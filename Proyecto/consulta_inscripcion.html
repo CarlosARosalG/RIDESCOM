@@ -1,0 +1,155 @@
+<!--
+Autor: Rosales González Carlos Andrés
+Fecha: 25/02/19
+Titulo: Consutla Inscripciones
+Funciones: Servirá para que el alumno visualice en una tabla los eventos a los que se ha registrado
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<head>
+	<meta charset="utf-8">
+	<title> Consulta resultados </title>
+
+	<!-- Estilos CSS -->
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<!--Jquery -->
+
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.min.js"></script>
+	<link rel="stylesheet"href="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" " href="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet"  href="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.theme.min.css">
+
+	<!-- Moment js  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es.js"></script>
+
+	<!-- Mis scripts -->
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<!-- Slider -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+	<!-- Bootstrap  -->	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- JS en bootstrap  -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<!-- CSS en bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	</head>
+</head>
+<body>
+	<!-- Cabecera -->
+		<header>
+			<div id="logo">
+				<h1> RIDESCOM </h1>
+			</div>
+
+
+			<div class="clearfix">
+				
+			</div>
+
+			<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
+			  <a class="navbar-brand" href="#">Inicio</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+			    <ul class="navbar-nav">
+			      <li class="nav-item active">
+			        <a class="nav-link" href="#">Registrate <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Calendario</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Resultados</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Inicia Sesión</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Contacto</a>
+			      </li>
+			      <li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Coordinador
+			        </a>
+			        <div id="menu" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			          <a class="dropdown-item" href="#">Registra</a>
+			          <a class="dropdown-item" href="#">Modifica</a>
+			          <a class="dropdown-item" href="#">Contraseña</a>
+			        </div>
+			      </li>
+			    </ul>
+			  </div>
+			</nav>
+
+
+		</header>
+
+
+	<!-- Calendario -->
+		<section>
+			<div class="clearfix" >&nbsp;</div>
+			<h2 id="titulo">Eventos a los que te has inscrito</h2>
+				<div class="container">
+					<div class="table-responsive">
+						<div class="clearfix" >&nbsp;</div>
+						<div class="clearfix" >&nbsp;</div>
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col"> Nombre </th>
+									<th scope="col"> Boleta </th>
+									<th scope="col"> Escuela </th>
+									<th scope="col"> Deporte </th>
+									<th scope="col"> Sub-división </th>
+									<th scope="col"> Posición </th>
+									<th scope="col"> Prueba </th>
+									<th scope="col"> Marca </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>Fila 1</th>
+									<td>Fila 1 Columna 1</td>
+									<td>Fila 1 Columna 2</td>
+									<td>Fila 1 Columna 2</td>
+									<td>Fila 1 Columna 2</td>
+									<td>Fila 1 Columna 2</td>
+									<td>Fila 1 Columna 2</td>
+									<td>Fila 1 Columna 2</td>
+								</tr>
+								<tr>
+									<th>Fila 2</th>
+									<td>Fila 2 Columna 1</td>
+									<td>Fila 2 Columna 2</td>
+									<td>Fila 1 Columna 2</td>
+									<td>Fila 1 Columna 2</td>
+									<td>Fila 1 Columna 2</td>
+									<td>Fila 1 Columna 2</td>
+									<td>Fila 1 Columna 2</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<input type="submit" value="Regresar" class="btn btn-outline-info float-right login_btn">
+                        <div class="clearfix" >&nbsp;</div>
+					</div>	
+				</div>
+		</section>
+
+</body>
+</html>
