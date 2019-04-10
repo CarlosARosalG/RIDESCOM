@@ -1,0 +1,50 @@
+\begin{UseCase}{CU2.2}{Validación estatus}{
+		Servirá para comprobar el estatus académico del alumno interesado en participar en un evento interpolitécnico. Para ello se comprobara haciendo una consulta con los datos registrados en la DAE (Dirección Académica Escolar). Si el alumno esta inscrito el botón Registrar estará habilitado para poder Registrarse en el evento. En caso contrario se le mostrará al alumno un mensaje indicando que no esta inscrito y por tal motivo, no participar en algún evento. 
+
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Alumno/Sistema}
+		\UCitem{Propósito}{Comprobar el estatus académico del alumno.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Haberse inciado sesión
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Ninguna}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Boleta
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Inscrito, puedes participar
+		    \item No inscrito, no puedes participar
+		\end{itemize}}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Errores}{
+        	\begin{itemize}
+            	\item EL alumno no esta inscrito en el periodo actual y por tal motivo no puede participar en un evento deportivo.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Oprime Botón validar en la pantalla .
+    \UCpaso Obtiene dato ingresado.
+	\UCpaso Valida que el alumno esta inscrito 
+    \UCpaso Muestra mensaje . \Trayref{A} \Trayref{B}
+    \end{UCtrayectoria}
+    
+	\begin{UCtrayectoriaA}{A}{}
+		\UCpaso Muestra el mensaje. “El alumno no esta inscrito en el periodo actual”
+		\UCpaso El botón para completar el registro permanecerá inhabilitado.
+		\UCpaso Regresa a trayectoria Principal 4.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{B}{}
+		\UCpaso Muestra el mensaje. “El alumno esta inscrito en el periodo actual”
+		\UCpaso El botón para completar el registro estará habilitado.
+        \UCpaso Regresa a trayectoria Principal 4.
+	\end{UCtrayectoriaA}

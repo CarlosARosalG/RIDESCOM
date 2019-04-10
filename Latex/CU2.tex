@@ -1,0 +1,60 @@
+\begin{UseCase}{CU1.1}{Inicio Sesión}{
+		Servirá para que el alumno pueda ingresar a la aplicación y así poder inscribirse en algún evento de su interés o consultar los eventos a los que ya se ha registrado previamente. \\
+        En caso de que el alumno ingrese una boleta la cual no a sido registrada, se mostrará un mensaje el cual le indique que la boleta que ingreso no existe. Mensaje . De igual manera, si la contraseña es diferente a la que se registro aparecerá un mensaje que le indique que la contraseña no coincide. Mensaje .
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Alumno}
+		\UCitem{Propósito}{Tener control de las personas registradas.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Haberse registrado
+            \item Perfil valido por el coordinador
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Ninguna}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Número de boleta 
+        	\item Contraseña
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Acceso a la página principal del alumno
+		\end{itemize}}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Errores}{
+        	\begin{itemize}
+        	    \item Los campos están vacíos.
+            	\item No existe la boleta. Mensaje .
+            	\item Contraseña incorrecta. Mensaje .
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Oprime el botón Iniciar Sesión en la pantalla.
+    \UCpaso Muestra la pantalla.
+	\UCpaso[\UCactor] Introduce Boleta y contraseña. 
+    \UCpaso[\UCactor] Presiona el botón Ingresar.
+    \UCpaso Comprueba que los campos no estén vacíos. \Trayref{A} \Trayref{B} \Trayref{C}
+    \UCpaso Obtiene los valores ingresados
+    \UCpaso Válida campos. 
+    \UCpaso Muestra la pantalla .
+    \end{UCtrayectoria}
+    
+	\begin{UCtrayectoriaA}{A}{No hay dato insertado en el campo solicitado}
+		\UCpaso muestra mensaje “Error: Los campos están vacíos por favor asegúrese de poner lo que se pide”. Mensaje .
+		\UCpaso Regresa al paso 3 de la Trayectoria Principal.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{B}{}
+		\UCpaso muestra mensaje “No existe boleta ingresada”. Mensaje .
+		\UCpaso Regresa al paso 2 de la trayectoria principal.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{C}{}
+		\UCpaso muestra mensaje “Contraseña incorrecta”. Mensaje .
+		\UCpaso Regresa al paso 2 de la trayectoria principal.
+	\end{UCtrayectoriaA}

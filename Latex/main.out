@@ -1,0 +1,53 @@
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Introducci\363n}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Justificaci\363n}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Problem\341tica}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Objetivos}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Objetivo General}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.6}{Objetivos Especificos}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{Marco te\363rico}{}% 8
+\BOOKMARK [1][-]{section.2.1}{An\341lisis de factibilidad t\351cnica}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{IDE}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Sistema Gestor de Base de Datos}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{Sistema Gestor de Base de Datos del lado del servidor}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.5}{Servidor}{chapter.2}% 13
+\BOOKMARK [0][-]{chapter.3}{Estado del arte}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Aplicaciones}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.2}{Aplicaciones Tournament Software}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.3}{Aplicaciones Active Network}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.4}{Aplicaciones TeamSnap Tournament}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.5}{Aplicaciones TorneoPal}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.6}{Aplicaciones Instituto Nacional del deporte CHILE}{chapter.3}% 20
+\BOOKMARK [0][-]{chapter.4}{Prototipo para el Registro a Interpolit\351cnicos Deportivos \(RIDESCOM\)}{}% 21
+\BOOKMARK [1][-]{section.4.1}{Prototipo para el Registro a Interpolit\351cnicos Deportivos \(RIDESCOM\)}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{Requisitos}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.3}{CU1 Registro}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.3.1}{Descripci\363n completa}{section.4.3}% 25
+\BOOKMARK [2][-]{subsection.4.3.2}{Atributos importantes}{section.4.3}% 26
+\BOOKMARK [2][-]{subsection.4.3.3}{Trayectorias del Caso de Uso}{section.4.3}% 27
+\BOOKMARK [1][-]{section.4.4}{CU1.1 Inicio Sesi\363n}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.1}{Descripci\363n completa}{section.4.4}% 29
+\BOOKMARK [2][-]{subsection.4.4.2}{Atributos importantes}{section.4.4}% 30
+\BOOKMARK [2][-]{subsection.4.4.3}{Trayectorias del Caso de Uso}{section.4.4}% 31
+\BOOKMARK [1][-]{section.4.5}{CU2 Inscripci\363n a un evento interpolit\351cnico}{chapter.4}% 32
+\BOOKMARK [2][-]{subsection.4.5.1}{Descripci\363n completa}{section.4.5}% 33
+\BOOKMARK [2][-]{subsection.4.5.2}{Atributos importantes}{section.4.5}% 34
+\BOOKMARK [2][-]{subsection.4.5.3}{Trayectorias del Caso de Uso}{section.4.5}% 35
+\BOOKMARK [1][-]{section.4.6}{CU2.2 Validaci\363n estatus}{chapter.4}% 36
+\BOOKMARK [2][-]{subsection.4.6.1}{Descripci\363n completa}{section.4.6}% 37
+\BOOKMARK [2][-]{subsection.4.6.2}{Atributos importantes}{section.4.6}% 38
+\BOOKMARK [2][-]{subsection.4.6.3}{Trayectorias del Caso de Uso}{section.4.6}% 39
+\BOOKMARK [1][-]{section.4.7}{Requisitos del usuario}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.8}{Requisitos funcionales de la aplicacion web}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.9}{Requisitos no funcionales de la aplicacion web}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.10}{Reglas de necocio de la aplicaci\363n}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.11}{Trabajo realizado}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.12}{Sprint 0}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.13}{Sprint 1}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.14}{Sprint 2}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.15}{Sprint 3}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.16}{Sprint 4}{chapter.4}% 49
+\BOOKMARK [1][-]{section.4.17}{Sprint 5}{chapter.4}% 50
+\BOOKMARK [1][-]{section.4.18}{Sprint 6}{chapter.4}% 51
+\BOOKMARK [1][-]{section.4.19}{Sprint 7}{chapter.4}% 52
+\BOOKMARK [0][-]{chapter.5}{Glosario}{}% 53

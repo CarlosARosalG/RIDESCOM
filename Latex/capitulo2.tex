@@ -1,0 +1,207 @@
+\chapter{Marco te\'orico}
+	%=========================================================
+	%                                                         Marco teorico
+	%=========================================================
+	
+	Con el tiempo se han creado eventos que fomentan la participación y competitividad de la comunidad, llamados interpolitécnicos. Estos involucran distintas áreas tales como: actividades deportivas, culturales o académicas, dichos eventos son de participación gratuita y  se realizan 2 veces al año entre todos los planteles académicos que constituyen al IPN, divididas en los niveles Medio Superior y Superior.\\
+	\cite{Reglas}\\
+	Dentro del IPN las actividades deportivas tienen como propósito brindar una formación integral a la comunidad politécnica, la unidad responsable dentro del IPN, es la Dirección de Desarrollo y Fomento Deportivo, dicha unidad es la encargada de la creación, administración y control de todas las actividades deportivas prácticadas dentro de esta, a su vez coordinan la realización de los Interpolitécnicos Deportivos del IPN siguiendo ‘el reglamento general liga interpolitécnica ‘[*], cuyos lineamientos explican los procesos que realiza cada persona involucrada.
+	El Coordinador de Área Deportiva de cada Unidad Académica es el responsable de supervisar los aspectos operativos y técnicos de todos los deportes que se practican dentro de la misma así mismo es el encargado de realizar el proceso de inscripción a un interpolitécnico para los alumnos que así lo deseen y para que puedan participar este deberá solicitar la documentación de inscripción (cédula de inscripción) individual o de sus equipos y entregarlos a los Coordinadores de cada Disciplina Deportiva en la Dirección de Desarrollo y Fomento Deportivo. \\
+	Cabe mencionar que durante el proceso de inscripción a un interpolitécnico el alumno debe de comprobar que está debidamente inscrito en algún plantel del IPN, para esto suele presentarse un documento emitido por control escolar con la cual puede cerciorarse de que el alumno si está inscrito.  Una vez corroborada la situación escolar del alumno, se continua con el llenado de una “Cédula de inscripción” para que de esta manera se concluya con la solicitud entre el Coordinador y el alumno.   
+	Este proceso suele tardar por distintas causas como: la comprobación del estado de inscripción o información incorrecta de los participantes durante el llenado de la “Cédula de Inscrición” produciendo un rechazo y así retrasar todo el trámite.\\
+	
+	Es por ello que se propone una solución que permita, hacer la comprobación oportuna del estado de inscripción del alumno y así proceder con el proceso burocrático correspondiente para la inscripción.\\
+	
+	Entrevista con responsable de las actividades del Departamento de Formación Deportiva
+	Buenas tardes, agradecemos el tiempo que nos esta brindando para mostrarle nuestra propuesta de Trabajo Terminal con la cual se pretende ayudar en el proceso de inscripción para los alumnos.
+	
+	\begin{enumerate}
+		\item ¿Cuál es el proceso actual para la inscripción a un evento interpolitécnico?
+		\item ¿Hay límite de edad para los participantes?
+		\item ¿Se tiene un formato definido para la inscripción?
+		\item ¿Es necesario la comprobación de inscripción de los alumnos?
+		\item ¿Cuántos deportes hay actualmente practicándose en el IPN?
+		\item ¿Se cuenta con algún método de verificación de datos?
+		\item Una vez concluido los eventos, ¿Qué sigue?
+		\item ¿Cuánto tiempo suele tardarse en la publicación de los resultados?
+		\item ¿Qué puntos se consideran en la generación de estadísticas?
+	\end{enumerate}
+	
+	
+	%=========================================================
+	%                                                         Analisis de factibilidad tecnica
+	%=========================================================
+	\section{An\'alisis de factibilidad t\'ecnica}
+	
+	
+	%=========================================================
+	%                                                         IDE
+	%=========================================================
+	\section{IDE}
+	\begin{itemize}
+		\item Netbeans 
+		\newline
+		Netbeans es un entorno integrado de desarrollo o IDE (IntegratedDevelopmentEnvironment).
+		En él podemos realizar todas las tareas asociadas a la programación.
+		\newline\newline
+		\textbf{¿Por qué usarlo?}
+		\newline
+		Simplifica alguna de las tareas que, sobretodo en proyectos grandes, son tediosas.
+		Nos asiste (parcialmente) en la escritura de código, aunque no nos libera de aprender el lenguaje de programación.
+		Nos ayuda en la navegación de las clases predefinidas.
+		Aunque puede ser costoso su aprendizaje, los beneficios superan las dificultades.
+		
+		\item Spring MVC \\ 
+		\textbf{¿En qué consiste Spring MVC? } \\
+		Spring Mvc es una alternativa de framework basado en el patrón modelo-vista-controlador, después de haber aprendido de errores de frameowrks como Jakarta Struts y otras alternativas.
+		El framework tiene un conjunto de interfaces que después se implementan para proporcionar la funcionalidad correspondiente. Las interfaces están acopladas claramente al Servlet Api.\\
+		La clase DispatcherServlet está en el front controller y es responsable de delegar y coordinar el control entre varias interfaces en la fase de ejecución durante una petición Http.
+		Las interfaces más importantes definidas en Spring Mvc, y sus responsabilidades, son las siguientes:
+		\begin{itemize}
+			\item HandlerMapping: permite manejar peticiones de entrada.
+			\item HandlerAdapter: ejecución de objetos que permiten manejar las peticiones entrantes.
+			\item Controller: está entre el modelo y la vista, y permite manejar peticiones entrantes y redirigirlas a la respuesta adecuada. 
+			\item Vista: responsable de retornar una respuesta al cliente. 
+			\item ViewResolver: selecciona una vista basada en un nombre lógico de la vista.
+			\item HandlerInterceptor: intercepta las peticiones entrantes, es comparable pero no igual a los filtros de Servlet.
+			\item LocaleResolver: resuelve y opcionalmente salva el locale de un usuario individual.
+			\item MultipartResolver: facilita trabajar con ficheros de subida wrapping peticiones de entrada.
+		\end{itemize}
+		Cada interfaz de estrategia tiene su responsabilidad importante dentro del framework general. Estas abstracciones ofrecidas por estas interfaces son potentes, pues permiten configurar un conjunto de interfaces juntas y ofrecen un conjunto en el top del Api de Servlet. Sin embargo, los desarrolladores y los vendedores son libres es escribir otras implementaciones. Spring MVC utiliza la interfaz java.util.Map como una abstracción del modelo cuando se espera que las llaves tenga valores de String. \\
+		Cada testeo de las implementaciones de estas interfaces tiene otra ventaja importante dentro del alto nivel de abstracción ofrecido por Spring Mvc. Dispatcher Servlet está altamente acoplado con el contenedor de Inversión de Control de Spring para configurar las capas de web de las aplicaciones. Sin embargo, las aplicaciones web pueden utilizar otras partes del framework de Spring, incluyendo el contenedor, y decidir no usar Spring Mvc. \\
+		\textbf{¿Qué ventajas tiene Spring MVC respecto a frameworks antecedentes como Struts?} \\
+		Struts es un framework mucho más antiguo, por lo que Spring ha aprendido de la experiencia adquirida de usar Struts para no cometer los mismos errores.
+		A continuación se enumeran un conjunto de ventajas:
+		\begin{itemize}
+			\item Spring MVC ofrece una división limpia entre Controllers, Models (JavaBeans) y Views. 
+			\item Spring MVC es muy flexible, ya que implementa toda su estructura mediante interfaces, no como Struts que obliga a heredar de clases concretas tanto en sus Actions como en sus Forms. 
+			\item Spring MVC provee interceptores y controllers que permiten interpretar y adaptar el comportamiento común en el manejo de múltiples requests.
+			\item Los controllers de Spring MVC se configuran mediante IoC como los demás objetos, lo cual los hace fácilmente testeables e integrables con otros objetos que estén en el contexto de Spring, y por tanto sean manejables por éste. 
+			\item Las partes de Spring MVC son más fácilmente testeables que las de Struts, debido a que evita la herencia de una clase de manera forzosa y una dependencia directa en el controller del servlet que despacha las peticiones. 
+			\item No existen ActionForms, se enlaza directamente con los beans de negocio. 
+			\item Struts obliga a extender la clase Action, mientras que Spring MVC no, aunque proporciona una serie de implementaciones de Controllers para que el usuario los utilice. Existe una gran variedad de Controladores.
+			\item Spring tiene una interfaz bien definida para la capa de negocio. 
+			\item Spring ofrece mejor integración con tecnologías distintas a JSP, como Velocity,XSLT,FreeMaker y XL. 
+		\end{itemize}
+		\pagebreak
+		\textbf{¿Qué ventajas tiene Spring MVC en la versión 3 respecto a la 2?} 
+		\begin{itemize}
+			\item Se ha introduce un nombre es espacio MVC que simplifica la configuración.
+			\item Se han insertado anotaciones adicionales como @CookieValue (permite relacionar un atributo de un método a una cookie) y @RequestMappings (asociar directamente en la clase la posibilidad de asociar una petición Url a un controlador específico).
+			\item El tipo ConversionService es una alternativa más simple y robusta que los PropertyEditors de JavaBeans.
+			\item Se soporta un formateo de números con el atributo @NumberFormat.
+			\item Se soportan el formateo de fechas, calendarios y joda time con el atributo @DatetimeFormat, siempre que la librería Joda Time esté dentro del classpath.
+			\item Se soporta la validación para entradas @Controller con la etiqueta @Valid, si se proporciona una implementación de la Jsr-303 en el classpath.
+			\item Soporte para leer y escribir Xml, si Jaxb está dentro del classpath.
+			\item Soporte para leer y escribir Json, si Jackson está dentor del classpath.
+		\end{itemize}
+		\textbf{Qué pasos hay que hacer para crear los controladores?} \\
+		\begin{itemize}
+			\item Definir una clase que implementa la interfaz del controlador.
+			\item Insertar dicha clase como un objeto en el contexto de Spring.
+			\item Asignar el nombre a una Uri que posteriormente será invocada por el usuario.
+			\item Especificar la extensión de la uti en el DispatcherServlet de Spring, configurado en web.xml, para que se pueda buscar internamente.
+		\end{itemize}
+		\textbf{¿Qué sería el modelo?} \\
+		El modelo son los datos con los que interactúa la vista y el controlador. En este caso, el modelo se pasa mediante un atributo de la clase ModelAndView, para posteriormente acceder al mismo desde la parte de la vista. \\
+		
+		\textbf{¿Qué recomendaciones darías para desarrollar utilizando Spring MVC?}\\
+		Primero: determinar el Ide de desarrollo que se quiera utilizar. Existan varias alternativas: Netbeans, Eclipse, Intellij, Spring Tool Suite. Yo, por precio (gratis) y facilidad de uso (está orientado al desarrollo de Spring) recomiendo el uso de Spring Tool Suite. \\
+		
+		Segundo: crear el proyecto básico, y elegir nuestra herramienta de gestión de librerías. Para crear el proyecto, tenemos varias alternativas, desde configurar nosotros desde cero el servlet de spring, como utilizar plantillas ya existentes. También existe la posibilidad de descargar las librerías de la web de Spring o bien utilizar repositorios de Maven.\\
+		
+		Tercero: escoger el tipo de vista que se utilizará para el proyecto. En mi caso, la vista que suelo utilizar y con la que me siento más acostumbrado es Jsp.\\
+		
+		Cuarto: desarrollar la parte de negocio (controladores) y persistencia (seleccionando un framework como hibernate o jpa), y relacionar los controladores, con la vista y la persistencia.
+		En principio, eso es todo.\\
+		\textbf{¿Qué licencia tiene esta herramienta?} \\
+		El framework fue lanzado inicialmente bajo Apache 2.0 License en junio de 2003. Esta licencia es una licencia de software libre creada por la Apache Software Foundation que requiere la conservación del aviso de copyright y disclaimer, pero no es una liencia copyleft, ya que no requiere la redistribución del código fuente cuando se distribuyen versiones modificadas. \\
+	\end{itemize}
+	
+	
+	%=========================================================
+	%                                                         Sistema Gestor de BD
+	%=========================================================
+	\section{Sistema Gestor de Base de Datos}
+	Realizando una investigación de los distintos gestores de Bases de Datos encontramos las siguientes caracteristicas:
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|l|p{35mm}|p{35mm}|p{35mm}|l}
+				\hline
+				Caracter\'isticas & Oracle & MySQL & SQL Server \\
+				\hline 
+				Interfaz & GUI, SQL & SQL & GUI, SQL \\ \hline
+				Lenguaje soportado & C, C++, C, Java, Ruby y Objective-C & C, C, C++, D, Java, Ruby y Objective C & Java, Ruby, Python, VB, .Net y PHP  \\ \hline
+				Sistema Operativo & Windows, GNU/Linux, Solaris, OS-X & Windows, GNU/Linux, OS-X, FreeBSD, Solaris & Windows \\ \hline
+				Licencia & Propietrio & Código Libre & Propietario \\ \hline
+			\end{tabular}
+			\caption{Tabla comparativa de lenguajes de BD.}
+			\label{tabla:sencilla}
+		\end{center}
+	\end{table}
+	
+	
+	%=========================================================
+	%                                                         Sistema Gestor de BD del lado del servidor
+	%=========================================================
+	\section{Sistema Gestor de Base de Datos del lado del servidor}
+	Para persistir la información que se genere a través de la aplicación y que esté disponible la mayor parte del tiempo por los usuarios es necesario contar con un SGBD en el servidor para que los datos están centralizados y se puedan agregar, actualizar, consultar y eliminar los datos generados por los usuarios. Comparando los SGBD, ver la tabla 2, más populares encontramos que la opción más confiable será utilizar MySQL debido a que es de código abierto, gratuito, con soporte técnico y abundante documentación. 
+	
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|l|p{35mm}|p{35mm}|p{35mm}|l}
+				\hline
+				Caracter\'isticas & Oracle & MySQL & SQL Server \\
+				\hline 
+				Interfaz & GUI, SQL & SQL & GUI, SQL \\ \hline
+				Lenguaje soportado & C, C++, C, Java, Ruby y Objective-C & C, C, C++, D, Java, Ruby y Objective C & Java, Ruby, Python, VB, .Net y PHP  \\ \hline
+				Sistema Operativo & Windows, GNU/Linux, Solaris, OS-X & Windows, GNU/Linux, OS-X, FreeBSD, Solaris & Windows \\ \hline
+				Licencia & Propietrio & Código Libre & Propietario \\ \hline
+			\end{tabular}
+			\caption{Tabla comparativa de lenguajes de BD.}
+			\label{tabla:sencilla}
+		\end{center}
+	\end{table}
+	
+	
+	%=========================================================
+	%                                                         Servidor
+	%=========================================================
+	\pagebreak
+	\section{Servidor}
+	Un servidor web es un sistema informático permanentemente conectado a la red donde se almacenan las distintas páginas que forman un sitio Web disponibles para ser visitadas por los usuarios a través de navegadores de Web utilizando el protocolo HTTP. 
+	
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|l|l|}
+				\hline
+				\multicolumn{2}{|c|}{Servidor Ideal} \\
+				\hline
+				Componentes & columna 2\\
+				\hline
+				\multicolumn{2}{|c|}{Hardware} \\
+				\hline
+				Procesador & columna 2\\
+				\hline
+				Plataforma & 64-Bits\\
+				\hline
+				Memoria RAM & 12 GB\\
+				\hline
+				Disco Duro & 1 TB\\
+				\hline
+				Arreglo de Discos Duros & Ninguno\\
+				\hline
+				D Drive & 1 TB\\
+				\hline
+				Monitor & 800 x 600 16 bits Color o Superior\\
+				\hline
+				\multicolumn{2}{|c|}{Software} \\
+				\hline
+				Sistema Operativo & Apache Tomcat 7\\
+				\hline
+				Base de Datos & MySQL\\
+				\hline 
+			\end{tabular}
+			\caption{Tabla de especificaciones del servidor.}
+		\end{center}
+	\end{table}
