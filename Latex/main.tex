@@ -4,15 +4,19 @@
 \usepackage[spanish,es-tabla]{babel}
 \usepackage[left=3cm,top=2cm,right=2cm,bottom=2cm]{geometry} 
 \usepackage{graphicx}
-\graphicspath{Imagenes/}
+\graphicspath{Imagenes}
 \usepackage{imakeidx}
 \usepackage{usecases}
 \usepackage{requerimientos}
 \usepackage{cdtBook}
+\usepackage{pdfpages}
 \makeindex[columns=3, title=Alphabetical Index, intoc]
 
 
 \begin{document}
+	
+	\includepdf{portada.pdf}
+	
 	%=========================================================
 	%                                                         Indice.
 	%=========================================================
@@ -34,6 +38,11 @@
 	%                                                         Capitulo 4 Prototipo RIDESCOM
 	%=========================================================
 		\include{capitulo4}
+		
+	%=========================================================
+	%                                                         Capitulo 4 Prototipo RIDESCOM
+	%=========================================================
+	\include{capitulo5}
 	\pagebreak
 	
 	%=========================================================

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.4.3)  9 APR 2019 22:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.4.3)  18 APR 2019 14:46
 entering extended mode
 **./main.tex
 (main.tex
@@ -410,6 +410,13 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@@cf@currentpos=\count121
 )
+("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysy
+m\wasysym.sty"
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+)
 
 ! LaTeX Error: Option clash for package color.
 
@@ -646,6 +653,22 @@ Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 41.
 
 )
+("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpag
+es\pdfpages.sty"
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+\AM@pagewidth=\dimen137
+\AM@pageheight=\dimen138
+
+("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpag
+es\pppdftex.def"
+File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box61
+\AM@global@opts=\toks26
+\AM@toc@title=\toks27
+\c@AM@survey=\count133
+\AM@templatesizebox=\box62
+)
 \main@idxfile=\write3
 \openout3 = `main.idx'.
 
@@ -654,39 +677,39 @@ Writing index file main.idx
 (main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
- (capitulo1.aux) (capitulo2.aux
+ (capitulo1.aux) (capitulo2.aux) (capitulo3.aux
 
 LaTeX Warning: Label `tabla:sencilla' multiply defined.
 
-) (capitulo3.aux) (capitulo4.aux
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
+) (capitulo4.aux
 
 LaTeX Warning: Label `tabla:sencilla' multiply defined.
 
 
 LaTeX Warning: Label `tabla:sencilla' multiply defined.
 
-) (glosario.aux) (referencias.aux))
+
+LaTeX Warning: Label `tabla:sencilla' multiply defined.
+
+) (capitulo5.aux) (glosario.aux) (referencias.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Info: Redefining \. on input line 15.
-LaTeX Info: Redefining \% on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Info: Redefining \. on input line 16.
+LaTeX Info: Redefining \% on input line 16.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -726,17 +749,17 @@ LaTeX Info: Redefining \% on input line 15.
 ("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/context/base
 /mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count133
-\scratchdimen=\dimen137
-\scratchbox=\box61
-\nofMPsegments=\count134
-\nofMParguments=\count135
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count136
-\MPscratchDim=\dimen138
-\MPnumerator=\count137
-\makeMPintoPDFobject=\count138
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count134
+\scratchdimen=\dimen139
+\scratchbox=\box63
+\nofMPsegments=\count135
+\nofMParguments=\count136
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen140
+\MPnumerator=\count138
+\makeMPintoPDFobject=\count139
+\everyMPtoPDFconversion=\toks29
 )
 ("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdi
 ek\epstopdf-base.sty"
@@ -753,8 +776,8 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring ON on input line 15.
+\AtBeginShipoutBox=\box64
+Package hyperref Info: Link coloring ON on input line 16.
 
 ("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperr
 ef\nameref.sty"
@@ -764,17 +787,75 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 diek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count139
+\c@section@level=\count140
 )
-LaTeX Info: Redefining \ref on input line 15.
-LaTeX Info: Redefining \pageref on input line 15.
-LaTeX Info: Redefining \nameref on input line 15.
+LaTeX Info: Redefining \ref on input line 16.
+LaTeX Info: Redefining \pageref on input line 16.
+LaTeX Info: Redefining \nameref on input line 16.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-\c@lstlisting=\count140
- (main.toc
+\c@lstlisting=\count141
+
+("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdi
+ek\pdflscape.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphi
+cs\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+
+pdfTeX warning: pdflatex.exe (file ./portada.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+<portada.pdf, id=247, 614.295pt x 794.97pt>
+File: portada.pdf Graphic file (type pdf)
+<use portada.pdf>
+Package pdftex.def Info: portada.pdf  used on input line 18.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./portada.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+File: portada.pdf Graphic file (type pdf)
+<use portada.pdf>
+Package pdftex.def Info: portada.pdf  used on input line 18.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./portada.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./portada.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+<portada.pdf, id=250, page=1, 614.295pt x 794.97pt>
+File: portada.pdf Graphic file (type pdf)
+<use portada.pdf, page 1>
+Package pdftex.def Info: portada.pdf , page1 used on input line 18.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: portada.pdf Graphic file (type pdf)
+<use portada.pdf, page 1>
+Package pdftex.def Info: portada.pdf , page1 used on input line 18.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: portada.pdf Graphic file (type pdf)
+<use portada.pdf, page 1>
+Package pdftex.def Info: portada.pdf , page1 used on input line 18.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: portada.pdf Graphic file (type pdf)
+<use portada.pdf, page 1>
+Package pdftex.def Info: portada.pdf , page1 used on input line 18.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: portada.pdf Graphic file (type pdf)
+<use portada.pdf, page 1>
+Package pdftex.def Info: portada.pdf , page1 used on input line 18.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+[1
+
+ <./portada.pdf>] (main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Font Info:    Try loading font information for OT1+cmbr on input line 3.
@@ -796,16 +877,21 @@ LaTeX Font Info:    Try loading font information for OMS+cmbrs on input line 3.
 ("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cmbrig
 ht\omscmbrs.fd"
 File: omscmbrs.fd 2005/04/13 v8.1 (WaS)
-) [1
+)
+LaTeX Font Info:    Try loading font information for U+wasy on input line 3.
 
+("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysy
+m\uwasy.fd"
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+) [2
 
 {C:/Users/Carlos A. Rosales/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 )
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -814,11 +900,11 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <5> not available
-(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 21.
-LaTeX Font Info:    Try loading font information for U+mvs on input line 21.
+(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 25.
+LaTeX Font Info:    Try loading font information for U+mvs on input line 25.
 
 ("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/marvos
-ym\umvs.fd") [2]
+ym\umvs.fd") [3]
 \openout2 = `capitulo1.aux'.
 
  (capitulo1.tex
@@ -827,21 +913,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.15 	
+l.16 	
        [1
 
 
 
 ]
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 	
+l.28 	
        [2]
-LaTeX Font Info:    Try loading font information for OMS+cmbr on input line 48.
+LaTeX Font Info:    Try loading font information for OMS+cmbr on input line 49.
 
 
 ("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cmbrig
@@ -849,15 +935,137 @@ ht\omscmbr.fd"
 File: omscmbr.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Font shape `OMS/cmbr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmbrs/m/n' tried instead on input line 48.
+(Font)              Font shape `OMS/cmbrs/m/n' tried instead on input line 49.
 )
-LaTeX Info: Redefining \. on input line 22.
-LaTeX Info: Redefining \% on input line 22.
- [3]
+LaTeX Info: Redefining \. on input line 26.
+LaTeX Info: Redefining \% on input line 26.
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.26 		\include{capitulo1}
+                           [3]
 \openout2 = `capitulo2.aux'.
 
  (capitulo2.tex
 Cap\'{\i }tulo 2.
+[4
+
+
+
+]
+<Imagenes/Aplicaciones/ToS1.png, id=420, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/ToS1.png Graphic file (type png)
+<use Imagenes/Aplicaciones/ToS1.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/ToS1.png  used on input line 37.
+
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+<Imagenes/Aplicaciones/ToS2.png, id=422, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/ToS2.png Graphic file (type png)
+<use Imagenes/Aplicaciones/ToS2.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/ToS2.png  used on input line 42.
+
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+LaTeX Info: Redefining \. on input line 46.
+LaTeX Info: Redefining \% on input line 46.
+ [5 <./Imagenes/Aplicaciones/ToS1.png> <./Imagenes/Aplicaciones/ToS2.png>]
+<Imagenes/Aplicaciones/Tos3.png, id=431, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/Tos3.png Graphic file (type png)
+<use Imagenes/Aplicaciones/Tos3.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/Tos3.png  used on input line 48.
+
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+<Imagenes/Aplicaciones/AN1.png, id=433, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/AN1.png Graphic file (type png)
+<use Imagenes/Aplicaciones/AN1.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/AN1.png  used on input line 67.
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+LaTeX Info: Redefining \. on input line 72.
+LaTeX Info: Redefining \% on input line 72.
+
+[6 <./Imagenes/Aplicaciones/Tos3.png> <./Imagenes/Aplicaciones/AN1.png>]
+<Imagenes/Aplicaciones/AN2.png, id=443, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/AN2.png Graphic file (type png)
+<use Imagenes/Aplicaciones/AN2.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/AN2.png  used on input line 75.
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+<Imagenes/Aplicaciones/TsT1.png, id=445, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/TsT1.png Graphic file (type png)
+<use Imagenes/Aplicaciones/TsT1.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/TsT1.png  used on input line 94.
+
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+
+[7 <./Imagenes/Aplicaciones/AN2.png> <./Imagenes/Aplicaciones/TsT1.png>]
+<Imagenes/Aplicaciones/TsT2.png, id=455, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/TsT2.png Graphic file (type png)
+<use Imagenes/Aplicaciones/TsT2.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/TsT2.png  used on input line 100
+.
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+<Imagenes/Aplicaciones/TsT3.png, id=456, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/TsT3.png Graphic file (type png)
+<use Imagenes/Aplicaciones/TsT3.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/TsT3.png  used on input line 105
+.
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+LaTeX Info: Redefining \. on input line 109.
+LaTeX Info: Redefining \% on input line 109.
+
+[8 <./Imagenes/Aplicaciones/TsT2.png> <./Imagenes/Aplicaciones/TsT3.png>]
+<Imagenes/Aplicaciones/TP1.png, id=466, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/TP1.png Graphic file (type png)
+<use Imagenes/Aplicaciones/TP1.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/TP1.png  used on input line 128.
+
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+<Imagenes/Aplicaciones/TP2.png, id=467, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/TP2.png Graphic file (type png)
+<use Imagenes/Aplicaciones/TP2.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/TP2.png  used on input line 133.
+
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+LaTeX Info: Redefining \. on input line 137.
+LaTeX Info: Redefining \% on input line 137.
+
+[9 <./Imagenes/Aplicaciones/TP1.png> <./Imagenes/Aplicaciones/TP2.png>]
+<Imagenes/Aplicaciones/INDC1.png, id=478, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/INDC1.png Graphic file (type png)
+<use Imagenes/Aplicaciones/INDC1.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/INDC1.png  used on input line 15
+2.
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+<Imagenes/Aplicaciones/INDC2.png, id=479, 1028.34187pt x 578.16pt>
+File: Imagenes/Aplicaciones/INDC2.png Graphic file (type png)
+<use Imagenes/Aplicaciones/INDC2.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/INDC2.png  used on input line 15
+7.
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+LaTeX Info: Redefining \. on input line 161.
+LaTeX Info: Redefining \% on input line 161.
+
+[10 <./Imagenes/Aplicaciones/INDC1.png> <./Imagenes/Aplicaciones/INDC2.png>]
+File: Imagenes/Aplicaciones/INDC1.png Graphic file (type png)
+<use Imagenes/Aplicaciones/INDC1.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/INDC1.png  used on input line 17
+5.
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+File: Imagenes/Aplicaciones/INDC2.png Graphic file (type png)
+<use Imagenes/Aplicaciones/INDC2.png>
+Package pdftex.def Info: Imagenes/Aplicaciones/INDC2.png  used on input line 18
+0.
+(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+)
+LaTeX Info: Redefining \. on input line 31.
+LaTeX Info: Redefining \% on input line 31.
+
+[11]
+\openout2 = `capitulo3.aux'.
+
+ (capitulo3.tex
+Cap\'{\i }tulo 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--12
 
@@ -868,174 +1076,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
-[4
+[12
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 42--53
-
- []
-
-LaTeX Info: Redefining \. on input line 75.
-LaTeX Info: Redefining \% on input line 75.
-[5]
-LaTeX Info: Redefining \. on input line 87.
-LaTeX Info: Redefining \% on input line 87.
- [6]
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--107
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--119
-
- []
-
-LaTeX Info: Redefining \. on input line 126.
-LaTeX Info: Redefining \% on input line 126.
-[7]
-Underfull \hbox (badness 7344) in paragraph at lines 134--134
-[]|\T1/cmbr/m/n/10 Java, Ruby, Pyt-hon,
- []
-
-
-Underfull \hbox (badness 7344) in paragraph at lines 157--157
-[]|\T1/cmbr/m/n/10 Java, Ruby, Pyt-hon,
- []
-
-LaTeX Info: Redefining \. on input line 171.
-LaTeX Info: Redefining \% on input line 171.
-[8])
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
- [9]
-\openout2 = `capitulo3.aux'.
-
- (capitulo3.tex
-Cap\'{\i }tulo 3.
-[10
-
-
-
-]
-<Imagenes/Aplicaciones/ToS1.png, id=280, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/ToS1.png Graphic file (type png)
-<use Imagenes/Aplicaciones/ToS1.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/ToS1.png  used on input line 37.
-
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
-<Imagenes/Aplicaciones/ToS2.png, id=282, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/ToS2.png Graphic file (type png)
-<use Imagenes/Aplicaciones/ToS2.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/ToS2.png  used on input line 42.
-
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
-LaTeX Info: Redefining \. on input line 46.
-LaTeX Info: Redefining \% on input line 46.
- [11 <./Imagenes/Aplicaciones/ToS1.png> <./Imagenes/Aplicaciones/ToS2.png>]
-<Imagenes/Aplicaciones/Tos3.png, id=292, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/Tos3.png Graphic file (type png)
-<use Imagenes/Aplicaciones/Tos3.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/Tos3.png  used on input line 48.
-
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
-<Imagenes/Aplicaciones/AN1.png, id=293, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/AN1.png Graphic file (type png)
-<use Imagenes/Aplicaciones/AN1.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/AN1.png  used on input line 67.
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
 LaTeX Info: Redefining \. on input line 72.
 LaTeX Info: Redefining \% on input line 72.
-[12 <./Imagenes/Aplicaciones/Tos3.png> <./Imagenes/Aplicaciones/AN1.png>]
-<Imagenes/Aplicaciones/AN2.png, id=302, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/AN2.png Graphic file (type png)
-<use Imagenes/Aplicaciones/AN2.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/AN2.png  used on input line 75.
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
-<Imagenes/Aplicaciones/TsT1.png, id=303, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/TsT1.png Graphic file (type png)
-<use Imagenes/Aplicaciones/TsT1.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/TsT1.png  used on input line 94.
+ [13]
 
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
-LaTeX Info: Redefining \. on input line 98.
-LaTeX Info: Redefining \% on input line 98.
+! LaTeX Error: There's no line here to end.
 
-[13 <./Imagenes/Aplicaciones/AN2.png> <./Imagenes/Aplicaciones/TsT1.png>]
-<Imagenes/Aplicaciones/TsT2.png, id=312, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/TsT2.png Graphic file (type png)
-<use Imagenes/Aplicaciones/TsT2.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/TsT2.png  used on input line 100
-.
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
-<Imagenes/Aplicaciones/TsT3.png, id=313, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/TsT3.png Graphic file (type png)
-<use Imagenes/Aplicaciones/TsT3.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/TsT3.png  used on input line 105
-.
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
-LaTeX Info: Redefining \. on input line 109.
-LaTeX Info: Redefining \% on input line 109.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 		E
+        l modelo son los datos con los que interact√∫a la vista y el control...
 
-[14 <./Imagenes/Aplicaciones/TsT2.png> <./Imagenes/Aplicaciones/TsT3.png>]
-<Imagenes/Aplicaciones/TP1.png, id=322, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/TP1.png Graphic file (type png)
-<use Imagenes/Aplicaciones/TP1.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/TP1.png  used on input line 128.
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
-<Imagenes/Aplicaciones/TP2.png, id=323, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/TP2.png Graphic file (type png)
-<use Imagenes/Aplicaciones/TP2.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/TP2.png  used on input line 133.
 
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
-LaTeX Info: Redefining \. on input line 137.
-LaTeX Info: Redefining \% on input line 137.
+Underfull \hbox (badness 10000) in paragraph at lines 99--102
 
-[15 <./Imagenes/Aplicaciones/TP1.png> <./Imagenes/Aplicaciones/TP2.png>]
-<Imagenes/Aplicaciones/INDC1.png, id=332, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/INDC1.png Graphic file (type png)
-<use Imagenes/Aplicaciones/INDC1.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/INDC1.png  used on input line 15
-2.
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
-<Imagenes/Aplicaciones/INDC2.png, id=333, 1028.34187pt x 578.16pt>
-File: Imagenes/Aplicaciones/INDC2.png Graphic file (type png)
-<use Imagenes/Aplicaciones/INDC2.png>
-Package pdftex.def Info: Imagenes/Aplicaciones/INDC2.png  used on input line 15
-7.
-(pdftex.def)             Requested size: 341.4408pt x 170.71451pt.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+LaTeX Info: Redefining \. on input line 105.
+LaTeX Info: Redefining \% on input line 105.
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 125--125
+[]|\T1/cmbr/m/n/10 Java, Ruby, Pyt-hon,
+ []
+
+LaTeX Info: Redefining \. on input line 134.
+LaTeX Info: Redefining \% on input line 134.
+[15]
+Underfull \hbox (badness 7344) in paragraph at lines 148--148
+[]|\T1/cmbr/m/n/10 Java, Ruby, Pyt-hon,
+ []
+
 )
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
-
-[16 <./Imagenes/Aplicaciones/INDC1.png> <./Imagenes/Aplicaciones/INDC2.png>]
+LaTeX Info: Redefining \. on input line 35.
+LaTeX Info: Redefining \% on input line 35.
+ [16]
 \openout2 = `capitulo4.aux'.
 
-
-(capitulo4.tex
+ (capitulo4.tex
 Cap\'{\i }tulo 4.
 (CU1.tex [17
 
@@ -1049,7 +1152,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.8 	}
+l.5 	}
       
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -1057,27 +1160,32 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--38
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
 
  []
 
-LaTeX Info: Redefining \. on input line 39.
-LaTeX Info: Redefining \% on input line 39.
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
 [18]
-<images/uc/actor.png, id=354, 96.36pt x 74.2775pt>
+<images/uc/actor.png, id=551, 96.36pt x 74.2775pt>
 File: images/uc/actor.png Graphic file (type png)
 <use images/uc/actor.png>
-Package pdftex.def Info: images/uc/actor.png  used on input line 39.
+Package pdftex.def Info: images/uc/actor.png  used on input line 40.
 (pdftex.def)             Requested size: 14.26958pt x 11.0pt.
-<images/uc/usecase.png, id=355, 91.34125pt x 61.22874pt>
-File: images/uc/usecase.png Graphic file (type png)
-<use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 40.
-(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+<images/uc/iu.png, id=552, 61.22874pt x 55.20625pt>
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 40.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+<images/uc/usecase.png, id=554, 91.34125pt x 61.22874pt>
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 41.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 41.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
 File: images/uc/actor.png Graphic file (type png)
 <use images/uc/actor.png>
 Package pdftex.def Info: images/uc/actor.png  used on input line 42.
@@ -1102,36 +1210,38 @@ File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 47.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
-File: images/uc/usecase.png Graphic file (type png)
-<use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 48.
-(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
-File: images/uc/usecase.png Graphic file (type png)
-<use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 49.
-(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 47.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
 LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <10> not available
-(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 50.
+(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 48.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 53.
+Package pdftex.def Info: images/uc/usecase.png  used on input line 51.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 54.
+Package pdftex.def Info: images/uc/usecase.png  used on input line 52.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 58.
+Package pdftex.def Info: images/uc/usecase.png  used on input line 56.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 59.
+Package pdftex.def Info: images/uc/usecase.png  used on input line 57.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 ) (CU2.tex
-LaTeX Info: Redefining \. on input line 4.
-LaTeX Info: Redefining \% on input line 4.
- [19 <./images/uc/actor.png> <./images/uc/usecase.png>]
+LaTeX Info: Redefining \. on input line 5.
+LaTeX Info: Redefining \% on input line 5.
+ [19 <./images/uc/actor.png> <./images/uc/iu.png> <./images/uc/usecase.png>]pdf
+TeX warning (ext4): destination with the same identifier (name{CU1}) has been a
+lready used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5 ...lar vigente para corroborar dichos datos. }
+                                                  
 
 ! LaTeX Error: File `uc/default' not found.
 
@@ -1139,8 +1249,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4 	}
-      
+l.5 ...lar vigente para corroborar dichos datos. }
+                                                  
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
 Try typing  <return>  to proceed.
@@ -1151,33 +1261,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--36
 
  []
 
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
+[20]
 File: images/uc/actor.png Graphic file (type png)
 <use images/uc/actor.png>
 Package pdftex.def Info: images/uc/actor.png  used on input line 37.
 (pdftex.def)             Requested size: 14.26958pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 38.
-(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
-File: images/uc/actor.png Graphic file (type png)
-<use images/uc/actor.png>
-Package pdftex.def Info: images/uc/actor.png  used on input line 39.
-(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
-File: images/uc/actor.png Graphic file (type png)
-<use images/uc/actor.png>
-Package pdftex.def Info: images/uc/actor.png  used on input line 40.
-(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
-LaTeX Info: Redefining \. on input line 41.
-LaTeX Info: Redefining \% on input line 41.
-[20]
-File: images/uc/usecase.png Graphic file (type png)
-<use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 41.
+Package pdftex.def Info: images/uc/usecase.png  used on input line 39.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 42.
+Package pdftex.def Info: images/uc/usecase.png  used on input line 40.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/actor.png Graphic file (type png)
+<use images/uc/actor.png>
+Package pdftex.def Info: images/uc/actor.png  used on input line 41.
+(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
+File: images/uc/actor.png Graphic file (type png)
+<use images/uc/actor.png>
+Package pdftex.def Info: images/uc/actor.png  used on input line 42.
+(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 43.
@@ -1188,11 +1294,23 @@ Package pdftex.def Info: images/uc/usecase.png  used on input line 44.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 45.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 46.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 47.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 48.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 49.
+Package pdftex.def Info: images/uc/usecase.png  used on input line 52.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
@@ -1200,19 +1318,15 @@ Package pdftex.def Info: images/uc/usecase.png  used on input line 53.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 54.
+Package pdftex.def Info: images/uc/usecase.png  used on input line 57.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 58.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
-File: images/uc/usecase.png Graphic file (type png)
-<use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 59.
-(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 ) (CU3.tex
-LaTeX Info: Redefining \. on input line 5.
-LaTeX Info: Redefining \% on input line 5.
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
  [21]
 
 ! LaTeX Error: File `uc/default' not found.
@@ -1221,52 +1335,66 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5 	}
+l.7 	}
       
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-LaTeX Info: Redefining \. on input line 40.
-LaTeX Info: Redefining \% on input line 40.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 7.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 7.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 7.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+
+Overfull \hbox (67.26979pt too wide) in paragraph at lines 7--7
+\T1/cmbr/m/n/10 Si los da-tos son co-rrec-tos, da click en el bo-tÛn [], a con-
+ti-nua-ciÛn se mues-tra la pan-ta-lla [] [][]p15InscripcionInterpolitecnico3
+ []
+
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 
  []
 
 File: images/uc/actor.png Graphic file (type png)
 <use images/uc/actor.png>
-Package pdftex.def Info: images/uc/actor.png  used on input line 41.
-(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
-File: images/uc/usecase.png Graphic file (type png)
-<use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 42.
-(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
-File: images/uc/usecase.png Graphic file (type png)
-<use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 43.
-(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
-File: images/uc/actor.png Graphic file (type png)
-<use images/uc/actor.png>
 Package pdftex.def Info: images/uc/actor.png  used on input line 44.
 (pdftex.def)             Requested size: 14.26958pt x 11.0pt.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 44.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 45.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 45.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
 File: images/uc/actor.png Graphic file (type png)
 <use images/uc/actor.png>
 Package pdftex.def Info: images/uc/actor.png  used on input line 46.
 (pdftex.def)             Requested size: 14.26958pt x 11.0pt.
-File: images/uc/usecase.png Graphic file (type png)
-<use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 47.
-(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/actor.png Graphic file (type png)
 <use images/uc/actor.png>
-Package pdftex.def Info: images/uc/actor.png  used on input line 48.
+Package pdftex.def Info: images/uc/actor.png  used on input line 47.
 (pdftex.def)             Requested size: 14.26958pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 48.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 49.
@@ -1275,26 +1403,89 @@ File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 50.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 50.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 51.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/actor.png Graphic file (type png)
+<use images/uc/actor.png>
+Package pdftex.def Info: images/uc/actor.png  used on input line 52.
+(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 53.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 54.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 54.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+File: images/uc/actor.png Graphic file (type png)
+<use images/uc/actor.png>
+Package pdftex.def Info: images/uc/actor.png  used on input line 55.
+(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 55.
+Package pdftex.def Info: images/uc/usecase.png  used on input line 56.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
-Package pdftex.def Info: images/uc/usecase.png  used on input line 60.
+Package pdftex.def Info: images/uc/usecase.png  used on input line 57.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 61.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 62.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/actor.png Graphic file (type png)
+<use images/uc/actor.png>
+Package pdftex.def Info: images/uc/actor.png  used on input line 66.
+(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 66.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 67.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/actor.png Graphic file (type png)
+<use images/uc/actor.png>
+Package pdftex.def Info: images/uc/actor.png  used on input line 71.
+(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 71.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 72.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+LaTeX Info: Redefining \. on input line 76.
+LaTeX Info: Redefining \% on input line 76.
+[23]
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 76.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 77.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 ) (CU4.tex
 LaTeX Info: Redefining \. on input line 4.
 LaTeX Info: Redefining \% on input line 4.
- [23]
+ [24]
 
 ! LaTeX Error: File `uc/default' not found.
 
@@ -1309,6 +1500,10 @@ I could not locate the file with any of these extensions:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+File: images/uc/iu.png Graphic file (type png)
+<use images/uc/iu.png>
+Package pdftex.def Info: images/uc/iu.png  used on input line 4.
+(pdftex.def)             Requested size: 11.09076pt x 10.0pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 33--33
 
@@ -1330,13 +1525,13 @@ File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 37.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
-LaTeX Info: Redefining \. on input line 41.
-LaTeX Info: Redefining \% on input line 41.
-[24]
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 41.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
+[25]
 File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 42.
@@ -1357,258 +1552,550 @@ File: images/uc/usecase.png Graphic file (type png)
 <use images/uc/usecase.png>
 Package pdftex.def Info: images/uc/usecase.png  used on input line 49.
 (pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+) (CU5.tex
+LaTeX Info: Redefining \. on input line 5.
+LaTeX Info: Redefining \% on input line 5.
+ [26]
+
+! LaTeX Error: File `uc/default' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 ...lar vigente para corroborar dichos datos. }
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+
+ []
+
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
+[27]
+File: images/uc/actor.png Graphic file (type png)
+<use images/uc/actor.png>
+Package pdftex.def Info: images/uc/actor.png  used on input line 37.
+(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 39.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 40.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/actor.png Graphic file (type png)
+<use images/uc/actor.png>
+Package pdftex.def Info: images/uc/actor.png  used on input line 41.
+(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
+File: images/uc/actor.png Graphic file (type png)
+<use images/uc/actor.png>
+Package pdftex.def Info: images/uc/actor.png  used on input line 42.
+(pdftex.def)             Requested size: 14.26958pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 43.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 44.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 45.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 46.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 47.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 48.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 52.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 53.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 57.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
+File: images/uc/usecase.png Graphic file (type png)
+<use images/uc/usecase.png>
+Package pdftex.def Info: images/uc/usecase.png  used on input line 58.
+(pdftex.def)             Requested size: 16.40865pt x 11.0pt.
 )
-Underfull \hbox (badness 2073) in paragraph at lines 37--37
+Underfull \hbox (badness 2073) in paragraph at lines 54--54
 []|\T1/cmbr/m/n/10 En una pan-ta-lla (vis-ta) se
  []
 
-LaTeX Info: Redefining \. on input line 47.
-LaTeX Info: Redefining \% on input line 47.
-[25]
-LaTeX Info: Redefining \. on input line 47.
-LaTeX Info: Redefining \% on input line 47.
- [26]
-Underfull \hbox (badness 2426) in paragraph at lines 60--60
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+[28]
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+ [29]
+Underfull \hbox (badness 2426) in paragraph at lines 77--77
 []|\T1/cmbr/m/n/10 Para te-ner se-gui-mien-to del
  []
 
-<Imagenes/BasedeDatos.png, id=464, 1532.72626pt x 1297.84875pt>
+)
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+ [30]
+\openout2 = `capitulo5.aux'.
+
+ (capitulo5.tex
+Cap\'{\i }tulo 5.
+<Imagenes/BasedeDatos.png, id=732, 1532.72626pt x 1297.84875pt>
 File: Imagenes/BasedeDatos.png Graphic file (type png)
 <use Imagenes/BasedeDatos.png>
-Package pdftex.def Info: Imagenes/BasedeDatos.png  used on input line 116.
+Package pdftex.def Info: Imagenes/BasedeDatos.png  used on input line 23.
 (pdftex.def)             Requested size: 625.96616pt x 426.78635pt.
-LaTeX Info: Redefining \. on input line 121.
-LaTeX Info: Redefining \% on input line 121.
-[27]
+[31
 
-LaTeX Warning: Text page 28 contains only floats.
 
-LaTeX Info: Redefining \. on input line 121.
-LaTeX Info: Redefining \% on input line 121.
-[28 <./Imagenes/BasedeDatos.png (PNG copy)>]
-<Imagenes/Disenos/Iniciogeneral.png, id=477, 527.72156pt x 347.04657pt>
-File: Imagenes/Disenos/Iniciogeneral.png Graphic file (type png)
-<use Imagenes/Disenos/Iniciogeneral.png>
-Package pdftex.def Info: Imagenes/Disenos/Iniciogeneral.png  used on input line
- 144.
-(pdftex.def)             Requested size: 284.52252pt x 170.72153pt.
-<Imagenes/Disenos/Iniciogeneral1.png, id=478, 529.22719pt x 389.95688pt>
-File: Imagenes/Disenos/Iniciogeneral1.png Graphic file (type png)
-<use Imagenes/Disenos/Iniciogeneral1.png>
-Package pdftex.def Info: Imagenes/Disenos/Iniciogeneral1.png  used on input lin
-e 151.
-(pdftex.def)             Requested size: 284.52675pt x 170.71281pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--155
+]
 
- []
+LaTeX Warning: Text page 32 contains only floats.
 
-<Imagenes/Disenos/Login.png, id=479, 529.22719pt x 347.79938pt>
-File: Imagenes/Disenos/Login.png Graphic file (type png)
-<use Imagenes/Disenos/Login.png>
-Package pdftex.def Info: Imagenes/Disenos/Login.png  used on input line 159.
-(pdftex.def)             Requested size: 284.52675pt x 170.71506pt.
-LaTeX Info: Redefining \. on input line 162.
-LaTeX Info: Redefining \% on input line 162.
-[29 <./Imagenes/Disenos/Iniciogeneral.png>]
-<Imagenes/Disenos/Registro.png, id=486, 527.72156pt x 347.04657pt>
-File: Imagenes/Disenos/Registro.png Graphic file (type png)
-<use Imagenes/Disenos/Registro.png>
-Package pdftex.def Info: Imagenes/Disenos/Registro.png  used on input line 166.
-
-(pdftex.def)             Requested size: 284.52252pt x 170.72153pt.
-LaTeX Info: Redefining \. on input line 170.
-LaTeX Info: Redefining \% on input line 170.
- [30 <./Imagenes/Disenos/Iniciogeneral1.png> <./Imagenes/Disenos/Login.png> <./
-Imagenes/Disenos/Registro.png>]
-<Imagenes/Disenos/Recuperacontrasena.png, id=496, 528.47438pt x 316.93407pt>
-File: Imagenes/Disenos/Recuperacontrasena.png Graphic file (type png)
-<use Imagenes/Disenos/Recuperacontrasena.png>
-Package pdftex.def Info: Imagenes/Disenos/Recuperacontrasena.png  used on input
- line 174.
-(pdftex.def)             Requested size: 284.5252pt x 170.7211pt.
-<Imagenes/Disenos/Restablecercontra.png, id=497, 527.72156pt x 316.93407pt>
-File: Imagenes/Disenos/Restablecercontra.png Graphic file (type png)
-<use Imagenes/Disenos/Restablecercontra.png>
-Package pdftex.def Info: Imagenes/Disenos/Restablecercontra.png  used on input 
-line 181.
-(pdftex.def)             Requested size: 284.52252pt x 170.7211pt.
-<Imagenes/Disenos/LoginJFD.png, id=498, 528.47438pt x 346.29375pt>
-File: Imagenes/Disenos/LoginJFD.png Graphic file (type png)
-<use Imagenes/Disenos/LoginJFD.png>
-Package pdftex.def Info: Imagenes/Disenos/LoginJFD.png  used on input line 188.
-
-(pdftex.def)             Requested size: 284.5252pt x 170.72108pt.
-LaTeX Info: Redefining \. on input line 191.
-LaTeX Info: Redefining \% on input line 191.
-
-[31 <./Imagenes/Disenos/Recuperacontrasena.png> <./Imagenes/Disenos/Restablecer
-contra.png>]
-<Imagenes/Disenos/InicioJFD.png, id=507, 553.31718pt x 344.78813pt>
-File: Imagenes/Disenos/InicioJFD.png Graphic file (type png)
-<use Imagenes/Disenos/InicioJFD.png>
-Package pdftex.def Info: Imagenes/Disenos/InicioJFD.png  used on input line 195
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
+[32 <./Imagenes/BasedeDatos.png (PNG copy)>]
+<Imagenes/Disenos/p19Iniciogeneral.png, id=743, 702.625pt x 461.725pt>
+File: Imagenes/Disenos/p19Iniciogeneral.png Graphic file (type png)
+<use Imagenes/Disenos/p19Iniciogeneral.png>
+Package pdftex.def Info: Imagenes/Disenos/p19Iniciogeneral.png  used on input l
+ine 51.
+(pdftex.def)             Requested size: 284.5294pt x 170.7158pt.
+<Imagenes/Disenos/p20Iniciogeneral1.png, id=744, 702.625pt x 516.93124pt>
+File: Imagenes/Disenos/p20Iniciogeneral1.png Graphic file (type png)
+<use Imagenes/Disenos/p20Iniciogeneral1.png>
+Package pdftex.def Info: Imagenes/Disenos/p20Iniciogeneral1.png  used on input 
+line 59.
+(pdftex.def)             Requested size: 284.5294pt x 170.71404pt.
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
+ [33 <./Imagenes/Disenos/p19Iniciogeneral.png>]
+<Imagenes/Disenos/p2LoginJFD.png, id=751, 702.625pt x 461.725pt>
+File: Imagenes/Disenos/p2LoginJFD.png Graphic file (type png)
+<use Imagenes/Disenos/p2LoginJFD.png>
+Package pdftex.def Info: Imagenes/Disenos/p2LoginJFD.png  used on input line 66
 .
-(pdftex.def)             Requested size: 284.52672pt x 170.71536pt.
-LaTeX Info: Redefining \. on input line 200.
-LaTeX Info: Redefining \% on input line 200.
- [32 <./Imagenes/Disenos/LoginJFD.png> <./Imagenes/Disenos/InicioJFD.png>]
-<Imagenes/Disenos/InicioJFDopciones.png, id=516, 553.31718pt x 346.29375pt>
-File: Imagenes/Disenos/InicioJFDopciones.png Graphic file (type png)
-<use Imagenes/Disenos/InicioJFDopciones.png>
-Package pdftex.def Info: Imagenes/Disenos/InicioJFDopciones.png  used on input 
-line 203.
-(pdftex.def)             Requested size: 284.52672pt x 170.72108pt.
-<Imagenes/Disenos/Inicio1JFD.png, id=517, 552.56438pt x 389.20406pt>
-File: Imagenes/Disenos/Inicio1JFD.png Graphic file (type png)
-<use Imagenes/Disenos/Inicio1JFD.png>
-Package pdftex.def Info: Imagenes/Disenos/Inicio1JFD.png  used on input line 20
-8.
-(pdftex.def)             Requested size: 284.52745pt x 170.72176pt.
-<Imagenes/Disenos/Registrauneventodeportivo.png, id=518, 527.72156pt x 472.0134
-4pt>
-File: Imagenes/Disenos/Registrauneventodeportivo.png Graphic file (type png)
-<use Imagenes/Disenos/Registrauneventodeportivo.png>
-Package pdftex.def Info: Imagenes/Disenos/Registrauneventodeportivo.png  used o
-n input line 216.
-(pdftex.def)             Requested size: 284.52252pt x 170.71696pt.
-LaTeX Info: Redefining \. on input line 219.
-LaTeX Info: Redefining \% on input line 219.
- [33 <./Imagenes/Disenos/InicioJFDopciones.png> <./Imagenes/Disenos/Inicio1JFD.
+(pdftex.def)             Requested size: 284.5294pt x 170.7158pt.
+LaTeX Info: Redefining \. on input line 69.
+LaTeX Info: Redefining \% on input line 69.
+ [34 <./Imagenes/Disenos/p20Iniciogeneral1.png>]
+<Imagenes/Disenos/p3InicioJefeFD.png, id=759, 735.74875pt x 461.725pt>
+File: Imagenes/Disenos/p3InicioJefeFD.png Graphic file (type png)
+<use Imagenes/Disenos/p3InicioJefeFD.png>
+Package pdftex.def Info: Imagenes/Disenos/p3InicioJefeFD.png  used on input lin
+e 73.
+(pdftex.def)             Requested size: 284.53836pt x 170.7158pt.
+LaTeX Info: Redefining \. on input line 78.
+LaTeX Info: Redefining \% on input line 78.
+ [35 <./Imagenes/Disenos/p2LoginJFD.png> <./Imagenes/Disenos/p3InicioJefeFD.png
+>]
+<Imagenes/Disenos/p4InicioJefeFDopcipones.png, id=768, 735.74875pt x 461.725pt>
+
+File: Imagenes/Disenos/p4InicioJefeFDopcipones.png Graphic file (type png)
+<use Imagenes/Disenos/p4InicioJefeFDopcipones.png>
+Package pdftex.def Info: Imagenes/Disenos/p4InicioJefeFDopcipones.png  used on 
+input line 81.
+(pdftex.def)             Requested size: 284.53836pt x 170.7158pt.
+<Imagenes/Disenos/p5InicioJefeFD1.png, id=769, 735.74875pt x 516.93124pt>
+File: Imagenes/Disenos/p5InicioJefeFD1.png Graphic file (type png)
+<use Imagenes/Disenos/p5InicioJefeFD1.png>
+Package pdftex.def Info: Imagenes/Disenos/p5InicioJefeFD1.png  used on input li
+ne 86.
+(pdftex.def)             Requested size: 284.53836pt x 170.71404pt.
+<Imagenes/Disenos/p6Creareventodeportivo.png, id=770, 702.625pt x 629.35126pt>
+File: Imagenes/Disenos/p6Creareventodeportivo.png Graphic file (type png)
+<use Imagenes/Disenos/p6Creareventodeportivo.png>
+Package pdftex.def Info: Imagenes/Disenos/p6Creareventodeportivo.png  used on i
+nput line 94.
+(pdftex.def)             Requested size: 284.5294pt x 170.71455pt.
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+ [36 <./Imagenes/Disenos/p4InicioJefeFDopcipones.png> <./Imagenes/Disenos/p5Ini
+cioJefeFD1.png>]
+<Imagenes/Disenos/p7Registrocoordinador.png, id=779, 702.625pt x 527.9725pt>
+File: Imagenes/Disenos/p7Registrocoordinador.png Graphic file (type png)
+<use Imagenes/Disenos/p7Registrocoordinador.png>
+Package pdftex.def Info: Imagenes/Disenos/p7Registrocoordinador.png  used on in
+put line 101.
+(pdftex.def)             Requested size: 284.5294pt x 170.71089pt.
+<Imagenes/Disenos/p8LogincoordUA.png, id=780, 702.625pt x 461.725pt>
+File: Imagenes/Disenos/p8LogincoordUA.png Graphic file (type png)
+<use Imagenes/Disenos/p8LogincoordUA.png>
+Package pdftex.def Info: Imagenes/Disenos/p8LogincoordUA.png  used on input lin
+e 108.
+(pdftex.def)             Requested size: 284.5294pt x 170.7158pt.
+LaTeX Info: Redefining \. on input line 111.
+LaTeX Info: Redefining \% on input line 111.
+
+[37 <./Imagenes/Disenos/p6Creareventodeportivo.png> <./Imagenes/Disenos/p7Regis
+trocoordinador.png>]
+<Imagenes/Disenos/p9InicioCoordUA.png, id=789, 751.80875pt x 461.725pt>
+File: Imagenes/Disenos/p9InicioCoordUA.png Graphic file (type png)
+<use Imagenes/Disenos/p9InicioCoordUA.png>
+Package pdftex.def Info: Imagenes/Disenos/p9InicioCoordUA.png  used on input li
+ne 116.
+(pdftex.def)             Requested size: 284.53165pt x 170.7158pt.
+LaTeX Info: Redefining \. on input line 121.
+LaTeX Info: Redefining \% on input line 121.
+ [38 <./Imagenes/Disenos/p8LogincoordUA.png> <./Imagenes/Disenos/p9InicioCoordU
+A.png>]
+<Imagenes/Disenos/p10InicioCoordUA1.png, id=798, 745.78625pt x 516.93124pt>
+File: Imagenes/Disenos/p10InicioCoordUA1.png Graphic file (type png)
+<use Imagenes/Disenos/p10InicioCoordUA1.png>
+Package pdftex.def Info: Imagenes/Disenos/p10InicioCoordUA1.png  used on input 
+line 124.
+(pdftex.def)             Requested size: 284.52832pt x 170.71404pt.
+<Imagenes/Disenos/p11Ingresaresultados.png, id=799, 735.74875pt x 777.90625pt>
+File: Imagenes/Disenos/p11Ingresaresultados.png Graphic file (type png)
+<use Imagenes/Disenos/p11Ingresaresultados.png>
+Package pdftex.def Info: Imagenes/Disenos/p11Ingresaresultados.png  used on inp
+ut line 131.
+(pdftex.def)             Requested size: 284.53836pt x 170.71259pt.
+<Imagenes/Disenos/p12Registroentrenador.png, id=800, 702.625pt x 527.9725pt>
+File: Imagenes/Disenos/p12Registroentrenador.png Graphic file (type png)
+<use Imagenes/Disenos/p12Registroentrenador.png>
+Package pdftex.def Info: Imagenes/Disenos/p12Registroentrenador.png  used on in
+put line 138.
+(pdftex.def)             Requested size: 284.5294pt x 170.71089pt.
+LaTeX Info: Redefining \. on input line 142.
+LaTeX Info: Redefining \% on input line 142.
+ [39 <./Imagenes/Disenos/p10InicioCoordUA1.png> <./Imagenes/Disenos/p11Ingresar
+esultados.png>]
+<Imagenes/Disenos/p1Login.png, id=809, 702.625pt x 461.725pt>
+File: Imagenes/Disenos/p1Login.png Graphic file (type png)
+<use Imagenes/Disenos/p1Login.png>
+Package pdftex.def Info: Imagenes/Disenos/p1Login.png  used on input line 146.
+(pdftex.def)             Requested size: 284.5294pt x 170.7158pt.
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
+ [40 <./Imagenes/Disenos/p12Registroentrenador.png>]
+<Imagenes/Disenos/p13Iniciopaticipante.png, id=817, 767.86874pt x 461.725pt>
+File: Imagenes/Disenos/p13Iniciopaticipante.png Graphic file (type png)
+<use Imagenes/Disenos/p13Iniciopaticipante.png>
+Package pdftex.def Info: Imagenes/Disenos/p13Iniciopaticipante.png  used on inp
+ut line 153.
+(pdftex.def)             Requested size: 284.52878pt x 170.7158pt.
+<Imagenes/Disenos/p14Iniciopaticipante1.png, id=818, 757.83125pt x 516.93124pt>
+
+File: Imagenes/Disenos/p14Iniciopaticipante1.png Graphic file (type png)
+<use Imagenes/Disenos/p14Iniciopaticipante1.png>
+Package pdftex.def Info: Imagenes/Disenos/p14Iniciopaticipante1.png  used on in
+put line 158.
+(pdftex.def)             Requested size: 284.53293pt x 170.71404pt.
+<Imagenes/Disenos/p15InscripcionInterpolitecnico1.png, id=819, 606.265pt x 614.
+295pt>
+File: Imagenes/Disenos/p15InscripcionInterpolitecnico1.png Graphic file (type p
+ng)
+<use Imagenes/Disenos/p15InscripcionInterpolitecnico1.png>
+Package pdftex.def Info: Imagenes/Disenos/p15InscripcionInterpolitecnico1.png  
+used on input line 165.
+(pdftex.def)             Requested size: 284.5283pt x 170.71727pt.
+<Imagenes/Disenos/p16InscripcionInterpolitecnico2.png, id=820, 610.28pt x 498.8
+6375pt>
+File: Imagenes/Disenos/p16InscripcionInterpolitecnico2.png Graphic file (type p
+ng)
+<use Imagenes/Disenos/p16InscripcionInterpolitecnico2.png>
+Package pdftex.def Info: Imagenes/Disenos/p16InscripcionInterpolitecnico2.png  
+used on input line 171.
+(pdftex.def)             Requested size: 284.53154pt x 170.71518pt.
+<Imagenes/Disenos/p17InscripcionInterpolitecnico3.png, id=821, 610.28pt x 477.7
+85pt>
+File: Imagenes/Disenos/p17InscripcionInterpolitecnico3.png Graphic file (type p
+ng)
+<use Imagenes/Disenos/p17InscripcionInterpolitecnico3.png>
+Package pdftex.def Info: Imagenes/Disenos/p17InscripcionInterpolitecnico3.png  
+used on input line 177.
+(pdftex.def)             Requested size: 284.53154pt x 170.71207pt.
+LaTeX Info: Redefining \. on input line 181.
+LaTeX Info: Redefining \% on input line 181.
+ [41 <./Imagenes/Disenos/p1Login.png> <./Imagenes/Disenos/p13Iniciopaticipante.
 png>]
-<Imagenes/Disenos/Registrocoordinador.png, id=527, 527.72156pt x 396.7322pt>
-File: Imagenes/Disenos/Registrocoordinador.png Graphic file (type png)
-<use Imagenes/Disenos/Registrocoordinador.png>
-Package pdftex.def Info: Imagenes/Disenos/Registrocoordinador.png  used on inpu
-t line 223.
-(pdftex.def)             Requested size: 284.52252pt x 170.71864pt.
-
-Overfull \hbox (4.88937pt too wide) in paragraph at lines 220--226
-[]\T1/cmbr/m/n/10 Interfaz Re-gis-tra un coor-di-na-dor: Se so-li-ci-ta-r·n da-
-tos co-mo Nom-bre, Ape-lli-do Pa-terno, Ape-lli-do Ma-terno,correo
- []
-
-<Imagenes/Disenos/LogincoordinadorUA.png, id=528, 526.96875pt x 346.29375pt>
-File: Imagenes/Disenos/LogincoordinadorUA.png Graphic file (type png)
-<use Imagenes/Disenos/LogincoordinadorUA.png>
-Package pdftex.def Info: Imagenes/Disenos/LogincoordinadorUA.png  used on input
- line 230.
-(pdftex.def)             Requested size: 284.5428pt x 170.72108pt.
-LaTeX Info: Redefining \. on input line 233.
-LaTeX Info: Redefining \% on input line 233.
-[34 <./Imagenes/Disenos/Registrauneventodeportivo.png> <./Imagenes/Disenos/Regi
-strocoordinador.png>]
-<Imagenes/Disenos/IniciocoordinadorUA.png, id=537, 552.56438pt x 345.54094pt>
-File: Imagenes/Disenos/IniciocoordinadorUA.png Graphic file (type png)
-<use Imagenes/Disenos/IniciocoordinadorUA.png>
-Package pdftex.def Info: Imagenes/Disenos/IniciocoordinadorUA.png  used on inpu
-t line 238.
-(pdftex.def)             Requested size: 284.52745pt x 170.71902pt.
-LaTeX Info: Redefining \. on input line 243.
-LaTeX Info: Redefining \% on input line 243.
- [35 <./Imagenes/Disenos/LogincoordinadorUA.png> <./Imagenes/Disenos/Iniciocoor
-dinadorUA.png>]
-<Imagenes/Disenos/IniciocoordinadorUA1.png, id=547, 554.82281pt x 389.20406pt>
-File: Imagenes/Disenos/IniciocoordinadorUA1.png Graphic file (type png)
-<use Imagenes/Disenos/IniciocoordinadorUA1.png>
-Package pdftex.def Info: Imagenes/Disenos/IniciocoordinadorUA1.png  used on inp
-ut line 246.
-(pdftex.def)             Requested size: 284.53055pt x 170.72176pt.
-<Imagenes/Disenos/Registraunentrenador.png, id=548, 527.72156pt x 395.97937pt>
-File: Imagenes/Disenos/Registraunentrenador.png Graphic file (type png)
-<use Imagenes/Disenos/Registraunentrenador.png>
-Package pdftex.def Info: Imagenes/Disenos/Registraunentrenador.png  used on inp
-ut line 253.
-(pdftex.def)             Requested size: 284.52252pt x 170.71492pt.
-<Imagenes/Disenos/Validaperfil.png, id=549, 552.56438pt x 357.58594pt>
-File: Imagenes/Disenos/Validaperfil.png Graphic file (type png)
-<use Imagenes/Disenos/Validaperfil.png>
-Package pdftex.def Info: Imagenes/Disenos/Validaperfil.png  used on input line 
-260.
-(pdftex.def)             Requested size: 284.52745pt x 170.71718pt.
-LaTeX Info: Redefining \. on input line 264.
-LaTeX Info: Redefining \% on input line 264.
- [36 <./Imagenes/Disenos/IniciocoordinadorUA1.png> <./Imagenes/Disenos/Registra
-unentrenador.png>]
-<Imagenes/Disenos/Ingresaresultados.png, id=558, 553.31718pt x 342.5297pt>
-File: Imagenes/Disenos/Ingresaresultados.png Graphic file (type png)
-<use Imagenes/Disenos/Ingresaresultados.png>
-Package pdftex.def Info: Imagenes/Disenos/Ingresaresultados.png  used on input 
-line 268.
-(pdftex.def)             Requested size: 284.52672pt x 170.72086pt.
-LaTeX Info: Redefining \. on input line 272.
-LaTeX Info: Redefining \% on input line 272.
- [37 <./Imagenes/Disenos/Validaperfil.png> <./Imagenes/Disenos/Ingresaresultado
-s.png>]
-<Imagenes/Disenos/Inicioparticipante.png, id=567, 551.81157pt x 347.79938pt>
-File: Imagenes/Disenos/Inicioparticipante.png Graphic file (type png)
-<use Imagenes/Disenos/Inicioparticipante.png>
-Package pdftex.def Info: Imagenes/Disenos/Inicioparticipante.png  used on input
- line 276.
-(pdftex.def)             Requested size: 284.53555pt x 170.71506pt.
-<Imagenes/Disenos/Inicioparticipante1.png, id=568, 554.07pt x 388.45125pt>
-File: Imagenes/Disenos/Inicioparticipante1.png Graphic file (type png)
-<use Imagenes/Disenos/Inicioparticipante1.png>
-Package pdftex.def Info: Imagenes/Disenos/Inicioparticipante1.png  used on inpu
-t line 281.
-(pdftex.def)             Requested size: 284.52493pt x 170.71754pt.
-<Imagenes/Disenos/Inscripcioninter.png, id=569, 526.21594pt x 496.10344pt>
-File: Imagenes/Disenos/Inscripcioninter.png Graphic file (type png)
-<use Imagenes/Disenos/Inscripcioninter.png>
-Package pdftex.def Info: Imagenes/Disenos/Inscripcioninter.png  used on input l
-ine 288.
-(pdftex.def)             Requested size: 284.53778pt x 170.71681pt.
-LaTeX Info: Redefining \. on input line 292.
-LaTeX Info: Redefining \% on input line 292.
- [38 <./Imagenes/Disenos/Inicioparticipante.png> <./Imagenes/Disenos/Iniciopart
-icipante1.png>]
-<Imagenes/Disenos/Consultainscripciones.png, id=578, 551.81157pt x 388.45125pt>
-
-File: Imagenes/Disenos/Consultainscripciones.png Graphic file (type png)
-<use Imagenes/Disenos/Consultainscripciones.png>
-Package pdftex.def Info: Imagenes/Disenos/Consultainscripciones.png  used on in
-put line 296.
-(pdftex.def)             Requested size: 284.53555pt x 170.71754pt.
+<Imagenes/Disenos/p18ConsultaInscripciones.png, id=830, 735.74875pt x 516.93124
+pt>
+File: Imagenes/Disenos/p18ConsultaInscripciones.png Graphic file (type png)
+<use Imagenes/Disenos/p18ConsultaInscripciones.png>
+Package pdftex.def Info: Imagenes/Disenos/p18ConsultaInscripciones.png  used on
+ input line 185.
+(pdftex.def)             Requested size: 284.53836pt x 170.71404pt.
 )
-LaTeX Info: Redefining \. on input line 36.
-LaTeX Info: Redefining \% on input line 36.
-
-[39 <./Imagenes/Disenos/Inscripcioninter.png> <./Imagenes/Disenos/Consultainscr
-ipciones.png>]
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+ [42 <./Imagenes/Disenos/p14Iniciopaticipante1.png> <./Imagenes/Disenos/p15Insc
+ripcionInterpolitecnico1.png> <./Imagenes/Disenos/p16InscripcionInterpolitecnic
+o2.png>]
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+ [43 <./Imagenes/Disenos/p17InscripcionInterpolitecnico3.png> <./Imagenes/Disen
+os/p18ConsultaInscripciones.png>]
 \openout2 = `glosario.aux'.
 
  (glosario.tex
-Cap\'{\i }tulo 5.
-[40
+Cap\'{\i }tulo 6.
+[44
 
 
 
 ])
-LaTeX Info: Redefining \. on input line 42.
-LaTeX Info: Redefining \% on input line 42.
- [41]
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
+ [45]
 \openout2 = `referencias.aux'.
 
  (referencias.tex
 
 LaTeX Font Warning: Font shape `T1/cmbr/m/sc' undefined
-(Font)              using `T1/cmbr/m/n' instead on input line 6.
+(Font)              using `T1/cmbr/m/n' instead on input line 7.
 
-LaTeX Font Info:    Try loading font information for T1+cmtl on input line 10.
+LaTeX Font Info:    Try loading font information for T1+cmtl on input line 11.
 
 ("C:\Users\Carlos A. Rosales\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cmbrig
 ht\t1cmtl.fd"
 File: t1cmtl.fd 2005/04/13 v8.1 (WaS)
 )
-Underfull \hbox (badness 2042) in paragraph at lines 58--60
-[]\T1/cmbr/m/sc/10 Disponible en: [][]$\T1/cmtl/m/n/10 http : / / odin . fi-[]b
- . unam . mx / salaD / practicasBD / manualBD . pdf ? fbclid = IwAR1iluFg _
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 	\newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 	\newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 	\newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--48
+\T1/cmbr/m/sc/10 Disponible en: [][]$\T1/cmtl/m/n/10 https : / / www . mundodep
+ortivo . com / otros-[]deportes / 20161007 / 41845726098 /
  []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 	\newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.60 	\newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 	\newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.78 	\newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 	\newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
+[]\T1/cmbr/m/sc/10 Disponible en: [][]$\T1/cmtl/m/n/10 http : / / www . actives
+ports . com / sports-[]solutions / by-[]feature /
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96 	\newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.105 	\newline
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 	\newline
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[46
+
+
+
+]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.123 	\newline
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+[]\T1/cmbr/m/sc/10 Disponible en: [][]$\T1/cmtl/m/n/10 http : / / openaccess . 
+uoc . edu / webapps / o2 / bitstream / 10609 / 17885 / 1 /
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132 	\newline
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.148 	\newline
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.156 	\newline
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.64 ... CONOCIMIENTO DE SCRUM (GU√çA SBOK^{TM}).}
+l.162 ...CONOCIMIENTO DE SCRUM (GU√çA SBOK^{TM}).}
                                                    [En linea]. pp. 51-63
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1616,7 +2103,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 <recently read> \egroup 
                         
-l.64 ... CONOCIMIENTO DE SCRUM (GU√çA SBOK^{TM}).}
+l.162 ...CONOCIMIENTO DE SCRUM (GU√çA SBOK^{TM}).}
                                                    [En linea]. pp. 51-63
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1627,7 +2114,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.65 		
+l.163 	
        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1635,7 +2122,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.65 		
+l.163 	
        
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1644,104 +2131,139 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--65
+Underfull \hbox (badness 10000) in paragraph at lines 161--163
 []\T1/cmbr/m/sl/10 T. Sat-pathy \T1/cmbr/m/sc/10 Una guÌa pa-ra el CUER-PO DE C
 O-NO-CI-MIEN-TO DE SCRUM (GUÕA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.164 	\newline
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 [][][]$\T1/cmtl/m/n/10 https : / / www . tenstep . ec / portal / images / pdfs 
 / Suscripciones _ TenStep / Silver / SCRUMstudy _ GUIA _
  []
 
-[42
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 	\newline
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
+! LaTeX Error: There's no line here to end.
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 97--99
-[]\T1/cmbr/m/sc/10 Disponible en: [][]$\T1/cmtl/m/n/10 https : / / www . mundod
-eportivo . com / otros-[]deportes / 20161007 / 41845726098 /
- []
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.197 	\newline
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--171
-[]\T1/cmbr/m/sc/10 Disponible en: [][]$\T1/cmtl/m/n/10 http : / / www . actives
-ports . com / sports-[]solutions / by-[]feature /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
-[]\T1/cmbr/m/sc/10 Disponible en: [][]$\T1/cmtl/m/n/10 http : / / openaccess . 
-uoc . edu / webapps / o2 / bitstream / 10609 / 17885 / 1 /
+Underfull \hbox (badness 2042) in paragraph at lines 198--200
+[]\T1/cmbr/m/sc/10 Disponible en: [][]$\T1/cmtl/m/n/10 http : / / odin . fi-[]b
+ . unam . mx / salaD / practicasBD / manualBD . pdf ? fbclid = IwAR1iluFg _
  []
 
 )
-LaTeX Info: Redefining \. on input line 48.
-LaTeX Info: Redefining \% on input line 48.
- [43]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+ [47]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 60.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 60.
  (main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
- (capitulo1.aux) (capitulo2.aux) (capitulo3.aux) (capitulo4.aux) (glosario.aux)
- (referencias.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
+ (capitulo1.aux) (capitulo2.aux) (capitulo3.aux) (capitulo4.aux) (capitulo5.aux
+) (glosario.aux) (referencias.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 60.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 60.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 641A6A9892F81636903292489B04B0CA;4418.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 8ACAB05B6BD12CABC08A987CAFA10F2D;2854
-(rerunfilecheck)             After:  81B8FB55BA97C53DB5D18AE55DA61989;3811.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
  ) 
 Here is how much of TeX's memory you used:
- 10530 strings out of 492946
- 157686 string characters out of 3120937
- 266688 words of memory out of 3000000
- 13885 multiletter control sequences out of 15000+200000
- 19395 words of font info for 47 fonts, out of 3000000 for 9000
+ 11304 strings out of 492946
+ 169926 string characters out of 3120937
+ 283948 words of memory out of 3000000
+ 14592 multiletter control sequences out of 15000+200000
+ 20036 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,12n,45p,1590b,669s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/
-cmbright/dpi600\cmbrmi10.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2
-.9\fonts/pk/ljfour/public/cmbright/dpi525\cmbrmi8.pk> <C:\Users\Carlos A. Rosal
-es\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi600\ebtl10.pk> <
-C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbr
-ight/dpi600\ebmr9.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\font
-s/pk/ljfour/public/cmbright/dpi540\ebbx10.pk> <C:\Users\Carlos A. Rosales\AppDa
-ta\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi600\cmbr10.pk> <C:\Users
-\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi
-720\ebmr10.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/lj
-four/public/cmbright/dpi720\ebbx10.pk> <C:\Users\Carlos A. Rosales\AppData\Loca
-l\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi600\cmbrsy10.pk> <C:\Users\Carl
-os A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi864\e
-bbx10.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/
-public/cmbright/dpi864\ebmr17.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiK
-TeX\2.9\fonts/pk/ljfour/public/cmbright/dpi600\ebmr8.pk> <C:\Users\Carlos A. Ro
-sales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi375\ebmo8.pk>
+ 45i,18n,48p,1590b,669s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{p13Iniciopaticipante} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{p15InscripcionInterpolitecnico3} has been reference
+d but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{p15InscripcionInterpolitecnico2} has been reference
+d but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{p15InscripcionInterpolitecnico1} has been reference
+d but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{p1Login} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{p19Iniciogeneral} has been referenced but does not 
+exist, replaced by a fixed one
+
  <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cm
-bright/dpi600\ebmo10.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\f
-onts/pk/ljfour/public/cmbright/dpi600\ebmr10.pk> <C:\Users\Carlos A. Rosales\Ap
-pData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi600\ebbx10.pk> <C:\Us
-ers\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/
-dpi864\ebmr10.pk><C:/Users/Carlos A. Rosales/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/marvosym/marvosym.pfb>
-Output written on main.pdf (45 pages, 5190522 bytes).
+bright/dpi600\cmbrmi10.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9
+\fonts/pk/ljfour/public/cmbright/dpi525\cmbrmi8.pk> <C:\Users\Carlos A. Rosales
+\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi600\ebtl10.pk> <C:
+\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbrig
+ht/dpi600\ebmr9.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/
+pk/ljfour/public/cmbright/dpi540\ebbx10.pk> <C:\Users\Carlos A. Rosales\AppData
+\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi600\cmbr10.pk> <C:\Users\C
+arlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi72
+0\ebmr10.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfo
+ur/public/cmbright/dpi600\cmbrsy10.pk> <C:\Users\Carlos A. Rosales\AppData\Loca
+l\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi720\ebbx10.pk> <C:\Users\Carlos
+ A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi864\ebb
+x10.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/pu
+blic/cmbright/dpi864\ebmr17.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTe
+X\2.9\fonts/pk/ljfour/public/cmbright/dpi600\ebmr8.pk> <C:\Users\Carlos A. Rosa
+les\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi375\ebmo8.pk> <
+C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbr
+ight/dpi600\ebmo10.pk> <C:\Users\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fon
+ts/pk/ljfour/public/cmbright/dpi600\ebmr10.pk> <C:\Users\Carlos A. Rosales\AppD
+ata\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dpi600\ebbx10.pk> <C:\User
+s\Carlos A. Rosales\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cmbright/dp
+i864\ebmr10.pk><C:/Users/Carlos A. Rosales/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/marvosym/marvosym.pfb>
+Output written on main.pdf (50 pages, 5388395 bytes).
 PDF statistics:
- 1318 PDF objects out of 1440 (max. 8388607)
- 234 named destinations out of 1000 (max. 500000)
- 514 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1560 PDF objects out of 1728 (max. 8388607)
+ 272 named destinations out of 1000 (max. 500000)
+ 689 words of extra memory for PDF output out of 10000 (max. 10000000)
 

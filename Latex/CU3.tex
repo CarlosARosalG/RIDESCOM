@@ -1,7 +1,9 @@
-\begin{UseCase}{CU2}{Inscripción a un evento interpolitécnico}{
-		Servirá para que el alumno pueda registrarse en el evento de su interés, dentro de este encontrará un formulario donde se le solicita: Grupo, NSS (Número de Seguro Social), correo electrónico, Delegación/Municipio, así como el seleccionar el deporte en el que desea participar.\\
-        Para poder inscribirse, deberá primero validar su estatus (Inscrito/No inscrito), en caso de que el alumno no valide su estatus el botón Registrar estará deshabilitado y no podrá registrarse.\\
-        Si el alumno valida su estatus académico y este no cumple con los requisitos, de igual manera el botón Registrar estará deshabilitado.
+\begin{UseCase}{CU2}{Inscribir a un evento interpolitécnico}{
+		\noindent Este caso de uso permite que el actor alumno, pueda registrarse en el evento interpolitécnico deportivo de su interés. Deberá llenar un formulario donde se solicitan datos del alumno como: Grupo, NSS (Número de Seguro Social), correo electrónico, Delegación/Municipio, así como el seleccionar el deporte en el que desea participar.\\
+        Para poder inscribirse, deberá primero validar su estatus académico (Inscrito/No inscrito), para ello debe ingresar su boleta, contraseña y el captcha como se muestra en la pantalla \IUref{p15InscripcionInterpolitecnico1}{Pantalla Inscribir interpolitécnico 1.}, da click en el botón \IUbutton { Verificar } si cumple con el requisito, continua el proceso, en caso contrario no podrá inscribirse en algun evento interpolitécnico deportivo.\\
+        El siguiente paso es la verificación de datos como se muestra en la pantalla \IUref{p15InscripcionInterpolitecnico2}{Pantalla Inscribir interpolitécnico 2.}, si los datos son correctos da click en el botón \IUbutton{ Aceptar }\\
+        Si los datos son correctos, da click en el botón \IUbutton{ Aceptar }, a continuación se muestra la pantalla \IUref{p15InscripcionInterpolitecnico3}{Pantalla Inscribir interpolitécnico 3.} donde llenará los datos corresponidentes al evento deportivo. Una vez que se llenen todos los campos, el alumno da click en el botón \IUbutton{ Inscribir }.\\ 
+        Al final se mostrará un mensaje de confirmación de la inscripción.
 	}
 		\UCitem{Versión}{0.1}
 		\UCitem{Autor}{Rosales González Carlos Andrés}
@@ -10,20 +12,21 @@
 		\UCitem{Propósito}{Poder participar en un evento deportivo.}
         \UCitem{Precondiciones}{
         \begin{itemize}
-            \item Haberse registrado en el sistema
             \item Iniciar Sesión
-            \item Validar inscripción
+            \item Ser un alumno pertenenciente al IPN
+            \item Validar estatus académico
         \end{itemize}}
-        \UCitem{Postcondiciones}{Ninguna}
+        \UCitem{Postcondiciones}{Persitencia de dat}
 		\UCitem{Entradas}{
         \begin{itemize}
-        	\item Boleta, Grupo, Escuela, Carrera
+        	\item Boleta, contraseña y captcha
+        	\item Grupo, Escuela, Carrera
         	\item Nombre, Apellido, Sexo
         	\item Curp, Fecha de nacimiento, Lugar
         	\item NSS, Correo electrónico, Delegación
         	\item Deporte, Sub-division, Prueba, Fecha del evento
         \end{itemize}}
-		\UCitem{Origen}{Pantalla}
+		\UCitem{Origen}{Teclado}
 		\UCitem{Salidas}{
 		\begin{itemize}
 		    \item Confirmación de la inscripción al evento
@@ -38,26 +41,38 @@
 		\UCitem{Observaciones}{}
 		\end{UseCase}
     \begin{UCtrayectoria}{Principal}
-    \UCpaso[\UCactor] Oprime el botón Inscribir Interpolitécnico de la pantalla .
-    \UCpaso Busca los eventos interpolitecnicos registrados, activos y en los que participa la escuela del alumno.
-    \UCpaso Muestra la pantalla .
-	\UCpaso[\UCactor] Selecciona el evento 
-	\UCpaso Busca los deportes y subdivisiones asociados al evento seleccionado
-	\UCpaso[\UCactor] Selecciona el deporte
-    \UCpaso busca las pruebas asociadas al deporte seleccionado.
-    \UCpaso[\UCactor] Ingresa los datos solicitados. \Trayref{A} \Trayref{B}
+    \UCpaso[\UCactor] Oprime el botón \IUbutton { Inscribir Interpolitécnico } de la pantalla \IUref{p13Iniciopaticipante}{Pantalla principal del alumno.}.\label{CU3_inicio}
+    \UCpaso Muestra la pantalla \IUref{p15InscripcionInterpolitecnico1}{Pantalla Inscribir interpolitécnico 1.}\label{CU3_regresa}
+    \UCpaso[\UCactor] Ingresa boleta, contraseña y captcha.
+    \UCpaso[\UCactor] Da click en el botón \IUbutton { Verificar }
+    \UCpaso Envia los datos mediante el crawler a la página del SAES.
+    \UCpaso Verifica si hay acceso al SAES. \Trayref{A} \Trayref{B}
+    \UCpaso Muestra la pantalla \IUref{p15InscripcionInterpolitecnico2}{Pantalla Inscribir interpolitécnico 2.}.
+    \UCpaso Muestra los datos personales del alumno.
+	\UCpaso[\UCactor] Da click en el botón \IUbutton {Aceptar}. \Trayref{C}
+	\UCpaso Busca los deportes y subdivisiones asociados a la unidad académica del alumno que esta haciendo la solicitud.
+	\UCpaso Muestra la pantalla \IUref{p15InscripcionInterpolitecnico3}{Pantalla Inscribir interpolitécnico 3.}. \label{CU3_deporte}
+	\UCpaso[\UCactor] Llena los campos solicitados. \Trayref{D}
     \UCpaso Confirma registro en una ventana emergente.
     \UCpaso Carga la pantalla Principal.
     \end{UCtrayectoria}
     
-	\begin{UCtrayectoriaA}{A}{}
+	\begin{UCtrayectoriaA}{A}{El alumno debe de estar inscrito para continuar.}
 		\UCpaso Muestra el mensaje. “El alumno no esta inscrito en el periodo actual”
-		\UCpaso El botón para completar el registro permanecerá inhabilitado.
-
+   		\UCpaso Continua en el paso \ref{CU3_regresa} del \UCref{CU3}.
 	\end{UCtrayectoriaA}
 	
-	\begin{UCtrayectoriaA}{B}{}
-		\UCpaso Muestra el mensaje. “Completa todos los campos”
-		\UCpaso Regresa al paso 3 de la Trayectoria Principal.
+	\begin{UCtrayectoriaA}{B}{El alumno cancela el proceso de Inscribir interpolitécnico}
+		\UCpaso[\UCactor] Da click en el botón \IUbutton { Cancelar } de la pantalla \IUref{p15InscripcionInterpolitecnico1}{Pantalla Inscribir interpolitécnico 1.}
+		\UCpaso  Continua en el paso \ref{CU3_inicio} del \UCref{CU3}.
+	\end{UCtrayectoriaA}
 
+	\begin{UCtrayectoriaA}{C}{Los datos del alumno no coinciden}
+		\UCpaso[\UCactor] Da click en el botón \IUbutton { Cancelar } de la pantalla \IUref{p15InscripcionInterpolitecnico2}{Pantalla Inscribir interpolitécnico 2.}
+		\UCpaso Continua en el paso \ref{CU3_inicio} del \UCref{CU3}.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{D}{El alumno no completa los campos requeridos}
+		\UCpaso Muestra el mensaje "Debes llenar todos los campos solicitados". \ref{CU3_deporte}
+		\UCpaso Continua en el paso \ref{CU3_inicio} del \UCref{CU3}.
 	\end{UCtrayectoriaA}

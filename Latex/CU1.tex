@@ -1,60 +1,61 @@
-\begin{UseCase}{CU1}{Registro}{
-		Servirá para que el alumno que esté interesado en participar en algún evento interpolitécnico deportivo, cree una cuenta para posteriormente poder iniciar sesión y así, inscribirse en el evento de su interés. 
-		Dicho registro lo encontrará dentro de la pantalla de Inicio en el apartado ‘Regístrate’, posteriormente deberá llenar los campos que se le solicitan, los cuales son: Boleta, Correo electrónico y una contraseña.
-		El numero de Boleta consta de 10 caracteres numéricos, y en el correo solamente se aceptan los dominios más comunes (Gmail, Hotmail, Outlook).
-		Una vez realizado, el alumno deberá acudir al Departamento de Actividades Deportivas de su Unidad Académica en un periodo no máximo a los 3 días a partir del día en el que se registró, para que el coordinador valide los datos que se ingresaron previamente. Para ello el coordinador deberá solicitar una identificación escolar vigente para corroborar dichos datos. 
-		
-		
+\begin{UseCase}{CU1}{Iniciar Sesión}{
+		\noindent Este caso de uso permite que el actor alumno pueda ingresar a la aplicación dandole las opciones de inscribirse en algún evento interpolitécnico deportivo de su interés o consultar los eventos a los que ya se ha registrado previamente. \\
+    	Para poder iniciar sesión el alumno deberá oprimir el botón \IUbutton{ Iniciar Sesión } ubicado en la pantalla ... Ingresará su número de boleta, contraseña el cual usa para ingresar al SAES (Sistema de Administración Escolar), y el captcha, como se muestra en la pantalla... Si los datos que ingresa no coinciden se le mostrará un mensaje.
+        Una vez que incie sesión se le mostrará la pantalla principal.
 	}
-	\UCitem{Versión}{0.1}
-	\UCitem{Autor}{Rosales González Carlos Andrés}
-	\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
-	\UCitem{Actor}{Alumno}
-	\UCitem{Propósito}{Poder inscribirse en un evento interpolitécnico deportivo.}
-	\UCitem{Precondiciones}{No estar registrado previamente}
-	\UCitem{Postcondiciones}{
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Alumno}
+		\UCitem{Propósito}{Tener control de las personas registradas.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Ser alumno del Instituto Politécnico Nacional.
+            \item Contar con el número de boleta usada en el SAES.
+            \item Contar con la contraseña usada en el SAES.
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla principal}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Número de boleta 
+        	\item Contraseña
+        	\item Captcha
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
 		\begin{itemize}
-			\item El alumno podrá ingresar al sistema.
-			\item Habrá un registro nuevo del alumno.
-			\item Deberá acudir en un periodo no máximo a 3 días al Departamento de Actividades Deportivas de su Unidad Académica.
-	\end{itemize}}
-	\UCitem{Entradas}{
-		\begin{itemize}
-			\item Número de boleta 
-			\item Contraseña
-			\item Correo electrónico
-	\end{itemize}}
-	\UCitem{Origen}{Pantalla, Teclado}
-	\UCitem{Salidas}{Pantalla}
-	\UCitem{Destino}{Pantalla principal}
-	\UCitem{Errores}{
-		\begin{itemize}
-			\item La boleta no es válida
-			\item Dominio de correo invalido
-		\end{itemize}
-	}
-	\UCitem{Observaciones}{Ninguna}
-\end{UseCase}
-\begin{UCtrayectoria}{Principal}
-	\UCpaso[\UCactor] Oprime el botón Registrate ubicado en la pantalla.
-	\UCpaso Se conecta al SAES y obtiene el CAPTCHA del login.
-	\UCpaso Muestra la pantalla.
-	\UCpaso[\UCactor] Introduce Boleta, Contraseña y correo electronico
-	\UCpaso[\UCactor] Presiona el botón.
-	\UCpaso Comprueba los campos obligatorios que no estén vacias.
-	\UCpaso Inicia sesión en el SAES de la escuela usando la boleta, contraseña y captcha introducidos.
-	\UCpaso verifica que el alumno está efectivamente inscrito \Trayref{A} \Trayref{B}
-	\UCpaso Registra al alumno.
-	\UCpaso Muestra el mensaje MSG1 “Registro de cuenta exitoso”.
-	\UCpaso Muestra la pantalla .
-\end{UCtrayectoria}
+		    \item Acceso a la página principal del alumno
+		\end{itemize}}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Errores}{
+        	\begin{itemize}
+        	    \item Los campos están vacíos.
+            	\item Boleta y/o contraseña incorrecta. Mensaje .
+            	\item Captcha incorrecto.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Oprime el botón \IUbutton{ Iniciar Sesión } que esta en la pantalla \IUref{p19Iniciogeneral}{Pantalla principal general.}.
+    \UCpaso Muestra la pantalla \IUref{p1Login}{Pantalla de Inicio de Sesión.}.
+	\UCpaso[\UCactor] Introduce Boleta, contraseña y captcha. \label{CU1_regresar} 
+    \UCpaso[\UCactor] Presiona el botón \IUbutton{ Ingresar }.
+    \UCpaso Comprueba que los campos no estén vacíos. \Trayref{A} \Trayref{B}
+    \UCpaso Obtiene los valores ingresados
+    \UCpaso Válida campos. 
+    \UCpaso Muestra la pantalla \IUref{p1Login}{Pantalla de Inicio de Sesión.}.
+    \end{UCtrayectoria}
+    
+	\begin{UCtrayectoriaA}{A}{Boleta y/o contraseña erróneo}
+		\UCpaso muestra mensaje “Error: La boleta y/o contraseña que se ingresó son erróneos”. Mensaje .
+   		\UCpaso Continua en el paso \ref{CU1_regresar} del \UCref{CU1}.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{B}{El captcha no coincide}
+		\UCpaso muestra mensaje “El captcha que se ingreso no coincide”. Mensaje .
+   		\UCpaso Continua en el paso \ref{CU1_regresar} del \UCref{CU1}.
+	\end{UCtrayectoriaA}
+	
 
-\begin{UCtrayectoriaA}{A}{Inserta algún otro carácter no correspondiente al “Número de Boleta” y presiona el botón ‘Registrar’}
-	\UCpaso Muestra en la ventana el mensaje “Número de Boleta inválido”
-	\UCpaso Regresa al paso 2 de la trayectoria principal.
-\end{UCtrayectoriaA}
 
-\begin{UCtrayectoriaA}{B}{Inserta algún otro carácter no correspondiente al “Dominio del correo electrónico” y presiona el botón ‘Registrar’}
-	\UCpaso Muestra en la ventana el mensaje “Correo inválido, asegúrese que su correo sea de tipo Gmail, Hotmail o Outlook”
-	\UCpaso Regresa al paso 2 de la trayectoria principal.
-\end{UCtrayectoriaA}
