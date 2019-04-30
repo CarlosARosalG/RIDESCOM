@@ -23,12 +23,35 @@ public class controlador {
     JdbcTemplate jdbcTemplate=new JdbcTemplate(con.ConectarSAES());
     ModelAndView mav1=new ModelAndView();
     
-    @RequestMapping("index.htm")
+    @RequestMapping("principal.htm")
     public ModelAndView Listar(){
-        String sql="select Numero_Boleta, Nombre,concat(Apellido_Pat, ' ' ,Apellido_Mat) as Apellidos, Sexo, CURP,  DATE_FORMAT(Fecha_Nac, \"%d/%m/%Y\")as Fecha_Nac, Escuela, if(Carrera='I','Ingenieria','Otra') as Carrera from Estudiante where Inscrito=1";
+        String sql="select Nombre_Evento, Act_Deportiva_ID_Deporte, Fecha_Evento, Lugar_del_evento, Descripcion from evento";
+        String sql1 = "select concat(Nombre, ' ', Ap_Pat, ' ', Ap_Mat) as NC,  from persona";
+        String sql2 = "select Escuela from escuela";
+        String sql3 = "select Disciplina from act_deportiva";
+        String sql4 = "select Prueba from pruebas";
+        String sql5 = "select Lugar_Obtenido, Marca from resultados";
+        
         List datos=this.jdbcTemplate.queryForList(sql);
-        mav1.addObject("lista",datos);
-        mav1.setViewName("index");
+        List datos1=this.jdbcTemplate.queryForList(sql1);
+        List datos2=this.jdbcTemplate.queryForList(sql2);
+        List datos3=this.jdbcTemplate.queryForList(sql3);
+        List datos4=this.jdbcTemplate.queryForList(sql4);
+        List datos5=this.jdbcTemplate.queryForList(sql5);
+        mav1.addObject("Evento",datos);
+        mav1.addObject("Persona",datos1);
+        mav1.addObject("Escuela",datos2);
+        mav1.addObject("Deporte",datos3);
+        mav1.addObject("Prueba",datos4);
+        mav1.addObject("Resultado",datos5);
+        mav1.setViewName("principal");
+        return mav1;
+    }
+    
+    @RequestMapping("consulta_inscripcion.htm")
+    public ModelAndView ins(){
+        String saql = "select ";
+        mav1.setViewName("consulta_inscripcion");
         return mav1;
     }
   }

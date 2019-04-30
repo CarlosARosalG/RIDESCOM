@@ -33,17 +33,40 @@ public class insertadatos {
     Crawler crw = new Crawler ();
     //private Crawler Crawler;
     
-    @RequestMapping(value="Login.htm", method = RequestMethod.GET)
+    @RequestMapping(value="iniciosesion.htm", method = RequestMethod.GET)
     public ModelAndView inicia() throws IOException{
        // String dire=this.crw.craw();
         cadena = this.crw.craw(); //se pasan las cadenas de entrada USUARIO, PASSWORD Y CAPTCHA.
         mav.addObject("src",cadena);
         mav.addObject(new Usuario());
         mav.addObject(new Crawler());
-        mav.setViewName("Login");
+        mav.setViewName("iniciosesion");
         return mav;
     }
-    @RequestMapping(value="Login.htm", method = RequestMethod.POST)
+    
+    @RequestMapping(value="iniciosesioCord.htm", method = RequestMethod.GET)
+    public ModelAndView iniciaCord() throws IOException{
+       // String dire=this.crw.craw();
+        cadena = this.crw.craw(); //se pasan las cadenas de entrada USUARIO, PASSWORD Y CAPTCHA.
+        mav.addObject("src",cadena);
+        mav.addObject(new Usuario());
+        mav.addObject(new Crawler());
+        mav.setViewName("iniciosesioCord");
+        return mav;
+    }
+    
+    @RequestMapping(value="iniciosesioJFD.htm", method = RequestMethod.GET)
+    public ModelAndView iniciaJFD() throws IOException{
+       // String dire=this.crw.craw();
+        cadena = this.crw.craw(); //se pasan las cadenas de entrada USUARIO, PASSWORD Y CAPTCHA.
+        mav.addObject("src",cadena);
+        mav.addObject(new Usuario());
+        mav.addObject(new Crawler());
+        mav.setViewName("iniciosesioJFD");
+        return mav;
+    }
+    
+    @RequestMapping(value="ingresa_resultados.htm", method = RequestMethod.POST)
     public ModelAndView inicia(Crawler c) throws Exception{
        this.crw.getData(c.getRegno(),c.getPasswd(),c.getVrfcd());
        return new ModelAndView("redirect:/index.htm");
@@ -55,10 +78,5 @@ public class insertadatos {
         mav.setViewName("registrar");
         return mav;
     }
-    
-   @RequestMapping(value="LoginC.htm", method = RequestMethod.GET)
-    public ModelAndView loginC(){
-        mav.addObject(new Usuario());
-        return mav;
-    }
+
 }
