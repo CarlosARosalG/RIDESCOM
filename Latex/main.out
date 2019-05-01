@@ -24,38 +24,44 @@
 \BOOKMARK [1][-]{section.4.2}{Reglas de Negocio}{chapter.4}% 24
 \BOOKMARK [1][-]{section.4.3}{Reglas del Sistema}{chapter.4}% 25
 \BOOKMARK [1][-]{section.4.4}{Casos de Uso}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.5}{CU1 Iniciar Sesi\363n}{chapter.4}% 27
-\BOOKMARK [2][-]{subsection.4.5.1}{Descripci\363n completa}{section.4.5}% 28
-\BOOKMARK [2][-]{subsection.4.5.2}{Atributos importantes}{section.4.5}% 29
-\BOOKMARK [2][-]{subsection.4.5.3}{Trayectorias del Caso de Uso}{section.4.5}% 30
-\BOOKMARK [1][-]{section.4.6}{CU1 Registro}{chapter.4}% 31
-\BOOKMARK [2][-]{subsection.4.6.1}{Descripci\363n completa}{section.4.6}% 32
-\BOOKMARK [2][-]{subsection.4.6.2}{Atributos importantes}{section.4.6}% 33
-\BOOKMARK [2][-]{subsection.4.6.3}{Trayectorias del Caso de Uso}{section.4.6}% 34
-\BOOKMARK [1][-]{section.4.7}{CU2 Inscribir a un evento interpolit\351cnico}{chapter.4}% 35
-\BOOKMARK [2][-]{subsection.4.7.1}{Descripci\363n completa}{section.4.7}% 36
-\BOOKMARK [2][-]{subsection.4.7.2}{Atributos importantes}{section.4.7}% 37
-\BOOKMARK [2][-]{subsection.4.7.3}{Trayectorias del Caso de Uso}{section.4.7}% 38
-\BOOKMARK [1][-]{section.4.8}{CU2.2 Validaci\363n estatus}{chapter.4}% 39
-\BOOKMARK [2][-]{subsection.4.8.1}{Descripci\363n completa}{section.4.8}% 40
-\BOOKMARK [2][-]{subsection.4.8.2}{Atributos importantes}{section.4.8}% 41
-\BOOKMARK [2][-]{subsection.4.8.3}{Trayectorias del Caso de Uso}{section.4.8}% 42
-\BOOKMARK [1][-]{section.4.9}{CU3 Validaci\363n de perfil}{chapter.4}% 43
-\BOOKMARK [2][-]{subsection.4.9.1}{Descripci\363n completa}{section.4.9}% 44
-\BOOKMARK [2][-]{subsection.4.9.2}{Atributos importantes}{section.4.9}% 45
-\BOOKMARK [2][-]{subsection.4.9.3}{Trayectorias del Caso de Uso}{section.4.9}% 46
-\BOOKMARK [1][-]{section.4.10}{Requisitos del usuario}{chapter.4}% 47
-\BOOKMARK [1][-]{section.4.11}{Requisitos funcionales de la aplicacion web}{chapter.4}% 48
-\BOOKMARK [1][-]{section.4.12}{Requisitos no funcionales de la aplicacion web}{chapter.4}% 49
-\BOOKMARK [1][-]{section.4.13}{Reglas de necocio de la aplicaci\363n}{chapter.4}% 50
-\BOOKMARK [0][-]{chapter.5}{Trabajo realizado}{}% 51
-\BOOKMARK [1][-]{section.5.1}{Trabajo realizado}{chapter.5}% 52
-\BOOKMARK [1][-]{section.5.2}{Sprint 0}{chapter.5}% 53
-\BOOKMARK [1][-]{section.5.3}{Sprint 1}{chapter.5}% 54
-\BOOKMARK [1][-]{section.5.4}{Sprint 2}{chapter.5}% 55
-\BOOKMARK [1][-]{section.5.5}{Sprint 3}{chapter.5}% 56
-\BOOKMARK [1][-]{section.5.6}{Sprint 4}{chapter.5}% 57
-\BOOKMARK [1][-]{section.5.7}{Sprint 5}{chapter.5}% 58
-\BOOKMARK [1][-]{section.5.8}{Sprint 6}{chapter.5}% 59
-\BOOKMARK [1][-]{section.5.9}{Sprint 7}{chapter.5}% 60
-\BOOKMARK [0][-]{chapter.6}{Glosario}{}% 61
+\BOOKMARK [2][-]{subsection.4.4.1}{CU1 Iniciar Sesi\363n}{section.4.4}% 27
+\BOOKMARK [2][-]{subsection.4.4.2}{CU2 Inscribir a un evento interpolit\351cnico deportivo}{section.4.4}% 28
+\BOOKMARK [1][-]{section.4.5}{Requisitos del usuario}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.6}{Requisitos funcionales de la aplicacion web}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.7}{Requisitos no funcionales de la aplicacion web}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.8}{Reglas de necocio de la aplicaci\363n}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.9}{Trabajo realizado}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.10}{Sprint 0}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.11}{Sprint 1}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.12}{Sprint 2}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.13}{Sprint 3}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.14}{Sprint 4}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.15}{Sprint 5}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.16}{Sprint 6}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.17}{Sprint 7}{chapter.4}% 41
+\BOOKMARK [0][-]{chapter.5}{Anexos}{}% 42
+\BOOKMARK [1][-]{section.5.1}{Dise\361os de Pantallas}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.2}{Diagrama de Procesos}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.3}{Casos de Uso}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.4}{CU1 Iniciar Sesi\363n}{chapter.5}% 46
+\BOOKMARK [2][-]{subsection.5.4.1}{Descripci\363n completa}{section.5.4}% 47
+\BOOKMARK [2][-]{subsection.5.4.2}{Atributos importantes}{section.5.4}% 48
+\BOOKMARK [2][-]{subsection.5.4.3}{Trayectorias del Caso de Uso}{section.5.4}% 49
+\BOOKMARK [1][-]{section.5.5}{CU1 Registro}{chapter.5}% 50
+\BOOKMARK [2][-]{subsection.5.5.1}{Descripci\363n completa}{section.5.5}% 51
+\BOOKMARK [2][-]{subsection.5.5.2}{Atributos importantes}{section.5.5}% 52
+\BOOKMARK [2][-]{subsection.5.5.3}{Trayectorias del Caso de Uso}{section.5.5}% 53
+\BOOKMARK [1][-]{section.5.6}{CU2 Inscribir a un evento interpolit\351cnico deportivo}{chapter.5}% 54
+\BOOKMARK [2][-]{subsection.5.6.1}{Descripci\363n completa}{section.5.6}% 55
+\BOOKMARK [2][-]{subsection.5.6.2}{Atributos importantes}{section.5.6}% 56
+\BOOKMARK [2][-]{subsection.5.6.3}{Trayectorias del Caso de Uso}{section.5.6}% 57
+\BOOKMARK [1][-]{section.5.7}{CU2.2 Validaci\363n estatus}{chapter.5}% 58
+\BOOKMARK [2][-]{subsection.5.7.1}{Descripci\363n completa}{section.5.7}% 59
+\BOOKMARK [2][-]{subsection.5.7.2}{Atributos importantes}{section.5.7}% 60
+\BOOKMARK [2][-]{subsection.5.7.3}{Trayectorias del Caso de Uso}{section.5.7}% 61
+\BOOKMARK [1][-]{section.5.8}{CU3 Validaci\363n de perfil}{chapter.5}% 62
+\BOOKMARK [2][-]{subsection.5.8.1}{Descripci\363n completa}{section.5.8}% 63
+\BOOKMARK [2][-]{subsection.5.8.2}{Atributos importantes}{section.5.8}% 64
+\BOOKMARK [2][-]{subsection.5.8.3}{Trayectorias del Caso de Uso}{section.5.8}% 65
+\BOOKMARK [1][-]{section.5.9}{Base de Datos}{chapter.5}% 66
+\BOOKMARK [0][-]{chapter.6}{Glosario}{}% 67

@@ -24,39 +24,45 @@
 \contentsline {section}{\numberline {4.1}Prototipo para el Registro a Interpolit\'ecnicos Deportivos (RIDESCOM)}{17}{section.4.1}% 
 \contentsline {section}{\numberline {4.2}Reglas de Negocio}{17}{section.4.2}% 
 \contentsline {section}{\numberline {4.3}Reglas del Sistema}{17}{section.4.3}% 
-\contentsline {section}{\numberline {4.4}Casos de Uso}{17}{section.4.4}% 
-\contentsline {section}{\numberline {4.5}CU1 Iniciar Sesi\IeC {\'o}n}{18}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Descripci\IeC {\'o}n completa}{18}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Atributos importantes}{18}{subsection.4.5.2}% 
-\contentsline {subsection}{\numberline {4.5.3}Trayectorias del Caso de Uso}{18}{subsection.4.5.3}% 
-\contentsline {section}{\numberline {4.6}CU1 Registro}{20}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}Descripci\IeC {\'o}n completa}{20}{subsection.4.6.1}% 
-\contentsline {subsection}{\numberline {4.6.2}Atributos importantes}{20}{subsection.4.6.2}% 
-\contentsline {subsection}{\numberline {4.6.3}Trayectorias del Caso de Uso}{20}{subsection.4.6.3}% 
-\contentsline {section}{\numberline {4.7}CU2 Inscribir a un evento interpolit\IeC {\'e}cnico}{22}{section.4.7}% 
-\contentsline {subsection}{\numberline {4.7.1}Descripci\IeC {\'o}n completa}{22}{subsection.4.7.1}% 
-\contentsline {subsection}{\numberline {4.7.2}Atributos importantes}{22}{subsection.4.7.2}% 
-\contentsline {subsection}{\numberline {4.7.3}Trayectorias del Caso de Uso}{23}{subsection.4.7.3}% 
-\contentsline {section}{\numberline {4.8}CU2.2 Validaci\IeC {\'o}n estatus}{25}{section.4.8}% 
-\contentsline {subsection}{\numberline {4.8.1}Descripci\IeC {\'o}n completa}{25}{subsection.4.8.1}% 
-\contentsline {subsection}{\numberline {4.8.2}Atributos importantes}{25}{subsection.4.8.2}% 
-\contentsline {subsection}{\numberline {4.8.3}Trayectorias del Caso de Uso}{25}{subsection.4.8.3}% 
-\contentsline {section}{\numberline {4.9}CU3 Validaci\IeC {\'o}n de perfil}{27}{section.4.9}% 
-\contentsline {subsection}{\numberline {4.9.1}Descripci\IeC {\'o}n completa}{27}{subsection.4.9.1}% 
-\contentsline {subsection}{\numberline {4.9.2}Atributos importantes}{27}{subsection.4.9.2}% 
-\contentsline {subsection}{\numberline {4.9.3}Trayectorias del Caso de Uso}{27}{subsection.4.9.3}% 
-\contentsline {section}{\numberline {4.10}Requisitos del usuario}{28}{section.4.10}% 
-\contentsline {section}{\numberline {4.11}Requisitos funcionales de la aplicacion web}{30}{section.4.11}% 
-\contentsline {section}{\numberline {4.12}Requisitos no funcionales de la aplicacion web}{30}{section.4.12}% 
-\contentsline {section}{\numberline {4.13}Reglas de necocio de la aplicaci\IeC {\'o}n}{30}{section.4.13}% 
-\contentsline {chapter}{\numberline {5}Trabajo realizado}{31}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Trabajo realizado}{31}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Sprint 0}{31}{section.5.2}% 
-\contentsline {section}{\numberline {5.3}Sprint 1}{33}{section.5.3}% 
-\contentsline {section}{\numberline {5.4}Sprint 2}{33}{section.5.4}% 
-\contentsline {section}{\numberline {5.5}Sprint 3}{43}{section.5.5}% 
-\contentsline {section}{\numberline {5.6}Sprint 4}{43}{section.5.6}% 
-\contentsline {section}{\numberline {5.7}Sprint 5}{43}{section.5.7}% 
-\contentsline {section}{\numberline {5.8}Sprint 6}{43}{section.5.8}% 
-\contentsline {section}{\numberline {5.9}Sprint 7}{43}{section.5.9}% 
-\contentsline {chapter}{\numberline {6}Glosario}{44}{chapter.6}% 
+\contentsline {section}{\numberline {4.4}Casos de Uso}{18}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}CU1 Iniciar Sesi\IeC {\'o}n}{18}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}CU2 Inscribir a un evento interpolit\IeC {\'e}cnico deportivo}{18}{subsection.4.4.2}% 
+\contentsline {section}{\numberline {4.5}Requisitos del usuario}{18}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Requisitos funcionales de la aplicacion web}{19}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Requisitos no funcionales de la aplicacion web}{19}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Reglas de necocio de la aplicaci\IeC {\'o}n}{19}{section.4.8}% 
+\contentsline {section}{\numberline {4.9}Trabajo realizado}{19}{section.4.9}% 
+\contentsline {section}{\numberline {4.10}Sprint 0}{19}{section.4.10}% 
+\contentsline {section}{\numberline {4.11}Sprint 1}{21}{section.4.11}% 
+\contentsline {section}{\numberline {4.12}Sprint 2}{21}{section.4.12}% 
+\contentsline {section}{\numberline {4.13}Sprint 3}{22}{section.4.13}% 
+\contentsline {section}{\numberline {4.14}Sprint 4}{22}{section.4.14}% 
+\contentsline {section}{\numberline {4.15}Sprint 5}{22}{section.4.15}% 
+\contentsline {section}{\numberline {4.16}Sprint 6}{22}{section.4.16}% 
+\contentsline {section}{\numberline {4.17}Sprint 7}{22}{section.4.17}% 
+\contentsline {chapter}{\numberline {5}Anexos}{23}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Dise\IeC {\~n}os de Pantallas}{23}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Diagrama de Procesos}{30}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Casos de Uso}{32}{section.5.3}% 
+\contentsline {section}{\numberline {5.4}CU1 Iniciar Sesi\IeC {\'o}n}{33}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}Descripci\IeC {\'o}n completa}{33}{subsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.4.2}Atributos importantes}{33}{subsection.5.4.2}% 
+\contentsline {subsection}{\numberline {5.4.3}Trayectorias del Caso de Uso}{33}{subsection.5.4.3}% 
+\contentsline {section}{\numberline {5.5}CU1 Registro}{35}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.5.1}Descripci\IeC {\'o}n completa}{35}{subsection.5.5.1}% 
+\contentsline {subsection}{\numberline {5.5.2}Atributos importantes}{35}{subsection.5.5.2}% 
+\contentsline {subsection}{\numberline {5.5.3}Trayectorias del Caso de Uso}{35}{subsection.5.5.3}% 
+\contentsline {section}{\numberline {5.6}CU2 Inscribir a un evento interpolit\IeC {\'e}cnico deportivo}{37}{section.5.6}% 
+\contentsline {subsection}{\numberline {5.6.1}Descripci\IeC {\'o}n completa}{37}{subsection.5.6.1}% 
+\contentsline {subsection}{\numberline {5.6.2}Atributos importantes}{37}{subsection.5.6.2}% 
+\contentsline {subsection}{\numberline {5.6.3}Trayectorias del Caso de Uso}{38}{subsection.5.6.3}% 
+\contentsline {section}{\numberline {5.7}CU2.2 Validaci\IeC {\'o}n estatus}{40}{section.5.7}% 
+\contentsline {subsection}{\numberline {5.7.1}Descripci\IeC {\'o}n completa}{40}{subsection.5.7.1}% 
+\contentsline {subsection}{\numberline {5.7.2}Atributos importantes}{40}{subsection.5.7.2}% 
+\contentsline {subsection}{\numberline {5.7.3}Trayectorias del Caso de Uso}{40}{subsection.5.7.3}% 
+\contentsline {section}{\numberline {5.8}CU3 Validaci\IeC {\'o}n de perfil}{42}{section.5.8}% 
+\contentsline {subsection}{\numberline {5.8.1}Descripci\IeC {\'o}n completa}{42}{subsection.5.8.1}% 
+\contentsline {subsection}{\numberline {5.8.2}Atributos importantes}{42}{subsection.5.8.2}% 
+\contentsline {subsection}{\numberline {5.8.3}Trayectorias del Caso de Uso}{42}{subsection.5.8.3}% 
+\contentsline {section}{\numberline {5.9}Base de Datos}{43}{section.5.9}% 
+\contentsline {chapter}{\numberline {6}Glosario}{45}{chapter.6}% 
