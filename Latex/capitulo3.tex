@@ -14,7 +14,7 @@
 	\\ Si se comprueba que el alumno está inscrito en el periodo actual en el que quiere participar, podrá continuar con el proceso, en caso contrario se negará la inscripción. \cite{Reglamento}
 	\\ Al concluir con la comprobación de inscripción, se le notifica al alumno cual es el estatus de su solicitud. 
 	
-	\noindent Para más detalles puede consultarse en el apartado Anexos \ref{ProcesoInscripcionActual}
+	\noindent Para más detalles puede consultarse en el apartado Anexos Apartado B \ref{ProcesoInscripcionActual}
 	
 	
 	
@@ -30,6 +30,7 @@
 	\section{IDE}
 	\begin{itemize}
 		\item  Netbeans 
+		\label{Herramientas}
 		\newline
 		Netbeans es un entorno integrado de desarrollo o IDE (IntegratedDevelopmentEnvironment), cone el que se puede realizar todas las tareas asociadas a la programación.
 		\newline
@@ -97,6 +98,41 @@
 		Cuarto: desarrollar la parte de negocio (controladores) y persistencia (seleccionando un framework como hibernate o jpa), y relacionar los controladores, con la vista y la persistencia.
 		En principio, eso es todo.\\
 		El framework fue lanzado inicialmente bajo Apache 2.0 License en junio de 2003. Esta licencia es una licencia de software libre creada por la Apache Software Foundation que requiere la conservación del aviso de copyright y disclaimer, pero no es una liencia copyleft, ya que no requiere la redistribución del código fuente cuando se distribuyen versiones modificadas. \cite{introspring} \\
+	\end{itemize}
+
+	\begin{itemize}
+		\item Web Crawler \newline
+			Un Web Crawler (también llamado Web Spider) es un programa diseñado para explorar páginas Web en forma automática. La operación normal es que se le da al programa un grupo de direcciones iniciales, el crawler descarga estas direcciones, analiza las páginas y busca enlaces a páginas nuevas. Luego descarga estas páginas nuevas, analiza sus enlaces, y así sucesivamente.\cite{crawling} \\
+			Los crawlers se pueden usar para varias cosas, lo más común es que se usen para:
+				\begin{itemize}
+					\item Crear el índice de una [article-1056.html máquina de búsqueda]. 
+					\item Analizar los enlaces de un sitio para buscar links rotos. 
+					\item Recolectar información de un cierto tipo, como precios de productos para armar un catálogo. \cite{craw}
+				\end{itemize} \\
+			
+			Un Web Crawler es un pequeño programa que recorre permanentemente el entramado de contenidos que conforman la Red. Su principal utilidad se la otorgan los buscadores al emplearlos para rastrear nuevas webs, de las que descargan automáticamente una copia que almacenan en un índice; una vez integradas en estas bases de datos las webs podrán ser rápidamente localizadas en la siguiente consulta efectuada por los usuarios, permitiendo mostrárselas entre la lista de resultados.
+			Una araña web inicia su trabajo visitando un conjunto de direcciones predeterminadas, analiza las páginas, identifica los enlaces externos que éstas puedan incluir y los añade a la lista de direcciones a visitar, perpetuándose en su labor.	\cite{web} \\
+			
+			Ahora bien, un rastreador web, indexador web, indizador web o araña web es un programa informático que inspecciona las páginas del World Wide Web de forma metódica y automatizada.1 Uno de los usos más frecuentes que se les da consiste en crear una copia de todas las páginas web visitadas para su procesado posterior por un motor de búsqueda que indexa las páginas proporcionando un sistema de búsquedas rápido. Las arañas web suelen ser bots. \cite{araña} \\
+			
+			Web scraping es una técnica utilizada mediante programas de software para extraer información de sitios web. Usualmente, estos programas simulan la navegación de un humano en la World Wide Web ya sea utilizando el protocolo HTTP manualmente, o incrustando un navegador en una aplicación.  \\
+			El web scraping está muy relacionado con la indexación de la web, la cual indexa la información de la web utilizando un robot y es una técnica universal adoptada por la mayoría de los motores de búsqueda. Sin embargo, el web scraping se enfoca más en la transformación de datos sin estructura en la web (como el formato HTML) en datos estructurados que pueden ser almacenados y analizados en una base de datos central, en una hoja de cálculo o en alguna otra fuente de almacenamiento. Alguno de los usos del web scraping son la comparación de precios en tiendas, la monitorización de datos relacionados con el clima de cierta región, la detección de cambios en sitios webs y la integración de datos en sitios webs.	\cite{araña} \\
+			
+			El web scraping es una técnica que sirve para extraer información de páginas web de forma automatizada. Si traducimos del inglés su significado vendría a significar algo así como “escarbar una web”. \\
+			Aplicaciones y ejemplos:\\
+			Su uso está muy claro: podemos aprovechar el web scraping para conseguir cantidades industriales de información (Big data) sin teclear una sola palabra. A través de los algoritmos de búsqueda podemos rastrear centenares de webs para extraer sólo aquella información que necesitamos.\\
+			Para ello nos será muy útil dominar regex (regular expression) para delimitar las búsquedas o hacerlas más precisas y que el filtrado de la información sea mejor.\\
+			Algunos ejemplos para los cuales vamos a necesitar el web scraping:
+				\begin{itemize}
+					\item Para marketing de contenidos: podemos diseñar un robot que haga un ‘scrapeo’ de datos concretos de una web y los podamos utilizar para generar nuestro propio contenido. Ejemplo: scrapear los datos estadísticos la web oficial de una liga de fútbol para generar nuestra propia base de datos.
+					\item Para ganar visibilidad en redes sociales: podemos utilizar los datos de un scrapeo para interactuar a través de un robot con usuarios en redes sociales. Ejemplo: crear un bot en instagram que seleccione los links de cada foto y luego programar un comentario en cada entrada.
+					\item Para controlar la imagen y la visibilidad de nuestra marca en internet: a través de un scrapeo podemos automatizar la posición por la que varios artículos de nuestra web se posicionan en Google o, por ejemplo, controlar la presencia del nombre de nuestra marca en determinados foros. Ejemplo: rastrear la posición en Google de todas las entradas de nuestro blog.
+				\end{itemize}	
+
+			
+			Para poder desarrollar un web scraping de la mejor manera se debe considerar  dos vertientes muy diferenciadas del conocimiento web, ambas esenciales para tener perfil versátil en la red. Por un lugar debemos dominar la visualización de datos a nivel conceptual y por el otro debemos disponer de los conocimientos técnicos necesarios para lograr extraer con exactitud los datos con herramientas especializadas. \\
+			Al fin y al cabo esto se resumirá en saber gestionar grandes cantidades de datos (big data). Debemos estar mínimamente familiarizados con la visualización de grandes cantidades de datos con tal de poder jerarquizar e interpretar los datos que extraigamos de una web. Y no solo para extraer los datos, también a la hora de plantear la estrategia de extracción debemos saber cuales van a ser los datos que vayamos a extraer con tal de poder darles un sentido informativo para el usuario \cite{scraping}.
+			
 	\end{itemize}
 	
 	

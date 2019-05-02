@@ -1,59 +1,78 @@
-\begin{UseCase}{CU2}{Registro}{
-		Servirá para que el alumno que esté interesado en participar en algún evento interpolitécnico deportivo, cree una cuenta para posteriormente poder iniciar sesión y así, inscribirse en el evento de su interés. 
-		Dicho registro lo encontrará dentro de la pantalla de Inicio en el apartado ‘Regístrate’, posteriormente deberá llenar los campos que se le solicitan, los cuales son: Boleta, Correo electrónico y una contraseña.
-		El numero de Boleta consta de 10 caracteres numéricos, y en el correo solamente se aceptan los dominios más comunes (Gmail, Hotmail, Outlook).
-		Una vez realizado, el alumno deberá acudir al Departamento de Actividades Deportivas de su Unidad Académica en un periodo no máximo a los 3 días a partir del día en el que se registró, para que el coordinador valide los datos que se ingresaron previamente. Para ello el coordinador deberá solicitar una identificación escolar vigente para corroborar dichos datos. }
-	
+\begin{UseCase}{CU2}{Inscribir a un evento interpolitécnico deportivo}{
+		\noindent Este caso de uso permite que el actor alumno, pueda registrarse en el evento interpolitécnico deportivo de su interés. Deberá llenar un formulario donde se solicitan datos del alumno como: Grupo, NSS (Número de Seguro Social), correo electrónico, Delegación/Municipio, así como el seleccionar el deporte en el que desea participar.\\
+		Para poder inscribirse, deberá primero validar su estatus académico (Inscrito/No inscrito), para ello debe ingresar su boleta, contraseña y el captcha como se muestra en la pantalla \IUref{p15InscripcionInterpolitecnico1}{Pantalla Inscribir interpolitécnico 1.}, da click en el botón \IUbutton { Verificar } si cumple con el requisito, continua el proceso, en caso contrario no podrá inscribirse en algun evento interpolitécnico deportivo.\\
+		El siguiente paso es la verificación de datos como se muestra en la pantalla \IUref{p15InscripcionInterpolitecnico2}{Pantalla Inscribir interpolitécnico 2.}, si los datos son correctos da click en el botón \IUbutton{ Aceptar }\\
+		Si los datos son correctos, da click en el botón \IUbutton{ Aceptar }, a continuación se muestra la pantalla \IUref{p15InscripcionInterpolitecnico3}{Pantalla Inscribir interpolitécnico 3.} donde llenará los datos corresponidentes al evento deportivo. Una vez que se llenen todos los campos, el alumno da click en el botón \IUbutton{ Inscribir }.\\ 
+		Al final se mostrará un mensaje de confirmación de la inscripción.
+	} \label{CU2_Inscribirauneventointerpolitécnicodeportivo}
 	\UCitem{Versión}{0.1}
 	\UCitem{Autor}{Rosales González Carlos Andrés}
 	\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
 	\UCitem{Actor}{Alumno}
-	\UCitem{Propósito}{Poder inscribirse en un evento interpolitécnico deportivo.}
-	\UCitem{Precondiciones}{No estar registrado previamente}
-	\UCitem{Postcondiciones}{
+	\UCitem{Propósito}{Poder participar en un evento deportivo.}
+	\UCitem{Precondiciones}{
 		\begin{itemize}
-			\item El alumno podrá ingresar al sistema.
-			\item Habrá un registro nuevo del alumno.
-			\item Deberá acudir en un periodo no máximo a 3 días al Departamento de Actividades Deportivas de su Unidad Académica.
+			\item Iniciar Sesión
+			\item Ser un alumno pertenenciente al IPN
+			\item Validar estatus académico
 	\end{itemize}}
+	\UCitem{Postcondiciones}{Persitencia de dat}
 	\UCitem{Entradas}{
 		\begin{itemize}
-			\item Número de boleta 
-			\item Contraseña
-			\item Correo electrónico
+			\item Boleta, contraseña y captcha
+			\item Grupo, Escuela, Carrera
+			\item Nombre, Apellido, Sexo
+			\item Curp, Fecha de nacimiento, Lugar
+			\item NSS, Correo electrónico, Delegación
+			\item Deporte, Sub-division, Prueba, Fecha del evento
 	\end{itemize}}
-	\UCitem{Origen}{Pantalla, Teclado}
-	\UCitem{Salidas}{Pantalla}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{
+		\begin{itemize}
+			\item Confirmación de la inscripción al evento
+	\end{itemize}}
 	\UCitem{Destino}{Pantalla principal}
 	\UCitem{Errores}{
 		\begin{itemize}
-			\item La boleta no es válida
-			\item Dominio de correo invalido
+			\item EL alumno no se encuentra inscrito en el periodo actual.
+			\item Completa todos los campos
 		\end{itemize}
 	}
-	\UCitem{Observaciones}{Ninguna}
+	\UCitem{Observaciones}{}
 \end{UseCase}
 \begin{UCtrayectoria}{Principal}
-	\UCpaso[\UCactor] Oprime el \IUbutton{ Registrate  } ubicado en la pantalla Principal.
-	%\UCpaso Muestra el mensaje {\bf MSG1-}``¿Está [{\em seguro}] de querer eliminar este registro.''.
-	\UCpaso Se conecta al SAES y obtiene el CAPTCHA del login.
-	\UCpaso Muestra la pantalla.
-	\UCpaso[\UCactor] Introduce Boleta, Contraseña y correo electronico
-	\UCpaso[\UCactor] Presiona el botón.
-	\UCpaso Comprueba los campos obligatorios que no estén vacias.
-	\UCpaso Inicia sesión en el SAES de la escuela usando la boleta, contraseña y captcha introducidos.
-	\UCpaso verifica que el alumno está efectivamente inscrito \Trayref{A} \Trayref{B}
-	\UCpaso Registra al alumno.
-	\UCpaso Muestra el mensaje MSG1 “Registro de cuenta exitoso”.
-	\UCpaso Muestra la pantalla .
+	\UCpaso[\UCactor] Oprime el botón \IUbutton { Inscribir Interpolitécnico } de la pantalla \IUref{p13Iniciopaticipante}{Pantalla principal del alumno \ref{Inscripcioninterpolitecnico}}.\label{CU3_inicio}
+	\UCpaso Muestra la pantalla \IUref{p15InscripcionInterpolitecnico1}{Pantalla Inscribir interpolitécnico 1 \ref{Inscripcioninterpolitecnico2}.}\label{CU3_regresa}
+	\UCpaso[\UCactor] Ingresa boleta, contraseña y captcha.
+	\UCpaso[\UCactor] Da click en el botón \IUbutton { Verificar }
+	\UCpaso Envia los datos mediante el crawler a la página del SAES.
+	\UCpaso Verifica si hay acceso al SAES. \Trayref{A} \Trayref{B}
+	\UCpaso Muestra la pantalla \IUref{p15InscripcionInterpolitecnico2}{Pantalla Inscribir interpolitécnico 2 \ref{Inscripcioninterpolitecnico3}}.
+	\UCpaso Muestra los datos personales del alumno.
+	\UCpaso[\UCactor] Da click en el botón \IUbutton {Aceptar}. \Trayref{C}
+	\UCpaso Busca los deportes y subdivisiones asociados a la unidad académica del alumno que esta haciendo la solicitud.
+	\UCpaso Muestra la pantalla \IUref{p15InscripcionInterpolitecnico3}{Pantalla Inscribir interpolitécnico 3.}. \label{CU3_deporte}
+	\UCpaso[\UCactor] Llena los campos solicitados. \Trayref{D}
+	\UCpaso Confirma registro en una ventana emergente.
+	\UCpaso Carga la pantalla Principal.
 \end{UCtrayectoria}
 
-\begin{UCtrayectoriaA}{A}{Inserta algún otro carácter no correspondiente al “Número de Boleta” y presiona el botón ‘Registrar’}
-	\UCpaso Muestra en la ventana el mensaje “Número de Boleta inválido”
-	\UCpaso Regresa al paso 2 de la trayectoria principal.
+\begin{UCtrayectoriaA}{A}{El alumno debe de estar inscrito para continuar.}
+	\UCpaso Muestra el mensaje. “El alumno no esta inscrito en el periodo actual”
+	\UCpaso Continua en el paso \ref{CU3_regresa} del \UCref{CU3}.
 \end{UCtrayectoriaA}
 
-\begin{UCtrayectoriaA}{B}{Inserta algún otro carácter no correspondiente al “Dominio del correo electrónico” y presiona el botón ‘Registrar’}
-	\UCpaso Muestra en la ventana el mensaje “Correo inválido, asegúrese que su correo sea de tipo Gmail, Hotmail o Outlook”
-	\UCpaso Regresa al paso 2 de la trayectoria principal.
+\begin{UCtrayectoriaA}{B}{El alumno cancela el proceso de Inscribir interpolitécnico}
+	\UCpaso[\UCactor] Da click en el botón \IUbutton { Cancelar } de la pantalla \IUref{p15InscripcionInterpolitecnico1}{Pantalla Inscribir interpolitécnico 1.}
+	\UCpaso  Continua en el paso \ref{CU3_inicio} del \UCref{CU3}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Los datos del alumno no coinciden}
+	\UCpaso[\UCactor] Da click en el botón \IUbutton { Cancelar } de la pantalla \IUref{p15InscripcionInterpolitecnico2}{Pantalla Inscribir interpolitécnico 2.}
+	\UCpaso Continua en el paso \ref{CU3_inicio} del \UCref{CU3}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{El alumno no completa los campos requeridos}
+	\UCpaso Muestra el mensaje "Debes llenar todos los campos solicitados". \ref{CU3_deporte}
+	\UCpaso Continua en el paso \ref{CU3_inicio} del \UCref{CU3}.
 \end{UCtrayectoriaA}

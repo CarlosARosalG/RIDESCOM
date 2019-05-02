@@ -26,45 +26,49 @@
 \BOOKMARK [1][-]{section.4.4}{Casos de Uso}{chapter.4}% 26
 \BOOKMARK [2][-]{subsection.4.4.1}{CU1 Iniciar Sesi\363n}{section.4.4}% 27
 \BOOKMARK [2][-]{subsection.4.4.2}{CU2 Inscribir a un evento interpolit\351cnico deportivo}{section.4.4}% 28
-\BOOKMARK [1][-]{section.4.5}{Requisitos del usuario}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.6}{Requisitos funcionales de la aplicacion web}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.7}{Requisitos no funcionales de la aplicacion web}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.8}{Reglas de necocio de la aplicaci\363n}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.9}{Trabajo realizado}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.10}{Sprint 0}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.11}{Sprint 1}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.12}{Sprint 2}{chapter.4}% 36
-\BOOKMARK [1][-]{section.4.13}{Sprint 3}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.14}{Sprint 4}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.15}{Sprint 5}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.16}{Sprint 6}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.17}{Sprint 7}{chapter.4}% 41
-\BOOKMARK [0][-]{chapter.5}{Trabajo a futuro}{}% 42
-\BOOKMARK [0][-]{chapter.6}{Anexos}{}% 43
-\BOOKMARK [1][-]{section.6.1}{Dise\361os de Pantallas}{chapter.6}% 44
-\BOOKMARK [1][-]{section.6.2}{Diagrama de Procesos}{chapter.6}% 45
-\BOOKMARK [1][-]{section.6.3}{Diagramas de Casos de Uso}{chapter.6}% 46
-\BOOKMARK [1][-]{section.6.4}{Casos de Uso}{chapter.6}% 47
-\BOOKMARK [1][-]{section.6.5}{CU1 Iniciar Sesi\363n}{chapter.6}% 48
-\BOOKMARK [2][-]{subsection.6.5.1}{Descripci\363n completa}{section.6.5}% 49
-\BOOKMARK [2][-]{subsection.6.5.2}{Atributos importantes}{section.6.5}% 50
-\BOOKMARK [2][-]{subsection.6.5.3}{Trayectorias del Caso de Uso}{section.6.5}% 51
-\BOOKMARK [1][-]{section.6.6}{CU2 Registro}{chapter.6}% 52
-\BOOKMARK [2][-]{subsection.6.6.1}{Descripci\363n completa}{section.6.6}% 53
-\BOOKMARK [2][-]{subsection.6.6.2}{Atributos importantes}{section.6.6}% 54
-\BOOKMARK [2][-]{subsection.6.6.3}{Trayectorias del Caso de Uso}{section.6.6}% 55
-\BOOKMARK [1][-]{section.6.7}{CU3 Inscribir a un evento interpolit\351cnico deportivo}{chapter.6}% 56
-\BOOKMARK [2][-]{subsection.6.7.1}{Descripci\363n completa}{section.6.7}% 57
-\BOOKMARK [2][-]{subsection.6.7.2}{Atributos importantes}{section.6.7}% 58
-\BOOKMARK [2][-]{subsection.6.7.3}{Trayectorias del Caso de Uso}{section.6.7}% 59
-\BOOKMARK [1][-]{section.6.8}{CU3.1 Validaci\363n estatus acad\351mico}{chapter.6}% 60
-\BOOKMARK [2][-]{subsection.6.8.1}{Descripci\363n completa}{section.6.8}% 61
-\BOOKMARK [2][-]{subsection.6.8.2}{Atributos importantes}{section.6.8}% 62
-\BOOKMARK [2][-]{subsection.6.8.3}{Trayectorias del Caso de Uso}{section.6.8}% 63
-\BOOKMARK [1][-]{section.6.9}{CU4 Validaci\363n de perfil}{chapter.6}% 64
-\BOOKMARK [2][-]{subsection.6.9.1}{Descripci\363n completa}{section.6.9}% 65
-\BOOKMARK [2][-]{subsection.6.9.2}{Atributos importantes}{section.6.9}% 66
-\BOOKMARK [2][-]{subsection.6.9.3}{Trayectorias del Caso de Uso}{section.6.9}% 67
-\BOOKMARK [1][-]{section.6.10}{Base de Datos}{chapter.6}% 68
-\BOOKMARK [1][-]{section.6.11}{Entrevista}{chapter.6}% 69
-\BOOKMARK [0][-]{chapter.7}{Glosario}{}% 70
+\BOOKMARK [2][-]{subsection.4.4.3}{CU 2.1 Validaci\363n estatus acad\351mico}{section.4.4}% 29
+\BOOKMARK [2][-]{subsection.4.4.4}{Registro}{section.4.4}% 30
+\BOOKMARK [2][-]{subsection.4.4.5}{Validaci\363n de perfil}{section.4.4}% 31
+\BOOKMARK [1][-]{section.4.5}{Requisitos del usuario}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.6}{Requisitos funcionales de la aplicacion web}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.7}{Requisitos no funcionales de la aplicacion web}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.8}{Reglas de necocio de la aplicaci\363n}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.9}{Sprint 0}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.10}{Sprint 1}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.11}{Sprint 2}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter.5}{Trabajo a futuro}{}% 39
+\BOOKMARK [1][-]{section.5.1}{Mecanismo de Validaci\363n de estatus acad\351mico}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.2}{Interfaces}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.3}{M\363dulo de formulario}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.4}{M\363dulo de difusi\363n de eventos}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.5}{M\363dulo de comunicaci\363n con redes sociales}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.6}{M\363dulo de creaci\363n de c\351dula de inscripci\363n a un evento interpolit\351cnico deportivo}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.7}{M\363dulo de consulta de resultados}{chapter.5}% 46
+\BOOKMARK [0][-]{chapter.6}{Anexos}{}% 47
+\BOOKMARK [1][-]{section.6.1}{Apartado A: Dise\361os de Pantallas}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.2}{Apartado B: Diagrama de Procesos}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.3}{Apartado C: Diagramas de Casos de Uso}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.4}{Apartado D: Casos de Uso}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.5}{CU1 Iniciar Sesi\363n}{chapter.6}% 52
+\BOOKMARK [2][-]{subsection.6.5.1}{Descripci\363n completa}{section.6.5}% 53
+\BOOKMARK [2][-]{subsection.6.5.2}{Atributos importantes}{section.6.5}% 54
+\BOOKMARK [2][-]{subsection.6.5.3}{Trayectorias del Caso de Uso}{section.6.5}% 55
+\BOOKMARK [1][-]{section.6.6}{CU2 Inscribir a un evento interpolit\351cnico deportivo}{chapter.6}% 56
+\BOOKMARK [2][-]{subsection.6.6.1}{Descripci\363n completa}{section.6.6}% 57
+\BOOKMARK [2][-]{subsection.6.6.2}{Atributos importantes}{section.6.6}% 58
+\BOOKMARK [2][-]{subsection.6.6.3}{Trayectorias del Caso de Uso}{section.6.6}% 59
+\BOOKMARK [1][-]{section.6.7}{CU2.1 Validaci\363n estatus acad\351mico}{chapter.6}% 60
+\BOOKMARK [2][-]{subsection.6.7.1}{Descripci\363n completa}{section.6.7}% 61
+\BOOKMARK [2][-]{subsection.6.7.2}{Atributos importantes}{section.6.7}% 62
+\BOOKMARK [2][-]{subsection.6.7.3}{Trayectorias del Caso de Uso}{section.6.7}% 63
+\BOOKMARK [1][-]{section.6.8}{CU Registro}{chapter.6}% 64
+\BOOKMARK [2][-]{subsection.6.8.1}{Descripci\363n completa}{section.6.8}% 65
+\BOOKMARK [2][-]{subsection.6.8.2}{Atributos importantes}{section.6.8}% 66
+\BOOKMARK [2][-]{subsection.6.8.3}{Trayectorias del Caso de Uso}{section.6.8}% 67
+\BOOKMARK [1][-]{section.6.9}{CU Validaci\363n de perfil}{chapter.6}% 68
+\BOOKMARK [2][-]{subsection.6.9.1}{Descripci\363n completa}{section.6.9}% 69
+\BOOKMARK [2][-]{subsection.6.9.2}{Atributos importantes}{section.6.9}% 70
+\BOOKMARK [2][-]{subsection.6.9.3}{Trayectorias del Caso de Uso}{section.6.9}% 71
+\BOOKMARK [1][-]{section.6.10}{Apartado E: Base de Datos}{chapter.6}% 72
+\BOOKMARK [1][-]{section.6.11}{Apartado F: Entrevista}{chapter.6}% 73
+\BOOKMARK [0][-]{chapter.7}{Glosario}{}% 74
