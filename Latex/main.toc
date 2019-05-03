@@ -1,75 +1,77 @@
-\select@language {spanish}
-\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Introducci\'on}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Justificaci\'on}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Problem\'atica}{3}{section.1.3}
-\contentsline {section}{\numberline {1.4}Objetivos}{3}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Objetivo General}{3}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Objetivos Especificos}{3}{subsection.1.4.2}
-\contentsline {chapter}{\numberline {2}Estado del arte}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}Aplicaciones}{4}{section.2.1}
-\contentsline {section}{\numberline {2.2}Aplicaciones Tournament Software}{4}{section.2.2}
-\contentsline {section}{\numberline {2.3}Aplicaciones Active Network}{6}{section.2.3}
-\contentsline {section}{\numberline {2.4}Aplicaciones TeamSnap Tournament}{7}{section.2.4}
-\contentsline {section}{\numberline {2.5}Aplicaciones TorneoPal}{9}{section.2.5}
-\contentsline {section}{\numberline {2.6}Aplicaciones Instituto Nacional del deporte CHILE}{10}{section.2.6}
-\contentsline {section}{\numberline {2.7}Prototipo para el registro a interpolit\IeC {\'e}cnicos RIDESCOM}{11}{section.2.7}
-\contentsline {chapter}{\numberline {3}Marco te\'orico}{12}{chapter.3}
-\contentsline {section}{\numberline {3.1}An\'alisis de factibilidad t\'ecnica}{12}{section.3.1}
-\contentsline {section}{\numberline {3.2}IDE}{12}{section.3.2}
-\contentsline {section}{\numberline {3.3}Sistema Gestor de Base de Datos}{16}{section.3.3}
-\contentsline {section}{\numberline {3.4}Sistema Gestor de Base de Datos del lado del servidor}{16}{section.3.4}
-\contentsline {section}{\numberline {3.5}Servidor}{17}{section.3.5}
-\contentsline {chapter}{\numberline {4}Trabajo realizado}{18}{chapter.4}
-\contentsline {section}{\numberline {4.1}Prototipo para el Registro a Interpolit\'ecnicos Deportivos (RIDESCOM)}{18}{section.4.1}
-\contentsline {section}{\numberline {4.2}Reglas de Negocio}{18}{section.4.2}
-\contentsline {section}{\numberline {4.3}Reglas del Sistema}{19}{section.4.3}
-\contentsline {section}{\numberline {4.4}Casos de Uso}{19}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}CU1 Iniciar Sesi\IeC {\'o}n}{19}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}CU2 Inscribir a un evento interpolit\IeC {\'e}cnico deportivo}{19}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}CU 2.1 Validaci\IeC {\'o}n estatus acad\IeC {\'e}mico}{19}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Registro}{19}{subsection.4.4.4}
-\contentsline {subsection}{\numberline {4.4.5}Validaci\IeC {\'o}n de perfil}{19}{subsection.4.4.5}
-\contentsline {section}{\numberline {4.5}Requisitos del usuario}{20}{section.4.5}
-\contentsline {section}{\numberline {4.6}Requisitos funcionales de la aplicacion web}{21}{section.4.6}
-\contentsline {section}{\numberline {4.7}Requisitos no funcionales de la aplicacion web}{21}{section.4.7}
-\contentsline {section}{\numberline {4.8}Reglas de necocio de la aplicaci\IeC {\'o}n}{21}{section.4.8}
-\contentsline {section}{\numberline {4.9}Sprint 0}{21}{section.4.9}
-\contentsline {section}{\numberline {4.10}Sprint 1}{22}{section.4.10}
-\contentsline {section}{\numberline {4.11}Sprint 2}{22}{section.4.11}
-\contentsline {chapter}{\numberline {5}Trabajo a futuro}{26}{chapter.5}
-\contentsline {section}{\numberline {5.1}Mecanismo de Validaci\IeC {\'o}n de estatus acad\IeC {\'e}mico}{26}{section.5.1}
-\contentsline {section}{\numberline {5.2}Interfaces}{26}{section.5.2}
-\contentsline {section}{\numberline {5.3}M\IeC {\'o}dulo de formulario}{26}{section.5.3}
-\contentsline {section}{\numberline {5.4}M\IeC {\'o}dulo de difusi\IeC {\'o}n de eventos}{27}{section.5.4}
-\contentsline {section}{\numberline {5.5}M\IeC {\'o}dulo de comunicaci\IeC {\'o}n con redes sociales}{27}{section.5.5}
-\contentsline {section}{\numberline {5.6}M\IeC {\'o}dulo de creaci\IeC {\'o}n de c\IeC {\'e}dula de inscripci\IeC {\'o}n a un evento interpolit\IeC {\'e}cnico deportivo}{27}{section.5.6}
-\contentsline {section}{\numberline {5.7}M\IeC {\'o}dulo de consulta de resultados}{27}{section.5.7}
-\contentsline {chapter}{\numberline {6}Anexos}{28}{chapter.6}
-\contentsline {section}{\numberline {6.1}Apartado A: Dise\IeC {\~n}os de Pantallas}{28}{section.6.1}
-\contentsline {section}{\numberline {6.2}Apartado B: Diagrama de Procesos}{34}{section.6.2}
-\contentsline {section}{\numberline {6.3}Apartado C: Diagramas de Casos de Uso}{35}{section.6.3}
-\contentsline {section}{\numberline {6.4}Apartado D: Casos de Uso}{36}{section.6.4}
-\contentsline {section}{\numberline {6.5}CU1 Iniciar Sesi\IeC {\'o}n}{37}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Descripci\IeC {\'o}n completa}{37}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Atributos importantes}{37}{subsection.6.5.2}
-\contentsline {subsection}{\numberline {6.5.3}Trayectorias del Caso de Uso}{37}{subsection.6.5.3}
-\contentsline {section}{\numberline {6.6}CU2 Inscribir a un evento interpolit\IeC {\'e}cnico deportivo}{39}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Descripci\IeC {\'o}n completa}{39}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2}Atributos importantes}{39}{subsection.6.6.2}
-\contentsline {subsection}{\numberline {6.6.3}Trayectorias del Caso de Uso}{40}{subsection.6.6.3}
-\contentsline {section}{\numberline {6.7}CU2.1 Validaci\IeC {\'o}n estatus acad\IeC {\'e}mico}{42}{section.6.7}
-\contentsline {subsection}{\numberline {6.7.1}Descripci\IeC {\'o}n completa}{42}{subsection.6.7.1}
-\contentsline {subsection}{\numberline {6.7.2}Atributos importantes}{42}{subsection.6.7.2}
-\contentsline {subsection}{\numberline {6.7.3}Trayectorias del Caso de Uso}{42}{subsection.6.7.3}
-\contentsline {section}{\numberline {6.8}CU Registro}{44}{section.6.8}
-\contentsline {subsection}{\numberline {6.8.1}Descripci\IeC {\'o}n completa}{44}{subsection.6.8.1}
-\contentsline {subsection}{\numberline {6.8.2}Atributos importantes}{44}{subsection.6.8.2}
-\contentsline {subsection}{\numberline {6.8.3}Trayectorias del Caso de Uso}{44}{subsection.6.8.3}
-\contentsline {section}{\numberline {6.9}CU Validaci\IeC {\'o}n de perfil}{46}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Descripci\IeC {\'o}n completa}{46}{subsection.6.9.1}
-\contentsline {subsection}{\numberline {6.9.2}Atributos importantes}{46}{subsection.6.9.2}
-\contentsline {subsection}{\numberline {6.9.3}Trayectorias del Caso de Uso}{46}{subsection.6.9.3}
-\contentsline {section}{\numberline {6.10}Apartado E: Base de Datos}{47}{section.6.10}
-\contentsline {section}{\numberline {6.11}Apartado F: Entrevista}{47}{section.6.11}
-\contentsline {chapter}{\numberline {7}Glosario}{49}{chapter.7}
+\babel@toc {spanish}{}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Introducci\'on}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Justificaci\'on}{2}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Problem\'atica}{2}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Objetivos}{3}{section.1.4}% 
+\contentsline {subsection}{\numberline {1.4.1}Objetivo General}{3}{subsection.1.4.1}% 
+\contentsline {subsection}{\numberline {1.4.2}Objetivos Especificos}{3}{subsection.1.4.2}% 
+\contentsline {chapter}{\numberline {2}Estado del arte}{4}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Aplicaciones}{4}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Aplicaciones Tournament Software}{4}{subsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.1.2}Aplicaciones Active Network}{6}{subsection.2.1.2}% 
+\contentsline {subsection}{\numberline {2.1.3}Aplicaciones TeamSnap Tournament}{7}{subsection.2.1.3}% 
+\contentsline {subsection}{\numberline {2.1.4}Aplicaciones TorneoPal}{9}{subsection.2.1.4}% 
+\contentsline {subsection}{\numberline {2.1.5}Aplicaciones Instituto Nacional del deporte CHILE}{10}{subsection.2.1.5}% 
+\contentsline {subsection}{\numberline {2.1.6}Prototipo para el registro a interpolit\IeC {\'e}cnicos RIDESCOM}{11}{subsection.2.1.6}% 
+\contentsline {chapter}{\numberline {3}Marco te\'orico}{12}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}An\'alisis de factibilidad t\'ecnica}{12}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}IDE}{12}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.2}Framework}{13}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.3}API's}{15}{subsection.3.1.3}% 
+\contentsline {section}{\numberline {3.2}Sistema Gestor de Base de Datos}{16}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Sistema Gestor de Base de Datos del lado del servidor}{16}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Servidor}{17}{section.3.4}% 
+\contentsline {chapter}{\numberline {4}Trabajo realizado}{18}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Prototipo para el Registro a Interpolit\'ecnicos Deportivos (RIDESCOM)}{18}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Reglas de Negocio}{19}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Reglas del Sistema}{19}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Casos de Uso}{19}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}CU1 Iniciar Sesi\IeC {\'o}n}{19}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}CU2 Inscribir a un evento interpolit\IeC {\'e}cnico deportivo}{19}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}CU 2.1 Validaci\IeC {\'o}n estatus acad\IeC {\'e}mico}{19}{subsection.4.4.3}% 
+\contentsline {subsection}{\numberline {4.4.4}Registro}{19}{subsection.4.4.4}% 
+\contentsline {subsection}{\numberline {4.4.5}Validaci\IeC {\'o}n de perfil}{20}{subsection.4.4.5}% 
+\contentsline {section}{\numberline {4.5}Requisitos del usuario}{20}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Requisitos funcionales de la aplicaci\IeC {\'o}n web}{22}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Requisitos no funcionales de la aplicaci\IeC {\'o}n web}{22}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Iteraciones}{22}{section.4.8}% 
+\contentsline {subsection}{\numberline {4.8.1}Sprint 0}{22}{subsection.4.8.1}% 
+\contentsline {subsection}{\numberline {4.8.2}Sprint 1}{23}{subsection.4.8.2}% 
+\contentsline {subsection}{\numberline {4.8.3}Sprint 2}{23}{subsection.4.8.3}% 
+\contentsline {chapter}{\numberline {5}Trabajo a futuro}{27}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Mecanismo de Validaci\IeC {\'o}n de estatus acad\IeC {\'e}mico}{27}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Interfaces}{27}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}M\IeC {\'o}dulo de formulario}{27}{section.5.3}% 
+\contentsline {section}{\numberline {5.4}M\IeC {\'o}dulo de difusi\IeC {\'o}n de eventos}{28}{section.5.4}% 
+\contentsline {section}{\numberline {5.5}M\IeC {\'o}dulo de comunicaci\IeC {\'o}n con redes sociales}{28}{section.5.5}% 
+\contentsline {section}{\numberline {5.6}M\IeC {\'o}dulo de creaci\IeC {\'o}n de c\IeC {\'e}dula de inscripci\IeC {\'o}n a un evento interpolit\IeC {\'e}cnico deportivo}{28}{section.5.6}% 
+\contentsline {section}{\numberline {5.7}M\IeC {\'o}dulo de consulta de resultados}{28}{section.5.7}% 
+\contentsline {chapter}{\numberline {6}Anexos}{29}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Apartado A: Dise\IeC {\~n}os de Pantallas}{29}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Apartado B: Diagrama de Procesos}{35}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Apartado C: Diagramas de Casos de Uso}{36}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Apartado D: Casos de Uso}{37}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}CU1 Iniciar Sesi\IeC {\'o}n}{38}{section.6.5}% 
+\contentsline {subsection}{\numberline {6.5.1}Descripci\IeC {\'o}n completa}{38}{subsection.6.5.1}% 
+\contentsline {subsection}{\numberline {6.5.2}Atributos importantes}{38}{subsection.6.5.2}% 
+\contentsline {subsection}{\numberline {6.5.3}Trayectorias del Caso de Uso}{38}{subsection.6.5.3}% 
+\contentsline {section}{\numberline {6.6}CU2 Inscribir a un evento interpolit\IeC {\'e}cnico deportivo}{40}{section.6.6}% 
+\contentsline {subsection}{\numberline {6.6.1}Descripci\IeC {\'o}n completa}{40}{subsection.6.6.1}% 
+\contentsline {subsection}{\numberline {6.6.2}Atributos importantes}{40}{subsection.6.6.2}% 
+\contentsline {subsection}{\numberline {6.6.3}Trayectorias del Caso de Uso}{41}{subsection.6.6.3}% 
+\contentsline {section}{\numberline {6.7}CU2.1 Validaci\IeC {\'o}n estatus acad\IeC {\'e}mico}{43}{section.6.7}% 
+\contentsline {subsection}{\numberline {6.7.1}Descripci\IeC {\'o}n completa}{43}{subsection.6.7.1}% 
+\contentsline {subsection}{\numberline {6.7.2}Atributos importantes}{43}{subsection.6.7.2}% 
+\contentsline {subsection}{\numberline {6.7.3}Trayectorias del Caso de Uso}{43}{subsection.6.7.3}% 
+\contentsline {section}{\numberline {6.8}CU Registro}{45}{section.6.8}% 
+\contentsline {subsection}{\numberline {6.8.1}Descripci\IeC {\'o}n completa}{45}{subsection.6.8.1}% 
+\contentsline {subsection}{\numberline {6.8.2}Atributos importantes}{45}{subsection.6.8.2}% 
+\contentsline {subsection}{\numberline {6.8.3}Trayectorias del Caso de Uso}{45}{subsection.6.8.3}% 
+\contentsline {section}{\numberline {6.9}CU Validaci\IeC {\'o}n de perfil}{47}{section.6.9}% 
+\contentsline {subsection}{\numberline {6.9.1}Descripci\IeC {\'o}n completa}{47}{subsection.6.9.1}% 
+\contentsline {subsection}{\numberline {6.9.2}Atributos importantes}{47}{subsection.6.9.2}% 
+\contentsline {subsection}{\numberline {6.9.3}Trayectorias del Caso de Uso}{47}{subsection.6.9.3}% 
+\contentsline {section}{\numberline {6.10}Apartado E: Base de Datos}{48}{section.6.10}% 
+\contentsline {section}{\numberline {6.11}Apartado F: Entrevista}{48}{section.6.11}% 
+\contentsline {chapter}{\numberline {7}Glosario}{50}{chapter.7}% 
