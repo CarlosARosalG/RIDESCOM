@@ -22,7 +22,7 @@
 	%                                                         Analisis de factibilidad tecnica
 	%=========================================================
 	\section{An\'alisis de factibilidad t\'ecnica}
-	
+	Éste análisis tiene como objetivo describir las herramientas que pueden ocuparse para la realización de este proyecto mencionando sus objetivos de cada herramienta de trabajo seleccionada.
 	
 	%=========================================================
 	%                                                         IDE
@@ -101,9 +101,9 @@
 		El framework fue lanzado inicialmente bajo Apache 2.0 License en junio de 2003. Esta licencia es una licencia de software libre creada por la Apache Software Foundation que requiere la conservación del aviso de copyright y disclaimer, pero no es una liencia copyleft, ya que no requiere la redistribución del código fuente cuando se distribuyen versiones modificadas. \cite{introspring} \\
 	\end{itemize}
 
-	\subsection{API's}
+	\subsection{Rastreo Web y API's}
 	\begin{itemize}
-		\item Web Crawler \newline
+		\item Web Crawler\newline
 			Un Web Crawler (también llamado Web Spider) es un programa diseñado para explorar páginas Web en forma automática. La operación normal es que se le da al programa un grupo de direcciones iniciales, el crawler descarga estas direcciones, analiza las páginas y busca enlaces a páginas nuevas. Luego descarga estas páginas nuevas, analiza sus enlaces, y así sucesivamente.\cite{crawling} \\
 			Los crawlers se pueden usar para varias cosas, lo más común es que se usen para:
 				\begin{itemize}
@@ -133,7 +133,34 @@
 
 			
 			Para poder desarrollar un web scraping de la mejor manera se debe considerar  dos vertientes muy diferenciadas del conocimiento web, ambas esenciales para tener perfil versátil en la red. Por un lugar debemos dominar la visualización de datos a nivel conceptual y por el otro debemos disponer de los conocimientos técnicos necesarios para lograr extraer con exactitud los datos con herramientas especializadas. \\
-			Al fin y al cabo esto se resumirá en saber gestionar grandes cantidades de datos (big data). Debemos estar mínimamente familiarizados con la visualización de grandes cantidades de datos con tal de poder jerarquizar e interpretar los datos que extraigamos de una web. Y no solo para extraer los datos, también a la hora de plantear la estrategia de extracción debemos saber cuales van a ser los datos que vayamos a extraer con tal de poder darles un sentido informativo para el usuario \cite{scraping}.
+			Al fin y al cabo esto se resumirá en saber gestionar grandes cantidades de datos (big data). Debemos estar mínimamente familiarizados con la visualización de grandes cantidades de datos con tal de poder jerarquizar e interpretar los datos que extraigamos de una web. Y no solo para extraer los datos, también a la hora de plantear la estrategia de extracción debemos saber cuales van a ser los datos que vayamos a extraer con tal de poder darles un sentido informativo para el usuario \cite{scraping}.\\
+			
+			\textbf{Api's más utilizadas}
+			\begin{itemize}
+				\item \textbf{Jsoup}: Es una libreria de Java para trabajar con HTML real en el mundo real. Proporciona una API muy conveniente para extraer y manipular datos, utilizando lo mejor de DOM, CSS y métodos similares a jquery.\\
+				
+				Implementa la especificación HTML5 WHATWG y analiza HTML en el mismo DOM que los navegadores modernos.
+				\begin{itemize}
+					\item 
+				\item Raspa y analiza HTML desde una URL, archivo o cadena
+				\item Encuentra y extrae datos, usando DOM transversal o selectores de CSS
+				manipular los elementos HTML, atributos y texto
+				\item Limpia el contenido enviado por el usuario contra una lista blanca segura, para evitar ataques XSS
+				\item HTML ordenado de salida
+				\end{itemize}
+				
+				Jsoup está diseñado para tratar con todas las variedades de HTML que se encuentran en la naturaleza; de lo prístino y de la validación para invalidar la etiqueta soup; jsoup creará un árbol de análisis sensible.\\
+				
+				Jsoup es un proyecto de código abierto distribuido bajo la licencia liberal MIT. El código fuente está disponible en GitHub.\cite{jsoup}
+				
+				\item \textbf{Selenium}: Es un automatizador de navegadores. Principalmente, es para automatizar aplicaciones web con fines de prueba, pero ciertamente no se limita a eso. Las tareas de administración aburridas basadas en la web pueden (y deberían) ser automatizadas también.\\
+				
+				Selenium tiene el soporte de algunos de los proveedores más grandes de navegadores que han tomado (o están tomando) pasos para hacer de Selenium una parte nativa de su navegador. También es la tecnología central en muchas otras herramientas de automatización del navegador, API y marcos.\\
+				
+				Selenium provee una herramienta de grabar/reproducir para crear pruebas sin usar un lenguaje de scripting para pruebas (Selenium IDE). Incluye también un lenguaje específico de dominio para pruebas (Selanese) para escribir pruebas en un amplio número de lenguajes de programación populares incluyendo Java, C#, Ruby, Groovy, Perl, Php y Python. Las pruebas pueden ejecutarse entonces usando la mayoría de los navegadores web modernos en diferentes sistemas operativos como Windows, Linux y OSX.
+				
+			\end{itemize}
+		Como Api seleccionada para trepar páginas web Jsoup es apta para la realización del trabajo ya que nos permite analizar libremente el DOM de alguna página y es mucho más rápido que selenium, ya que no necesita molestarse con un DOM "vivo". Selenium siempre debe verificar si los manejadores de elementos siguen siendo válidos antes de realizar cualquier operación con ellos pero la sobrecarga es realmente notable cuando realiza un raspado serio. \\
 			
 	\end{itemize}
 	
@@ -141,23 +168,23 @@
 	%=========================================================
 	%                                                         Sistema Gestor de BD
 	%=========================================================
-	\section{Sistema Gestor de Base de Datos}
-	\noindent Realizando una investigación de los distintos gestores de Bases de Datos encontramos las siguientes caracteristicas:
-	\begin{table}[htbp]
-		\begin{center}
-			\begin{tabular}{|l|p{35mm}|p{35mm}|p{35mm}|l}
-				\hline
-				Caracter\'isticas & Oracle & MySQL & SQL Server \\
-				\hline 
-				Interfaz & GUI, SQL & SQL & GUI, SQL \\ \hline
-				Lenguaje soportado & C, C++, C, Java, Ruby y Objective-C & C, C, C++, D, Java, Ruby y Objective C & Java, Ruby, Python, VB, .Net y PHP  \\ \hline
-				Sistema Operativo & Windows, GNU/Linux, Solaris, OS-X & Windows, GNU/Linux, OS-X, FreeBSD, Solaris & Windows \\ \hline
-				Licencia & Propietrio & Código Libre & Propietario \\ \hline
-			\end{tabular}
-			\caption{Tabla comparativa de lenguajes de BD.}
-			\label{tabla:sencilla}
-		\end{center}
-	\end{table}
+	%\section{Sistema Gestor de Base de Datos}
+	%\noindent Realizando una investigación de los distintos gestores de Bases de Datos encontramos las siguientes caracteristicas:
+	%\begin{table}[htbp]
+	%	\begin{center}
+	%		\begin{tabular}{|l|p{35mm}|p{35mm}|p{35mm}|l}
+	%			\hline
+	%			Caracter\'isticas & Oracle & MySQL & SQL Server \\
+	%			\hline 
+	%			Interfaz & GUI, SQL & SQL & GUI, SQL \\ \hline
+	%			Lenguaje soportado & C, C++, C, Java, Ruby y Objective-C & C, C, C++, D, Java, Ruby y Objective C & Java, Ruby, Python, VB, .Net y PHP  \\ \hline
+	%			Sistema Operativo & Windows, GNU/Linux, Solaris, OS-X & Windows, GNU/Linux, OS-X, FreeBSD, Solaris & Windows \\ \hline
+	%			Licencia & Propietrio & Código Libre & Propietario \\ \hline
+	%		\end{tabular}
+	%		\caption{Tabla comparativa de lenguajes de BD.}
+	%		\label{tabla:sencilla}
+	%	\end{center}
+	%\end{table}
 	
 	%=========================================================
 	%              Sistema Gestor de BD del lado del servidor
@@ -187,39 +214,52 @@
 	%=========================================================
 
 	\section{Servidor}
-	\noindent Un servidor web es un sistema informático permanentemente conectado a la red donde se almacenan las distintas páginas que forman un sitio Web disponibles para ser visitadas por los usuarios a través de navegadores de Web utilizando el protocolo HTTP. 
+	\noindent Para establecer las caracteristicas de nuestro servidor debemos conocer parte de sus componentes y que operabilidad tendrá dedicada.
+	Empezando con los procesadores dedicados para equipos de servidores, se recomienda usar Intel Xeon (cualquier versión), por ejemplo: los servidores con Intel Xeon E5 v3 pueden tener hasta 36 núcleos y se encuentran entre los pocos procesadores que son compatibles con la nueva versión DDR4 de RAM, que utiliza un consumo de energía muy reducido y brinda una excelente velocidad de transferencia de datos.\cite{serv}
 	
+	Tomando en cuenta las recomendaciones para armar un buen servidor se tomaron algunas caracteristicas de componentes que pueden ser accesibles para montar el proyecto. \cite{serv}\cite{servi}
 	\begin{table}[htbp]
 		\begin{center}
 			\begin{tabular}{|l|l|}
 				\hline
 				\multicolumn{2}{|c|}{Servidor Ideal} \\
 				\hline
-				Componentes \\
+				Componentes & \\
 				\hline
 				\multicolumn{2}{|c|}{Hardware} \\
 				\hline
-				Procesador & Intel core i3\\
+				Procesador & Intel Xeon ó AMD Opteron\\
 				\hline
 				Plataforma & 64-Bits\\
 				\hline
-				Memoria RAM & 12 GB\\
+				Memoria RAM & 8 GB\\
 				\hline
-				Disco Duro & 1 TB\\
+				Disco Duro & 500 GB\\
 				\hline
 				Arreglo de Discos Duros & Ninguno\\
-				\hline
-				D Drive & 1 TB\\
 				\hline
 				Monitor & 800 x 600 16 bits Color o Superior\\
 				\hline
 				\multicolumn{2}{|c|}{Software} \\
 				\hline
-				Sistema Operativo & Windows\\
+				Sistema Operativo & Windows \\
 				\hline
-				Base de Datos & MySQL\\
-				\hline 
+				Base de Datos & MySQL 5.1 Community Server\\
+				\hline
 			\end{tabular}
 			\caption{Tabla de especificaciones del servidor.}
 		\end{center}
 	\end{table}
+Suponiendo el caso de que por día se hagan 1000 visitas diarias donde se tienen 6 páginas por visita que además por página consume 100kb.
+
+En condiciones normales, una web envía más datos de los que recibe, por lo cual, hemos de contar con los datos enviados.
+\\
+Podremos calcular la transferencia de datos con la siguiente formula\\
+
+(días por mes) x (visitas diarias) x (páginas por visita) x (volumen por página) x 1,25\\
+
+En cuestión de la memoria RAM está esta pensada de manera que soporte las consultas realizadas por los usuarios en la aplicación, es bien dicho que entre más RAM el servidor tendrá mejor rendimiento \cite{servi}.
+
+O bien Tomando como caso la capacidad del disco duro se considera que el almacenamiento no se saturará hasta pasado 1 año, puesto que el uso de memoria de almacenamiento de datos creados por la aplicación no serán concurrentes, con el proposito de almacenar la aplicación y los archivos de base de datos, cuya base de datos incrementa de acuerdo al número de usuarios que hagan uso de ella (unicamente los que estén inscritos, o usuarios coordinador).\\
+
+
