@@ -52,8 +52,19 @@ public class controlador {
     
     @RequestMapping(value="consulta_inscripcion.htm", method = RequestMethod.GET)
     public ModelAndView ins(){
-        String saql = "select ";
+        String saql = "select ae.ALUMNO_ID_ALUMNO, ae.EVENTO_EVENTO_ID "
+                    + "from ALUMNO_HAS_EVENTO"
+                    + "WHERE ALUMNO_ID_ALUMNO = #alumno"
+                    + "alumno", alumnoId;
         mav1.setViewName("consulta_inscripcion");
+        return mav1;
+    }
+    
+    @RequestMapping(value="difundirevento.htm", method = RequestMethod.GET)
+    public ModelAndView difun(){
+        String saql = " select e.Nombre_Evento, e.Fecha_inicio_Registro, e.Fecha_fin_Registro, e.Lugar_del_evento, e.Descripcion, e.Fecha_Evento, e.Ciclo_ID_Ciclo, e.Act_Deportiva_ID_Deporte\n" +
+"	from Evento e; ";
+        mav1.setViewName("difundirevento");
         return mav1;
     }
   }

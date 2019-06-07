@@ -79,6 +79,9 @@ public class insertadatos {
     
     @RequestMapping(value="ingresa_resultados.htm", method = RequestMethod.GET)
     public ModelAndView re(){
+        String sql1 = " INSERT INTO Resultados  (Lugar_Obtenido, Marca, Alumno_has_Evento_Alumno_ID_Alumno, Alumno_has_Evento_Evento_Evento_ID)\n" +
+"	values ('2', '1:45','2015630443', '1');  ";
+        
         //mav.addObject(new resultados);
         mav.setViewName("ingresa_resultados");
         return mav;
@@ -93,6 +96,40 @@ public class insertadatos {
         mav.addObject(new Alumno());
         mav.setViewName("registrar");
         return mav;
+    }
+    
+    @RequestMapping(value="difundirevento.htm", method= RequestMethod.GET)
+    public ModelAndView difunde(){
+        String sql1 = " select e.Nombre_Evento, e.Fecha_inicio_Registro, e.Fecha_fin_Registro, e.Lugar_del_evento, e.Descripcion, e.Fecha_Evento, e.Ciclo_ID_Ciclo, e.Act_Deportiva_ID_Deporte\n" +
+"	from Evento e; ";
+        mav.addObject(new Evento());
+        mav.setViewName("difundir");
+        return mav;
+    }
+    
+    @RequestMapping(value="registroentrenador.htm", method= RequestMethod.GET)
+    public ModelAndView entrenador(){
+        String sql1 = " insert into Persona(Nombre, Ap_Pat, Ap_Mat, Tipo_Sexo_ID_Tipo_Sexo, CURP, Fecha_Nac, NSS, Usuario_Usuario_ID, Municipio_ID_Municipio, Municipio_Estados_ID_estado)\n" +
+"	values ('José', 'Ramirez', 'Olvera', '1','ROGC960117HDFSNR09', '1996-01-17','123456789', '4', '0222','07'); ";
+        mav.addObject(new Evento());
+        mav.setViewName("difundir");
+        return mav;
+    }
+    
+    @RequestMapping(value="registroevento.htm", method= RequestMethod.GET)
+    public ModelAndView evento(){
+        String sql1 = " insert into Evento (Nombre_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Lugar_del_evento, Descripcion, Fecha_Evento, Ciclo_ID_Ciclo, Act_Deportiva_ID_Deporte) \n" +
+"			values ('Evento de Atlestismo', '2019-06-15', '2019-06-17', 'Estadio Wilfrido el evento se llevara a cabo dentro del estudio', 'Evento deportivo para atletismo', '2019-07-15', '1', '4'); ";
+        mav.addObject(new Evento());
+        mav.setViewName("difundir");
+        return mav;
+    }
+
+    private static class Evento {
+
+        public Evento() {
+            
+        }
     }
 
 }

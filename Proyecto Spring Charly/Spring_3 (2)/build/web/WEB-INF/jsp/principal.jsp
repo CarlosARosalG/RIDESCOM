@@ -369,6 +369,149 @@ Funciones: Será la vista gerenal para los alumnos
                    height: auto;
                    margin: 0 auto;
            }
+           
+           
+           * {
+                    margin:0;
+                    padding:0;
+            }
+
+            /*EN EL VIDEO HAY UN ERROR POR EL CUAL NO SE VISUALIZA EN GOOGLE CHROME,
+            EL CÓDIGO A CONTINUACIÓN YA ESTA CORREGIDO*/
+
+            header {
+                    margin-top:10px;
+                width: 100%;
+                overflow: hidden;
+                height: 100px;
+                position: relative;
+            }
+
+            #bar {
+                    margin-top:3px;
+                width: 100%;
+                overflow: hidden;
+                height: 150px;
+                position: relative;
+            }
+
+            nav {
+                top:-20px;
+                position: absolute;
+                left:0;
+                right:0;
+                    margin:20px auto;
+                    max-width:1000px;
+                    width:90%;
+            }
+
+            nav ul {
+                    list-style:none;
+            }
+
+            nav > ul {
+                    display:table;
+                    width:100%;
+                    background:#000;
+                    position:relative;
+            }
+
+            nav > ul li {
+                    display:table-cell;
+            }
+
+            /*Sub-menu*/
+            nav > ul > li:hover > ul {
+                    display:block;
+                    height:100%;
+            }
+
+            nav > ul > li > ul {
+                    display:block;
+                    position:absolute;
+                    background:#000;
+                    left:0;
+                    right:0;
+                    overflow:hidden;
+                    height:0%;
+                    -webkit-transition: all .3s ease;
+                    -moz-transition: all .3s ease;
+                    -ms-transition: all .3s ease;
+                    -o-transition: all .3s ease;
+                    transition: all .3s ease;
+            }
+
+            nav > ul li a {
+                    color:#fff;
+                    display:block;
+                    line-height:20px;
+                    padding:20px;
+                    position: relative;
+                    text-align:center;
+                    text-decoration:none;
+                    -webkit-transition: all .3s ease;
+                    -moz-transition: all .3s ease;
+                    -ms-transition: all .3s ease;
+                    -o-transition: all .3s ease;
+                    transition: all .3s ease;
+            }
+
+            nav > ul > li > ul > li a:hover {
+                    background:#0101DF;
+            }
+
+            nav > ul > li > a span {
+                    background:#174459;
+                    display:block;
+                    height:100%;
+                    width:100%;
+                    left:0;
+                    position:absolute;
+                    top:-55px;
+                    -webkit-transition: all .3s ease;
+                    -moz-transition: all .3s ease;
+                    -ms-transition: all .3s ease;
+                    -o-transition: all .3s ease;
+                    transition: all .3s ease;
+            }
+
+            nav > ul > li > a span .fas {
+                    display:block;
+                    line-height:60px;
+            }
+
+            nav > ul > li > a:hover > span {
+                    top:0;
+            }
+
+            /*Colores*/
+            nav ul li a .primero {
+                    background:#0e5061;
+            }
+
+            nav ul li a .segundo {
+                    background:#5da5a2;
+            }
+
+            nav ul li a .tercero {
+                    background:#f25724;
+            }
+
+            nav ul li a .cuarto {
+                    background:#174459;
+            }
+
+            nav ul li a .quinto {
+                    background:#37a4d9;
+            }
+
+            nav ul li a .sexto {
+                    background:#0174DF;
+            }
+
+            nav ul li a .septimo {
+                    background: #0101DF;
+            }
 
 
         </style>
@@ -407,7 +550,9 @@ Funciones: Será la vista gerenal para los alumnos
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 	<!-- CSS en bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
+        
+	<!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	</head>
 </head>
 <body>
@@ -417,50 +562,39 @@ Funciones: Será la vista gerenal para los alumnos
 			<div id="logo">
 				<h1> RIDESCOM </h1>
 			</div>
-
-
-			<div class="clearfix">
-				
+			<div class="clearfix">	
+			</div>
+			<div class="clearfix">	
+			</div>
+			<div class="clearfix">	
 			</div>
 
-			<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
-			  <a class="navbar-brand" href="#">Inicio</a>
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-			  </button>
-			  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-			    <ul class="navbar-nav">
-			      <li class="nav-item">
-			        <a class="nav-link" href="Calen">Calendario</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="Resul">Resultados</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="iniciasesion.htm">Inicia Sesión</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="Contac">Contacto</a>
-			      </li>
-			      <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Coordinador
-			        </a>
-			        <div id="menu" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			          <a class="dropdown-item" href="#">Registra</a>
-			          <a class="dropdown-item" href="#">Modifica</a>
-			          <a class="dropdown-item" href="#">Contraseña</a>
-			        </div>
-			      </li>
-			    </ul>
-			  </div>
-			</nav>
-
-
+				
 		</header>
+
 
 	<!-- Carosel -->
 	<section>
+
+		<nav id="bar">
+					<ul>
+						<li><a href="#"><span class="primero"><i class="fas fa-home"></i></span> Inicio </a></li>
+						<li><a href="#"><span class="segundo"><i class="fas fa-calendar"></i></span> Registrate </a></li>
+						<li><a href="#"><span class="tercero"><i class="fas fa-calendar"></i></span> Calendario </a></li>
+						<li><a href="#"><span class="cuarto"><i class="fas fa-poll"></i></span> Resultados </a></li>
+						<li><a href="iniciasesion.html"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Inicia Sesión </a></li>
+						<li><a href="#"><span class="sexto"><i class="fas fa-address-book"></i></span> Contacto </a></li>
+						<li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> Coordinador </a>
+							<ul>
+								<li><a href="#">Item #1</a></li>
+								<li><a href="#">Item #2</a></li>
+								<li><a href="#">Item #3</a></li>
+								<li><a href="#">Item #4</a></li>
+								<li><a href="#">Item #5</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
 		<h2 id="titulo">Deportes en la ESCOM</h2>
 			
 				<div class="row justify-center">

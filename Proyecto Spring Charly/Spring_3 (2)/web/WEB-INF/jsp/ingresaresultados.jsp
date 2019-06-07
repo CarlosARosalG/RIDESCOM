@@ -1,0 +1,525 @@
+<%-- 
+    Document   : ingresaresultados
+    Created on : 27/05/2019, 04:53:38 PM
+    Author     : Carlos A. Rosales
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+	<meta charset="utf-8">
+	<title> Incribe Interpolitécnico </title>
+
+        <!--Jquery -->
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.min.js"></script>
+	<link rel="stylesheet"href="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" " href="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet"  href="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.theme.min.css">
+
+	<!-- Moment js  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es.js"></script>
+
+	<!-- Mis scripts -->
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<!-- Slider -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+	<!-- Bootstrap  -->	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- JS en bootstrap  -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<!-- CSS en bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	
+	<!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        
+        <style>
+            /*****************************************
+            * Autor: Rosales González Carlos Andrés *
+            * Titulo: Hoja de estilos 				 *
+            ****************************************/
+
+           .clearfix {
+                   float: none;
+                   clear: both;
+           }
+
+           #global {
+                   width: 80%;
+                   margin: 0px auto;
+                   margin-top: 30px;
+                   margin-bottom: 30px;
+                   background: white;
+                   padding: 20px;
+                   box-shadow: 0px 0px 50px gray;
+           }
+
+           body {
+                   background: #8360c3;
+                   background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
+                   background: linear-gradient(to right, #2ebf91, #8360c3);
+                   /* background-image: url(../img/fondo.jpg); */
+           }
+
+           #texto {
+                   text-align: center;
+           }
+
+           #titulo {
+                   text-align: center;
+                   font-family: "Verdana", "Arial";
+           }
+
+           #logo {
+                   font-family: "Verdana", "Arial";
+                   font-size: 28px;
+                   letter-spacing: 4px;
+                   line-height: 80px;
+                   color: white;
+                   width: auto;
+                   height: auto;
+                   text-transform: uppercase;
+                   text-align: center;
+                   background: #667db6;
+                   background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
+                   background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
+           }
+
+           /************************
+            * Diseño para buscador *
+           ************************/
+
+           #slidebar {
+                   font-family: "Helvitica", "Arial";
+                   width: 50%;
+                   float: all;
+           }
+
+           #slidebar h4 {
+                   margin-top: 50px;
+                   margin-bottom: 20px;
+                   text-align: center;
+                   line-height: 10px;
+                   color: #333;
+                   background: url('../img/negro.jpg') repeat-x;
+           }
+
+           #slidebar h4 span {
+                   background: white;
+                   padding: 5px;
+           }
+
+           #slidebar img {
+                   width: 100%;
+           }
+
+           #slidebar p {
+                   font-size: 15px;
+                   text-align: justify;
+           }
+
+           form input[type="text"],
+           form input[type="pasword"],
+           form input[type="email"],
+           form input[type="number"],
+           select {
+                   font-family: "Verdana", "Arial";
+                   font-size: 12px;
+                   text-align: center;
+                   padding: 5px;
+                   border-radius: 5px;
+                   border: 1px solid #ccc;
+                   width: 80%;
+                   box-shadow: 0px 0px 2px gray;
+                   margin-top: 5px;
+                   margin-bottom: 5px;
+           }
+
+           /***********************
+            * Essential Structure *
+            ***********************/
+           .flexsearch--wrapper {
+                   height: 20%;
+                   width: 60%;
+                   max-width: 80%;
+                   overflow: hidden;
+                   background: transparent;
+                   margin: 0;
+                   position: static;
+           }
+
+           .flexsearch--form {
+                   overflow: hidden;
+                   position: relative;
+           }
+
+           .flexsearch--input-wrapper {
+                   padding: 0 66px 0 0; /* Right padding for submit button width */
+                   overflow: hidden;
+           }
+
+           .flexsearch--input {
+                   width: 100%;
+           }
+
+           /***********************
+            * Configurable Styles *
+            ***********************/
+           .flexsearch {  
+                   padding: 0 5px 0 30px; /* Padding for other horizontal elements */
+           }
+
+           .flexsearch--input {
+                   -webkit-box-sizing: content-box;
+                   -moz-box-sizing: content-box;
+                   box-sizing: content-box;
+                   height: 30px;
+                   padding: 0 46px 0 10px;
+                   border-color: #667db6;
+                   border-radius: 35px; 
+                   border-style: solid;
+                   border-width: 5px;
+                   margin-top: 15px;
+                   color: #333;
+                   font-family: 'Helvetica', sans-serif;
+                   font-size: 16px;
+                   -webkit-appearance: none;
+                   -moz-appearance: none;
+           }
+
+           .flexsearch--submit {
+                   position: absolute;
+                   right: 0;
+                   top: 0;
+                   display: block;
+                   width: 50px;
+                   height: 50px;
+                   padding: 0;
+                   border: none;
+                   margin-top: 6px; /* margin-top + border-width */
+                   margin-right: 3px; /* border-width */
+                   background: transparent;
+                   color: #667db6;
+                   font-family: 'Helvetica', sans-serif;
+                   font-size: 40px;
+                   line-height: 60px;
+           }
+
+           .flexsearch--input:focus {
+                   outline: none;
+                   border-color: #333;
+           }
+
+           .flexsearch--input:focus.flexsearch--submit {
+                   color: #333; 
+           }
+
+           .flexsearch--submit:hover {
+                   color: #333;
+                   cursor: pointer;
+           }
+
+           ::-webkit-input-placeholder {
+                   color: #888;  
+           }
+
+           input:-moz-placeholder {
+             color: #888
+           }
+
+           .h1 {
+             float: left;
+             margin: 25px;
+             color: #333;
+             font-family: 'Helvetica', sans-serif;
+             font-size: 45px;
+             font-weight: bold;
+             line-height: 45px;
+             text-align: center;
+           }
+
+
+           /**********************
+            * Medios de Contacto *
+            *********************/
+
+           .cuadro {
+               width:800px;
+               margin:50px auto 0;
+               display:flex;
+           }
+           .cuadro .box {
+               position:relative;
+               width: 300px;
+               height:100px;
+               box-sizing:border-box;
+               text-align:center;
+               margin:0 10px;
+               background:#00171d;
+               overflow:hidden;
+               border-radius:4px;
+               box-shadow:0 0 0 2px rgba(0,7,10,1);
+           }
+           .cuadro .box .icon {
+               width:100%;
+               height:100%;
+               background: #0f0c29;  
+                   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+                   background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+               transition: 0.5s;
+           }
+           .cuadro .box .icon .fa {
+               font-size: 4em;
+               line-height:100px;
+               color: #FFFFFF;
+           }
+           .cuadro .box:hover .icon {
+               transform:scale(0);
+           }
+           .cuadro .box .details {
+               position:absolute;
+               top:0;
+               left:0;
+               right:0;
+               width:100%;
+               height:100%;
+               background:#03a9f4;
+               transition:0.5s;
+               transform:scale(2);
+               opacity:0;
+           }
+           .cuadro .box:hover .details {
+               transform:scale(1);
+               opacity:1;
+           }
+           .cuadro .box .details h3 {
+               margin:0;
+               padding:0;
+               line-height:100px;
+               font-size:24px;
+               color:#fff;
+           }
+           .cuadro .box .details:nth-child(2) .details {
+               background:#e91e63;
+           }
+           .cuadro .box .details:nth-child(2) .details {
+               background:#607d8b;
+           }
+
+
+           /************
+            * Carousel *
+            ***********/
+
+           #slider-home {
+                   margin-bottom: 50px;
+           }
+
+           #carouselExampleIndicators{
+                   left: 100px;
+                   width: 640px;
+           }
+
+           .slider-home {
+                   height: 100%;
+                   left: 0;
+                   top: 0;
+                   width: 340px;
+           }
+
+            .carousel-inner {
+                   background: rgba(216, 216, 216, 0.75);
+                   height: 100%;
+                   left: 0;
+                   top: 0;
+                   padding: 30px 45px;
+                   text-align: left;
+                   width: 340px;
+            }
+
+           .carousel-item img {
+                   display: block;
+                   max-width: 100%;
+                   height: auto;
+                   margin: 0 auto;
+           }
+        </style>
+	</head>
+</head>
+<body>
+	<section id="global">
+		<div id="titulo">
+			<h1> Ingresa resultados </h1>
+		</div>
+
+		<div class="col-12 ">
+			<div id="noti" class="alert alert-danger col-6" role="alert">
+			<p> 
+			  Ingresa los resultados de los participantes.
+			  Llena todos los campos.
+			</p>
+			</div>
+		</div>
+
+		<!-- Formulario --> 
+		<form class="needs-validation" novalidate>
+			<div class="form-row">
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"><i class="fas fa-id-card"></i> Boleta </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="Boleta" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+				    <button type="button" class="btn btn-outline-info">Buscar</button>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"><i class="fas fa-user"></i> Nombre </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="Nombre" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"><i class="fas fa-user"></i> Apellido Paterno </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="Apellido Peterno" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"><i class="fas fa-user"></i> Apellido Materno </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="Apellido Materno" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+		    	<div class="col-md-4 mb-3">
+			    	<label for="validationTooltip02"><i class="fas fa-graduation-cap"></i> Escuela </label>
+			    	<input type="text" class="form-control" id="validationTooltip02" value="Escuela" disabled/>
+			    	<div class="valid-tooltip">
+			      		OK
+			    	</div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"><i class="fas fa-graduation-cap"></i> Carrera </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="Carrera" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"><i class="fas fa-walking"></i> Deporte </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="Deporte" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"><i class="fas fa-walking"></i> Sub-división </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="Sub-división" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"><i class="fas fa-trophy"></i> Posición </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="Posicion" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"><i class="fas fa-walking"></i> Prueba </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="Prueba" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"><i class="fas fa-stopwatch"></i> Marca </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="Marca" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			</div>
+			<button type="button" class="btn  btn-outline-success "> Registrar </button>
+		  	<button type="button" class="btn  btn-outline-danger "> Cancelar </button>
+		</form>
+
+		<div class="clearfix" >&nbsp;</div>
+		<div id="titulo">
+			<h3> Datos registrados </h3>
+		</div>
+		<div class="clearfix" >&nbsp;</div>
+		<div class="col-sm-12 main-box">
+			<div class="responsive-table table-responsive clearfix">
+	            <table id="listado" class="table table-light">
+	                <thead>
+	                    <tr>
+	                        <th> Nombre </th>
+	                        <th> Boleta </th>
+	                        <th> Unidad Académica </th>
+	                        <th> Deporte </th>
+	                        <th> Sub-división </th>
+	                        <th> Posición </th>
+	                        <th> Prueba </th>
+	                        <th> Marca </th>
+	                    </tr>
+	                </thead>
+	                <tbody>
+	                    <tr>
+	                        <td> Carlos </td>
+	                        <td> 201563XXX </td>
+	                        <td> ESCOM </td>
+	                        <td> Atletismo </td>
+	                        <td> sub-17 </td>
+	                        <td> 4 </td>
+	                        <td> 100m. </td>
+	                        <td> 1:01 </td>
+	                    </tr>
+	                </tbody>
+	                <tbody>
+	                    <tr>
+	                        <td> Carlos </td>
+	                        <td> 201563XXX </td>
+	                        <td> ESCOM </td>
+	                        <td> Atletismo </td>
+	                        <td> sub-17 </td>
+	                        <td> 4 </td>
+	                        <td> 100m. </td>
+	                        <td> 1:01 </td>
+	                    </tr>
+	                </tbody>
+	                <tbody>
+	                    <tr>
+	                        <td> Carlos </td>
+	                        <td> 201563XXX </td>
+	                        <td> ESCOM </td>
+	                        <td> Atletismo </td>
+	                        <td> sub-17 </td>
+	                        <td> 4 </td>
+	                        <td> 100m. </td>
+	                        <td> 1:01 </td>
+	                    </tr>
+	                </tbody>
+	            </table>
+	        </div>
+	    </div>
+	</section>
+</body>
+</html>
