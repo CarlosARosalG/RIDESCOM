@@ -25,20 +25,48 @@ Funciones: Servirá para que el alumno visualice en una tabla los eventos a los 
             * Autor: Rosales González Carlos Andrés *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
+
            .clearfix {
                    float: none;
                    clear: both;
            }
 
            #global {
-                   width: 65%;
+                   width: 80%;
                    margin: 0px auto;
                    margin-top: 30px;
+                   margin-bottom: 30px;
                    background: white;
                    padding: 20px;
                    box-shadow: 0px 0px 50px gray;
-                   text-align: center;
-                   font-size: 20px;
+           }
+
+           body {
+                   background: #000046;
+                   background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046);
+                   background: linear-gradient(to bottom, #1CB5E0, #000046);
+
+                   /* background-image: url(../img/fondo.jpg); */
+           }
+
+           .subir {
+                   color: white;
+                   text-decoration: none;
+                   display: block;
+                   float: right;
+           }
+
+           footer {
+                   font-family: "Helvitica", "Arial";
+                   color: white;
+                   background: rgba(51, 51, 51, 0.70);
+                   line-height: 47px;
+                   width: 80%;
+                   height: 80px;
+                   margin: 0px auto;
+                   margin-top: 30px;
+                   padding: 20px;
+                   margin-bottom: 30px;
            }
 
            #texto {
@@ -63,39 +91,6 @@ Funciones: Servirá para que el alumno visualice en una tabla los eventos a los 
                    background: #667db6;
                    background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
                    background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
-
-           }
-
-           /************
-            * Bar menu *
-           ************/
-
-           #menu {
-                   font-family: "Helvitica", "Arial";
-                   background: #667db6;
-                   background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
-                   background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
-                   width: 100%;
-                   text-transform: uppercase;
-                   margin-bottom: 20px;
-           }
-           #menu ul {
-                   line-height: 46px;
-                   list-style: none;
-           }
-
-           #menu li {
-                   height: 46px;
-                   display: inline-block;
-                   transition: all 300ms;
-           }
-
-           #menu a {
-                   display: block;
-                   color: white;
-                   text-decoration: none;
-                   padding-left: 30px;
-                   padding-right: 30px;
            }
 
            /************************
@@ -147,12 +142,6 @@ Funciones: Servirá para que el alumno visualice en una tabla los eventos a los 
                    margin-top: 5px;
                    margin-bottom: 5px;
            }
-
-
-           /************************
-            * Diseño para buscador *
-           ************************/
-
 
            /***********************
             * Essential Structure *
@@ -262,12 +251,6 @@ Funciones: Servirá para que el alumno visualice en una tabla los eventos a los 
             * Medios de Contacto *
             *********************/
 
-           body {
-               margin:0;
-               padding:0;
-               font-family:sans-serif;
-               background:#002b38;
-           }
            .cuadro {
                width:800px;
                margin:50px auto 0;
@@ -370,6 +353,148 @@ Funciones: Servirá para que el alumno visualice en una tabla los eventos a los 
            }
 
 
+
+           * {
+                   margin:0;
+                   padding:0;
+           }
+
+           /*EN EL VIDEO HAY UN ERROR POR EL CUAL NO SE VISUALIZA EN GOOGLE CHROME,
+           EL CÓDIGO A CONTINUACIÓN YA ESTA CORREGIDO*/
+
+           header {
+                   margin-top:10px;
+               width: 100%;
+               overflow: hidden;
+               height: 100px;
+               position: relative;
+           }
+
+           #bar {
+                   margin-top:3px;
+               width: 100%;
+               overflow: hidden;
+               height: 60px;
+               position: relative;
+           }
+
+           nav {
+               top:-20px;
+               position: absolute;
+               left:0;
+               right:0;
+                   margin:20px auto;
+                   max-width:1000px;
+                   width:90%;
+           }
+
+           nav ul {
+                   list-style:none;
+           }
+
+           nav > ul {
+                   display:table;
+                   width:100%;
+                   background:#000;
+                   position:relative;
+           }
+
+           nav > ul li {
+                   display:table-cell;
+           }
+
+           /*Sub-menu*/
+           nav > ul > li:hover > ul {
+                   display:block;
+                   height:100%;
+           }
+
+           nav > ul > li > ul {
+                   display:block;
+                   position:absolute;
+                   background:#000;
+                   left:0;
+                   right:0;
+                   overflow:hidden;
+                   height:0%;
+                   -webkit-transition: all .3s ease;
+                   -moz-transition: all .3s ease;
+                   -ms-transition: all .3s ease;
+                   -o-transition: all .3s ease;
+                   transition: all .3s ease;
+           }
+
+           nav > ul li a {
+                   color:#fff;
+                   display:block;
+                   line-height:20px;
+                   padding:20px;
+                   position: relative;
+                   text-align:center;
+                   text-decoration:none;
+                   -webkit-transition: all .3s ease;
+                   -moz-transition: all .3s ease;
+                   -ms-transition: all .3s ease;
+                   -o-transition: all .3s ease;
+                   transition: all .3s ease;
+           }
+
+           nav > ul > li > ul > li a:hover {
+                   background:#0101DF;
+           }
+
+           nav > ul > li > a span {
+                   background:#174459;
+                   display:block;
+                   height:100%;
+                   width:100%;
+                   left:0;
+                   position:absolute;
+                   top:-55px;
+                   -webkit-transition: all .3s ease;
+                   -moz-transition: all .3s ease;
+                   -ms-transition: all .3s ease;
+                   -o-transition: all .3s ease;
+                   transition: all .3s ease;
+           }
+
+           nav > ul > li > a span .fas {
+                   display:block;
+                   line-height:60px;
+           }
+
+           nav > ul > li > a:hover > span {
+                   top:0;
+           }
+
+           /*Colores*/
+           nav ul li a .primero {
+                   background:#0e5061;
+           }
+
+           nav ul li a .segundo {
+                   background:#5da5a2;
+           }
+
+           nav ul li a .tercero {
+                   background:#f25724;
+           }
+
+           nav ul li a .cuarto {
+                   background:#174459;
+           }
+
+           nav ul li a .quinto {
+                   background:#37a4d9;
+           }
+
+           nav ul li a .sexto {
+                   background:#0174DF;
+           }
+
+           nav ul li a .septimo {
+                   background: #0101DF;
+           }
         </style>
 
 	<!--Jquery -->
@@ -409,61 +534,41 @@ Funciones: Servirá para que el alumno visualice en una tabla los eventos a los 
 
 	</head>
 </head>
-<body>
+<body id="fon">
+	<section id="global">
+
 	<!-- Cabecera -->
 		<header>
 			<div id="logo">
 				<h1> RIDESCOM </h1>
 			</div>
-
-
-			<div class="clearfix">
-				
+			<div class="clearfix">	
 			</div>
-
-			<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
-			  <a class="navbar-brand" href="#">Inicio</a>
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-			  </button>
-			  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-			    <ul class="navbar-nav">
-			      <li class="nav-item active">
-			        <a class="nav-link" href="#">Registrate <span class="sr-only">(current)</span></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#">Calendario</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#">Resultados</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#">Inicia Sesión</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#">Contacto</a>
-			      </li>
-			      <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Coordinador
-			        </a>
-			        <div id="menu" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			          <a class="dropdown-item" href="#">Registra</a>
-			          <a class="dropdown-item" href="#">Modifica</a>
-			          <a class="dropdown-item" href="#">Contraseña</a>
-			        </div>
-			      </li>
-			    </ul>
-			  </div>
-			</nav>
-
-
+			
 		</header>
-
-
-	<!-- Calendario -->
-		<section>
-			<div class="clearfix" >&nbsp;</div>
+	<!-- Menú -->
+		<nav id="bar">
+			<ul>
+				<li><a href="#"><span class="primero"><i class="fas fa-home"></i></span> Inicio </a></li>
+				<li><a href="#"><span class="segundo"><i class="fas fa-calendar"></i></span> Registrate </a></li>
+				<li><a href="#"><span class="tercero"><i class="fas fa-calendar"></i></span> Calendario </a></li>
+				<li><a href="#"><span class="cuarto"><i class="fas fa-poll"></i></span> Resultados </a></li>
+				<li><a href="iniciasesion.html"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Inicia Sesión </a></li>
+				<li><a href="#Contacto"><span class="sexto"><i class="fas fa-address-book"></i></span> Contacto </a></li>
+				<li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> Coordinador </a>
+					<ul>
+						<li><a href="#">Item #1</a></li>
+						<li><a href="#">Item #2</a></li>
+						<li><a href="#">Item #3</a></li>
+						<li><a href="#">Item #4</a></li>
+						<li><a href="#">Item #5</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+                
+                <section>
+			
 			<h2 id="titulo">Eventos a los que te has inscrito</h2>
 				<div class="container">
 					<div class="table-responsive">
@@ -511,6 +616,9 @@ Funciones: Servirá para que el alumno visualice en una tabla los eventos a los 
 					</div>	
 				</div>
 		</section>
-
+	
+		<div class="clearfix" >&nbsp;</div>
+		<div class="clearfix" >&nbsp;</div>
+	</section>
 </body>
 </html>
