@@ -22,336 +22,352 @@ Funciones: Será la vista gerenal para los alumnos
 	<!-- Estilos CSS 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">-->
         <style type="text/css">
-            /*****************************************
-            * Autor: Rosales González Carlos Andrés *
-            * Titulo: Hoja de estilos 				 *
-            ****************************************/
+            	/*****************************************
+                * Autor: Rosales González Carlos Andrés *
+                * Titulo: Hoja de estilos 				 *
+                ****************************************/
 
-           .clearfix {
-                   float: none;
-                   clear: both;
-           }
+               .clearfix {
+                       float: none;
+                       clear: both;
+               }
 
-           #global {
-                   width: 80%;
-                   margin: 0px auto;
-                   margin-top: 30px;
-                   margin-bottom: 30px;
-                   background: white;
-                   padding: 20px;
-                   box-shadow: 0px 0px 50px gray;
-           }
+               #global {
+                       width: 80%;
+                       margin: 0px auto;
+                       margin-top: 30px;
+                       margin-bottom: 30px;
+                       background: white;
+                       padding: 20px;
+                       box-shadow: 0px 0px 50px gray;
+               }
 
-           body {
-                   background: #000046;
-                   background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046);
-                   background: linear-gradient(to bottom, #1CB5E0, #000046);
+               body {
+                       background: #000046;
+                       background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046);
+                       background: linear-gradient(to bottom, #1CB5E0, #000046);
 
-                   /* background-image: url(../img/fondo.jpg); */
-           }
+                       /* background-image: url(../img/fondo.jpg); */
+               }
 
-           .subir {
-                   color: white;
-                   text-decoration: none;
-                   display: block;
-                   float: right;
-           }
+               .subir {
+                       color: white;
+                       text-decoration: none;
+                       display: block;
+                       float: right;
+               }
 
-           footer {
-                   font-family: "Helvitica", "Arial";
-                   color: white;
-                   background: rgba(51, 51, 51, 0.70);
-                   line-height: 47px;
-                   width: 80%;
-                   height: 80px;
-                   margin: 0px auto;
-                   margin-top: 30px;
-                   padding: 20px;
-                   margin-bottom: 30px;
-           }
+               footer {
+                       font-family: "Helvitica", "Arial";
+                       color: white;
+                       background: rgba(51, 51, 51, 0.70);
+                       line-height: 47px;
+                       width: 80%;
+                       height: 80px;
+                       margin: 0px auto;
+                       margin-top: 30px;
+                       padding: 20px;
+                       margin-bottom: 30px;
+               }
 
-           #texto {
-                   text-align: center;
-           }
+               #texto {
+                       text-align: center;
+               }
 
-           #titulo {
-                   text-align: center;
-                   font-family: "Verdana", "Arial";
-           }
+               #titulo {
+                       text-align: center;
+                       font-family: "Verdana", "Arial";
+               }
 
-           #logo {
-                   font-family: "Verdana", "Arial";
-                   font-size: 28px;
-                   letter-spacing: 4px;
-                   line-height: 80px;
-                   color: white;
-                   width: auto;
-                   height: auto;
-                   text-transform: uppercase;
-                   text-align: center;
-                   background: #667db6;
-                   background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
-                   background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
-           }
+               #logo {
+                       font-family: "Verdana", "Arial";
+                       font-size: 28px;
+                       letter-spacing: 4px;
+                       line-height: 80px;
+                       color: white;
+                       width: auto;
+                       height: auto;
+                       text-transform: uppercase;
+                       text-align: center;
+                       background: #667db6;
+                       background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
+                       background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
+               }
 
-           /************************
-            * Diseño para buscador *
-           ************************/
+               #logoi {
+                       text-align: center;
+               }
 
-           #slidebar {
-                   font-family: "Helvitica", "Arial";
-                   width: 50%;
-                   float: all;
-           }
+               /************************
+                * Diseño para buscador *
+               ************************/
 
-           #slidebar h4 {
-                   margin-top: 50px;
-                   margin-bottom: 20px;
-                   text-align: center;
-                   line-height: 10px;
-                   color: #333;
-                   background: url('../img/negro.jpg') repeat-x;
-           }
+               #slidebar {
+                       font-family: "Helvitica", "Arial";
+                       width: 50%;
+                       float: all;
+               }
 
-           #slidebar h4 span {
-                   background: white;
-                   padding: 5px;
-           }
+               #slidebar h4 {
+                       margin-top: 50px;
+                       margin-bottom: 20px;
+                       text-align: center;
+                       line-height: 10px;
+                       color: #333;
+                       background: url('../img/negro.jpg') repeat-x;
+               }
 
-           #slidebar img {
-                   width: 100%;
-           }
+               #slidebar h4 span {
+                       background: white;
+                       padding: 5px;
+               }
 
-           #slidebar p {
-                   font-size: 15px;
-                   text-align: justify;
-           }
+               #slidebar img {
+                       width: 100%;
+               }
 
-           form input[type="text"],
-           form input[type="pasword"],
-           form input[type="email"],
-           form input[type="number"],
-           select {
-                   font-family: "Verdana", "Arial";
-                   font-size: 12px;
-                   text-align: center;
-                   padding: 5px;
-                   border-radius: 5px;
-                   border: 1px solid #ccc;
-                   width: 80%;
-                   box-shadow: 0px 0px 2px gray;
-                   margin-top: 5px;
-                   margin-bottom: 5px;
-           }
+               #slidebar p {
+                       font-size: 15px;
+                       text-align: justify;
+               }
 
-           /***********************
-            * Essential Structure *
-            ***********************/
-           .flexsearch--wrapper {
-                   height: 20%;
-                   width: 60%;
-                   max-width: 80%;
-                   overflow: hidden;
-                   background: transparent;
-                   margin: 0;
-                   position: static;
-           }
+               form input[type="text"],
+               form input[type="pasword"],
+               form input[type="email"],
+               form input[type="number"],
+               select {
+                       font-family: "Verdana", "Arial";
+                       font-size: 12px;
+                       text-align: center;
+                       padding: 5px;
+                       border-radius: 5px;
+                       border: 1px solid #ccc;
+                       width: 80%;
+                       box-shadow: 0px 0px 2px gray;
+                       margin-top: 5px;
+                       margin-bottom: 5px;
+               }
 
-           .flexsearch--form {
-                   overflow: hidden;
-                   position: relative;
-           }
+               /***********************
+                * Essential Structure *
+                ***********************/
+               .flexsearch--wrapper {
+                       height: 20%;
+                       width: 60%;
+                       max-width: 80%;
+                       overflow: hidden;
+                       background: transparent;
+                       margin: 0;
+                       position: static;
+               }
 
-           .flexsearch--input-wrapper {
-                   padding: 0 66px 0 0; /* Right padding for submit button width */
-                   overflow: hidden;
-           }
+               .flexsearch--form {
+                       overflow: hidden;
+                       position: relative;
+               }
 
-           .flexsearch--input {
-                   width: 100%;
-           }
+               .flexsearch--input-wrapper {
+                       padding: 0 66px 0 0; /* Right padding for submit button width */
+                       overflow: hidden;
+               }
 
-           /***********************
-            * Configurable Styles *
-            ***********************/
-           .flexsearch {  
-                   padding: 0 5px 0 30px; /* Padding for other horizontal elements */
-           }
+               .flexsearch--input {
+                       width: 100%;
+               }
 
-           .flexsearch--input {
-                   -webkit-box-sizing: content-box;
-                   -moz-box-sizing: content-box;
-                   box-sizing: content-box;
-                   height: 30px;
-                   padding: 0 46px 0 10px;
-                   border-color: #667db6;
-                   border-radius: 35px; 
-                   border-style: solid;
-                   border-width: 5px;
-                   margin-top: 15px;
-                   color: #333;
-                   font-family: 'Helvetica', sans-serif;
-                   font-size: 16px;
-                   -webkit-appearance: none;
-                   -moz-appearance: none;
-           }
+               /***********************
+                * Configurable Styles *
+                ***********************/
+               .flexsearch {  
+                       padding: 0 5px 0 30px; /* Padding for other horizontal elements */
+               }
 
-           .flexsearch--submit {
-                   position: absolute;
-                   right: 0;
-                   top: 0;
-                   display: block;
-                   width: 50px;
-                   height: 50px;
-                   padding: 0;
-                   border: none;
-                   margin-top: 6px; /* margin-top + border-width */
-                   margin-right: 3px; /* border-width */
-                   background: transparent;
-                   color: #667db6;
-                   font-family: 'Helvetica', sans-serif;
-                   font-size: 40px;
-                   line-height: 60px;
-           }
+               .flexsearch--input {
+                       -webkit-box-sizing: content-box;
+                       -moz-box-sizing: content-box;
+                       box-sizing: content-box;
+                       height: 30px;
+                       padding: 0 46px 0 10px;
+                       border-color: #667db6;
+                       border-radius: 35px; 
+                       border-style: solid;
+                       border-width: 5px;
+                       margin-top: 15px;
+                       color: #333;
+                       font-family: 'Helvetica', sans-serif;
+                       font-size: 16px;
+                       -webkit-appearance: none;
+                       -moz-appearance: none;
+               }
 
-           .flexsearch--input:focus {
-                   outline: none;
-                   border-color: #333;
-           }
+               .flexsearch--submit {
+                       position: absolute;
+                       right: 0;
+                       top: 0;
+                       display: block;
+                       width: 50px;
+                       height: 50px;
+                       padding: 0;
+                       border: none;
+                       margin-top: 6px; /* margin-top + border-width */
+                       margin-right: 3px; /* border-width */
+                       background: transparent;
+                       color: #667db6;
+                       font-family: 'Helvetica', sans-serif;
+                       font-size: 40px;
+                       line-height: 60px;
+               }
 
-           .flexsearch--input:focus.flexsearch--submit {
-                   color: #333; 
-           }
+               .flexsearch--input:focus {
+                       outline: none;
+                       border-color: #333;
+               }
 
-           .flexsearch--submit:hover {
-                   color: #333;
-                   cursor: pointer;
-           }
+               .flexsearch--input:focus.flexsearch--submit {
+                       color: #333; 
+               }
 
-           ::-webkit-input-placeholder {
-                   color: #888;  
-           }
+               .flexsearch--submit:hover {
+                       color: #333;
+                       cursor: pointer;
+               }
 
-           input:-moz-placeholder {
-             color: #888
-           }
+               ::-webkit-input-placeholder {
+                       color: #888;  
+               }
 
-           .h1 {
-             float: left;
-             margin: 25px;
-             color: #333;
-             font-family: 'Helvetica', sans-serif;
-             font-size: 45px;
-             font-weight: bold;
-             line-height: 45px;
-             text-align: center;
-           }
+               input:-moz-placeholder {
+                 color: #888
+               }
 
-
-           /**********************
-            * Medios de Contacto *
-            *********************/
-
-           .cuadro {
-               width:800px;
-               margin:50px auto 0;
-               display:flex;
-           }
-           .cuadro .box {
-               position:relative;
-               width: 300px;
-               height:100px;
-               box-sizing:border-box;
-               text-align:center;
-               margin:0 10px;
-               background:#00171d;
-               overflow:hidden;
-               border-radius:4px;
-               box-shadow:0 0 0 2px rgba(0,7,10,1);
-           }
-           .cuadro .box .icon {
-               width:100%;
-               height:100%;
-               background: #0f0c29;  
-                   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-                   background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
-               transition: 0.5s;
-           }
-           .cuadro .box .icon .fa {
-               font-size: 4em;
-               line-height:100px;
-               color: #FFFFFF;
-           }
-           .cuadro .box:hover .icon {
-               transform:scale(0);
-           }
-           .cuadro .box .details {
-               position:absolute;
-               top:0;
-               left:0;
-               right:0;
-               width:100%;
-               height:100%;
-               background:#03a9f4;
-               transition:0.5s;
-               transform:scale(2);
-               opacity:0;
-           }
-           .cuadro .box:hover .details {
-               transform:scale(1);
-               opacity:1;
-           }
-           .cuadro .box .details h3 {
-               margin:0;
-               padding:0;
-               line-height:100px;
-               font-size:24px;
-               color:#fff;
-           }
-           .cuadro .box .details:nth-child(2) .details {
-               background:#e91e63;
-           }
-           .cuadro .box .details:nth-child(2) .details {
-               background:#607d8b;
-           }
+               .h1 {
+                 float: left;
+                 margin: 25px;
+                 color: #333;
+                 font-family: 'Helvetica', sans-serif;
+                 font-size: 45px;
+                 font-weight: bold;
+                 line-height: 45px;
+                 text-align: center;
+               }
 
 
-           /************
-            * Carousel *
-            ***********/
+               /**********************
+                * Medios de Contacto *
+                *********************/
 
-           #slider-home {
-                   margin-bottom: 50px;
-           }
+               .cuadro {
+                   width:800px;
+                   margin:50px auto 0;
+                   display:flex;
+               }
+               .cuadro .box {
+                   position:relative;
+                   width: 300px;
+                   height:100px;
+                   box-sizing:border-box;
+                   text-align:center;
+                   margin:0 10px;
+                   background:#00171d;
+                   overflow:hidden;
+                   border-radius:4px;
+                   box-shadow:0 0 0 2px rgba(0,7,10,1);
+               }
+               .cuadro .box .icon {
+                   width:100%;
+                   height:100%;
+                   background: #0f0c29;  
+                       background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+                       background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+                   transition: 0.5s;
+               }
+               .cuadro .box .icon .fa {
+                   font-size: 4em;
+                   line-height:100px;
+                   color: #FFFFFF;
+               }
+               .cuadro .box:hover .icon {
+                   transform:scale(0);
+               }
+               .cuadro .box .details {
+                   position:absolute;
+                   top:0;
+                   left:0;
+                   right:0;
+                   width:100%;
+                   height:100%;
+                   background:#03a9f4;
+                   transition:0.5s;
+                   transform:scale(2);
+                   opacity:0;
+               }
+               .cuadro .box:hover .details {
+                   transform:scale(1);
+                   opacity:1;
+               }
+               .cuadro .box .details h3 {
+                   margin:0;
+                   padding:0;
+                   line-height:100px;
+                   font-size:24px;
+                   color:#fff;
+               }
+               .cuadro .box .details:nth-child(2) .details {
+                   background:#e91e63;
+               }
+               .cuadro .box .details:nth-child(2) .details {
+                   background:#607d8b;
+               }
 
-           #carouselExampleIndicators{
-                   left: 100px;
-                   width: 640px;
-           }
 
-           .slider-home {
-                   height: 100%;
-                   left: 0;
-                   top: 0;
-                   width: 340px;
-           }
+               /************
+                * Carousel *
+                ***********/
 
-            .carousel-inner {
-                   background: rgba(216, 216, 216, 0.75);
-                   height: 100%;
-                   left: 0;
-                   top: 0;
-                   padding: 30px 45px;
-                   text-align: left;
-                   width: 340px;
-            }
+               #slider-home {
+                       margin-bottom: 50px;
+               }
 
-           .carousel-item img {
-                   display: block;
-                   max-width: 100%;
-                   height: auto;
-                   margin: 0 auto;
-           }
+               #carouselExampleIndicators{
+                       width: 80%;
+                       margin: 0px auto;
+                       margin-top: 20px;
+                       margin-bottom: 30px;
+                       background: white;
+                       padding: 20px;
+               }
+
+               .slider-home {
+                       height: 100%;
+                       left: 0;
+                       top: 0;
+                       width: 340px;
+               }
+
+                .carousel-inner {
+                       background: rgba(255, 255, 255, 0.55);
+                       height: 100%;
+                       left: 0;
+                       top: 0;
+                       padding: 30px 45px;
+                       text-align: left;
+                       width: 340px;
+                }
+
+               .carousel-item img {
+                       display: block;
+                       max-width: 100%;
+                       height: auto;
+                       margin: 0 auto;
+               }
+
+               .carousel-control-prev-icon {
+                       background: black;
+                       margin-top: 100px;
+                       width: 10px;
+               }
+
+
 
            * {
                    margin:0;
@@ -543,12 +559,8 @@ Funciones: Será la vista gerenal para los alumnos
 
 	<!-- Cabecera -->
 		<header>
-			<div id="logo">
-				<h1> RIDESCOM </h1>
-			</div>
-			<div class="clearfix">	
-			</div>
-			<div class="clearfix">	
+			<div id="logoi">
+				<img src="img/ridescom.jpg" width="500">
 			</div>
 			<div class="clearfix">	
 			</div>
@@ -557,23 +569,24 @@ Funciones: Será la vista gerenal para los alumnos
 		<nav id="bar">
 			<ul>
 				<li><a href="#"><span class="primero"><i class="fas fa-home"></i></span> Inicio </a></li>
-				<li><a href="#"><span class="segundo"><i class="fas fa-calendar"></i></span> Registrate </a></li>
-				<li><a href="#"><span class="tercero"><i class="fas fa-calendar"></i></span> Calendario </a></li>
-				<li><a href="#"><span class="cuarto"><i class="fas fa-poll"></i></span> Resultados </a></li>
-				<li><a href="iniciasesion.html"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Inicia Sesión </a></li>
+<!--				<li><a href="#"><span class="segundo"><i class="fas fa-calendar"></i></span> Registrate </a></li>-->
+				<li><a href="#calendario"><span class="tercero"><i class="fas fa-calendar"></i></span> Calendario </a></li>
+				<li><a href="#resultados"><span class="cuarto"><i class="fas fa-poll"></i></span> Resultados </a></li>
+				<li><a href="iniciosesion.htm"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Inicia Sesión </a></li>
 				<li><a href="#Contacto"><span class="sexto"><i class="fas fa-address-book"></i></span> Contacto </a></li>
 				<li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> Coordinador </a>
 					<ul>
-						<li><a href="#">Item #1</a></li>
-						<li><a href="#">Item #2</a></li>
-						<li><a href="#">Item #3</a></li>
-						<li><a href="#">Item #4</a></li>
-						<li><a href="#">Item #5</a></li>
+						<li><a href="#"> Inicia sesión </a></li>
+						<li><a href="#"> Ingresa resultados </a></li>
+						<li><a href="#"> Registra un entrenador </a></li>
+						<li><a href="#"> Item #4 </a></li>
+						<li><a href="#"> Item #5 </a></li>
 					</ul>
 				</li>
 			</ul>
 		</nav>
 
+		<section>
 		<h2 id="titulo">Deportes en la ESCOM</h2>
 		
 	<!-- Slider -->	
@@ -673,6 +686,7 @@ Funciones: Será la vista gerenal para los alumnos
 	  			</div>
 			</div>
 		</div>
+		</section>
 			
 	<!-- Calendario -->
 		<h2 id="titulo">Calendario de eventos</h2>
