@@ -3,19 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/src/java/Controller/controlador.java</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/web/redirect.jsp</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/web/WEB-INF/jsp/difundirevento.jsp</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/web/WEB-INF/jsp/inscripcioninter2.jsp</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/web/WEB-INF/jsp/consulta_inscripcion.jsp</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/src/java/Config/Conexion.java</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/web/WEB-INF/jsp/principal.jsp</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/src/java/Controller/insertadatos.java</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/web/WEB-INF/jsp/ingresaresultados.jsp</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/web/WEB-INF/jsp/inscripcioninter3.jsp</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/web/WEB-INF/dispatcher-servlet.xml</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/web/WEB-INF/jsp/registroevento.jsp</file>
-            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3/web/WEB-INF/jsp/registroentrenador.jsp</file>
+            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3%20(2)/web/WEB-INF/jsp/consulta_inscripcion.jsp</file>
+            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3%20(2)/web/WEB-INF/jsp/principal.jsp</file>
+            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3%20(2)/src/java/mx/ipn/escom/ridescom/dao/jpa/JpaDaoBase.java</file>
+            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3%20(2)/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3%20(2)/src/java/mx/ipn/escom/ridescom/model/Alumno.java</file>
+            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3%20(2)/src/java/mx/ipn/escom/ridescom/controller/insertadatos.java</file>
+            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3%20(2)/src/java/mx/ipn/escom/ridescom/dao/jpa/AlumnoJpaDao.java</file>
+            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3%20(2)/web/redirect.jsp</file>
+            <file>file:/C:/Users/Carlos%20A.%20Rosales/Desktop/Spring_3%20(2)/src/java/mx/ipn/escom/ridescom/controller/controlador.java</file>
         </group>
     </open-files>
 </project-private>

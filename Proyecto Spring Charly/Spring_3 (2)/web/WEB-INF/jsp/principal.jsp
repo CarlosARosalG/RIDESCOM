@@ -22,496 +22,495 @@ Funciones: Será la vista gerenal para los alumnos
 	<!-- Estilos CSS 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">-->
         <style type="text/css">
-            /*****************************************
-            * Autor: Rosales González Carlos Andrés *
-            * Titulo: Hoja de estilos 				 *
-            ****************************************/
-           .clearfix {
-                   float: none;
-                   clear: both;
+            	/*****************************************
+                * Autor: Rosales González Carlos Andrés *
+                * Titulo: Hoja de estilos 				 *
+                ****************************************/
+
+               .clearfix {
+                       float: none;
+                       clear: both;
+               }
+
+               #global {
+                       width: 80%;
+                       margin: 0px auto;
+                       margin-top: 30px;
+                       margin-bottom: 30px;
+                       background: white;
+                       padding: 20px;
+                       box-shadow: 0px 0px 50px gray;
+               }
+
+               body {
+                       background: #000046;
+                       background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046);
+                       background: linear-gradient(to bottom, #1CB5E0, #000046);
+
+                       /* background-image: url(../img/fondo.jpg); */
+               }
+
+               .subir {
+                       color: white;
+                       text-decoration: none;
+                       display: block;
+                       float: right;
+               }
+
+               footer {
+                       font-family: "Helvitica", "Arial";
+                       color: white;
+                       background: rgba(51, 51, 51, 0.70);
+                       line-height: 47px;
+                       width: 80%;
+                       height: 80px;
+                       margin: 0px auto;
+                       margin-top: 30px;
+                       padding: 20px;
+                       margin-bottom: 30px;
+               }
+
+               #texto {
+                       text-align: center;
+               }
+
+               #titulo {
+                       text-align: center;
+                       font-family: "Verdana", "Arial";
+               }
+
+               #logo {
+                       font-family: "Verdana", "Arial";
+                       font-size: 28px;
+                       letter-spacing: 4px;
+                       line-height: 80px;
+                       color: white;
+                       width: auto;
+                       height: auto;
+                       text-transform: uppercase;
+                       text-align: center;
+                       background: #667db6;
+                       background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
+                       background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
+               }
+
+               #logoi {
+                       text-align: center;
+               }
+
+               /************************
+                * Diseño para buscador *
+               ************************/
+
+               #slidebar {
+                       font-family: "Helvitica", "Arial";
+                       width: 50%;
+                       float: all;
+               }
+
+               #slidebar h4 {
+                       margin-top: 50px;
+                       margin-bottom: 20px;
+                       text-align: center;
+                       line-height: 10px;
+                       color: #333;
+                       background: url('../img/negro.jpg') repeat-x;
+               }
+
+               #slidebar h4 span {
+                       background: white;
+                       padding: 5px;
+               }
+
+               #slidebar img {
+                       width: 100%;
+               }
+
+               #slidebar p {
+                       font-size: 15px;
+                       text-align: justify;
+               }
+
+               form input[type="text"],
+               form input[type="pasword"],
+               form input[type="email"],
+               form input[type="number"],
+               select {
+                       font-family: "Verdana", "Arial";
+                       font-size: 12px;
+                       text-align: center;
+                       padding: 5px;
+                       border-radius: 5px;
+                       border: 1px solid #ccc;
+                       width: 80%;
+                       box-shadow: 0px 0px 2px gray;
+                       margin-top: 5px;
+                       margin-bottom: 5px;
+               }
+
+               /***********************
+                * Essential Structure *
+                ***********************/
+               .flexsearch--wrapper {
+                       height: 20%;
+                       width: 60%;
+                       max-width: 80%;
+                       overflow: hidden;
+                       background: transparent;
+                       margin: 0;
+                       position: static;
+               }
+
+               .flexsearch--form {
+                       overflow: hidden;
+                       position: relative;
+               }
+
+               .flexsearch--input-wrapper {
+                       padding: 0 66px 0 0; /* Right padding for submit button width */
+                       overflow: hidden;
+               }
+
+               .flexsearch--input {
+                       width: 100%;
+               }
+
+               /***********************
+                * Configurable Styles *
+                ***********************/
+               .flexsearch {  
+                       padding: 0 5px 0 30px; /* Padding for other horizontal elements */
+               }
+
+               .flexsearch--input {
+                       -webkit-box-sizing: content-box;
+                       -moz-box-sizing: content-box;
+                       box-sizing: content-box;
+                       height: 30px;
+                       padding: 0 46px 0 10px;
+                       border-color: #667db6;
+                       border-radius: 35px; 
+                       border-style: solid;
+                       border-width: 5px;
+                       margin-top: 15px;
+                       color: #333;
+                       font-family: 'Helvetica', sans-serif;
+                       font-size: 16px;
+                       -webkit-appearance: none;
+                       -moz-appearance: none;
+               }
+
+               .flexsearch--submit {
+                       position: absolute;
+                       right: 0;
+                       top: 0;
+                       display: block;
+                       width: 50px;
+                       height: 50px;
+                       padding: 0;
+                       border: none;
+                       margin-top: 6px; /* margin-top + border-width */
+                       margin-right: 3px; /* border-width */
+                       background: transparent;
+                       color: #667db6;
+                       font-family: 'Helvetica', sans-serif;
+                       font-size: 40px;
+                       line-height: 60px;
+               }
+
+               .flexsearch--input:focus {
+                       outline: none;
+                       border-color: #333;
+               }
+
+               .flexsearch--input:focus.flexsearch--submit {
+                       color: #333; 
+               }
+
+               .flexsearch--submit:hover {
+                       color: #333;
+                       cursor: pointer;
+               }
+
+               ::-webkit-input-placeholder {
+                       color: #888;  
+               }
+
+               input:-moz-placeholder {
+                 color: #888
+               }
+
+               .h1 {
+                 float: left;
+                 margin: 25px;
+                 color: #333;
+                 font-family: 'Helvetica', sans-serif;
+                 font-size: 45px;
+                 font-weight: bold;
+                 line-height: 45px;
+                 text-align: center;
+               }
+
+
+               /**********************
+                * Medios de Contacto *
+                *********************/
+
+               .cuadro {
+                   width:800px;
+                   margin:50px auto 0;
+                   display:flex;
+               }
+               .cuadro .box {
+                   position:relative;
+                   width: 300px;
+                   height:100px;
+                   box-sizing:border-box;
+                   text-align:center;
+                   margin:0 10px;
+                   background:#00171d;
+                   overflow:hidden;
+                   border-radius:4px;
+                   box-shadow:0 0 0 2px rgba(0,7,10,1);
+               }
+               .cuadro .box .icon {
+                   width:100%;
+                   height:100%;
+                   background: #0f0c29;  
+                       background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+                       background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+                   transition: 0.5s;
+               }
+               .cuadro .box .icon .fa {
+                   font-size: 4em;
+                   line-height:100px;
+                   color: #FFFFFF;
+               }
+               .cuadro .box:hover .icon {
+                   transform:scale(0);
+               }
+               .cuadro .box .details {
+                   position:absolute;
+                   top:0;
+                   left:0;
+                   right:0;
+                   width:100%;
+                   height:100%;
+                   background:#03a9f4;
+                   transition:0.5s;
+                   transform:scale(2);
+                   opacity:0;
+               }
+               .cuadro .box:hover .details {
+                   transform:scale(1);
+                   opacity:1;
+               }
+               .cuadro .box .details h3 {
+                   margin:0;
+                   padding:0;
+                   line-height:100px;
+                   font-size:24px;
+                   color:#fff;
+               }
+               .cuadro .box .details:nth-child(2) .details {
+                   background:#e91e63;
+               }
+               .cuadro .box .details:nth-child(2) .details {
+                   background:#607d8b;
+               }
+
+
+               /************
+                * Carousel *
+                ***********/
+
+               #slider-home {
+                       margin-bottom: 50px;
+               }
+
+               #carouselExampleIndicators{
+                       width: 80%;
+                       margin: 0px auto;
+                       margin-top: 20px;
+                       margin-bottom: 30px;
+                       background: white;
+                       padding: 20px;
+               }
+
+               .slider-home {
+                       height: 100%;
+                       left: 0;
+                       top: 0;
+                       width: 340px;
+               }
+
+                .carousel-inner {
+                       background: rgba(255, 255, 255, 0.55);
+                       height: 100%;
+                       left: 0;
+                       top: 0;
+                       padding: 30px 45px;
+                       text-align: left;
+                       width: 340px;
+                }
+
+               .carousel-item img {
+                       display: block;
+                       max-width: 100%;
+                       height: auto;
+                       margin: 0 auto;
+               }
+
+               .carousel-control-prev-icon {
+                       background: black;
+                       margin-top: 100px;
+                       width: 10px;
+               }
+
+
+
+           * {
+                   margin:0;
+                   padding:0;
            }
 
-           #global {
-                   width: 65%;
-                   margin: 0px auto;
-                   margin-top: 30px;
-                   background: white;
-                   padding: 20px;
-                   box-shadow: 0px 0px 50px gray;
-                   text-align: center;
-                   font-size: 20px;
+           /*EN EL VIDEO HAY UN ERROR POR EL CUAL NO SE VISUALIZA EN GOOGLE CHROME,
+           EL CÓDIGO A CONTINUACIÓN YA ESTA CORREGIDO*/
+
+           header {
+                   margin-top:10px;
+               width: 100%;
+               overflow: hidden;
+               height: 100px;
+               position: relative;
            }
 
-           #texto {
-                   text-align: center;
+           #bar {
+                   margin-top:3px;
+               width: 100%;
+               overflow: hidden;
+               height: 150px;
+               position: relative;
            }
 
-           #titulo {
-                   text-align: center;
-                   font-family: "Verdana", "Arial";
-           }
-
-           #logo {
-                   font-family: "Verdana", "Arial";
-                   font-size: 28px;
-                   letter-spacing: 4px;
-                   line-height: 80px;
-                   color: white;
-                   width: auto;
-                   height: auto;
-                   text-transform: uppercase;
-                   text-align: center;
-                   background: #667db6;
-                   background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
-                   background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
-
-           }
-
-           /************
-            * Bar menu *
-           ************/
-
-           #menu {
-                   font-family: "Helvitica", "Arial";
-                   background: #667db6;
-                   background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
-                   background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
-                   width: 100%;
-                   text-transform: uppercase;
-                   margin-bottom: 20px;
-           }
-           #menu ul {
-                   line-height: 46px;
-                   list-style: none;
-           }
-
-           #menu li {
-                   height: 46px;
-                   display: inline-block;
-                   transition: all 300ms;
-           }
-
-           #menu a {
-                   display: block;
-                   color: white;
-                   text-decoration: none;
-                   padding-left: 30px;
-                   padding-right: 30px;
-           }
-
-           /************************
-            * Diseño para buscador *
-           ************************/
-
-           #slidebar {
-                   font-family: "Helvitica", "Arial";
-                   width: 50%;
-                   float: all;
-           }
-
-           #slidebar h4 {
-                   margin-top: 50px;
-                   margin-bottom: 20px;
-                   text-align: center;
-                   line-height: 10px;
-                   color: #333;
-                   background: url('../img/negro.jpg') repeat-x;
-           }
-
-           #slidebar h4 span {
-                   background: white;
-                   padding: 5px;
-           }
-
-           #slidebar img {
-                   width: 100%;
-           }
-
-           #slidebar p {
-                   font-size: 15px;
-                   text-align: justify;
-           }
-
-           form input[type="text"],
-           form input[type="pasword"],
-           form input[type="email"],
-           form input[type="number"],
-           select {
-                   font-family: "Verdana", "Arial";
-                   font-size: 12px;
-                   text-align: center;
-                   padding: 5px;
-                   border-radius: 5px;
-                   border: 1px solid #ccc;
-                   width: 80%;
-                   box-shadow: 0px 0px 2px gray;
-                   margin-top: 5px;
-                   margin-bottom: 5px;
-           }
-
-
-           /************************
-            * Diseño para buscador *
-           ************************/
-
-
-           /***********************
-            * Essential Structure *
-            ***********************/
-           .flexsearch--wrapper {
-                   height: 20%;
-                   width: 60%;
-                   max-width: 80%;
-                   overflow: hidden;
-                   background: transparent;
-                   margin: 0;
-                   position: static;
-           }
-
-           .flexsearch--form {
-                   overflow: hidden;
-                   position: relative;
-           }
-
-           .flexsearch--input-wrapper {
-                   padding: 0 66px 0 0; /* Right padding for submit button width */
-                   overflow: hidden;
-           }
-
-           .flexsearch--input {
-                   width: 100%;
-           }
-
-           /***********************
-            * Configurable Styles *
-            ***********************/
-           .flexsearch {  
-                   padding: 0 5px 0 30px; /* Padding for other horizontal elements */
-           }
-
-           .flexsearch--input {
-                   -webkit-box-sizing: content-box;
-                   -moz-box-sizing: content-box;
-                   box-sizing: content-box;
-                   height: 30px;
-                   padding: 0 46px 0 10px;
-                   border-color: #667db6;
-                   border-radius: 35px; 
-                   border-style: solid;
-                   border-width: 5px;
-                   margin-top: 15px;
-                   color: #333;
-                   font-family: 'Helvetica', sans-serif;
-                   font-size: 16px;
-                   -webkit-appearance: none;
-                   -moz-appearance: none;
-           }
-
-           .flexsearch--submit {
-                   position: absolute;
-                   right: 0;
-                   top: 0;
-                   display: block;
-                   width: 50px;
-                   height: 50px;
-                   padding: 0;
-                   border: none;
-                   margin-top: 6px; /* margin-top + border-width */
-                   margin-right: 3px; /* border-width */
-                   background: transparent;
-                   color: #667db6;
-                   font-family: 'Helvetica', sans-serif;
-                   font-size: 40px;
-                   line-height: 60px;
-           }
-
-           .flexsearch--input:focus {
-                   outline: none;
-                   border-color: #333;
-           }
-
-           .flexsearch--input:focus.flexsearch--submit {
-                   color: #333; 
-           }
-
-           .flexsearch--submit:hover {
-                   color: #333;
-                   cursor: pointer;
-           }
-
-           ::-webkit-input-placeholder {
-                   color: #888;  
-           }
-
-           input:-moz-placeholder {
-             color: #888
-           }
-
-           .h1 {
-             float: left;
-             margin: 25px;
-             color: #333;
-             font-family: 'Helvetica', sans-serif;
-             font-size: 45px;
-             font-weight: bold;
-             line-height: 45px;
-             text-align: center;
-           }
-
-
-           /**********************
-            * Medios de Contacto *
-            *********************/
-
-           body {
-               margin:0;
-               padding:0;
-               font-family:sans-serif;
-               background:#002b38;
-           }
-           .cuadro {
-               width:800px;
-               margin:50px auto 0;
-               display:flex;
-           }
-           .cuadro .box {
-               position:relative;
-               width: 300px;
-               height:100px;
-               box-sizing:border-box;
-               text-align:center;
-               margin:0 10px;
-               background:#00171d;
-               overflow:hidden;
-               border-radius:4px;
-               box-shadow:0 0 0 2px rgba(0,7,10,1);
-           }
-           .cuadro .box .icon {
-               width:100%;
-               height:100%;
-               background: #0f0c29;  
-                   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-                   background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
-               transition: 0.5s;
-           }
-           .cuadro .box .icon .fa {
-               font-size: 4em;
-               line-height:100px;
-               color: #FFFFFF;
-           }
-           .cuadro .box:hover .icon {
-               transform:scale(0);
-           }
-           .cuadro .box .details {
-               position:absolute;
-               top:0;
+           nav {
+               top:-20px;
+               position: absolute;
                left:0;
                right:0;
-               width:100%;
-               height:100%;
-               background:#03a9f4;
-               transition:0.5s;
-               transform:scale(2);
-               opacity:0;
-           }
-           .cuadro .box:hover .details {
-               transform:scale(1);
-               opacity:1;
-           }
-           .cuadro .box .details h3 {
-               margin:0;
-               padding:0;
-               line-height:100px;
-               font-size:24px;
-               color:#fff;
-           }
-           .cuadro .box .details:nth-child(2) .details {
-               background:#e91e63;
-           }
-           .cuadro .box .details:nth-child(2) .details {
-               background:#607d8b;
+                   margin:20px auto;
+                   max-width:1000px;
+                   width:90%;
            }
 
-
-           /************
-            * Carousel *
-            ***********/
-
-           #slider-home {
-                   margin-bottom: 50px;
+           nav ul {
+                   list-style:none;
            }
 
-           #carouselExampleIndicators{
-                   left: 100px;
-                   width: 640px;
+           nav > ul {
+                   display:table;
+                   width:100%;
+                   background:#000;
+                   position:relative;
            }
 
-           .slider-home {
-                   height: 100%;
-                   left: 0;
-                   top: 0;
-                   width: 340px;
+           nav > ul li {
+                   display:table-cell;
            }
 
-            .carousel-inner {
-                   background: rgba(216, 216, 216, 0.75);
-                   height: 100%;
-                   left: 0;
-                   top: 0;
-                   padding: 30px 45px;
-                   text-align: left;
-                   width: 340px;
-            }
-
-           .carousel-item img {
-                   display: block;
-                   max-width: 100%;
-                   height: auto;
-                   margin: 0 auto;
+           /*Sub-menu*/
+           nav > ul > li:hover > ul {
+                   display:block;
+                   height:100%;
            }
-           
-           
-           * {
-                    margin:0;
-                    padding:0;
-            }
 
-            /*EN EL VIDEO HAY UN ERROR POR EL CUAL NO SE VISUALIZA EN GOOGLE CHROME,
-            EL CÓDIGO A CONTINUACIÓN YA ESTA CORREGIDO*/
+           nav > ul > li > ul {
+                   display:block;
+                   position:absolute;
+                   background:#000;
+                   left:0;
+                   right:0;
+                   overflow:hidden;
+                   height:0%;
+                   -webkit-transition: all .3s ease;
+                   -moz-transition: all .3s ease;
+                   -ms-transition: all .3s ease;
+                   -o-transition: all .3s ease;
+                   transition: all .3s ease;
+           }
 
-            header {
-                    margin-top:10px;
-                width: 100%;
-                overflow: hidden;
-                height: 100px;
-                position: relative;
-            }
+           nav > ul li a {
+                   color:#fff;
+                   display:block;
+                   line-height:20px;
+                   padding:20px;
+                   position: relative;
+                   text-align:center;
+                   text-decoration:none;
+                   -webkit-transition: all .3s ease;
+                   -moz-transition: all .3s ease;
+                   -ms-transition: all .3s ease;
+                   -o-transition: all .3s ease;
+                   transition: all .3s ease;
+           }
 
-            #bar {
-                    margin-top:3px;
-                width: 100%;
-                overflow: hidden;
-                height: 150px;
-                position: relative;
-            }
+           nav > ul > li > ul > li a:hover {
+                   background:#0101DF;
+           }
 
-            nav {
-                top:-20px;
-                position: absolute;
-                left:0;
-                right:0;
-                    margin:20px auto;
-                    max-width:1000px;
-                    width:90%;
-            }
+           nav > ul > li > a span {
+                   background:#174459;
+                   display:block;
+                   height:100%;
+                   width:100%;
+                   left:0;
+                   position:absolute;
+                   top:-55px;
+                   -webkit-transition: all .3s ease;
+                   -moz-transition: all .3s ease;
+                   -ms-transition: all .3s ease;
+                   -o-transition: all .3s ease;
+                   transition: all .3s ease;
+           }
 
-            nav ul {
-                    list-style:none;
-            }
+           nav > ul > li > a span .fas {
+                   display:block;
+                   line-height:60px;
+           }
 
-            nav > ul {
-                    display:table;
-                    width:100%;
-                    background:#000;
-                    position:relative;
-            }
+           nav > ul > li > a:hover > span {
+                   top:0;
+           }
 
-            nav > ul li {
-                    display:table-cell;
-            }
+           /*Colores*/
+           nav ul li a .primero {
+                   background:#0e5061;
+           }
 
-            /*Sub-menu*/
-            nav > ul > li:hover > ul {
-                    display:block;
-                    height:100%;
-            }
+           nav ul li a .segundo {
+                   background:#5da5a2;
+           }
 
-            nav > ul > li > ul {
-                    display:block;
-                    position:absolute;
-                    background:#000;
-                    left:0;
-                    right:0;
-                    overflow:hidden;
-                    height:0%;
-                    -webkit-transition: all .3s ease;
-                    -moz-transition: all .3s ease;
-                    -ms-transition: all .3s ease;
-                    -o-transition: all .3s ease;
-                    transition: all .3s ease;
-            }
+           nav ul li a .tercero {
+                   background:#f25724;
+           }
 
-            nav > ul li a {
-                    color:#fff;
-                    display:block;
-                    line-height:20px;
-                    padding:20px;
-                    position: relative;
-                    text-align:center;
-                    text-decoration:none;
-                    -webkit-transition: all .3s ease;
-                    -moz-transition: all .3s ease;
-                    -ms-transition: all .3s ease;
-                    -o-transition: all .3s ease;
-                    transition: all .3s ease;
-            }
+           nav ul li a .cuarto {
+                   background:#174459;
+           }
 
-            nav > ul > li > ul > li a:hover {
-                    background:#0101DF;
-            }
+           nav ul li a .quinto {
+                   background:#37a4d9;
+           }
 
-            nav > ul > li > a span {
-                    background:#174459;
-                    display:block;
-                    height:100%;
-                    width:100%;
-                    left:0;
-                    position:absolute;
-                    top:-55px;
-                    -webkit-transition: all .3s ease;
-                    -moz-transition: all .3s ease;
-                    -ms-transition: all .3s ease;
-                    -o-transition: all .3s ease;
-                    transition: all .3s ease;
-            }
+           nav ul li a .sexto {
+                   background:#0174DF;
+           }
 
-            nav > ul > li > a span .fas {
-                    display:block;
-                    line-height:60px;
-            }
+           nav ul li a .septimo {
+                   background: #0101DF;
+           }
 
-            nav > ul > li > a:hover > span {
-                    top:0;
-            }
-
-            /*Colores*/
-            nav ul li a .primero {
-                    background:#0e5061;
-            }
-
-            nav ul li a .segundo {
-                    background:#5da5a2;
-            }
-
-            nav ul li a .tercero {
-                    background:#f25724;
-            }
-
-            nav ul li a .cuarto {
-                    background:#174459;
-            }
-
-            nav ul li a .quinto {
-                    background:#37a4d9;
-            }
-
-            nav ul li a .sexto {
-                    background:#0174DF;
-            }
-
-            nav ul li a .septimo {
-                    background: #0101DF;
-            }
 
 
         </style>
@@ -555,150 +554,143 @@ Funciones: Será la vista gerenal para los alumnos
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	</head>
 </head>
-<body>
+<body id="fon">
+	<section id="global">
 
 	<!-- Cabecera -->
 		<header>
-			<div id="logo">
-				<h1> RIDESCOM </h1>
+			<div id="logoi">
+				<img src="img/ridescom.jpg" width="500">
 			</div>
 			<div class="clearfix">	
 			</div>
-			<div class="clearfix">	
-			</div>
-			<div class="clearfix">	
-			</div>
-
-				
 		</header>
-
-
-	<!-- Carosel -->
-	<section>
-
+	<!-- Menú -->
 		<nav id="bar">
+			<ul>
+				<li><a href="#"><span class="primero"><i class="fas fa-home"></i></span> Inicio </a></li>
+<!--				<li><a href="#"><span class="segundo"><i class="fas fa-calendar"></i></span> Registrate </a></li>-->
+				<li><a href="#calendario"><span class="tercero"><i class="fas fa-calendar"></i></span> Calendario </a></li>
+				<li><a href="#resultados"><span class="cuarto"><i class="fas fa-poll"></i></span> Resultados </a></li>
+				<li><a href="iniciosesion.htm"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Inicia Sesión </a></li>
+				<li><a href="#Contacto"><span class="sexto"><i class="fas fa-address-book"></i></span> Contacto </a></li>
+				<li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> Coordinador </a>
 					<ul>
-						<li><a href="#"><span class="primero"><i class="fas fa-home"></i></span> Inicio </a></li>
-						<li><a href="#"><span class="segundo"><i class="fas fa-calendar"></i></span> Registrate </a></li>
-						<li><a href="#"><span class="tercero"><i class="fas fa-calendar"></i></span> Calendario </a></li>
-						<li><a href="#"><span class="cuarto"><i class="fas fa-poll"></i></span> Resultados </a></li>
-						<li><a href="iniciasesion.html"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Inicia Sesión </a></li>
-						<li><a href="#"><span class="sexto"><i class="fas fa-address-book"></i></span> Contacto </a></li>
-						<li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> Coordinador </a>
-							<ul>
-								<li><a href="#">Item #1</a></li>
-								<li><a href="#">Item #2</a></li>
-								<li><a href="#">Item #3</a></li>
-								<li><a href="#">Item #4</a></li>
-								<li><a href="#">Item #5</a></li>
-							</ul>
-						</li>
+						<li><a href="#"> Inicia sesión </a></li>
+						<li><a href="#"> Ingresa resultados </a></li>
+						<li><a href="#"> Registra un entrenador </a></li>
+						<li><a href="#"> Item #4 </a></li>
+						<li><a href="#"> Item #5 </a></li>
 					</ul>
-				</nav>
-		<h2 id="titulo">Deportes en la ESCOM</h2>
-			
-				<div class="row justify-center">
-					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-						    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
-						    <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
-			  			</ol>
-			  			<div id="carouselExampleIndicators" class="carousel-inner">
-			    			<div class="carousel-item active">
-						      <img src="img/ajedrez.png" class="d-block w-50" alt="Ajedrez">
-						      <div class="panel-overlay">
-					              <h2>Ajedrez</h2>
-					              <p>l ajedrez es un juego entre dos personas, cada una de las cuales dispone de 16 piezas móviles que se colocan sobre un tablero​ dividido en 64 casillas o escaques.​<br/>
-					          </div>
-			    			</div>
-			    			<div class="carousel-item">
-						      <img src="img/baloncesto.png" class="d-block w-50" alt="Baloncesto">
-						      <div class="panel-overlay">
-					              <h2>Baloncesto</h2>
-					              <p>es un deporte en el cual compiten dos equipos de cinco jugadores cada uno.<br/>
-					          </div>
-			    			</div>
-			    			<div class="carousel-item">
-						      <img src="img/barras.png" class="d-block w-50" alt="Barras">
-						      <div class="panel-overlay">
-					              <h2>Barras</h2>
-					              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-					          </div>
-			    			</div>
-			    			<div class="carousel-item">
-						      <img src="img/beisbol.png" class="d-block w-50" alt="Beisbol">
-						      <div class="panel-overlay">
-					              <h2>Beisbol</h2>
-					              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-					          </div>
-			    			</div>
-			    			<div class="carousel-item">
-						      <img src="img/futbol.png" class="d-block w-50" alt="Futbol">
-						      <div class="panel-overlay">
-					              <h2>Futbol</h2>
-					              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-					          </div>
-			    			</div>
-			    			<div class="carousel-item">
-						      <img src="img/sucem.png" class="d-block w-50" alt="Sucem">
-						      <div class="panel-overlay">
-					              <h2>Sucem</h2>
-					              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-					          </div>
-			    			</div>
-			    			<div class="carousel-item">
-						      <img src="img/taekwondo.png" class="d-block w-50" alt="Taekwondo">
-						      <div class="panel-overlay">
-					              <h2>Taekwondo</h2>
-					              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-					          </div>
-			    			</div>
-			    			<div class="carousel-item">
-						      <img src="img/tenisdemesa.png" class="d-block w-50" alt="Tenis de mesa">
-						      <div class="panel-overlay">
-					              <h2>Tenis de mesa</h2>
-					              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-					          </div>
-			    			</div>
-			    			<div class="carousel-item">
-						      <img src="img/tochobandera1.png" class="d-block w-50" alt="Tocho bandera">
-						      <div class="panel-overlay">
-					              <h2>Tocho bandera</h2>
-					              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-					          </div>
-			    			</div>
-			    			<div class="carousel-item">
-						      <img src="img/voleibol.png" class="d-block w-50" alt="Voleibol">
-						      <div class="panel-overlay">
-					              <h2>Voleibol</h2>
-					              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-					          </div>
-			    			</div>
-			    			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-							    <span class="carousel-control-prev-icon" ></span>
-							    <span class="sr-only"> Anterior </span>
-			  				</a>
-			  				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-							    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-							    <span class="sr-only"> Siguiente </span>
-							</a>
-			  			</div>
-					</div>
-				</div>
-			
-		
+				</li>
+			</ul>
+		</nav>
 
+		<section>
+		<h2 id="titulo">Deportes en la ESCOM</h2>
+		
+	<!-- Slider -->	
+		<div class="row justify-center">
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+				    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+	  			</ol>
+	  			<div id="carouselExampleIndicators" class="carousel-inner">
+	    			<div class="carousel-item active">
+				      <img src="img/ajedrez.png" class="d-block w-50" alt="Ajedrez">
+				      <div class="panel-overlay">
+			              <h2>Ajedrez</h2>
+			              <p>l ajedrez es un juego entre dos personas, cada una de las cuales dispone de 16 piezas móviles que se colocan sobre un tablero​ dividido en 64 casillas o escaques.​<br/>
+			          </div>
+	    			</div>
+	    			<div class="carousel-item">
+				      <img src="img/baloncesto.png" class="d-block w-50" alt="Baloncesto">
+				      <div class="panel-overlay">
+			              <h2>Baloncesto</h2>
+			              <p>es un deporte en el cual compiten dos equipos de cinco jugadores cada uno.<br/>
+			          </div>
+	    			</div>
+	    			<div class="carousel-item">
+				      <img src="img/barras.png" class="d-block w-50" alt="Barras">
+				      <div class="panel-overlay">
+			              <h2>Barras</h2>
+			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
+			          </div>
+	    			</div>
+	    			<div class="carousel-item">
+				      <img src="img/beisbol.png" class="d-block w-50" alt="Beisbol">
+				      <div class="panel-overlay">
+			              <h2>Beisbol</h2>
+			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
+			          </div>
+	    			</div>
+	    			<div class="carousel-item">
+				      <img src="img/futbol.png" class="d-block w-50" alt="Futbol">
+				      <div class="panel-overlay">
+			              <h2>Futbol</h2>
+			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
+			          </div>
+	    			</div>
+	    			<div class="carousel-item">
+				      <img src="img/sucem.png" class="d-block w-50" alt="Sucem">
+				      <div class="panel-overlay">
+			              <h2>Sucem</h2>
+			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
+			          </div>
+	    			</div>
+	    			<div class="carousel-item">
+				      <img src="img/taekwondo.png" class="d-block w-50" alt="Taekwondo">
+				      <div class="panel-overlay">
+			              <h2>Taekwondo</h2>
+			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
+			          </div>
+	    			</div>
+	    			<div class="carousel-item">
+				      <img src="img/tenisdemesa.png" class="d-block w-50" alt="Tenis de mesa">
+				      <div class="panel-overlay">
+			              <h2>Tenis de mesa</h2>
+			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
+			          </div>
+	    			</div>
+	    			<div class="carousel-item">
+				      <img src="img/tochobandera1.png" class="d-block w-50" alt="Tocho bandera">
+				      <div class="panel-overlay">
+			              <h2>Tocho bandera</h2>
+			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
+			          </div>
+	    			</div>
+	    			<div class="carousel-item">
+				      <img src="img/voleibol.png" class="d-block w-50" alt="Voleibol">
+				      <div class="panel-overlay">
+			              <h2>Voleibol</h2>
+			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
+			          </div>
+	    			</div>
+	    			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					    <span class="carousel-control-prev-icon" ></span>
+					    <span class="sr-only"> Anterior </span>
+	  				</a>
+	  				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="sr-only"> Siguiente </span>
+					</a>
+	  			</div>
+			</div>
+		</div>
+		</section>
+			
 	<!-- Calendario -->
 		<h2 id="titulo">Calendario de eventos</h2>
-			<div id="Calen" class="container">
+			<div class="container">
 				<div class="col-row-12">
 					<!-- The second value will be selected initially -->
 					<select name="select">
@@ -722,12 +714,13 @@ Funciones: Será la vista gerenal para los alumnos
 						<thead>
 							<tr>
 								<th scope="col"> Nombre </th>
-                                                                <th scope="col"> Escuela </th>
+								<th scope="col"> Boleta </th>
+								<th scope="col"> Escuela </th>
 								<th scope="col"> Deporte </th>
 								<th scope="col"> Sub-división </th>
-								<th scope="col"> Fecha del evento </th>
-                                                                <th scope="col"> Lugar del evento </th>
-								<th scope="col"> Descripción </th>
+								<th scope="col"> Posición </th>
+								<th scope="col"> Prueba </th>
+								<th scope="col"> Marca </th>
 							</tr>
 						</thead>
 						<tbody>
@@ -744,6 +737,7 @@ Funciones: Será la vista gerenal para los alumnos
 							<tr>
 								<th>Fila 2</th>
 								<td>Fila 2 Columna 1</td>
+								<td>Fila 2 Columna 2</td>
 								<td>Fila 1 Columna 2</td>
 								<td>Fila 1 Columna 2</td>
 								<td>Fila 1 Columna 2</td>
@@ -756,9 +750,8 @@ Funciones: Será la vista gerenal para los alumnos
 			</div>
 
 	<!-- Resultados --> 		
-		
-                <h2 id="titulo">Consulta los resultados</h2>
-		<div id="Resul" class="container">
+		<h2 id="titulo">Consulta los resultados</h2>
+		<div class="container">
 				<div class="col-row-12">
 					<div class="flexsearch">
 						<div class="flexsearch--wrapper">
@@ -777,25 +770,25 @@ Funciones: Será la vista gerenal para los alumnos
 						<thead>
 							<tr>
 								<th scope="col"> Nombre </th>
-                                                                <%--<th scope="col"> Boleta </th> --%>
+								<th scope="col"> Boleta </th>
 								<th scope="col"> Escuela </th>
 								<th scope="col"> Deporte </th>
-                                                                <%--<th scope="col"> Sub-división </th> --%>
+								<th scope="col"> Sub-división </th>
+								<th scope="col"> Posición </th>
 								<th scope="col"> Prueba </th>
-                                                                <th scope="col"> Posición </th>
 								<th scope="col"> Marca </th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-                                                                <th> ${Persona} </th>
-								<td> ${Escuela} </td>
-								<td> ${Deporte}</td>
-								<td> ${Prueba} </td>
-                                                <c:forEach var="dat" items="${Resultado}">
-								<td> ${dat.Lugar_Obtenido} </td>
-								<td> ${dat.Marca} </td>
-                                                </c:forEach>
+								<th>Fila 1</th>
+								<td>Fila 1 Columna 1</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
 							</tr>
 							<tr>
 								<th>Fila 2</th>
@@ -812,9 +805,9 @@ Funciones: Será la vista gerenal para los alumnos
 				</div>
 		</div>
 
-
 	<!-- Contacto -->
-		<div id="Contac" class="container">
+		<a name="Contacto" id="Contacto"></a>
+		<div class="container">
 			<div class="cuadro">
 				<div class="box">
 					<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
@@ -832,8 +825,13 @@ Funciones: Será la vista gerenal para los alumnos
 		</div>
 		<div class="clearfix" >&nbsp;</div>
 		<div class="clearfix" >&nbsp;</div>
-		<div class="clearfix" >&nbsp;</div>
 	</section>
-
+	
+		<footer>
+			Escuela Superior de Cómputo &copy;
+			<a href="#" class="subir"> Ir arriba </a>
+		</footer>
+		
+	<div class="clearfix" >&nbsp;</div>
 </body>
 </html>

@@ -69,9 +69,9 @@
             }
 
             body {
-                   background: #8360c3;
-                   background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
-                   background: linear-gradient(to right, #2ebf91, #8360c3);
+                   background: #000046;
+                   background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046);
+                   background: linear-gradient(to bottom, #1CB5E0, #000046);
                    /* background-image: url(../img/fondo.jpg); */
             }
 

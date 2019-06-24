@@ -19,19 +19,22 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="iniciosesion.htm">insertadatos</prop>
-                <prop key="iniciosesioCord.htm">insertadatos</prop>
-                <prop key="iniciosesioJFD.htm">insertadatos</prop>
-                <prop key="ingresa_resultados.htm">insertadatos</prop>
-                <prop key="registrar.htm">insertadatos</prop>
-                <prop key="inscripcioninter2.htm">insertadatos</prop>
-                <prop key="inscripcioninter2.htm">insertadatos</prop>
-                <prop key="registroentrenador.htm">insertadatos</prop>
-                <prop key="registroevento.htm">insertadatos</prop>
+                <prop key="Registracord.htm">insertadatos</prop> <!-- OK! -->
+                <prop key="ingresaresultados.htm">insertadatos</prop> <!-- OK! -->
+                <prop key="iniciasesionCord.htm">insertadatos</prop> <!-- OK! -->
+                <prop key="iniciasesionJFD.htm">insertadatos</prop> <!-- OK! -->
+                <prop key="iniciosesion.htm">insertadatos</prop> <!-- OK! -->
+                <prop key="inscripcioninter2.htm">insertadatos</prop> <!-- OK! -->
+                <prop key="inscripcioninter3.htm">insertadatos</prop> <!-- OK! -->
+                <prop key="registrar.htm">insertadatos</prop> <!-- OK! -->
+                <prop key="registroentrenador.htm">insertadatos</prop> <!-- OK! -->
+                <prop key="registroevento.htm">insertadatos</prop> <!-- OK -->
                 
-                <prop key="difundirevento.htm">controlador</prop>
-                <prop key="principal.htm">controlador</prop>
-                <prop key="consulta_inscripcion.htm">controlador</prop>
+                <prop key="Usuario.htm">controlador</prop> <!-- OK! -->
+                <prop key="Valida.htm">controlador</prop> <!-- OK! -->
+                <prop key="consulta_inscripcion.htm">controlador</prop> <!-- OK! -->
+                <prop key="difundirevento.htm">controlador</prop> <!-- OK! -->
+                <prop key="principal.htm">controlador</prop> <!-- OK! -->
             </props>
         </property>
     </bean>
@@ -44,7 +47,7 @@
     <!--
     The index controller.
     -->
-    <bean name="controlador " class="Controller.controlador"/>
-    <bean name="insertadatos " class="Controller.insertadatos"/>
+    <bean name="controlador " class="mx.ipn.escom.ridescom.controller.controlador"/>
+    <bean name="insertadatos " class="mx.ipn.escom.ridescom.controller.insertadatos"/>
 
 </beans>
