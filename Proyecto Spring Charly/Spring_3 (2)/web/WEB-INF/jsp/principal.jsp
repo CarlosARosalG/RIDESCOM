@@ -276,9 +276,9 @@ Funciones: Será la vista gerenal para los alumnos
                .cuadro .box .icon {
                    width:100%;
                    height:100%;
-                   background: #0f0c29;  
-                       background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-                       background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+                   background: #000046;
+                   background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046);
+                   background: linear-gradient(to bottom, #1CB5E0, #000046);
                    transition: 0.5s;
                }
                .cuadro .box .icon .fa {
@@ -517,14 +517,11 @@ Funciones: Será la vista gerenal para los alumnos
 
 	<!--Jquery -->
 
-        <script type="text/javascript" src="../../js/jquery-ui/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="../../js/jquery-ui/jquery-ui.min.js"></script>
-        <link rel="stylesheet"  href="../../css/jquery-ui.css">
-        <link rel="stylesheet" href="../../css/jquery-ui.min.css">
-        <link rel="stylesheet"  href="../../css/jquery-ui.structure.css">
-	<link rel="stylesheet" href="../../css/jquery-ui.structure.min.css">
-        <link rel="stylesheet"  href="../../css/jquery-ui.theme.css">
-	<link rel="stylesheet"  href="../../css/jquery-ui.theme.min.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
+	<link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" " href="js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
         
 
 	<!-- Moment js  -->
@@ -532,7 +529,7 @@ Funciones: Será la vista gerenal para los alumnos
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es.js"></script>
 
 	<!-- Mis scripts -->
-	<script type="text/javascript" src="../../js/main.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 
 	<!-- Slider -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
@@ -689,11 +686,12 @@ Funciones: Será la vista gerenal para los alumnos
 		</section>
 			
 	<!-- Calendario -->
+                <a name="calendario" id="Contacto"></a>
 		<h2 id="titulo">Calendario de eventos</h2>
 			<div class="container">
-				<div class="col-row-12">
+				<div class="col-row-8">
 					<!-- The second value will be selected initially -->
-					<select name="select">
+                                        <select name="select" style="width: 380px;">
 					  <option value="value1" selected> Selecciona un deporte </option> 
 					  <option value="value2"> Ajedrez </option>
 					  <option value="value3"> Baloncesto </option>
@@ -708,6 +706,7 @@ Funciones: Será la vista gerenal para los alumnos
 					</select>
 				</div>
 			</div>
+                        <div class="clearfix" >&nbsp;</div>
 			<div class="container">
 				<div class="table-responsive">
 					<table class="table table-hover">
@@ -721,6 +720,7 @@ Funciones: Será la vista gerenal para los alumnos
 								<th scope="col"> Posición </th>
 								<th scope="col"> Prueba </th>
 								<th scope="col"> Marca </th>
+                                                                <th scope="col">  </th>
 							</tr>
 						</thead>
 						<tbody>
@@ -733,6 +733,21 @@ Funciones: Será la vista gerenal para los alumnos
 								<td>Fila 1 Columna 2</td>
 								<td>Fila 1 Columna 2</td>
 								<td>Fila 1 Columna 2</td>
+                                                                <td> 
+                                                                    <a href="registroevento.htm" style='text-decoration:none;color: #777620;'> 
+                                                                        <i class="far fa-plus-square"></i> 
+                                                                    </a> 
+                                                                </td>
+                                                                <td> 
+                                                                    <a href="Registracord.htm" style='text-decoration:none;color: #0174DF;'> 
+                                                                        <i class="far fa-edit"></i>  
+                                                                    </a> 
+                                                                </td>
+                                                                <td> 
+                                                                    <a href="Registracord.htm" style='text-decoration:none;color: #ed3237;'> 
+                                                                        <i class="far fa-trash-alt"></i> 
+                                                                    </a> 
+                                                                </td>
 							</tr>
 							<tr>
 								<th>Fila 2</th>
@@ -749,7 +764,8 @@ Funciones: Será la vista gerenal para los alumnos
 				</div>	
 			</div>
 
-	<!-- Resultados --> 		
+	<!-- Resultados --> 	
+                <a name="resultados" id="Contacto"></a>
 		<h2 id="titulo">Consulta los resultados</h2>
 		<div class="container">
 				<div class="col-row-12">
@@ -811,7 +827,11 @@ Funciones: Será la vista gerenal para los alumnos
 			<div class="cuadro">
 				<div class="box">
 					<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-					<div class='details'><h3>ESCOM</h3></div>
+                                        <div class='details'>
+                                            <h3><a href='https://www.google.com.mx/maps/place/Escuela+Superior+de+Cómputo/@19.5046589,-99.1490405,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1f835393528b5:0x5f2dd0563ce99e8!8m2!3d19.5046539!4d-99.1468518' style='text-decoration:none;color: #FFFFFF;'> 
+                                                    ESCOM 
+                                            </a></h3>
+                                        </div>
 				</div>
 				<div class="box">
 					<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
