@@ -558,7 +558,7 @@
 		<h2 id="titulo">Lista de deportes de interpolitécnicos</h2>
                     <div id="agregaboton">
                         <label> Para agregar un nuevo deporte pulsa aquí: </label>
-                        <a href="Pruebas/AgregarDeporte" style='text-decoration:none;color: #777620; align-content: right;'> 
+                        <a href="Deportes/AgregarDeporte" style='text-decoration:none;color: #777620; align-content: right;'> 
                             <i class="far fa-plus-square"></i> 
                         </a> 
                     </div>
@@ -590,7 +590,7 @@
                                                 </select>
                                          </div>
 			</div>
-                        <div class="clearfix" >&nbsp;</div>
+                        <div class="clearfix" > &nbsp;</div>
 			<div class="container">
 				<div class="table-responsive">
 					<table class="table table-hover">
@@ -608,12 +608,12 @@
                                 <td>${dato.Disciplina}</td>
                                 
                                 <td> 
-                                                                    <a href="" style='text-decoration:none;color: #0174DF;'> 
+                                                                    <a href="Deportes/EditarDeporte?DeporteID=${dato.ID_Deporte}" style='text-decoration:none;color: #0174DF;'> 
                                                                         <i class="far fa-edit"></i>  
                                                                     </a> 
                                                                 </td>
                                                                 <td> 
-                                                                    <a href="BorrarDeporte?DeporteID=${dato.ID_Deporte}" style='text-decoration:none;color: red;'>
+                                                                    <a href="Deportes/BorrarDeporte?DeporteID=${dato.ID_Deporte}" style='text-decoration:none;color: red;'>
                                                                     <i  class="far fa-trash-alt"></i> 
                                                                     </a> 
                                                                 </td>

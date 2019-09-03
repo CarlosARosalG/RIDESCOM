@@ -536,6 +536,11 @@ Funciones: Será la vista gerenal para los alumnos
 
 	<!-- Mis scripts -->
 	<script type="text/javascript" src="js/main.js"></script>
+        <script language="javascript">
+            $(document).ready(function() {
+            $('#example').DataTable();
+            } );
+        </script>
 
 	<!-- Slider -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
@@ -575,7 +580,7 @@ Funciones: Será la vista gerenal para los alumnos
 				<li><a href="Usuarios"><span class="tercero"><i class="fas fa-user"></i></span> Usuarios </a></li>
 				<li><a href="DDyFD/Deportes"><span class="cuarto"><i class="fas fa-poll"></i></span> Deportes </a></li>
                                 <li><a href="DDyFD/Pruebas"><span class="cuarto"><i class="fas fa-poll"></i></span> Pruebas </a></li>
-				<li><a href="Eventos"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Eventos </a></li>
+<!--				<li><a href="#calendario"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Eventos </a></li>-->
 				<li><a href="#Contacto"><span class="sexto"><i class="fas fa-address-book"></i></span> Contacto </a></li>
 				<li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> ${Nombre_U} </a>
 					<ul>
@@ -594,85 +599,75 @@ Funciones: Será la vista gerenal para los alumnos
 		<h2 id="titulo">Lista de eventos</h2>
                     <div id="agregaboton">
                         <label> Para agregar un nuevo evento pulsa aquí: </label>
-                        <a href="" style='text-decoration:none;color: #777620; align-content: right;'> 
-                            <i class="far fa-plus-square"></i> 
+                        <a href="DDyFD/AgregarEvento" style='text-decoration:none;color: #777620; align-content: right;'> 
+                            <i class="far fa-plus-square fa-2x"></i> 
                         </a> 
                     </div>
 			<div class="container">
 				<div class="col-row-8">
-                                    <label>Filtrar por:</label>
-					<!-- The second value will be selected initially -->
-                                        <select name="select" id="selectsport" style="width: 380px;">
-					  <option value="">Selecciona deporte</option>
-                                                    <%
-                                                        try{
-                                                            String query="select * from Act_Deportiva";
-                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
-                                                            Connect conn = new Connect();
-                                                            Statement stm=conn.Connect().createStatement();
-                                                            ResultSet rs=stm.executeQuery(query);
-                                                            while(rs.next()){
-                                                                %>
-                                                                <option value="<%=rs.getInt("ID_Deporte")%>"><%=rs.getString("Disciplina")%></option>
-                                                                <%
-                                                            }
-                                                            
-                                                        }catch(Exception ex)
-                                                        {
-                                                            ex.printStackTrace();
-                                                            out.println("Error: "+ex.getMessage());
-                                                        }
-                                                    %>
-                                                </select>
+                                    <div class="flexsearch">
+                                        <div class="flexsearch--wrapper">
+                                            <form class="flexsearch--form" id="searchTerm" placeholder="Buscar" type="text" onkeyup="doSearch()" />
+                                                <div class="flexsearch--input-wrapper">
+                                                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar..." title="Busqueda Rapida" class="form-control">
+<!--                                                    <input class="flexsearch--input" type="search" placeholder="Busca un deporte">-->
+                                                </div>
+        <!--                                        <input class="flexsearch--submit" type="submit" value="&#10140;"/>-->
+                                            </form>    
+                                        </div>
 				</div>
 			</div>
                         <div class="clearfix" >&nbsp;</div>
 			<div class="container">
 				<div class="table-responsive">
-					<table class="table table-hover">
+					<table class="table table-hover" id="datos">
 						<thead>
 							<tr>
-								<th scope="col"> Nombre </th>
-								<th scope="col"> Boleta </th>
-								<th scope="col"> Escuela </th>
-								<th scope="col"> Deporte </th>
-								<th scope="col"> Sub-división </th>
-								<th scope="col"> Posición </th>
-								<th scope="col"> Prueba </th>
-								<th scope="col"> Marca </th>
-                                                                <th scope="col">  </th>
+<!--								<th scope="col"> ID </th>-->
+								<th scope="col"> Evento </th>
+                                                                <th scope="col"> Deporte </th>
+								<th scope="col"> Inicio Registro </th>
+								<th scope="col"> Limite Registro </th>
+                                                                <th scope="col"> Lugar </th>
+                                                                <th scope="col"> Fecha del Evento </th>
+                                                                <th scope="col"> Ciclo Escolar</th>
+								<th scope="col"> Direccion </th>
+								<th scope="col"> Punto de Referencia </th>
+								<th scope="col"> Descripcion </th>
+                                                                
+                                                                
+                                                                
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<th>Fila 1</th>
-								<td>Fila 1 Columna 1</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-                                                                <td> 
-                                                                    <a href="editarevento.htm" style='text-decoration:none;color: #0174DF;'> 
+                                                    <c:forEach var="dato" items="${eve}">
+                                                        <tr>
+<!--                                                            <td>${dato.Evento_ID}</td>-->
+                                                            <td>${dato.Nombre_Evento}</td>
+                                                            <td>${dato.Disciplina}</td>
+                                                            <td>${dato.Fecha_inicio_Registro}</td>
+                                                            <td>${dato.Fecha_fin_Registro}</td>
+                                                            <td>${dato.Lugar_del_evento}</td>
+                                                            <td>${dato.Fecha_evento}</td>
+                                                            <td>${dato.Ciclo_Escolar}</td>
+                                                            <td>${dato.Direccion}</td>
+                                                            <td>${dato.P_referencia}</td>
+                                                            <td>${dato.Descripcion}</td>
+                                                            
+                                                            
+                                                            
+                                                            <td> 
+                                                                    <a href="DDyFD/EditarEvento?EventoID=${dato.Evento_ID}" style='text-decoration:none;color: #0174DF;'> 
                                                                         <i class="far fa-edit"></i>  
                                                                     </a> 
-                                                                </td>
-                                                                <td> 
-                                                                        <i class="far fa-trash-alt"></i> 
+                                                            </td>
+                                                            <td> 
+                                                                    <a href="DDyFD/BorrarEvento?EventoID=${dato.Evento_ID}" style='text-decoration:none;color: red;'>
+                                                                        <i  class="far fa-trash-alt"></i> 
                                                                     </a> 
-                                                                </td>
-							</tr>
-							<tr>
-								<th>Fila 2</th>
-								<td>Fila 2 Columna 1</td>
-								<td>Fila 2 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-							</tr>
+                                                            </td>
+                                                        </tr>
+                                                    </c:forEach>
 						</tbody>
 					</table>
 				</div>	
@@ -685,7 +680,7 @@ Funciones: Será la vista gerenal para los alumnos
 		<h2 id="titulo">Consulta coordinadores de U.A.</h2>
                 <div id="agregaboton">
                     <label> Para agregar un nuevo coordinador pulsa aquí: </label>
-                    <a href="ingresaresultados.htm" style='text-decoration:none;color: #777620; align-content: right;'> 
+                    <a href="" style='text-decoration:none;color: #777620; align-content: right;'> 
                         <i class="far fa-plus-square"></i> 
                     </a> 
                 </div>
@@ -752,7 +747,7 @@ Funciones: Será la vista gerenal para los alumnos
 						<div class="flexsearch--wrapper">
 							<form class="flexsearch--form" action="#" method="post">
 								<div class="flexsearch--input-wrapper">
-									<input class="flexsearch--input" type="search" placeholder="Busca un deporte">
+									<input class="flexsearch--input" type="search" placeholder="Busca un deporte"id="searchTerm" type="text" onkeyup="doSearch()" />
 								</div>
 								<input class="flexsearch--submit" type="submit" value="&#10140;"/>
 							</form>
@@ -764,37 +759,28 @@ Funciones: Será la vista gerenal para los alumnos
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th scope="col"> Nombre </th>
-								<th scope="col"> Boleta </th>
+								<th scope="col"> Evento </th>
+								<th scope="col"> Participante</th>
 								<th scope="col"> Escuela </th>
 								<th scope="col"> Deporte </th>
-								<th scope="col"> Sub-división </th>
-								<th scope="col"> Posición </th>
 								<th scope="col"> Prueba </th>
+								<th scope="col"> Lugar </th>
 								<th scope="col"> Marca </th>
+                                                                <th scope="col">  </th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<th>Fila 1</th>
-								<td>Fila 1 Columna 1</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-							</tr>
-							<tr>
-								<th>Fila 2</th>
-								<td>Fila 2 Columna 1</td>
-								<td>Fila 2 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-								<td>Fila 1 Columna 2</td>
-							</tr>
+							<c:forEach var="dat" items="${res}">
+                                                        <tr>
+                                                            <td>${dat.Evento}</td>
+                                                            <td>${dat.Nombre}</td>
+                                                            <td>${dat.Escuela}</td>
+                                                            <td>${dat.Deporte}</td>
+                                                            <td>${dat.Prueba}</td>
+                                                            <td>${dat.Lugar}</td>
+                                                            <td>${dat.Marca}</td>
+                                                        </tr>
+                                                    </c:forEach>
 						</tbody>
 					</table>
 				</div>
@@ -833,4 +819,54 @@ Funciones: Será la vista gerenal para los alumnos
 		
 	<div class="clearfix" >&nbsp;</div>
 </body>
+<!--<script>
+    $(document).ready(function () {
+
+    $('#selectsport').change(function () {
+        var values = [];
+        $('#selectsport option:selected').each(function () {
+            if ($(this).val() != "") values.push($(this).text());
+        });
+        filter('table > tbody > tr', values);
+    });
+    $('#selectsport1').change(function () {
+        var values = [];
+        $('#selectsport1 option:selected').each(function () {
+            if ($(this).val() != "") values.push($(this).text());
+        });
+        filter('table > tbody > tr', values);
+    });
+
+    function filter(selector, values) {
+        $(selector).each(function () {
+            var sel = $(this);
+            var tokens = sel.text().split('\n');
+            var toknesObj = [], i;
+            for(i=0;i<tokens.length;i++){
+                toknesObj.push( {text:tokens[i].trim(), found:false});
+            }
+            
+            var show = false;
+            console.log(values);
+            $.each(values, function (i, val) {
+                
+                for(i=0;i<toknesObj.length;i++){                    
+                    if (!toknesObj[i].found && toknesObj[i].text.search(new RegExp("\\b"+val+"\\b")) >= 0) {
+                        toknesObj[i].found = true;
+                    }
+                }
+            });          
+            
+            var count = 0;
+             $.each(toknesObj, function (i, val) {
+                 if (val.found){
+                     count+=1;
+                 }
+             });
+            show = (count === values.length);        
+            show ? sel.show() : sel.hide();
+        });
+    }
+});
+</script>-->
 </html>

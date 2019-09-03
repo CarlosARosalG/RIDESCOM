@@ -150,7 +150,7 @@
 			</div>
                     <div class="card-body">
                         ${mjs}
-                        <form class="needs-validation" accion="Coordinador" novalidate  method="POST">
+                        <form class="needs-validation" novalidate  method="POST">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -172,7 +172,7 @@
                             <div class="clearfix" >&nbsp;</div>
                             <input name="btn" value="Entrar" type="submit" class="btn btn-light float-right login_btn">
                             
-                            <a href="Home" class="btn btn-light float-right login_btn"> Volver </a>
+                            <a href="../../Home" class="btn btn-light float-right login_btn"> Volver </a>
                         </form>
                     </div>
 <!--			<div class="card-footer">

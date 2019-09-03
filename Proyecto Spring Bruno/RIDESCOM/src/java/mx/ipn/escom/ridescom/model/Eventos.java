@@ -20,13 +20,13 @@ public class Eventos {
     String P_Ref;
     String Desc;
     String FE;
-    String ciclo;
-    String deporte;
+    int ciclo;
+    int deporte;
     
     public Eventos() {
     }
 
-    public Eventos(int E_ID, String Nombre_E, String FIR, String FFR, String Lugar, String Dir, String P_Ref, String Desc, String FE, String ciclo, String deporte) {
+    public Eventos(int E_ID, String Nombre_E, String FIR, String FFR, String Lugar, String Dir, String P_Ref, String Desc, String FE, int ciclo, int deporte) {
         this.E_ID = E_ID;
         this.Nombre_E = Nombre_E;
         this.FIR = FIR;
@@ -112,19 +112,19 @@ public class Eventos {
         this.FE = FE;
     }
 
-    public String getCiclo() {
+    public int getCiclo() {
         return ciclo;
     }
 
-    public void setCiclo(String ciclo) {
+    public void setCiclo(int ciclo) {
         this.ciclo = ciclo;
     }
 
-    public String getDeporte() {
+    public int getDeporte() {
         return deporte;
     }
 
-    public void setDeporte(String deporte) {
+    public void setDeporte(int deporte) {
         this.deporte = deporte;
     }
     

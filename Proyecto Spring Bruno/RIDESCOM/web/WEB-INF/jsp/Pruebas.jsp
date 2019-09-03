@@ -612,8 +612,10 @@
                                                 </select>
 				</div>
 			</div>
-                        <div class="clearfix" >&nbsp;</div>
+                        <div class="clearfix" > &nbsp;</div>
+                        
 			<div class="container">
+                            ${msjs} 
 				<div class="table-responsive">
 					<table class="table table-hover">
 						<thead>
@@ -633,12 +635,12 @@
                                 <td>${dato.Disciplina}</td>
                                 
                                 <td> 
-                                                                    <a href="" style='text-decoration:none;color: #0174DF;'> 
+                                                                    <a href="Pruebas/EditarPrueba?PruebaID=${dato.ID_Pruebas}" style='text-decoration:none;color: #0174DF;'> 
                                                                         <i class="far fa-edit"></i>  
                                                                     </a> 
                                                                 </td>
                                                                 <td> 
-                                                                    <a href="BorrarPrueba?PruebaID=${dato.ID_Pruebas}" style='text-decoration:none;color: red;'>
+                                                                    <a href="Pruebas/BorrarPrueba?PruebaID=${dato.ID_Pruebas}" style='text-decoration:none;color: red;'>
                                                                     <i  class="far fa-trash-alt"></i> 
                                                                     </a> 
                                                                 </td>

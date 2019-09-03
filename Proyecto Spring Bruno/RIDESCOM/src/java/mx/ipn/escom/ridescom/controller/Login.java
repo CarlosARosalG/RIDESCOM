@@ -35,27 +35,6 @@ public class Login {
     UsuarioDAO udao=new UsuarioDAO();
     
     List dat;
-//    @RequestMapping(value="Login")
-//    public ModelAndView coord(){   
-//        mav.setViewName("Login");
-//        return mav;
-//    }
-//    public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsri) {
-//        if(hsr.getParameter("btn")!= null){
-//            HttpSession session=hsr.getSession();
-//            String user=hsr.getParameter("Nombre_U");
-//            
-//            session.setAttribute("Nombre_U", user);
-//        }
-//        ModelAndView mv=new ModelAndView("Login");
-//        return mv;  
-//    }
-//    @RequestMapping(value="/Logout", method=RequestMethod.GET)
-//    public String logut(HttpServletRequest re) throws Exception{
-//        HttpSession session = re.getSession();
-//        session.invalidate();
-//        return "redirect:/";
-//    }
     
     @RequestMapping(value="Login", method=RequestMethod.GET)
     public ModelAndView log(HttpServletRequest req){
@@ -79,7 +58,6 @@ public class Login {
         String jefe= "DDyFD";
         
         us=udao.validar(usuario, pass);
-//        if(req.getParameter("btn")!= null){
         if(us.getNombre_U()!= null){
             if(us.getNombre_U().equals(jefe)){
             
@@ -99,45 +77,11 @@ public class Login {
         }else{
             return new ModelAndView("Login");
         }
-/////////////////////////////////Version prueba1///////////////////////////////////////////////
-//        String jefe="DDyFD";
-//        String coord="ESCOM";
-//        String sql="select Nombre_U, Password_U from usuario where Nombre_U=\""+u.getNombre_U()+"\" and Password_U=\""+u.getPassword_U()+"\"";
-//        String sqlu="select Nombre_U from usuario where Nombre_U=\""+u.getNombre_U()+"\" and Password_U=\""+u.getPassword_U()+"\"";
-//        dt=this.rid.queryForList(sqlu).toString();
-//        mav.setViewName("Login");
-//        
-//        String user= us.getNombre_U();
-//        String pass= us.getPassword_U();
-//        us=udao.validar(user, pass);
-//        if(u.getNombre_U()!= null && u.getPassword_U()!=null){
-//            switch (u.getNombre_U()){
-//                case "DDyFD":
-//                    return new ModelAndView("redirect:/DDyFD");
-//                        
-//                case "ESCOM":
-//                    return new ModelAndView("redirect:/Coordinador");
-//                    
-//                default:
-//                    return new ModelAndView("redirect:/Login");
-//            }
-////                if(u.getNombre_U().equals(jefe)){
-////                    
-////                    this.rid.execute(sql);
-////                    return new ModelAndView("redirect:/DDyFD");
-////                }else {
-////                    
-////                    this.rid.execute(sql);
-////                    return new ModelAndView("redirect:/Coordinador");
-////                }
-//        }else{
-//            return new ModelAndView("redirect:/Login");
-//        }
     }
-//
-//    @RequestMapping(value="LoginAlumno")
-//    public ModelAndView alumno(){   
-//        mav.setViewName("LoginAlumno");
-//        return mav;
-//    }
+    
+    @RequestMapping(value="Error")
+    public ModelAndView alumno(){   
+        mav.setViewName("Error404");
+        return mav;
+    }
 }

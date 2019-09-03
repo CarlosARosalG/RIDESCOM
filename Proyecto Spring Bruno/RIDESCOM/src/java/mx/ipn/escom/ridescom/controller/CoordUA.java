@@ -8,11 +8,19 @@ package mx.ipn.escom.ridescom.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 
 public class CoordUA {
     ModelAndView mav=new ModelAndView();
+    
+    @RequestMapping(value="/Logout", method=RequestMethod.GET)
+    public String logout(HttpServletRequest re) throws Exception{
+        HttpSession session = re.getSession();
+        session.invalidate();
+        return "redirect:/Login";
+    }
     
     @RequestMapping(value="Coordinador")
     public ModelAndView coord(HttpServletRequest req){   
@@ -22,7 +30,7 @@ public class CoordUA {
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
         mav.setViewName("DDyFD");
         }
-        //mav.setViewName("CoordUA");
+        mav.setViewName("CoordUA");
         return mav;
     }
 }

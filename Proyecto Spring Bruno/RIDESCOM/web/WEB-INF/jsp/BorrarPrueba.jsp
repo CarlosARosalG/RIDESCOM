@@ -9,21 +9,21 @@
     <body>
          <div class="container mt-4 col-lg-4">
             <div class="card border-info">
-                <h4>Eliminar campos</h4>
+                <h4>¿Seguro que desea eliminar estos datos?</h4>
             </div>
             <div class="card-header bg-info">
                 <form method="POST">
-                    <label>ID Prueba: ${prue[0].ID_Prueba}</label>
+                    <label>ID Prueba: ${prue[0].ID_Pruebas}</label>
                     <p></p>
                     <label>Prueba</label>
-                    <input type="text" value="${prue[0].Prueba}" name="Prueba" class="form-control" autocomplete="off" required>
+                    <input type="text" value="${prue[0].Prueba}" name="Prueba" class="form-control" autocomplete="off" disabled/>
                      <label>Tipo de Prueba</label>
-                     <input type="text" value=" ${prue[0].Tipo_Pruebas_ID_Prueba}"  name="Tipo" class="form-control" autocomplete="off" required> 
+                     <input type="text" value=" ${prue[0].Tipo}"  name="Tipo" class="form-control" autocomplete="off" disabled/> 
                      <label>Deporte</label>
-                     <input type="text" value=" ${prue[0].Act_Deportiva_ID_Deporte}"  name="Act_Prueba" class="form-control" autocomplete="off" required> 
+                     <input type="text" value=" ${prue[0].Disciplina}"  name="Act_Prueba" class="form-control" autocomplete="off" disabled/> 
                     
-                    <input type="submit" value="Eliminar" class="btn btn-success">
-                   <a href="" type="submit" value="Regresar" class="btn btn-success">Regresar</a>
+                     <a href="ConfirmaBorrar?PruebaID=${prue[0].ID_Pruebas}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
+                   <a href="../Pruebas" type="submit" value="Regresar" class="btn btn-success">Regresar</a>
                 </form>
             </div>
         </div>

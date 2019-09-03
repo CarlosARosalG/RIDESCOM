@@ -4,6 +4,8 @@
     Author     : Carlos A. Rosales
 --%>
 
+<%@page import="java.sql.*"%>
+<%@page import="mx.ipn.escom.ridescom.config.Connect"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!--
@@ -17,7 +19,7 @@ Funciones: Será la vista gerenal para los alumnos
 <head>
 	<head>
 	<meta charset="utf-8">
-	<title> Coordinador de Unidad Académica</title>
+	<title> Principal Coordinador </title>
 
 	<!-- Estilos CSS 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">-->
@@ -569,13 +571,22 @@ Funciones: Será la vista gerenal para los alumnos
 	<!-- Menú -->
 		<nav id="bar">
 			<ul>
-				<li><a href="#"><span class="primero"><i class="fas fa-home"></i></span> Inicio </a></li>
-<!--				<li><a href="#"><span class="segundo"><i class="fas fa-calendar"></i></span> Registrate </a></li>-->
-				<li><a href="#calendario"><span class="tercero"><i class="fas fa-calendar"></i></span> Calendario </a></li>
+                                <li><a href="#calendario"><span class="tercero"><i class="fas fa-calendar"></i></span> Eventos </a></li>
 				<li><a href="#resultados"><span class="cuarto"><i class="fas fa-poll"></i></span> Resultados </a></li>
+                                <li><a href="constancias.htm"><span class="primero"><i class="fas fa-sign-in-alt"></i></span> Cedulas de inscripción </a></li>
+<!--				<li><a href="#"><span class="segundo"><i class="fas fa-calendar"></i></span> Registrate </a></li>-->
 				<li><a href="consultainscritos.htm"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Consulta Inscritos </a></li>
 				<li><a href="difundirevento.htm"><span class="sexto"><i class="fas fa-address-book"></i></span> Difundir evento </a></li>
-				<li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> Contacto </a>
+                                <li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> ${Nombre_U} </a>
+					<ul>
+						<li><a href="#"> Usuario </a></li>
+						<li><a href="#"> Correo </a></li>
+                                                <li>
+                                                    <a href="Logout">Salir</a>
+                                                </li>
+					</ul>
+				</li>
+<!--				<li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> Contacto </a>
 					<ul>
 						<li><a href="#"> Inicia sesión </a></li>
 						<li><a href="#"> Ingresa resultados </a></li>
@@ -583,131 +594,38 @@ Funciones: Será la vista gerenal para los alumnos
 						<li><a href="#"> Item #4 </a></li>
 						<li><a href="#"> Item #5 </a></li>
 					</ul>
-				</li>
+				</li>-->
 			</ul>
 		</nav>
-
-<!--		<section>
-		<h2 id="titulo">Deportes en la ESCOM</h2>
-		
-	 Slider 	
-		<div class="row justify-center">
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-				    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
-	  			</ol>
-	  			<div id="carouselExampleIndicators" class="carousel-inner">
-	    			<div class="carousel-item active">
-				      <img src="img/ajedrez.png" class="d-block w-50" alt="Ajedrez">
-				      <div class="panel-overlay">
-			              <h2>Ajedrez</h2>
-			              <p>l ajedrez es un juego entre dos personas, cada una de las cuales dispone de 16 piezas móviles que se colocan sobre un tablero​ dividido en 64 casillas o escaques.​<br/>
-			          </div>
-	    			</div>
-	    			<div class="carousel-item">
-				      <img src="img/baloncesto.png" class="d-block w-50" alt="Baloncesto">
-				      <div class="panel-overlay">
-			              <h2>Baloncesto</h2>
-			              <p>es un deporte en el cual compiten dos equipos de cinco jugadores cada uno.<br/>
-			          </div>
-	    			</div>
-	    			<div class="carousel-item">
-				      <img src="img/barras.png" class="d-block w-50" alt="Barras">
-				      <div class="panel-overlay">
-			              <h2>Barras</h2>
-			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-			          </div>
-	    			</div>
-	    			<div class="carousel-item">
-				      <img src="img/beisbol.png" class="d-block w-50" alt="Beisbol">
-				      <div class="panel-overlay">
-			              <h2>Beisbol</h2>
-			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-			          </div>
-	    			</div>
-	    			<div class="carousel-item">
-				      <img src="img/futbol.png" class="d-block w-50" alt="Futbol">
-				      <div class="panel-overlay">
-			              <h2>Futbol</h2>
-			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-			          </div>
-	    			</div>
-	    			<div class="carousel-item">
-				      <img src="img/sucem.png" class="d-block w-50" alt="Sucem">
-				      <div class="panel-overlay">
-			              <h2>Sucem</h2>
-			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-			          </div>
-	    			</div>
-	    			<div class="carousel-item">
-				      <img src="img/taekwondo.png" class="d-block w-50" alt="Taekwondo">
-				      <div class="panel-overlay">
-			              <h2>Taekwondo</h2>
-			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-			          </div>
-	    			</div>
-	    			<div class="carousel-item">
-				      <img src="img/tenisdemesa.png" class="d-block w-50" alt="Tenis de mesa">
-				      <div class="panel-overlay">
-			              <h2>Tenis de mesa</h2>
-			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-			          </div>
-	    			</div>
-	    			<div class="carousel-item">
-				      <img src="img/tochobandera1.png" class="d-block w-50" alt="Tocho bandera">
-				      <div class="panel-overlay">
-			              <h2>Tocho bandera</h2>
-			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-			          </div>
-	    			</div>
-	    			<div class="carousel-item">
-				      <img src="img/voleibol.png" class="d-block w-50" alt="Voleibol">
-				      <div class="panel-overlay">
-			              <h2>Voleibol</h2>
-			              <p>Do you want to know the possible routes to get to know the center of Coyoacan?<br/>
-			          </div>
-	    			</div>
-	    			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-					    <span class="carousel-control-prev-icon" ></span>
-					    <span class="sr-only"> Anterior </span>
-	  				</a>
-	  				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-					    <span class="sr-only"> Siguiente </span>
-					</a>
-	  			</div>
-			</div>
-		</div>
-		</section>-->
 			
 	<!-- Calendario -->
                 <a name="calendario" id="Contacto"></a>
-		<h2 id="titulo">Calendario de eventos</h2>
+		<h2 id="titulo">Lista de eventos</h2>
 			<div class="container">
 				<div class="col-row-8">
 					<!-- The second value will be selected initially -->
-                                        <select name="select" style="width: 380px;">
-					  <option value="value1" selected> Selecciona un deporte </option> 
-					  <option value="value2"> Ajedrez </option>
-					  <option value="value3"> Baloncesto </option>
-					  <option value="value3"> Barras </option>
-					  <option value="value3"> Beisbol </option>
-					  <option value="value3"> Futbol </option>
-					  <option value="value3"> Sucem </option>
-					  <option value="value3"> Taekwondo </option>
-					  <option value="value3"> Tenis de mesa </option>
-					  <option value="value3"> Tocho bandera </option>
-					  <option value="value3"> Voleibol </option>
-					</select>
+                                        <select name="select" id="selectsport" style="width: 380px;">
+					  <option value="">Seleccione Deporte</option>
+                                                    <%
+                                                        try{
+                                                            String query="select * from Act_Deportiva";
+                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                                            Connect conn = new Connect();
+                                                            Statement stm=conn.Connect().createStatement();
+                                                            ResultSet rs=stm.executeQuery(query);
+                                                            while(rs.next()){
+                                                                %>
+                                                                <option value="<%=rs.getInt("ID_Deporte")%>"><%=rs.getString("Disciplina")%></option>
+                                                                <%
+                                                            }
+                                                            
+                                                        }catch(Exception ex)
+                                                        {
+                                                            ex.printStackTrace();
+                                                            out.println("Error: "+ex.getMessage());
+                                                        }
+                                                    %>
+                                                </select>
 				</div>
 			</div>
                         <div class="clearfix" >&nbsp;</div>
@@ -825,6 +743,84 @@ Funciones: Será la vista gerenal para los alumnos
 					</table>
 				</div>
 		</div>
+                
+                <!-- Entrenadores -->
+                <a name="calendario" id="Contacto"></a>
+		<h2 id="titulo">Entrenadores</h2>
+                    <div id="agregaboton">
+                        <label> Para agregar un nuevo entrenador pulsa aquí: </label>
+                        <a href="registroevento.htm" style='text-decoration:none;color: #777620; align-content: right;'> 
+                            <i class="far fa-plus-square"></i> 
+                        </a> 
+                    </div>
+			<div class="container">
+				<div class="col-row-8">
+					<!-- The second value will be selected initially -->
+                                        <select name="select" style="width: 380px;">
+					  <option value="value1" selected> Selecciona una Unidad Académica </option> 
+					  <option value="value2"> ESIME </option>
+					  <option value="value3"> ESCOM </option>
+					  <option value="value3"> UPIICSA </option>
+					  <option value="value3"> ESIQUIE </option>
+					</select>
+				</div>
+			</div>
+                        <div class="clearfix" >&nbsp;</div>
+			<div class="container">
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col"> Nombre </th>
+								<th scope="col"> Apellido Paterno </th>
+                                                                <th scope="col"> Apellido Materno </th>
+								<th scope="col"> Escuela </th>
+								<th scope="col"> Deporte </th>
+								<th scope="col"> Teléfono fijo </th>
+                                                                <th scope="col">  </th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Fila 1</th>
+								<td>Fila 1 Columna 1</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
+                                                                <td> 
+                                                                    <a href="registroentrenador.htm" style='text-decoration:none;color: #0174DF;'> 
+                                                                        <i class="far fa-edit"></i>  
+                                                                    </a> 
+                                                                </td>
+                                                                <td> 
+                                                                        <i class="far fa-trash-alt"></i> 
+                                                                    </a> 
+                                                                </td>
+							</tr>
+							<tr>
+								<th>Fila 1</th>
+								<td>Fila 1 Columna 1</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
+								<td>Fila 1 Columna 2</td>
+                                                                <td> 
+                                                                    <a href="registroentrenador.htm" style='text-decoration:none;color: #0174DF;'> 
+                                                                        <i class="far fa-edit"></i>  
+                                                                    </a> 
+                                                                </td>
+                                                                <td> 
+                                                                        <i class="far fa-trash-alt"></i> 
+                                                                    </a> 
+                                                                </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+			</div>
+        <div class="clearfix" >&nbsp;</div>    
+        <div class="clearfix" >&nbsp;</div>
 
 	<!-- Contacto -->
 		<a name="Contacto" id="Contacto"></a>
@@ -834,7 +830,7 @@ Funciones: Será la vista gerenal para los alumnos
 					<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
                                         <div class='details'>
                                             <h3><a href='https://www.google.com.mx/maps/place/Escuela+Superior+de+Cómputo/@19.5046589,-99.1490405,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1f835393528b5:0x5f2dd0563ce99e8!8m2!3d19.5046539!4d-99.1468518' style='text-decoration:none;color: #FFFFFF;'> 
-                                                    ESCOM 
+                                                    ESCOM - Actividades Deportivas
                                             </a></h3>
                                         </div>
 				</div>
@@ -859,4 +855,54 @@ Funciones: Será la vista gerenal para los alumnos
 		
 	<div class="clearfix" >&nbsp;</div>
 </body>
+<script>
+    $(document).ready(function () {
+
+    $('#selectsport').change(function () {
+        var values = [];
+        $('#selectsport option:selected').each(function () {
+            if ($(this).val() != "") values.push($(this).text());
+        });
+        filter('table > tbody > tr', values);
+    });
+    $('#selectsport1').change(function () {
+        var values = [];
+        $('#selectsport1 option:selected').each(function () {
+            if ($(this).val() != "") values.push($(this).text());
+        });
+        filter('table > tbody > tr', values);
+    });
+
+    function filter(selector, values) {
+        $(selector).each(function () {
+            var sel = $(this);
+            var tokens = sel.text().split('\n');
+            var toknesObj = [], i;
+            for(i=0;i<tokens.length;i++){
+                toknesObj.push( {text:tokens[i].trim(), found:false});
+            }
+            
+            var show = false;
+            console.log(values);
+            $.each(values, function (i, val) {
+                
+                for(i=0;i<toknesObj.length;i++){                    
+                    if (!toknesObj[i].found && toknesObj[i].text.search(new RegExp("\\b"+val+"\\b")) >= 0) {
+                        toknesObj[i].found = true;
+                    }
+                }
+            });          
+            
+            var count = 0;
+             $.each(toknesObj, function (i, val) {
+                 if (val.found){
+                     count+=1;
+                 }
+             });
+            show = (count === values.length);        
+            show ? sel.show() : sel.hide();
+        });
+    }
+});
+</script>
 </html>

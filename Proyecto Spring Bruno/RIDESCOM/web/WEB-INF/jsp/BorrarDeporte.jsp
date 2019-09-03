@@ -18,8 +18,8 @@
                     <label>Deporte</label>
                     <input type="text" value="${dep[0].Disciplina}" name="Disciplina" class="form-control" autocomplete="off" required>
                     
-                    <input type="submit" value="Eliminar" class="btn btn-success">
-                   <a href="" type="submit" value="Regresar" class="btn btn-success">Regresar</a>
+                    <a href="ConfirmaBorrar?DeporteID=${dep[0].ID_Deporte}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
+                   <a href="../Deportes" type="submit" value="Regresar" class="btn btn-success">Regresar</a>
                 </form>
             </div>
         </div>

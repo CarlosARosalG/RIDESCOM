@@ -153,7 +153,7 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-                                            <input type="text" class="form-control" placeholder="Boleta/Usuario" name="regno"  maxlength="10" required/>
+                                            <input type="text" class="form-control" placeholder="Número de Boleta" name="User"  maxlength="10" required/>
 <!--                                            <div class="valid-feedback">
                                                 Looks good!
                                             </div>-->
@@ -165,7 +165,7 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-                                                <input type="password" class="form-control" placeholder="Contraseña" name="passwd"  maxlength="10" required/>
+                                                <input type="password" class="form-control" placeholder="Contraseña" name="Password"  maxlength="10" required/>
                                                 <div class="invalid-feedback">
                                                     Campo requerido
                                                 </div>
@@ -175,7 +175,7 @@
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
 						<!--<input type="text" class="form-control" name="vrfcd" placeholder="Captcha" requied/>-->
-                                                <input type="text" class="form-control" placeholder="Captcha" name="vrfcd" required/>
+                                                <input type="text" class="form-control" placeholder="Captcha" name="Captcha" required/>
                                                 <div class="invalid-feedback">
                                                     Campo requerido
                                                 </div>

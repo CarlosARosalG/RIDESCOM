@@ -146,10 +146,10 @@
             <div class="card col-sm-10">
                 <div class="card-body">
                         <div class="form-group text-center">
-                            <h3>¿Desea Continuar?</h3>
-                            
-                            <a class="btn btn-primary" href="AgregarPrueba">Continuar</a>  
-                        <a class="btn btn-primary" href="../Pruebas">Terminar</a>
+                            <H2>La prueba ha sido agregada correctamente</H2>
+                            <h3>¿Desea continuar agregando más?</h3>
+                            <a class="btn btn-primary" href="AgregarPrueba">SI</a>  
+                        <a class="btn btn-primary" href="../Pruebas">NO</a>
                 </div>
             </div>
         </div>
