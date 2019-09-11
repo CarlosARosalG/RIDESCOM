@@ -1,0 +1,65 @@
+\begin{UseCase}{CU2}{Iniciar Sesión Coordinador de Unidad Académica}{
+		\noindent Esta caso de uso servirá para que el Coordinador de Unidad Académica pueda ingresar a la página web, poder identificar al usuario y así mostrar las vistas que tienen asginada. \\
+    	Para poder iniciar sesión el actor deberá oprimir el botón \IUbutton{ Iniciar Sesión } ubicado en la pantalla \ref{inicioJFDycoord}. Ingresará su número de boleta, contraseña el cual usa para ingresar al SAES (Sistema de Administración Escolar), y el captcha, como se muestra en la pantalla... Si los datos que ingresa no coinciden se le mostrará un mensaje.
+        Una vez que incie sesión se le mostrará la pantalla principal.
+        \MSGref{MSG1}{Faltan campos por completar}.
+        
+	} \label{CU2_Iniciarsesion}
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Coordinador de Unidad Académica }
+		\UCitem{Propósito}{Tener control de las personas registradas.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Contar con una cuenta.
+            \item Contar con la contraseña.
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla principal}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Usuario. 
+        	\item Contraseña
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Acceso a la página principal del Coordinador de Unidad Académica
+		\end{itemize}}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Errores}{
+        	\begin{itemize}
+        	    \item Los campos están vacíos.
+            	\item Usuario y/o contraseña incorrecta.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+	\pagebreak
+	
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Ingresa a la página RIDESCOM.
+    \UCpaso Muestra la pantalla \IUref{}{Pantalla de Inicio de Sesión \ref{inicioJFDycoord}}.
+    \UCpaso[\UCactor] Oprime el botón \IUbutton{ JFD o Coordinador } que esta en la \IUref{}{Pantalla de Inicio de Sesión \ref{inicioJFDycoord}}
+    \UCpaso Muestra la \IUref{}{Pantalla de Inicio de Sesión \ref{inicioJFDycoord}}
+	\UCpaso[\UCactor] Introduce Usuario y contraseña. \label{CU2_regresar} 
+    \UCpaso[\UCactor] Presiona el botón \IUbutton{ Ingresar }.
+    \UCpaso Comprueba que los campos no estén vacíos. \Trayref{A}
+    \UCpaso Obtiene los valores ingresados
+    \UCpaso Válida campos. \Trayref{B}
+    \UCpaso Muestra la \IUref{}{Pantalla principal del Jefe de Fomento Deportivo. \ref{principalcoord}}
+    \end{UCtrayectoria}
+    
+    \begin{UCtrayectoriaA}{A}{Campo(s) vacios}
+    	\UCpaso muestra mensaje “CamposNecesario".
+    	\UCpaso Continua en el paso \ref{CU2_regresar} del \UCref{CU2}.
+    \end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{Boleta y/o contraseña erróneo}
+		\UCpaso muestra mensaje “El usuario y/o contraseña que se ingresó son erróneos”. Mensaje .
+   		\UCpaso Continua en el paso \ref{CU2_regresar} del \UCref{CU2}.
+	\end{UCtrayectoriaA}
+
+	
+
+
