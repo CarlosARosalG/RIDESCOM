@@ -379,7 +379,7 @@
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip01"><i class="fas fa-id-card"></i> Usuario </label>
-                            <input name="Nombre_U" type="text" id="validationTooltip01" onkeypress="return soloLetras(event)" class="form-control" placeholder="Usuario" maxlength="15" required/>
+                            <input name="Nombre_U" type="text" id="validationTooltip01" onkeypress="return soloLetras(event)" class="form-control" placeholder="Usuario" maxlength="20" required/>
                             <div class="invalid-feedback">
                                 Ingresa un usuario
                             </div>
@@ -393,42 +393,42 @@
                         </div>
                         <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Nombre </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="Nombre" placeholder="Nombre" required>
+				    <input type="text" class="form-control" id="validationTooltip02" onkeypress="return soloLetras(event)" name="Nombre" placeholder="Nombre" maxlength="45" required/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 				</div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Apellido Paterno </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="Appat" placeholder="Apellido Paterno" required>
+				    <input type="text" class="form-control" id="validationTooltip02" onkeypress="return soloLetras(event)" name="Appat" placeholder="Apellido Paterno" maxlength="45" required/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Apellido Materno </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="Apmat" placeholder="Apellido Materno" required>
+				    <input type="text" class="form-control" id="validationTooltip02" onkeypress="return soloLetras(event)" name="Apmat" placeholder="Apellido Materno" maxlength="45" required/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> CURP </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="CURP" placeholder="CURP" required>
+				    <input type="text" class="form-control" id="validationTooltip02" name="CURP" placeholder="CURP" minlength="18" maxlength="18" required/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> NSS </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" placeholder="NSS" required>
+				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" placeholder="NSS" maxlength="45" required/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
                             <label for="validationTooltip03"> Fecha de Nacimiento </label>
-                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" placeholder="YYYY-MM-DD" required>
+                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" placeholder="YYYY-MM-DD" maxlength="10" required/>
                             <script>
                                  var today, datepicker;
                                 today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()-1);
@@ -442,7 +442,7 @@
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Sexo </label>
                                     <br>
-				    <select name="Sexo" class="custom-select" style="width: 150px;" required>
+				    <select name="Sexo" class="custom-select" style="width: 150px;" required/>
 					  <option value=""></option>
                                                     <%
                                                         try{
@@ -471,7 +471,7 @@
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Estado </label>
 <!--				    <input type="text" class="form-control" id="validationTooltip02" name="Estado" placeholder="Estado" required>-->
-                                    <select name="estado" id="edo" class="custom-select" style="width: 300px;" required>
+                                    <select name="estado" id="edo" class="custom-select" style="width: 300px;" required/>
 					  <option value="">Seleccione Estado</option>
                                                     <%
                                                         try{
@@ -500,7 +500,7 @@
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Municipio </label>
 <!--				    <input type="text" class="form-control" id="validationTooltip02" placeholder="Buscar..." required>-->
-                                    <select name="municipio" id="mun" class="custom-select" style="width: 300px;" required>
+                                    <select name="municipio" id="mun" class="custom-select" style="width: 300px;" required/>
 					  <option value="">Seleccione municipio</option>
                                                     <%
                                                         try{
@@ -529,21 +529,21 @@
                             
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Correo </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Correo" placeholder="Correo" required>
+                                    <input type="text" class="form-control" id="validationTooltip02" name="Correo" placeholder="Correo" required/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Teléfono de contacto </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_fijo" placeholder="Telefono fijo" required>
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Tel_fijo" placeholder="Telefono fijo" minlength="10" maxlength="15" required/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Teléfono Móvil (Opcional) </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_cel" placeholder="Telefono movil" required>
+                                    <input type="text" class="num form-control" id="validationTooltip02" name="Tel_cel" placeholder="Telefono movil" minlength="10" maxlength="15" required/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -553,7 +553,7 @@
 			<div class="form-row">    
 				<div class="col-md-5 mb-3">
 					<label for="validationTooltip03">Unidad Académica</label>
-					<select  id="deporte" class="custom-select" style="width: 380px;" data-live-search="true" required>
+					<select  id="deporte" class="custom-select" style="width: 380px;" data-live-search="true" required/>
 <!--					  <option value="">Seleccione Escuela</option>-->
                                                     <%
                                                         try{
@@ -624,5 +624,10 @@
             return false;
         }
     }
+    </script>
+    <script>
+     $('.num').on('input', function () { 
+    this.value = this.value.replace(/[^0-9]/g,'');
+    });
     </script>
 </html>

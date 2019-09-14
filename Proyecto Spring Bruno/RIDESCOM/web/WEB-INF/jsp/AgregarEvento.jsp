@@ -390,7 +390,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip03"> Fecha del Evento </label>
-                            <input name="FE" type="text" class="form-control" id="datepicker" placeholder="" required>
+                            <input name="FE" type="text" class="form-control" id="datepicker" placeholder="YYYY-MM-DD" maxlength="10" required/>
                             <div class="invalid-feedback">
                                 Ingresa una fecha válida
                             </div>
@@ -416,7 +416,7 @@
                                 });
                             </script>-->
                             <label for="validationTooltip03"> Fecha limite para registrarse </label>
-                            <input name="FFR" type="text" class="form-control" id="datepicker2" placeholder="" required>
+                            <input name="FFR" type="text" class="form-control" id="datepicker2" placeholder="YYYY-MM-DD" maxlength="10" required/>
                             <script>
                                 var today, datepicker;
                                 today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
@@ -429,7 +429,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip02"> Semestre </label>
-                                <select name="ciclo" id="selectsport" class="custom-select" style="width: 150px;">
+                                <select name="ciclo" id="selectsport" class="custom-select" style="width: 150px;" required/>
 					  <option value="">Ciclo escolar</option>
                                                     <%
                                                         try{
@@ -458,7 +458,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip04"> Lugar donde se realizará el evento </label>
-                            <input name="Lugar" type="text" class="form-control" id="validationTooltip04" placeholder="Lugar" maxlength="200" required>
+                            <input name="Lugar" type="text" class="form-control" id="validationTooltip04" placeholder="Lugar del Evento" maxlength="200" required/>
                             <div class="invalid-feedback">
                                 Ingresa un usuario
                             </div>
@@ -481,7 +481,7 @@
                     <div>
                         <label for="validationTooltip05"> Deporte </label>
                         <div class="col-md-3 mb-3">
-                                <select name="deporte" id="selectsport" class="custom-select" style="width: 380px;">
+                                <select name="deporte" id="selectsport" class="custom-select" style="width: 380px;" required/>
 					  <option value="">Deporte</option>
                                                     <%
                                                         try{
@@ -510,8 +510,8 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1"> Comentarios acerca del evento </label>
-                        <textarea name="Desc" class="form-control" id="exampleFormControlTextarea1" rows="2" maxlength="200"></textarea>
-                        <p id="contadorTaComentario">0/200</p>
+                        <textarea name="Desc" onkeyup="countChars(this);" class="form-control" id="exampleFormControlTextarea1" rows="2" maxlength="200"></textarea>
+                        <p id="charNum">0/200</p>
                     </div>
 <!--                    <button class="btn  btn-outline-success" type="submit"> Registrar </button>-->
                     <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Registrar </button>
@@ -520,35 +520,16 @@
 	</section>
 </body>
 <script>
-    init_contadorTa("exampleFormControlTextarea1","contadorTaComentario", 200);
-    function init_contadorTa(idtextarea, idcontador,max)
-{
-$("contadorTaComentario"+idtextarea).keyup(function()
-{
-updateContadorTa(idtextarea, idcontador,max);
-});
- 
-$("contadorTaComentario"+idtextarea).change(function()
-{
-updateContadorTa(idtextarea, idcontador,max);
-});
- 
+function countChars(obj){
+    var maxLength = 200;
+    var strLength = obj.value.length;
+    
+    if(strLength > maxLength){
+        document.getElementById("charNum").innerHTML = '<span style="color: black;">'+strLength+'/'+maxLength+'</span>';
+    }else{
+        document.getElementById("charNum").innerHTML = strLength+'/'+maxLength+'';
+    }
 }
- 
-function updateContadorTa(idtextarea, idcontador,max)
-{
-var contador = $("#"+idcontador);
-var ta =     $("#"+idtextarea);
-contador.html("0/"+max);
- 
-contador.html(ta.val().length+"/"+max);
-if(parseInt(ta.val().length)>max)
-{
-ta.val(ta.val().substring(0,max-1));
-contador.html(max+"/"+max);
-}
- 
-}​
 </script>
 
 <script>

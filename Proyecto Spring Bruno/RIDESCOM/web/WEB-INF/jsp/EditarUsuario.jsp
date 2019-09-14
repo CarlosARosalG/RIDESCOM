@@ -233,11 +233,11 @@
                    cursor: pointer;
            }
 
-           ::-webkit-input-placeholder {
+           ::-webkit-input-value {
                    color: #888;  
            }
 
-           input:-moz-placeholder {
+           input:-moz-value {
              color: #888
            }
 
@@ -372,6 +372,8 @@
 			  Verifica que no falte ningún campo por completar antes de guardar la actualización de datos.
 			</p>
 			</div>
+                    <label>ID Persona: ${da[0].ID_Persona}</label>
+                            <br>
 		</div>
 
 		<!-- Formulario --> 
@@ -379,56 +381,56 @@
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip01"><i class="fas fa-id-card"></i> Usuario </label>
-                            <input name="Nombre_U" type="text" id="validationTooltip01" onkeypress="return soloLetras(event)" class="form-control" placeholder="Usuario" maxlength="20" required/>
+                            <input name="Nombre_U" type="text" id="validationTooltip01" onkeypress="return soloLetras(event)" class="form-control" value="${da[0].Nombre_U}" maxlength="15" required/>
                             <div class="invalid-feedback">
                                 Ingresa un usuario
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip02"><i class="fas fa-key"></i> Contraseña </label>
-                            <input name="Password_U" type="password"  id="validationTooltip02" class="form-control" placeholder="Contraseña" minlength="4" maxlength="16" required/>
+                            <input name="Password_U" type="text"  id="validationTooltip02" class="form-control" value="${da[0].Password_U}" minlength="4" maxlength="16" required/>
                             <div class="invalid-feedback">
                                 Ingresa una contraseña
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Nombre </label>
-				    <input type="text" class="form-control" id="validationTooltip02" onkeypress="return soloLetras(event)" name="Nombre" placeholder="Nombre" maxlength="45" required/>
+				    <input type="text" class="form-control" id="validationTooltip02" name="Nombre" value="${da[0].Nombre}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 				</div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Apellido Paterno </label>
-				    <input type="text" class="form-control" id="validationTooltip02" onkeypress="return soloLetras(event)" name="Appat" placeholder="Apellido Paterno" maxlength="45" required/>
+				    <input type="text" class="form-control" id="validationTooltip02" name="Appat" value="${da[0].Ap_pat}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Apellido Materno </label>
-				    <input type="text" class="form-control" id="validationTooltip02" onkeypress="return soloLetras(event)" name="Apmat" placeholder="Apellido Materno" maxlength="45" required/>
+				    <input type="text" class="form-control" id="validationTooltip02" name="Apmat" value="${da[0].Ap_mat}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> CURP </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="CURP" placeholder="CURP" minlength="18" maxlength="18" required/>
+				    <input type="text" class="form-control" id="validationTooltip02" name="CURP" value="${da[0].CURP}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> NSS </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" placeholder="NSS" maxlength="45" required/>
+				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" value="${da[0].NSS}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
                             <label for="validationTooltip03"> Fecha de Nacimiento </label>
-                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" placeholder="YYYY-MM-DD" maxlength="10" required/>
+                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" value="${da[0].Fecha_Nac}" required>
                             <script>
                                  var today, datepicker;
                                 today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()-1);
@@ -442,7 +444,7 @@
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Sexo </label>
                                     <br>
-				    <select name="Sexo" class="custom-select" style="width: 150px;" required/>
+				    <select name="Sexo" class="custom-select" style="width: 150px;" required>
 					  <option value=""></option>
                                                     <%
                                                         try{
@@ -463,15 +465,15 @@
                                                             out.println("Error: "+ex.getMessage());
                                                         }
                                                     %>
-                                                </select>
+                                    </select>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Estado </label>
-<!--				    <input type="text" class="form-control" id="validationTooltip02" name="Estado" placeholder="Estado" required>-->
-                                    <select name="estado" id="edo" class="custom-select" style="width: 300px;" required/>
+<!--				    <input type="text" class="form-control" id="validationTooltip02" name="Estado" value="Estado" required>-->
+                                    <select name="estado" id="edo" class="custom-select" style="width: 300px;" required>
 					  <option value="">Seleccione Estado</option>
                                                     <%
                                                         try{
@@ -492,15 +494,15 @@
                                                             out.println("Error: "+ex.getMessage());
                                                         }
                                                     %>
-                                                </select>
+                                    </select>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Municipio </label>
-<!--				    <input type="text" class="form-control" id="validationTooltip02" placeholder="Buscar..." required>-->
-                                    <select name="municipio" id="mun" class="custom-select" style="width: 300px;" required/>
+<!--				    <input type="text" class="form-control" id="validationTooltip02" value="Buscar..." required>-->
+                                    <select name="municipio" id="mun" class="custom-select" style="width: 300px;" required>
 					  <option value="">Seleccione municipio</option>
                                                     <%
                                                         try{
@@ -521,7 +523,7 @@
                                                             out.println("Error: "+ex.getMessage());
                                                         }
                                                     %>
-                                                </select>
+                                    </select>
                                     <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -529,21 +531,21 @@
                             
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Correo </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Correo" placeholder="Correo" required/>
+                                    <input type="text" class="form-control" id="validationTooltip02" name="Correo" value="${da[0].Correo}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Teléfono de contacto </label>
-                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Tel_fijo" placeholder="Telefono fijo" minlength="10" maxlength="15" required/>
+                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_fijo" value="${da[0].Telefono}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Teléfono Móvil (Opcional) </label>
-                                    <input type="text" class="num form-control" id="validationTooltip02" name="Tel_cel" placeholder="Telefono movil" minlength="10" maxlength="15" required/>
+                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_cel" value="${da[0].Celular}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -553,7 +555,7 @@
 			<div class="form-row">    
 				<div class="col-md-5 mb-3">
 					<label for="validationTooltip03">Unidad Académica</label>
-					<select  id="deporte" class="custom-select" style="width: 380px;" data-live-search="true" required/>
+					<select  id="UA" class="custom-select" style="width: 380px;" data-live-search="true" required>
 <!--					  <option value="">Seleccione Escuela</option>-->
                                                     <%
                                                         try{
@@ -574,7 +576,7 @@
                                                             out.println("Error: "+ex.getMessage());
                                                         }
                                                     %>
-                                                </select>
+                                        </select>
 				</div>
                    </div>
                     <div class="clearfix" >&nbsp;</div>
@@ -624,10 +626,5 @@
             return false;
         }
     }
-    </script>
-    <script>
-     $('.num').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-    });
     </script>
 </html>

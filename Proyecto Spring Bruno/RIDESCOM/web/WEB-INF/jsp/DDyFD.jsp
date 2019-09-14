@@ -577,16 +577,16 @@ Funciones: Será la vista gerenal para los alumnos
 	<!-- Menú -->
 		<nav id="bar">
 			<ul>
-				<li><a href="#"><span class="primero"><i class="fas fa-home"></i></span> Inicio </a></li>
+				<li><a href="DDyFD"><span class="primero"><i class="fas fa-home"></i></span> Inicio </a></li>
 				<li><a href="#Usuarios"><span class="tercero"><i class="fas fa-user"></i></span> Usuarios </a></li>
 				<li><a href="DDyFD/Deportes"><span class="cuarto"><i class="fas fa-poll"></i></span> Deportes </a></li>
                                 <li><a href="DDyFD/Pruebas"><span class="cuarto"><i class="fas fa-poll"></i></span> Pruebas </a></li>
-<!--				<li><a href="#calendario"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Eventos </a></li>-->
 				<li><a href="#Contacto"><span class="sexto"><i class="fas fa-address-book"></i></span> Contacto </a></li>
 				<li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> Perfil </a>
 					<ul>
 						<li><a href="#"> ${Nombre_U} </a></li>
                                                 <li><a href="#"> ${p.Correo} </a></li>
+                                                <li><a href="#"> ${p.Nombre} ${p.Ap_Pat} </a></li>
                                                 
                                                 <li>
                                                     <a href="Logout">Salir</a>
@@ -712,6 +712,10 @@ Funciones: Será la vista gerenal para los alumnos
 						</thead>
 						<tbody>
 							<c:forEach var="d" items="${coo}">
+                                                            <script>
+                                                                    $('#uselock').show(${d.Activo}!==0);
+                                                                    $('#useunlock').hide(${d.Activo}=0);
+                                                            </script>
                                                         <tr>
                                                             <td>${d.Nombre_U}</td>
                                                             <td>${d.Nombre}</td>
@@ -729,11 +733,16 @@ Funciones: Será la vista gerenal para los alumnos
                                                                         <i class="far fa-edit"></i>  
                                                                     </a> 
                                                             </td>
-                                                            <td> 
-                                                                    <a href="DDyFD/DesactivarUsuario?UsuarioID=${d.ID_Persona}" style='text-decoration:none;color: red;'> 
+                                                            
+                                                            <td > 
+                                                                    <a href="DDyFD/DesactivarUsuario?UsuarioID=${d.ID_Persona}" id="uselock" style='text-decoration:none;color: black;'> 
+                                                                        <i class="fas fa-user-lock"></i>
+                                                                    </a> 
+                                                                    <a href="DDyFD/ActivarUsuario?UsuarioID=${d.ID_Persona}" id="useunlock" style='text-decoration:none;color: gray;'> 
                                                                         <i class="fas fa-user-lock"></i>
                                                                     </a> 
                                                             </td>
+                                                                    
                                                             <td> 
                                                                     <a href="DDyFD/BorrarUsuario?UsuarioID=${d.ID_Persona}" style='text-decoration:none;color: red;'> 
                                                                         <i class="far fa-trash-alt"></i>  

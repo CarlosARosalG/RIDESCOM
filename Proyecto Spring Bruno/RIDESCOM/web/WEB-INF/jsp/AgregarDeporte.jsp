@@ -383,7 +383,7 @@
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip01"> Nombre del deporte </label>
-                            <input type="text" name="Disciplina" id="validationTooltip01" class="form-control" placeholder="Nombre Deporte" maxlength="30" required/>
+                            <input type="text" name="Disciplina" id="validationTooltip01" class="form-control" placeholder="Nombre Deporte" maxlength="50" required/>
                             <div class="invalid-feedback">
                                 Ingresa una prueba
                             </div>

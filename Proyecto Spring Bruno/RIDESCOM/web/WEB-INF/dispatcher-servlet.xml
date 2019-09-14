@@ -49,6 +49,7 @@
                 <prop key="DDyFD/AgregarUsuario">usuarios</prop>
                 <prop key="DDyFD/EditarUsuario">usuarios</prop>
                 <prop key="DDyFD/DesactivarUsuario">usuarios</prop>
+                <prop key="DDyFD/ActivarUsuario">usuarios</prop>
                 <prop key="DDyFD/BorrarUsuario">usuarios</prop>
                 <prop key="DDyFD/ConfirmaBorrarUsuario">usuarios</prop>
                 <prop key="DDyFD/Usuariosiguiente">usuarios</prop>

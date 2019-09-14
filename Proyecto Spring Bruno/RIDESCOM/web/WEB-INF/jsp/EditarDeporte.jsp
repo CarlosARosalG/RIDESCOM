@@ -385,7 +385,7 @@
                             <label>ID Deporte: ${dep[0].ID_Deporte}</label>
                             <div></div>
                             <label for="validationTooltip01"> Nombre del Deporte </label>
-                            <input type="text" name="Disciplina" value="${dep[0].Disciplina}" id="validationTooltip01" class="form-control" maxlength="30" required/>
+                            <input type="text" name="Disciplina" value="${dep[0].Disciplina}" id="validationTooltip01" class="form-control" maxlength="50" required/>
                             <div class="invalid-feedback">
                                 Ingresa un deporte
                             </div>

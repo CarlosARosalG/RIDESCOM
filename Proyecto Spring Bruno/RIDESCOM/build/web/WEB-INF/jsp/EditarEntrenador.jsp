@@ -517,14 +517,14 @@
 			    </div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Teléfono de contacto </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_fijo" value="${per[0].Telefono}" required>
+                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_fijo" value="${per[0].Telefono}" minlength="10" maxlength="15" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Teléfono Móvil (Opcional) </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_cel" value="${per[0].Celular}" required>
+                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_cel" value="${per[0].Celular}" minlength="10" maxlength="15" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>

@@ -391,7 +391,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <select name="Tipo" id="selectsport" class="custom-select" style="width: 380px;" autocomplete="off">
+                            <select name="Tipo" id="selectsport" class="custom-select" style="width: 380px;" autocomplete="off" required/>
 					  <option value="">Tipo de prueba</option>
                                                     <%
                                                         try{
@@ -415,7 +415,7 @@
                             </select>
                         </div>
                         <div >
-                            <select name="Act_Prueba" id="selectsport" class="custom-select" style="width: 380px;" autocomplete="off">
+                            <select name="Act_Prueba" id="selectsport" class="custom-select" style="width: 380px;" autocomplete="off" required/>
 					  <option value="">Deporte al que pertenece</option>
                                                     <%
                                                         try{
