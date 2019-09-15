@@ -1,0 +1,57 @@
+\begin{UseCase}{CU14}{Consulta Resultados}{
+		\noindent Esta caso de uso servirá para que el Jefe de Fomento Deportivo pueda consultar los Resultados obtenidos por los participantes una vez estos hallan terminado y, sean registrados en la página.
+		Para ello el Jefe de Fomento Deportivo dará click en el botón \IUbutton{ Resultados } ubicado en la  parte superior de la \IUref{}{Pantalla de Principal \ref{principalJFD}}.	
+	} \label{CU14_evento}
+
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Jefe de Fomento Deportivo}
+		\UCitem{Propósito}{Consultar los resultados obtenidos por los participantes.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Iniciar sesión.
+            \item Tener registrados datos.	
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla principal}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Nombre
+        	\item Boleta
+        	\item Deporte
+        	\item Sub-División
+        	\item Posición
+        	\item Prueba
+        	\item Marca
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Resultados de los participantes.
+		    \item No hay resultados registrados.
+		\end{itemize}}
+		\UCitem{Destino}{Principal Jefe Fomento Deportivo}
+		\UCitem{Errores}{
+        	\begin{itemize}
+			    \item No hay coordinadores registrados.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+	
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla Principal \ref{principalJFD}}.
+    \UCpaso Muestra la \IUref{}{Pantalla Principal \ref{principalJFD}}. \label{CU14_regresar}
+    \UCpaso[\UCactor] Da click en el botón \IUbutton{ Resultados }.  
+    \UCpaso Muestra la tabla de Resultados. \Trayref{A}
+    \end{UCtrayectoria}
+    
+    \begin{UCtrayectoriaA}{A}{No hay registros}
+    	\UCpaso Muestra mensaje “No hay coordinadores registrados".
+    	\UCpaso Continua en el paso \ref{CU14_regresar} del \UCref{CU14}.
+    \end{UCtrayectoriaA}
+
+
+	
+
+

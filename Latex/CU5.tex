@@ -1,60 +1,38 @@
-\begin{UseCase}{CU}{Validación de perfil}{
-		Servirá para que el alumno que esté interesado en participar en algún evento interpolitécnico deportivo, cree una cuenta para posteriormente poder iniciar sesión y así, inscribirse en el evento de su interés. 
-		Dicho registro lo encontrará dentro de la pantalla de Inicio en el apartado ‘Regístrate’, posteriormente deberá llenar los campos que se le solicitan, los cuales son: Boleta, Correo electrónico y una contraseña.
-		El numero de Boleta consta de 10 caracteres numéricos, y en el correo solamente se aceptan los dominios más comunes (Gmail, Hotmail, Outlook).
-		Una vez realizado, el alumno deberá acudir al Departamento de Actividades Deportivas de su Unidad Académica en un periodo no máximo a los 3 días a partir del día en el que se registró, para que el coordinador valide los datos que se ingresaron previamente. Para ello el coordinador deberá solicitar una identificación escolar vigente para corroborar dichos datos. }
-		\label{CU_Validacionperfil}
+\begin{UseCase}{CU5}{Recupera contraseña para el Coordinador}{
+		Servirá para que el  Coordinador de la Unidad Académica pueda solicitar su restablecimiento de contraseña. Para ellos deberá de dar click en el botón \IUbutton{ Recuperar Contraseña } que se encuentra en la \IUref{}{Pantalla de Inicio de Sesión \ref{inicioJFDycoord}}.
+		EL Jefe de Fomento Deportivo, recibirá la notificación de que un COordinador de Unidad Académica solicita el restablecimiento de la contraseña y así, este podrá realizar el cambio. 
+	}
+	\label{CU5_Recupercoord}
 	
 	\UCitem{Versión}{0.1}
 	\UCitem{Autor}{Rosales González Carlos Andrés}
 	\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
 	\UCitem{Actor}{Alumno}
-	\UCitem{Propósito}{Poder inscribirse en un evento interpolitécnico deportivo.}
-	\UCitem{Precondiciones}{No estar registrado previamente}
+	\UCitem{Propósito}{Restablecer las contraseña del usaurio de un Coordinador de Unidad Académica.}
+	\UCitem{Precondiciones}{Tener una cuenta registrada.}
 	\UCitem{Postcondiciones}{
 		\begin{itemize}
-			\item El alumno podrá ingresar al sistema.
-			\item Habrá un registro nuevo del alumno.
-			\item Deberá acudir en un periodo no máximo a 3 días al Departamento de Actividades Deportivas de su Unidad Académica.
+			\item El Coordinador de la Unidad acadpemica podrá ingresar a la página.
 	\end{itemize}}
 	\UCitem{Entradas}{
 		\begin{itemize}
-			\item Número de boleta 
-			\item Contraseña
-			\item Correo electrónico
+			\item Usuario
 	\end{itemize}}
 	\UCitem{Origen}{Pantalla, Teclado}
 	\UCitem{Salidas}{Pantalla}
-	\UCitem{Destino}{Pantalla principal}
+	\UCitem{Destino}{Login Coordinador de Unidad Académica}
 	\UCitem{Errores}{
 		\begin{itemize}
-			\item La boleta no es válida
-			\item Dominio de correo invalido
+			\item El usuario no es válida
+			\item Campo requerido.
 		\end{itemize}
 	}
 	\UCitem{Observaciones}{Ninguna}
 \end{UseCase}
 \begin{UCtrayectoria}{Principal}
-	\UCpaso[\UCactor] Oprime el \IUbutton{ Registrate  } ubicado en la pantalla Principal.
-	%\UCpaso Muestra el mensaje {\bf MSG1-}``¿Está [{\em seguro}] de querer eliminar este registro.''.
-	\UCpaso Se conecta al SAES y obtiene el CAPTCHA del login.
-	\UCpaso Muestra la pantalla.
-	\UCpaso[\UCactor] Introduce Boleta, Contraseña y correo electronico
-	\UCpaso[\UCactor] Presiona el botón.
-	\UCpaso Comprueba los campos obligatorios que no estén vacias.
-	\UCpaso Inicia sesión en el SAES de la escuela usando la boleta, contraseña y captcha introducidos.
-	\UCpaso verifica que el alumno está efectivamente inscrito \Trayref{A} \Trayref{B}
-	\UCpaso Registra al alumno.
-	\UCpaso Muestra el mensaje MSG1 “Registro de cuenta exitoso”.
-	\UCpaso Muestra la pantalla .
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{ Recuperar } ubicado en la \IUref{}{Pantalla de Inicio de Sesión \ref{inicioJFDycoord}}.
+	\UCpaso Es redirigido .
+	\UCpaso[\UCactor] Introduce su correo electrónico.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{ Recuperar }.
+	\UCpaso Envía la contraseña al correo registrado.
 \end{UCtrayectoria}
-
-\begin{UCtrayectoriaA}{A}{Inserta algún otro carácter no correspondiente al “Número de Boleta” y presiona el botón ‘Registrar’}
-	\UCpaso Muestra en la ventana el mensaje “Número de Boleta inválido”
-	\UCpaso Regresa al paso 2 de la trayectoria principal.
-\end{UCtrayectoriaA}
-
-\begin{UCtrayectoriaA}{B}{Inserta algún otro carácter no correspondiente al “Dominio del correo electrónico” y presiona el botón ‘Registrar’}
-	\UCpaso Muestra en la ventana el mensaje “Correo inválido, asegúrese que su correo sea de tipo Gmail, Hotmail o Outlook”
-	\UCpaso Regresa al paso 2 de la trayectoria principal.
-\end{UCtrayectoriaA}
