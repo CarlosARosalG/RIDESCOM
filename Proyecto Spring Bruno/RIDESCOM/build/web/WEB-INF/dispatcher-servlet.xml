@@ -70,6 +70,10 @@
                 <prop key="Coordinador/BorrarEntrenador">entrenadores</prop>
                 <prop key="Coordinador/ConfirmaBorrarEntrenador">entrenadores</prop>
                 
+                <prop key="Coordinador/DifundirEvento">difundir</prop>
+                <prop key="Coordinador/ConsultaInscritos">consultainscritos</prop>
+                <prop key="Coordinador/Cedulas">cedulas</prop>
+                
                 <prop key="Resultados">resultados</prop>
                 
             </props>
@@ -90,6 +94,9 @@
     <bean name="evento" class="mx.ipn.escom.ridescom.controller.Evento"/>
     <bean name="pruebas" class="mx.ipn.escom.ridescom.controller.Pruebas"/>
     <bean name="deportes" class="mx.ipn.escom.ridescom.controller.Deportes"/>
+    <bean name="difundir" class="mx.ipn.escom.ridescom.controller.Difundir"/>
+    <bean name="consultainscritos" class="mx.ipn.escom.ridescom.controller.ConsultaInscritos"/>
+    <bean name="cedulas" class="mx.ipn.escom.ridescom.controller.Cedulas"/>
     <bean name="resultados" class="mx.ipn.escom.ridescom.controller.Resultados"/>
 <!--    <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"

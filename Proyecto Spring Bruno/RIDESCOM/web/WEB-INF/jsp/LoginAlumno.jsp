@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <head>
+        <link href="https://www.saes.escom.ipn.mx/BotDetectCaptcha.ashx?get=layoutStyleSheet" rel="stylesheet" type="text/css" /><link href="https://www.saes.escom.ipn.mx/App_Themes/Granite/_vti_cnf/Default.css" type="text/css" rel="stylesheet" /><link href="https://www.saes.escom.ipn.mx/App_Themes/Granite/Default.css" type="text/css" rel="stylesheet" />
         <!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         
@@ -141,6 +142,9 @@
         <title>Login</title>
     </head>
     <body>
+<script>
+    
+</script>
     <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
@@ -182,7 +186,7 @@
 					</div>
                                         <div class="clearfix" >&nbsp;</div>
                                         <div>
-                                            <a target="_blank" href="http://captcha.com/asp.net-captcha-info.html" title="BotDetect Control" onclick="c_default_ctl00_leftcolumn_loginuser_logincaptcha.OnHelpLinkClick(); return c_default_ctl00_leftcolumn_loginuser_logincaptcha.FollowHelpLink;"><img class="LBD_CaptchaImage" id="c_default_ctl00_leftcolumn_loginuser_logincaptcha_CaptchaImage" src="${src}" alt="CAPTCHA"></a>
+                                            <a target="_blank" href="http://captcha.com/asp.net-captcha-info.html" title="BotDetect Control" onclick="c_default_ctl00_leftcolumn_loginuser_logincaptcha.OnHelpLinkClick(); return c_default_ctl00_leftcolumn_loginuser_logincaptcha.FollowHelpLink;"><img class="LBD_CaptchaImage" id="c_default_ctl00_leftcolumn_loginuser_logincaptcha_CaptchaImage" src="${src}" alt="CAPTCHA"></a> <!--src="../../../abc.jpg"-->
                                         </div>
                                         <div class="clearfix" >&nbsp;</div>
 					<div class="form-group">

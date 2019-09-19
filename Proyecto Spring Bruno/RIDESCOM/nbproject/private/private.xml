@@ -8,8 +8,8 @@
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarPrueba.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Connect.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/CoordUA.jsp</file>
-            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/LoginAlumno.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/BorrarDeporte.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/LoginAlumno.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/UsuarioDAO.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/Eventos.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Alumno.jsp</file>
@@ -50,12 +50,15 @@
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/EditarPrueba.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/Persona.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/DDyFD.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/DifundirEvento.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Conexion.java</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Difundir.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/Crawler.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Deportes.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarUsuario.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Entrenadores.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/PerfilDDyFD.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Craw.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Deportes.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Eventonext.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/web.xml</file>

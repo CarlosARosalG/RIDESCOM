@@ -28,15 +28,6 @@ public class UsuarioDAO {
         Usuario us=new Usuario();
 
         String sql="select Nombre_U, Password_U from usuario where BINARY Nombre_U=? and BINARY Password_U=? and Activo=1 and Roles_ID_Roles<>3";
-//        String sql="select c.id_Cuenta, r.ID_Roles, r.Rol, p.Nombre, p.Usuario_Usuario_ID, u.Usuario_ID\n" +
-//"	\n" +
-//"	from Cuenta c, Roles r, Usuario u, Persona p\n" +
-//"\n" +
-//"		where r.ID_Roles = c.Roles_ID_Roles\n" +
-//" \n" +
-//"			AND c.Usuario_Usuario_ID = u.Usuario_ID\n" +
-//"\n" +
-//"	                AND u.Usuario_ID = p.Usuario_Usuario_ID where Nombre_U=? and Password_U=?";
         try{
             con=cn.Connect();
             ps=con.prepareStatement(sql);

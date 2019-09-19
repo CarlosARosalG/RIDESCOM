@@ -512,8 +512,8 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1"> Comentarios acerca del evento </label>
-                        <textarea name="Desc" class="form-control" id="exampleFormControlTextarea1" rows="2" value="${eve[0].Descripcion}" maxlength="200"></textarea>
-                        <p id="contadorTaComentario">0/200</p>
+                        <textarea name="Desc" onkeyup="countChars(this);" class="form-control" id="exampleFormControlTextarea1" placeholder="${eve[0].Descripcion}" rows="2" maxlength="200"></textarea>
+                        <p id="charNum">0/200</p>
                     </div>
 <!--                    <button class="btn  btn-outline-success" type="submit"> Registrar </button>-->
                     <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Actualizar </button>
@@ -521,38 +521,6 @@
                 </form>
 	</section>
 </body>
-<script>
-    init_contadorTa("exampleFormControlTextarea1","contadorTaComentario", 200);
-    function init_contadorTa(idtextarea, idcontador,max)
-{
-$("#"+idtextarea).keyup(function()
-{
-updateContadorTa(idtextarea, idcontador,max);
-});
- 
-$("#"+idtextarea).change(function()
-{
-updateContadorTa(idtextarea, idcontador,max);
-});
- 
-}
- 
-function updateContadorTa(idtextarea, idcontador,max)
-{
-var contador = $("#"+idcontador);
-var ta =     $("#"+idtextarea);
-contador.html("0/"+max);
- 
-contador.html(ta.val().length+"/"+max);
-if(parseInt(ta.val().length)>max)
-{
-ta.val(ta.val().substring(0,max-1));
-contador.html(max+"/"+max);
-}
- 
-}​
-</script>
-
 <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {
@@ -573,5 +541,16 @@ contador.html(max+"/"+max);
           }, false);
         })();
 </script>
-
+<script>
+function countChars(obj){
+    var maxLength = 200;
+    var strLength = obj.value.length;
+    
+    if(strLength > maxLength){
+        document.getElementById("charNum").innerHTML = '<span style="color: black;">'+strLength+'/'+maxLength+'</span>';
+    }else{
+        document.getElementById("charNum").innerHTML = strLength+'/'+maxLength+'';
+    }
+}
+</script>
 </html>

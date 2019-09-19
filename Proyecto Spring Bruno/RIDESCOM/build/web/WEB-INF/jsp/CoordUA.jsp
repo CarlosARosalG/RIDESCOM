@@ -567,10 +567,10 @@
 			<ul>
                                 <li><a href="#calendario"><span class="tercero"><i class="fas fa-calendar"></i></span> Eventos </a></li>
 				<li><a href="#resultados"><span class="cuarto"><i class="fas fa-poll"></i></span> Resultados </a></li>
-                                <li><a href=""><span class="primero"><i class="fas fa-sign-in-alt"></i></span> Cedulas de inscripción </a></li>
+                                <li><a href="Coordinador/Cedulas"><span class="primero"><i class="fas fa-sign-in-alt"></i></span> Cedulas de inscripción </a></li>
 <!--				<li><a href="#"><span class="segundo"><i class="fas fa-calendar"></i></span> Registrate </a></li>-->
-				<li><a href=""><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Consulta Inscritos </a></li>
-				<li><a href=""><span class="sexto"><i class="fas fa-address-book"></i></span> Difundir evento </a></li>
+				<li><a href="Coordinador/ConsultaInscritos"><span class="quinto"><i class="fas fa-sign-in-alt"></i></span> Consulta Inscritos </a></li>
+				<li><a href="Coordinador/DifundirEvento"><span class="sexto"><i class="fas fa-address-book"></i></span> Difundir evento </a></li>
                                 <li><a href="#"><span class="septimo"><i class="fas fa-user"></i></span> Perfil </a>
 					<ul>
 						<li><a href="#"> ${Nombre_U} </a></li>
