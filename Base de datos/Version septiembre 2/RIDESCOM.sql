@@ -259,7 +259,7 @@ CREATE INDEX `fk_Alumno_Escuela_has_Prog_Academico1_idx` ON `RIDESCOM`.`Alumno` 
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Ciclo` (
   `ID_Ciclo` INT NOT NULL AUTO_INCREMENT,
-  `Ciclo_Escolar`` VARCHAR(6) NOT NULL,
+  `Ciclo` VARCHAR(6) NOT NULL,
   PRIMARY KEY (`ID_Ciclo`))
 ENGINE = InnoDB;
 
@@ -3316,7 +3316,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `RIDESCOM`;
-INSERT INTO `RIDESCOM`.`Ciclo` (`ID_Ciclo`, `Ciclo_Escolar`) VALUES (1, '2020/1');
+INSERT INTO `RIDESCOM`.`Ciclo` (`ID_Ciclo`, `Ciclo`) VALUES (1, '2020/1');
 
 COMMIT;
 
