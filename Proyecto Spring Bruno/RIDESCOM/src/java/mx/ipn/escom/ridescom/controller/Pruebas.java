@@ -200,5 +200,4 @@ public class Pruebas {
         mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
         return mv;
     }
-
 }

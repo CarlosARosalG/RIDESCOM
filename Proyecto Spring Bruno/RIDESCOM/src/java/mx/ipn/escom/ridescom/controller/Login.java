@@ -39,12 +39,16 @@ public class Login {
     @RequestMapping(value="Login", method=RequestMethod.GET)
     public ModelAndView log(HttpServletRequest req){
         HttpSession session = req.getSession();
-        if(session.getAttribute("Nombre_U")== null){
+        if(session.getAttribute("Nombre_U")!= null){
+            if(us.getRol()==1){
+                mav.setViewName("Error404");
+            }else if(us.getRol()==2){
+                mav.setViewName("CoordUA");
+            }else if(us.getRol()==3){
+                mav.setViewName("Alumno");
+            }
+        }else{
             mav.setViewName("Login");
-        }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
-            mav.setViewName("Error404");
-        }else if(session.getAttribute("Nombre_U").equals("ESCOM")){
-            mav.setViewName("CoordUA");
         }
         return mav;
     }
@@ -55,19 +59,22 @@ public class Login {
         if(accion.equalsIgnoreCase("Entrar")){
         String usuario=req.getParameter("Nombre_U");
         String pass=req.getParameter("Password_U");
-        String jefe= "DDyFD";
+        //String jefe= "DDyFD";
         
         us=udao.validar(usuario, pass);
         if(us.getNombre_U()!= null){
-            if(us.getNombre_U().equals(jefe)){
-            
-            HttpSession session=req.getSession();
-            session.setAttribute("Nombre_U", jefe); //user
-            return new ModelAndView("redirect:/DDyFD");
-            }else {
+            if(us.getRol()==1){
+                HttpSession session=req.getSession();
+                session.setAttribute("Nombre_U", usuario); //user
+                return new ModelAndView("redirect:/DDyFD");
+            }else if(us.getRol()==2) {
                 HttpSession session=req.getSession();
                 session.setAttribute("Nombre_U", usuario); //user
                 return new ModelAndView("redirect:/Coordinador");
+            }else{
+                HttpSession session=req.getSession();
+                session.setAttribute("Nombre_U", usuario); //user
+                return new ModelAndView("redirect:/Alumno");
             }
         }else{
         ModelAndView mv=new ModelAndView("Login");
@@ -80,7 +87,7 @@ public class Login {
     }
     
     @RequestMapping(value="Error")
-    public ModelAndView alumno(){   
+    public ModelAndView error(){   
         mav.setViewName("Error404");
         return mav;
     }

@@ -380,8 +380,9 @@
 		
 		<!-- Formulario --> 
                 <form class="needs-validation" novalidate method="POST">
+                    <label>ID de Evento: ${eve[0].Evento_ID}</label>
                     <div class="form-row">
-                        <label>ID de Evento: ${eve[0].Evento_ID}</label>
+                        
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip01"> Nombre del evento </label>
                             <input name="Nombre_E" type="text" id="validationTooltip01" class="form-control" value="${eve[0].Nombre_Evento}" maxlength="300" required/>
@@ -409,16 +410,8 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip03"> Fecha de Inicio para registrarse </label>
-                            <input name="FIR" type="text" class="form-control" id="datepicker1" value="${fecha}" required>
-                            <script>
-                                var today, datepicker;
-                                today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                                    datepicker = $('#datepicker1').datepicker({
-                                    uiLibrary: 'bootstrap4',
-                                    minDate: today,
-                                    format: 'yyyy-mm-dd'
-                                });
-                            </script>
+                            <input type="text" class="form-control" id="datepicker1" value="${fecha}" disabled>
+                            
                             <label for="validationTooltip03"> Fecha limite para registrarse </label>
                             <input name="FFR" type="text" class="form-control" id="datepicker2" value="${eve[0].Fecha_fin_Registro}" required>
                             <script>
@@ -460,24 +453,28 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip04"> Lugar donde se realizará el evento </label>
-                            <input name="Lugar" type="text" class="form-control" id="validationTooltip04" value="${eve[0].Lugar_del_Evento}" maxlength="200" required>
-                            <div class="invalid-feedback">
-                                Ingresa un usuario
-                            </div>
-                        </div>
-                      <div class="col-md-8 mb-3">
-                            <label for="validationTooltip02"> Dirección del Lugar </label>
-                            <input name="Dir" type="text" class="form-control" id="validationTooltip02" value="${eve[0].Direccion}" maxlength="150" required/>
-                            <div class="invalid-feedback">
-                                Ingresa un usuario
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <label for="validationTooltip04"> Punto de referencia o lugar cercano </label>
-                            <input name="P_Ref" type="text" class="form-control" id="validationTooltip04" value="${eve[0].P_Referencia}" maxlength="100" required/>
-                            <div class="invalid-feedback">
-                                Ingresa un usuario
-                            </div>
+                            <select name="sede" id="selectsport" class="custom-select" style="width: 150px;" required/>
+					  <option value="">Sedes...</option>
+                                                    <%
+                                                        try{
+                                                            String query="select * from Sede s inner join(Municipio m, Estados edo) on(m.Estados_ID_estado=edo.ID_estado AND m.ID_Municipio=s.Municipio_ID_Municipio AND m.Estados_ID_estado=s.Municipio_Estados_ID_estado)";
+                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                                            Connect conn = new Connect();
+                                                            Statement stm=conn.Connect().createStatement();
+                                                            ResultSet rs=stm.executeQuery(query);
+                                                            while(rs.next()){
+                                                                %>
+                                                                <option value="<%=rs.getInt("ID_Sede")%>"><%=rs.getString("Nombre_S")%></option>
+                                                                <%
+                                                            }
+                                                            
+                                                        }catch(Exception ex)
+                                                        {
+                                                            ex.printStackTrace();
+                                                            out.println("Error: "+ex.getMessage());
+                                                        }
+                                                    %>
+                                                </select>
                         </div>
                     </div>
                     <div>

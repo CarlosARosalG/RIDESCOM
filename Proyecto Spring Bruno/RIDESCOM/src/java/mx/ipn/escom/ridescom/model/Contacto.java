@@ -14,6 +14,7 @@ public class Contacto {
     String Correo;
     String Tel_fijo;
     String Tel_cel;
+    String Ext;
 
     public Contacto() {
     }

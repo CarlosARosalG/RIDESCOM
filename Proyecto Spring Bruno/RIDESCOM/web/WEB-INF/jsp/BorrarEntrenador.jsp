@@ -477,7 +477,7 @@
 		  	</div>
                         <a href="ConfirmaBorrarEntrenador?EntrenadorID=${per[0].ID_Persona}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
 <!--		  	<button type="submit" class="btn  btn-outline-success "> Borrar </button>-->
-		  	<a href="../Coordinador"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+		  	<a href="../../Entrenadores"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
 		</form>
 	</section>
 

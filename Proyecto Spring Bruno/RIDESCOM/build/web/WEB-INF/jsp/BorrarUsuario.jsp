@@ -430,15 +430,7 @@
                             <div class="col-md-4 mb-3">
                             <label for="validationTooltip03"> Fecha de Nacimiento </label>
                             <input name="Nacimiento" type="text" class="form-control" id="datepicker" value="${usu[0].Fecha_Nac}" disabled/>
-                            <script>
-                                 var today, datepicker;
-                                today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()-1);
-                                    datepicker = $('#datepicker').datepicker({
-                                    uiLibrary: 'bootstrap4',
-                                    maxDate: today,
-                                    format: 'yyyy-mm-dd'
-                                });
-                            </script>
+
                         </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Sexo </label>
@@ -495,8 +487,8 @@
 				</div>
                    </div>
                     <div class="clearfix" >&nbsp;</div>
-                    <button type="submit" class="btn  btn-outline-success "> Registrar </button>
-                    <a href="../DDyFD"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn btn-outline-danger"> Cancelar </button></a>
+                    <button type="submit" class="btn  btn-outline-success "> Eliminar </button>
+                    <a href="../Usuarios"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn btn-outline-danger"> Cancelar </button></a>
                 </form>
 		<div class="clearfix" >&nbsp;</div>
 	</section>

@@ -31,7 +31,7 @@ public class Evento {
     int EventoID;
     List dat;
     List dat1;
-
+   
      ////////////////////////////////// Operadores CRUD //////////////////////////////////////////////////////
     //Scripts para Agregar Deportes
     @RequestMapping(value="DDyFD/AgregarEvento", method=RequestMethod.GET)
@@ -51,8 +51,8 @@ public class Evento {
 //            String sql="insert into Evento(Nombre_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Lugar_del_Evento, Descripcion, Direccion, P_Referencia, Fecha_Evento, Ciclo_ID_Ciclo, Act_Deportiva_ID_Deporte) value (?,?,?,?,?,?,?,?,?,?);";
 //            this.rid.update(sql, ev.getNombre_E(), ev.getFIR(), ev.getFFR(), ev.getLugar(), ev.getDesc(), ev.getDir(), ev.getP_Ref(), ev.getFE(), ev.getCiclo(), ev.getDeporte());
         
-        String sql="insert into Evento(Nombre_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Lugar_del_Evento, Descripcion, Direccion, P_Referencia, Fecha_Evento, Ciclo_ID_Ciclo, Act_Deportiva_ID_Deporte) value (?,left(now(),10),?,?,?,?,?,?,?,?);";
-            this.rid.update(sql, ev.getNombre_E(), ev.getFFR(), ev.getLugar(), ev.getDesc(), ev.getDir(), ev.getP_Ref(), ev.getFE(), ev.getCiclo(), ev.getDeporte());
+        String sql="insert into Evento(Nombre_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Descripcion, Fecha_Evento, Ciclo_ID_Ciclo, Act_Deportiva_ID_Deporte, Sede_ID_Sede) value (?,left(now(),10),?,?,?,?,?,?);";
+            this.rid.update(sql, ev.getNombre_E(), ev.getFFR(), ev.getDesc(), ev.getFE(), ev.getCiclo(), ev.getDeporte(), ev.getSede());
             return new ModelAndView("redirect:../DDyFD/Eventosiguiente");
     }
     @RequestMapping(value="DDyFD/Eventosiguiente", method=RequestMethod.GET)
@@ -96,8 +96,8 @@ public class Evento {
     }
     @RequestMapping(value="DDyFD/EditarEvento", method=RequestMethod.POST)
     public ModelAndView Editar(Eventos ev){
-        String sql="update Evento set Nombre_Evento=?, Fecha_inicio_Registro=?, Fecha_fin_Registro=?, Lugar_del_Evento=?, Descripcion=?, Direccion=?, P_Referencia=?, Fecha_Evento=?, Ciclo_ID_Ciclo=?, Act_Deportiva_ID_Deporte=? where Evento_ID="+EventoID;
-        this.rid.update(sql, ev.getNombre_E(), ev.getFIR(), ev.getFFR(), ev.getLugar(), ev.getDesc(), ev.getDir(), ev.getP_Ref(), ev.getFE(), ev.getCiclo(), ev.getDeporte());
+        String sql="update Evento set Nombre_Evento=?, Fecha_fin_Registro=?, Descripcion=?, Fecha_Evento=?, Ciclo_ID_Ciclo=?, Act_Deportiva_ID_Deporte=?, Sede_ID_Sede=? where Evento_ID="+EventoID;
+        this.rid.update(sql, ev.getNombre_E(), ev.getFFR(), ev.getDesc(), ev.getFE(), ev.getCiclo(), ev.getDeporte(), ev.getSede());
         ModelAndView mv=new ModelAndView ("redirect:../DDyFD");
         
         return mv;
@@ -128,8 +128,8 @@ public class Evento {
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
         EventoID=Integer.parseInt(re.getParameter("EventoID"));
 //        String sql="select * from Evento where Evento_ID="+EventoID;
-        String sql="select Evento_ID, Nombre_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Lugar_del_Evento, Descripcion, Direccion, P_referencia, Fecha_Evento, Ciclo.Ciclo_Escolar, Act_Deportiva.Disciplina from Evento "
-                + "inner join (Ciclo, Act_Deportiva) on (Evento.Ciclo_ID_Ciclo=Ciclo.ID_Ciclo AND Evento.Act_Deportiva_ID_Deporte=Act_Deportiva.ID_Deporte) where Evento_ID="+EventoID;
+        String sql="select Evento_ID, Nombre_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Descripcion, Fecha_Evento, Ciclo.Ciclo_Escolar, Act_Deportiva.Disciplina, Sede.Nombre_S from Evento "
+                + "inner join (Ciclo, Act_Deportiva, Sede) on (Evento.Ciclo_ID_Ciclo=Ciclo.ID_Ciclo AND Evento.Act_Deportiva_ID_Deporte=Act_Deportiva.ID_Deporte AND Evento.Sede_ID_Sede=Sede.ID_Sede) where Evento_ID="+EventoID;
         dat = this.rid.queryForList(sql);
         mav.addObject("eve",dat);
         mav.setViewName("BorrarEvento");
@@ -140,8 +140,8 @@ public class Evento {
     }    
     @RequestMapping(value="DDyFD/BorrarEvento", method=RequestMethod.POST)
     public ModelAndView delete(Eventos ev){
-        String sql="update Evento set Nombre_Evento=?, Fecha_inicio_Registro=?, Fecha_fin_Registro=?, Lugar_del_Evento=?, Descripcion=?, Direccion=?, P_Referencia=?, Fecha_Evento=?, Ciclo_ID_Ciclo=?, Act_Deportiva_ID_Deporte=? where Evento_ID="+EventoID;
-        this.rid.update(sql, ev.getNombre_E(), ev.getFIR(), ev.getFFR(), ev.getLugar(), ev.getDesc(), ev.getDir(), ev.getP_Ref(), ev.getFE(), ev.getCiclo(), ev.getDeporte());
+        String sql="update Evento set Nombre_Evento=?, Fecha_inicio_Registro=?, Fecha_fin_Registro=?, Descripcion=?, Fecha_Evento=?, Ciclo_ID_Ciclo=?, Act_Deportiva_ID_Deporte=?, Sede_ID_Sede=? where Evento_ID="+EventoID;
+        this.rid.update(sql, ev.getNombre_E(), ev.getFIR(), ev.getFFR(), ev.getDesc(), ev.getFE(), ev.getCiclo(), ev.getDeporte(), ev.getSede());
         ModelAndView mv=new ModelAndView ("redirect:../DDyFD/ConfirmaBorrarEvento");
         return mv;
     }
@@ -154,6 +154,4 @@ public class Evento {
 //        mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
         return mv;
     }
-
-    
 }

@@ -7,9 +7,12 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
@@ -28,6 +31,7 @@
                 <prop key="LoginAlumno">logina</prop>
                 
                 <prop key="DDyFD">ddyfd</prop>
+                <prop key="DDyFD/Resultados">resultadosfd</prop>
                 
                 <prop key="DDyFD/AgregarEvento">evento</prop>
                 <prop key="DDyFD/Eventosiguiente">evento</prop>
@@ -46,13 +50,13 @@
 <!--                <prop key="DDyFD/Deportes/BorrarDeporte">deportes</prop>-->
                 
                 <prop key="DDyFD/Usuarios">usuarios</prop>
-                <prop key="DDyFD/AgregarUsuario">usuarios</prop>
-                <prop key="DDyFD/EditarUsuario">usuarios</prop>
-                <prop key="DDyFD/DesactivarUsuario">usuarios</prop>
-                <prop key="DDyFD/ActivarUsuario">usuarios</prop>
-                <prop key="DDyFD/BorrarUsuario">usuarios</prop>
+                <prop key="DDyFD/Usuarios/AgregarUsuario">usuarios</prop>
+                <prop key="DDyFD/Usuarios/EditarUsuario">usuarios</prop>
+                <prop key="DDyFD/Usuarios/DesactivarUsuario">usuarios</prop>
+                <prop key="DDyFD/Usuarios/ActivarUsuario">usuarios</prop>
+                <prop key="DDyFD/Usuarios/BorrarUsuario">usuarios</prop>
                 <prop key="DDyFD/ConfirmaBorrarUsuario">usuarios</prop>
-                <prop key="DDyFD/Usuariosiguiente">usuarios</prop>
+                <prop key="DDyFD/Usuarios/Usuariosiguiente">usuarios</prop>
 
                 <prop key="DDyFD/Pruebas">pruebas</prop>
                 <prop key="DDyFD/Pruebas/AgregarPrueba">pruebas</prop>
@@ -62,19 +66,37 @@
                 <prop key="DDyFD/Pruebas/ConfirmaBorrar">pruebas</prop>
                 <prop key="DDyFD/Pruebas/Pruebasiguiente">pruebas</prop>
                 
+                <prop key="DDyFD/Sedes">sedes</prop>
+                <prop key="DDyFD/Sedes/AgregarSede">sedes</prop>
+                <prop key="DDyFD/Sedes/Sedesiguiente">sedes</prop>
+                <prop key="DDyFD/Sedes/EditarSede">sedes</prop>
+                <prop key="DDyFD/Sedes/ConfirmaSede">sedes</prop>
+                <prop key="DDyFD/Sedes/BorrarSede">sedes</prop>
+                <prop key="DDyFD/Sedes/ConfirmaBorrarSede">sedes</prop>
                 
                 <prop key="Coordinador">coordua</prop>
-                <prop key="Coordinador/AgregarEntrenador">entrenadores</prop>
-                <prop key="Coordinador/Entrenadorsiguiente">entrenadores</prop>
-                <prop key="Coordinador/EditarEntrenador">entrenadores</prop>
-                <prop key="Coordinador/BorrarEntrenador">entrenadores</prop>
-                <prop key="Coordinador/ConfirmaBorrarEntrenador">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores/AgregarEntrenador">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores/Entrenadorsiguiente">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores/EditarEntrenador">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores/BorrarEntrenador">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores/ConfirmaBorrarEntrenador">entrenadores</prop>
                 
                 <prop key="Coordinador/DifundirEvento">difundir</prop>
-                <prop key="Coordinador/ConsultaInscritos">consultainscritos</prop>
+                
+                <prop key="Coordinador/AlumnosInscritos">inscritos</prop>
+                
                 <prop key="Coordinador/Cedulas">cedulas</prop>
                 
-                <prop key="Resultados">resultados</prop>
+                <prop key="Coordinador/Resultados">resultados</prop>
+                <prop key="Coordinador/Resultados/AgregarResultado">resultados</prop>
+                <prop key="Coordinador/Resultados/Resultadosiguiente">resultados</prop>
+                <prop key="Coordinador/Resultados/EditarResultado">resultados</prop>
+                
+                <prop key="Alumno">alumno</prop>
+                <prop key="Alumno/Resultados">resultadosal</prop>
+                <prop key="ConsultaInscritos">consultainscritos</prop>
+                <prop key="InfoAlumno">alumno</prop>
                 
             </props>
         </property>
@@ -93,15 +115,20 @@
     <bean name="ddyfd" class="mx.ipn.escom.ridescom.controller.DDyFD"/>
     <bean name="evento" class="mx.ipn.escom.ridescom.controller.Evento"/>
     <bean name="pruebas" class="mx.ipn.escom.ridescom.controller.Pruebas"/>
+    <bean name="sedes" class="mx.ipn.escom.ridescom.controller.Sedes"/>
     <bean name="deportes" class="mx.ipn.escom.ridescom.controller.Deportes"/>
     <bean name="difundir" class="mx.ipn.escom.ridescom.controller.Difundir"/>
     <bean name="consultainscritos" class="mx.ipn.escom.ridescom.controller.ConsultaInscritos"/>
     <bean name="cedulas" class="mx.ipn.escom.ridescom.controller.Cedulas"/>
+    <bean name="alumno" class="mx.ipn.escom.ridescom.controller.Alumno"/>
     <bean name="resultados" class="mx.ipn.escom.ridescom.controller.Resultados"/>
+    <bean name="resultadosfd" class="mx.ipn.escom.ridescom.controller.ResultadosFD"/>
+    <bean name="resultadosal" class="mx.ipn.escom.ridescom.controller.ResultadosAL"/>
+    <bean name="inscritos" class="mx.ipn.escom.ridescom.controller.AlumnosInscritos"/>
 <!--    <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />-->
     <context:annotation-config />
     <context:component-scan base-package="mx.ipn.escom.ridescom"/>
-    
+
 </beans>

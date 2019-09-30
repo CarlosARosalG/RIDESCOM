@@ -4,13 +4,20 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Pruebanext.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarEntrenador.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/DDyFD.java</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Sedenext.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/BorrarSede.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ConsultaInscritos.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Sedes.java</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/EditarSede.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarPrueba.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Connect.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/CoordUA.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/BorrarDeporte.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/LoginAlumno.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/UsuarioDAO.java</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Sedes.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/Eventos.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Alumno.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Home.java</file>
@@ -26,16 +33,18 @@
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/BorrarPrueba.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarEvento.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/EditarDeporte.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/InfoAlumno.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ConfirmaEdicion.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/CoordUA.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Login.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Login.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Resultados.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/Usuario.java</file>
-            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/applicationContext.xml</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Evento.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ConfirmaEdiciond.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/EditarEvento.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Alumno.java</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Cedulas.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ConfirmaEdicionu.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/EditarUsuario.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Entrenadornext.jsp</file>
@@ -43,13 +52,19 @@
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/BorrarEvento.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/redirect.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ConfirmaEdicione.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Apc.java</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Crawp.java</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarSede.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Deportenext.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/ConsultaInscritos.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/index.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/BorrarEntrenador.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/LoginAlumno.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/EditarPrueba.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/Persona.java</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/AlumnoDAO.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/DDyFD.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Usuarios.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/DifundirEvento.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Conexion.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Difundir.java</file>
@@ -57,10 +72,11 @@
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Deportes.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarUsuario.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Entrenadores.java</file>
-            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/PerfilDDyFD.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Craw.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Deportes.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Eventonext.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ConsultaCedulas.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/Sede.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Usuarios.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarDeporte.jsp</file>

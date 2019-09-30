@@ -193,6 +193,4 @@ public class Deportes {
 //        mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
         return mv;
     }
-
-
 }

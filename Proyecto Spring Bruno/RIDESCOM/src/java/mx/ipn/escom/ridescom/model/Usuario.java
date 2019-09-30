@@ -14,15 +14,17 @@ public class Usuario {
     String Nombre_U;
     String Password_U;
     String activo;
+    int Rol;
 
     public Usuario() {
     }
 
-    public Usuario(int ID, String Nombre_U, String Password_U, String activo) {
+    public Usuario(int ID, String Nombre_U, String Password_U, String activo, int Rol) {
         this.ID = ID;
         this.Nombre_U = Nombre_U;
         this.Password_U = Password_U;
         this.activo = activo;
+        this.Rol = Rol;
     }
 
     public int getID() {
@@ -55,6 +57,14 @@ public class Usuario {
 
     public void setActivo(String activo) {
         this.activo = activo;
+    }
+
+    public int getRol() {
+        return Rol;
+    }
+
+    public void setRol(int Rol) {
+        this.Rol = Rol;
     }
     
     

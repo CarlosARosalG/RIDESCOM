@@ -27,7 +27,7 @@ public class UsuarioDAO {
     public Usuario validar(String usuario, String pass){
         Usuario us=new Usuario();
 
-        String sql="select Nombre_U, Password_U from usuario where BINARY Nombre_U=? and BINARY Password_U=? and Activo=1 and Roles_ID_Roles<>3";
+        String sql="select Nombre_U, Password_U, Roles_ID_Roles from usuario where BINARY Nombre_U=? and BINARY Password_U=? and Activo=1 and Roles_ID_Roles<>3";
         try{
             con=cn.Connect();
             ps=con.prepareStatement(sql);
@@ -39,6 +39,7 @@ public class UsuarioDAO {
                 //us.setNombre_U(rs.getString("ID_Roles"));
                 us.setNombre_U(rs.getString("Nombre_U"));
                 us.setPassword_U(rs.getString("Password_U"));
+                us.setRol(rs.getInt("Roles_ID_Roles"));
             }
         }catch(Exception e){
         }

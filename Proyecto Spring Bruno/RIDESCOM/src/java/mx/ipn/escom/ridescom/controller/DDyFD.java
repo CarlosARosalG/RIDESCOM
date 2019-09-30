@@ -54,7 +54,7 @@ public class DDyFD {
         String sqlp="select u.Nombre_U, p.Nombre, p.Ap_Pat, p.Ap_Mat, s.Sexo, p.Fecha_Nac, p.CURP, p.NSS, ce.Correo, tf.Telefono, tc.Celular" +
 "	from persona p, Usuario u, contacto c, tipo_sexo s, email ce, telefono_fijo tf, telefono_celular tc, Roles r" +
 "		where r.ID_Roles='1' " +
-"               AND p.Usuario_Usuario_ID = u.Usuario_ID" +
+"               AND p.ID_Persona = u.Persona_ID_Persona" +
 "               AND u.Roles_ID_Roles = r.ID_Roles" +
 "               AND p.ID_Persona = c.Persona_ID_Persona" +
 "               AND p.Tipo_Sexo_ID_Tipo_Sexo = s.ID_Tipo_Sexo" +
@@ -65,43 +65,18 @@ public class DDyFD {
         if(p!=null)
             mav.addObject("ddyfd",p);
                     //Consulta de Eventos registrados en la Base de Datos
-            String sql1="select Evento_ID, Nombre_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Lugar_del_evento, Direccion, P_referencia, Descripcion, Fecha_evento, Ciclo.Ciclo_Escolar, Act_Deportiva.Disciplina from Evento "
-            + "inner join (Ciclo, Act_Deportiva) on (Evento.Ciclo_ID_Ciclo=Ciclo.ID_Ciclo AND Evento.Act_Deportiva_ID_Deporte=Act_Deportiva.ID_Deporte) order by Fecha_evento ASC";
+            String sql1="select Evento_ID, Nombre_Evento, Descripcion, DATE_FORMAT(Fecha_Inicio_Registro,'%d-%m-%Y') AS FIR, DATE_FORMAT(Fecha_Fin_Registro,'%d-%m-%Y') AS FFR, DATE_FORMAT(Fecha_Evento, '%d-%m-%Y') AS FE, Ciclo_Escolar, Disciplina, Nombre_S, Municipio, Estado from Evento e "
+                    + "inner join (Ciclo ci, Act_Deportiva d, Sede s, Municipio m, Estados edo) "
+                    + "on (e.Ciclo_ID_Ciclo=ci.ID_Ciclo "
+                    + "AND e.Act_Deportiva_ID_Deporte=d.ID_Deporte "
+                    + "AND e.Sede_ID_Sede=s.ID_Sede "
+                    + "AND s.Municipio_ID_Municipio=m.ID_Municipio "
+                    + "AND s.Municipio_Estados_ID_estado=m.Estados_ID_estado "
+                    + "AND m.Estados_ID_estado=edo.ID_estado) order by Fecha_evento ASC";
             dat=this.rid.queryForList(sql1);
             //Aqui el sql solo muestra los eventos que no hayan pasado 
             if(dat!=null)
                 mav.addObject("eve",dat);
-            
-                    //Consulta de Uusarios de Coordinadores de UA
-            String sql="select u.Nombre_U, if(u.Activo=1,'Activo','Inactivo')as Activo, p.Nombre, p.ID_Persona, p.Ap_Pat, p.Ap_Mat, s.Sexo, p.Fecha_Nac, p.CURP, p.NSS, ce.Correo, tf.Telefono, tc.Celular" +
-"	from persona p, Usuario u, contacto c, tipo_sexo s, email ce, telefono_fijo tf, telefono_celular tc, Roles r" +
-"		where r.ID_Roles='2' " +
-"               AND p.Usuario_Usuario_ID = u.Usuario_ID" +
-"               AND u.Roles_ID_Roles = r.ID_Roles" +
-"               AND p.ID_Persona = c.Persona_ID_Persona" +
-"               AND p.Tipo_Sexo_ID_Tipo_Sexo = s.ID_Tipo_Sexo" +
-"               AND c.ID_Contacto = ce.Contacto_ID_Contacto" +
-"		AND c.ID_Contacto = tf.Contacto_ID_Contacto" +
-"               AND c.ID_Contacto = tc.Contacto_ID_Contacto";
-            dat2=this.rid.queryForList(sql);
-            if(dat2!=null)
-                mav.addObject("coo", dat2);
-            
-                    //Consulta de Resultados registrados en la Base de Datos
-            String sql2="select concat(p.Nombre,'',p.Ap_Pat,'',p.Ap_Mat) as Nombre, es.Escuela as Escuela, ad.Disciplina as Deporte, pr.Prueba as Prueba, r.Lugar_Obtenido as Lugar, r.Marca as Marca, e.Nombre_Evento as Evento "
-                    + "from Resultados r, Inscripcion ae, Alumno a, Persona p, Evento e, Escuela es, Escuela_Act_Deportiva ead, Act_Deportiva ad, Pruebas pr "
-                    + "WHERE r.Inscripcion_Alumno_ID_Alumno = ae.Alumno_ID_Alumno "
-                    + "AND ae.Alumno_ID_Alumno = a.ID_Alumno "
-                    + "AND a.Persona_ID_Persona = p.ID_Persona "
-                    + "AND ae.Evento_Evento_ID = e.Evento_ID "
-                    + "AND ae.Escuela_ID_Escuela = es.ID_Escuela "
-                    + "AND es.ID_Escuela = ead.Escuela_ID_Escuela "
-                    + "AND ead.Act_Deportiva_ID_Deporte = ad.ID_Deporte "
-                    + "AND ad.ID_Deporte = pr.Act_Deportiva_ID_Deporte ";
-            
-            dat1=this.rid.queryForList(sql2);
-            if(dat1!=null)
-            mav.addObject("res",dat1);
         return mav;
     }
     @RequestMapping(value="DDyFD", method=RequestMethod.POST)

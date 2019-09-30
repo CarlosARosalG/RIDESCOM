@@ -10,7 +10,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title> Registra un Usuario </title>
+	<title> Editar un Usuario </title>
 
 	<!--Jquery -->
 
@@ -363,7 +363,7 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Registrar un usuario de coordinador Unidad Académica</h1>
+			<h1> Editar información de un usuario de coordinador Unidad Académica</h1>
 		</div>
 
 		<div class="col-12 ">
@@ -423,14 +423,14 @@
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> NSS </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" value="${da[0].NSS}" required>
+				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" value="${da[0].NSS}">
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
                             <label for="validationTooltip03"> Fecha de Nacimiento </label>
-                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" value="${da[0].Fecha_Nac}" required>
+                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" value="${da[0].Fecha_Nac}" required disabled/>
                             <script>
                                  var today, datepicker;
                                 today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()-1);
@@ -538,14 +538,14 @@
 			    </div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Teléfono de contacto </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_fijo" value="${da[0].Telefono}" required>
+                                    <input type="text" class="num form-control" id="validationTooltip02" name="Tel_fijo" value="${da[0].Telefono}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Teléfono Móvil (Opcional) </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_cel" value="${da[0].Celular}" required>
+                                    <input type="text" class="num form-control" id="validationTooltip02" name="Tel_cel" value="${da[0].Celular}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -626,5 +626,10 @@
             return false;
         }
     }
+    </script>
+    <script>
+     $('.num').on('input', function () { 
+    this.value = this.value.replace(/[^0-9]/g,'');
+    });
     </script>
 </html>

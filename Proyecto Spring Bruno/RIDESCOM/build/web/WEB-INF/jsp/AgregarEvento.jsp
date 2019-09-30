@@ -458,26 +458,31 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip04"> Lugar donde se realizará el evento </label>
-                            <input name="Lugar" type="text" class="form-control" id="validationTooltip04" placeholder="Lugar del Evento" maxlength="200" required/>
-                            <div class="invalid-feedback">
-                                Ingresa un usuario
-                            </div>
-                        </div>
-                      <div class="col-md-8 mb-3">
-                            <label for="validationTooltip02"> Dirección del Lugar </label>
-                            <input name="Dir" type="text" class="form-control" id="validationTooltip02" placeholder="Dirección" maxlength="150" required/>
-                            <div class="invalid-feedback">
-                                Ingresa un usuario
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <label for="validationTooltip04"> Punto de referencia o lugar cercano </label>
-                            <input name="P_Ref" type="text" class="form-control" id="validationTooltip04" placeholder="Punto de referencia" maxlength="100" required/>
-                            <div class="invalid-feedback">
-                                Ingresa un usuario
-                            </div>
+                            <select name="sede" id="selectsport" class="custom-select" style="width: 150px;" required/>
+					  <option value="">Sedes...</option>
+                                                    <%
+                                                        try{
+                                                            String query="select * from Sede s inner join(Municipio m, Estados edo) on(m.Estados_ID_estado=edo.ID_estado AND m.ID_Municipio=s.Municipio_ID_Municipio AND m.Estados_ID_estado=s.Municipio_Estados_ID_estado)";
+                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                                            Connect conn = new Connect();
+                                                            Statement stm=conn.Connect().createStatement();
+                                                            ResultSet rs=stm.executeQuery(query);
+                                                            while(rs.next()){
+                                                                %>
+                                                                <option value="<%=rs.getInt("ID_Sede")%>"><%=rs.getString("Nombre_S")%></option>
+                                                                <%
+                                                            }
+                                                            
+                                                        }catch(Exception ex)
+                                                        {
+                                                            ex.printStackTrace();
+                                                            out.println("Error: "+ex.getMessage());
+                                                        }
+                                                    %>
+                                                </select>
                         </div>
                     </div>
+                                                                
                     <div>
                         <label for="validationTooltip05"> Deporte </label>
                         <div class="col-md-3 mb-3">

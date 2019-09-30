@@ -6,7 +6,10 @@
 package mx.ipn.escom.ridescom.controller;
 
 //import com.mysql.jdbc.Connection;
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
@@ -17,8 +20,10 @@ import javax.servlet.http.HttpSession;
 import mx.ipn.escom.ridescom.config.Conexion;
 import mx.ipn.escom.ridescom.model.Crawler;
 import mx.ipn.escom.ridescom.model.Usuario;
-import mx.ipn.escom.ridescom.model.UsuarioDAO;
+import mx.ipn.escom.ridescom.model.AlumnoDAO;
 import mx.ipn.escom.ridescom.config.Craw;
+import static mx.ipn.escom.ridescom.config.Craw.cookies;
+import mx.ipn.escom.ridescom.config.Crawp;
 import org.jsoup.Connection;
 //import org.jsoup.Connection.Method;
 import org.jsoup.Connection.Response;
@@ -38,23 +43,27 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginAlumno {
     ModelAndView mav=new ModelAndView();
     Craw crw=new Craw();
+    Crawp crwp=new Crawp();
+    Crawler crawl=new Crawler();
     Conexion cn=new Conexion();
     Connection con;
     JdbcTemplate rid=new JdbcTemplate(cn.ConectaRID());
     PreparedStatement ps;
     ResultSet rs;
     
-    Usuario us=new Usuario();
-    UsuarioDAO udao=new UsuarioDAO();
+    Usuario usu=new Usuario();
+    AlumnoDAO adao=new AlumnoDAO();
     
     List dat;
     
-//    public Map<String, String> cookies;
-//
-	private static String saes = "https://www.saes.escom.ipn.mx/";
-	private static String logi = "https://www.saes.escom.ipn.mx/Default.aspx";
-	public static String user = "https://www.saes.escom.ipn.mx/Alumnos/default.aspx";
-
+    public String regno;
+    public String passwd;
+    public String vrfcd;
+    
+    private static final String saes = "https://www.saes.escom.ipn.mx/";
+    private static final String logi = "https://www.saes.escom.ipn.mx/Default.aspx";
+    public static String user = "https://www.saes.escom.ipn.mx/Alumnos/default.aspx";
+    
 //Cerrar sesion del usuario DDyFD
     @RequestMapping(value="/Logout", method=RequestMethod.GET)
     public String logout(HttpServletRequest re) throws Exception{
@@ -62,26 +71,96 @@ public class LoginAlumno {
         session.invalidate();
         return "redirect:/LoginAlumno";
     }
-    String crawl;
     @RequestMapping(value="LoginAlumno", method=RequestMethod.GET)
     public ModelAndView alumno(HttpServletRequest re) throws Exception{
         HttpSession session = re.getSession();
-        if(session.getAttribute("Nombre_U")== null){         
-         String a=crw.capt();
-         mav.addObject("src", a);
-         mav.setViewName("LoginAlumno");
-        }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
-        mav.setViewName("Error404");
+        if(session.getAttribute("Nombre_U")!= null){
+            if(usu.getRol()==1){
+            mav.setViewName("DDyFD");
+        }else if(usu.getRol()==2){
+            mav.setViewName("CoordUA");
         }else{
-            mav.setViewName("Error404");
+            mav.setViewName("Alumno");
+        }
+        }else {
+            crw.ima();// DEBERIA DE GENERAR IMAGENES
+            crw.capt();
+         mav.addObject("src", crw.capt());
+            mav.setViewName("LoginAlumno");
         }
         return mav;
     }
-    @RequestMapping(value="Alumno", method=RequestMethod.POST)
+    @RequestMapping(value="LoginAlumno", method=RequestMethod.POST)
     public ModelAndView log(HttpServletRequest req, HttpServletResponse resp, Crawler cr) throws Exception{
-        String regno=;
-        String passwd;
-        String vrfcd;
-        crw.log(regno, passwd, vrfcd);
+        String accion=req.getParameter("btn");
+        if(accion.equalsIgnoreCase("Entrar")){
+        String usuario=req.getParameter("User");
+        String pass=req.getParameter("Password");
+        String capt=req.getParameter("Captcha");
+        //String jefe= "DDyFD";
+        
+        usu=adao.validar(usuario, pass);
+        if(usu.getNombre_U()!= null){
+            if(usu.getRol()==1){
+
+            HttpSession session=req.getSession();
+            session.setAttribute("Nombre_U", usuario); //user
+            return new ModelAndView("redirect:/DDyFD");
+            }else if(usu.getRol()==2) {
+                HttpSession session=req.getSession();
+                session.setAttribute("Nombre_U", usuario); //user
+                return new ModelAndView("redirect:/Coordinador");
+            }else{
+                HttpSession session=req.getSession();
+                session.setAttribute("Nombre_U", usuario); //user
+                return new ModelAndView("redirect:/Alumno");
+            }
+        }else{
+            regno=usuario;
+            passwd=pass;
+            vrfcd=capt;
+        
+            Connection conn = Jsoup.connect(saes+"/Default.aspx?ReturnUrl=%2falumnos%2fdefault.aspx")
+	            .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36")
+	            .cookies(crw.cookie())
+	            .timeout(0)
+                    .data(crw.log(regno, passwd, vrfcd))
+//	            .data("ctl00$leftColumn$LoginUser$UserName", usuario, 
+//                          "ctl00$leftColumn$LoginUser$Password", pass,
+//                          "ctl00$leftColumn$LoginUser$CaptchaCodeTextBox", vrfcd)//Aquí debe de ir los parametros insertados en log()
+	            .data("ctl00$leftColumn$LoginUser$LoginButton","Iniciar")
+	            .method(Connection.Method.POST);
+            Connection.Response response = conn.execute();
+            response.cookies().get(logi);
+
+
+            Map<String, String> loginCookies = response.cookies();
+
+            Document docn = Jsoup.connect("https://www.saes.escom.ipn.mx/Alumnos/default.aspx")
+	          .cookies(loginCookies)
+	          .get();
+
+            Document docs = Jsoup.connect("https://www.saes.escom.ipn.mx/Alumnos/Reinscripciones/Comprobante_Horario.aspx")
+		          .cookies(loginCookies)
+		          .get();
+
+            Element n = docn.getElementById("ctl00_mainCopy_FormView1_nombrelabel");	    
+	    String nombre = n.text();
+
+            Element e = docs.select("table#ctl00_mainCopy_GV_Horario td").first();
+            String grupo=e.text();
+            if(grupo!=null){
+            ModelAndView mv=new ModelAndView("InfoAlumno");
+        return mv;
+            }
+        }
+        }else{
+            ModelAndView mv=new ModelAndView("LoginAlumno");
+        mv.addObject("mjs", "<div style='color: red;'>ERROR, usuario o contraseña invalido.</div>");
+        return mv;
+        }
+        ModelAndView mv=new ModelAndView("LoginAlumno");
+        mv.addObject("mjs", "<div style='color: red;'>ERROR, usuario o contraseña invalido.</div>");
+        return mv;
     }
-    }
+}

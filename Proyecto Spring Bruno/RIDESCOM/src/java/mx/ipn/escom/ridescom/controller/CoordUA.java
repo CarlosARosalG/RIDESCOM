@@ -52,7 +52,7 @@ public class CoordUA {
         String sqlp="select u.Nombre_U, p.Nombre, p.Ap_Pat, p.Ap_Mat, s.Sexo, p.Fecha_Nac, p.CURP, p.NSS, ce.Correo, tf.Telefono, tc.Celular" +
 "	from persona p, Usuario u, contacto c, tipo_sexo s, email ce, telefono_fijo tf, telefono_celular tc, Roles r" +
 "		where r.ID_Roles='2' " +
-"               AND p.Usuario_Usuario_ID = u.Usuario_ID" +
+"               AND p.ID_Persona = u.Persona_ID_Persona" +
 "               AND u.Roles_ID_Roles = r.ID_Roles" +
 "               AND p.ID_Persona = c.Persona_ID_Persona" +
 "               AND p.Tipo_Sexo_ID_Tipo_Sexo = s.ID_Tipo_Sexo" +
@@ -63,26 +63,19 @@ public class CoordUA {
         if(p!=null)
             mav.addObject("e",p);
                     //Consulta de Eventos registrados en la Base de Datos
-            String sql1="select Evento_ID, Nombre_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Lugar_del_evento, Direccion, P_referencia, Descripcion, Fecha_evento, Ciclo.Ciclo_Escolar, Act_Deportiva.Disciplina from Evento "
-            + "inner join (Ciclo, Act_Deportiva) on (Evento.Ciclo_ID_Ciclo=Ciclo.ID_Ciclo AND Evento.Act_Deportiva_ID_Deporte=Act_Deportiva.ID_Deporte) where Fecha_evento > left(now(),10) order by Fecha_evento ASC";
+            String sql1="select Nombre_Evento, Descripcion, DATE_FORMAT(Fecha_Inicio_Registro,'%d-%m-%Y') AS FIR, DATE_FORMAT(Fecha_Fin_Registro,'%d-%m-%Y') AS FFR, DATE_FORMAT(Fecha_Evento, '%d-%m-%Y') AS FE, Ciclo_Escolar, Disciplina, Nombre_S, Municipio, Estado from Evento e "
+                    + "inner join (Ciclo ci, Act_Deportiva d, Sede s, Municipio m, Estados edo) "
+                    + "on (e.Ciclo_ID_Ciclo=ci.ID_Ciclo "
+                    + "AND e.Act_Deportiva_ID_Deporte=d.ID_Deporte "
+                    + "AND e.Sede_ID_Sede=s.ID_Sede "
+                    + "AND s.Municipio_ID_Municipio=m.ID_Municipio "
+                    + "AND s.Municipio_Estados_ID_estado=m.Estados_ID_estado "
+                    + "AND m.Estados_ID_estado=edo.ID_estado) "
+                    + "where Fecha_evento > left(now(),10) order by Fecha_evento ASC";
             dat=this.rid.queryForList(sql1);
             
             if(dat!=null)
                 mav.addObject("eve",dat);
-            
-                    //Consulta de Entrenadpres
-            String sql="SELECT p.ID_Persona, concat(p.Nombre, ' ', p.Ap_Pat, ' ', p.Ap_Mat) as Nombre, em.Correo, e.Act_Deportiva_ID_Deporte, d.Disciplina, tf.telefono, tc.Celular"+
-"	from Persona p, persona_has_act_deportiva e, act_deportiva d, Contacto c, Email em, Telefono_fijo tf, Telefono_celular tc"+
-"		WHERE p.Usuario_Usuario_ID is null"+
-"            AND p.ID_Persona = e.Persona_ID_Persona"+
-"            AND e.Act_Deportiva_ID_Deporte = d.ID_Deporte"+
-"            AND p.ID_Persona = c.Persona_ID_Persona"+
-"            AND c.ID_Contacto = em.Contacto_ID_Contacto"+
-"            AND c.ID_Contacto = tf.Contacto_ID_Contacto"+
-"            AND c.ID_Contacto = tc.Contacto_ID_Contacto;";
-            dat2=this.rid.queryForList(sql);
-            if(dat2!=null)
-                mav.addObject("ent", dat2);
             
                     //Consulta de Resultados registrados en la Base de Datos
             String sql2="select concat(p.Nombre,'',p.Ap_Pat,'',p.Ap_Mat) as Nombre, es.Escuela as Escuela, ad.Disciplina as Deporte, pr.Prueba as Prueba, r.Lugar_Obtenido as Lugar, r.Marca as Marca, e.Nombre_Evento as Evento "

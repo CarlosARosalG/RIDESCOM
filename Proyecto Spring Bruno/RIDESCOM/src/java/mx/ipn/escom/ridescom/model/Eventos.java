@@ -15,29 +15,28 @@ public class Eventos {
     String Nombre_E;
     String FIR;
     String FFR;
-    String Lugar;
-    String Dir;
-    String P_Ref;
+//    String Lugar;
+//    String Dir;
+//    String P_Ref;
     String Desc;
     String FE;
     int ciclo;
     int deporte;
+    int sede;
     
     public Eventos() {
     }
 
-    public Eventos(int E_ID, String Nombre_E, String FIR, String FFR, String Lugar, String Dir, String P_Ref, String Desc, String FE, int ciclo, int deporte) {
+    public Eventos(int E_ID, String Nombre_E, String FIR, String FFR, String Desc, String FE, int ciclo, int deporte, int sede) {
         this.E_ID = E_ID;
         this.Nombre_E = Nombre_E;
         this.FIR = FIR;
         this.FFR = FFR;
-        this.Lugar = Lugar;
-        this.Dir = Dir;
-        this.P_Ref = P_Ref;
         this.Desc = Desc;
         this.FE = FE;
         this.ciclo = ciclo;
         this.deporte = deporte;
+        this.sede=sede;
     }
 
     public int getE_ID() {
@@ -71,31 +70,6 @@ public class Eventos {
     public void setFFR(String FFR) {
         this.FFR = FFR;
     }
-
-    public String getLugar() {
-        return Lugar;
-    }
-
-    public void setLugar(String Lugar) {
-        this.Lugar = Lugar;
-    }
-
-    public String getDir() {
-        return Dir;
-    }
-
-    public void setDir(String Dir) {
-        this.Dir = Dir;
-    }
-
-    public String getP_Ref() {
-        return P_Ref;
-    }
-
-    public void setP_Ref(String P_Ref) {
-        this.P_Ref = P_Ref;
-    }
-
     public String getDesc() {
         return Desc;
     }
@@ -127,6 +101,13 @@ public class Eventos {
     public void setDeporte(int deporte) {
         this.deporte = deporte;
     }
-    
+
+    public int getSede() {
+        return sede;
+    }
+
+    public void setSede(int sede) {
+        this.sede = sede;
+    }
     
 }

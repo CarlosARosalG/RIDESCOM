@@ -153,11 +153,12 @@
 			</div>
 			<div class="card-body">
                             <form class="needs-validation" novalidate method="POST">
-					<div class="input-group form-group">
+				${mjs}	
+                                    <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-                                            <input type="text" class="form-control" placeholder="Número de Boleta" name="User"  maxlength="10" required/>
+                                            <input type="text" class="num form-control" placeholder="Número de Boleta" name="User"  maxlength="10" required/>
 <!--                                            <div class="valid-feedback">
                                                 Looks good!
                                             </div>-->
@@ -179,7 +180,7 @@
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
 						<!--<input type="text" class="form-control" name="vrfcd" placeholder="Captcha" requied/>-->
-                                                <input type="text" class="form-control" placeholder="Captcha" name="Captcha" required/>
+                                                <input type="text" class="form-control" placeholder="Captcha" name="Captcha" autocomplete="off" required/>
                                                 <div class="invalid-feedback">
                                                     Campo requerido
                                                 </div>
@@ -190,7 +191,7 @@
                                         </div>
                                         <div class="clearfix" >&nbsp;</div>
 					<div class="form-group">
-                                            <input type="submit" value="Entrar"  class="btn btn-light float-right login_btn">
+                                            <input name="btn" value="Entrar" type="submit" class="btn btn-light float-right login_btn">
                                             <a href="Home" class="btn btn-light float-right login_btn"> Volver </a>
 					</div>
                                         <div class="clearfix" >&nbsp;</div>
@@ -245,5 +246,10 @@
             });
           }, false);
         })();
-</script>    
+</script>   
+<script>
+     $('.num').on('input', function () { 
+    this.value = this.value.replace(/[^0-9]/g,'');
+    });
+</script>
 </html>

@@ -149,7 +149,7 @@
                             <H2>El usuario ha sido agregado correctamente</H2>
                             <h3>¿Desea agregar más?</h3>
                             <a class="btn btn-primary" href="AgregarUsuario">SI</a>  
-                        <a class="btn btn-primary" href="../DDyFD">NO</a>
+                        <a class="btn btn-primary" href="../Usuarios">NO</a>
                 </div>
             </div>
         </div>

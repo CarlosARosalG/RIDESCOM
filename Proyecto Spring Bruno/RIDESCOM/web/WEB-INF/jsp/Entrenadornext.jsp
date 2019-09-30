@@ -149,7 +149,7 @@
                             <H2>El entrenador ha sido agregada correctamente</H2>
                             <h3>¿Desea agregar otro?</h3>
                             <a class="btn btn-primary" href="AgregarEntrenador">SI</a>  
-                        <a class="btn btn-primary" href="../Coordinador">NO</a>
+                        <a class="btn btn-primary" href="../../Coordinador/Entrenadores">NO</a>
                 </div>
             </div>
         </div>

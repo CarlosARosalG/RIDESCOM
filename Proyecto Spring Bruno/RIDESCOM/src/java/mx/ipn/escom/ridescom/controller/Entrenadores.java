@@ -5,6 +5,7 @@
  */
 package mx.ipn.escom.ridescom.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -35,9 +36,38 @@ public class Entrenadores {
     
     
     List dat;
+    List mu;
+    List es;
+    
+    @RequestMapping(value="Coordinador/Entrenadores", method=RequestMethod.GET)
+    public ModelAndView entrenadores(HttpServletRequest re)throws SQLException{
+         HttpSession session = re.getSession();
+        if(session.getAttribute("Nombre_U")== null){
+         mav.setViewName("Error404");
+        }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
+        mav.setViewName("DDyFD");
+        }else{
+            //Consulta de Entrenadores
+            String sql="SELECT p.ID_Persona, concat(p.Nombre, ' ', p.Ap_Pat, ' ', p.Ap_Mat) as Nombre, em.Correo, d.Disciplina, tf.telefono, tc.Celular"+
+"	from Persona p, persona_has_act_deportiva e, act_deportiva d, Extension ext, Contacto c, Email em, Telefono_fijo tf, Telefono_celular tc"+
+"	WHERE p.ID_Persona = e.Persona_ID_Persona"+
+"            AND ext.Telefono_Fijo_ID_Tel_Fijo = tf.ID_Tel_Fijo"+
+"            AND e.Act_Deportiva_ID_Deporte = d.ID_Deporte"+
+"            AND p.ID_Persona = c.Persona_ID_Persona"+
+"            AND c.ID_Contacto = em.Contacto_ID_Contacto"+
+"            AND c.ID_Contacto = tf.Contacto_ID_Contacto"+
+"            AND c.ID_Contacto = tc.Contacto_ID_Contacto";
+            dat=this.rid.queryForList(sql);
+            if(dat!=null)
+                mav.addObject("ent", dat);
+            mav.setViewName("Entrenadores");
+        }
+        return mav;
+    }
+    
     ////////////////////////////////// Operadores CRUD //////////////////////////////////////////////////////
     //Scripts para Agregar Deportes
-    @RequestMapping(value="Coordinador/AgregarEntrenador", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Entrenadores/AgregarEntrenador", method=RequestMethod.GET)
     public ModelAndView Agrega(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -45,28 +75,35 @@ public class Entrenadores {
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
         mav.setViewName("DDyFD");
         }else{
-            mav.setViewName("Entrenadores");
+            String sqlm="select * from Municipio order by Municipio ASC";
+            mu=this.rid.queryForList(sqlm);
+            es=this.rid.queryForList(sqlm);
+            mav.addObject("muni", mu);
+            mav.addObject("ed", es);
+            mav.setViewName("AgregarEntrenador");
         }
         return mav;
     }
-    @RequestMapping(value="Coordinador/AgregarEntrenador", method=RequestMethod.POST)
+    @RequestMapping(value="Coordinador/Entrenadores/AgregarEntrenador", method=RequestMethod.POST)
     public ModelAndView Agrega(Persona p, Eventos ev, Contacto c )throws Exception{
             
-            String sql="insert into Persona (Nombre, Ap_Pat, Ap_Mat, Tipo_Sexo_ID_Tipo_Sexo, CURP, Fecha_Nac, NSS, Usuario_Usuario_ID, Municipio_ID_Municipio, Municipio_Estados_ID_estado) values (?,?,?,?,?,?,?,NULL,?, (select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+"))";
+            String sql="insert into Persona (Nombre, Ap_Pat, Ap_Mat, Tipo_Sexo_ID_Tipo_Sexo, CURP, Fecha_Nac, NSS, Municipio_ID_Municipio, Municipio_Estados_ID_estado) values (?,?,?,?,?,?,?,?, (select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+"))";
             this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
             String sql1="insert into Contacto (Persona_ID_Persona) values ((select MAX(ID_Persona)from Persona))";
             this.rid.update(sql1);
             String sqld="insert into Persona_has_Act_Deportiva (Act_Deportiva_ID_Deporte,Persona_ID_Persona) values ((select ID_Deporte from Act_Deportiva where ID_Deporte="+ev.getDeporte()+"),(select MAX(ID_Persona)from Persona))";
             this.rid.update(sqld);
-            String sqltf="insert into Telefono_fijo (Telefono, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
+            String sqltf="insert into Telefono_fijo (Telefono, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto) from Contacto))";
             this.rid.update(sqltf, c.getTel_fijo());
+            String sqltex="insert into Extension (Telefono_Fijo_ID_Tel_Fijo) values ((select MAX(ID_Tel_Fijo )from Telefono_Fijo))";
+            this.rid.update(sqltex);           
             String sqltc="insert into Telefono_Celular (Celular, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
             this.rid.update(sqltc, c.getTel_cel());
             String sqlc="insert into Email (Correo, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
             this.rid.update(sqlc, c.getCorreo());
-            return new ModelAndView ("redirect:../Coordinador/Entrenadorsiguiente");
+            return new ModelAndView ("redirect:../Entrenadores/Entrenadorsiguiente");
     }
-    @RequestMapping(value="Coordinador/Entrenadorsiguiente", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Entrenadores/Entrenadorsiguiente", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
           HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -80,7 +117,7 @@ public class Entrenadores {
     }
     
     //Scripts para edición de Entrenadores
-    @RequestMapping(value="Coordinador/EditarEntrenador", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Entrenadores/EditarEntrenador", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -91,8 +128,7 @@ public class Entrenadores {
             EntrenadorID=Integer.parseInt(re.getParameter("EntrenadorID"));
             
             String sql="select * from Persona p, persona_has_act_deportiva e, act_deportiva d, Contacto c, Email em, Telefono_fijo tf, Telefono_celular tc, Municipio m, Estados es, Tipo_Sexo ts"+
-"           WHERE p.Usuario_Usuario_ID is null"+
-"            AND p.ID_Persona = e.Persona_ID_Persona"+
+"           WHERE  p.ID_Persona = e.Persona_ID_Persona"+
 "            AND p.Tipo_Sexo_ID_Tipo_Sexo = ts.ID_Tipo_Sexo"+
 "            AND p.Municipio_ID_Municipio = m.ID_Municipio"+
 "            AND p.Municipio_Estados_ID_estado = m.Estados_ID_estado"+
@@ -109,12 +145,10 @@ public class Entrenadores {
         }
         return mav;
     }
-    @RequestMapping(value="Coordinador/EditarEntrenador", method=RequestMethod.POST)
-    public ModelAndView Editar(Persona p, Contacto c, Eventos ev){
-        String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Usuario_Usuario_ID=NULL, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+")where ID_Persona="+EntrenadorID;
+    @RequestMapping(value="Coordinador/Entrenadores/EditarEntrenador", method=RequestMethod.POST)
+    public ModelAndView Editar(Persona p, Contacto c, Eventos ev) throws UnsupportedEncodingException{
+        String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+")where ID_Persona="+EntrenadorID;
         this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
-//        String sql1="update Contacto set Persona_ID_Persona="+EntrenadorID;
-//        this.rid.update(sql1);
         String sqld="update Persona_has_Act_Deportiva set Act_Deportiva_ID_Deporte=(select ID_Deporte from Act_Deportiva where ID_Deporte="+ev.getDeporte()+") where Persona_ID_Persona="+EntrenadorID;
         this.rid.update(sqld);
         String sqltf="update Telefono_fijo set Telefono=? where Contacto_ID_Contacto=(select ID_Contacto from Contacto where Persona_ID_Persona="+EntrenadorID+")";
@@ -124,29 +158,29 @@ public class Entrenadores {
         String sqlc="update Email set Correo=? where Contacto_ID_Contacto=(select ID_Contacto from Contacto where Persona_ID_Persona="+EntrenadorID+")";
         this.rid.update(sqlc, c.getCorreo());
 
-        ModelAndView mv=new ModelAndView ("redirect:../Coordinador");
+        ModelAndView mv=new ModelAndView ("redirect:../Entrenadores");
 //        mv.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");
         return mv;
     }
-    @RequestMapping(value="DDyFD/Deportes/ConfirmaDeporte", method=RequestMethod.GET)
-    public ModelAndView confirm(HttpServletRequest re){
-        HttpSession session = re.getSession();
-        if(session.getAttribute("Nombre_U")== null){
-         mav.setViewName("Error404");
-        }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
-        EntrenadorID=Integer.parseInt(re.getParameter("EntrenadorID"));
-        String sql="select * from Act_Deportiva where ID_Deporte="+EntrenadorID;
-        dat = this.rid.queryForList(sql);
-        mav.addObject("dep",dat);
-        mav.setViewName("DDyFD");
-        }else{
-            mav.setViewName("CoordUA");
-        }
-        return mav;
-    }
+//    @RequestMapping(value="DDyFD/Deportes/ConfirmaDeporte", method=RequestMethod.GET)
+//    public ModelAndView confirm(HttpServletRequest re){
+//        HttpSession session = re.getSession();
+//        if(session.getAttribute("Nombre_U")== null){
+//         mav.setViewName("Error404");
+//        }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
+//        EntrenadorID=Integer.parseInt(re.getParameter("EntrenadorID"));
+//        String sql="select * from Act_Deportiva where ID_Deporte="+EntrenadorID;
+//        dat = this.rid.queryForList(sql);
+//        mav.addObject("dep",dat);
+//        mav.setViewName("DDyFD");
+//        }else{
+//            mav.setViewName("CoordUA");
+//        }
+//        return mav;
+//    }
 
     //Scripts para borrar registros
-    @RequestMapping(value="Coordinador/BorrarEntrenador", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Entrenadores/BorrarEntrenador", method=RequestMethod.GET)
     public ModelAndView delete(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -156,8 +190,7 @@ public class Entrenadores {
         }else{
         EntrenadorID=Integer.parseInt(re.getParameter("EntrenadorID"));
         String sql="select * from Persona p, persona_has_act_deportiva e, act_deportiva d, Contacto c, Email em, Telefono_fijo tf, Telefono_celular tc, Municipio m, Estados es, Tipo_Sexo ts"+
-"	WHERE p.Usuario_Usuario_ID is null"+
-"            AND p.ID_Persona = e.Persona_ID_Persona"+
+"	WHERE p.ID_Persona = e.Persona_ID_Persona"+
 "            AND p.Tipo_Sexo_ID_Tipo_Sexo = ts.ID_Tipo_Sexo"+
 "            AND p.Municipio_ID_Municipio = m.ID_Municipio"+
 "            AND p.Municipio_Estados_ID_estado = m.Estados_ID_estado"+
@@ -174,32 +207,19 @@ public class Entrenadores {
         }
         return mav;
     }    
-    @RequestMapping(value="Coordinador/BorrarEntrenador", method=RequestMethod.POST)
+    @RequestMapping(value="Coordinador/Entrenadores/BorrarEntrenador", method=RequestMethod.POST)
     public ModelAndView delete(Persona p, Contacto c, Eventos ev){
-        String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Usuario_Usuario_ID=NULL, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+") where ID_Persona="+EntrenadorID;
+        String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+") where ID_Persona="+EntrenadorID;
         this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
-//            String sql1="insert into Contacto (Persona_ID_Persona) values ((select MAX(ID_Persona)from Persona))";
-//            this.rid.update(sql1);
-//            String sqld="insert into Persona_has_Act_Deportiva (Act_Deportiva_ID_Deporte,Persona_ID_Persona) values ((select ID_Deporte from Act_Deportiva where ID_Deporte="+ev.getDeporte()+"),(select MAX(ID_Persona)from Persona))";
-//            this.rid.update(sqld);
-//            String sqltf="insert into Telefono_fijo (Telefono, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
-//            this.rid.update(sqltf, c.getTel_fijo());
-//            String sqltc="insert into Telefono_Celular (Celular, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
-//            this.rid.update(sqltc, c.getTel_cel());
-//            String sqlc="insert into Email (Correo, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
-//            this.rid.update(sqlc, c.getCorreo());
-        
-//        String sql="update Persona set Disciplina=? where ID_Deporte="+EntrenadorID;
-//        this.rid.update(sql);
         ModelAndView mv=new ModelAndView ("redirect:../ConfirmaBorrarEntrenador");
         return mv;
     }
-    @RequestMapping(value="Coordinador/ConfirmaBorrarEntrenador")
+    @RequestMapping(value="Coordinador/Entrenadores/ConfirmaBorrarEntrenador")
     public ModelAndView confirma(HttpServletRequest re){
         EntrenadorID=Integer.parseInt(re.getParameter("EntrenadorID"));
         String sql ="delete from Persona where ID_Persona="+EntrenadorID;
         this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../Coordinador");
+        ModelAndView mv=new ModelAndView ("redirect:../Entrenadores");
 //        mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
         return mv;
     }

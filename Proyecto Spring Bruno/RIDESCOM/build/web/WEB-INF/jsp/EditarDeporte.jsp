@@ -390,6 +390,8 @@
                                 Ingresa un deporte
                             </div>
                         </div>
+                            <div class="clearfix">&nbsp;</div>
+                    </div>
 <!--                    <a href="../Deportes/ConfirmaDeporte?DeporteID=${dep[0].ID_Deporte}" type="submit" value="Agregar" class="btn btn-outline-success">Agregar</a>-->
                     <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Actualizar </button>
                     <a href="../Deportes"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>

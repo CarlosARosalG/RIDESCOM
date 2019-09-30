@@ -11,7 +11,7 @@
 <html>
 <head>
 	<head>
-	<meta charset="utf-8">
+            <meta http-equiv="Content_Type" content="text/html" charset="ISO-8859-1">
 	<title> Registra un entrenador </title>
 
 
@@ -503,7 +503,7 @@
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Fecha de Nacimiento </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="Nacimiento" value="${per[0].Fecha_Nac}" required>
+				    <input type="text" class="form-control" id="validationTooltip02" name="Nacimiento" value="${per[0].Fecha_Nac}" required disabled/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -517,14 +517,14 @@
 			    </div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Teléfono de contacto </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_fijo" value="${per[0].Telefono}" minlength="10" maxlength="15" required>
+                                    <input type="text" class="num form-control" id="validationTooltip02" name="Tel_fijo" value="${per[0].Telefono}" minlength="10" maxlength="15" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Teléfono Móvil (Opcional) </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Tel_cel" value="${per[0].Celular}" minlength="10" maxlength="15" required>
+                                    <input type="text" class="num form-control" id="validationTooltip02" name="Tel_cel" value="${per[0].Celular}" minlength="10" maxlength="15" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -561,9 +561,14 @@
 		  	</div>
 <!--                        <a href="EditarEntrenador?EntrenadorID=${per[0].ID_Persona}" type="submit" value="Eliminar" class="btn btn-success">Actualizar</a>-->
 		  	<button type="submit" class="btn  btn-outline-success "> Actualizar </button>
-		  	<a href="../Coordinador"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+		  	<a href="../Entrenadores"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
 		</form>
 	</section>
 
 </body>
+<script>
+     $('.num').on('input', function () { 
+    this.value = this.value.replace(/[^0-9]/g,'');
+    });
+</script>
 </html>
