@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CedulaInscripcion" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a46a1779-b601-42b5-aa69-e476d4b4f2e3">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Cedula" uuid="76f49d02-d6ff-4b63-8c8b-c3aab1812626">
+		<queryString>
+			<![CDATA[select p.Ap_Pat, p.Ap_Mat, p.nombre, date_format(p.Fecha_Nac,"%Y-%m-%d") as Fecha_Nac, (select Estado from Estados where Homo=(select left(right(CURP,7),2) from persona WHERE ID_Persona=3)) as Lugar_Nac, p.CURP, pa.Programa, a.ID_Alumno, a.Inscrito as Grupo, p.NSS, ce.Correo, m.municipio, ad.Disciplina
+	from Alumno a, Inscripcion i, Evento e, act_deportiva ad, Persona p, Contacto c, email ce, Municipio m, escuela_has_prog_academico epa, escuela es, prog_academico pa
+		where p.ID_Persona = a.Persona_ID_Persona
+			AND p.ID_Persona = c.Persona_ID_Persona
+            AND c.ID_Contacto = ce.Contacto_ID_Contacto
+            AND p.Municipio_ID_Municipio = m.ID_Municipio
+			AND a.ID_Alumno = i.Alumno_ID_Alumno
+            AND a.Escuela_has_Prog_Academico_Prog_Academico_ID_Prog_Academico = epa.Prog_Academico_ID_Prog_Academico
+            AND epa.Escuela_ID_Escuela = es.ID_Escuela
+            AND epa.Prog_Academico_ID_Prog_Academico = pa.ID_Prog_Academico
+			AND i.Evento_Evento_ID = e.Evento_ID
+            AND e.Act_Deportiva_ID_Deporte = ad.ID_Deporte
+            order by ad.Disciplina asc;]]>
+		</queryString>
+		<field name="Ap_Pat" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Ap_Mat" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nombre" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Fecha_Nac" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Lugar_Nac" class="java.lang.String"/>
+		<field name="CURP" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Programa" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="ID_Alumno" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Grupo" class="java.lang.String"/>
+		<field name="NSS" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Correo" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="municipio" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Disciplina" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset1" uuid="d0337ed0-6ce7-401a-91da-b59e6658ebac"/>
+	<parameter name="ACT_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select p.Ap_Pat, p.Ap_Mat, p.nombre, p.Fecha_Nac, (select Estado from Estados where Homo=(select left(right(CURP,7),2) from persona WHERE ID_Persona=3)) as Lugar_Nac, p.CURP, pa.Programa, a.ID_Alumno, a.Inscrito as Grupo, p.NSS, ce.Correo, m.municipio, ad.Disciplina
+	from Alumno a, Inscripcion i, Evento e, act_deportiva ad, Persona p, Contacto c, email ce, Municipio m, escuela_has_prog_academico epa, escuela es, prog_academico pa
+		where p.ID_Persona = a.Persona_ID_Persona
+			AND p.ID_Persona = c.Persona_ID_Persona
+            AND c.ID_Contacto = ce.Contacto_ID_Contacto
+            AND p.Municipio_ID_Municipio = m.ID_Municipio
+			AND a.ID_Alumno = i.Alumno_ID_Alumno
+            AND a.Escuela_has_Prog_Academico_Prog_Academico_ID_Prog_Academico = epa.Prog_Academico_ID_Prog_Academico
+            AND epa.Escuela_ID_Escuela = es.ID_Escuela
+            AND epa.Prog_Academico_ID_Prog_Academico = pa.ID_Prog_Academico
+			AND i.Evento_Evento_ID = e.Evento_ID
+            AND e.Act_Deportiva_ID_Deporte = ad.ID_Deporte
+	AND ad.ID_Deporte = $P!{ACT_ID}
+            order by ad.Disciplina asc;]]>
+	</queryString>
+	<field name="Ap_Pat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ap_Mat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fecha_Nac" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Lugar_Nac" class="java.lang.String"/>
+	<field name="CURP" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Programa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID_Alumno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Grupo" class="java.lang.String"/>
+	<field name="NSS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Correo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="municipio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Disciplina" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="286" y="43" width="164" height="24" uuid="a73a43bc-daf9-431f-84b0-06001b9cb2c1"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Cédula de Inscripción]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="597" y="23" width="117" height="20" uuid="cf15345c-2135-4178-a4bf-31c9577c9ead"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="0" width="100" height="20" uuid="ff1a849c-6ca5-4f8a-b122-a1049b001da6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Fotografía]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="103" y="1" width="50" height="20" uuid="fb4282db-83d6-4897-a3c3-511f339c82e3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Ap_Pat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="0" width="50" height="20" uuid="bfeff604-0ca2-4eca-9e5b-2acfd186972a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Ap_Mat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="1" width="75" height="20" uuid="137a5e7d-3532-42e8-badf-8bf12c90ba36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="120" height="20" uuid="e4447947-7d69-49a5-b9ce-0b0e09829c3c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CURP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="1" width="65" height="20" uuid="a8a9219d-7be7-4837-91c6-31cf79d840a2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Boleta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="0" width="60" height="20" uuid="ce25cc71-1b9c-4305-a801-6a7915fc9cda"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NSS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="523" y="1" width="135" height="20" uuid="f84bf2d1-f3e9-4ca5-82f6-67496cf9323d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="658" y="0" width="80" height="20" uuid="ed4bb27c-d0ed-4a9b-bceb-bd4d587633cb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Disciplina]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<elementGroup>
+				<elementGroup/>
+			</elementGroup>
+			<textField>
+				<reportElement x="103" y="1" width="50" height="48" uuid="89c1d9a2-02e6-4029-9add-a861888e8d31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ap_Pat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="398" y="1" width="65" height="47" uuid="e4d9be4b-8103-49bb-953c-c905011bb24c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ID_Alumno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="659" y="1" width="80" height="47" uuid="09cbd779-0a15-4f4c-a8d5-4a76246a8218"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Disciplina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="1" width="50" height="48" uuid="81986ced-b2d6-432f-baa1-ec106c79b76c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ap_Mat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="1" width="60" height="47" uuid="7f07526c-a44b-4c49-85fc-edea1aad2445"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NSS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="2" width="100" height="47" uuid="1c928c5e-43b7-43cf-8fef-4a1bdc027cce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Aquí va fotografía]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="524" y="1" width="135" height="47" uuid="3c885ba7-db13-418c-9444-efc5c2dbea36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Correo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="1" width="120" height="47" uuid="bdb88da6-8bc9-4973-ba6f-28247b7afe47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CURP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="1" width="75" height="48" uuid="03d69f70-527a-46d6-9a80-6d75656f2985"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="286" y="4" width="80" height="20" uuid="ae2403bf-ab7f-4a79-ac6e-6a2be20244f8"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="366" y="3" width="40" height="20" uuid="7de71f9d-8134-4783-b275-8d3dffc3bc85"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
