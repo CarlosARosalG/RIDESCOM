@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1d39e8e1-7d55-4244-9df3-ad9d6dd0f322">
+	<queryString language="SQL">
+		<![CDATA[select p.Ap_Pat, p.Ap_Mat, p.nombre, p.Fecha_Nac, (select Estado from Estados where Homo=(select left(right(CURP,7),2) from persona WHERE ID_Persona=3)) as Lugar_Nac, p.CURP, pa.Programa, a.ID_Alumno, a.Inscrito as Grupo, p.NSS, ce.Correo, m.municipio, ad.Disciplina
+	from Alumno a, Inscripcion i, Evento e, act_deportiva ad, Persona p, Contacto c, email ce, Municipio m, escuela_has_prog_academico epa, escuela es, prog_academico pa
+		where p.ID_Persona = a.Persona_ID_Persona
+			AND p.ID_Persona = c.Persona_ID_Persona
+            AND c.ID_Contacto = ce.Contacto_ID_Contacto
+            AND p.Municipio_ID_Municipio = m.ID_Municipio
+			AND a.ID_Alumno = i.Alumno_ID_Alumno
+            AND a.Escuela_has_Prog_Academico_Prog_Academico_ID_Prog_Academico = epa.Prog_Academico_ID_Prog_Academico
+            AND epa.Escuela_ID_Escuela = es.ID_Escuela
+            AND epa.Prog_Academico_ID_Prog_Academico = pa.ID_Prog_Academico
+			AND i.Evento_Evento_ID = e.Evento_ID
+            AND e.Act_Deportiva_ID_Deporte = ad.ID_Deporte
+            order by ad.Disciplina asc;]]>
+	</queryString>
+	<field name="Ap_Pat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ap_Mat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fecha_Nac" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Lugar_Nac" class="java.lang.String"/>
+	<field name="CURP" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Programa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID_Alumno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Grupo" class="java.lang.String"/>
+	<field name="NSS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Correo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="municipio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Disciplina" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
