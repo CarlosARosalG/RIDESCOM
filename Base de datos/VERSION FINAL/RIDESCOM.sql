@@ -115,7 +115,7 @@ ENGINE = InnoDB;
 
 CREATE INDEX `fk_Persona_Tipo_Sexo1_idx` ON `RIDESCOM`.`Persona` (`Tipo_Sexo_ID_Tipo_Sexo` ASC) VISIBLE;
 
-CREATE INDEX `fk_Persona_Municipio1_idx` ON `RIDESCOM`.`Persona` (`Municipio_ID_Municipio` ASC, `Municipio_Estados_ID_estado` ASC) VISIBLE;
+CREATE INDEX `fk_Persona_Municipio1_idx` ON `RIDESCOM`.`Persona` (`Municipio_ID_Municipio` ASC, `Municipio_Estados_ID_estado` ASC);
 
 
 -- -----------------------------------------------------
@@ -142,9 +142,9 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Usuario` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Usuario_Roles1_idx` ON `RIDESCOM`.`Usuario` (`Roles_ID_Roles` ASC) VISIBLE;
+CREATE INDEX `fk_Usuario_Roles1_idx` ON `RIDESCOM`.`Usuario` (`Roles_ID_Roles` ASC);
 
-CREATE INDEX `fk_Usuario_Persona1_idx` ON `RIDESCOM`.`Usuario` (`Persona_ID_Persona` ASC) VISIBLE;
+CREATE INDEX `fk_Usuario_Persona1_idx` ON `RIDESCOM`.`Usuario` (`Persona_ID_Persona` ASC);
 
 
 -- -----------------------------------------------------
@@ -198,9 +198,9 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Prog_Academico` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Programa_Estudiantil_Area_Conocimiento1_idx` ON `RIDESCOM`.`Prog_Academico` (`Area_Conocimiento_ID_Area_Conocimiento` ASC) VISIBLE;
+CREATE INDEX `fk_Programa_Estudiantil_Area_Conocimiento1_idx` ON `RIDESCOM`.`Prog_Academico` (`Area_Conocimiento_ID_Area_Conocimiento` ASC);
 
-CREATE INDEX `fk_Programa_Estudiantil_Nivel1_idx` ON `RIDESCOM`.`Prog_Academico` (`Nivel_ID_Nivel` ASC) VISIBLE;
+CREATE INDEX `fk_Programa_Estudiantil_Nivel1_idx` ON `RIDESCOM`.`Prog_Academico` (`Nivel_ID_Nivel` ASC);
 
 
 -- -----------------------------------------------------
@@ -222,9 +222,9 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Escuela_has_Prog_Academico` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Escuela_has_Programa_Academico_Escuela1_idx` ON `RIDESCOM`.`Escuela_has_Prog_Academico` (`Escuela_ID_Escuela` ASC) VISIBLE;
+CREATE INDEX `fk_Escuela_has_Programa_Academico_Escuela1_idx` ON `RIDESCOM`.`Escuela_has_Prog_Academico` (`Escuela_ID_Escuela` ASC);
 
-CREATE INDEX `fk_Escuela_has_Prog_Academico_Prog_Academico1_idx` ON `RIDESCOM`.`Escuela_has_Prog_Academico` (`Prog_Academico_ID_Prog_Academico` ASC) VISIBLE;
+CREATE INDEX `fk_Escuela_has_Prog_Academico_Prog_Academico1_idx` ON `RIDESCOM`.`Escuela_has_Prog_Academico` (`Prog_Academico_ID_Prog_Academico` ASC);
 
 
 -- -----------------------------------------------------
@@ -249,9 +249,9 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Alumno` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Alumno_Persona1_idx` ON `RIDESCOM`.`Alumno` (`Persona_ID_Persona` ASC) VISIBLE;
+CREATE INDEX `fk_Alumno_Persona1_idx` ON `RIDESCOM`.`Alumno` (`Persona_ID_Persona` ASC);
 
-CREATE INDEX `fk_Alumno_Escuela_has_Prog_Academico1_idx` ON `RIDESCOM`.`Alumno` (`Escuela_has_Prog_Academico_Escuela_ID_Escuela` ASC, `Escuela_has_Prog_Academico_Prog_Academico_ID_Prog_Academico` ASC) VISIBLE;
+CREATE INDEX `fk_Alumno_Escuela_has_Prog_Academico1_idx` ON `RIDESCOM`.`Alumno` (`Escuela_has_Prog_Academico_Escuela_ID_Escuela` ASC, `Escuela_has_Prog_Academico_Prog_Academico_ID_Prog_Academico` ASC);
 
 
 -- -----------------------------------------------------
@@ -284,7 +284,7 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Sede` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Sede_Municipio1_idx` ON `RIDESCOM`.`Sede` (`Municipio_ID_Municipio` ASC, `Municipio_Estados_ID_estado` ASC) VISIBLE;
+CREATE INDEX `fk_Sede_Municipio1_idx` ON `RIDESCOM`.`Sede` (`Municipio_ID_Municipio` ASC, `Municipio_Estados_ID_estado` ASC);
 
 
 -- -----------------------------------------------------
@@ -318,9 +318,9 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Pruebas` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Pruebas_Tipo_Pruebas1_idx` ON `RIDESCOM`.`Pruebas` (`Tipo_Pruebas_ID_Prueba` ASC) VISIBLE;
+CREATE INDEX `fk_Pruebas_Tipo_Pruebas1_idx` ON `RIDESCOM`.`Pruebas` (`Tipo_Pruebas_ID_Prueba` ASC);
 
-CREATE INDEX `fk_Pruebas_Act_Deportiva1_idx` ON `RIDESCOM`.`Pruebas` (`Act_Deportiva_ID_Deporte` ASC) VISIBLE;
+CREATE INDEX `fk_Pruebas_Act_Deportiva1_idx` ON `RIDESCOM`.`Pruebas` (`Act_Deportiva_ID_Deporte` ASC);
 
 
 -- -----------------------------------------------------
@@ -354,11 +354,11 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Evento` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Evento_Ciclo1_idx` ON `RIDESCOM`.`Evento` (`Ciclo_ID_Ciclo` ASC) VISIBLE;
+CREATE INDEX `fk_Evento_Ciclo1_idx` ON `RIDESCOM`.`Evento` (`Ciclo_ID_Ciclo` ASC);
 
-CREATE INDEX `fk_Evento_Sede1_idx` ON `RIDESCOM`.`Evento` (`Sede_ID_Sede` ASC) VISIBLE;
+CREATE INDEX `fk_Evento_Sede1_idx` ON `RIDESCOM`.`Evento` (`Sede_ID_Sede` ASC);
 
-CREATE INDEX `fk_Evento_Pruebas1_idx` ON `RIDESCOM`.`Evento` (`Pruebas_ID_Pruebas` ASC) VISIBLE;
+CREATE INDEX `fk_Evento_Pruebas1_idx` ON `RIDESCOM`.`Evento` (`Pruebas_ID_Pruebas` ASC);
 
 
 -- -----------------------------------------------------
@@ -386,11 +386,11 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Inscripcion` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Alumno_has_Evento_Evento1_idx` ON `RIDESCOM`.`Inscripcion` (`Evento_Evento_ID` ASC) VISIBLE;
+CREATE INDEX `fk_Alumno_has_Evento_Evento1_idx` ON `RIDESCOM`.`Inscripcion` (`Evento_Evento_ID` ASC);
 
-CREATE INDEX `fk_Alumno_has_Evento_Alumno1_idx` ON `RIDESCOM`.`Inscripcion` (`Alumno_ID_Alumno` ASC) VISIBLE;
+CREATE INDEX `fk_Alumno_has_Evento_Alumno1_idx` ON `RIDESCOM`.`Inscripcion` (`Alumno_ID_Alumno` ASC);
 
-CREATE INDEX `fk_Inscripcion_Escuela1_idx` ON `RIDESCOM`.`Inscripcion` (`Escuela_ID_Escuela` ASC) VISIBLE;
+CREATE INDEX `fk_Inscripcion_Escuela1_idx` ON `RIDESCOM`.`Inscripcion` (`Escuela_ID_Escuela` ASC);
 
 
 -- -----------------------------------------------------
@@ -410,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Resultados` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Resultados_Inscripcion1_idx` ON `RIDESCOM`.`Resultados` (`Inscripcion_Alumno_ID_Alumno` ASC, `Inscripcion_Evento_Evento_ID` ASC) VISIBLE;
+CREATE INDEX `fk_Resultados_Inscripcion1_idx` ON `RIDESCOM`.`Resultados` (`Inscripcion_Alumno_ID_Alumno` ASC, `Inscripcion_Evento_Evento_ID` ASC);
 
 
 -- -----------------------------------------------------
@@ -428,7 +428,7 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Cedula` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Cedula_Inscripcion1_idx` ON `RIDESCOM`.`Cedula` (`Inscripcion_Alumno_ID_Alumno` ASC, `Inscripcion_Evento_Evento_ID` ASC) VISIBLE;
+CREATE INDEX `fk_Cedula_Inscripcion1_idx` ON `RIDESCOM`.`Cedula` (`Inscripcion_Alumno_ID_Alumno` ASC, `Inscripcion_Evento_Evento_ID` ASC);
 
 
 -- -----------------------------------------------------
@@ -445,7 +445,7 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Contacto` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Contacto_Persona1_idx` ON `RIDESCOM`.`Contacto` (`Persona_ID_Persona` ASC) VISIBLE;
+CREATE INDEX `fk_Contacto_Persona1_idx` ON `RIDESCOM`.`Contacto` (`Persona_ID_Persona` ASC);
 
 
 -- -----------------------------------------------------
@@ -472,11 +472,11 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Escuela_Act_Deportiva` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Escuela_has_Areas_Deportiva_Areas_Deportiva1_idx` ON `RIDESCOM`.`Escuela_Act_Deportiva` (`Act_Deportiva_ID_Deporte` ASC) VISIBLE;
+CREATE INDEX `fk_Escuela_has_Areas_Deportiva_Areas_Deportiva1_idx` ON `RIDESCOM`.`Escuela_Act_Deportiva` (`Act_Deportiva_ID_Deporte` ASC);
 
-CREATE INDEX `fk_Escuela_has_Areas_Deportiva_Escuela1_idx` ON `RIDESCOM`.`Escuela_Act_Deportiva` (`Escuela_ID_Escuela` ASC) VISIBLE;
+CREATE INDEX `fk_Escuela_has_Areas_Deportiva_Escuela1_idx` ON `RIDESCOM`.`Escuela_Act_Deportiva` (`Escuela_ID_Escuela` ASC);
 
-CREATE INDEX `fk_Escuela_has_Areas_Deportiva_Ciclo1_idx` ON `RIDESCOM`.`Escuela_Act_Deportiva` (`Ciclo_ID_Ciclo` ASC) VISIBLE;
+CREATE INDEX `fk_Escuela_has_Areas_Deportiva_Ciclo1_idx` ON `RIDESCOM`.`Escuela_Act_Deportiva` (`Ciclo_ID_Ciclo` ASC);
 
 
 -- -----------------------------------------------------
@@ -498,9 +498,9 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Persona_has_Act_Deportiva` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Persona_has_Actividad_Deportiva_Persona1_idx` ON `RIDESCOM`.`Persona_has_Act_Deportiva` (`Persona_ID_Persona` ASC) VISIBLE;
+CREATE INDEX `fk_Persona_has_Actividad_Deportiva_Persona1_idx` ON `RIDESCOM`.`Persona_has_Act_Deportiva` (`Persona_ID_Persona` ASC);
 
-CREATE INDEX `fk_Persona_Actividad_Deportiva_Act_Deportiva1_idx` ON `RIDESCOM`.`Persona_has_Act_Deportiva` (`Act_Deportiva_ID_Deporte` ASC) VISIBLE;
+CREATE INDEX `fk_Persona_Actividad_Deportiva_Act_Deportiva1_idx` ON `RIDESCOM`.`Persona_has_Act_Deportiva` (`Act_Deportiva_ID_Deporte` ASC);
 
 
 -- -----------------------------------------------------
@@ -518,7 +518,7 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Telefono_Celular` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Telefono_Celular_Contacto1_idx` ON `RIDESCOM`.`Telefono_Celular` (`Contacto_ID_Contacto` ASC) VISIBLE;
+CREATE INDEX `fk_Telefono_Celular_Contacto1_idx` ON `RIDESCOM`.`Telefono_Celular` (`Contacto_ID_Contacto` ASC);
 
 
 -- -----------------------------------------------------
@@ -536,7 +536,7 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Telefono_Fijo` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Telefono_Fijo_Contacto1_idx` ON `RIDESCOM`.`Telefono_Fijo` (`Contacto_ID_Contacto` ASC) VISIBLE;
+CREATE INDEX `fk_Telefono_Fijo_Contacto1_idx` ON `RIDESCOM`.`Telefono_Fijo` (`Contacto_ID_Contacto` ASC);
 
 
 -- -----------------------------------------------------
@@ -554,7 +554,7 @@ CREATE TABLE IF NOT EXISTS `RIDESCOM`.`Email` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Email_Contacto1_idx` ON `RIDESCOM`.`Email` (`Contacto_ID_Contacto` ASC) VISIBLE;
+CREATE INDEX `fk_Email_Contacto1_idx` ON `RIDESCOM`.`Email` (`Contacto_ID_Contacto` ASC);
 
 
 -- -----------------------------------------------------
