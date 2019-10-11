@@ -37,7 +37,7 @@ public class Deportes {
     
     List dat;
     
-    @RequestMapping(value="DDyFD/Deportes", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Deportes.html", method=RequestMethod.GET)
     public ModelAndView Prueba(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -51,7 +51,7 @@ public class Deportes {
         mav.addObject("dep",dat);
         return mav;
     }
-    @RequestMapping(value="DDyFD/Deportes", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Deportes.html", method=RequestMethod.POST)
     public ModelAndView log(HttpServletRequest req, HttpServletResponse resp) throws Exception{
         
         String accion=req.getParameter("btn");
@@ -67,12 +67,12 @@ public class Deportes {
             
             HttpSession session=req.getSession();
             session.setAttribute("Nombre_U", jefe); //user
-            return new ModelAndView("redirect:/DDyFD");
+            return new ModelAndView("redirect:/DDyFD.html");
             }else {
-                return new ModelAndView("redirect:/Coordinador");
+                return new ModelAndView("redirect:/Coordinador.html");
             }
         }else{
-        ModelAndView mv=new ModelAndView("Login");
+        ModelAndView mv=new ModelAndView("Login.html");
         mv.addObject("mjs", "<div style='color: red;'>ERROR, usuario no existe.</div>");
         return mv;  
         }
@@ -80,13 +80,13 @@ public class Deportes {
 //             HttpSession session = req.getSession();
 //             session.invalidate();
         //return "redirect:/";
-            return new ModelAndView("Login");
+            return new ModelAndView("Login.html");
         }
     }
     
     ////////////////////////////////// Operadores CRUD //////////////////////////////////////////////////////
     //Scripts para Agregar Deportes
-    @RequestMapping(value="DDyFD/Deportes/AgregarDeporte", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Deportes/AgregarDeporte.html", method=RequestMethod.GET)
     public ModelAndView Agrega(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -98,14 +98,14 @@ public class Deportes {
         }
         return mav;
     }
-    @RequestMapping(value="DDyFD/Deportes/AgregarDeporte", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Deportes/AgregarDeporte.html", method=RequestMethod.POST)
     public ModelAndView Agrega(Deporte dep)throws Exception{
             
             String sql="insert into Act_Deportiva(Disciplina) value (?);";
             this.rid.update(sql, dep.getDisciplina());
-            return new ModelAndView("redirect:../Deportes/Deportesiguiente");
+            return new ModelAndView("redirect:../Deportes/Deportesiguiente.html");
     }
-    @RequestMapping(value="DDyFD/Deportes/Deportesiguiente", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Deportes/Deportesiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
           HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -119,7 +119,7 @@ public class Deportes {
     }
     
     //Scripts para edición de Deportes
-    @RequestMapping(value="DDyFD/Deportes/EditarDeporte", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Deportes/EditarDeporte.html", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -135,15 +135,15 @@ public class Deportes {
         }
         return mav;
     }
-    @RequestMapping(value="DDyFD/Deportes/EditarDeporte", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Deportes/EditarDeporte.html", method=RequestMethod.POST)
     public ModelAndView Editar(Deporte dep){
         String sql="update Act_Deportiva set Disciplina=? where ID_Deporte="+DeporteID;
         this.rid.update(sql, dep.getDisciplina());
-        ModelAndView mv=new ModelAndView ("redirect:../Deportes");
+        ModelAndView mv=new ModelAndView ("redirect:../Deportes.html");
 //        mv.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");
         return mv;
     }
-    @RequestMapping(value="DDyFD/Deportes/ConfirmaDeporte", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Deportes/ConfirmaDeporte.html", method=RequestMethod.GET)
     public ModelAndView confirm(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -161,7 +161,7 @@ public class Deportes {
     }
 
     //Scripts para borrar registros
-    @RequestMapping(value="DDyFD/Deportes/BorrarDeporte", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Deportes/BorrarDeporte.html", method=RequestMethod.GET)
     public ModelAndView delete(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -177,19 +177,19 @@ public class Deportes {
         }
         return mav;
     }    
-    @RequestMapping(value="DDyFD/Deportes/BorrarDeporte", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Deportes/BorrarDeporte.html", method=RequestMethod.POST)
     public ModelAndView delete(Deporte dep){
         String sql="update Act_Deportiva set Disciplina=? where ID_Deporte="+DeporteID;
         this.rid.update(sql, dep.getDisciplina());
-        ModelAndView mv=new ModelAndView ("redirect:../DDyFD/ConfirmaBorrar");
+        ModelAndView mv=new ModelAndView ("redirect:../DDyFD/ConfirmaBorrar.html");
         return mv;
     }
-    @RequestMapping(value="DDyFD/Deportes/ConfirmaBorrar")
+    @RequestMapping(value="DDyFD/Deportes/ConfirmaBorrar.html")
     public ModelAndView confirma(HttpServletRequest re){
         DeporteID=Integer.parseInt(re.getParameter("DeporteID"));
         String sql ="delete from Act_Deportiva where ID_Deporte="+DeporteID;
         this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../Deportes");
+        ModelAndView mv=new ModelAndView ("redirect:../Deportes.html");
 //        mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
         return mv;
     }

@@ -530,9 +530,9 @@ Funciones: Será la vista gerenal para los alumnos
 
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-        <link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
-        <link rel="stylesheet"  href="js/jquery-ui/jquery-ui.structure.min.css">
-        <link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
+        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
 
 
         <!-- Moment js  -->
@@ -569,7 +569,7 @@ Funciones: Será la vista gerenal para los alumnos
 		<h2 id="titulo">Entrenadores</h2>
                     <div id="agregaboton">
                         <label> Para agregar un nuevo entrenador pulsa aquí: </label>
-                        <a href="Entrenadores/AgregarEntrenador" style='text-decoration:none;color: #777620; align-content: right;'> 
+                        <a href="Entrenadores/AgregarEntrenador.html" style='text-decoration:none;color: #777620; align-content: right;'> 
                             <i class="far fa-plus-square"></i> 
                         </a> 
                     </div>
@@ -615,12 +615,12 @@ Funciones: Será la vista gerenal para los alumnos
                                                             <td>${en.Celular}</td>
 
                                                             <td> 
-                                                                    <a href="Entrenadores/EditarEntrenador?EntrenadorID=${en.ID_Persona}" style='text-decoration:none;color: #0174DF;'> 
+                                                                    <a href="Entrenadores/EditarEntrenador.html?EntrenadorID=${en.ID_Persona}" style='text-decoration:none;color: #0174DF;'> 
                                                                         <i class="far fa-edit"></i>  
                                                                     </a> 
                                                             </td>
                                                             <td> 
-                                                                    <a href="Entrenadores/BorrarEntrenador?EntrenadorID=${en.ID_Persona}" style='text-decoration:none;color: red;'> 
+                                                                    <a href="Entrenadores/BorrarEntrenador.html?EntrenadorID=${en.ID_Persona}" style='text-decoration:none;color: red;'> 
                                                                         <i class="far fa-trash-alt"></i>  
                                                                     </a> 
                                                             </td>
@@ -631,7 +631,7 @@ Funciones: Será la vista gerenal para los alumnos
 				</div>	
                             
 			</div>
-                        <a href="../Coordinador" class="btn btn-light float-right login_btn"> Volver </a>
+                        <a href="../Coordinador.html" class="btn btn-light float-right login_btn"> Volver </a>
         <div class="clearfix" >&nbsp;</div>    
         <div class="clearfix" >&nbsp;</div>
     </section>

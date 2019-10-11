@@ -17,7 +17,7 @@
         <!--Jquery -->
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-        <link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
         <link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
         <link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
 
@@ -399,7 +399,7 @@
             </div>
             <div class="clearfix" >&nbsp;</div>
             <button type="submit" class="btn  btn-outline-success "> Buscar </button>
-            <a href="principalcoord.htm"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn btn-outline-danger"> Cancelar </button></a>
+            <a href="#"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn btn-outline-danger"> Cancelar </button></a>
         </form>
         <div class="clearfix" >&nbsp;</div>
 

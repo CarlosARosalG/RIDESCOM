@@ -148,8 +148,8 @@
                         <div class="form-group text-center">
                             <H2>El deporte ha sido agregada correctamente</H2>
                             <h3>¿Desea agregar más?</h3>
-                            <a class="btn btn-primary" href="AgregarDeporte">SI</a>  
-                        <a class="btn btn-primary" href="../Deportes">NO</a>
+                            <a class="btn btn-primary" href="AgregarDeporte.html">SI</a>  
+                        <a class="btn btn-primary" href="../Deportes.html">NO</a>
                 </div>
             </div>
         </div>

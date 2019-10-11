@@ -34,7 +34,7 @@ public class Evento {
    
      ////////////////////////////////// Operadores CRUD //////////////////////////////////////////////////////
     //Scripts para Agregar Deportes
-    @RequestMapping(value="DDyFD/AgregarEvento", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/AgregarEvento.html", method=RequestMethod.GET)
     public ModelAndView Agrega(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -46,16 +46,16 @@ public class Evento {
         }
         return mav;
     }
-    @RequestMapping(value="DDyFD/AgregarEvento", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/AgregarEvento.html", method=RequestMethod.POST)
     public ModelAndView Agrega(Eventos ev)throws Exception{            
 //            String sql="insert into Evento(Nombre_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Lugar_del_Evento, Descripcion, Direccion, P_Referencia, Fecha_Evento, Ciclo_ID_Ciclo, Act_Deportiva_ID_Deporte) value (?,?,?,?,?,?,?,?,?,?);";
 //            this.rid.update(sql, ev.getNombre_E(), ev.getFIR(), ev.getFFR(), ev.getLugar(), ev.getDesc(), ev.getDir(), ev.getP_Ref(), ev.getFE(), ev.getCiclo(), ev.getDeporte());
         
         String sql="insert into Evento(Nombre_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Descripcion, Fecha_Evento, Ciclo_ID_Ciclo, Act_Deportiva_ID_Deporte, Sede_ID_Sede) value (?,left(now(),10),?,?,?,?,?,?);";
             this.rid.update(sql, ev.getNombre_E(), ev.getFFR(), ev.getDesc(), ev.getFE(), ev.getCiclo(), ev.getDeporte(), ev.getSede());
-            return new ModelAndView("redirect:../DDyFD/Eventosiguiente");
+            return new ModelAndView("redirect:../DDyFD/Eventosiguiente.html");
     }
-    @RequestMapping(value="DDyFD/Eventosiguiente", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Eventosiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
           HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -69,7 +69,7 @@ public class Evento {
     }
     
     //Scripts para edición de Deportes
-    @RequestMapping(value="DDyFD/EditarEvento", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/EditarEvento.html", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -94,15 +94,15 @@ public class Evento {
         }
         return mav;
     }
-    @RequestMapping(value="DDyFD/EditarEvento", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/EditarEvento.html", method=RequestMethod.POST)
     public ModelAndView Editar(Eventos ev){
         String sql="update Evento set Nombre_Evento=?, Fecha_fin_Registro=?, Descripcion=?, Fecha_Evento=?, Ciclo_ID_Ciclo=?, Act_Deportiva_ID_Deporte=?, Sede_ID_Sede=? where Evento_ID="+EventoID;
         this.rid.update(sql, ev.getNombre_E(), ev.getFFR(), ev.getDesc(), ev.getFE(), ev.getCiclo(), ev.getDeporte(), ev.getSede());
-        ModelAndView mv=new ModelAndView ("redirect:../DDyFD");
+        ModelAndView mv=new ModelAndView ("redirect:../DDyFD.html");
         
         return mv;
     }
-    @RequestMapping(value="DDyFD/ConfirmaEvento", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/ConfirmaEvento.html", method=RequestMethod.GET)
     public ModelAndView confirm(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -120,7 +120,7 @@ public class Evento {
     }
 
     //Scripts para borrar registros
-    @RequestMapping(value="DDyFD/BorrarEvento", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/BorrarEvento.html", method=RequestMethod.GET)
     public ModelAndView delete(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -138,19 +138,19 @@ public class Evento {
         }
         return mav;
     }    
-    @RequestMapping(value="DDyFD/BorrarEvento", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/BorrarEvento.html", method=RequestMethod.POST)
     public ModelAndView delete(Eventos ev){
         String sql="update Evento set Nombre_Evento=?, Fecha_inicio_Registro=?, Fecha_fin_Registro=?, Descripcion=?, Fecha_Evento=?, Ciclo_ID_Ciclo=?, Act_Deportiva_ID_Deporte=?, Sede_ID_Sede=? where Evento_ID="+EventoID;
         this.rid.update(sql, ev.getNombre_E(), ev.getFIR(), ev.getFFR(), ev.getDesc(), ev.getFE(), ev.getCiclo(), ev.getDeporte(), ev.getSede());
-        ModelAndView mv=new ModelAndView ("redirect:../DDyFD/ConfirmaBorrarEvento");
+        ModelAndView mv=new ModelAndView ("redirect:../DDyFD/ConfirmaBorrarEvento.html");
         return mv;
     }
-    @RequestMapping(value="DDyFD/ConfirmaBorrarEvento")
+    @RequestMapping(value="DDyFD/ConfirmaBorrarEvento.html")
     public ModelAndView confirma(HttpServletRequest re){
         EventoID=Integer.parseInt(re.getParameter("EventoID"));
         String sql ="delete from Evento where Evento_ID="+EventoID;
         this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../DDyFD");
+        ModelAndView mv=new ModelAndView ("redirect:../DDyFD.html");
 //        mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
         return mv;
     }

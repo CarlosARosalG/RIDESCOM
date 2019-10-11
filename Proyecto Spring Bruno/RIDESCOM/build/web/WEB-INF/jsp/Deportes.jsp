@@ -558,7 +558,7 @@
 		<h2 id="titulo">Lista de deportes de interpolitécnicos</h2>
                     <div id="agregaboton">
                         <label> Para agregar un nuevo deporte pulsa aquí: </label>
-                        <a href="Deportes/AgregarDeporte" style='text-decoration:none;color: #777620; align-content: right;'> 
+                        <a href="Deportes/AgregarDeporte.html" style='text-decoration:none;color: #777620; align-content: right;'> 
                             <i class="far fa-plus-square"></i> 
                         </a> 
                     </div>
@@ -608,12 +608,12 @@
                                 <td>${dato.Disciplina}</td>
                                 
                                 <td> 
-                                                                    <a href="Deportes/EditarDeporte?DeporteID=${dato.ID_Deporte}" style='text-decoration:none;color: #0174DF;'> 
+                                                                    <a href="Deportes/EditarDeporte.html?DeporteID=${dato.ID_Deporte}" style='text-decoration:none;color: #0174DF;'> 
                                                                         <i class="far fa-edit"></i>  
                                                                     </a> 
                                                                 </td>
 <!--                                                                <td> 
-                                                                    <a href="Deportes/BorrarDeporte?DeporteID=${dato.ID_Deporte}" style='text-decoration:none;color: red;'>
+                                                                    <a href="Deportes/BorrarDeporte.html?DeporteID=${dato.ID_Deporte}" style='text-decoration:none;color: red;'>
                                                                     <i  class="far fa-trash-alt"></i> 
                                                                     </a> 
                                                                 </td>-->
@@ -622,7 +622,7 @@
                         </tbody>
 					</table>
 				</div>	
-                            <a href="../DDyFD" class="btn btn-light float-right login_btn"> Volver </a>
+                            <a href="../DDyFD.html" class="btn btn-light float-right login_btn"> Volver </a>
 			</div>
         
 		<div class="clearfix" >&nbsp;</div>

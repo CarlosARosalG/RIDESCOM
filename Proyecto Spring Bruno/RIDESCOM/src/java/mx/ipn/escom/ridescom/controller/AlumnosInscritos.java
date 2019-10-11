@@ -40,7 +40,7 @@ public class AlumnosInscritos {
     List dat1;
     List dat2;
     
-    @RequestMapping(value="Coordinador/AlumnosInscritos", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/AlumnosInscritos.html", method=RequestMethod.GET)
     public ModelAndView Alumno(){   
         String sqli="select concat(p.Nombre,' ',p.Ap_Pat,' ',p.Ap_Mat) as Nombre, a.ID_Alumno, ev.Nombre_Evento, d.Disciplina, ci.Ciclo_Escolar from persona p " +
 "INNER JOIN (alumno a, inscripcion i, Escuela es, evento ev, act_deportiva d, pruebas pr, ciclo ci) "
@@ -50,12 +50,12 @@ public class AlumnosInscritos {
         mav.setViewName("AlumnosInscritos");
         return mav;
     }
-    @RequestMapping(value="Coordinador/AlumnosInscritos", method=RequestMethod.POST)
+    @RequestMapping(value="Coordinador/AlumnosInscritos.html", method=RequestMethod.POST)
     public ModelAndView Alu(HttpServletRequest request, HttpServletResponse response,Ced cd) throws JRException, IOException{   
         ConectaCedula cc=new ConectaCedula();
             //File reportfile =new File(application.getRealPath("WEB-INF/jsp/Cedula.jasper"));
             Map<String, Object> parameter = new HashMap<>();
-            String path = "C:\\Users\\spy51\\Desktop\\Ride\\RIDESCOM\\web\\WEB-INF\\jsp\\Cedula.jasper";
+            String path = "Cedula.jasper";
             
 //            String dat=request.getParameter("iddeporte");
             parameter.put("Deporte",cd.getIddeporte());
@@ -70,7 +70,7 @@ public class AlumnosInscritos {
             outputstream.flush();
             outputstream.close();
        
-        return new ModelAndView("redirect:/Coordinador/Cedula");
+        return new ModelAndView("redirect:/Coordinador/AlumnosInscritos.html");
     }
 //    @RequestMapping(value="Coordinador/Cedula", method=RequestMethod.GET)
 //    public ModelAndView cedul(){   

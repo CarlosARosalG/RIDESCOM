@@ -116,9 +116,9 @@
 	<!--Jquery -->
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
-	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
+	<link rel="stylesheet" href="resources/js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="resources/js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="resour/js/jquery-ui/jquery-ui.theme.min.css">
 
 	<!-- Moment js  -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
@@ -172,7 +172,7 @@
                             <div class="clearfix" >&nbsp;</div>
                             <input name="btn" value="Entrar" type="submit" class="btn btn-light float-right login_btn">
                             
-                            <a href="../RIDESCOM/Home" class="btn btn-light float-right login_btn"> Volver </a>
+                            <a href="../RIDESCOM/Home.html" class="btn btn-light float-right login_btn"> Volver </a>
                         </form>
                     </div>
 <!--			<div class="card-footer">

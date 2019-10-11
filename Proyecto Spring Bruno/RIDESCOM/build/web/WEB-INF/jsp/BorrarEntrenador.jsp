@@ -18,9 +18,9 @@
 	<!--Jquery -->
 	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet"href="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet" " href="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.structure.min.css">
-	<link rel="stylesheet"  href="C:/Users/Carlos A. Rosales/Documents/IPN/RIDESCOM/js/jquery-ui/jquery-ui.theme.min.css">
+	<link rel="stylesheet"href="resources/js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="resources/js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet"  href="resources/js/jquery-ui/jquery-ui.theme.min.css">
 
 	<!-- Moment js  -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
@@ -475,9 +475,9 @@
 					<input type="text" class="form-control" id="validationTooltip02" name="Tel_cel" value="${per[0].Disciplina}" disabled/>
 				</div>
 		  	</div>
-                        <a href="ConfirmaBorrarEntrenador?EntrenadorID=${per[0].ID_Persona}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
+                        <a href="ConfirmaBorrarEntrenador.html?EntrenadorID=${per[0].ID_Persona}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
 <!--		  	<button type="submit" class="btn  btn-outline-success "> Borrar </button>-->
-		  	<a href="../../Entrenadores"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+		  	<a href="../../Entrenadores.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
 		</form>
 	</section>
 

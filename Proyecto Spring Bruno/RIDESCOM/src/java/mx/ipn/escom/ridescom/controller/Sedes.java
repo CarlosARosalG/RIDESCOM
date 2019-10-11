@@ -36,7 +36,7 @@ public class Sedes {
     List dat;
     List dat1;
     
-    @RequestMapping(value="DDyFD/Sedes", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Sedes.html", method=RequestMethod.GET)
     public ModelAndView Sede(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -55,7 +55,7 @@ public class Sedes {
         }
         return mav;
     }
-    @RequestMapping(value="DDyFD/Sedes", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Sedes.html", method=RequestMethod.POST)
     public ModelAndView log(HttpServletRequest req, HttpServletResponse resp) throws Exception{
         
         String accion=req.getParameter("btn");
@@ -73,23 +73,23 @@ public class Sedes {
 //            String user=req.getParameter("Nombre_U");
             session.setAttribute("Nombre_U", jefe); //user
             
-            return new ModelAndView("redirect:/DDyFD");
+            return new ModelAndView("redirect:/DDyFD.html");
             }else {
-                return new ModelAndView("redirect:/Coordinador");
+                return new ModelAndView("redirect:/Coordinador.html");
             }
         }else{
-        ModelAndView mv=new ModelAndView("Login");
+        ModelAndView mv=new ModelAndView("Login.html");
         mv.addObject("mjs", "<div style='color: red;'>ERROR, usuario no existe.</div>");
         return mv;  
         }
         }else{
-            return new ModelAndView("Login");
+            return new ModelAndView("Login.html");
         }
     }
     
     ////////////////////////////////// Operadores CRUD //////////////////////////////////////////////////////
     //Scripts para Agregar Sedes
-    @RequestMapping(value="DDyFD/Sedes/AgregarSede", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Sedes/AgregarSede.html", method=RequestMethod.GET)
     public ModelAndView Agrega(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -101,7 +101,7 @@ public class Sedes {
         }
         return mav;
     }
-    @RequestMapping(value="DDyFD/Sedes/AgregarSede", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Sedes/AgregarSede.html", method=RequestMethod.POST)
     public ModelAndView Agrega(HttpServletRequest req, HttpServletResponse resp, Sede sed)throws Exception{
             if(sed.getNumero().isEmpty()){
             String sql="update Sede set Nombre_S=?, Calle=?, Colonia=?, Numero='s/n', CP=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select Estados_ID_estado from Municipio where ID_Municipio=?)where ID_Sede="+SedeID;
@@ -110,10 +110,10 @@ public class Sedes {
         String sql="update Sede set Nombre_S=?, Calle=?, Colonia=?, Numero=?, CP=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select Estados_ID_estado from Municipio where ID_Municipio=?)where ID_Sede="+SedeID;
             this.rid.update(sql, sed.getSede(), sed.getCalle(), sed.getColonia(), sed.getNumero(), sed.getCP(), sed.getMunicipio(), sed.getMunicipio());
         }
-        ModelAndView mv=new ModelAndView ("redirect:../Sedes");
+        ModelAndView mv=new ModelAndView ("redirect:../Sedes.html");
         return mv;
     }
-    @RequestMapping(value="DDyFD/Sedes/Sedesiguiente", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Sedes/Sedesiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -125,7 +125,7 @@ public class Sedes {
     }
     
     //Scripts para edición de Sedes
-    @RequestMapping(value="DDyFD/Sedes/EditarSede", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Sedes/EditarSede.html", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -142,7 +142,7 @@ public class Sedes {
         System.out.println(mav);
         return mav;
     }
-    @RequestMapping(value="DDyFD/Sedes/EditarSede", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Sedes/EditarSede.html", method=RequestMethod.POST)
     public ModelAndView Editar(Sede sed){
         if(sed.getNumero().isEmpty()){
             String sql="update Sede set Nombre_S=?, Calle=?, Colonia=?, Numero='s/n', CP=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select Estados_ID_estado from Municipio where ID_Municipio=?)where ID_Sede="+SedeID;
@@ -151,7 +151,7 @@ public class Sedes {
         String sql="update Sede set Nombre_S=?, Calle=?, Colonia=?, Numero=?, CP=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select Estados_ID_estado from Municipio where ID_Municipio=?)where ID_Sede="+SedeID;
             this.rid.update(sql, sed.getSede(), sed.getCalle(), sed.getColonia(), sed.getNumero(), sed.getCP(), sed.getMunicipio(), sed.getMunicipio());
         }
-        ModelAndView mv=new ModelAndView ("redirect:../Sedes");
+        ModelAndView mv=new ModelAndView ("redirect:../Sedes.html");
         return mv;
     }
 //    @RequestMapping(value="DDyFD/Sedes/ConfirmaEdicion", method=RequestMethod.GET)
@@ -173,7 +173,7 @@ public class Sedes {
 //    }
 
     //Scripts para borrar registros
-    @RequestMapping(value="DDyFD/Sedes/BorrarSede", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Sedes/BorrarSede.html", method=RequestMethod.GET)
     public ModelAndView delete(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -189,19 +189,19 @@ public class Sedes {
         }
         return mav;
     }    
-    @RequestMapping(value="DDyFD/Sedes/BorrarSede", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Sedes/BorrarSede.html", method=RequestMethod.POST)
     public ModelAndView delete(Sede sed){
         String sql="update Sede set Nombre_S=?, Calle=?, Colonia=?, Numero=?, CP=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+sed.getMunicipio()+") where ID_Sede="+SedeID;
         this.rid.update(sql, sed.getSede(), sed.getCalle(), sed.getColonia(), sed.getNumero(), sed.getCP(), sed.getMunicipio());
-        ModelAndView mv=new ModelAndView ("redirect:../Sedes");
+        ModelAndView mv=new ModelAndView ("redirect:../Sedes.html");
         return mv;
     }
-    @RequestMapping(value="DDyFD/Sedes/ConfirmaBorrar")
+    @RequestMapping(value="DDyFD/Sedes/ConfirmaBorrar.html")
     public ModelAndView confirma(HttpServletRequest re){
         SedeID=Integer.parseInt(re.getParameter("SedeID"));
         String sql ="delete from Sede where ID_Sede="+SedeID;
         this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../Sedes");
+        ModelAndView mv=new ModelAndView ("redirect:../Sedes.html");
         mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
         return mv;
     }

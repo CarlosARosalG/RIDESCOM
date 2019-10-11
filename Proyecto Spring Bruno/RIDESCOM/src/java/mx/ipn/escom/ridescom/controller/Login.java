@@ -36,7 +36,7 @@ public class Login {
     
     List dat;
     
-    @RequestMapping(value="Login", method=RequestMethod.GET)
+    @RequestMapping(value="Login.html", method=RequestMethod.GET)
     public ModelAndView log(HttpServletRequest req){
         HttpSession session = req.getSession();
         if(session.getAttribute("Nombre_U")!= null){
@@ -52,7 +52,7 @@ public class Login {
         }
         return mav;
     }
-    @RequestMapping(value="Login", method=RequestMethod.POST)
+    @RequestMapping(value="Login.html", method=RequestMethod.POST)
     public ModelAndView log(HttpServletRequest req, HttpServletResponse resp) throws Exception{
         
         String accion=req.getParameter("btn");
@@ -66,27 +66,27 @@ public class Login {
             if(us.getRol()==1){
                 HttpSession session=req.getSession();
                 session.setAttribute("Nombre_U", usuario); //user
-                return new ModelAndView("redirect:/DDyFD");
+                return new ModelAndView("redirect:/DDyFD.html");
             }else if(us.getRol()==2) {
                 HttpSession session=req.getSession();
                 session.setAttribute("Nombre_U", usuario); //user
-                return new ModelAndView("redirect:/Coordinador");
+                return new ModelAndView("redirect:/Coordinador.html");
             }else{
                 HttpSession session=req.getSession();
                 session.setAttribute("Nombre_U", usuario); //user
-                return new ModelAndView("redirect:/Alumno");
+                return new ModelAndView("redirect:/Alumno.html");
             }
         }else{
-        ModelAndView mv=new ModelAndView("Login");
+        ModelAndView mv=new ModelAndView("Login.html");
         mv.addObject("mjs", "<div style='color: red;'>ERROR, usuario o contraseña invalido.</div>");
         return mv;  
         }
         }else{
-            return new ModelAndView("Login");
+            return new ModelAndView("Login.html");
         }
     }
     
-    @RequestMapping(value="Error")
+    @RequestMapping(value="Error.html")
     public ModelAndView error(){   
         mav.setViewName("Error404");
         return mav;

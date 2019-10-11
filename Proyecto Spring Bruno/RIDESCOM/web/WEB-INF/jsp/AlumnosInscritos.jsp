@@ -21,7 +21,6 @@
         <link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
         <link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
         <link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
-
         <!-- Moment js  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es.js"></script>
@@ -451,11 +450,6 @@
                             <td>${ins.Disciplina}</td>
                             <td>${ins.Ciclo_Escolar}</td>
 
-                            <td> 
-                                <a href="Resultados/EditarResultado?ResulID=${d.ID_Persona}" style='text-decoration:none;color: #0174DF;'> 
-                                <i class="far fa-edit"></i>  
-                                </a> 
-                            </td>
                         </tr>
                         </c:forEach>
                     </tbody>
@@ -504,7 +498,7 @@
             </div>
             <input name="btn" value="Generar" type="submit" class="btn btn-light float-leftt login_btn">
         </form>
-            <a href="../Coordinador" class="btn btn-light float-right login_btn"> Volver </a>
+            <a href="../Coordinador.html" class="btn btn-light float-right login_btn"> Volver </a>
     </section>
 </body>
 

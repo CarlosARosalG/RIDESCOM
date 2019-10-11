@@ -18,7 +18,7 @@
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet" " href="js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
 	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
 
 	<!-- Mis scripts -->
@@ -392,9 +392,9 @@
                         </div>
                             <div class="clearfix">&nbsp;</div>
                     </div>
-<!--                    <a href="../Deportes/ConfirmaDeporte?DeporteID=${dep[0].ID_Deporte}" type="submit" value="Agregar" class="btn btn-outline-success">Agregar</a>-->
+<!--                    <a href="../Deportes/ConfirmaDeporte.html?DeporteID=${dep[0].ID_Deporte}" type="submit" value="Agregar" class="btn btn-outline-success">Agregar</a>-->
                     <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Actualizar </button>
-                    <a href="../Deportes"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+                    <a href="../Deportes.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
                 </form>
 	</section>
 </body>

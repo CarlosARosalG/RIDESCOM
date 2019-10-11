@@ -530,9 +530,9 @@ Funciones: Será la vista gerenal para los alumnos
 
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-        <link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
-        <link rel="stylesheet"  href="js/jquery-ui/jquery-ui.structure.min.css">
-        <link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
+        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
 
 
         <!-- Moment js  -->
@@ -571,7 +571,7 @@ Funciones: Será la vista gerenal para los alumnos
             <div class="col-row-12">
                 <div id="agregaboton">
                         <label> Para agregar resultados de un alumno pulsa aquí: </label>
-                        <a href="Resultados/AgregarResultado" style='text-decoration:none;color: #777620; align-content: right;'> 
+                        <a href="Resultados/AgregarResultado.html" style='text-decoration:none;color: #777620; align-content: right;'> 
                             <i class="far fa-plus-square fa-2x"></i> 
                         </a> 
                     </div>
@@ -612,7 +612,7 @@ Funciones: Será la vista gerenal para los alumnos
                                                             <td>${ins.Marca}</td>
 
                                                             <td> 
-                                                                    <a href="Resultados/EditarResultado?ResulID=${d.ID_Persona}" style='text-decoration:none;color: #0174DF;'> 
+                                                                    <a href="Resultados/EditarResultado.html?ResulID=${d.ID_Persona}" style='text-decoration:none;color: #0174DF;'> 
                                                                         <i class="far fa-edit"></i>  
                                                                     </a> 
                                                             </td>
@@ -621,7 +621,7 @@ Funciones: Será la vista gerenal para los alumnos
 						</tbody>
                 </table>
             </div>
-            <a href="../Coordinador" class="btn btn-light float-right login_btn"> Volver </a>
+            <a href="../Coordinador.html" class="btn btn-light float-right login_btn"> Volver </a>
         </div>
 
         <div class="clearfix" >&nbsp;</div>

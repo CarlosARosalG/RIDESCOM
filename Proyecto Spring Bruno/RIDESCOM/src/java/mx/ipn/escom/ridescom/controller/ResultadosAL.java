@@ -42,7 +42,7 @@ public class ResultadosAL {
     String a;
     String co;
     
-    @RequestMapping(value="Alumno/Resultados", method=RequestMethod.GET)
+    @RequestMapping(value="Alumno/Resultados.html", method=RequestMethod.GET)
     public ModelAndView log(HttpServletRequest req){
         HttpSession session = req.getSession();
         if(session.getAttribute("Nombre_U")!= null){

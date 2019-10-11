@@ -48,7 +48,7 @@ public class Resultados {
     String a;
     String co;
     
-    @RequestMapping(value="Coordinador/Resultados", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Resultados.html", method=RequestMethod.GET)
     public ModelAndView resul(){   
         String sql1="SELECT i.Alumno_ID_Alumno, p.Nombre, e.Escuela, ad.Disciplina, pr.Prueba, r.Lugar_Obtenido, r.Marca, ev.Nombre_Evento " +
 "	FROM Resultados r, Inscripcion i, Escuela e, Evento ev, Pruebas pr, Act_Deportiva ad, Persona p, Alumno a " +
@@ -63,12 +63,11 @@ public class Resultados {
             //Aqui el sql solo muestra los eventos que no hayan pasado 
             if(dat!=null)
                 mav.addObject("ins",dat);
-                mav.setViewName("Resultados");
         mav.setViewName("Resultados");
         return mav;
     }
     
-    @RequestMapping(value="Alumno/Resultados", method=RequestMethod.GET)
+    @RequestMapping(value="Alumno/Resultados.html", method=RequestMethod.GET)
     public ModelAndView resulA(){   
         mav.setViewName("ResultadosAlumno");
         return mav;
@@ -76,7 +75,7 @@ public class Resultados {
     
     ////////////////////////////////// Operadores CRUD //////////////////////////////////////////////////////
     //Scripts para Agregar Deportes
-    @RequestMapping(value="Coordinador/Resultados/AgregarResultado", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Resultados/AgregarResultado.html", method=RequestMethod.GET)
     public ModelAndView Agrega(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -101,7 +100,7 @@ public class Resultados {
         }
         return mav;
     }
-    @RequestMapping(value="Coordinador/Resultados/AgregarUsuario", method=RequestMethod.POST)
+    @RequestMapping(value="Coordinador/Resultados/AgregarUsuario.html", method=RequestMethod.POST)
     public ModelAndView Agrega(Usuario u, Persona p, Eventos ev, Contacto c )throws Exception{
             
             String sql="insert into Persona (Nombre, Ap_Pat, Ap_Mat, Tipo_Sexo_ID_Tipo_Sexo, CURP, Fecha_Nac, NSS, Municipio_ID_Municipio, Municipio_Estados_ID_estado) values (?,?,?,?,?,?,?,?, (select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+"))";
@@ -116,9 +115,9 @@ public class Resultados {
             this.rid.update(sqltc, c.getTel_cel());
             String sqlc="insert into Email (Correo, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
             this.rid.update(sqlc, c.getCorreo());
-            return new ModelAndView ("redirect:../Coordinador/Resultados/Resultadoiguiente");
+            return new ModelAndView ("redirect:../Coordinador/Resultados/Resultadoiguiente.html");
     }
-    @RequestMapping(value="Coordinador/Resultados/Resultadosiguiente", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Resultados/Resultadosiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
           HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -132,7 +131,7 @@ public class Resultados {
     }
     
     //Scripts para edición de Usuarios
-    @RequestMapping(value="Coordinador/Resultados/EditarResultado", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Resultados/EditarResultado.html", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -163,7 +162,7 @@ public class Resultados {
         }
         return mav;
     }
-    @RequestMapping(value="Coordinador/Resultados/EditarResultado", method=RequestMethod.POST)
+    @RequestMapping(value="Coordinador/Resultados/EditarResultado.html", method=RequestMethod.POST)
     public ModelAndView Editar(Usuario u, Persona p, Contacto c, Eventos ev){
         String sqlu="update Usuario set Nombre_U=?, Password_U=? where Persona_ID_Persona="+ResulID;
         this.rid.update(sqlu, u.getNombre_U(), u.getPassword_U());
@@ -189,7 +188,7 @@ public class Resultados {
             String sqlc="update Email set Correo=? where Contacto_ID_Contacto="+co;
             this.rid.update(sqlc, c.getCorreo());
 
-        ModelAndView mv=new ModelAndView ("redirect:../Resultados");
+        ModelAndView mv=new ModelAndView ("redirect:../Resultados.html");
 //        mv.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");
         return mv;
     }

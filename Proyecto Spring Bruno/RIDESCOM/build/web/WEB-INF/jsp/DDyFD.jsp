@@ -749,15 +749,15 @@ Funciones: Será la vista gerenal para los alumnos
                             <li><a href="#"style='text-decoration:none;'> ${p.Correo} </a></li>
                             <li><a href="#"style='text-decoration:none;'> ${p.Nombre} ${p.Ap_pat} </a></li>
                             <li><a href="#Contacto"style='text-decoration:none;'><span class="sexto"></span> Contacto </a></li>
-                            <li><a href="Logout" style='text-decoration:none;'>Salir</a></li>
+                            <li><a href="Logout.html" style='text-decoration:none;'>Salir</a></li>
                             
                         </ul>
                     </li>
-                    <li><a href="DDyFD/Usuarios" style='text-decoration:none; color: #fff'><span class="segundo"><i class="fas fa-users"></i></span> Usuarios </a></li>
-                    <li><a href="DDyFD/Deportes"><span class="tercero" style='text-decoration:none; color: #fff'><i class="fas fa-share-alt"></i></span> Deportes </a></li>
-                    <li><a href="DDyFD/Pruebas"><span class="cuarto" style='text-decoration:none; color: #fff'><i class="fas fa-users"></i></span> Pruebas</a></li>
-                    <li><a href="DDyFD/Sedes" style='text-decoration:none; color: #fff'><span class="sexto"><i class="fas fa-poll"></i></span> Sedes </a></li>
-                    <li><a href="DDyFD/Resultados" style='text-decoration:none; color: #fff'><span class="sexto"><i class="fas fa-poll"></i></span> Resultados </a></li>
+                    <li><a href="DDyFD/Usuarios.html" style='text-decoration:none; color: #fff'><span class="segundo"><i class="fas fa-users"></i></span> Usuarios </a></li>
+                    <li><a href="DDyFD/Deportes.html"><span class="tercero" style='text-decoration:none; color: #fff'><i class="fas fa-share-alt"></i></span> Deportes </a></li>
+                    <li><a href="DDyFD/Pruebas.html"><span class="cuarto" style='text-decoration:none; color: #fff'><i class="fas fa-users"></i></span> Pruebas</a></li>
+                    <li><a href="DDyFD/Sedes.html" style='text-decoration:none; color: #fff'><span class="sexto"><i class="fas fa-poll"></i></span> Sedes </a></li>
+                    <li><a href="DDyFD/Resultados.html" style='text-decoration:none; color: #fff'><span class="sexto"><i class="fas fa-poll"></i></span> Resultados </a></li>
                     
                 </ul>
             </nav>
@@ -768,7 +768,7 @@ Funciones: Será la vista gerenal para los alumnos
             </div>
             <div id="agregaboton">
                         <label> Para agregar un nuevo evento pulsa aquí: </label>
-                        <a href="DDyFD/AgregarEvento" style='text-decoration:none;color: #777620; align-content: right;'> 
+                        <a href="DDyFD/AgregarEvento.html" style='text-decoration:none;color: #777620; align-content: right;'> 
                             <i class="far fa-plus-square fa-2x"></i> 
                         </a> 
             </div>
@@ -785,10 +785,10 @@ Funciones: Será la vista gerenal para los alumnos
                                 <blockquote><u>Período de inscripciones</u>: ${dato.FIR} / ${dato.FFR}</blockquote>
                                 <blockquote><u>Descripción: </u><div class="clearfix">&nbsp;</div>
                                     ${dato.Descripcion}</blockquote>
-                                <a href="DDyFD/EditarEvento?EventoID=${dato.Evento_ID}" class="bnt-more" id="edita" style='text-decoration:none;color: #0174DF;'> 
+                                <a href="DDyFD/EditarEvento.html?EventoID=${dato.Evento_ID}" class="bnt-more" id="edita" style='text-decoration:none;color: #0174DF;'> 
                                     <i class="far fa-edit fa-2x"></i>  
                                 </a> 
-                                <a href="DDyFD/BorrarEvento?EventoID=${dato.Evento_ID}"class="bnt-more" style='text-decoration:none;color: red;'>
+                                <a href="DDyFD/BorrarEvento.html?EventoID=${dato.Evento_ID}"class="bnt-more" style='text-decoration:none;color: red;'>
                                     <i  class="far fa-trash-alt fa-2x"></i> 
                                 </a> 
                         </div>

@@ -22,8 +22,8 @@
                      <label>Deporte</label>
                      <input type="text" value=" ${prue[0].Disciplina}"  name="Act_Prueba" class="form-control" autocomplete="off" disabled/> 
                     
-                     <a href="ConfirmaBorrar?PruebaID=${prue[0].ID_Pruebas}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
-                   <a href="../Pruebas" type="submit" value="Regresar" class="btn btn-success">Regresar</a>
+                     <a href="ConfirmaBorrar.html?PruebaID=${prue[0].ID_Pruebas}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
+                   <a href="../Pruebas.html" type="submit" value="Regresar" class="btn btn-success">Regresar</a>
                 </form>
             </div>
         </div>

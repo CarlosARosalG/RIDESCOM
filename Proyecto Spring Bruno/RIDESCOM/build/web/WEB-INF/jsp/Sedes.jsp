@@ -526,9 +526,9 @@ Funciones: Será la vista gerenal para los alumnos
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.structure.min.css">
-	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
         
 
 	<!-- Moment js  -->
@@ -579,7 +579,7 @@ Funciones: Será la vista gerenal para los alumnos
 		<h2 id="titulo">Lista de Sedes</h2>
                     <div id="agregaboton">
                         <label> Para agregar una nueva sede donde se realizan los eventos deportivos pulsa aquí: </label>
-                        <a href="Sedes/AgregarSede" style='text-decoration:none;color: #777620; align-content: right;'> 
+                        <a href="Sedes/AgregarSede.html" style='text-decoration:none;color: #777620; align-content: right;'> 
                             <i class="far fa-plus-square fa-2x"></i> 
                         </a> 
                     </div>
@@ -614,12 +614,12 @@ Funciones: Será la vista gerenal para los alumnos
                                                             <td>${dato.Nombre_S}</td>
                                                             <td>${dato.Calle}, ${dato.Numero}, ${dato.Colonia}, ${dato.CP}, ${dato.Municipio}, ${dato.Estado}</td>
                                                             <td> 
-                                                                    <a href="Sedes/EditarSede?SedeID=${dato.ID_Sede}" id="edita" style='text-decoration:none;color: #0174DF;'> 
+                                                                    <a href="Sedes/EditarSede.html?SedeID=${dato.ID_Sede}" id="edita" style='text-decoration:none;color: #0174DF;'> 
                                                                         <i class="far fa-edit"></i>  
                                                                     </a> 
                                                             </td>
                                                             <td> 
-                                                                    <a href="Sedes/BorrarSede?SedeID=${dato.ID_Sede}" style='text-decoration:none;color: red;'>
+                                                                    <a href="Sedes/BorrarSede.html?SedeID=${dato.ID_Sede}" style='text-decoration:none;color: red;'>
                                                                         <i  class="far fa-trash-alt"></i> 
                                                                     </a> 
                                                             </td>
@@ -628,7 +628,7 @@ Funciones: Será la vista gerenal para los alumnos
 						</tbody>
 					</table>
 				</div>	
-                            <a href="../DDyFD" class="btn btn-light float-right login_btn"> Volver </a>
+                            <a href="../DDyFD.html" class="btn btn-light float-right login_btn"> Volver </a>
 			</div>
         <div class="clearfix" >&nbsp;</div>    
         <div class="clearfix" >&nbsp;</div>

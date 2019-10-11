@@ -530,9 +530,9 @@ Funciones: Será la vista gerenal para los alumnos
 
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.structure.min.css">
-	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
         
 
 	<!-- Moment js  -->
@@ -570,7 +570,7 @@ Funciones: Será la vista gerenal para los alumnos
 		<h2 id="titulo">Consulta coordinadores de U.A.</h2>
                 <div id="agregaboton">
                     <label> Para agregar un nuevo coordinador pulsa aquí: </label>
-                    <a href="Usuarios/AgregarUsuario" style='text-decoration:none;color: #777620; align-content: right;'> 
+                    <a href="Usuarios/AgregarUsuario.html" style='text-decoration:none;color: #777620; align-content: right;'> 
                         <i class="far fa-plus-square"></i> 
                     </a> 
                 </div>
@@ -614,22 +614,22 @@ Funciones: Será la vista gerenal para los alumnos
                                                             <td>${d.Activo}</td>
 
                                                             <td> 
-                                                                    <a href="Usuarios/EditarUsuario?UsuarioID=${d.ID_Persona}" style='text-decoration:none;color: #0174DF;'> 
+                                                                    <a href="Usuarios/EditarUsuario.html?UsuarioID=${d.ID_Persona}" style='text-decoration:none;color: #0174DF;'> 
                                                                         <i class="far fa-edit"></i>  
                                                                     </a> 
                                                             </td>
                                                             
                                                             <td > 
-                                                                    <a href="Usuarios/DesactivarUsuario?UsuarioID=${d.ID_Persona}" id="uselock" style='text-decoration:none;color: black;'> 
+                                                                    <a href="Usuarios/DesactivarUsuario.html?UsuarioID=${d.ID_Persona}" id="uselock" style='text-decoration:none;color: black;'> 
                                                                         <i class="fas fa-user-lock"></i>
                                                                     </a> 
-                                                                    <a href="Usuarios/ActivarUsuario?UsuarioID=${d.ID_Persona}" id="uselock" style='text-decoration:none;color: gray;'> 
+                                                                    <a href="Usuarios/ActivarUsuario.html?UsuarioID=${d.ID_Persona}" id="uselock" style='text-decoration:none;color: gray;'> 
                                                                         <i class="fas fa-user-lock"></i>
                                                                     </a> 
                                                             </td>
                                                                     
                                                             <td> 
-                                                                    <a href="Usuarios/BorrarUsuario?UsuarioID=${d.ID_Persona}" style='text-decoration:none;color: red;'> 
+                                                                    <a href="Usuarios/BorrarUsuario.html?UsuarioID=${d.ID_Persona}" style='text-decoration:none;color: red;'> 
                                                                         <i class="far fa-trash-alt"></i>  
                                                                     </a> 
                                                             </td>
@@ -643,7 +643,7 @@ Funciones: Será la vista gerenal para los alumnos
         <div class="clearfix" >&nbsp;</div>
         <div class="clearfix" >&nbsp;</div>
         
-        <a href="../DDyFD" class="btn btn-light float-right login_btn"> Volver </a>
+        <a href="../DDyFD.html" class="btn btn-light float-right login_btn"> Volver </a>
         
         <div class="clearfix" >&nbsp;</div>
 	</section>

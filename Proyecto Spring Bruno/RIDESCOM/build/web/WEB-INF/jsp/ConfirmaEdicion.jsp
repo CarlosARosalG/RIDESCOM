@@ -22,7 +22,7 @@
                      <label>Deporte</label>
                      <input type="text" value=" ${prue[0].Disciplina}"  name="Act_Prueba" class="form-control" autocomplete="off" disabled/> 
                     
-                   <a href="../Pruebas" type="submit" value="Regresar" class="btn btn-success">Aceptar</a>
+                   <a href="../Pruebas.html" type="submit" value="Regresar" class="btn btn-success">Aceptar</a>
                 </form>
             </div>
         </div>

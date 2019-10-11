@@ -116,9 +116,9 @@
 	<!--Jquery -->
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
 	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
-	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
 
 	<!-- Moment js  -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
@@ -148,8 +148,8 @@
                         <div class="form-group text-center">
                             <H2>El entrenador ha sido agregada correctamente</H2>
                             <h3>¿Desea agregar otro?</h3>
-                            <a class="btn btn-primary" href="AgregarEntrenador">SI</a>  
-                        <a class="btn btn-primary" href="../../Coordinador/Entrenadores">NO</a>
+                            <a class="btn btn-primary" href="AgregarEntrenador.html">SI</a>  
+                        <a class="btn btn-primary" href="../../Coordinador/Entrenadores.html">NO</a>
                 </div>
             </div>
         </div>

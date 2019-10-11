@@ -33,14 +33,14 @@ public class DDyFD {
     List dat2;
     
     //Cerrar sesion del usuario DDyFD
-    @RequestMapping(value="/Logout", method=RequestMethod.GET)
+    @RequestMapping(value="/Logout.html", method=RequestMethod.GET)
     public String logout(HttpServletRequest re) throws Exception{
         HttpSession session = re.getSession();
         session.invalidate();
-        return "redirect:/Login";
+        return "redirect:/Login.html";
     }
     
-    @RequestMapping(value="DDyFD", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD.html", method=RequestMethod.GET)
     public ModelAndView Ddyfd(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -83,7 +83,7 @@ public class DDyFD {
 
         return mav;
     }
-    @RequestMapping(value="DDyFD", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD.html", method=RequestMethod.POST)
     public ModelAndView log(HttpServletRequest req, HttpServletResponse resp) throws Exception{
         
         String accion=req.getParameter("btn");
@@ -100,19 +100,19 @@ public class DDyFD {
             HttpSession session=req.getSession();
             session.setAttribute("Nombre_U", jefe); //user
             
-            return new ModelAndView("redirect:/DDyFD");
+            return new ModelAndView("redirect:/DDyFD.html");
             }else {
                 HttpSession session=req.getSession();
                 session.setAttribute("Nombre_U", usuario); //user
-                return new ModelAndView("redirect:/Coordinador");
+                return new ModelAndView("redirect:/Coordinador.html");
             }
         }else{
-        ModelAndView mv=new ModelAndView("Login");
+        ModelAndView mv=new ModelAndView("Login.html");
         mv.addObject("mjs", "<div style='color: red;'>ERROR, usuario no existe.</div>");
         return mv;  
         }
         }else{
-            return new ModelAndView("Login");
+            return new ModelAndView("Login.html");
         }
     }
 }

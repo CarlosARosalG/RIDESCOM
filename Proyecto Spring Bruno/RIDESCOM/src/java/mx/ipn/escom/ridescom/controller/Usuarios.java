@@ -48,7 +48,7 @@ public class Usuarios {
     String a;
     String co;
     
-    @RequestMapping(value="DDyFD/Usuarios", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Usuarios.html", method=RequestMethod.GET)
     public ModelAndView lista(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -78,7 +78,7 @@ public class Usuarios {
     
     ////////////////////////////////// Operadores CRUD //////////////////////////////////////////////////////
     //Scripts para Agregar Deportes
-    @RequestMapping(value="DDyFD/Usuarios/AgregarUsuario", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Usuarios/AgregarUsuario.html", method=RequestMethod.GET)
     public ModelAndView Agrega(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -90,7 +90,7 @@ public class Usuarios {
         }
         return mav;
     }
-    @RequestMapping(value="DDyFD/Usuarios/AgregarUsuario", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Usuarios/AgregarUsuario.html", method=RequestMethod.POST)
     public ModelAndView Agrega(Usuario u, Persona p, Eventos ev, Contacto c )throws Exception{
             
             String sql="insert into Persona (Nombre, Ap_Pat, Ap_Mat, Tipo_Sexo_ID_Tipo_Sexo, CURP, Fecha_Nac, NSS, Municipio_ID_Municipio, Municipio_Estados_ID_estado) values (?,?,?,?,?,?,?,?, (select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+"))";
@@ -105,9 +105,9 @@ public class Usuarios {
             this.rid.update(sqltc, c.getTel_cel());
             String sqlc="insert into Email (Correo, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
             this.rid.update(sqlc, c.getCorreo());
-            return new ModelAndView ("redirect:../DDyFD/Usuarios/Usuariosiguiente");
+            return new ModelAndView ("redirect:../DDyFD/Usuarios/Usuariosiguiente.html");
     }
-    @RequestMapping(value="DDyFD/Usuarios/Usuariosiguiente", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Usuarios/Usuariosiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
           HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -121,7 +121,7 @@ public class Usuarios {
     }
     
     //Scripts para edición de Usuarios
-    @RequestMapping(value="DDyFD/Usuarios/EditarUsuario", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Usuarios/EditarUsuario.html", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -152,7 +152,7 @@ public class Usuarios {
         }
         return mav;
     }
-    @RequestMapping(value="DDyFD/Usuarios/EditarUsuario", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Usuarios/EditarUsuario.html", method=RequestMethod.POST)
     public ModelAndView Editar(Usuario u, Persona p, Contacto c, Eventos ev){
         String sqlu="update Usuario set Nombre_U=?, Password_U=? where Persona_ID_Persona="+UsuarioID;
         this.rid.update(sqlu, u.getNombre_U(), u.getPassword_U());
@@ -178,11 +178,11 @@ public class Usuarios {
             String sqlc="update Email set Correo=? where Contacto_ID_Contacto="+co;
             this.rid.update(sqlc, c.getCorreo());
 
-        ModelAndView mv=new ModelAndView ("redirect:../Usuarios");
+        ModelAndView mv=new ModelAndView ("redirect:../Usuarios.html");
 //        mv.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");
         return mv;
     }
-    @RequestMapping(value="DDyFD/ConfirmaUsuario", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/ConfirmaUsuario.html", method=RequestMethod.GET)
     public ModelAndView confirm(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -200,7 +200,7 @@ public class Usuarios {
     }
 
     //Scripts para borrar registros
-    @RequestMapping(value="DDyFD/Usuarios/BorrarUsuario", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Usuarios/BorrarUsuario.html", method=RequestMethod.GET)
     public ModelAndView delete(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -231,7 +231,7 @@ public class Usuarios {
         }
         return mav;
     }    
-    @RequestMapping(value="DDyFD/Usuarios/BorrarUsuario", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Usuarios/BorrarUsuario.html", method=RequestMethod.POST)
     public ModelAndView delete(Persona p, Contacto c, Eventos ev){
         String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Usuario_Usuario_ID=NULL, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+") where ID_Persona="+UsuarioID;
         this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
@@ -248,19 +248,19 @@ public class Usuarios {
         
 //        String sql="update Persona set Disciplina=? where ID_Deporte="+UsuarioID;
 //        this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../Usuarios/ConfirmaBorrarUsuario");
+        ModelAndView mv=new ModelAndView ("redirect:../Usuarios/ConfirmaBorrarUsuario.html");
         return mv;
     }
-    @RequestMapping(value="DDyFD/Usuarios/ConfirmaBorrarUsuario")
+    @RequestMapping(value="DDyFD/Usuarios/ConfirmaBorrarUsuario.html")
     public ModelAndView confirma(HttpServletRequest re){
         UsuarioID=Integer.parseInt(re.getParameter("UsuarioID"));
 //        String sql="update Usuario set Activo=0";
         String sql ="delete from Persona where ID_Persona="+UsuarioID;
         this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../Usuarios");
+        ModelAndView mv=new ModelAndView ("redirect:../Usuarios.html");
         return mv;
     }
-    @RequestMapping(value="DDyFD/Usuarios/DesactivarUsuario")
+    @RequestMapping(value="DDyFD/Usuarios/DesactivarUsuario.html")
     public ModelAndView desactiva(HttpServletRequest re){
         UsuarioID=Integer.parseInt(re.getParameter("UsuarioID"));
 //        String sql="update Usuario set Activo=0 where Usuario_ID=(select Usuario_Usuario_ID from Persona where ID_Persona="+UsuarioID+")";
@@ -278,10 +278,10 @@ public class Usuarios {
         }
         String sqlp="update Usuario set Activo=0 where Usuario_ID="+p;
         this.rid.update(sqlp);
-        ModelAndView mv=new ModelAndView ("redirect:../Usuarios");
+        ModelAndView mv=new ModelAndView ("redirect:../Usuarios.html");
         return mv;
     }
-    @RequestMapping(value="DDyFD/Usuarios/ActivarUsuario")
+    @RequestMapping(value="DDyFD/Usuarios/ActivarUsuario.html")
     public ModelAndView activa(HttpServletRequest re){
         UsuarioID=Integer.parseInt(re.getParameter("UsuarioID"));
 //        String sql="update Usuario set Activo=0 where Usuario_ID=(select Usuario_Usuario_ID from Persona where ID_Persona="+UsuarioID+")";
@@ -299,7 +299,7 @@ public class Usuarios {
         }
         String sqlp="update Usuario set Activo=1 where Usuario_ID="+p;
         this.rid.update(sqlp);
-        ModelAndView mv=new ModelAndView ("redirect:../Usuarios");
+        ModelAndView mv=new ModelAndView ("redirect:../Usuarios.html");
         return mv;
     }
 }

@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class Difundir {
     ModelAndView mav=new ModelAndView();
     
-    @RequestMapping(value="Coordinador/DifundirEvento")
+    @RequestMapping(value="Coordinador/DifundirEvento.html")
     public ModelAndView home(){   
         mav.setViewName("DifundirEvento");
         return mav;

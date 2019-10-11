@@ -17,8 +17,8 @@
 
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet" " href="js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
 	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
 
 	<!-- Mis scripts -->
@@ -514,7 +514,7 @@
                     </div>
 <!--                    <button class="btn  btn-outline-success" type="submit"> Registrar </button>-->
                     <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Actualizar </button>
-                    <a href="../DDyFD"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+                    <a href="../DDyFD.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
                 </form>
 	</section>
 </body>

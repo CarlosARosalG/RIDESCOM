@@ -65,13 +65,13 @@ public class LoginAlumno {
     public static String user = "https://www.saes.escom.ipn.mx/Alumnos/default.aspx";
     
 //Cerrar sesion del usuario DDyFD
-    @RequestMapping(value="/Logout", method=RequestMethod.GET)
+    @RequestMapping(value="/Logout.html", method=RequestMethod.GET)
     public String logout(HttpServletRequest re) throws Exception{
         HttpSession session = re.getSession();
         session.invalidate();
-        return "redirect:/LoginAlumno";
+        return "redirect:/LoginAlumno.html";
     }
-    @RequestMapping(value="LoginAlumno", method=RequestMethod.GET)
+    @RequestMapping(value="LoginAlumno.html", method=RequestMethod.GET)
     public ModelAndView alumno(HttpServletRequest re) throws Exception{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")!= null){
@@ -96,7 +96,7 @@ public class LoginAlumno {
         }
         return mav;
     }
-    @RequestMapping(value="LoginAlumno", method=RequestMethod.POST)
+    @RequestMapping(value="LoginAlumno.html", method=RequestMethod.POST)
     public ModelAndView log(HttpServletRequest req, HttpServletResponse resp, Crawler cr) throws Exception{
         String accion=req.getParameter("btn");
         if(accion.equalsIgnoreCase("Entrar")){
@@ -119,7 +119,7 @@ public class LoginAlumno {
 //            }else{
                 HttpSession session=req.getSession();
                 session.setAttribute("Nombre_U", usuario); //user
-                return new ModelAndView("redirect:/Alumno");
+                return new ModelAndView("redirect:/Alumno.html");
 //            }
         }else{
             regno=usuario;
@@ -150,22 +150,22 @@ public class LoginAlumno {
             Element n = docn.getElementById("ctl00_mainCopy_FormView1_nombrelabel");	    
 	    String nombre = n.text();
             if(nombre.isEmpty()){
-                    ModelAndView mv=new ModelAndView("LoginAlumno");
+                    ModelAndView mv=new ModelAndView("LoginAlumno.html");
                     return mv;
             }else{
                 Element e = docs.select("table#ctl00_mainCopy_GV_Horario td").first();
                 String grupo=e.text();
                 if(grupo.isEmpty()){
-                    ModelAndView mv=new ModelAndView("LoginAlumno");
+                    ModelAndView mv=new ModelAndView("LoginAlumno.html");
                     return mv;
                 }else{
-                    ModelAndView mv=new ModelAndView("InfoAlumno");
+                    ModelAndView mv=new ModelAndView("InfoAlumno.html");
                     return mv;
                 }
             }
         }
         }else{
-            ModelAndView mv=new ModelAndView("LoginAlumno");
+            ModelAndView mv=new ModelAndView("LoginAlumno.html");
         mv.addObject("mjs", "<div style='color: red;'>ERROR, usuario o contraseña invalido.</div>");
         return mv;
         }

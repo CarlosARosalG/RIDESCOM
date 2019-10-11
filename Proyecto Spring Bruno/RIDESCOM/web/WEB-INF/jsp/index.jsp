@@ -148,12 +148,12 @@
                 <div class="card-body">
                         <div class="form-group text-center">
                             <h3>Usuarios</h3>
-                            <img src="../../resources/img/user.png" alt=""/>
+                            <img src="resources/img/user.png" width="200" height="200"/>
                             <div>
                                 <label>Por favor escoja el usuario al que pertenezca</label>
                             </div>
-                            <a class="btn btn-primary" href="Login">Coordinador</a>  
-                        <a class="btn btn-primary" href="LoginAlumno">Alumno</a>
+                            <a class="btn btn-primary" href="Login.html">Coordinador</a>  
+                        <a class="btn btn-primary" href="LoginAlumno.html">Alumno</a>
                 </div>
             </div>
         </div>

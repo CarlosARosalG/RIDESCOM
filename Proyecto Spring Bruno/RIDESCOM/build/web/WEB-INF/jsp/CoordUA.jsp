@@ -751,15 +751,15 @@ Funciones: Será la vista gerenal para los alumnos
                             <li><a href="#"style='text-decoration:none;'> ${p.Correo} </a></li>
                             <li><a href="#"style='text-decoration:none;'> ${p.Nombre} ${p.Ap_pat} </a></li>
                             <li><a href="#Contacto"style='text-decoration:none;'><span class="sexto"></span> Contacto </a></li>
-                            <li><a href="Logout" style='text-decoration:none;'>Salir</a></li>
+                            <li><a href="Logout.html" style='text-decoration:none;'>Salir</a></li>
                             
                         </ul>
                     </li>
-                    <li><a href="Coordinador/Entrenadores" style='text-decoration:none; color: #fff'><span class="segundo"><i class="fas fa-users"></i></span> Entrenadores </a></li>
-                    <li><a href="Coordinador/DifundirEvento"><span class="tercero" style='text-decoration:none; color: #fff'><i class="fas fa-share-alt"></i></span> Difundir Evento </a></li>
-                    <li><a href="Coordinador/AlumnosInscritos"><span class="cuarto" style='text-decoration:none; color: #fff'><i class="fas fa-users"></i></span> Consulta Inscritos </a></li>
-                    <li><a href="Coordinador/Cedulas"><span class="quinto" style='text-decoration:none; color: #fff'><i class="fas fa-book-open"></i></span> Cédulas de Inscripción </a></li>
-                    <li><a href="Coordinador/Resultados" style='text-decoration:none; color: #fff'><span class="sexto"><i class="fas fa-poll"></i></span> Resultados </a></li>
+                    <li><a href="Coordinador/Entrenadores.html" style='text-decoration:none; color: #fff'><span class="segundo"><i class="fas fa-users"></i></span> Entrenadores </a></li>
+                    <li><a href="Coordinador/DifundirEvento.html"><span class="tercero" style='text-decoration:none; color: #fff'><i class="fas fa-share-alt"></i></span> Difundir Evento </a></li>
+                    <li><a href="Coordinador/AlumnosInscritos.html"><span class="cuarto" style='text-decoration:none; color: #fff'><i class="fas fa-users"></i></span> Consulta Inscritos </a></li>
+                    <li><a href="Coordinador/Cedulas.html"><span class="quinto" style='text-decoration:none; color: #fff'><i class="fas fa-book-open"></i></span> Cédulas de Inscripción </a></li>
+                    <li><a href="Coordinador/Resultados.html" style='text-decoration:none; color: #fff'><span class="sexto"><i class="fas fa-poll"></i></span> Resultados </a></li>
                     
                 </ul>
             </nav>

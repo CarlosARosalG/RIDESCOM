@@ -37,7 +37,7 @@ public class Pruebas {
     
     List dat;
     
-    @RequestMapping(value="DDyFD/Pruebas", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Pruebas.html", method=RequestMethod.GET)
     public ModelAndView Prueba(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -52,7 +52,7 @@ public class Pruebas {
         mav.addObject("prue",dat);
         return mav;
     }
-    @RequestMapping(value="DDyFD/Pruebas", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Pruebas.html", method=RequestMethod.POST)
     public ModelAndView log(HttpServletRequest req, HttpServletResponse resp) throws Exception{
         
         String accion=req.getParameter("btn");
@@ -70,23 +70,23 @@ public class Pruebas {
 //            String user=req.getParameter("Nombre_U");
             session.setAttribute("Nombre_U", jefe); //user
             
-            return new ModelAndView("redirect:/DDyFD");
+            return new ModelAndView("redirect:/DDyFD.html");
             }else {
-                return new ModelAndView("redirect:/Coordinador");
+                return new ModelAndView("redirect:/Coordinador.html");
             }
         }else{
-        ModelAndView mv=new ModelAndView("Login");
+        ModelAndView mv=new ModelAndView("Login.html");
         mv.addObject("mjs", "<div style='color: red;'>ERROR, usuario no existe.</div>");
         return mv;  
         }
         }else{
-            return new ModelAndView("Login");
+            return new ModelAndView("Login.html");
         }
     }
     
     ////////////////////////////////// Operadores CRUD //////////////////////////////////////////////////////
     //Scripts para Agregar Pruebas
-    @RequestMapping(value="DDyFD/Pruebas/AgregarPrueba", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Pruebas/AgregarPrueba.html", method=RequestMethod.GET)
     public ModelAndView Agrega(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -98,14 +98,14 @@ public class Pruebas {
         }
         return mav;
     }
-    @RequestMapping(value="DDyFD/Pruebas/AgregarPrueba", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Pruebas/AgregarPrueba.html", method=RequestMethod.POST)
     public ModelAndView Agrega(HttpServletRequest req, HttpServletResponse resp, Prueba pru)throws Exception{
             
             String sql="insert into Pruebas(Prueba, Tipo_Pruebas_ID_Prueba, Act_Deportiva_ID_Deporte) values (?,?,?);";
             this.rid.update(sql, pru.getPrueba(), pru.getTipo(), pru.getAct_Prueba());
-            return new ModelAndView("redirect:../Pruebas/Pruebasiguiente");
+            return new ModelAndView("redirect:../Pruebas/Pruebasiguiente.html");
     }
-    @RequestMapping(value="DDyFD/Pruebas/Pruebasiguiente", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Pruebas/Pruebasiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -117,7 +117,7 @@ public class Pruebas {
     }
     
     //Scripts para edición de Pruebas
-    @RequestMapping(value="DDyFD/Pruebas/EditarPrueba", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Pruebas/EditarPrueba.html", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -134,15 +134,15 @@ public class Pruebas {
         System.out.println(mav);
         return mav;
     }
-    @RequestMapping(value="DDyFD/Pruebas/EditarPrueba", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Pruebas/EditarPrueba.html", method=RequestMethod.POST)
     public ModelAndView Editar(Prueba pru){
         String sql="update Pruebas set Prueba=?, Act_Deportiva_ID_Deporte=?, Tipo_Pruebas_ID_Prueba=? where ID_Pruebas="+PruebaID;
         this.rid.update(sql, pru.getPrueba(), pru.getAct_Prueba(), pru.getTipo());
-        ModelAndView mv=new ModelAndView ("redirect:../Pruebas");
+        ModelAndView mv=new ModelAndView ("redirect:../Pruebas.html");
         
         return mv;
     }
-    @RequestMapping(value="DDyFD/Pruebas/ConfirmaEdicion", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Pruebas/ConfirmaEdicion.html", method=RequestMethod.GET)
     public ModelAndView confirm(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -161,7 +161,7 @@ public class Pruebas {
     }
 
     //Scripts para borrar registros
-    @RequestMapping(value="DDyFD/Pruebas/BorrarPrueba", method=RequestMethod.GET)
+    @RequestMapping(value="DDyFD/Pruebas/BorrarPrueba.html", method=RequestMethod.GET)
     public ModelAndView delete(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -184,19 +184,19 @@ public class Pruebas {
 //
 //        return mv;
     }    
-    @RequestMapping(value="DDyFD/Pruebas/BorrarPrueba", method=RequestMethod.POST)
+    @RequestMapping(value="DDyFD/Pruebas/BorrarPrueba.html", method=RequestMethod.POST)
     public ModelAndView delete(Prueba pru){
         String sql="update Pruebas set Prueba=?, Act_Deportiva_ID_Deporte=?, Tipo_Pruebas_ID_Prueba=? where ID_Pruebas="+PruebaID;
         this.rid.update(sql, pru.getPrueba(), pru.getAct_Prueba(), pru.getTipo());
-        ModelAndView mv=new ModelAndView ("redirect:../Pruebas");
+        ModelAndView mv=new ModelAndView ("redirect:../Pruebas.html");
         return mv;
     }
-    @RequestMapping(value="DDyFD/Pruebas/ConfirmaBorrar")
+    @RequestMapping(value="DDyFD/Pruebas/ConfirmaBorrar.html")
     public ModelAndView confirma(HttpServletRequest re){
         PruebaID=Integer.parseInt(re.getParameter("PruebaID"));
         String sql ="delete from Pruebas where ID_Pruebas="+PruebaID;
         this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../Pruebas");
+        ModelAndView mv=new ModelAndView ("redirect:../Pruebas.html");
         mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
         return mv;
     }

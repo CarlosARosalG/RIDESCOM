@@ -18,7 +18,7 @@
                     <label>Deporte</label>
                     <input type="text" value="${dep[0].Disciplina}" name="Disciplina" class="form-control" autocomplete="off" disabled/>
                     
-                   <a href="../Deportes" type="submit" value="Regresar" class="btn btn-success">Aceptar</a>
+                   <a href="../Deportes.html" type="submit" value="Regresar" class="btn btn-success">Aceptar</a>
                 </form>
             </div>
         </div>

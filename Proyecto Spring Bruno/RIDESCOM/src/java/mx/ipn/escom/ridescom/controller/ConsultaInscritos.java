@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ConsultaInscritos {
     ModelAndView mav=new ModelAndView();
     
-    @RequestMapping(value="Coordinador/ConsultaInscritos")
+    @RequestMapping(value="Coordinador/ConsultaInscritos.html")
     public ModelAndView home(){   
         mav.setViewName("ConsultaInscritos");
         return mav;

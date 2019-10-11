@@ -16,12 +16,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class Alumno {
     ModelAndView mav=new ModelAndView();
     
-    @RequestMapping(value="InfoAlumno", method=RequestMethod.GET)
+    @RequestMapping(value="InfoAlumno.html", method=RequestMethod.GET)
     public ModelAndView Ialu(){   
         mav.setViewName("InfoAlumno");
         return mav;
     }
-    @RequestMapping(value="Alumno", method=RequestMethod.GET)
+    @RequestMapping(value="Alumno.html", method=RequestMethod.GET)
     public ModelAndView Alumno(){   
         mav.setViewName("Alumno");
         return mav;

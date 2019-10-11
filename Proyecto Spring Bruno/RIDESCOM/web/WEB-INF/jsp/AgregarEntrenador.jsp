@@ -565,7 +565,7 @@
 				</div>
 		  	</div>
 		  	<button type="submit" class="btn  btn-outline-success "> Registrar </button>
-		  	<a href="../Entrenadores"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+		  	<a href="../Entrenadores.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
 		</form>
 	</section>
 </body>

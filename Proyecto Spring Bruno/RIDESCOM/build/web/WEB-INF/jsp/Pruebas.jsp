@@ -511,9 +511,9 @@
 
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-	<link rel="stylesheet"href="js/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.structure.min.css">
-	<link rel="stylesheet"  href="js/jquery-ui/jquery-ui.theme.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
         
 
 	<!-- Moment js  -->
@@ -558,7 +558,7 @@
 		<h2 id="titulo">Lista de Pruebas</h2>
                     <div id="agregaboton">
                         <label> Para agregar una nueva prueba pulsa aquí: </label>
-                        <a href="Pruebas/AgregarPrueba" style='text-decoration:none;color: #777620; align-content: right;'> 
+                        <a href="Pruebas/AgregarPrueba.html" style='text-decoration:none;color: #777620; align-content: right;'> 
                             <i class="far fa-plus-square fa-2x"></i> 
                         </a> 
                     </div>
@@ -635,12 +635,12 @@
                                 <td>${dato.Disciplina}</td>
                                 
                                 <td> 
-                                                                    <a href="Pruebas/EditarPrueba?PruebaID=${dato.ID_Pruebas}" style='text-decoration:none;color: #0174DF;'> 
+                                                                    <a href="Pruebas/EditarPrueba.html?PruebaID=${dato.ID_Pruebas}" style='text-decoration:none;color: #0174DF;'> 
                                                                         <i class="far fa-edit"></i>  
                                                                     </a> 
                                                                 </td>
                                                                 <td> 
-                                                                    <a href="Pruebas/BorrarPrueba?PruebaID=${dato.ID_Pruebas}" style='text-decoration:none;color: red;'>
+                                                                    <a href="Pruebas/BorrarPrueba.html?PruebaID=${dato.ID_Pruebas}" style='text-decoration:none;color: red;'>
                                                                     <i  class="far fa-trash-alt"></i> 
                                                                     </a> 
                                                                 </td>
@@ -649,7 +649,7 @@
                         </tbody>
 					</table>
 				</div>	
-                            <a href="../DDyFD" class="btn btn-light float-right login_btn"> Volver </a>
+                            <a href="../DDyFD.html" class="btn btn-light float-right login_btn"> Volver </a>
 			</div>
         
 		<div class="clearfix" >&nbsp;</div>

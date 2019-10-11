@@ -39,7 +39,7 @@ public class Entrenadores {
     List mu;
     List es;
     
-    @RequestMapping(value="Coordinador/Entrenadores", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Entrenadores.html", method=RequestMethod.GET)
     public ModelAndView entrenadores(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -67,7 +67,7 @@ public class Entrenadores {
     
     ////////////////////////////////// Operadores CRUD //////////////////////////////////////////////////////
     //Scripts para Agregar Deportes
-    @RequestMapping(value="Coordinador/Entrenadores/AgregarEntrenador", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Entrenadores/AgregarEntrenador.html", method=RequestMethod.GET)
     public ModelAndView Agrega(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -84,7 +84,7 @@ public class Entrenadores {
         }
         return mav;
     }
-    @RequestMapping(value="Coordinador/Entrenadores/AgregarEntrenador", method=RequestMethod.POST)
+    @RequestMapping(value="Coordinador/Entrenadores/AgregarEntrenador.html", method=RequestMethod.POST)
     public ModelAndView Agrega(Persona p, Eventos ev, Contacto c )throws Exception{
             
             String sql="insert into Persona (Nombre, Ap_Pat, Ap_Mat, Tipo_Sexo_ID_Tipo_Sexo, CURP, Fecha_Nac, NSS, Municipio_ID_Municipio, Municipio_Estados_ID_estado) values (?,?,?,?,?,?,?,?, (select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+"))";
@@ -103,7 +103,7 @@ public class Entrenadores {
             this.rid.update(sqlc, c.getCorreo());
             return new ModelAndView ("redirect:../Entrenadores/Entrenadorsiguiente");
     }
-    @RequestMapping(value="Coordinador/Entrenadores/Entrenadorsiguiente", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Entrenadores/Entrenadorsiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
           HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -117,7 +117,7 @@ public class Entrenadores {
     }
     
     //Scripts para edición de Entrenadores
-    @RequestMapping(value="Coordinador/Entrenadores/EditarEntrenador", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Entrenadores/EditarEntrenador.html", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -145,7 +145,7 @@ public class Entrenadores {
         }
         return mav;
     }
-    @RequestMapping(value="Coordinador/Entrenadores/EditarEntrenador", method=RequestMethod.POST)
+    @RequestMapping(value="Coordinador/Entrenadores/EditarEntrenador.html", method=RequestMethod.POST)
     public ModelAndView Editar(Persona p, Contacto c, Eventos ev) throws UnsupportedEncodingException{
         String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+")where ID_Persona="+EntrenadorID;
         this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
@@ -158,7 +158,7 @@ public class Entrenadores {
         String sqlc="update Email set Correo=? where Contacto_ID_Contacto=(select ID_Contacto from Contacto where Persona_ID_Persona="+EntrenadorID+")";
         this.rid.update(sqlc, c.getCorreo());
 
-        ModelAndView mv=new ModelAndView ("redirect:../Entrenadores");
+        ModelAndView mv=new ModelAndView ("redirect:../Entrenadores.html");
 //        mv.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");
         return mv;
     }
@@ -180,7 +180,7 @@ public class Entrenadores {
 //    }
 
     //Scripts para borrar registros
-    @RequestMapping(value="Coordinador/Entrenadores/BorrarEntrenador", method=RequestMethod.GET)
+    @RequestMapping(value="Coordinador/Entrenadores/BorrarEntrenador.html", method=RequestMethod.GET)
     public ModelAndView delete(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")== null){
@@ -207,19 +207,19 @@ public class Entrenadores {
         }
         return mav;
     }    
-    @RequestMapping(value="Coordinador/Entrenadores/BorrarEntrenador", method=RequestMethod.POST)
+    @RequestMapping(value="Coordinador/Entrenadores/BorrarEntrenador.html", method=RequestMethod.POST)
     public ModelAndView delete(Persona p, Contacto c, Eventos ev){
         String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+") where ID_Persona="+EntrenadorID;
         this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
-        ModelAndView mv=new ModelAndView ("redirect:../ConfirmaBorrarEntrenador");
+        ModelAndView mv=new ModelAndView ("redirect:../ConfirmaBorrarEntrenador.html");
         return mv;
     }
-    @RequestMapping(value="Coordinador/Entrenadores/ConfirmaBorrarEntrenador")
+    @RequestMapping(value="Coordinador/Entrenadores/ConfirmaBorrarEntrenador.html")
     public ModelAndView confirma(HttpServletRequest re){
         EntrenadorID=Integer.parseInt(re.getParameter("EntrenadorID"));
         String sql ="delete from Persona where ID_Persona="+EntrenadorID;
         this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../Entrenadores");
+        ModelAndView mv=new ModelAndView ("redirect:../Entrenadores.html");
 //        mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
         return mv;
     }

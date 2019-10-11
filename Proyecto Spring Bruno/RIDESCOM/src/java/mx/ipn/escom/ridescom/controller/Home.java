@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class Home {
     ModelAndView mav=new ModelAndView();
     
-    @RequestMapping(value="Home")
+    @RequestMapping(value="Home.html")
     public ModelAndView home(){   
         mav.setViewName("index");
         return mav;
