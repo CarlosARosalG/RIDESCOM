@@ -5,7 +5,7 @@
 --%>
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +49,7 @@
         
         <style>
             /*****************************************
-            * Autor: Rosales GonzÃ¡lez Carlos AndrÃ©s *
+            * Autor: Rosales González Carlos Andrés *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
 
@@ -100,7 +100,7 @@
            }
 
            /************************
-            * DiseÃ±o para buscador *
+            * Diseño para buscador *
            ************************/
 
            #slidebar {
@@ -363,13 +363,13 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Editar informaciÃ³n de un usuario de coordinador Unidad AcadÃ©mica</h1>
+			<h1> Editar información de un usuario de coordinador Unidad Académica</h1>
 		</div>
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-light col-6" role="alert">
 			<p> 
-			  Verifica que no falte ningÃºn campo por completar antes de guardar la actualizaciÃ³n de datos.
+			  Verifica que no falte ningún campo por completar antes de guardar la actualización de datos.
 			</p>
 			</div>
                     <label>ID Persona: ${da[0].ID_Persona}</label>
@@ -387,10 +387,10 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip02"><i class="fas fa-key"></i> ContraseÃ±a </label>
+                            <label for="validationTooltip02"><i class="fas fa-key"></i> Contraseña </label>
                             <input name="Password_U" type="text"  id="validationTooltip02" class="form-control" value="${da[0].Password_U}" minlength="4" maxlength="16" required/>
                             <div class="invalid-feedback">
-                                Ingresa una contraseÃ±a
+                                Ingresa una contraseña
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -422,7 +422,7 @@
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> NSS </label>
+				    <label for="validationTooltip02"> NSS (Opcional) </label>
 				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" value="${da[0].NSS}">
 				    <div class="valid-tooltip">
 				    	OK
@@ -430,7 +430,7 @@
 			    </div>
                             <div class="col-md-4 mb-3">
                             <label for="validationTooltip03"> Fecha de Nacimiento </label>
-                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" value="${da[0].Fecha_Nac}" required disabled/>
+                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" value="${da[0].Fecha_Nac}" required/>
                             <script>
                                  var today, datepicker;
                                 today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()-1);
@@ -440,12 +440,15 @@
                                     format: 'yyyy-mm-dd'
                                 });
                             </script>
+                            <div class="valid-tooltip">
+				    	OK
+				    </div>
                         </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Sexo </label>
                                     <br>
 				    <select name="Sexo" class="custom-select" style="width: 150px;" required>
-					  <option value=""></option>
+					  <option value="${da[0].ID_Tipo_Sexo}">${da[0].Sexo}</option>
                                                     <%
                                                         try{
                                                             String query="select * from Tipo_Sexo";
@@ -471,49 +474,20 @@
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Estado </label>
-<!--				    <input type="text" class="form-control" id="validationTooltip02" name="Estado" value="Estado" required>-->
-                                    <select name="estado" id="edo" class="custom-select" style="width: 300px;" required>
-					  <option value="">Seleccione Estado</option>
-                                                    <%
-                                                        try{
-                                                            String query="SELECT DISTINCT municipio.Estados_ID_estado, estados.Estado FROM municipio LEFT JOIN estados ON municipio.Estados_ID_estado = estados.ID_estado";
-                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
-                                                            Connect conn = new Connect();
-                                                            Statement stm=conn.Connect().createStatement();
-                                                            ResultSet rs=stm.executeQuery(query);
-                                                            while(rs.next()){
-                                                                %>
-                                                                <option value="<%=rs.getInt("Estados_ID_estado")%>"><%=rs.getString("Estado")%></option>
-                                                                <%
-                                                            }
-                                                            
-                                                        }catch(Exception ex)
-                                                        {
-                                                            ex.printStackTrace();
-                                                            out.println("Error: "+ex.getMessage());
-                                                        }
-                                                    %>
-                                    </select>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
-			    </div>
-                            <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Municipio </label>
 <!--				    <input type="text" class="form-control" id="validationTooltip02" value="Buscar..." required>-->
-                                    <select name="municipio" id="mun" class="custom-select" style="width: 300px;" required>
-					  <option value="">Seleccione municipio</option>
+                                    <select name="municipio" id="mun" class="custom-select" style="width: 350px;" required>
+					  <option value="${da[0].ID_Municipio}">${da[0].Municipio} - ${da[0].Estado}</option>
                                                     <%
                                                         try{
-                                                            String query="select * from Municipio order by Municipio ASC";
+                                                            String query="select * from Municipio m, Estados edo where m.Estados_ID_estado=edo.ID_estado order by Municipio ASC";
                                                             Class.forName("com.mysql.jdbc.Driver").newInstance();
                                                             Connect conn = new Connect();
                                                             Statement stm=conn.Connect().createStatement();
                                                             ResultSet rs=stm.executeQuery(query);
                                                             while(rs.next()){
                                                                 %>
-                                                                <option value="<%=rs.getString("ID_Municipio")%>"><%=rs.getString("Municipio")%></option>
+                                                                <option value="<%=rs.getString("ID_Municipio")%>"><%=rs.getString("Municipio")%> - <%=rs.getString("Estado")%></option>
                                                                 <%
                                                             }
                                                             
@@ -537,15 +511,22 @@
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> TelÃ©fono de contacto </label>
+				    <label for="validationTooltip02"> Teléfono de contacto </label>
                                     <input type="text" class="num form-control" id="validationTooltip02" name="Tel_fijo" value="${da[0].Telefono}" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> TelÃ©fono MÃ³vil (Opcional) </label>
-                                    <input type="text" class="num form-control" id="validationTooltip02" name="Tel_cel" value="${da[0].Celular}" required>
+				    <label for="validationTooltip02"> Extensión (Opcional) </label>
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Ext" value="${da[0].Ext}" minlength="10" maxlength="15">
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Teléfono Móvil (Opcional) </label>
+                                    <input type="text" class="num form-control" id="validationTooltip02" name="Tel_cel" value="${da[0].Celular}">
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -554,7 +535,7 @@
 
 			<div class="form-row">    
 				<div class="col-md-5 mb-3">
-					<label for="validationTooltip03">Unidad AcadÃ©mica</label>
+					<label for="validationTooltip03">Unidad Académica</label>
 					<select  id="UA" class="custom-select" style="width: 380px;" data-live-search="true" required>
 <!--					  <option value="">Seleccione Escuela</option>-->
                                                     <%
@@ -581,7 +562,7 @@
                    </div>
                     <div class="clearfix" >&nbsp;</div>
                     <button type="submit" class="btn  btn-outline-success "> Registrar </button>
-                    <a href="../DDyFD.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn btn-outline-danger"> Cancelar </button></a>
+                    <a href="../Usuarios.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn btn-outline-danger"> Cancelar </button></a>
                 </form>
 		<div class="clearfix" >&nbsp;</div>
 	</section>
@@ -611,7 +592,7 @@
         function soloLetras(e){
        key = e.keyCode || e.which;
        tecla = String.fromCharCode(key).toLowerCase();
-       letras = " Ã¡Ã©Ã­Ã³ÃºabcdefghijklmnÃ±opqrstuvwxyz";
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
        especiales = "8-37-39-46";
 
        tecla_especial = false;

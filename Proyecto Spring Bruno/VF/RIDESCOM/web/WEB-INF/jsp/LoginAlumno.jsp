@@ -4,7 +4,7 @@
     Author     : spy51
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -149,7 +149,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Inicia SesiÃ³n</h3>
+				<h3>Inicia Sesión</h3>
 			</div>
 			<div class="card-body">
                             <form class="needs-validation" novalidate method="POST">
@@ -158,7 +158,7 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-                                            <input type="text" class="num form-control" placeholder="NÃºmero de Boleta" name="User"  maxlength="10" required/>
+                                            <input type="text" class="num form-control" placeholder="Número de Boleta" name="User"  maxlength="10" required/>
 <!--                                            <div class="valid-feedback">
                                                 Looks good!
                                             </div>-->
@@ -170,7 +170,7 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-                                                <input type="password" class="form-control" placeholder="ContraseÃ±a" name="Password"  maxlength="10" required/>
+                                                <input type="password" class="form-control" placeholder="Contraseña" name="Password"  maxlength="10" required/>
                                                 <div class="invalid-feedback">
                                                     Campo requerido
                                                 </div>
@@ -198,10 +198,12 @@
                                         <div class="clearfix" >&nbsp;</div>
                                         <div class="card-footer">
                                             <div class="d-flex justify-content-center">
-                                                    <a href="https://www.saes.escom.ipn.mx/SendEmail/PruebaSendMail.aspx">Â¿Olvidaste tu contraseÃ±a?</a>
+                                                    <a href="https://www.saes.escom.ipn.mx/SendEmail/PruebaSendMail.aspx">¿Olvidaste tu contraseña?</a>
+                                                    <a href="Privacidad.html">Politica de privacidad</a>
                                             </div>
                                         </div>
 				</form>
+                                    
                                         
                                 <script>
                                     // Example starter JavaScript for disabling form submissions if there are invalid fields

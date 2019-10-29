@@ -42,7 +42,7 @@ public class AlumnosInscritos {
     
     @RequestMapping(value="Coordinador/AlumnosInscritos.html", method=RequestMethod.GET)
     public ModelAndView Alumno(){   
-        String sqli="select concat(p.Nombre,' ',p.Ap_Pat,' ',p.Ap_Mat) as Nombre, a.ID_Alumno, ev.Nombre_Evento, d.Disciplina, ci.Ciclo_Escolar from persona p " +
+        String sqli="select concat(p.Nombre,' ',p.Ap_Pat,' ',p.Ap_Mat) as Nombre, a.ID_Alumno, ev.Nombre_Evento, d.ID_Deporte, d.Disciplina, ci.Ciclo_Escolar from persona p " +
 "INNER JOIN (alumno a, inscripcion i, Escuela es, evento ev, act_deportiva d, pruebas pr, ciclo ci) "
                 + "on (a.Persona_ID_Persona=p.ID_Persona AND ev.Ciclo_ID_Ciclo=ci.ID_Ciclo AND ev.Pruebas_ID_Pruebas=pr.ID_Pruebas AND pr.Act_Deportiva_ID_Deporte=d.ID_Deporte AND i.Evento_Evento_ID=ev.Evento_ID AND i.Alumno_ID_Alumno=a.ID_Alumno AND i.Escuela_ID_Escuela=es.ID_Escuela)";
         dat=this.rid.queryForList(sqli);

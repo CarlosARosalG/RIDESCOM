@@ -40,6 +40,9 @@ public class Usuarios {
     ResultSet rs=null;
     PreparedStatement ps;
     
+    ResultSet rs1=null;
+    PreparedStatement ps1;
+    
     List dat;
     List dat2;
     List es;
@@ -47,6 +50,7 @@ public class Usuarios {
     String p;
     String a;
     String co;
+    String u;
     
     @RequestMapping(value="DDyFD/Usuarios.html", method=RequestMethod.GET)
     public ModelAndView lista(HttpServletRequest re)throws SQLException{
@@ -101,11 +105,16 @@ public class Usuarios {
             this.rid.update(sql1);
             String sqltf="insert into Telefono_fijo (Telefono, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
             this.rid.update(sqltf, c.getTel_fijo());
+            String sqltex="insert into Extension (Ext, Telefono_Fijo_ID_Tel_Fijo) values (?,(select MAX(ID_Tel_Fijo)from Telefono_Fijo))";
+            this.rid.update(sqltex, c.getExt());
             String sqltc="insert into Telefono_Celular (Celular, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
             this.rid.update(sqltc, c.getTel_cel());
             String sqlc="insert into Email (Correo, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
             this.rid.update(sqlc, c.getCorreo());
-            return new ModelAndView ("redirect:../DDyFD/Usuarios/Usuariosiguiente.html");
+//            return new ModelAndView ("redirect:../Usuarios/Usuariosiguiente.html");
+        mav.setViewName("redirect:../Usuarios.html");
+        mav.addObject("mjs", "<div style='color: green;'>Se ha Agregado un Usuario correctamente</div>");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Usuarios/Usuariosiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
@@ -120,7 +129,7 @@ public class Usuarios {
         return mav;
     }
     
-    //Scripts para ediciÃ³n de Usuarios
+    //Scripts para edición de Usuarios
     @RequestMapping(value="DDyFD/Usuarios/EditarUsuario.html", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
@@ -129,7 +138,7 @@ public class Usuarios {
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
             UsuarioID=Integer.parseInt(re.getParameter("UsuarioID"));
             
-            String sql="select * from Persona p, Usuario u, Contacto c, Email em, Telefono_fijo tf, Telefono_celular tc, Municipio m, Estados es, Tipo_Sexo ts"+
+            String sql="select * from Persona p, Usuario u, Contacto c, Email em, Telefono_fijo tf, Extension ex,Telefono_celular tc, Municipio m, Estados es, Tipo_Sexo ts"+
 "           WHERE u.Roles_ID_Roles=2"+
 "            AND p.ID_Persona = u.Persona_ID_Persona"+
 "            AND p.Tipo_Sexo_ID_Tipo_Sexo = ts.ID_Tipo_Sexo"+
@@ -139,6 +148,7 @@ public class Usuarios {
 "            AND p.ID_Persona = c.Persona_ID_Persona"+
 "            AND c.ID_Contacto = em.Contacto_ID_Contacto"+
 "            AND c.ID_Contacto = tf.Contacto_ID_Contacto"+
+"            AND tf.ID_Tel_Fijo=ex.Telefono_Fijo_ID_Tel_Fijo"+
 "            AND c.ID_Contacto = tc.Contacto_ID_Contacto"+ 
 "            AND ID_Persona="+UsuarioID;
 //        String sqles="select Escuela from Escuela where ID_Escuela=7";
@@ -158,16 +168,14 @@ public class Usuarios {
         this.rid.update(sqlu, u.getNombre_U(), u.getPassword_U());
         String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+") where ID_Persona="+UsuarioID;
         this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
-        
-        String sqlcon="select ID_contacto from Contacto where Persona_ID_Persona="+a;
+        String sqlcon="select ID_contacto from Contacto where Persona_ID_Persona="+UsuarioID;
         try{
             ct=cn.Connect();
             ps=ct.prepareStatement(sqlcon);
             rs=ps.executeQuery();
             if(rs!=null){
                 while(rs.next())
-                co =rs.getString("ID_Contacto");
-                
+                co =rs.getString("ID_Contacto");        
             }
         }catch(Exception e){
         }
@@ -177,10 +185,15 @@ public class Usuarios {
             this.rid.update(sqltc, c.getTel_cel());
             String sqlc="update Email set Correo=? where Contacto_ID_Contacto="+co;
             this.rid.update(sqlc, c.getCorreo());
-
-        ModelAndView mv=new ModelAndView ("redirect:../Usuarios.html");
-//        mv.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");
-        return mv;
+            String sqltex="update Extension set Ext=? where Telefono_Fijo_ID_Tel_Fijo= (select ID_Tel_Fijo from Telefono_Fijo where Contacto_ID_Contacto="+co+")";
+            this.rid.update(sqltex, c.getExt());
+            
+        mav.setViewName("redirect:../Usuarios.html");
+        mav.addObject("mjs", "<div style='color: green;'>Se han Actualizado los datos correctamente</div>");
+        return mav;
+//        ModelAndView mv=new ModelAndView ("redirect:../Usuarios.html");
+////        mv.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");
+//        return mv;
     }
     @RequestMapping(value="DDyFD/ConfirmaUsuario.html", method=RequestMethod.GET)
     public ModelAndView confirm(HttpServletRequest re){
@@ -207,7 +220,7 @@ public class Usuarios {
          mav.setViewName("Error404");
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
             UsuarioID=Integer.parseInt(re.getParameter("UsuarioID"));
-        String sql="select * from Persona p, Usuario u, Contacto c, Email em, Telefono_fijo tf, Telefono_celular tc, Municipio m, Estados es, Tipo_Sexo ts"+
+        String sql="select * from Persona p, Usuario u, Contacto c, Email em, Telefono_fijo tf, Extension ex, Telefono_celular tc, Municipio m, Estados es, Tipo_Sexo ts"+
 "           WHERE u.Roles_ID_Roles=2"+
 "            AND p.ID_Persona = u.Persona_ID_Persona"+
 "            AND p.Tipo_Sexo_ID_Tipo_Sexo = ts.ID_Tipo_Sexo"+
@@ -217,6 +230,7 @@ public class Usuarios {
 "            AND p.ID_Persona = c.Persona_ID_Persona"+
 "            AND c.ID_Contacto = em.Contacto_ID_Contacto"+
 "            AND c.ID_Contacto = tf.Contacto_ID_Contacto"+
+"            AND tf.ID_Tel_Fijo=ex.Telefono_Fijo_ID_Tel_Fijo"+
 "            AND c.ID_Contacto = tc.Contacto_ID_Contacto"+ 
 "            AND ID_Persona="+UsuarioID;
         String sqles="select Escuela from Escuela where ID_Escuela=7";
@@ -232,24 +246,14 @@ public class Usuarios {
         return mav;
     }    
     @RequestMapping(value="DDyFD/Usuarios/BorrarUsuario.html", method=RequestMethod.POST)
-    public ModelAndView delete(Persona p, Contacto c, Eventos ev){
-        String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Usuario_Usuario_ID=NULL, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+") where ID_Persona="+UsuarioID;
-        this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
-//            String sql1="insert into Contacto (Persona_ID_Persona) values ((select MAX(ID_Persona)from Persona))";
-//            this.rid.update(sql1);
-//            String sqld="insert into Persona_has_Act_Deportiva (Act_Deportiva_ID_Deporte,Persona_ID_Persona) values ((select ID_Deporte from Act_Deportiva where ID_Deporte="+ev.getDeporte()+"),(select MAX(ID_Persona)from Persona))";
-//            this.rid.update(sqld);
-//            String sqltf="insert into Telefono_fijo (Telefono, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
-//            this.rid.update(sqltf, c.getTel_fijo());
-//            String sqltc="insert into Telefono_Celular (Celular, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
-//            this.rid.update(sqltc, c.getTel_cel());
-//            String sqlc="insert into Email (Correo, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
-//            this.rid.update(sqlc, c.getCorreo());
-        
-//        String sql="update Persona set Disciplina=? where ID_Deporte="+UsuarioID;
-//        this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../Usuarios/ConfirmaBorrarUsuario.html");
-        return mv;
+    public ModelAndView delete(HttpServletRequest re, Persona p, Contacto c, Eventos ev){
+        UsuarioID=Integer.parseInt(re.getParameter("UsuarioID"));
+//        String sql="update Usuario set Activo=0";
+        String sql ="delete from Persona where ID_Persona="+UsuarioID;
+        this.rid.update(sql);
+        mav.setViewName("redirect:../Usuarios.html");
+        mav.addObject("mjs", "<div style='color: green;'>Se ha Eliminado un Usuario correctamente</div>");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Usuarios/ConfirmaBorrarUsuario.html")
     public ModelAndView confirma(HttpServletRequest re){
@@ -257,49 +261,66 @@ public class Usuarios {
 //        String sql="update Usuario set Activo=0";
         String sql ="delete from Persona where ID_Persona="+UsuarioID;
         this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../Usuarios.html");
-        return mv;
+        mav.setViewName("redirect:../Usuarios.html");
+//        mav.addObject("mjs", "<div style='color: green;'>Se ha Eliminado un Usuario correctamente</div>");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Usuarios/DesactivarUsuario.html")
     public ModelAndView desactiva(HttpServletRequest re){
         UsuarioID=Integer.parseInt(re.getParameter("UsuarioID"));
 //        String sql="update Usuario set Activo=0 where Usuario_ID=(select Usuario_Usuario_ID from Persona where ID_Persona="+UsuarioID+")";
-        String sql ="select u.Usuario_ID from Usuario u where u.Persona_ID_Persona="+UsuarioID;
+        String sql ="select u.Usuario_ID, u.Nombre_U from Usuario u where u.Persona_ID_Persona="+UsuarioID;
+        String sqll ="select u.Nombre_U from Usuario u where u.Persona_ID_Persona="+UsuarioID;
         try{
             ct=cn.Connect();
             ps=ct.prepareStatement(sql);
+            ps1=ct.prepareStatement(sqll);
             rs=ps.executeQuery();
+            rs1=ps1.executeQuery();
             if(rs!=null){
                 while(rs.next())
                 p =rs.getString("Usuario_ID");
-                
+            }
+            if(rs!=null){
+                while(rs1.next())
+                u =rs1.getString("Nombre_U");
             }
         }catch(Exception e){
         }
         String sqlp="update Usuario set Activo=0 where Usuario_ID="+p;
         this.rid.update(sqlp);
-        ModelAndView mv=new ModelAndView ("redirect:../Usuarios.html");
-        return mv;
+//        ModelAndView mv=new ModelAndView ("redirect:../Usuarios.html");
+//        return mv;
+        mav.setViewName("redirect:../Usuarios.html");
+        mav.addObject("mjs", "<div style='color: green;'>El usuario '"+u+"' Se ha puesto como INACTIVO un usuario</div>");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Usuarios/ActivarUsuario.html")
     public ModelAndView activa(HttpServletRequest re){
         UsuarioID=Integer.parseInt(re.getParameter("UsuarioID"));
 //        String sql="update Usuario set Activo=0 where Usuario_ID=(select Usuario_Usuario_ID from Persona where ID_Persona="+UsuarioID+")";
-        String sql ="select u.Usuario_ID from Usuario u where u.Persona_ID_Persona="+UsuarioID;
+        String sql ="select u.Usuario_ID, u.Nombre_U from Usuario u where u.Persona_ID_Persona="+UsuarioID;
+        String sqll ="select u.Nombre_U from Usuario u where u.Persona_ID_Persona="+UsuarioID;
         try{
             ct=cn.Connect();
             ps=ct.prepareStatement(sql);
+            ps1=ct.prepareStatement(sql);
             rs=ps.executeQuery();
+            rs1=ps1.executeQuery();
             if(rs!=null){
                 while(rs.next())
                 p =rs.getString("Usuario_ID");
-                
+            }
+            if(rs!=null){
+                while(rs1.next())
+                u =rs1.getString("Nombre_U");
             }
         }catch(Exception e){
         }
         String sqlp="update Usuario set Activo=1 where Usuario_ID="+p;
         this.rid.update(sqlp);
-        ModelAndView mv=new ModelAndView ("redirect:../Usuarios.html");
-        return mv;
+        mav.setViewName("redirect:../Usuarios.html");
+        mav.addObject("mjs", "<div style='color: green;'>El usuario '"+u+"' Se ha puesto como ACTIVO un usuario</div>");
+        return mav;
     }
 }

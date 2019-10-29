@@ -36,6 +36,7 @@ public class Pruebas {
     JdbcTemplate rid=new JdbcTemplate(con.ConectaRID());
     
     List dat;
+    List prue;
     
     @RequestMapping(value="DDyFD/Pruebas.html", method=RequestMethod.GET)
     public ModelAndView Prueba(HttpServletRequest re)throws SQLException{
@@ -92,6 +93,9 @@ public class Pruebas {
         if(session.getAttribute("Nombre_U")== null){
          mav.setViewName("Error404");
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
+        String sq="select* from Pruebas pr inner join (Act_Deportiva d, Tipo_Pruebas tp) on (pr.Act_Deportiva_ID_Deporte=d.ID_Deporte and tp.ID_Tipo=pr.Tipo_Pruebas_ID_Tipo)";
+        prue=this.rid.queryForList(sq);
+        mav.addObject("prueba", prue);
         mav.setViewName("AgregarPrueba");
         }else{
             mav.setViewName("CoordUA");
@@ -103,7 +107,10 @@ public class Pruebas {
             
             String sql="insert into Pruebas(Prueba, Tipo_Pruebas_ID_Tipo, Act_Deportiva_ID_Deporte) values (?,?,?);";
             this.rid.update(sql, pru.getPrueba(), pru.getTipo(), pru.getAct_Prueba());
-            return new ModelAndView("redirect:../Pruebas/Pruebasiguiente.html");
+//            return new ModelAndView("redirect:../Pruebas/Pruebasiguiente.html");
+        mav.setViewName("redirect:../Pruebas.html");
+        mav.addObject("mjs", "<div style='color: green;'>Se ha Agregado una Prueba correctamente</div>");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Pruebas/Pruebasiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
@@ -124,7 +131,7 @@ public class Pruebas {
          mav.setViewName("Error404");
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
         PruebaID=Integer.parseInt(re.getParameter("PruebaID"));
-        String sql="select * from Pruebas where ID_Pruebas="+PruebaID;
+        String sql="select * from Pruebas pr inner join (Act_Deportiva d, Tipo_Pruebas tp) on (pr.Act_Deportiva_ID_Deporte=d.ID_Deporte and pr.Tipo_Pruebas_ID_Tipo=tp.ID_Tipo) where ID_Pruebas="+PruebaID;
         dat = this.rid.queryForList(sql);
         mav.addObject("prue",dat);
         mav.setViewName("EditarPrueba");
@@ -138,9 +145,11 @@ public class Pruebas {
     public ModelAndView Editar(Prueba pru){
         String sql="update Pruebas set Prueba=?, Act_Deportiva_ID_Deporte=?, Tipo_Pruebas_ID_Tipo=? where ID_Pruebas="+PruebaID;
         this.rid.update(sql, pru.getPrueba(), pru.getAct_Prueba(), pru.getTipo());
-        ModelAndView mv=new ModelAndView ("redirect:../Pruebas.html");
-        
-        return mv;
+//        ModelAndView mv=new ModelAndView ("redirect:../Pruebas.html");
+//        return mv;
+        mav.setViewName("redirect:../Pruebas.html");
+        mav.addObject("mjs", "<div style='color: green;'>Se han Actualizado los datos de una Prueba correctamente</div>");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Pruebas/ConfirmaEdicion.html", method=RequestMethod.GET)
     public ModelAndView confirm(HttpServletRequest re){
@@ -188,8 +197,11 @@ public class Pruebas {
     public ModelAndView delete(Prueba pru){
         String sql="update Pruebas set Prueba=?, Act_Deportiva_ID_Deporte=?, Tipo_Pruebas_ID_Tipo=? where ID_Pruebas="+PruebaID;
         this.rid.update(sql, pru.getPrueba(), pru.getAct_Prueba(), pru.getTipo());
-        ModelAndView mv=new ModelAndView ("redirect:../Pruebas.html");
-        return mv;
+//        ModelAndView mv=new ModelAndView ("redirect:../Pruebas.html");
+//        return mv;
+        mav.setViewName("redirect:../Pruebas.html");
+        mav.addObject("mjs", "<div style='color: green;'>Se ha Eliminado una Prueba correctamente</div>");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Pruebas/ConfirmaBorrar.html")
     public ModelAndView confirma(HttpServletRequest re){
@@ -197,7 +209,7 @@ public class Pruebas {
         String sql ="delete from Pruebas where ID_Pruebas="+PruebaID;
         this.rid.update(sql);
         ModelAndView mv=new ModelAndView ("redirect:../Pruebas.html");
-        mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
+//        mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
         return mv;
     }
 }

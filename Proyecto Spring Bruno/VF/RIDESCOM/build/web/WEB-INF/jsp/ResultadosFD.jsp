@@ -566,18 +566,20 @@ Funciones: Será la vista gerenal para los alumnos
         <a name="resultados" id="Contacto"></a>
         <h2 id="titulo">Consulta los resultados de participantes</h2>
         <div class="container">
-            <div class="col-row-12">
-                <div class="flexsearch">
-                    <div class="flexsearch--wrapper">
-                            <div class="flexsearch--input-wrapper">
-                                <input class="flexsearch--input" type="search" placeholder="Buscar...">
-                            </div>
-                    </div>
-                </div>
-            </div>
+            <div class="col-row-8">
+                                    <div class="flexsearch">
+                                        <div class="flexsearch--wrapper">
+                                            <form class="flexsearch--form" id="searchTerm" placeholder="Buscar" type="text" onkeyup="doSearch()" />
+                                                <div class="flexsearch--input-wrapper">
+                                                    <input type="text" id="search" placeholder="Buscar..." title="Busqueda Rapida" class="form-control">
+                                                </div>
+                                            </form>    
+                                        </div>
+                                    </div>
+                                </div>
 
             <div class="table-responsive">
-                <table class="table table-hover">
+                <table class="table table-hover" >
                     <thead>
                         <tr>
                             <th scope="col"> Boleta </th>
@@ -593,7 +595,7 @@ Funciones: Será la vista gerenal para los alumnos
                             
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="datos">
 							<c:forEach var="d" items="${res}">
                                                         <tr>
                                                             <td>${d.Alumno_ID_Alumno}</td>
@@ -619,4 +621,16 @@ Funciones: Será la vista gerenal para los alumnos
 
     <div class="clearfix" >&nbsp;</div>
 </body>
+<script>
+var $rows = $('#datos tr');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+
+</script>
 </html>

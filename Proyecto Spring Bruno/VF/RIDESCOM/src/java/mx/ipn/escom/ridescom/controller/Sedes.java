@@ -110,8 +110,9 @@ public class Sedes {
         String sql="insert into Sede (Nombre_S, Calle, Colonia, Numero, CP, Municipio_ID_Municipio, Municipio_Estados_ID_estado) values (?, ?, ?, ?, ?, ?, (select Estados_ID_estado from Municipio where ID_Municipio=?))";
             this.rid.update(sql, sed.getSede(), sed.getCalle(), sed.getColonia(), sed.getNumero(), sed.getCP(), sed.getMunicipio(), sed.getMunicipio());
         }
-        ModelAndView mv=new ModelAndView ("redirect:../Sedes.html");
-        return mv;
+        mav.setViewName("redirect:../Sedes.html");
+        mav.addObject("msjs", "<div style='color: green;'>Se ha Agregado una sede correctamente</div>");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Sedes/Sedesiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
@@ -124,7 +125,7 @@ public class Sedes {
         return mav;
     }
     
-    //Scripts para ediciÃ³n de Sedes
+    //Scripts para edición de Sedes
     @RequestMapping(value="DDyFD/Sedes/EditarSede.html", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
@@ -132,7 +133,7 @@ public class Sedes {
          mav.setViewName("Error404");
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
         SedeID=Integer.parseInt(re.getParameter("SedeID"));
-        String sql="select * from Sede where ID_Sede="+SedeID;
+        String sql="select * from sede s inner join(municipio m, estados edo) on (m.Estados_ID_estado=edo.ID_estado and s.Municipio_ID_Municipio=m.ID_Municipio) where ID_Sede="+SedeID;
         dat = this.rid.queryForList(sql);
         mav.addObject("sed",dat);
         mav.setViewName("EditarSede");
@@ -151,27 +152,10 @@ public class Sedes {
         String sql="update Sede set Nombre_S=?, Calle=?, Colonia=?, Numero=?, CP=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select Estados_ID_estado from Municipio where ID_Municipio=?)where ID_Sede="+SedeID;
             this.rid.update(sql, sed.getSede(), sed.getCalle(), sed.getColonia(), sed.getNumero(), sed.getCP(), sed.getMunicipio(), sed.getMunicipio());
         }
-        ModelAndView mv=new ModelAndView ("redirect:../Sedes.html");
-        return mv;
+        mav.setViewName("redirect:../Sedes.html");
+        mav.addObject("msjs", "<div style='color: green;'>Se han Actualizado los datos correctamente</div>");
+        return mav;
     }
-//    @RequestMapping(value="DDyFD/Sedes/ConfirmaEdicion", method=RequestMethod.GET)
-//    public ModelAndView confirm(HttpServletRequest re){
-//        HttpSession session = re.getSession();
-//        if(session.getAttribute("Nombre_U")== null){
-//         mav.setViewName("Error404");
-//        }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
-//        SedeID=Integer.parseInt(re.getParameter("SedeID"));
-//        String sql="select ID_Sedes, Sede, Tipo_Sedes_ID_Sede, Act_Deportiva_ID_Deporte, Tipo_Sedes.Tipo, Act_Deportiva.Disciplina from Sedes "
-//                + "inner join (Tipo_Sedes,Act_Deportiva) on (Sedes.Tipo_Sedes_ID_Sede=Tipo_Sedes.ID_Tipo AND Sedes.Act_Deportiva_ID_Deporte=Act_Deportiva.ID_Deporte) where ID_Sedes="+SedeID;
-//        dat = this.rid.queryForList(sql);
-//        mav.addObject("prue",dat);
-//        mav.setViewName("ConfirmaEdicion");
-//        }else{
-//            mav.setViewName("CoordUA");
-//        }
-//        return mav;
-//    }
-
     //Scripts para borrar registros
     @RequestMapping(value="DDyFD/Sedes/BorrarSede.html", method=RequestMethod.GET)
     public ModelAndView delete(HttpServletRequest re){
@@ -190,19 +174,23 @@ public class Sedes {
         return mav;
     }    
     @RequestMapping(value="DDyFD/Sedes/BorrarSede.html", method=RequestMethod.POST)
-    public ModelAndView delete(Sede sed){
-        String sql="update Sede set Nombre_S=?, Calle=?, Colonia=?, Numero=?, CP=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+sed.getMunicipio()+") where ID_Sede="+SedeID;
-        this.rid.update(sql, sed.getSede(), sed.getCalle(), sed.getColonia(), sed.getNumero(), sed.getCP(), sed.getMunicipio());
-        ModelAndView mv=new ModelAndView ("redirect:../Sedes.html");
-        return mv;
+    public ModelAndView delete(HttpServletRequest re, Sede sed){
+        SedeID=Integer.parseInt(re.getParameter("SedeID"));
+        String sql ="delete from Sede where ID_Sede="+SedeID;
+        this.rid.update(sql);
+//        ModelAndView mv=new ModelAndView ("redirect:../Sedes.html");
+        mav.setViewName("redirect:../Sedes.html");
+        mav.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
+        return mav;
     }
+    //No sirve más
     @RequestMapping(value="DDyFD/Sedes/ConfirmaBorrar.html")
     public ModelAndView confirma(HttpServletRequest re){
         SedeID=Integer.parseInt(re.getParameter("SedeID"));
         String sql ="delete from Sede where ID_Sede="+SedeID;
         this.rid.update(sql);
         ModelAndView mv=new ModelAndView ("redirect:../Sedes.html");
-        mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
+        mv.addObject("msjs", "<div style='color: green;'>Se ha Eliminado correctamente</div>");
         return mv;
     }
 }

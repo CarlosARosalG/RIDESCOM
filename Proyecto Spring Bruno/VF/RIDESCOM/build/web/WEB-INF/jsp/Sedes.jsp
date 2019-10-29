@@ -19,7 +19,7 @@ Funciones: Será la vista gerenal para los alumnos
 <head>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title> DDyFD </title>
+	<title> Sedes </title>
 
 	<!-- Estilos CSS 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">-->
@@ -593,12 +593,13 @@ Funciones: Será la vista gerenal para los alumnos
                                                 </div>
                                             </form>    
                                         </div>
-				</div>
-			</div>
+                                    </div>
+                                </div>
+                            ${msjs}
                         <div class="clearfix" >&nbsp;</div>
 			<div class="container">
 				<div class="table-responsive">
-					<table class="table table-hover" id="datos">
+					<table class="table table-hover" >
 						<thead>
 							<tr>
 								<th scope="col"> Sede </th>
@@ -608,7 +609,7 @@ Funciones: Será la vista gerenal para los alumnos
 								
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="datos">
                                                     <c:forEach var="dato" items="${se}">
                                                         <tr>
                                                             <td>${dato.Nombre_S}</td>

@@ -590,6 +590,7 @@
                                                 </select>
                                          </div>
 			</div>
+                        ${mjs}
                         <div class="clearfix" > &nbsp;</div>
 			<div class="container">
 				<div class="table-responsive">

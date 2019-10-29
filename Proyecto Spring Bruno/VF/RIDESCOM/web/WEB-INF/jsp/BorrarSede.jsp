@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +51,7 @@
     
     <style>
         /*****************************************
-        * Autor: Rosales Gonz√°lez Carlos Andr√©s *
+        * Autor: Rosales Gonz·lez Carlos AndrÈs *
         * Titulo: Hoja de estilos 				 *
         ****************************************/
 
@@ -106,7 +106,7 @@
        }
 
        /************************
-        * Dise√±o para buscador *
+        * DiseÒo para buscador *
        ************************/
 
        #slidebar {
@@ -369,12 +369,12 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Borrar la informaci√≥n de una sede </h1>
+			<h1> Borrar la informaciÛn de una sede </h1>
 		</div>
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-warning col-4" role="alert">
-			  <p> Aqu√≠ podr√°s editar la informaci√≥n de una sede donde se realicen interpolit√©cnicos deportivos. </p>
+			  <p> AquÌ podr·s editar la informaciÛn de una sede donde se realicen interpolitÈcnicos deportivos. </p>
 			  <p> Recuerda verificar todos los datos antes de concluir. </p>
 			</div>
 		</div>
@@ -386,42 +386,42 @@
                     <div class="form-row">
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Nombre del lugar </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Sede" value="${sed[0].Nombre_S}" maxlength="50" disabled//>
+                                    <input type="text" class="form-control" id="validationTooltip02" name="Sede" value="${sed[0].Nombre_S}" maxlength="50" readonly="readonly"/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 				</div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Calle </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="Calle" value="${sed[0].Calle}" maxlength="100" disabled//>
+				    <input type="text" class="form-control" id="validationTooltip02" name="Calle" value="${sed[0].Calle}" maxlength="100" readonly="readonly"/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Colonia </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="Colonia" value="${sed[0].Colonia}" maxlength="100" disabled//>
+				    <input type="text" class="form-control" id="validationTooltip02" name="Colonia" value="${sed[0].Colonia}" maxlength="100" readonly="readonly"/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Numero </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Numero" value="${sed[0].Numero}" maxlength="5" disabled/>
+                                    <input type="text" class="form-control" id="validationTooltip02" name="Numero" value="${sed[0].Numero}" maxlength="5" readonly="readonly"/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> CP </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="CP" value="${sed[0].CP}" maxlength="5" disabled//>
+				    <input type="text" class="form-control" id="validationTooltip02" name="CP" value="${sed[0].CP}" maxlength="5" readonly="readonly"/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Estado en el que se localiza la sede </label>
-				    <input type="text" class="form-control" id="validationTooltip02" value="${sed[0].Municipio}" disabled/>
+				    <input type="text" class="form-control" id="validationTooltip02" value="${sed[0].Estado}" readonly="readonly"/>
                                     
                                     <div class="valid-tooltip">
 				    	OK
@@ -429,7 +429,7 @@
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Municipio en el que se localiza la sede </label>
-				    <input name="municipio" type="text" class="form-control" id="validationTooltip02" value="${sed[0].Municipio}" disabled/>
+				    <input name="municipio" type="text" class="form-control" id="validationTooltip02" value="${sed[0].Municipio}" readonly="readonly"/>
                                     
                                     <div class="valid-tooltip">
 				    	OK

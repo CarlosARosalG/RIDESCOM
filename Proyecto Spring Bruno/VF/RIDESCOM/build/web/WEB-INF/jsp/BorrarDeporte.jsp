@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +18,8 @@
                     <label>Deporte</label>
                     <input type="text" value="${dep[0].Disciplina}" name="Disciplina" class="form-control" autocomplete="off" disabled>
                     
-                    <a href="ConfirmaBorrar.html?DeporteID=${dep[0].ID_Deporte}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
+<!--                    <a href="ConfirmaBorrar.html?DeporteID=${dep[0].ID_Deporte}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>-->
+                    <button type="submit" class="btn  btn-outline-success "> Eliminar </button>
                    <a href="../Deportes.html" type="submit" value="Regresar" class="btn btn-success">Regresar</a>
                 </form>
             </div>

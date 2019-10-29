@@ -6,21 +6,21 @@
 
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
     <head>
         <meta charset="utf-8">
-        <title> Consulta alumnos inscritos </title>
+        <title> Consulta inscripciones </title>
 
         <!--Jquery -->
         <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="resources/js/jquery-ui/jquery-ui.min.js"></script>
-        <link rel="stylesheet" href="resources/js/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet"href="resources/js/jquery-ui/jquery-ui.min.css">
         <link rel="stylesheet" href="resources/js/jquery-ui/jquery-ui.structure.min.css">
         <link rel="stylesheet"  href="resources/js/jquery-ui/jquery-ui.theme.min.css">
-
         <!-- Moment js  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es.js"></script>
@@ -358,7 +358,7 @@
 <body>
     <section id="global">
         <div id="titulo">
-            <h1> Consulta a alumnos inscritos </h1>
+            <h1> Consulta tus inscripciones </h1>
         </div>
 
         <div class="col-12 ">
@@ -370,37 +370,18 @@
         </div>
 
         <!-- Formulario --> 
-        <form class="needs-validation" novalidate>
-            <div class="form-row">
-                <div class="col-md-5 mb-3">
-                    <label for="validationTooltip03">Deporte</label>
-                    <select id="deporte" class="custom-select" required>
-                        <option value="" selected disabled>Selecciona un deporte</option>
-                        <option value="1"> ESIME </option>
-                        <option value="2"> ESCOM </option>
-                        <option value="3"> ESIQUIE </option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Selecciona un deporte
-                    </div>
-                </div>
-                <div class="col-md-5 mb-3">
-                    <label for="validationTooltip03">Ciclo Escolar</label>
-                    <select id="deporte" class="custom-select" required>
-                        <option value="" selected disabled>Selecciona un ciclo escolar</option>
-                        <option value="1"> 2019-1 </option>
-                        <option value="2"> 2019-2 </option>
-                        <option value="3"> 2020-1 </option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Selecciona un ciclo escolar
-                    </div>
-                </div>
-            </div>
+            <div class="col-row-8">
+                                    <div class="flexsearch">
+                                        <div class="flexsearch--wrapper">
+                                            <form class="flexsearch--form" id="searchTerm" placeholder="Buscar" type="text" onkeyup="doSearch()" />
+                                                <div class="flexsearch--input-wrapper">
+                                                    <input type="text" id="search" placeholder="Buscar..." title="Busqueda Rapida" class="form-control">
+                                                </div>
+                                            </form>    
+                                        </div>
+                                    </div>
+                                </div>
             <div class="clearfix" >&nbsp;</div>
-            <button type="submit" class="btn  btn-outline-success "> Buscar </button>
-            <a href="#"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn btn-outline-danger"> Cancelar </button></a>
-        </form>
         <div class="clearfix" >&nbsp;</div>
 
         <div class="container">
@@ -410,82 +391,27 @@
                         <tr>
                             <th scope="col"> Nombre </th>
                             <th scope="col"> Boleta </th>
-                            <th scope="col"> Escuela </th>
                             <th scope="col"> Deporte </th>
-                            <th scope="col"> Sub-división </th>
-                            <th scope="col"> Posición </th>
-                            <th scope="col"> Prueba </th>
-                            <th scope="col"> Marca </th>
+                            <th scope="col"> Evento </th>
+                            <th scope="col"> Ciclo Escolar </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="datos">
+                        <c:forEach var="alui" items="${resu}">
                         <tr>
-                            <th>Fila 1</th>
-                            <td>Fila 1 Columna 1</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
+                            <td>${alui.Nombre}</td>
+                            <td>${alui.ID_Alumno}</td>
+                            <td>${alui.Disciplina}</td>
+                            <td>${alui.Nombre_Evento}</td>
+                            <td>${alui.Ciclo_Escolar}</td>
+
                         </tr>
-                        <tr>
-                            <th>Fila 2</th>
-                            <td>Fila 2 Columna 1</td>
-                            <td>Fila 2 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                        </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
+                <a href="../Alumno.html" class="btn btn-light float-right login_btn"> Volver </a>
             </div>	
         </div>
-
-        
-        <h2 id="titulo">Cédula de Inscripción</h2>
-        <div class="col-12 ">
-            <div id="noti" class="alert alert-light col-6" role="alert">
-                <p> 
-                    Para descargar la cédula de inscripción, selecciona el deporte.
-                    Posteriormente oprime el Generar Cédula.
-                    Guarda el archivo en formato PDF.
-                </p>
-            </div>
-        </div>
-        <form name="form1" method="post" action="CedulaInscripcion.java">
-            <label for="validationTooltip05"> Deporte </label>
-            <div class="col-md-3 mb-3">
-                <select name="deporte" id="selectsport" class="custom-select" style="width: 380px;" required/>
-                <option value="">Deporte</option>
-                <%
-                    try {
-                        String query = "select * from Act_Deportiva";
-                        Class.forName("com.mysql.jdbc.Driver").newInstance();
-                        Connect conn = new Connect();
-                        Statement stm = conn.Connect().createStatement();
-                        ResultSet rs = stm.executeQuery(query);
-                        while (rs.next()) {
-                %>
-                <option value="<%=rs.getInt("ID_Deporte")%>"><%=rs.getString("Disciplina")%></option>
-                <%
-                        }
-
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-                        out.println("Error: " + ex.getMessage());
-                    }
-                %>
-                </select>
-                <div class="invalid-feedback">
-                    Ingresa un deporte
-                </div>
-            </div>
-            <input type="submit" name="button" id="button" value="Generar Cédulta">
-        </form>
-
     </section>
 </body>
 
@@ -509,5 +435,16 @@
         }, false);
     })();
 </script>
+<script>
+var $rows = $('#datos tr');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
 
+</script>
 </html>

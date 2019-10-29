@@ -44,6 +44,8 @@ public class Difundir {
 "                    AND s.Municipio_Estados_ID_estado=m.Estados_ID_estado " +
 "                    AND m.Estados_ID_estado=edo.ID_estado) " +
 "                    where Fecha_evento >= left(now(),10) order by FE ASC) as eve left join (inscripcion i) on (i.Evento_Evento_ID=eve.Evento_ID)";
+        dat=this.rid.queryForList(sq);
+        mav.addObject("even", dat);
         mav.setViewName("DifundirEvento");
         return mav;
     }

@@ -4,7 +4,7 @@
     Author     : spy51
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -146,7 +146,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Inicia SesiÃ³n</h3>
+				<h3>Inicia Sesión</h3>
 			</div>
                     <div class="card-body">
                         ${mjs}
@@ -164,7 +164,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="ContraseÃ±a" name="Password_U"  maxlength="16" required/>
+                                <input type="password" class="form-control" placeholder="Contraseña" name="Password_U"  maxlength="16" required/>
                                 <div class="invalid-feedback">
                                     Campo requerido
                                 </div>
@@ -177,7 +177,7 @@
                     </div>
 <!--			<div class="card-footer">
 				<div class="d-flex justify-content-center">
-					<a href="#">Â¿Olvidaste tu contraseÃ±a?</a>
+					<a href="#">¿Olvidaste tu contraseña?</a>
 				</div>
 			</div>-->
 		</div>
@@ -188,7 +188,7 @@
         function soloLetras(e){
        key = e.keyCode || e.which;
        tecla = String.fromCharCode(key).toLowerCase();
-       letras = " Ã¡Ã©Ã­Ã³ÃºabcdefghijklmnÃ±opqrstuvwxyz";
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
        especiales = "8-37-39-46";
 
        tecla_especial = false;

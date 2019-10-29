@@ -789,9 +789,6 @@ Funciones: Será la vista gerenal para los alumnos
                                 <u>Prueba</u>: ${dato.Prueba} - ${dato.Rama}</blockquote>
                                 <blockquote><u>Descripción: </u><div class="clearfix">&nbsp;</div>
                                     ${dato.Descripcion}</blockquote>
-                                <a href="DDyFD/EditarEvento.html?EventoID=${dato.Evento_ID}" class="edita bnt-more" style='text-decoration:none;color: #0174DF;'> 
-                                    <i class="far fa-edit fa-2x"></i>  
-                                </a> 
                                 <script>
                                     var today;
                                     today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1);
@@ -800,10 +797,10 @@ Funciones: Será la vista gerenal para los alumnos
                                 console.log(Date(${dato.FE}));
                                 
                                // console.log((String)(today));
-                                    $('.edita').toggle(${dato.FE}<today);
+                                    $('.edita').toggle(${dato.FE}>today);
                                 </script>
-                                <a href="DDyFD/BorrarEvento.html?EventoID=${dato.Evento_ID}" class="borra bnt-more"  style='text-decoration:none;color: red;'>
-                                    <i  class="far fa-trash-alt fa-2x"></i> 
+                                <a href="DDyFD/EditarEvento.html?EventoID=${dato.Evento_ID}" class="edita bnt-more" style='text-decoration:none;color: #0174DF;'> 
+                                    <i class="far fa-edit fa-2x"></i>  
                                 </a> 
                                 <script>
                                     var cnd;
@@ -811,6 +808,10 @@ Funciones: Será la vista gerenal para los alumnos
                                     cnd = ${dato.algo}===0;
                                     $('.borra').toggle(false);
                                 </script>
+                                <a href="DDyFD/BorrarEvento.html?EventoID=${dato.Evento_ID}" class="borra bnt-more"  style='text-decoration:none;color: red;'>
+                                    <i  class="far fa-trash-alt fa-2x"></i> 
+                                </a> 
+                                
                         </div>
                     </div>                   
                     </c:forEach>

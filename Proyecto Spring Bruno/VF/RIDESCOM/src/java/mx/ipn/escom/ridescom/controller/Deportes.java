@@ -103,7 +103,9 @@ public class Deportes {
             
             String sql="insert into Act_Deportiva(Disciplina) value (?);";
             this.rid.update(sql, dep.getDisciplina());
-            return new ModelAndView("redirect:../Deportes/Deportesiguiente.html");
+        mav.setViewName("redirect:../Deportes.html");
+        mav.addObject("mjs", "<div style='color: green;'>Se ha Agregado un deporte correctamente</div>");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Deportes/Deportesiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
@@ -118,7 +120,7 @@ public class Deportes {
         return mav;
     }
     
-    //Scripts para ediciÃ³n de Deportes
+    //Scripts para edición de Deportes
     @RequestMapping(value="DDyFD/Deportes/EditarDeporte.html", method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest re)throws SQLException{
         HttpSession session = re.getSession();
@@ -136,12 +138,15 @@ public class Deportes {
         return mav;
     }
     @RequestMapping(value="DDyFD/Deportes/EditarDeporte.html", method=RequestMethod.POST)
-    public ModelAndView Editar(Deporte dep){
+    public ModelAndView Editar(HttpServletRequest re, Deporte dep){
         String sql="update Act_Deportiva set Disciplina=? where ID_Deporte="+DeporteID;
-        this.rid.update(sql, dep.getDisciplina());
-        ModelAndView mv=new ModelAndView ("redirect:../Deportes.html");
-//        mv.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");
-        return mv;
+        String dis=re.getParameter("Disciplina");
+//        this.rid.update(sql, dep.getDisciplina());
+        this.rid.update(sql, dis);
+//        ModelAndView mv=new ModelAndView ("redirect:../Deportes.html");
+        mav.setViewName("redirect:../Deportes.html");
+        mav.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Deportes/ConfirmaDeporte.html", method=RequestMethod.GET)
     public ModelAndView confirm(HttpServletRequest re){
@@ -189,8 +194,8 @@ public class Deportes {
         DeporteID=Integer.parseInt(re.getParameter("DeporteID"));
         String sql ="delete from Act_Deportiva where ID_Deporte="+DeporteID;
         this.rid.update(sql);
-        ModelAndView mv=new ModelAndView ("redirect:../Deportes.html");
-//        mv.addObject("msjs", "<div style='color: green;'>Se ha eliminado correctamente</div>");
-        return mv;
+        mav.setViewName("redirect:../Deportes.html");
+//        mav.addObject("mjs", "<div style='color: green;'>Se ha Eliminado correctamente</div>");
+        return mav;
     }
 }

@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +51,7 @@
     
     <style>
         /*****************************************
-        * Autor: Rosales Gonz√°lez Carlos Andr√©s *
+        * Autor: Rosales Gonz·lez Carlos AndrÈs *
         * Titulo: Hoja de estilos 				 *
         ****************************************/
 
@@ -106,7 +106,7 @@
        }
 
        /************************
-        * Dise√±o para buscador *
+        * DiseÒo para buscador *
        ************************/
 
        #slidebar {
@@ -374,7 +374,7 @@
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-warning col-4" role="alert">
-			  <p> Aqu√≠ podr√°s registrar sedes donde se realicen interpolit√©cnicos deportivos. </p>
+			  <p> AquÌ podr·s registrar sedes donde se realicen interpolitÈcnicos deportivos. </p>
 			  <p> Recuerda verificar todos los datos antes de concluir. </p>
 			</div>
 		</div>
@@ -413,7 +413,7 @@
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> CP </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="CP" placeholder="C√≥digo Postal" maxlength="5" required>
+				    <input type="text" class="form-control" id="validationTooltip02" name="CP" placeholder="CÛdigo Postal" maxlength="5" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>

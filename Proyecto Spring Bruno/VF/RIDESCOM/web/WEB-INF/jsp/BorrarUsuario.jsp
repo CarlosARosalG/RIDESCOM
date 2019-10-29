@@ -5,7 +5,7 @@
 --%>
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +49,7 @@
         
         <style>
             /*****************************************
-            * Autor: Rosales GonzÃ¡lez Carlos AndrÃ©s *
+            * Autor: Rosales González Carlos Andrés *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
 
@@ -100,7 +100,7 @@
            }
 
            /************************
-            * DiseÃ±o para buscador *
+            * Diseño para buscador *
            ************************/
 
            #slidebar {
@@ -363,13 +363,13 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Borra un usuario de Unidad AcadÃ©mica</h1>
+			<h1> Borra un usuario de Unidad Académica</h1>
 		</div>
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-light col-6" role="alert">
 			<p> 
-			  Verifica que no falte ningÃºn campo por completar antes de guardar la actualizaciÃ³n de datos.
+			  Verifica que no falte ningún campo por completar antes de guardar la actualización de datos.
 			</p>
 			</div>
 		</div>
@@ -386,10 +386,10 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip02"><i class="fas fa-key"></i> ContraseÃ±a </label>
+                            <label for="validationTooltip02"><i class="fas fa-key"></i> Contraseña </label>
                             <input name="Password_U" type="text"  id="validationTooltip02" class="form-control" value="${usu[0].Password_U}" minlength="4" maxlength="16" disabled/>
                             <div class="invalid-feedback">
-                                Ingresa una contraseÃ±a
+                                Ingresa una contraseña
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -465,14 +465,21 @@
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> TelÃ©fono Fijo </label>
+				    <label for="validationTooltip02"> Teléfono Fijo </label>
                                     <input type="text" class="form-control" id="validationTooltip02" name="Tel_fijo" value="${usu[0].Telefono}" disabled/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> TelÃ©fono MÃ³vil (Opcional) </label>
+				    <label for="validationTooltip02"> Extensión (Opcional) </label>
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Ext" value="${usu[0].Ext}" minlength="10" maxlength="15" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Teléfono Móvil (Opcional) </label>
                                     <input type="text" class="form-control" id="validationTooltip02" name="Tel_cel" value="${usu[0].Celular}" disabled/>
 				    <div class="valid-tooltip">
 				    	OK
@@ -482,7 +489,7 @@
 
 			<div class="form-row">    
 				<div class="col-md-5 mb-3">
-					<label for="validationTooltip03">Unidad AcadÃ©mica</label>
+					<label for="validationTooltip03">Unidad Académica</label>
 					<input type="text" class="form-control" id="validationTooltip02" name="Escuela" value="${es[0].Escuela}" disabled/>
 				</div>
                    </div>
@@ -518,7 +525,7 @@
         function soloLetras(e){
        key = e.keyCode || e.which;
        tecla = String.fromCharCode(key).toLowerCase();
-       letras = " Ã¡Ã©Ã­Ã³ÃºabcdefghijklmnÃ±opqrstuvwxyz";
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
        especiales = "8-37-39-46";
 
        tecla_especial = false;

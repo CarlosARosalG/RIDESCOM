@@ -17,7 +17,7 @@ Funciones: Será la vista gerenal para los alumnos
 <head>
 	<head>
 	<meta charset="utf-8">
-	<title> Principal </title>
+	<title> Usuarios </title>
 
 	<!-- Estilos CSS 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">-->
@@ -575,6 +575,18 @@ Funciones: Será la vista gerenal para los alumnos
                     </a> 
                 </div>
                 <div class="container">
+                    <div class="col-row-8">
+                                    <div class="flexsearch">
+                                        <div class="flexsearch--wrapper">
+                                            <form class="flexsearch--form" id="searchTerm" placeholder="Buscar" type="text" onkeyup="doSearch()" />
+                                                <div class="flexsearch--input-wrapper">
+                                                    <input type="text" id="search" placeholder="Buscar..." title="Busqueda Rapida" class="form-control">
+                                                </div>
+                                            </form>    
+                                        </div>
+                                    </div>
+                                </div>
+                    ${mjs}
 				<div class="table-responsive">
 					<table class="table table-hover">
 						<thead>
@@ -589,16 +601,21 @@ Funciones: Será la vista gerenal para los alumnos
 								<th scope="col"> Teléfono </th>
                                                                 <th scope="col"> Celular </th>
                                                                 <th scope="col"> Status </th>
-                                                                <th> </th>
+                                                                <th scope="col"> Desactivar </th>
+                                                                <th scope="col"> Activar </th>
+                                                                
                                                                 <th> Acciones </th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="datos">
 							<c:forEach var="d" items="${coo}">
+                                                        <script>
+                                                            var cond=${d.Ext}===null;
+                                                            $('#exten').toggle(cond);
+                                                        </script>
                                                             <script>
-                                                                var cond=${d.Ext}=null;
-                                                                var act=${d.Activo}=0;
-                                                                    $('#exten').toggle(cond);
+                                                                
+                                                                var act=${d.Activo}===0;
                                                                     $('#uselock').toggle(act);
                                                             </script>
                                                         <tr>
@@ -613,21 +630,23 @@ Funciones: Será la vista gerenal para los alumnos
                                                             <td>${d.Celular}</td>
                                                             <td>${d.Activo}</td>
 
-                                                            <td> 
-                                                                    <a href="Usuarios/EditarUsuario.html?UsuarioID=${d.ID_Persona}" style='text-decoration:none;color: #0174DF;'> 
-                                                                        <i class="far fa-edit"></i>  
-                                                                    </a> 
-                                                            </td>
                                                             
                                                             <td > 
                                                                     <a href="Usuarios/DesactivarUsuario.html?UsuarioID=${d.ID_Persona}" id="uselock" style='text-decoration:none;color: black;'> 
                                                                         <i class="fas fa-user-lock"></i>
                                                                     </a> 
+                                                            </td>
+                                                            <td>
                                                                     <a href="Usuarios/ActivarUsuario.html?UsuarioID=${d.ID_Persona}" id="uselock" style='text-decoration:none;color: gray;'> 
                                                                         <i class="fas fa-user-lock"></i>
                                                                     </a> 
                                                             </td>
                                                                     
+                                                            <td> 
+                                                                    <a href="Usuarios/EditarUsuario.html?UsuarioID=${d.ID_Persona}" style='text-decoration:none;color: #0174DF;'> 
+                                                                        <i class="far fa-edit"></i>  
+                                                                    </a> 
+                                                            </td>
                                                             <td> 
                                                                     <a href="Usuarios/BorrarUsuario.html?UsuarioID=${d.ID_Persona}" style='text-decoration:none;color: red;'> 
                                                                         <i class="far fa-trash-alt"></i>  
@@ -650,4 +669,16 @@ Funciones: Será la vista gerenal para los alumnos
 		
 	<div class="clearfix" >&nbsp;</div>
 </body>
+<script>
+var $rows = $('#datos tr');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+
+</script>
 </html>

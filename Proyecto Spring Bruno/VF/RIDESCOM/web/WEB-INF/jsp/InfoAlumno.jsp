@@ -6,13 +6,13 @@
 
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<head>
 	<meta charset="utf-8">
-	<title> Informaci√≥n Personal </title>
+	<title> InformaciÛn Personal </title>
 
 	<!--Jquery -->
 	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
@@ -49,7 +49,7 @@
         
         <style>
             /*****************************************
-            * Autor: Rosales Gonz√°lez Carlos Andr√©s *
+            * Autor: Rosales Gonz·lez Carlos AndrÈs *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
 
@@ -100,7 +100,7 @@
            }
 
            /************************
-            * Dise√±o para buscador *
+            * DiseÒo para buscador *
            ************************/
 
            #slidebar {
@@ -364,12 +364,12 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Registra un evento interpolit√©cnico deportivo </h1>
+			<h1> Registra tu informaciÛn personal restante </h1>
 		</div>
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-danger col-6" role="alert">
-			  <p> Verifica tus datos si son correctos, en caso contrario acude al departamento de gesti√≥n escolar de tu unidad ac√°demica. </p>
+			  <p> Verifica tus datos sean correctos, en caso contrario acude al departamento de gestiÛn escolar de tu unidad ac·demica. </p>
 			</div>
 		</div>
 
@@ -378,7 +378,7 @@
 			<div class="form-row">
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Boleta </label>
-				    <input type="text" class="form-control" id="validationTooltip02" value="Boleta" disabled/>
+                                    <input type="text" class="form-control" id="validationTooltip02" value="Boleta" readonly="readonly"/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -457,7 +457,7 @@
                                                 </select>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Correo electr√≥nico </label>
+				    <label for="validationTooltip02"> Correo electrÛnico </label>
 				    <input type="text" class="form-control" id="validationTooltip02" value="Correo electronico" required/>
 				    <div class="valid-tooltip">
 				    	OK

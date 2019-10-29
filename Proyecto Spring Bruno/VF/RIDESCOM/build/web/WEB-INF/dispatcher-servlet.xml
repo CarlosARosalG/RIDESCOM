@@ -28,6 +28,7 @@
             <props>
                 <prop key="Home.html">home</prop>
                 <prop key="Login.html">login</prop>
+                <prop key="Privacidad.html">logina</prop>
                 <prop key="Error404.html">login</prop>
                 <prop key="Error.html">login</prop>
                 <prop key="Logout.html">ddyfd</prop>
@@ -97,8 +98,9 @@
                 <prop key="Alumno.html">alumno</prop>
                 <prop key="Alumno/Resultados.html">resultadosal</prop>
                 <prop key="Alumno/Inscribirse.html">inscribir</prop>
-                <prop key="ConsultaInscritos.html">consultainscritos</prop>
+                <prop key="Alumno/Inscripciones.html">inscribir</prop>
                 <prop key="InfoAlumno.html">alumno</prop>
+                <prop key="Alumno/InfoAlumno.html">alumno</prop>
                 
             </props>
         </property>
@@ -120,7 +122,7 @@
     <bean name="sedes" class="mx.ipn.escom.ridescom.controller.Sedes"/>
     <bean name="deportes" class="mx.ipn.escom.ridescom.controller.Deportes"/>
     <bean name="difundir" class="mx.ipn.escom.ridescom.controller.Difundir"/>
-    <bean name="consultainscritos" class="mx.ipn.escom.ridescom.controller.ConsultaInscritos"/>
+    
     <bean name="alumno" class="mx.ipn.escom.ridescom.controller.Alumno"/>
     <bean name="resultados" class="mx.ipn.escom.ridescom.controller.Resultados"/>
     <bean name="resultadosfd" class="mx.ipn.escom.ridescom.controller.ResultadosFD"/>

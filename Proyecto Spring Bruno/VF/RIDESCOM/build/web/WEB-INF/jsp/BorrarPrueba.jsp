@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,7 +9,7 @@
     <body>
          <div class="container mt-4 col-lg-4">
             <div class="card border-info">
-                <h4>Â¿Seguro que desea eliminar estos datos?</h4>
+                <h4>¿Seguro que desea eliminar estos datos?</h4>
             </div>
             <div class="card-header bg-info">
                 <form method="POST">
@@ -24,7 +24,8 @@
                      <label>Deporte</label>
                      <input type="text" value=" ${prue[0].Disciplina}"  name="Act_Prueba" class="form-control" autocomplete="off" disabled/> 
                     
-                     <a href="ConfirmaBorrar.html?PruebaID=${prue[0].ID_Pruebas}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
+                     <!--<a href="ConfirmaBorrar.html?PruebaID=${prue[0].ID_Pruebas}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>-->
+                     <button type="submit" class="btn  btn-outline-success "> Eliminar </button>
                    <a href="../Pruebas.html" type="submit" value="Regresar" class="btn btn-success">Regresar</a>
                 </form>
             </div>

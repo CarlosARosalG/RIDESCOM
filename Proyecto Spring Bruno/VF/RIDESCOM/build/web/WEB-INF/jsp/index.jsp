@@ -147,13 +147,17 @@
             <div class="card col-sm-10">
                 <div class="card-body">
                         <div class="form-group text-center">
-                            <h3>Usuarios</h3>
+                            <h3 style="color:white;">Usuarios</h3>
                             <img src="resources/img/user.png" width="200" height="200"/>
                             <div>
-                                <label>Por favor escoja el usuario al que pertenezca</label>
+                                <label style="color:white;">Por favor escoja el usuario al que pertenezca</label>
                             </div>
+                            <form class="needs-validation" novalidate  method="POST">
+<!--                                <button name="coordinador" value="coord" type="submit" class="btn  btn-primary"> Coordinador </button>-->
                             <a class="btn btn-primary" href="Login.html">Coordinador</a>  
-                        <a class="btn btn-primary" href="LoginAlumno.html">Alumno</a>
+                                <!--<a class="btn btn-primary" href="LoginAlumno.html">Alumno</a>-->
+                                <button name="alumno" value="alu" type="submit" class="btn  btn-primary"> Alumno </button>
+                            </form>
                 </div>
             </div>
         </div>

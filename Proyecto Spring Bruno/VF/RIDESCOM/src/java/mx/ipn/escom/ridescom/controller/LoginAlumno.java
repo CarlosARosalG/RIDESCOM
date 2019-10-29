@@ -14,6 +14,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Scanner;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
@@ -48,7 +49,7 @@ public class LoginAlumno {
     Usuario us=new Usuario();
     Crawler cra=new Crawler();
     UsuarioDAO udao=new UsuarioDAO();
-    CrawlerDAO crdao=new CrawlerDAO();
+//    CrawlerDAO crdao=new CrawlerDAO();
     
     List dat;
     
@@ -70,7 +71,7 @@ public class LoginAlumno {
         return mav;
     }
     @RequestMapping(value="LoginAlumno.html", method=RequestMethod.POST)
-    public ModelAndView log(HttpServletRequest req, HttpServletResponse resp) throws Exception{
+    public ModelAndView log(HttpServletRequest req, HttpServletResponse resp, Craw cw) throws Exception{
         
         String accion=req.getParameter("btn");
         if(accion.equalsIgnoreCase("Entrar")){
@@ -79,23 +80,33 @@ public class LoginAlumno {
         String capt=req.getParameter("Captcha");
         //String jefe= "DDyFD";
         
-        us=udao.validar(usuario, pass);
-        if(us.getNombre_U()!= null){
-            if(us.getRol()==3){
-                HttpSession session=req.getSession();
-                session.setAttribute("Nombre_U", usuario); //user
-                return new ModelAndView("redirect:/Alumno.html");
+            us=udao.validar(usuario, pass);
+            if(us.getNombre_U()!= null){
+                if(us.getRol()==3){
+                    HttpSession session=req.getSession();
+                    session.setAttribute("Nombre_U", usuario); //user
+                    return new ModelAndView("redirect:/Alumno.html");
+                }else{
+                    return new ModelAndView("redirect:/Error404.html");
+                }
             }else{
-                return new ModelAndView("redirect:/Error404.html");
-            }
+                //Aqui deberia ir el crawler
+                    ModelAndView mv=new ModelAndView("LoginAlumno.html");
+                    mv.addObject("mjs", "<div style='color: green;'>OK, usuario y contraseña valido.</div>");
+                    return mv;  
+                }
         }else{
-        cw.getData(usuario, pass, capt);
-        ModelAndView mv=new ModelAndView("LoginAlumno.html");
-        mv.addObject("mjs", "<div style='color: green;'>OK, usuario y contraseña valido.</div>");
-        return mv;  
-        }
-        }else{
-            return new ModelAndView("LoginAlumno.html");
-        }
+                
+                    ModelAndView mv=new ModelAndView("LoginAlumno.html");
+                    mv.addObject("mjs", "<div style='color: green;'>OK, usuario y contraseña valido.</div>");
+                    return mv;  
+                }
     }
+    
+    @RequestMapping(value="Privacidad.html")
+    ModelAndView term(){
+        mav.setViewName("Condiciones");
+        return mav;
+    }
+    
 }

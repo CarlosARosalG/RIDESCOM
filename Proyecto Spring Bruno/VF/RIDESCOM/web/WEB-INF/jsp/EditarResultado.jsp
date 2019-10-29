@@ -7,7 +7,7 @@
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +50,7 @@
         
         <style>
             /*****************************************
-            * Autor: Rosales GonzÃ¡lez Carlos AndrÃ©s *
+            * Autor: Rosales González Carlos Andrés *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
 
@@ -101,7 +101,7 @@
            }
 
            /************************
-            * DiseÃ±o para buscador *
+            * Diseño para buscador *
            ************************/
 
            #slidebar {
@@ -381,7 +381,7 @@
 			<div class="form-row">
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip01"><i class="fas fa-id-card"></i> Boleta </label>
-                                    <input type="text" id="validationTooltip01" class="form-control" value="${alu[0].Alumno_ID_Alumno}" maxlength="10" disabled/>
+                                    <input name="Boleta" type="text" id="validationTooltip01" class="form-control" value="${alu[0].Alumno_ID_Alumno}" maxlength="10" readonly="readonly"/>
 				</div>
 			</div>
                 
@@ -411,7 +411,7 @@
 			    	<label for="validationTooltip05"><i class="fas fa-graduation-cap"></i> Escuela </label>
                                 <input type="text" id="validationTooltip05" class="form-control" value="${alu[0].Escuela}" maxlength="10" disabled>
 			    	<div class="invalid-feedback">
-                                    Ingresa una unidad acÃ¡demica
+                                    Ingresa una unidad acádemica
                                 </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
@@ -424,32 +424,50 @@
 			    <div>
                         <label for="validationTooltip05"> Prueba </label>
                         <div class="col-md-3 mb-3">
-                                <select name="deporte" id="selectsport" class="custom-select" style="width: 380px;" required/>
-					  <option value="">Seleccione prueba...</option>
-                                                                <option value="${alu[0].ID_Prueba}">${alu[0].Prueba} - ${alu[0].Disciplina} </option>
-                                                </select>
+                                <select name="Ev_ID" id="selectsport" class="custom-select" style="width: 380px;" required/>
+                                       <option value="${alu[0].ID_Prueba}">${alu[0].Prueba} - ${alu[0].Disciplina} </option>
+                                       <%
+                                                        try{
+                                                            String query="select ID_Pruebas, Prueba, Disciplina from pruebas pr, Act_Deportiva d where pr.Act_Deportiva_ID_Deporte=d.ID_Deporte";
+                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                                            Connect conn = new Connect();
+                                                            Statement stm=conn.Connect().createStatement();
+                                                            ResultSet rs=stm.executeQuery(query);
+                                                            while(rs.next()){
+                                                                %>
+                                                                <option value="<%=rs.getInt("ID_Pruebas")%>"><%=rs.getString("Prueba")%>-<%=rs.getString("Disciplina")%></option>
+                                                                <%
+                                                            }
+                                                            
+                                                        }catch(Exception ex)
+                                                        {
+                                                            ex.printStackTrace();
+                                                            out.println("Error: "+ex.getMessage());
+                                                        }
+                                                    %>
+                                </select>
                             <div class="invalid-feedback">
                                 Ingresa un deporte
                             </div>
                         </div>
                     </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip09"><i class="fas fa-trophy"></i> PosiciÃ³n </label>
-                                    <input type="text" id="validationTooltip09" class="form-control" value="${alu[0].Lugar_Obtenido}" maxlength="10" required/>
+				    <label for="validationTooltip09"><i class="fas fa-trophy"></i> Posición </label>
+                                    <input name="Posicion" type="text" id="validationTooltip09" class="form-control" value="${alu[0].Lugar_Obtenido}" maxlength="10" required/>
 				    <div class="invalid-feedback">
-                                        Ingresa una posiciÃ³n
+                                        Ingresa una posición
                                     </div>
 			    </div>
 			    
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip11"><i class="fas fa-stopwatch"></i> Marca </label>
-                                    <input type="text" id="validationTooltip11" class="form-control" value="${alu[0].Marca}" maxlength="10" required/>
+                                    <input name="Marca" type="text" id="validationTooltip11" class="form-control" value="${alu[0].Marca}" maxlength="10" required/>
 				    <div class="invalid-feedback">
                                         Ingresa una marca
                                     </div>
 			    </div>
 			</div>
-			<button type="submit" class="btn  btn-outline-success "> Registrar </button>
+			<button type="submit" class="btn  btn-outline-success "> Actualizar </button>
 		  	<a href="../Resultados.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn btn-outline-danger"> Volver </button></a>
 		</form>
 

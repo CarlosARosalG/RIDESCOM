@@ -15,7 +15,6 @@ Funciones: Será la vista gerenal para los alumnos
 <!DOCTYPE html>
 <html lang="es">
     <head>
-    <head>
         <meta charset="utf-8">
         <title> Resultados </title>
 
@@ -561,48 +560,53 @@ Funciones: Será la vista gerenal para los alumnos
         <!--Fontawesome CDN-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     </head>
-</head>
 <body id="fon">
     <section id="global">
         <!-- Resultados --> 	
         <a name="resultados" id="Contacto"></a>
         <h2 id="titulo">Consulta los resultados de participantes</h2>
         <div class="container">
-            <div class="col-row-12">
-                <div class="flexsearch">
-                    <div class="flexsearch--wrapper">
-                            <div class="flexsearch--input-wrapper">
-                                <input class="flexsearch--input" type="search" placeholder="Buscar...">
-                            </div>
-                            <input class="flexsearch--submit" type="submit" value="&#10140;"/>
-                    </div>
-                </div>
-            </div>
+            <div class="col-row-8">
+                                    <div class="flexsearch">
+                                        <div class="flexsearch--wrapper">
+                                            <form class="flexsearch--form" id="searchTerm" placeholder="Buscar" type="text" onkeyup="doSearch()" />
+                                                <div class="flexsearch--input-wrapper">
+                                                    <input type="text" id="search" placeholder="Buscar..." title="Busqueda Rapida" class="form-control">
+                                                </div>
+                                            </form>    
+                                        </div>
+                                    </div>
+                                </div>
 
             <div class="table-responsive">
-                <table class="table table-hover">
+                <table class="table table-hover" >
                     <thead>
                         <tr>
                             <th scope="col"> Boleta </th>
                             <th scope="col"> Nombre </th>
 <!--                            <th scope="col"> Escuela </th>-->
-                            <th scope="col"> Deporte </th>
+                            <th scope="col"> Escuela </th>
 <!--                            <th scope="col"> Sub-división </th>-->
+                            <th scope="col"> Deporte </th>
                             <th scope="col"> Evento </th>
+                            <th scope="col"> Prueba </th>
                             <th scope="col"> Posición </th>
                             <th scope="col"> Marca </th>
+                            
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="datos">
 							<c:forEach var="d" items="${res}">
                                                         <tr>
-                                                            <td>${d.ID_Alumno}</td>
+                                                            <td>${d.Alumno_ID_Alumno}</td>
                                                             <td>${d.Nombre}</td>
-                                                            <td>${d.Deporte}</td>
-                                                            <td>${d.Evento} </td>
-                                                            <td>${d.Lugar}</td>
+                                                            <td>${d.Escuela}</td>
+                                                            <td>${d.Disciplina}</td>
+                                                            <td>${d.Nombre_Evento}</td>
+                                                            <td>${d.Prueba} </td>
+                                                            <td>${d.Lugar_Obtenido}</td>
                                                             <td>${d.Marca}</td>
-
+                                                            
                                                         </tr>
                                                     </c:forEach>
 						</tbody>
@@ -617,4 +621,16 @@ Funciones: Será la vista gerenal para los alumnos
 
     <div class="clearfix" >&nbsp;</div>
 </body>
+<script>
+var $rows = $('#datos tr');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+
+</script>
 </html>

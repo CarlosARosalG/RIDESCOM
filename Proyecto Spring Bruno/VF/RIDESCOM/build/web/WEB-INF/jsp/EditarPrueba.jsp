@@ -6,12 +6,12 @@
 
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title> Editar informaci√≥n de una prueba </title>
+	<title> Editar informaciÛn de una prueba </title>
 
 	<!--Jquery -->
 
@@ -50,7 +50,7 @@
     
     <style>
         /*****************************************
-        * Autor: Rosales Gonz√°lez Carlos Andr√©s *
+        * Autor: Rosales Gonz·lez Carlos AndrÈs *
         * Titulo: Hoja de estilos 				 *
         ****************************************/
 
@@ -105,7 +105,7 @@
        }
 
        /************************
-        * Dise√±o para buscador *
+        * DiseÒo para buscador *
        ************************/
 
        #slidebar {
@@ -368,12 +368,12 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Editar informaci√≥n acerca de una prueba </h1>
+			<h1> Editar informaciÛn acerca de una prueba </h1>
 		</div>
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-warning col-4" role="alert">
-			  <p> Aqu√≠ podr√°s editar informaci√≥n de la prueba deportiva. </p>
+			  <p> AquÌ podr·s editar informaciÛn de la prueba deportiva. </p>
 			  <p> Recuerda verificar todos los datos antes de concluir. </p>
 			</div>
 		</div>
@@ -392,7 +392,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <select name="Tipo" id="selectsport" class="custom-select" style="width: 380px;" autocomplete="off" required/>
-					  <option value="">Tipo de prueba</option>
+					  <option value="${prue[0].ID_Tipo}">${prue[0].Tipo} - ${prue[0].Rama}</option>
                                                     <%
                                                         try{
                                                             String query="select * from Tipo_Pruebas";
@@ -402,7 +402,7 @@
                                                             ResultSet rs=stm.executeQuery(query);
                                                             while(rs.next()){
                                                                 %>
-                                                                <option value="<%=rs.getInt("ID_Tipo")%>"><%=rs.getString("Tipo")%>-<%=rs.getString("Rama")%></option>
+                                                                <option value="<%=rs.getInt("ID_Tipo")%>"><%=rs.getString("Tipo")%> - <%=rs.getString("Rama")%></option>
                                                                 <%
                                                             }
                                                             
@@ -416,7 +416,7 @@
                         </div>
                         <div >
                             <select name="Act_Prueba" id="selectsport" class="custom-select" style="width: 380px;" autocomplete="off" required/>
-					  <option value="">Deporte al que pertenece</option>
+					  <option value="${prue[0].ID_Deporte}">${prue[0].Disciplina}</option>
                                                     <%
                                                         try{
                                                             String query="select * from Act_Deportiva";

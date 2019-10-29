@@ -735,36 +735,34 @@ Funciones: Será la vista gerenal para los alumnos
             <header>
                 <div id="logoi">
                     <img src="resources/img/ridescom.jpg" width="500">
-                    ${mjs}
                 </div>
                 <div class="clearfix">	
                 </div>
             </header>
+            <c:forEach var="al" items="${alu}">
             <!-- Menú -->
             <nav id="bar">
                 <ul>
                     <li><a href="#" style='text-decoration:none; color: #fff'><span class="primero"><i class="fas fa-user"></i></span> Perfil </a>
                         <ul id="Usuario">
                             <li><a href="#"style='text-decoration:none;'> ${Nombre_U} </a></li>
-                            <li><a href="#"style='text-decoration:none;'> ${p.Correo} </a></li>
-                            <li><a href="#"style='text-decoration:none;'> ${p.Nombre} ${p.Ap_pat} </a></li>
+                            <li><a href="#"style='text-decoration:none;'> ${al.Correo} </a></li>
+                            <li><a href="#"style='text-decoration:none;'> ${al.Nombre} ${al.Ap_pat} </a></li>
                             <li><a href="#Contacto"style='text-decoration:none;'><span class="sexto"></span> Contacto </a></li>
                             <li><a href="Logout.html" style='text-decoration:none;'>Salir</a></li>
                             
                         </ul>
                     </li>
-                    <li><a href="#" style='text-decoration:none; color: #fff'><span class="segundo"><i class="fas fa-users"></i></span> Entrenadores </a></li>
-                    <li><a href="#"><span class="tercero" style='text-decoration:none; color: #fff'><i class="fas fa-share-alt"></i></span> Difundir Evento </a></li>
-                    <li><a href="#"><span class="cuarto" style='text-decoration:none; color: #fff'><i class="fas fa-users"></i></span> Consulta Inscritos </a></li>
-                    <li><a href="#"><span class="quinto" style='text-decoration:none; color: #fff'><i class="fas fa-book-open"></i></span> Cédulas de Inscripción </a></li>
-                    <li><a href="#" style='text-decoration:none; color: #fff'><span class="sexto"><i class="fas fa-poll"></i></span> Resultados </a></li>
+                    <li><a href="Alumno/Inscribirse.html" style='text-decoration:none; color: #fff'><span class="segundo"><i class="fas fa-users"></i></span> Inscribir interpolitecnico </a></li>
+                    <li><a href="Alumno/Inscripciones.html"><span class="tercero" style='text-decoration:none; color: #fff'><i class="fas fa-share-alt"></i></span> Consulta inscripciones </a></li>
+                    <li><a href="Alumno/Resultados.html" style='text-decoration:none; color: #fff'><span class="sexto"><i class="fas fa-poll"></i></span> Resultados </a></li>
                     
                 </ul>
             </nav>
-
+            </c:forEach>
 
             <div class="container text-center">
-                <h1>Eventos Interpolitécnicos Deportivos</h1>
+                <h1>Eventos Interpolitécnicos Deportivos Disponibles</h1>
             </div>
 
             <section class="timeline">
@@ -784,6 +782,9 @@ Funciones: Será la vista gerenal para los alumnos
                                 <div class="date">${dato.FE}</div>
                                 <blockquote><u>Lugar del Evento</u>: ${dato.Nombre_S}</blockquote>
                                 <blockquote><u>Período de inscripciones</u>: ${dato.FIR} / ${dato.FFR}</blockquote>
+                                <blockquote><u>Deporte del evento</u>: ${dato.Disciplina}
+                                    <p></p>
+                                <u>Prueba</u>: ${dato.Prueba} - ${dato.Rama}</blockquote>
                                 <blockquote><u>Descripción: </u><div class="clearfix">&nbsp;</div>
                                     ${dato.Descripcion}</blockquote>
                             </div>

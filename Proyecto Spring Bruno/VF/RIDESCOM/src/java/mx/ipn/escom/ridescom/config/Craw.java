@@ -27,14 +27,52 @@ import org.jsoup.select.Elements;
 //import crawler.webcrawler;
 
 public class Craw {
+//    String usuario;
+//    String pass;
+//    String vrfcd;
+//
+//    public Craw() {
+//    }
+//
+//    public Craw(String usuario, String pass, String vrfcd) {
+//        this.usuario = usuario;
+//        this.pass = pass;
+//        this.vrfcd = vrfcd;
+//    }
+//
+//    public String getUsuario() {
+//        return usuario;
+//    }
+//
+//    public void setUsuario(String usuario) {
+//        this.usuario = usuario;
+//    }
+//
+//    public String getPass() {
+//        return pass;
+//    }
+//
+//    public void setPass(String pass) {
+//        this.pass = pass;
+//    }
+//
+//    public String getVrfcd() {
+//        return vrfcd;
+//    }
+//
+//    public void setVrfcd(String vrfcd) {
+//        this.vrfcd = vrfcd;
+//    }
+    
     public Map<String, String> cookies;
 
 	private static String saes = "https://www.saes.escom.ipn.mx/";
 	private static String logi = "https://www.saes.escom.ipn.mx/Default.aspx";
 	public static String user = "https://www.saes.escom.ipn.mx/Alumnos/default.aspx";
-
+        
+        
 	//Mapea los campos que se solicitan, USUARIO, CONTRASEÑA y CAPTCHA, ademas de descargar el captcha.
-	public HashMap<String,String> downloadCaptcha()throws Exception {
+	public Document downloadCaptcha()throws Exception {
 	    
 		Connection con = (Jsoup.connect(logi));
 		con.method(Connection.Method.GET).timeout(30000).execute();
@@ -46,16 +84,21 @@ public class Craw {
 
    	Element img = doc.getElementById("c_default_ctl00_leftcolumn_loginuser_logincaptcha_CaptchaImage");  	 
   	 String a = img.absUrl("src");
-   	
-   	//Extraer script html del captcha
-   	Elements sc = doc.select("div[id=c_default_ctl00_leftcolumn_loginuser_logincaptcha_CaptchaImageDiv]");
-   	String as = sc.outerHtml();
 
-	    Elements fields = doc.select("input");
-	    HashMap<String,String> formFields = new HashMap<String, String>();
-	    for (Element field : fields ){
-	        formFields.put(field.attr("name"), field.attr("value"));
-	    }
+//	    Elements fields = doc.select("input");
+//	    HashMap<String,String> formFields = new HashMap<String, String>();
+//	    for (Element field : fields ){
+//	        formFields.put(field.attr("name"), field.attr("value"));
+//	    }
+////            String regno = usuario;
+////	    String passwd = pass; 
+////	    String vrfcd = capt;
+//
+//            Scanner s=new Scanner(System.in);
+//	    vrfcd = s.nextLine();
+//	    formFields.put("ctl00$leftColumn$LoginUser$UserName", usuario);
+//	    formFields.put("ctl00$leftColumn$LoginUser$Password", pass);
+//	    formFields.put("ctl00$leftColumn$LoginUser$CaptchaCodeTextBox", vrfcd);
 
    //Descarga la imagen obtenida de la URL del CAPTCHA.
    	Connection.Response resultImageResponse = Jsoup.connect(a)
@@ -64,28 +107,44 @@ public class Craw {
 	            .method(Connection.Method.GET).timeout(30000).execute();
 
 	//Crea la imagen del captcha y la guarda.
-	    FileOutputStream out = (new FileOutputStream(new java.io.File("abc.jpg")));
+	    FileOutputStream out = (new FileOutputStream(new java.io.File("../../../Users/spy51/Desktop/Ride/RIDESCOM/web/resources/img/abc.jpg")));
 	    out.write(resultImageResponse.bodyAsBytes());
 	    out.close();
 	    System.out.println("Ingrese datos de usuario BOLETA/PASSWORD/CLAVE_CAPTCHA");
 	    System.out.println(res.contentType());
-	    return formFields;
+	    return doc;
 	}
 	
-	
-
-	//Realiza lectura y envio de datos insertados al login
-	public void getData(String usuario, String pass, String capt) throws Exception{
-            HashMap<String, String> formFields = downloadCaptcha();
-            String regno = usuario;
-	    String passwd = pass; 
+	public HashMap<String, String> parametros(String usuario, String pass, String vrfcd) throws Exception{
+            Elements fields = downloadCaptcha().select("input");
+	    HashMap<String,String> formFields = new HashMap<String, String>();
+	    for (Element field : fields ){
+	        formFields.put(field.attr("name"), field.attr("value"));
+	    }
+//            String regno = usuario;
+//	    String passwd = pass; 
 //	    String vrfcd = capt;
 
-            Scanner s=new Scanner(System.in);
-	    String vrfcd = s.nextLine();
-	    formFields.put("ctl00$leftColumn$LoginUser$UserName", regno);
-	    formFields.put("ctl00$leftColumn$LoginUser$Password", passwd);
+//            Scanner s=new Scanner(System.in);
+//	    vrfcd = s.nextLine();
+	    formFields.put("ctl00$leftColumn$LoginUser$UserName", usuario);
+	    formFields.put("ctl00$leftColumn$LoginUser$Password", pass);
 	    formFields.put("ctl00$leftColumn$LoginUser$CaptchaCodeTextBox", vrfcd);
+            return formFields;
+        }
+
+	//Realiza lectura y envio de datos insertados al login
+	public void getData(String regno, String passwd, String captcha) throws Exception{
+            HashMap<String, String> formFields = parametros(regno, passwd, captcha);
+//            String regno = usuario;
+//	    String passwd = pass; 
+////	    String vrfcd = capt;
+//
+//            Scanner s=new Scanner(System.in);
+//	    String vrfcd = s.nextLine();
+//	    formFields.put("ctl00$leftColumn$LoginUser$UserName", regno);
+//	    formFields.put("ctl00$leftColumn$LoginUser$Password", passwd);
+//	    formFields.put("ctl00$leftColumn$LoginUser$CaptchaCodeTextBox", vrfcd);
 		Connection conn = Jsoup.connect(saes+"/Default.aspx?ReturnUrl=%2falumnos%2fdefault.aspx")
 	            .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36")
 	            .cookies(cookies)
@@ -113,49 +172,21 @@ public class Craw {
 	    
 	    //Aquí se escanea el nombre del alumno que inició sesión
 	    Element n = docn.getElementById("ctl00_mainCopy_FormView1_nombrelabel");
-	    
 	    String nombre = n.text();
+            
+            Element f = docs.select("span#ctl00_mainCopy_Lbl_Mensaje").first();
+	    String fail=f.text();
 
-
-       //Aquí se escanea el comprobante del alumno que inició sesión
-	    Element e = docs.select("table#ctl00_mainCopy_GV_Horario td").first();
-	    String grupo=e.text();
-	    if(grupo.isEmpty()) {
-	    	String noin="LO SENTIMOS NO ESTÁS INSCRITO";
-	    	System.out.println(noin);
+       
+	    if(fail.isEmpty()) {
+	    	//Aqu� se escanea el comprobante del alumno que inici� sesi�n
+		    Element e = docs.select("table#ctl00_mainCopy_GV_Horario td").first();
+		    String grupo=e.text();
+		    System.out.println(nombre+" EST�S INSCRITO EN: " +grupo);
+	    	
 	    }else {
-	    	System.out.println("ERES: " +nombre);
-	        System.out.println("ESTÁS INSCRITO EN: " +e.text());
+		    System.out.println("LO SENTIMOS "+nombre+" NO ESTAS INSCRITO");
 	    }
 	}
-
-	//Corre la lectura de campos para logear
-//	private void run(String user, String pass, String capt) throws Exception, IOException {
-//	    HashMap<String, String> formFields = downloadCaptcha();
-//
-//	    BufferedReader cr = new BufferedReader(new InputStreamReader(System.in));
-//	    BufferedReader dr = new BufferedReader(new InputStreamReader(System.in));
-//	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//
-//	    //Parametros de entrada del Form LOGIN.JSP
-//	    String regno = user;
-//	    String passwd = pass; 
-//	    String vrfcd = capt;
-//
-//	    formFields.put("ctl00$leftColumn$LoginUser$UserName", regno);
-//	    formFields.put("ctl00$leftColumn$LoginUser$Password", passwd);
-//	    formFields.put("ctl00$leftColumn$LoginUser$CaptchaCodeTextBox", vrfcd);
-//
-//	    //System.out.println(formFields);
-//	    getData(formFields);
-//	}
-
-
-
-//	public static void main(String[] args) throws Exception {
-//
-//	    Craw main = new Craw();
-//	    	main.run();
-//	   }
 }
  

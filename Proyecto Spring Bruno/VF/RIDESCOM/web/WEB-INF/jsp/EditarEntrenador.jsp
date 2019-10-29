@@ -6,54 +6,52 @@
 
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<head>
-            <meta http-equiv="Content_Type" content="text/html" charset="ISO-8859-1">
-	<title> Registra un entrenador </title>
-
+	<meta charset="utf-8">
+	<title> Registra un Usuario </title>
 
 	<!--Jquery -->
+
 	<script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="resources/js/jquery-ui/jquery-ui.min.js"></script>
 	<link rel="stylesheet"href="resources/js/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet" " href="resources/js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="resources/js/jquery-ui/jquery-ui.structure.min.css">
 	<link rel="stylesheet"  href="resources/js/jquery-ui/jquery-ui.theme.min.css">
-
-	<!-- Moment js  -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es.js"></script>
 
 	<!-- Mis scripts -->
 	<script type="text/javascript" src="resources/js/main.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.full.min.js"></script>
 
-	<!-- Slider -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-	<!-- Bootstrap  -->	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- JS en bootstrap  -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 	<!-- CSS en bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	
-	<!--Fontawesome CDN-->
+
+	<!-- Moment js  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es.js"></script>
+        
+        <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	</head>
+
+	<!-- referencias para el calendario -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
         
         <style>
             /*****************************************
-            * Autor: Rosales GonzÃ¡lez Carlos AndrÃ©s *
+            * Autor: Rosales González Carlos Andrés *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
 
@@ -104,7 +102,7 @@
            }
 
            /************************
-            * DiseÃ±o para buscador *
+            * Diseño para buscador *
            ************************/
 
            #slidebar {
@@ -237,11 +235,11 @@
                    cursor: pointer;
            }
 
-           ::-webkit-input-value {
+           ::-webkit-input-placeholder {
                    color: #888;  
            }
 
-           input:-moz-value {
+           input:-moz-placeholder {
              color: #888
            }
 
@@ -366,12 +364,12 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Edita la informaciÃ³n de un entrenador </h1>
+			<h1> Edita la información de un entrenador </h1>
 		</div>
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-dark col-4" role="alert">
-			  <p> Edita la informaciÃ³n de un entrenador que labore en la Unidad AcÃ¡demica. </p>
+			  <p> Edita la información de un entrenador que labore en la Unidad Acádemica. </p>
 			  <p> Recuerda verificar todos los datos antes de concluir. </p>
 			</div>
 		</div>
@@ -410,7 +408,7 @@
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> NSS </label>
+				    <label for="validationTooltip02"> NSS (Opcional) </label>
 				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" value="${per[0].NSS}" required>
 				    <div class="valid-tooltip">
 				    	OK
@@ -474,18 +472,18 @@
 			    </div>-->
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Municipio </label>
-				    <select name="municipio" id="mun" class="custom-select" style="width: 300px;" required>
-					  <option value="${per[0].Municipio_ID_Municipio}">${per[0].Municipio}</option>
+				    <select name="municipio" id="mun" class="custom-select" style="width: 350px;" required>
+					  <option value="${per[0].Municipio_ID_Municipio}">${per[0].Municipio} - ${per[0].Estado}</option>
                                                     <%
                                                         try{
-                                                            String query="select * from Municipio order by Municipio ASC";
+                                                            String query="select * from Municipio m, Estados edo where m.Estados_ID_estado=edo.ID_estado order by Municipio ASC";
                                                             Class.forName("com.mysql.jdbc.Driver").newInstance();
                                                             Connect conn = new Connect();
                                                             Statement stm=conn.Connect().createStatement();
                                                             ResultSet rs=stm.executeQuery(query);
                                                             while(rs.next()){
                                                                 %>
-                                                                <option value="<%=rs.getString("ID_Municipio")%>"><%=rs.getString("Municipio")%></option>
+                                                                <option value="<%=rs.getString("ID_Municipio")%>"><%=rs.getString("Municipio")%>-<%=rs.getString("Estado")%></option>
                                                                 <%
                                                             }
                                                             
@@ -501,9 +499,9 @@
 				    	OK
 				    </div>
 			    </div>
-                            <div class="col-md-4 mb-3">
+                        <div class="col-md-4 mb-3">
                             <label for="validationTooltip03"> Fecha de Nacimiento </label>
-                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" value="${per[0].Fecha_Nac}" maxlength="10" required disabled/>
+                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" value="${per[0].Fecha_Nac}" maxlength="10" required/>
                             <script>
                                  var today, datepicker;
                                 today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()-1);
@@ -522,14 +520,21 @@
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> TelÃ©fono de contacto </label>
+				    <label for="validationTooltip02"> Teléfono de contacto </label>
                                     <input type="text" class="num form-control" id="validationTooltip02" name="Tel_fijo" value="${per[0].Telefono}" minlength="10" maxlength="15" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
+                                     <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Extensión (Opcional) </label>
+                                    <input type="text" class="num form-control" id="validationTooltip02" name="Ext" onkeypress="return validarSiNumero()" value="${per[0].Ext}" minlength="10" maxlength="15">
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> TelÃ©fono MÃ³vil (Opcional) </label>
+				    <label for="validationTooltip02"> Teléfono Móvil (Opcional) </label>
                                     <input type="text" class="num form-control" id="validationTooltip02" name="Tel_cel" value="${per[0].Celular}" minlength="10" maxlength="15" required>
 				    <div class="valid-tooltip">
 				    	OK

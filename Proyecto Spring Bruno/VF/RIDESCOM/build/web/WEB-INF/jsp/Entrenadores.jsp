@@ -575,8 +575,7 @@ Funciones: Será la vista gerenal para los alumnos
                     </div>
 			<div class="container">
 				<div class="col-row-8">
-					<!-- The second value will be selected initially -->
-                                        
+                                        ${mjs}
 				</div>
 			</div>
                         <div class="clearfix" >&nbsp;</div>
@@ -611,7 +610,12 @@ Funciones: Será la vista gerenal para los alumnos
                                                             <td>${en.Estado}</td>
                                                             <td>${en.Municipio}</td>-->
                                                             <td>${en.Correo}</td>
-                                                            <td>${en.telefono}</td>
+                                                        <script>
+                                                            var cond;
+                                                            cond=${en.Ext}!==0;
+                                                            $("#exten").toggle(cond);
+                                                        </script>
+                                                            <td>${en.telefono} <a id="exten">Ext. ${en.Ext}</a></td>
                                                             <td>${en.Celular}</td>
 
                                                             <td> 

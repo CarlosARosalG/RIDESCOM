@@ -60,7 +60,8 @@ public class DDyFD {
 "               AND p.Tipo_Sexo_ID_Tipo_Sexo = s.ID_Tipo_Sexo" +
 "               AND c.ID_Contacto = ce.Contacto_ID_Contacto" +
 "		AND c.ID_Contacto = tf.Contacto_ID_Contacto" +
-"               AND c.ID_Contacto = tc.Contacto_ID_Contacto";
+"               AND c.ID_Contacto = tc.Contacto_ID_Contacto"+
+"               AND Nombre_U='"+session.getAttribute("Nombre_U")+"'";
         p=this.rid.queryForList(sqlp);
         if(p!=null)
             mav.addObject("ddyfd",p);

@@ -6,7 +6,7 @@
 
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +50,7 @@
     
     <style>
         /*****************************************
-        * Autor: Rosales Gonz√°lez Carlos Andr√©s *
+        * Autor: Rosales Gonz·lez Carlos AndrÈs *
         * Titulo: Hoja de estilos 				 *
         ****************************************/
 
@@ -105,7 +105,7 @@
        }
 
        /************************
-        * Dise√±o para buscador *
+        * DiseÒo para buscador *
        ************************/
 
        #slidebar {

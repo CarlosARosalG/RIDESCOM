@@ -6,7 +6,7 @@
 
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +50,7 @@
     
     <style>
         /*****************************************
-        * Autor: Rosales Gonz√°lez Carlos Andr√©s *
+        * Autor: Rosales Gonz·lez Carlos AndrÈs *
         * Titulo: Hoja de estilos 				 *
         ****************************************/
 
@@ -105,7 +105,7 @@
        }
 
        /************************
-        * Dise√±o para buscador *
+        * DiseÒo para buscador *
        ************************/
 
        #slidebar {
@@ -368,12 +368,12 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Confirma la eliminaci√≥n de un evento interpolit√©cnico deportivo </h1>
+			<h1> Confirma la eliminaciÛn de un evento interpolitÈcnico deportivo </h1>
 		</div>
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-warning col-4" role="alert">
-			  <p> Aqu√≠ podr√°s eliminar un nuevo evento interpolit√©cnico deportivo. </p>
+			  <p> AquÌ podr·s eliminar un nuevo evento interpolitÈcnico deportivo. </p>
 			  <p> Recuerda verificar todos los datos antes de concluir. </p>
 			</div>
 		</div>
@@ -394,7 +394,7 @@
                             <label for="validationTooltip03"> Fecha del Evento </label>
                             <input name="FE" type="text" class="form-control" id="datepicker" placeholder="${eve[0].Fecha_Evento}" disabled>
                             <div class="invalid-feedback">
-                                Ingresa una fecha v√°lida
+                                Ingresa una fecha v·lida
                             </div>
                         </div>
                         <div class="col-md-2 mb-3">
@@ -436,7 +436,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip04"> Lugar donde se realizar√° el evento </label>
+                            <label for="validationTooltip04"> Lugar donde se realizar· el evento </label>
                             <input name="Lugar" type="text" class="form-control" id="validationTooltip04" placeholder="${eve[0].Nombre_S}" maxlength="200" disabled/>
                             <div class="invalid-feedback">
                                 Ingresa un usuario
@@ -479,7 +479,8 @@
                         <textarea name="Desc" class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="${eve[0].Descripcion}" maxlength="200"></textarea>
                         
                     </div>
-                        <a href="ConfirmaBorrarEvento.html?EventoID=${eve[0].Evento_ID}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
+<!--                        <a href="ConfirmaBorrarEvento.html?EventoID=${eve[0].Evento_ID}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>-->
+                        <button type="submit" class="btn  btn-outline-success "> Eliminar </button>
 <!--                    <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Registrar </button>-->
                     <a href="../DDyFD.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
                 </form>
@@ -514,7 +515,7 @@ ta.val(ta.val().substring(0,max-1));
 contador.html(max+"/"+max);
 }
  
-}‚Äã
+}?
 </script>
 
 <script>

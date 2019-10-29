@@ -592,14 +592,14 @@
 					  <option value="">Tipo de prueba</option>
                                                     <%
                                                         try{
-                                                            String query="select * from Tipo_Pruebas";
+                                                            String query="select * from Tipo_Pruebas where Rama='Varonil'";
                                                             Class.forName("com.mysql.jdbc.Driver").newInstance();
                                                             Connect conn = new Connect();
                                                             Statement stm=conn.Connect().createStatement();
                                                             ResultSet rs=stm.executeQuery(query);
                                                             while(rs.next()){
                                                                 %>
-                                                                <option value="<%=rs.getInt("ID_Tipo")%>"><%=rs.getString("Tipo")%>-<%=rs.getString("Rama")%></option>
+                                                                <option value="<%=rs.getInt("ID_Tipo")%>"><%=rs.getString("Tipo")%></option>
                                                                 <%
                                                             }
                                                             
@@ -615,7 +615,7 @@
                         <div class="clearfix" > &nbsp;</div>
                         
 			<div class="container">
-                            ${msjs} 
+                            ${mjs} 
 				<div class="table-responsive">
 					<table class="table table-hover">
 						<thead>

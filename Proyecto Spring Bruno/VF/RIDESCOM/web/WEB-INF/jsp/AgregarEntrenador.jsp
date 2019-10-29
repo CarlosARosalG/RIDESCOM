@@ -6,7 +6,7 @@
 
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +51,7 @@
         
         <style>
             /*****************************************
-            * Autor: Rosales Gonz√°lez Carlos Andr√©s *
+            * Autor: Rosales Gonz·lez Carlos AndrÈs *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
 
@@ -102,7 +102,7 @@
            }
 
            /************************
-            * Dise√±o para buscador *
+            * DiseÒo para buscador *
            ************************/
 
            #slidebar {
@@ -369,7 +369,7 @@
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-dark col-4" role="alert">
-			  <p> Registra a un entrenador que labore en la Unidad Ac√°demica. </p>
+			  <p> Registra a un entrenador que labore en la Unidad Ac·demica. </p>
 			  <p> Recuerda verificar todos los datos antes de concluir. </p>
 			</div>
 		</div>
@@ -407,7 +407,7 @@
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> NSS </label>
+				    <label for="validationTooltip02"> NSS (Opcional) </label>
 				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" placeholder="NSS" required>
 				    <div class="valid-tooltip">
 				    	OK
@@ -428,35 +428,6 @@
                                                             while(rs.next()){
                                                                 %>
                                                                 <option value="<%=rs.getInt("ID_Tipo_Sexo")%>"><%=rs.getString("Sexo")%></option>
-                                                                <%
-                                                            }
-                                                            
-                                                        }catch(Exception ex)
-                                                        {
-                                                            ex.printStackTrace();
-                                                            out.println("Error: "+ex.getMessage());
-                                                        }
-                                                    %>
-                                                </select>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
-			    </div>
-                            <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Estado </label>
-<!--				    <input type="text" class="form-control" id="validationTooltip02" name="Estado" placeholder="Estado" required>-->
-                                    <select name="estado" id="edo" class="custom-select" style="width: 300px;" required>
-					  <option value="">Seleccione Estado</option>
-                                                    <%
-                                                        try{
-                                                            String query="SELECT DISTINCT municipio.Estados_ID_estado, estados.Estado FROM municipio LEFT JOIN estados ON (municipio.Estados_ID_estado = estados.ID_estado)";
-                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
-                                                            Connect conn = new Connect();
-                                                            Statement stm=conn.Connect().createStatement();
-                                                            ResultSet rs=stm.executeQuery(query);
-                                                            while(rs.next()){
-                                                                %>
-                                                                <option value="<%=rs.getInt("Estados_ID_estado")%>"><%=rs.getString("Estado")%></option>
                                                                 <%
                                                             }
                                                             
@@ -502,7 +473,7 @@
 			    </div>
                             <div class="col-md-4 mb-3">
                             <label for="validationTooltip03"> Fecha de Nacimiento </label>
-                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" placeholder="YYYY-MM-DD" maxlength="10" required disabled/>
+                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" placeholder="YYYY-MM-DD" maxlength="10" required/>
                             <script>
                                  var today, datepicker;
                                 today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()-1);
@@ -521,14 +492,21 @@
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Tel√©fono de contacto </label>
+				    <label for="validationTooltip02"> TelÈfono de contacto </label>
                                     <input type="text" class="num form-control" id="validationTooltip02" name="Tel_fijo" placeholder="Telefono fijo" maxlength="10" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Tel√©fono M√≥vil (Opcional) </label>
+				    <label for="validationTooltip02"> ExtensiÛn (Opcional) </label>
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Ext" placeholder="Extension de Telefono fijo" minlength="10" maxlength="15">
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> TelÈfono MÛvil (Opcional) </label>
                                     <input type="text" class="num form-control" id="validationTooltip02" name="Tel_cel" placeholder="Telefono movil" maxlength="10" required>
 				    <div class="valid-tooltip">
 				    	OK

@@ -6,12 +6,12 @@
 
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title> Editar informaci√≥n de un deporte </title>
+	<title> Editar informaciÛn de un deporte </title>
 
 	<!--Jquery -->
 
@@ -50,7 +50,7 @@
     
     <style>
         /*****************************************
-        * Autor: Rosales Gonz√°lez Carlos Andr√©s *
+        * Autor: Rosales Gonz·lez Carlos AndrÈs *
         * Titulo: Hoja de estilos 				 *
         ****************************************/
 
@@ -105,7 +105,7 @@
        }
 
        /************************
-        * Dise√±o para buscador *
+        * DiseÒo para buscador *
        ************************/
 
        #slidebar {
@@ -368,12 +368,12 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Editar informaci√≥n acerca de un deporte </h1>
+			<h1> Editar informaciÛn acerca de un deporte </h1>
 		</div>
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-warning col-4" role="alert">
-			  <p> Aqu√≠ podr√°s editar informaci√≥n de una disciplina deportiva. </p>
+			  <p> AquÌ podr·s editar informaciÛn de una disciplina deportiva. </p>
 			  <p> Recuerda verificar todos los datos antes de concluir. </p>
 			</div>
 		</div>

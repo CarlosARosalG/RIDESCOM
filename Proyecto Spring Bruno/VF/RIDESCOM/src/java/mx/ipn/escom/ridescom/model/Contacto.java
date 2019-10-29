@@ -19,11 +19,12 @@ public class Contacto {
     public Contacto() {
     }
 
-    public Contacto(int ID_Contacto, String Correo, String Tel_fijo, String Tel_cel) {
+    public Contacto(int ID_Contacto, String Correo, String Tel_fijo, String Tel_cel, String Ext) {
         this.ID_Contacto = ID_Contacto;
         this.Correo = Correo;
         this.Tel_fijo = Tel_fijo;
         this.Tel_cel = Tel_cel;
+        this.Ext = Ext;
     }
 
     public int getID_Contacto() {
@@ -56,6 +57,14 @@ public class Contacto {
 
     public void setTel_cel(String Tel_cel) {
         this.Tel_cel = Tel_cel;
+    }
+
+    public String getExt() {
+        return Ext;
+    }
+
+    public void setExt(String Ext) {
+        this.Ext = Ext;
     }
     
     

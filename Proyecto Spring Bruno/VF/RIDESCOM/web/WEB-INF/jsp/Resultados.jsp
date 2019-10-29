@@ -575,18 +575,22 @@ Funciones: Será la vista gerenal para los alumnos
                             <i class="far fa-plus-square fa-2x"></i> 
                         </a> 
                     </div>
-                <div class="flexsearch">
-                    <div class="flexsearch--wrapper">
-                            <div class="flexsearch--input-wrapper">
-                                <input class="flexsearch--input" type="search" placeholder="Buscar Boleta">
+                <div class="col-row-8">
+                    <div class="flexsearch">
+                            <div class="flexsearch--wrapper">
+                                <form class="flexsearch--form" id="searchTerm" placeholder="Buscar" type="text" onkeyup="doSearch()" />
+                                    <div class="flexsearch--input-wrapper">
+                                        <input type="text" id="search" placeholder="Buscar..." title="Busqueda Rapida" class="form-control">
+                                    </div>
+                                </form>    
                             </div>
-                            <input class="flexsearch--submit" type="submit" value="&#10140;"/>
                     </div>
                 </div>
             </div>
 
             <div class="table-responsive">
-                <table class="table table-hover">
+                ${mjs}
+                <table class="table table-hover" id="datos">
                     <thead>
                         <tr>
                             <th scope="col"> Boleta </th>
@@ -630,4 +634,16 @@ Funciones: Será la vista gerenal para los alumnos
 
     <div class="clearfix" >&nbsp;</div>
 </body>
+<script>
+var $rows = $('#datos tr');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+
+</script>
 </html>

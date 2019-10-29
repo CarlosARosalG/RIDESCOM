@@ -46,16 +46,27 @@ public class ResultadosAL {
     public ModelAndView log(HttpServletRequest req){
         HttpSession session = req.getSession();
         if(session.getAttribute("Nombre_U")!= null){
-            if(us.getRol()==1){
-                mav.setViewName("DDyFD");
-            }else if(us.getRol()==2){
-                mav.setViewName("CoordUA");
-            }else if(us.getRol()==3){
-                mav.setViewName("ResultadosAlumno");
-            }
-        }else{
-            mav.setViewName("Login");
+                mav.setViewName("Inscribirse");
+        }else {
+        mav.setViewName("LoginAlumno");
         }
+        String sql="select i.Alumno_ID_Alumno, p.Nombre, e.Escuela, ad.Disciplina, pr.Prueba, r.Lugar_Obtenido, r.Marca, ev.Nombre_Evento \n" +
+"	FROM Resultados r\n" +
+"    inner join (Inscripcion i, Escuela e, Evento ev, Pruebas pr, Act_Deportiva ad, Persona p, Alumno a )\n" +
+"    on (p.ID_Persona=a.Persona_ID_Persona\n" +
+"       and pr.Act_Deportiva_ID_Deporte=ad.ID_Deporte\n" +
+"       and pr.ID_Pruebas=ev.Pruebas_ID_Pruebas\n" +
+"       and a.ID_Alumno=i.Alumno_ID_Alumno\n" +
+"       and ev.Evento_ID=i.Evento_Evento_ID\n" +
+"       and e.ID_Escuela=i.Escuela_ID_Escuela\n" +
+"       and r.Inscripcion_Alumno_ID_Alumno=i.Alumno_ID_Alumno\n" +
+"       and r.Inscripcion_Evento_Evento_ID=i.Evento_Evento_ID)"
+                + "where a.ID_Alumno="+session.getAttribute("Nombre_U");
+            
+            dat=this.rid.queryForList(sql);
+            if(dat!=null)
+            mav.addObject("res",dat);
+        mav.setViewName("ResultadosAlumno");
         return mav;
     }
 }

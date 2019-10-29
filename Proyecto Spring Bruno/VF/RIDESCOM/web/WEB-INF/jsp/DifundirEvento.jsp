@@ -3,8 +3,8 @@
     Created on : 27/05/2019, 03:56:50 PM
     Author     : Carlos A. Rosales
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +50,7 @@
         
         <style>
             /*****************************************
-            * Autor: Rosales Gonz√°lez Carlos Andr√©s *
+            * Autor: Rosales Gonz·lez Carlos AndrÈs *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
 
@@ -101,7 +101,7 @@
             }
 
             /************************
-            * Dise√±o para buscador *
+            * DiseÒo para buscador *
             ************************/
 
             #slidebar {
@@ -365,7 +365,7 @@
     <div id="fb-root"></div>
 <section id="global">
 	<div id="titulo">
-            <h1> Difundir evento interpolit√©cnico deportivo </h1>
+            <h1> Difundir evento interpolitÈcnico deportivo </h1>
         </div>
         <h2 id="titulo">Consulta los eventos para publicar</h2>
         <div class="container">
@@ -386,30 +386,29 @@
                             <th scope="col"> Deporte </th>
                             <th scope="col"> Fecha del evento </th>
                             <th scope="col"> Lugar del evento </th>
-                            <th scope="col"> Descripci√≥n </th>
+                            <th scope="col"> Ciclo </th>
                             <th></th>
-                            <th></th>
+                            <!--<th></th>-->
                         </tr>
                     </thead>
                     <tbody>
+                    <c:forEach var="e" items="${even}">
                         <tr>
-                            <td>Fila 1 Columna 1</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>Fila 1 Columna 2</td>
-                            <td>
-                                <div>
-                                    <button type="button" class="btn btn-outline-info"> RIDESCOM </button>
-                                </div>
-                            </td>
-                            <td>
+                                                            <td>${e.Nombre_Evento}</td>
+                                                            <td>${e.Disciplina}</td>
+                                                            <td>${e.FE}</td>
+                                                            <td>${e.Nombre_S}</td>
+                                                            <td>${e.Ciclo_Escolar}</td>
+<!--                                                            <td>${e.Prueba} </td>
+                                                            <td>${e.Lugar_Obtenido}</td>
+                                                            <td>${e.Marca}</td>-->
+                                                            <td>
                                 <div class="fb-login-button" data-width="" data-size="medium" data-button-type="continue_with" 
                                      data-auto-logout-link="false" data-use-continue-as="false">
                                 </div>
                             </td>
-                        </tr>
-                        
+                                                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
                 <a href="../Coordinador.html" class="btn btn-light float-right login_btn"> Volver </a>

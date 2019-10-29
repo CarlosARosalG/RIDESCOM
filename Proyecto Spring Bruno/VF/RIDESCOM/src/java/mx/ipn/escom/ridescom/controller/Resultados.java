@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import mx.ipn.escom.ridescom.config.Conexion;
 import mx.ipn.escom.ridescom.config.Connect;
+import mx.ipn.escom.ridescom.model.Resultado;
 import mx.ipn.escom.ridescom.model.Boleta;
 
 import mx.ipn.escom.ridescom.model.Contacto;
@@ -33,7 +34,9 @@ public class Resultados {
     Connect cn=new Connect();
     Connection ct;
     PreparedStatement ps;
+    PreparedStatement ps1;
     ResultSet rs;
+    ResultSet rs1;
     
     ModelAndView mav=new ModelAndView();
     JdbcTemplate rid=new JdbcTemplate(con.ConectaRID());
@@ -46,6 +49,7 @@ public class Resultados {
     List dat2;
     List es;
     List ust;
+    List dr;
     String p;
     String a;
     String co;
@@ -90,10 +94,10 @@ public class Resultados {
                 "  and e.Pruebas_ID_Pruebas=pr.ID_Pruebas " +
                 "  and i.Alumno_ID_Alumno=a.ID_Alumno " +
                 "  and i.Evento_Evento_ID=e.Evento_ID "
-                + "and a.ID_Alumno='"+AlumnoID+"'";
+                + "and i.Alumno_ID_Alumno='"+AlumnoID+"'";
         
         dat= this.rid.queryForList(s);
-        String pr="SELECT pr.Prueba, d.Disciplina " +
+        String pr="SELECT i.Evento_Evento_ID, e.Pruebas_ID_Pruebas, pr.Prueba, d.Disciplina " +
 "                from persona p, Alumno a, escuela_has_prog_academico ep, escuela es, prog_academico prog, Inscripcion i, Evento e, Pruebas pr, Act_Deportiva d " +
 "                where p.ID_Persona=a.Persona_ID_Persona " +
 "                  and es.ID_Escuela=ep.Escuela_ID_Escuela " +
@@ -104,12 +108,12 @@ public class Resultados {
 "                  and e.Pruebas_ID_Pruebas=pr.ID_Pruebas " +
 "                  and i.Alumno_ID_Alumno=a.ID_Alumno " +
 "                  and i.Evento_Evento_ID=e.Evento_ID " +
-"                and a.ID_Alumno='"+AlumnoID+"'";
+"                and i.Alumno_ID_Alumno='"+AlumnoID+"'";
 //        String sql="select ID_Alumno from Alumno where ID_Alumno="+AlumnoID;
 //        String bol=dat.toString();
 //        mav.addObject("bole",bol.substring(12, 22));
         dat2=this.rid.queryForList(pr);
-        String sa="select i.Alumno_ID_Alumno, p.ID_Persona, p.Nombre, e.Escuela, ad.Disciplina, pr.Prueba, r.Lugar_Obtenido, r.Marca, ev.Nombre_Evento \n" +
+        String sa="select i.Alumno_ID_Alumno, p.ID_Persona, p.Nombre, e.Escuela, ad.Disciplina, ev.Pruebas_ID_Pruebas, pr.Prueba, r.Lugar_Obtenido, r.Marca, ev.Nombre_Evento \n" +
 "	FROM Resultados r\n" +
 "    inner join (Inscripcion i, Escuela e, Evento ev, Pruebas pr, Act_Deportiva ad, Persona p, Alumno a )\n" +
 "    on (p.ID_Persona=a.Persona_ID_Persona\n" +
@@ -129,12 +133,6 @@ public class Resultados {
         return mav;
     }
     
-    @RequestMapping(value="Alumno/Resultados.html", method=RequestMethod.GET)
-    public ModelAndView resulA(){   
-        mav.setViewName("ResultadosAlumno");
-        return mav;
-    }
-    
     ////////////////////////////////// Operadores CRUD //////////////////////////////////////////////////////
     //Scripts para Agregar Deportes
     @RequestMapping(value="Coordinador/Resultados/AgregarResultado.html", method=RequestMethod.GET)
@@ -145,7 +143,7 @@ public class Resultados {
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
         mav.setViewName("Error");
         }else{
-            String sa="select i.Alumno_ID_Alumno, p.ID_Persona, p.Nombre, e.Escuela, ad.Disciplina, pr.Prueba, r.Lugar_Obtenido, r.Marca, ev.Nombre_Evento \n" +
+            String sa="select i.Alumno_ID_Alumno, p.ID_Persona, p.Nombre, e.Escuela, ad.Disciplina, ev.Pruebas_ID_Pruebas, pr.Prueba, r.Lugar_Obtenido, r.Marca, ev.Nombre_Evento \n" +
 "	FROM Resultados r\n" +
 "    inner join (Inscripcion i, Escuela e, Evento ev, Pruebas pr, Act_Deportiva ad, Persona p, Alumno a )\n" +
 "    on (p.ID_Persona=a.Persona_ID_Persona\n" +
@@ -163,22 +161,36 @@ public class Resultados {
         }
         return mav;
     }
-    @RequestMapping(value="Coordinador/Resultados/AgregarUsuario.html", method=RequestMethod.POST)
-    public ModelAndView Agrega(Usuario u, Persona p, Eventos ev, Contacto c )throws Exception{
+    @RequestMapping(value="Coordinador/Resultados/AgregarResultado.html", method=RequestMethod.POST)
+    public ModelAndView Agrega( Resultado re)throws Exception{
+            String che="select DISTINCT Inscripcion_Alumno_ID_Alumno, Inscripcion_Evento_Evento_ID from Resultados where Inscripcion_Alumno_ID_Alumno="+re.getBoleta()+" and Inscripcion_Evento_Evento_ID="+re.getEv_ID();
+//            String che1="select DISTINCT Inscripcion_Evento_Evento_ID from Resultados where Inscripcion_Alumno_ID_Alumno="+re.getBoleta()+" and Inscripcion_Evento_Evento_ID="+re.getEv_ID();
+        try{
+            ct=cn.Connect();
+            ps=ct.prepareStatement(che);
+            rs=ps.executeQuery();
+            if(rs!=null && rs1!=null){
+                while(rs.next() && rs1.next()){
+                co =rs.getString("Inscripcion_Alumno_ID_Alumno");
+                a=rs.getString("Inscripcion_Evento_Evento_ID");
+                }
+            }
+        }catch(Exception e){
+        }
+        if(a==null && co==null){
+            String sql="insert into Resultados (Lugar_Obtenido, Marca, Inscripcion_Alumno_ID_Alumno, Inscripcion_Evento_Evento_ID) values (?,?,?,?)";
+            this.rid.update(sql,re.getPosicion(), re.getMarca(), re.getBoleta(), re.getEv_ID());
             
-            String sql="insert into Persona (Nombre, Ap_Pat, Ap_Mat, Tipo_Sexo_ID_Tipo_Sexo, CURP, Fecha_Nac, NSS, Municipio_ID_Municipio, Municipio_Estados_ID_estado) values (?,?,?,?,?,?,?,?, (select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+"))";
-            this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
-            String sqlu="insert into Usuario (Nombre_U, Password_U, Activo, Fecha_inicio, Roles_ID_Roles, Persona_ID_Persona) values (?,?,1,left(now(),10),2,(select MAX(ID_Persona)from Persona))";
-            this.rid.update(sqlu, u.getNombre_U(), u.getPassword_U());
-            String sql1="insert into Contacto (Persona_ID_Persona) values ((select MAX(ID_Persona)from Persona))";
-            this.rid.update(sql1);
-            String sqltf="insert into Telefono_fijo (Telefono, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
-            this.rid.update(sqltf, c.getTel_fijo());
-            String sqltc="insert into Telefono_Celular (Celular, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
-            this.rid.update(sqltc, c.getTel_cel());
-            String sqlc="insert into Email (Correo, Contacto_ID_Contacto) values (?,(select MAX(ID_Contacto)from Contacto))";
-            this.rid.update(sqlc, c.getCorreo());
-            return new ModelAndView ("redirect:../Coordinador/Resultados/Resultadoiguiente.html");
+//            return new ModelAndView ("redirect:../Coordinador/Resultados.html");
+            mav.setViewName("redirect:../Coordinador/Resultados.html");
+            mav.addObject("mjs", "<div style='color: green;'>Los resultados se registraron correctamente.</div>");
+            return mav;
+        }else{
+             //            return new ModelAndView ("redirect:../Coordinador/Resultados.html");ModelAndView mv=new ModelAndView("/AgregarResultado.html");
+            mav.setViewName("redirect:../Coordinador/Resultados.html");
+            mav.addObject("mjs", "<div style='color: red;'>Esta información ya esta registrada.</div>");
+        return mav;  
+        }
     }
     @RequestMapping(value="Coordinador/Resultados/Resultadosiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
@@ -242,29 +254,31 @@ String sa="select i.Alumno_ID_Alumno,p.ID_Persona, p.Nombre, e.Escuela, ad.Disci
     }
     @RequestMapping(value="Coordinador/Resultados/EditarResultado.html", method=RequestMethod.POST)
     public ModelAndView Editar(Usuario u, Persona p, Contacto c, Eventos ev){
-        String sqlu="update Usuario set Nombre_U=?, Password_U=? where Persona_ID_Persona="+ResulID;
-        this.rid.update(sqlu, u.getNombre_U(), u.getPassword_U());
-        String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+") where ID_Persona="+ResulID;
-        this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
         
-        String sqlcon="select ID_contacto from Contacto where Persona_ID_Persona="+a;
-        try{
-            ct=cn.Connect();
-            ps=ct.prepareStatement(sqlcon);
-            rs=ps.executeQuery();
-            if(rs!=null){
-                while(rs.next())
-                co =rs.getString("ID_Contacto");
-                
-            }
-        }catch(Exception e){
-        }
-        String sqltf="update Telefono_fijo set Telefono=? where Contacto_ID_Contacto="+co;
-            this.rid.update(sqltf, c.getTel_fijo());
-            String sqltc="update Telefono_Celular set Celular=? where Contacto_ID_Contacto="+co;
-            this.rid.update(sqltc, c.getTel_cel());
-            String sqlc="update Email set Correo=? where Contacto_ID_Contacto="+co;
-            this.rid.update(sqlc, c.getCorreo());
+        String sr="update Resultados set Lugar_Obtenido=?, Marca=? where =";
+//        String sqlu="update Usuario set Nombre_U=?, Password_U=? where Persona_ID_Persona="+ResulID;
+//        this.rid.update(sqlu, u.getNombre_U(), u.getPassword_U());
+//        String sql="update Persona set Nombre=?, Ap_Pat=?, Ap_Mat=?, Tipo_Sexo_ID_Tipo_Sexo=?, CURP=?, Fecha_Nac=?, NSS=?, Municipio_ID_Municipio=?, Municipio_Estados_ID_estado=(select DISTINCT Estados_ID_estado from Municipio where ID_Municipio="+p.getMunicipio()+") where ID_Persona="+ResulID;
+//        this.rid.update(sql, p.getNombre(), p.getAppat(), p.getApmat(), p.getSexo(), p.getCURP(), p.getNacimiento(), p.getNSS(), p.getMunicipio());
+//        
+//        String sqlcon="select ID_contacto from Contacto where Persona_ID_Persona="+ResulID;
+//        try{
+//            ct=cn.Connect();
+//            ps=ct.prepareStatement(sqlcon);
+//            rs=ps.executeQuery();
+//            if(rs!=null){
+//                while(rs.next())
+//                co =rs.getString("ID_Contacto");
+//                
+//            }
+//        }catch(Exception e){
+//        }
+//        String sqltf="update Telefono_fijo set Telefono=? where Contacto_ID_Contacto="+co;
+//            this.rid.update(sqltf, c.getTel_fijo());
+//            String sqltc="update Telefono_Celular set Celular=? where Contacto_ID_Contacto="+co;
+//            this.rid.update(sqltc, c.getTel_cel());
+//            String sqlc="update Email set Correo=? where Contacto_ID_Contacto="+co;
+//            this.rid.update(sqlc, c.getCorreo());
 
         ModelAndView mv=new ModelAndView ("redirect:../Resultados.html");
 //        mv.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");

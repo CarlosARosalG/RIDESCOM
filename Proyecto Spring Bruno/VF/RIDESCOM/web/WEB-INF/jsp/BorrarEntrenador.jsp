@@ -6,7 +6,7 @@
 
 <%@page import="java.sql.*"%>
 <%@page import="mx.ipn.escom.ridescom.config.Connect"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +53,7 @@
         
         <style>
             /*****************************************
-            * Autor: Rosales Gonz√°lez Carlos Andr√©s *
+            * Autor: Rosales Gonz·lez Carlos AndrÈs *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
 
@@ -104,7 +104,7 @@
            }
 
            /************************
-            * Dise√±o para buscador *
+            * DiseÒo para buscador *
            ************************/
 
            #slidebar {
@@ -371,7 +371,7 @@
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-dark col-4" role="alert">
-			  <p> Elimina a un entrenador que labore en la Unidad Ac√°demica. </p>
+			  <p> Elimina a un entrenador que labore en la Unidad Ac·demica. </p>
 			  <p> Recuerda verificar todos los datos antes de concluir. </p>
 			</div>
 		</div>
@@ -453,14 +453,21 @@
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Tel√©fono de contacto </label>
+				    <label for="validationTooltip02"> TelÈfono de contacto </label>
                                     <input type="text" class="form-control" id="validationTooltip02" name="Tel_fijo" value="${per[0].Telefono}" disabled/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Tel√©fono M√≥vil (Opcional) </label>
+				    <label for="validationTooltip02"> ExtensiÛn (Opcional) </label>
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Ext" value="${per[0].Ext}" minlength="10" maxlength="15" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> TelÈfono MÛvil (Opcional) </label>
                                     <input type="text" class="form-control" id="validationTooltip02" name="Tel_cel" value="${per[0].Celular}" disabled/>
 				    <div class="valid-tooltip">
 				    	OK
@@ -475,7 +482,8 @@
 					<input type="text" class="form-control" id="validationTooltip02" name="Tel_cel" value="${per[0].Disciplina}" disabled/>
 				</div>
 		  	</div>
-                        <a href="ConfirmaBorrarEntrenador.html?EntrenadorID=${per[0].ID_Persona}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>
+                        <!--<a href="ConfirmaBorrarEntrenador.html?EntrenadorID=${per[0].ID_Persona}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>-->
+                                        <button type="submit" class="btn  btn-outline-success "> Eliminar </button>
 <!--		  	<button type="submit" class="btn  btn-outline-success "> Borrar </button>-->
 		  	<a href="../../Entrenadores.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
 		</form>
