@@ -1,5 +1,5 @@
 \begin{UseCase}{CU16}{Agregar Pruebas}{
-		\noindent Esta caso de uso servirá para que el Jefe de Fomento Deportivo pueda agregar pruebas de las distintas Actividades Deportivas registradas.
+		\noindent Esta caso de uso servirá para que el Jefe de Fomento Deportivo pueda agregar pruebas que involucren las Actividades Deportivas previamente registradas.
 		Para ello el Jefe de Fomento Deportivo dará click en el botón \IUbutton{ + Agregar } ubicado en la \IUref{}{Pantalla de Pruebas \ref{pruebas}}.	
 	} \label{CU16_evento}
 
@@ -7,10 +7,11 @@
 		\UCitem{Autor}{Rosales González Carlos Andrés}
 		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
 		\UCitem{Actor}{Jefe de Fomento Deportivo}
-		\UCitem{Propósito}{Agregar los datos de pruebas en la página.}
+		\UCitem{Propósito}{Agregar pruebas.}
         \UCitem{Precondiciones}{
         \begin{itemize}
-            \item Iniciar sesión.	
+            \item Iniciar sesión.
+            \item Tener deportes registrados.	
         \end{itemize}}
         \UCitem{Postcondiciones}{Se muestra la pantalla Agregar Pruebas}
 		\UCitem{Entradas}{
@@ -36,15 +37,17 @@
 		\end{UseCase}
 	
     \begin{UCtrayectoria}{Principal}
-    \UCpaso[\UCactor] Oprime el botón \IUbutton{ Agregar } en la \IUref{}{Pantalla Editar una Prueba\ref{pruebas}}.
-    \UCpaso Muestra la \IUref{}{Pantalla Editar un Agregar Coordinador \ref{editarpruebas}}. 
+   	\UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla Principal \ref{VistaPruebas}}.
+   	\UCpaso Muestra la \IUref{}{Pantalla Principal \ref{VIstaPruebas}}.
+    \UCpaso[\UCactor] Oprime el botón \IUbutton{ Agregar } en la \IUref{}{Pantalla Editar una Prueba\ref{VistaPruebas}}.
+    \UCpaso Muestra la \IUref{}{Pantalla Editar un Agregar Coordinador \ref{VistaAgregaPrueba}}. 
     \UCpaso[\UCactor] Lllena los campos. \label{CU16_regresar}  
-    \UCpaso[\UCactor] Presiona el botón \IUbutton{ Registrar }.
+    \UCpaso[\UCactor] Presiona el botón \IUbutton{ Agregar }.
     \UCpaso Comprueba que los campos no estén vacíos. \Trayref{A}
     \UCpaso Obtiene los valores ingresados
     \UCpaso Válida campos. \Trayref{B}
     \UCpaso Muestra mensaje de confirmación de registro.
-    \UCpaso Muestra la \IUref{}{Pantalla principal del Jefe de Fomento Deportivo. \ref{principalJFD}}.
+    \UCpaso Muestra la \IUref{}{Pantalla principal del Jefe de Fomento Deportivo. \ref{VistaPruebas}}.
 \end{UCtrayectoria}
 
 \begin{UCtrayectoriaA}{A}{Campo(s) vacios}

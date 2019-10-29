@@ -1,32 +1,131 @@
-\chapter{Trabajo a futuro}
+\chapter{Desarrollo}
 	
-	\noindent Así, con lo implementado de la aplicación hasta el momento y tomando en cuenta los problemas que surgieron al momento de estar analizando, diseñando y codficando la aplicación, se ha realizado un análisis sobre los resultados obtenidos hasta el momento, y hemos comparado éstos últimos con lo esperado y ya diseñado de la aplicación, pues como se ha explicado con anterioridad, RIDESCOM se ha divido en módulos para obtener mejores resultados en el tiempo requerido, siendo estos módulos: Mecanismo de Validación de estatus académico, Interfaces, Módulo de formulario, Módulo de difusión de eventos, Módulo de comunicación con redes sociales, Módulo de creación de cédula de inscripción a un evento interpolitécnico deportivo, Módulo de consulta de resultados. Bien, de los ya mencionados y su desarrollo, así como sus respectivas implementaciones se plantea el trabajo a realizar y a entrgar a futuro. A continuación se detalla el avance planeado en cada uno de los módulos mencionados, mismos que juntos completan la aplicación RIDESCOM.
+%	\noindent Así, con lo implementado de la aplicación hasta el momento y tomando en cuenta los problemas que surgieron al momento de estar analizando, diseñando y codficando la aplicación, se ha realizado un análisis sobre los resultados obtenidos hasta el momento, y hemos comparado éstos últimos con lo esperado y ya diseñado de la aplicación, pues como se ha explicado con anterioridad, RIDESCOM se ha divido en módulos para obtener mejores resultados en el tiempo requerido, siendo estos módulos: Mecanismo de Validación de estatus académico, Interfaces, Módulo de formulario, Módulo de difusión de eventos, Módulo de comunicación con redes sociales, Módulo de creación de cédula de inscripción a un evento interpolitécnico deportivo, Módulo de consulta de resultados. Bien, de los ya mencionados y su desarrollo, así como sus respectivas implementaciones se plantea el trabajo a realizar y a entrgar a futuro. A continuación se detalla el avance planeado en cada uno de los módulos mencionados, mismos que juntos completan la aplicación RIDESCOM.
+%	
+%	
+%	\section{Mecanismo de Validación de estatus académico}	
+%	 El módulo de Mecanismo de Validación de estatus académico se ha desarrollado hasta el momento un prototipo, el cual muestra una tabla en la que se puede verificar si el alumno esta inscrito o no. Sin embargo, no cuenta con el diseño final ni con las funciones completas.
+%	
+%	\section{Interfaces}
+%	Las interfaces se han desarrollado hasta el momento prototipos, el cual muestra de manera genreal, la estructura y el contenido de las vistas que conforman la aplicación web RIDESCOM. Sin embargo, conforme se va análisando cada módulo pueden cambiar como ya pasado. 
+%	
+%	\section{Módulo de formulario}	
+%	El módulo de formulario originalmente estaba destinado para desarrollar los formularios de Registro, Inscripción a un evento interpolitécnico deportivo, sin embargo como ya se mencionó, se desarrolló un crawler que se conecta con el SAES dando una mejor solución a la problematica y a su vez omitiendo de cierta manera algunas vistas.
+%	\pagebreak
+%	
+%	\section{Módulo de difusión de eventos}
+%	La finalidad de éste módulo es que el coordinador de la unidad académica pueda postear en la red social de Facebook de la escuela, un evento que ya haya sido registrado previamente para que de esta manera pueda llegar a la mayor población posible y así, tratar conseguir más participación de la comunidad.
+%	
+%	
+%	\section{Módulo de comunicación con redes sociales}	
+%	Esté módulo esta ligado con el Módulo de difusión de eventos ya que para poder hacer la difusión de los eventos debe existir una conexión entre RIDESCOM y Facebook para que se pueda concluir con la difusión.
+%	
+%	
+%	\section{Módulo de creación de cédula de inscripción a un evento interpolitécnico deportivo}	
+%	Dentro de éste módulo se generará el archivo que servirá como evidencia para los coordinadores de las unidades académicas, a su vez se hará uso del Mecanismo de Validación de estatus académico.
+%	
+%	\section{Módulo de consulta de resultados}	
+%	Finalmente se plantea el Módulo de consulta de resultados, que servirá para informar a los participantes y la comunidad en general los resultados de los compañeros que participaron en los eventos interpolitécnicos deportivos. 
+
+	%=========================================================
+	%                                                         Sprint 0
+	%=========================================================
+	\section{Sprint 0}
+	\noindent En este SPRINT se declara el planteamiento y comportamiento de la aplicación como tal, en sus inicios, el plan de desarrollo y los posibles resultados que otorgará.
+	Este SPRINT no se contempló en la entrega del protocolo, sin embargo es de importancia ya que en este se definen, las herramientas \ref{Herramientas} que se van a emplear, el análisis del sistema, visualizar y proponer el proceso que se emplea.
+	También se especificará cómo es que se instalaron las herramientas que se emplearon.
 	
-	
-	\section{Mecanismo de Validación de estatus académico}	
-	 El módulo de Mecanismo de Validación de estatus académico se ha desarrollado hasta el momento un prototipo, el cual muestra una tabla en la que se puede verificar si el alumno esta inscrito o no. Sin embargo, no cuenta con el diseño final ni con las funciones completas.
-	
-	\section{Interfaces}
-	Las interfaces se han desarrollado hasta el momento prototipos, el cual muestra de manera genreal, la estructura y el contenido de las vistas que conforman la aplicación web RIDESCOM. Sin embargo, conforme se va análisando cada módulo pueden cambiar como ya pasado. 
-	
-	\section{Módulo de formulario}	
-	El módulo de formulario originalmente estaba destinado para desarrollar los formularios de Registro, Inscripción a un evento interpolitécnico deportivo, sin embargo como ya se mencionó, se desarrolló un crawler que se conecta con el SAES dando una mejor solución a la problematica y a su vez omitiendo de cierta manera algunas vistas.
+	\noindent Dentro de este Spring nos reunimos con responsable de las actividades del Departamento de Formación Deportivas para que se planteara la problematica, que es lo que se puede atacar con el proyecto, ver el proceso detalladamente para la inscripción a un evento interpolitécnico deportivo \ref{Entrevista}, se plantearon los Casos de Uso, para mas detalles consulte el apartado Anexos la sección D \ref{CasosdeUso}. Se modelo la base de datos que tendrá el proyecto \ref{BasedeDatos}. 
 	\pagebreak
 	
-	\section{Módulo de difusión de eventos}
+	%=========================================================
+	%                                                         Sprint 1
+	%=========================================================
+	\section{Sprint 1:  Mecanismo de validación de estatus académico.}
+	\noindent El desarrollo de este SPRINT se consideró que la manera de validación del participante será que el alumno que desee participar en un evento interpolitécnico para ello deberá registrarse en la aplicación web posteriormente, deberá acudir con el coordinador de su Unidad Académica y que el corrobore sus datos solicitando alguna identificación, cabe destacar que este proceso de validación se hará solo una vez.
+	Una vez que haya sido validado por el coordinador y este, activará su cuenta, el alumno interesado podrá ingresar en el sistema e inscribirse en una evento interpolitécnico dentro de las fechas establecidas.
+	El objetivo de este mecanismo es comprobar la existencia de un alumno en la base de datos del plantel o en el IPN y aceptar únicamente a los que estén inscritos. \ref{craweler}
+	
+	
+	%=========================================================
+	%                                                         Sprint 2
+	%=========================================================
+	\section{Sprint 2: Interfaces}
+	\noindent Para la desarrollo de este SPRINT se tomaron los debidos requerimientos para la realización del diseño de las interfaces y así hacer que la aplicación sea amigable con el usuario utilizando las siguientes plantillas para la visualización de las interfaces como una propuesta.
+	\newline
+	
+	\noindent Interfaz Inicio general: Esta interfaz es la principal donde los usuarios podrán visualizar datos de aspecto público. 
+	\newline
+	Parte 1:
+	Cualquier usuario que visite la URL de la aplicación podrá ver los elementos de navegación tales como: Inicio (Página principal), Registro, Calendario, Inicia Sesión, Contacto, los deportes que se imparten en la ESCOM, una introducción a los eventos interpolitécnicos deportivos próximos, para mas detalles consulte en el apartado Anexo la Figura \ref{Iniciogeneral}.
+	\newline
+	Parte 2:
+	Dentro de la misma habrá una sección de resultados generales de los últimos eventos realizados y finalmente una  sección donde se localiza el contacto del plantel para más información al respecto y un contacto de Facebook del área de actividades deportivas de la ESCOM, para mas detalles consulte en el apartado Anexo la Figura \ref{Iniciogeneral1}.
+	\newline
+	
+	\noindent Interfaz Login del Jefe del Departamento de Fomento Deportivo: En esta interfaz ayuda al usuario indicando los elementos que se necesitan para iniciar sesión como usuario de la aplicación (Nombre-Usuario/contraseña previamente registrado), si el usuario no existe el mecanismo realizado en el SPRINT1 se encargará de rechazarlo, podrá recuperar su contraseña en la sección de “¿Olvidaste tu contraseña?”, para mas detalles consulte en el apartado Anexo la Figura 	\ref{LoginJFD}. 
+	\newline
+	
+	\noindent Interfaz Inicio del Jefe del Departamento de Fomento Deportivo: El diseño de la página será muy similar con el resto de los usuarios, sin embargo, este contará con distintas opciones como son: Crear un evento deportivo, Resultados, Calendario y Control de cordinadores donde en este apartado tendrá la opción de Consultar coordinadores, Registrar usuario, Modificar contraseña de los coordinadores de las Unidades Académicas, para mas detalles consulte en el apartado Anexo la Figura 	\ref{IniciogeneralJFDopciones}. El diseño en general de la vista de este usuario se puede ver en el apartado Anexo las Figuras \ref{IniciogeneralJFD} y \ref{IniciogeneralJFD1}.
+	\newline
+	
+	\noindent Interfaz Crear un evento interpolitécnico: Dentro de esta vista el Jefe del Departamento de Fomento Deportivo llenaráa los campos para poder dar de alta algún evento, se pedirá el Nombre del evento, Fecha en la que se llevará acabo, Fecha inicio de inscripción y Fecha fin de inscripción, un campo de Descripción donde podrá agregar la dirección del lugar entre otros datos. Se seleccionará el deporte al que corresponde dicho evento, para mas detalles consulte en el apartado Anexo la Figura \ref{Creareventodeportivo}.
+	\newline
+	
+	\noindent Interfaz Registra un coordinador: Se solicitarán datos como Nombre, Apellido Paterno, Apellido Materno,correo electrónico, teleéfonos de contacto y Escuela a la que pertenece, para mas detalles consulte en el apartado Anexo la Figura \ref{Registrocoordinador}.
+	\pagebreak
+	
+	\noindent Interfaz login coordinador: En esta interfaz ayuda al usuario indicando los elementos que se necesitan para iniciar sesión como usuario de la aplicación (Nombre-Usuario/contraseña previamente registrado), si el usuario no existe el mecanismo realizado en el SPRINT1 se encargará de rechazarlo, para mas detalles consulte en el apartado Anexo la Figura \ref{LogincoordUA}. En caso de que el coordinador olvide su contraseña deberá ponerse en contacto con el Jefe del Departamento de Fomento Deportivo para solicitar el cambio de contraseña.
+	\newline
+	
+	\noindent Interfaz  Inicio del coordinador de una Unidad Académica: Al igual que el resto de los usuarios en general tiene un diseño muy similar, la diferencia recae en las opciones que puede realizar, en este caso son: Registrar entrenador, Calendario, Resultados, Consulta de inscripciones y Válidar perfil, para mas detalles consulte en el apartado Anexo la Figuras 	\ref{IniciogeneralcoordUA} y en la Figura \ref{IniciogeneralcoordUA1} se puede observar que estará disponible un apartado para publicar algun evento previamente dado de alta en la red social de Facebook.
+	\newline
+	
+	\noindent Interfaz Resultados: Este módulo esta designado para que se ingresen los resultados de los participantes y sean vistos en la página principal. Podrá ingresar hasta 20 datos por vez, para mas detalles consulte en el apartado Anexo la Figura \ref{Ingresaresultados}.
+	\newline
+	
+	\noindent Interfaz Registro entrenador: En este  módulo el coordinador deberá los campos solicitados tales como: No. Empleado, Nombre, Apellidos, Correo electrónico, Teléfono fijo, Teléfono móvil, asi como definir a que deporte pertenece y por ultimo, especificar si cuenta con un asistente, para mas detalles consulte en el apartado Anexo la Figura \ref{Registroentrenador}.
+	\newline
+	
+	\noindent Interfaz Login alumno: En esta interfaz ayuda al usuario indicando los elementos que se necesitan para iniciar sesión como usuario de la aplicación (Usuario/contraseña previamente registrado), si el usuario no existe el mecanismo realizado en el SPRINT1 se encargará de rechazarlo, podrá recuperar su contraseña en la sección de “¿Olvidaste tu contraseña?”, para mas detalles consulte en el apartado Anexo la Figura \ref{Login}.
+	\newline
+	
+	\noindent Interfaz Inicio del alumno: El diseño de la página será muy similar con el resto de los usuarios, sin embargo, este contará con distintas opciones como son: Inscribir un Interpolitécnico, Calendario, Consulta tus registros y Contacto, como se muestra en el apartado Anexo, la Figura 	\ref{Inscripcioninterpolitecnico}. El diseño en general de la vista de este usuario, para mas detalles consulte en el apartado Anexo la Figuras \ref{Inicioparticipante} y \ref{Inicioparticipante1}.
+	\newline
+	
+	\noindent Interfaz Inscribir interpolitécnico: En este módulo el alumno primero deberá válidar el estatus de su inscripción, si esta inscrito en el periodo actual, se habilitará el botón para registrar la cédula. En caso contrario el botón no estará habilitado y por tanto, no podrá inscribirse. Los campos que debera llenar el alumno serán: Grupo, NSS (Número de Seguro Social), Lugar de Nacimiento, correo electrónico, Delegación/Municipio, asi como seleccionar el deporte, sub-division y prueba en la que quiere participar, para mas detalles consulte en el apartado Anexo las Figuras \ref{Inscripcioninterpolitecnico}, \ref{Inscripcioninterpolitecnico2} y \ref{Inscripcioninterpolitecnico3}.
+	\newline
+	
+	\noindent Interfaz Consulta tus registros: En este módulo, el participante podrá visualizar en una tabla los eventos a los cuales se a registrado, a su vez le mostrará información como: el deporte, prueba Fecha del Evento y la direccion del mismo, para mas detalles consulte en el apartado Anexo la Figura \ref{Consultainscripciones}.
+	\newline
+
+	\noindent En este capítulo se presentará una breve descripción del trabajo realizado, los problemas que se enfretaron, así como lo que se logró. Continuando con el capítulo se presentan los Sprint porgramado. 
+	De manera breve se hace mención de los casos de uso desarrollados, vistas del proyecto final. así como las pruebas realizadas.
+	
+	\section{Sprint 3: Módulo de formulario}	
+	El módulo de formulario originalmente estaba destinado para desarrollar los formularios de Registro, Inscripción a un evento interpolitécnico deportivo, sin embargo como ya se mencionó, se desarrolló un crawler que se conecta con el SAES dando una mejor solución a la problematica y a su vez omitiendo de cierta manera algunas vistas.
+	\pagebreak
+		
+	\section{Sprint 4: Módulo de difusión de eventos}
 	La finalidad de éste módulo es que el coordinador de la unidad académica pueda postear en la red social de Facebook de la escuela, un evento que ya haya sido registrado previamente para que de esta manera pueda llegar a la mayor población posible y así, tratar conseguir más participación de la comunidad.
-	
-	
-	\section{Módulo de comunicación con redes sociales}	
+		
+		
+	\section{Sprint 5:Módulo de comunicación con redes sociales}	
 	Esté módulo esta ligado con el Módulo de difusión de eventos ya que para poder hacer la difusión de los eventos debe existir una conexión entre RIDESCOM y Facebook para que se pueda concluir con la difusión.
 	
+	\section{Sprint 6:Módulo de creación de cédula de inscripción.}
+	Para el desarrollo de este módulo se realizó una investigación de un pluggin o herramienta que sea compatible y de fácil implementación para la generación de un reporte. 
+	Una vez realizada la investigación se decidió usar le herremienta iReport, la cual tiene facilidad al integrarla al proyecto y facilidad al hacer uso de la misma.
+	Una vez agregado el pluggin que nos permite hacer uso de la misma, se hizo de un análisis de los parámetros que se iban a mostrar en el reporte final. \\
+	Se definió un formato único que será utilizado por las distintas Unidades Académicas, a su vez se definió que será en formato PDF ya que asi, se puede apoyar a la mitigación de edición de datos de los participantes. \\
+	Al descargar el formato, el Coordinador podrá visualizar un listado de los participantes que se inscribieron en algún evento Iterpolitécnico Deportivo.
+ 
 	
-	\section{Módulo de creación de cédula de inscripción a un evento interpolitécnico deportivo}	
-	Dentro de éste módulo se generará el archivo que servirá como evidencia para los coordinadores de las unidades académicas, a su vez se hará uso del Mecanismo de Validación de estatus académico.
-	
-	\section{Módulo de consulta de resultados}	
-	Finalmente se plantea el Módulo de consulta de resultados, que servirá para informar a los participantes y la comunidad en general los resultados de los compañeros que participaron en los eventos interpolitécnicos deportivos. 
+	\section{Sprint 7: Módulo de consulta de resultados.}
+	Durante el desarrollo de este módulo, se encontró con la problematica al hacer la consulta de las personas inscritas a los Eventos, ya que solo se podía consultar el Evento al que este se inscribió, sin embargo no se podía accesar a la información tal como la Prueba o Deporte que estaba asociado al Evento.
+	Este se resolvió haciendo una modificación de relación entre tablas de la Base de Datos, las tablas modificadas fueron: Evento, 
 	
 	
+	\section{Reporte Técnico}
 	
-	
+	\section{Manual de Usuario}
