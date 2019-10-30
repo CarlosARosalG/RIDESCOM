@@ -1,5 +1,5 @@
 \begin{UseCase}{CU10}{Consulta Coordinadores Registrados}{
-		\noindent Esta caso de uso servirá para que el Jefe de Fomento Deportivo pueda consultar los Coordinadores de las Unidades Académicas que han sido registrados.
+		\noindent Esta caso de uso servirá para que el Jefe de Fomento Deportivo pueda consultar los Coordinadores de las Unidades Académicas que han sido registrados, mostrando datos relevanes de estos.
 		Para ello el Jefe de Fomento Deportivo dará click en el botón \IUbutton{ Coordinadores } ubicado en la  parte superior de la \IUref{}{Pantalla de Principal \ref{principalJFD}}.	
 	} \label{CU10_evento}
 
@@ -15,12 +15,13 @@
         \UCitem{Postcondiciones}{Se muestra la pantalla principal}
 		\UCitem{Entradas}{
         \begin{itemize}
-        	\item Nombre
-        	\item Apellido Paterno
-        	\item Apellido Materno
-        	\item Unidad Académica
-        	\item Teléfono fijo
+        	\item Usuario
+        	\item Persona
         	\item Correo electrónico
+        	\item Teléfono fijo
+        	\item Celular
+        	\item Estatus
+        	\item Acciones
         \end{itemize}}
 		\UCitem{Origen}{Pantalla, Teclado}
 		\UCitem{Salidas}{
@@ -28,7 +29,7 @@
 		    \item Coordinadores registrados.
 		    \item No hay coordinadores registrados.
 		\end{itemize}}
-		\UCitem{Destino}{Principal Jefe Fomento Deportivo}
+		\UCitem{Destino}{Consulta Coordinadores.}
 		\UCitem{Errores}{
         	\begin{itemize}
 			    \item No hay coordinadores registrados.
@@ -38,10 +39,10 @@
 		\end{UseCase}
 	
     \begin{UCtrayectoria}{Principal}
-    \UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla Editar un Evento Interpolitécnico Deportivo \ref{principalJFD}}.
+    \UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla Principal \ref{principalJFD}}.
     \UCpaso Muestra la \IUref{}{Pantalla Registrar un Evento Interpolitécnico Deportivo \ref{principalJFD}}. \label{CU10_regresar}
     \UCpaso[\UCactor] Da click en el botón \IUbutton{ Coordinadores }.  
-    \UCpaso Muestra la tabla de Coordinadores de Unidades Académicas. \Trayref{A}
+    \UCpaso Muestra la tabla de Coordinadores de Unidades Académicas registrados. \Trayref{A}
     \end{UCtrayectoria}
     
     \begin{UCtrayectoriaA}{A}{No hay registros}

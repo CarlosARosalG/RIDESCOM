@@ -1,6 +1,6 @@
 \begin{UseCase}{CU17}{Editar datos de las Pruebas}{
-		\noindent Esta caso de uso servirá para que el Jefe de Fomento Deportivo pueda editar los datos de las pruebas registradas previamente registrado con la finalidad de que si llega a presentar un cambio en e la prueba pueda ser editado sin problema alguno.
-		Para ello el Jefe de Fomento Deportivo dará click en el botón \IUbutton{ Editar } ubicado en la  parte derecha de la tabla de Pruebas dentro de la \IUref{}{Pantalla de Pruebas \ref{principalJFD}}.	
+		\noindent Esta caso de uso servirá para que el Jefe de Fomento Deportivo pueda editar los datos de las pruebas registradas, con la finalidad de que pueda modificar datos es caso de ser necesario sin problema alguno.
+		Para ello el Jefe de Fomento Deportivo dará click en el botón \IUbutton{ Editar } ubicado en la  parte derecha de la tabla de Pruebas dentro de la \IUref{}{Pantalla de Pruebas \ref{VistaPruebas}}.	
 	} \label{CU17_evento}
 x
 		\UCitem{Versión}{0.1}
@@ -11,7 +11,7 @@ x
         \UCitem{Precondiciones}{
         \begin{itemize}
             \item Iniciar sesión.
-            \item Tener una prueba registrado.
+            \item Tener una prueba registrada.
             \item Seleccionar una prueba para editar.
         \end{itemize}}
         \UCitem{Postcondiciones}{Se muestra la pantalla Editar Pruebas}
@@ -46,7 +46,7 @@ x
     \UCpaso Obtiene los valores ingresados
     \UCpaso Válida campos. \Trayref{B}
     \UCpaso Muestra mensaje de confirmación de registro.
-    \UCpaso Muestra la \IUref{}{Pantalla principal \ref{pruebas}}.
+    \UCpaso Muestra la \IUref{}{Pantalla principal \ref{VistaPruebas}}.
     \end{UCtrayectoria}
     
     \begin{UCtrayectoriaA}{A}{Campo(s) vacios}

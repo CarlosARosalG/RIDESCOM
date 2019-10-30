@@ -1,6 +1,6 @@
 \begin{UseCase}{CU18}{Eliminar datos de Pruebas}{
 		\noindent Esta caso de uso servirá para que el Jefe de Fomento Deportivo pueda eliminar los datos de una prueba previamente registrado.
-		Para ello el Jefe de Fomento Deportivo dará click en el botón \IUbutton{ Eliminar } ubicado en la  parte derecha de la tabla de Pruebas dentro de la \IUref{}{Pantalla de Pruebas \ref{pruebas}}.	
+		Para ello el Jefe de Fomento Deportivo dará click en el botón \IUbutton{ Eliminar } ubicado en la  parte derecha de la tabla de Pruebas dentro de la \IUref{}{Pantalla de Pruebas \ref{VistaPruebas}}.	
 	} \label{CU18_evento}
 
 		\UCitem{Versión}{0.1}
@@ -38,11 +38,11 @@
 		\end{UseCase}
 	
     \begin{UCtrayectoria}{Principal}
-    \UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla de pruebas \ref{pruebas}}.
-    \UCpaso Muestra la \IUref{}{Pantalla de pruebas \ref{pruebas}}.
+    \UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla de pruebas \ref{VistaPruebas}}.
+    \UCpaso Muestra la \IUref{}{Pantalla de pruebas \ref{VistaPruebas}}.
     \UCpaso[\UCactor] Da click en el botón \IUbutton{ Eliminar }. \label{CU18_regresar}.
     \UCpaso Muestra mensaje para confirmar la acción. \Trayref{A}
-    \UCpaso Muestra la \IUref{}{Pantalla principal del Jefe de Fomento Deportivo. \ref{pruebas}}.
+    \UCpaso Muestra la \IUref{}{Pantalla principal del Jefe de Fomento Deportivo. \ref{VistaPruebas}}.
     \end{UCtrayectoria}
     
     \begin{UCtrayectoriaA}{A}{Error al eliminar el evento}

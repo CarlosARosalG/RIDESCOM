@@ -10,12 +10,23 @@
 \usepackage{requerimientos}
 \usepackage{cdtBook}
 \usepackage{pdfpages}
-\makeindex[columns=3, title=Alphabetical Index, intoc]
-
+\usepackage{appendix}
+\renewcommand{\appendixname}{Apéndice}
+\renewcommand{\appendixtocname}{Apéndice}
+\renewcommand{\appendixpagename}{Apéndice}
+%\makeindex[columns=3, title=Alphabetical Index, intoc]
+\let\OLDthebibliography=\thebibliography
+\def\thebibliography#1{\OLDthebibliography{#1}\addcontentsline{toc}{chapter}{\bibname}}	
 
 \begin{document}
-	
+	\renewcommand{\bibname}{Referencias}
 	\includepdf{portada.pdf}
+	
+	\includepdf{portada2.pdf}
+	
+	\includepdf{cartaResponsivaTT20182.pdf}
+	
+	\includepdf{Advertencia.pdf}
 	
 	%=========================================================
 	%                                                         Indice.
@@ -35,37 +46,43 @@
 		\include{capitulo3}
 	\newpage
 	%=========================================================
-	%                                                         Capitulo 4 Prototipo RIDESCOM
+	%                                                         Capitulo 4 Análisis
 	%=========================================================
 		\include{capitulo4}
 		
 	%=========================================================
-	%                                                         Capitulo 6 Trabajo a futuro
+	%                                                         Capitulo 6 Desarrollo
 	%=========================================================
 	\include{capitulo6}
 	
 	%=========================================================
-	%                                                         Anexos
+	%                                                         Capitulo 7 Pruebas
 	%=========================================================
-	\include{Anexos}
+	\include{capitulo7}
 	
-	%========================================================
-	%       Mensajes
-	%========================================================
-	\include{mensajes}	
+	%=========================================================
+	%                                                         Capitulo 7 Pruebas
+	%=========================================================
+	\include{Conclusiones}
+	
+	%=========================================================
+	%                                                         Capitulo 7 Pruebas
+	%=========================================================
+	\include{TrabajoFuturo}
 
-	\pagebreak
+	%=========================================================
+	%     										Referencias
+	%=========================================================
+	\include{referencias}	
 	
 	%=========================================================
 	%             apendice              Glosario
 	%=========================================================
 		\include{glosario}
-
-	%=========================================================
-	%     										Referencias
-	%=========================================================
 	
-		\include{referencias}
-	
+	%=========================================================
+	%                                                         Anexos
+	%=========================================================
+		\include{Anexos}
 	
 \end{document}

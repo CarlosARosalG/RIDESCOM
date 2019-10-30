@@ -1,6 +1,6 @@
 \begin{UseCase}{CU6}{Consulta Calendario de Eventos}{
-		\noindent Esta caso de uso servirá para que el actor pueda consultar en la página principal los eventos que han sido registrados y están disponibles para inscribirse. 
-		Para poder visualizar la tabla que muestra estos datos, el actor dará click en el botón \IUbutton{ Calendario } ubicados en la \IUref{}{Pantalla de Principal \ref{principalalum}}.
+		\noindent Este caso de uso tiene como finalidad mostrar la las fechas en la que los eventos registrados se van a realizar, el actor pueda consultar en la página principal los eventos que han sido registrados y están disponibles para inscribirse. 
+		Para ello deberá iniciar sesión, una vez hecho esto se mostrará una pantalla  donde estarán las opciones que este tenga disponibles y a su vez, el calendario de eventos estará contenida en esta misma como se puede apreciar en \IUref{}{Pantalla de Principal \ref{principalalum}}.
         
 	} \label{CU6_evento}
 		\UCitem{Versión}{0.1}
@@ -15,9 +15,11 @@
         \UCitem{Postcondiciones}{Se muestra la pantalla principal}
 		\UCitem{Entradas}{
         \begin{itemize}
-        	\item Ciclo escolar
         	\item Nombre Eventos
         	\item Deporte
+        	\item Fecha del Evento
+        	\item Descripcion
+    	    \item Ciclo escolar
         \end{itemize}}
 		\UCitem{Origen}{Pantalla, Teclado}
 		\UCitem{Salidas}{
@@ -37,8 +39,8 @@
     \begin{UCtrayectoria}{Principal}
     \UCpaso[\UCactor] Ingresa a la página RIDESCOM.
     \UCpaso Muestra la pantalla \IUref{}{Pantalla de Inicio de Sesión \ref{principalalum}}.
-    \UCpaso[\UCactor] Oprime el botón \IUbutton{ Calendario } que esta en la \IUref{}{Pantalla de Principal \ref{principalJFD}}.
-    \UCpaso Muestra la \IUref{}{Pantalla de Inicio de Sesión \ref{principalJFD}} en la sección Calendario de Eventos. \Trayref{A} \label{CU6_regresar}
+    \UCpaso Muestra los eventos registrados.  \Trayref{A} \label{CU6_regresar}
+    \UCpaso[\UCactor] Se desplaza dentro de la \IUref{}{Pantalla de Principal \ref{principalJFD}} para visualizar todos los campos registrados.
 	\UCpaso[\UCactor] Consulta los eventos. 
     \end{UCtrayectoria}
 
