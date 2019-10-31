@@ -27,7 +27,7 @@ public class Home {
         String accion=req.getParameter("alumno");
         String accion1=req.getParameter("coordinador");
         if(accion.equalsIgnoreCase("alu")){
-            cw.downloadCaptcha();
+//            cw.downloadCaptcha();
             mav.setViewName("redirect:/LoginAlumno.html");
         }else{
             mav.setViewName("Home.html");

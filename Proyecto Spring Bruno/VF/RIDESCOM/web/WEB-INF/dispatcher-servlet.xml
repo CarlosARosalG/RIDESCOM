@@ -99,6 +99,7 @@
                 <prop key="Alumno/Resultados.html">resultadosal</prop>
                 <prop key="Alumno/Inscribirse.html">inscribir</prop>
                 <prop key="Alumno/Inscripciones.html">inscribir</prop>
+                <prop key="Alumno/Inscripiones/BorrarInscripcion.html">inscribir</prop>
                 <prop key="InfoAlumno.html">alumno</prop>
                 <prop key="Alumno/InfoAlumno.html">alumno</prop>
                 

@@ -404,7 +404,13 @@
                             <td>${alui.Disciplina}</td>
                             <td>${alui.Nombre_Evento}</td>
                             <td>${alui.Ciclo_Escolar}</td>
-
+                            
+<!--                            <td> 
+                                <a href="Inscripciones/BorrarInscripcion.html?Ev=${alui.Evento_Evento_ID}" style='text-decoration:none;color: red;'> 
+                                <i class="far fa-trash-alt"></i>  
+                                </a> 
+                            </td>-->
+                            
                         </tr>
                         </c:forEach>
                     </tbody>

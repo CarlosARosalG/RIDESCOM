@@ -5,11 +5,15 @@
  */
 package mx.ipn.escom.ridescom.controller;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import mx.ipn.escom.ridescom.config.Conexion;
+import mx.ipn.escom.ridescom.config.Connect;
 import mx.ipn.escom.ridescom.model.Inscribir;
 import mx.ipn.escom.ridescom.model.Usuario;
 import mx.ipn.escom.ridescom.model.UsuarioDAO;
@@ -25,20 +29,31 @@ import org.springframework.web.servlet.ModelAndView;
 public class Inscribirse {
     ModelAndView mav=new ModelAndView();
     Conexion con=new Conexion();
+    Connect cn =new Connect();
     JdbcTemplate rid=new JdbcTemplate(con.ConectaRID());
     UsuarioDAO udao=new UsuarioDAO();
     Usuario us=new Usuario();
+    Connection ct;
+    PreparedStatement psre;
+    PreparedStatement ps;
+    ResultSet rsre;
+    ResultSet rs;
     
+    String cu;
+    String de;
+    
+    int Ev;
     List p;
     List dat;
     List dat1;
     List dat2;
+    List dat3;
     
     @RequestMapping(value="Alumno/Inscripciones.html", method=RequestMethod.GET)
     public ModelAndView insc(HttpServletRequest re){
         HttpSession session = re.getSession();
         if(session.getAttribute("Nombre_U")!= null){
-            String sqli="select concat(p.Nombre,' ',p.Ap_Pat,' ',p.Ap_Mat) as Nombre, a.ID_Alumno, ev.Nombre_Evento, d.ID_Deporte, d.Disciplina, ci.Ciclo_Escolar from persona p \n" +
+            String sqli="select i.Evento_Evento_ID, concat(p.Nombre,' ',p.Ap_Pat,' ',p.Ap_Mat) as Nombre, a.ID_Alumno, ev.Nombre_Evento, d.ID_Deporte, d.Disciplina, ci.Ciclo_Escolar from persona p \n" +
 "        INNER JOIN (alumno a, inscripcion i, Escuela es, evento ev, act_deportiva d, pruebas pr, ciclo ci) \n" +
 "        on (a.Persona_ID_Persona=p.ID_Persona AND ev.Ciclo_ID_Ciclo=ci.ID_Ciclo AND ev.Pruebas_ID_Pruebas=pr.ID_Pruebas AND pr.Act_Deportiva_ID_Deporte=d.ID_Deporte AND i.Evento_Evento_ID=ev.Evento_ID AND i.Alumno_ID_Alumno=a.ID_Alumno AND i.Escuela_ID_Escuela=es.ID_Escuela)\n" +
 "where a.ID_Alumno='"+session.getAttribute("Nombre_U")+"'";
@@ -60,17 +75,50 @@ public class Inscribirse {
         }else {
         mav.setViewName("LoginAlumno");
         }
+        String sc="select edo.Estado \n" +
+"	from persona p, Alumno a, Usuario u, contacto c, tipo_sexo s, email ce, telefono_fijo tf, telefono_celular tc, Roles r, Escuela es, Prog_Academico prog, Escuela_has_Prog_Academico ep, Estados edo, Municipio m\n" +
+"		where  edo.Homo=(select left(right(P.CURP,7),2))\n" +
+"        	   AND r.ID_Roles='3' \n" +
+"               AND edo.ID_estado=m.Estados_ID_estado\n" +
+"			   AND p.Municipio_ID_Municipio=m.ID_Municipio\n" +
+"			   AND p.Municipio_Estados_ID_estado=m.Estados_ID_estado\n" +
+"               AND p.ID_Persona = u.Persona_ID_Persona\n" +
+"               AND p.ID_Persona = a.Persona_ID_Persona\n" +
+"               AND u.Roles_ID_Roles = r.ID_Roles\n" +
+"               AND p.ID_Persona = c.Persona_ID_Persona\n" +
+"               AND p.Tipo_Sexo_ID_Tipo_Sexo = s.ID_Tipo_Sexo\n" +
+"               AND c.ID_Contacto = ce.Contacto_ID_Contacto\n" +
+"			   AND c.ID_Contacto = tf.Contacto_ID_Contacto\n" +
+"               AND c.ID_Contacto = tc.Contacto_ID_Contacto\n" +
+"               AND es.ID_Escuela=ep.Escuela_ID_Escuela\n" +
+"               AND prog.ID_Prog_Academico=ep.Prog_Academico_ID_Prog_Academico\n" +
+"               AND u.Nombre_U='"+session.getAttribute("Nombre_U")+"'";
+         try{
+            ct=cn.Connect();
+            psre=ct.prepareStatement(sc);
+            rsre=psre.executeQuery();
+            if(rsre!=null ){
+                while(rsre.next()){
+                cu =rsre.getString("Estado");
+                }
+            }
+        }catch(Exception e){
+        }
+        mav.addObject("lugar", cu);
         //Info del Usuario principal
-        String sqlp="select u.Nombre_U, p.Nombre, p.Ap_Pat, p.Ap_Mat, s.Sexo, p.Fecha_Nac, p.CURP, p.NSS, ce.Correo, tf.Telefono, tc.Celular" +
-"	from persona p, Usuario u, contacto c, tipo_sexo s, email ce, telefono_fijo tf, telefono_celular tc, Roles r" +
+        String sqlp="select a.ID_Alumno, u.Nombre_U, p.Nombre, p.Ap_Pat, p.Ap_Mat, s.Sexo, p.Fecha_Nac, p.CURP, p.NSS, ce.Correo, tf.Telefono, tc.Celular, es.Escuela, prog.Programa" +
+"	from persona p, Alumno a, Usuario u, contacto c, tipo_sexo s, email ce, telefono_fijo tf, telefono_celular tc, Roles r, Escuela es, Prog_Academico prog, Escuela_has_Prog_Academico ep" +
 "		where r.ID_Roles='3' " +
 "               AND p.ID_Persona = u.Persona_ID_Persona" +
+"               AND p.ID_Persona = a.Persona_ID_Persona" +
 "               AND u.Roles_ID_Roles = r.ID_Roles" +
 "               AND p.ID_Persona = c.Persona_ID_Persona" +
 "               AND p.Tipo_Sexo_ID_Tipo_Sexo = s.ID_Tipo_Sexo" +
 "               AND c.ID_Contacto = ce.Contacto_ID_Contacto" +
 "		AND c.ID_Contacto = tf.Contacto_ID_Contacto" +
 "               AND c.ID_Contacto = tc.Contacto_ID_Contacto"+
+"               AND es.ID_Escuela=ep.Escuela_ID_Escuela"+
+"               AND prog.ID_Prog_Academico=ep.Prog_Academico_ID_Prog_Academico"+
 "               AND Nombre_U='"+session.getAttribute("Nombre_U")+"'";
         p=this.rid.queryForList(sqlp);
         if(p!=null)
@@ -100,6 +148,111 @@ public class Inscribirse {
         String ev=req.getParameter("Evento");
         String sqi="insert Inscripcion (Alumno_ID_Alumno, Evento_Evento_ID, Escuela_ID_Escuela) values('"+session.getAttribute("Nombre_U")+"',"+ev+",7)";
         this.rid.update(sqi);
+        mav.setViewName("redirect:/Alumno/Inscripciones.html");
+        mav.addObject("mjs", "<div style='color: green;'>Tu inscripción se realizó correctamente.</div>");
+        return mav;
+    }
+    
+//Checar
+    @RequestMapping(value="Alumno/Inscripciones/BorrarInscripcion.html", method=RequestMethod.GET)
+    public ModelAndView inscr(HttpServletRequest re){
+        HttpSession session = re.getSession();
+        Ev=Integer.parseInt("Ev");
+        if(session.getAttribute("Nombre_U")!= null){
+            String sqled="select a.ID_Alumno, u.Nombre_U, p.Nombre, p.Ap_Pat, p.Ap_Mat, s.Sexo, p.Fecha_Nac, p.CURP, p.NSS, ce.Correo, tf.Telefono, tc.Celular, es.Escuela, prog.Programa" +
+"	from persona p, Alumno a, Usuario u, contacto c, tipo_sexo s, email ce, telefono_fijo tf, telefono_celular tc, Roles r, Escuela es, Prog_Academico prog, Escuela_has_Prog_Academico ep" +
+"		where r.ID_Roles='3' " +
+"               AND p.ID_Persona = u.Persona_ID_Persona" +
+"               AND p.ID_Persona = a.Persona_ID_Persona" +
+"               AND u.Roles_ID_Roles = r.ID_Roles" +
+"               AND p.ID_Persona = c.Persona_ID_Persona" +
+"               AND p.Tipo_Sexo_ID_Tipo_Sexo = s.ID_Tipo_Sexo" +
+"               AND c.ID_Contacto = ce.Contacto_ID_Contacto" +
+"		AND c.ID_Contacto = tf.Contacto_ID_Contacto" +
+"               AND c.ID_Contacto = tc.Contacto_ID_Contacto"+
+"               AND es.ID_Escuela=ep.Escuela_ID_Escuela"+
+"               AND prog.ID_Prog_Academico=ep.Prog_Academico_ID_Prog_Academico"+
+"               AND Nombre_U='"+session.getAttribute("Nombre_U")+"'";
+        dat3=this.rid.queryForList(sqled);
+        mav.addObject("resu",dat3);
+        String sc="select edo.Estado \n" +
+"	from persona p, Alumno a, Usuario u, contacto c, tipo_sexo s, email ce, telefono_fijo tf, telefono_celular tc, Roles r, Escuela es, Prog_Academico prog, Escuela_has_Prog_Academico ep, Estados edo, Municipio m\n" +
+"		where  edo.Homo=(select left(right(P.CURP,7),2))\n" +
+"        	   AND r.ID_Roles='3' \n" +
+"               AND edo.ID_estado=m.Estados_ID_estado\n" +
+"			   AND p.Municipio_ID_Municipio=m.ID_Municipio\n" +
+"			   AND p.Municipio_Estados_ID_estado=m.Estados_ID_estado\n" +
+"               AND p.ID_Persona = u.Persona_ID_Persona\n" +
+"               AND p.ID_Persona = a.Persona_ID_Persona\n" +
+"               AND u.Roles_ID_Roles = r.ID_Roles\n" +
+"               AND p.ID_Persona = c.Persona_ID_Persona\n" +
+"               AND p.Tipo_Sexo_ID_Tipo_Sexo = s.ID_Tipo_Sexo\n" +
+"               AND c.ID_Contacto = ce.Contacto_ID_Contacto\n" +
+"			   AND c.ID_Contacto = tf.Contacto_ID_Contacto\n" +
+"               AND c.ID_Contacto = tc.Contacto_ID_Contacto\n" +
+"               AND es.ID_Escuela=ep.Escuela_ID_Escuela\n" +
+"               AND prog.ID_Prog_Academico=ep.Prog_Academico_ID_Prog_Academico\n" +
+"               AND u.Nombre_U='"+session.getAttribute("Nombre_U")+"'";
+         try{
+            ct=cn.Connect();
+            psre=ct.prepareStatement(sc);
+            rsre=psre.executeQuery();
+            if(rsre!=null ){
+                while(rsre.next()){
+                cu =rsre.getString("Estado");
+                }
+            }
+        }catch(Exception e){
+        }
+        mav.addObject("lugar", cu);
+        //Info del Usuario principal
+        String sqlp="select a.ID_Alumno, u.Nombre_U, p.Nombre, p.Ap_Pat, p.Ap_Mat, s.Sexo, p.Fecha_Nac, p.CURP, p.NSS, ce.Correo, tf.Telefono, tc.Celular, es.Escuela, prog.Programa" +
+"	from persona p, Alumno a, Usuario u, contacto c, tipo_sexo s, email ce, telefono_fijo tf, telefono_celular tc, Roles r, Escuela es, Prog_Academico prog, Escuela_has_Prog_Academico ep" +
+"		where r.ID_Roles='3' " +
+"               AND p.ID_Persona = u.Persona_ID_Persona" +
+"               AND p.ID_Persona = a.Persona_ID_Persona" +
+"               AND u.Roles_ID_Roles = r.ID_Roles" +
+"               AND p.ID_Persona = c.Persona_ID_Persona" +
+"               AND p.Tipo_Sexo_ID_Tipo_Sexo = s.ID_Tipo_Sexo" +
+"               AND c.ID_Contacto = ce.Contacto_ID_Contacto" +
+"		AND c.ID_Contacto = tf.Contacto_ID_Contacto" +
+"               AND c.ID_Contacto = tc.Contacto_ID_Contacto"+
+"               AND es.ID_Escuela=ep.Escuela_ID_Escuela"+
+"               AND prog.ID_Prog_Academico=ep.Prog_Academico_ID_Prog_Academico"+
+"               AND Nombre_U='"+session.getAttribute("Nombre_U")+"'";
+        p=this.rid.queryForList(sqlp);
+        if(p!=null)
+            mav.addObject("alum",p);
+                //Consulta de Eventos registrados en la Base de Datos
+            String sld="select i.Evento_Evento_ID, concat(p.Nombre,' ',p.Ap_Pat,' ',p.Ap_Mat) as Nombre, a.ID_Alumno, ev.Nombre_Evento, d.ID_Deporte, d.Disciplina, ci.Ciclo_Escolar from persona p \n" +
+"        INNER JOIN (alumno a, inscripcion i, Escuela es, evento ev, act_deportiva d, pruebas pr, ciclo ci) \n" +
+"        on (a.Persona_ID_Persona=p.ID_Persona AND ev.Ciclo_ID_Ciclo=ci.ID_Ciclo AND ev.Pruebas_ID_Pruebas=pr.ID_Pruebas AND pr.Act_Deportiva_ID_Deporte=d.ID_Deporte AND i.Evento_Evento_ID=ev.Evento_ID AND i.Alumno_ID_Alumno=a.ID_Alumno AND i.Escuela_ID_Escuela=es.ID_Escuela)\n" +
+"where a.ID_Alumno='"+session.getAttribute("Nombre_U")+"' and i.Evento_Evento_ID="+Ev;
+            try{
+            ct=cn.Connect();
+            ps=ct.prepareStatement(sld);
+            rs=ps.executeQuery();
+            if(rs!=null ){
+                while(rs.next()){
+                de =rs.getString("Disciplina");
+                }
+            }
+            }   catch(Exception e){
+            }
+            mav.addObject("deporte",de);
+            mav.setViewName("BorrarInscripcion");
+        }else {
+        mav.setViewName("LoginAlumno");
+        }
+        return mav;
+    }
+    @RequestMapping(value="Alumno/Inscripciones/BorrarInscripcion.html", method=RequestMethod.POST)
+    public ModelAndView inscB(HttpServletRequest re){
+        HttpSession session = re.getSession();
+        Ev=Integer.parseInt("Ev");
+        String sqld="delete from Inscripcion where a.ID_Alumno='"+session.getAttribute("Nombre_U")+"' and Evento_Evento_ID="+Ev;
+        this.rid.update(sqld);
+        
         mav.setViewName("redirect:/Alumno/Inscripciones.html");
         mav.addObject("mjs", "<div style='color: green;'>Tu inscripción se realizó correctamente.</div>");
         return mav;

@@ -91,16 +91,15 @@ public class LoginAlumno {
                 }
             }else{
                 //Aqui deberia ir el crawler
-                    ModelAndView mv=new ModelAndView("LoginAlumno.html");
-                    mv.addObject("mjs", "<div style='color: green;'>OK, usuario y contraseÃ±a valido.</div>");
-                    return mv;  
+                    mav.setViewName("redirect:/LoginAlumno.html");
+                    mav.addObject("mjs", "<div style='color: red;'>ERROR, usuario o contraseña invalido.</div>"); 
                 }
         }else{
                 
-                    ModelAndView mv=new ModelAndView("LoginAlumno.html");
-                    mv.addObject("mjs", "<div style='color: green;'>OK, usuario y contraseÃ±a valido.</div>");
-                    return mv;  
+                    mav.setViewName("redirect:/LoginAlumno.html");
+                    mav.addObject("mjs", "<div style='color: red;'>ERROR, usuario o contraseña invalido.</div>"); 
                 }
+        return mav;
     }
     
     @RequestMapping(value="Privacidad.html")

@@ -5,11 +5,15 @@
  */
 package mx.ipn.escom.ridescom.controller;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import mx.ipn.escom.ridescom.config.Conexion;
+import mx.ipn.escom.ridescom.config.Connect;
 import mx.ipn.escom.ridescom.model.Deporte;
 import mx.ipn.escom.ridescom.model.Eventos;
 import mx.ipn.escom.ridescom.model.Usuario;
@@ -23,10 +27,16 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class Evento {
     Conexion con=new Conexion();
+    Connect cn=new Connect();
     ModelAndView mav=new ModelAndView();
     JdbcTemplate rid=new JdbcTemplate(con.ConectaRID());
     Usuario us=new Usuario();
     UsuarioDAO udao=new UsuarioDAO();
+    
+    Connection ct;
+    ResultSet rs;
+    PreparedStatement ps;
+    String dep;
     
     int EventoID;
     List dat;
@@ -76,6 +86,19 @@ public class Evento {
          mav.setViewName("Error404");
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
         EventoID=Integer.parseInt(re.getParameter("EventoID"));
+        String ei="select Evento_Evento_ID from Inscripcion where Evento_Evento_ID="+EventoID;
+        try{
+            ct=cn.Connect();
+            ps=ct.prepareStatement(ei);
+            rs=ps.executeQuery();
+            if(rs!=null ){
+                while(rs.next() ){
+                dep =rs.getString("Evento_Evento_ID");
+                }
+            }
+        }catch(Exception e){
+        }
+        if(dep==null){
             String sql="select Evento_ID, Nombre_Evento, Descripcion, Fecha_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Prueba, Disciplina, Nombre_S, Ciclo_Escolar " +
                         "from Evento e, Ciclo c, Sede s, Pruebas pr, act_deportiva d " +
                         "where e.Ciclo_ID_Ciclo=c.ID_Ciclo " +
@@ -95,6 +118,36 @@ public class Evento {
         mav.addObject("eve",dat);
 //        mav.addObject("fecha", dat1);
         mav.setViewName("EditarEvento");
+        }else{
+            String adep =null;
+            
+            String sql="select Evento_ID, Nombre_Evento, Descripcion, Fecha_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Prueba, Disciplina, Nombre_S, Ciclo_Escolar " +
+                        "from Evento e, Ciclo c, Sede s, Pruebas pr, act_deportiva d " +
+                        "where e.Ciclo_ID_Ciclo=c.ID_Ciclo " +
+                        "and e.Sede_ID_Sede=s.ID_Sede " +
+                        "and e.Pruebas_ID_Pruebas=pr.ID_Pruebas " +
+                        "and pr.Act_Deportiva_ID_Deporte=d.ID_Deporte " +
+                        "and Evento_ID="+EventoID;
+//            String f="select left (now(),10)";
+            String f="select Fecha_inicio_Registro from Evento where Evento_ID="+EventoID;
+        dat = this.rid.queryForList(sql);
+        dat1=this.rid.queryForList(f);
+        
+        String o = dat1.toString();
+//        mav.addObject("fecha", o.substring(18, 28));
+        mav.addObject("fecha", o.substring(24, 34));
+        
+        mav.addObject("eve",dat);
+        mav.addObject("mjs", "<div style='color: red;'>No se puede editar porque ya tiene inscritos en él</div>");
+        mav.addObject("jav", "<script>\n" +
+"                            var cond;\n" +
+"                            cond="+adep+"!==null;\n" +
+"                            $('#actt').toggle(cond);\n" +
+"                        </script>");
+        mav.setViewName("EditarEvento");
+//         mav.setViewName("redirect:/DDyFD.html");
+        }
+            
         }else{
             mav.setViewName("CoordUA");
         }

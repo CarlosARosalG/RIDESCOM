@@ -184,10 +184,13 @@ public class Deportes {
     }    
     @RequestMapping(value="DDyFD/Deportes/BorrarDeporte.html", method=RequestMethod.POST)
     public ModelAndView delete(Deporte dep){
-        String sql="update Act_Deportiva set Disciplina=? where ID_Deporte="+DeporteID;
-        this.rid.update(sql, dep.getDisciplina());
-        ModelAndView mv=new ModelAndView ("redirect:../DDyFD/ConfirmaBorrar.html");
-        return mv;
+//        String sql="update Act_Deportiva set Disciplina=? where ID_Deporte="+DeporteID;
+        String sql ="delete from Act_Deportiva where ID_Deporte="+DeporteID;
+        this.rid.update(sql);
+        mav.setViewName("redirect:../Deportes.html");
+        mav.addObject("mjs", "<div style='color: green;'>Se ha Eliminado correctamente</div>");
+//        ModelAndView mv=new ModelAndView ("redirect:../Deportes.html");
+        return mav;
     }
     @RequestMapping(value="DDyFD/Deportes/ConfirmaBorrar.html")
     public ModelAndView confirma(HttpServletRequest re){

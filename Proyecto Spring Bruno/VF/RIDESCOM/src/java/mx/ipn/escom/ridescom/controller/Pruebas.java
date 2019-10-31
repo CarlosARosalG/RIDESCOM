@@ -194,9 +194,10 @@ public class Pruebas {
 //        return mv;
     }    
     @RequestMapping(value="DDyFD/Pruebas/BorrarPrueba.html", method=RequestMethod.POST)
-    public ModelAndView delete(Prueba pru){
-        String sql="update Pruebas set Prueba=?, Act_Deportiva_ID_Deporte=?, Tipo_Pruebas_ID_Tipo=? where ID_Pruebas="+PruebaID;
-        this.rid.update(sql, pru.getPrueba(), pru.getAct_Prueba(), pru.getTipo());
+    public ModelAndView delete(HttpServletRequest re, Prueba pru){
+        PruebaID=Integer.parseInt(re.getParameter("PruebaID"));
+        String sql ="delete from Pruebas where ID_Pruebas="+PruebaID;
+        this.rid.update(sql);
 //        ModelAndView mv=new ModelAndView ("redirect:../Pruebas.html");
 //        return mv;
         mav.setViewName("redirect:../Pruebas.html");

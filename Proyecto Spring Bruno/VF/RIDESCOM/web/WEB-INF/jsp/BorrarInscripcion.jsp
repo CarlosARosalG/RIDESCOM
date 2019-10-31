@@ -13,7 +13,7 @@
 <head>
 	<head>
 	<meta charset="utf-8">
-	<title> Incribe Interpolitécnico </title>
+	<title> Borra Inscripción </title>
 
 	<!--Jquery -->
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -363,16 +363,17 @@
 </head>
 <body>
 	<section id="global">
-            <c:forEach var="per" items="${alum}">
+            
 		<div id="titulo">
-			<h1> Registra un evento interpolitécnico deportivo </h1>
+			<h1> Borra tu inscripción </h1>
 		</div>
 
 		<div class="col-12 ">
 			<div id="noti" class="alert alert-warning col-4" role="alert">
-			  <p> Solo se muestran los eventos disponibles. </p>
+			  <p> ¿Estas seguro de eliminar tu inscripción?. </p>
 			</div>
 		</div>
+            <c:forEach var="per" items="${alum}">
                 <div class="form-row">
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Boleta </label>
@@ -461,49 +462,12 @@
                     <div class="form-row">
                         ${mjs}
                         <div class="col-md-5 mb-3">
-                            <select id="Evento_ID" name="Evento" class="custom-select" required>
-                                <option value="">Selecciona Evento...</option>
-                                <%
-                                                        try{
-                                                            String query="SELECT * from (select Evento_ID, Nombre_Evento, Descripcion, DATE_FORMAT(Fecha_Inicio_Registro,'%d-%m-%Y') AS FIR, DATE_FORMAT(Fecha_Fin_Registro,'%d-%m-%Y') AS FFR, DATE_FORMAT(Fecha_Evento, '%d-%m-%Y') AS FE, Ciclo_Escolar, Disciplina, Nombre_S, Municipio, Estado, Prueba, Rama \n" +
-                        "from Evento e " +
-                    "inner join (Ciclo ci, Pruebas pr, Act_Deportiva d, Sede s, Municipio m, Estados edo, Tipo_Pruebas tp) " +
-"                    on (e.Ciclo_ID_Ciclo=ci.ID_Ciclo " +
-"                    AND pr.Tipo_Pruebas_ID_Tipo=tp.ID_Tipo " +
-"                    AND e.Pruebas_ID_Pruebas=pr.ID_Pruebas " +
-"                    AND pr.Act_Deportiva_ID_Deporte=d.ID_Deporte " +
-"                    AND e.Sede_ID_Sede=s.ID_Sede " +
-"                    AND s.Municipio_ID_Municipio=m.ID_Municipio " +
-"                    AND s.Municipio_Estados_ID_estado=m.Estados_ID_estado " +
-"                    AND m.Estados_ID_estado=edo.ID_estado) " +
-"                    where Fecha_evento >= left(now(),10) order by FE ASC) as eve left join (inscripcion i) on (i.Evento_Evento_ID=eve.Evento_ID)";
-                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
-                                                            Connect conn = new Connect();
-                                                            Statement stm=conn.Connect().createStatement();
-                                                            ResultSet rs=stm.executeQuery(query);
-                                                            while(rs.next()){
-                                                                %>
-                                                                <option value="<%=rs.getInt("Evento_ID")%>"><%=rs.getString("Nombre_Evento")%> - <%=rs.getString("Prueba")%> </option>
-                                                                <%
-                                                            }
-                                                            
-                                                        }catch(Exception ex)
-                                                        {
-                                                            ex.printStackTrace();
-                                                            out.println("Error: "+ex.getMessage());
-                                                        }
-                                                    %>
-                                <%--<c:forEach var="" items="${}">--%>    
-                                <%--</c:forEach>--%>
-                            </select>
-                            <div class="invalid-feedback">
-                                Ingresa la prueba en la que quieres participar
-                            </div>
+                            <input id="Evento_ID" name="Evento" value="${deporte}" class="custom-select" disabled/>
                         </div>
                     </div>
                     <div class="clearfix" >&nbsp;</div>
                     <button type="submit" class="btn  btn-outline-success "> Registrar </button>
-                    <a href="../Alumno.html" class="btn  btn-outline-danger "> Volver </a>
+                    <a href="../Inscripciones.html" class="btn  btn-outline-danger "> Volver </a>
                 </form>
 	</section>
 </body>

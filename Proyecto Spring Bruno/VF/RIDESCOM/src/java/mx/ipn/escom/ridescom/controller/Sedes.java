@@ -190,7 +190,7 @@ public class Sedes {
         String sql ="delete from Sede where ID_Sede="+SedeID;
         this.rid.update(sql);
         ModelAndView mv=new ModelAndView ("redirect:../Sedes.html");
-        mv.addObject("msjs", "<div style='color: green;'>Se ha Eliminado correctamente</div>");
+//        mv.addObject("msjs", "<div style='color: green;'>Se ha Eliminado correctamente</div>");
         return mv;
     }
 }

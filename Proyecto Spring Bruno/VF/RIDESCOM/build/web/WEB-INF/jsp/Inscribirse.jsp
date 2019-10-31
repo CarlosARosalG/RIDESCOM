@@ -363,6 +363,7 @@
 </head>
 <body>
 	<section id="global">
+            <c:forEach var="per" items="${alum}">
 		<div id="titulo">
 			<h1> Registra un evento interpolitécnico deportivo </h1>
 		</div>
@@ -372,7 +373,85 @@
 			  <p> Solo se muestran los eventos disponibles. </p>
 			</div>
 		</div>
-
+                <div class="form-row">
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Boleta </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="${per.ID_Alumno}" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+				</div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Nombre </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="${per.Nombre}" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+				</div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Apellido Patarno </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="${per.Ap_Pat}" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Apellido Materno </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="${per.Ap_Mat}" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				     <label for="validationTooltip01"> CURP </label>
+				     <input type="text" class="form-control" id="validationTooltip01" value="${per.CURP}" disabled/>
+				     <div class="valid-tooltip">
+				     	OK
+				     </div>
+		    	</div>
+		    	<div class="col-md-4 mb-3">
+			    	<label for="validationTooltip02"> Escuela </label>
+			    	<input type="text" class="form-control" id="validationTooltip02" value="${per.Escuela}" disabled/>
+			    	<div class="valid-tooltip">
+			      		OK
+			    	</div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Carrera </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="${per.Programa}" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Fecha de nacimiento </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="${per.Fecha_Nac}" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Lugar de nacimiento </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="${lugar}" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Sexo </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="${per.Sexo}" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Correo electrónico </label>
+				    <input type="text" class="form-control" id="validationTooltip02" value="${per.Correo}" disabled/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                </c:forEach>
 		<!-- Formulario --> 
                 <form class="needs-validation" novalidate method="POST">
                     <!-- Material checked -->

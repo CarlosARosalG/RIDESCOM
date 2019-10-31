@@ -361,8 +361,47 @@
         </style>
 </head>
 <body>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3&appId=343722776301044&autoLogAppEvents=1"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{569609143783510}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{v4.0}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+   
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+
+
+{
+    status: 'connected',
+    authResponse: {
+        accessToken: '...',
+        expiresIn:'...',
+        signedRequest:'...',
+        userID:'...'
+    }
+}
+
+
+</script>
     <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v5.0&appId=569609143783510&autoLogAppEvents=1"></script>
 <section id="global">
 	<div id="titulo">
             <h1> Difundir evento interpolitécnico deportivo </h1>
@@ -370,14 +409,16 @@
         <h2 id="titulo">Consulta los eventos para publicar</h2>
         <div class="container">
             <div class="col-row-12">
+                <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
                 <div class="flexsearch">
-                    <div class="flexsearch--wrapper">
-                            <div class="flexsearch--input-wrapper">
-                                <input class="flexsearch--input" type="search" placeholder="Busca un deporte">                       
+                            <div class="flexsearch--wrapper">
+                                <form class="flexsearch--form" id="searchTerm" placeholder="Buscar" type="text" onkeyup="doSearch()" />
+                                    <div class="flexsearch--input-wrapper">
+                                        <input type="text" id="search" placeholder="Buscar..." title="Busqueda Rapida" class="form-control">
+                                    </div>
+                                </form>    
                             </div>
                     </div>
-                </div>
-
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -391,7 +432,7 @@
                             <!--<th></th>-->
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="datos">
                     <c:forEach var="e" items="${even}">
                         <tr>
                                                             <td>${e.Nombre_Evento}</td>
@@ -403,10 +444,8 @@
                                                             <td>${e.Lugar_Obtenido}</td>
                                                             <td>${e.Marca}</td>-->
                                                             <td>
-                                <div class="fb-login-button" data-width="" data-size="medium" data-button-type="continue_with" 
-                                     data-auto-logout-link="false" data-use-continue-as="false">
-                                </div>
-                            </td>
+                                                                    <button type="button" class="btn btn-outline-info"> RIDESCOM </button>
+                                                            </td>
                                                         </tr>
                     </c:forEach>
                     </tbody>
@@ -424,7 +463,18 @@
 	    fjs.parentNode.insertBefore(js, fjs);
 	  }(document, 'script', 'facebook-jssdk'));
 	 </script>
-    
 </section>
 </body>
+<script>
+var $rows = $('#datos tr');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+
+</script>
 </html>

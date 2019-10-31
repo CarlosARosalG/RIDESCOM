@@ -369,6 +369,7 @@
 	<section id="global">
 		<div id="titulo">
 			<h1> Edita información de un evento interpolitécnico deportivo </h1>
+                        ${mjs}
 		</div>
 
 		<div class="col-12 ">
@@ -514,8 +515,9 @@
                         <textarea name="Desc" onkeyup="countChars(this);" class="form-control" id="exampleFormControlTextarea1" rows="2" maxlength="200">${eve[0].Descripcion}</textarea>
                         <p id="charNum">0/200</p>
                     </div>
+                        ${jav}
 <!--                    <button class="btn  btn-outline-success" type="submit"> Registrar </button>-->
-                    <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Actualizar </button>
+                    <button id="actt" name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Actualizar </button>
                     <a href="../DDyFD.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
                 </form>
 	</section>
