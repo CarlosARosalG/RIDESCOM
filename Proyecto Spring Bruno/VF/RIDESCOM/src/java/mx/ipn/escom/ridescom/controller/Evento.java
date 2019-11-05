@@ -99,7 +99,7 @@ public class Evento {
         }catch(Exception e){
         }
         if(dep==null){
-            String sql="select Evento_ID, Nombre_Evento, Descripcion, Fecha_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Prueba, Disciplina, Nombre_S, Ciclo_Escolar " +
+            String sql="select Evento_ID, Nombre_Evento, Descripcion, Fecha_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, ID_Pruebas, Prueba, Disciplina, ID_Sede, Nombre_S, ID_Ciclo, Ciclo_Escolar " +
                         "from Evento e, Ciclo c, Sede s, Pruebas pr, act_deportiva d " +
                         "where e.Ciclo_ID_Ciclo=c.ID_Ciclo " +
                         "and e.Sede_ID_Sede=s.ID_Sede " +
@@ -119,9 +119,7 @@ public class Evento {
 //        mav.addObject("fecha", dat1);
         mav.setViewName("EditarEvento");
         }else{
-            String adep =null;
-            
-            String sql="select Evento_ID, Nombre_Evento, Descripcion, Fecha_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, Prueba, Disciplina, Nombre_S, Ciclo_Escolar " +
+            String sql="select Evento_ID, Nombre_Evento, Descripcion, Fecha_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, ID_Pruebas, Prueba, Disciplina, ID_Sede, Nombre_S, ID_Ciclo, Ciclo_Escolar " +
                         "from Evento e, Ciclo c, Sede s, Pruebas pr, act_deportiva d " +
                         "where e.Ciclo_ID_Ciclo=c.ID_Ciclo " +
                         "and e.Sede_ID_Sede=s.ID_Sede " +
@@ -139,11 +137,6 @@ public class Evento {
         
         mav.addObject("eve",dat);
         mav.addObject("mjs", "<div style='color: red;'>No se puede editar porque ya tiene inscritos en él</div>");
-        mav.addObject("jav", "<script>\n" +
-"                            var cond;\n" +
-"                            cond="+adep+"!==null;\n" +
-"                            $('#actt').toggle(cond);\n" +
-"                        </script>");
         mav.setViewName("EditarEvento");
 //         mav.setViewName("redirect:/DDyFD.html");
         }

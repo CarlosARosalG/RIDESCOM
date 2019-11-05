@@ -362,9 +362,45 @@
 </head>
 <body>
 <script>
+    function post_on_wall()
+{
+    FB.login(function(response)
+    {
+        if (response.authResponse)
+        {
+            alert('Logged in!');
+ 
+            // Post message to your wall
+ 
+            var opts = {
+                message : document.getElementById('fb_message').value,
+                name : 'Post Title',
+                link : 'https://www.facebook.com/alejandro.escom.14',
+                description : 'post description',
+                picture : 'http://2.gravatar.com/avatar/8a13ef9d2ad87de23c6962b216f8e9f4?s=128&amp;d=mm&amp;r=G'
+            };
+ 
+            FB.api('/me/feed', 'post', opts, function(response)
+            {
+                if (!response || response.error)
+                {
+                    alert('Posting error occured');
+                }
+                else
+                {
+                    alert('Success - Post ID: ' + response.id);
+                }
+            });
+        }
+        else
+        {
+            alert('Not logged in');
+        }
+    }, { scope : 'publish_stream' });
+}
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '{569609143783510}',
+      appId      : '{569609143 783510}',
       cookie     : true,
       xfbml      : true,
       version    : '{v4.0}'
@@ -400,11 +436,26 @@ FB.getLoginStatus(function(response) {
 
 
 </script>
+<script>
+	// Load the SDK asynchronously
+	  (function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+	    js = d.createElement(s); js.id = id;
+	    js.src = "//connect.facebook.net/en_US/sdk.js";
+	    fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));
+	 </script>
     <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v5.0&appId=569609143783510&autoLogAppEvents=1"></script>
 <section id="global">
 	<div id="titulo">
             <h1> Difundir evento interpolitécnico deportivo </h1>
+            <div id="fb_div">
+    <h3>Post to your Facebook wall:</h3> <br />
+    <textarea id="fb_message" name="fb_message" cols="70" rows="7"></textarea> <br />
+    <input type="button" value="Post on Wall" onClick="post_on_wall();" />
+</div>
         </div>
         <h2 id="titulo">Consulta los eventos para publicar</h2>
         <div class="container">
@@ -453,16 +504,6 @@ FB.getLoginStatus(function(response) {
                 <a href="../Coordinador.html" class="btn btn-light float-right login_btn"> Volver </a>
             </div>
         </div>
-    <script>
-	// Load the SDK asynchronously
-	  (function(d, s, id) {
-	    var js, fjs = d.getElementsByTagName(s)[0];
-	    if (d.getElementById(id)) return;
-	    js = d.createElement(s); js.id = id;
-	    js.src = "//connect.facebook.net/en_US/sdk.js";
-	    fjs.parentNode.insertBefore(js, fjs);
-	  }(document, 'script', 'facebook-jssdk'));
-	 </script>
 </section>
 </body>
 <script>

@@ -27,43 +27,6 @@ import org.jsoup.select.Elements;
 //import crawler.webcrawler;
 
 public class Craw {
-//    String usuario;
-//    String pass;
-//    String vrfcd;
-//
-//    public Craw() {
-//    }
-//
-//    public Craw(String usuario, String pass, String vrfcd) {
-//        this.usuario = usuario;
-//        this.pass = pass;
-//        this.vrfcd = vrfcd;
-//    }
-//
-//    public String getUsuario() {
-//        return usuario;
-//    }
-//
-//    public void setUsuario(String usuario) {
-//        this.usuario = usuario;
-//    }
-//
-//    public String getPass() {
-//        return pass;
-//    }
-//
-//    public void setPass(String pass) {
-//        this.pass = pass;
-//    }
-//
-//    public String getVrfcd() {
-//        return vrfcd;
-//    }
-//
-//    public void setVrfcd(String vrfcd) {
-//        this.vrfcd = vrfcd;
-//    }
-    
     public Map<String, String> cookies;
 
 	private static String saes = "https://www.saes.escom.ipn.mx/";
@@ -130,21 +93,12 @@ public class Craw {
 	    formFields.put("ctl00$leftColumn$LoginUser$UserName", usuario);
 	    formFields.put("ctl00$leftColumn$LoginUser$Password", pass);
 	    formFields.put("ctl00$leftColumn$LoginUser$CaptchaCodeTextBox", vrfcd);
+            getData(formFields);
             return formFields;
         }
 
 	//Realiza lectura y envio de datos insertados al login
-	public void getData(String regno, String passwd, String captcha) throws Exception{
-            HashMap<String, String> formFields = parametros(regno, passwd, captcha);
-//            String regno = usuario;
-//	    String passwd = pass; 
-////	    String vrfcd = capt;
-//
-//            Scanner s=new Scanner(System.in);
-//	    String vrfcd = s.nextLine();
-//	    formFields.put("ctl00$leftColumn$LoginUser$UserName", regno);
-//	    formFields.put("ctl00$leftColumn$LoginUser$Password", passwd);
-//	    formFields.put("ctl00$leftColumn$LoginUser$CaptchaCodeTextBox", vrfcd);
+	public void getData(HashMap<String, String> formFields) throws Exception{
 		Connection conn = Jsoup.connect(saes+"/Default.aspx?ReturnUrl=%2falumnos%2fdefault.aspx")
 	            .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36")
 	            .cookies(cookies)

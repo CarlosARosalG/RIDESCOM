@@ -428,7 +428,7 @@
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip02"> Semestre </label>
                             <select name="ciclo" id="selectsport" class="custom-select" style="width: 150px;" required/>
-					  <option value="">Ciclo_Escolar</option>
+					  <option value="${eve[0].ID_Ciclo}">${eve[0].Ciclo_Escolar}</option>
                                                     <%
                                                         try{
                                                             String query="select * from Ciclo";
@@ -457,7 +457,7 @@
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip04"> Lugar donde se realizará el evento </label>
                             <select name="sede" id="selectsport" class="custom-select" style="width: 200px;" required/>
-					  <option value="">Seleccione sede...</option>
+					  <option value="${eve[0].ID_Sede}">${eve[0].Nombre_S}</option>
                                                     <%
                                                         try{
                                                             String query="select * from Sede s inner join(Municipio m, Estados edo) on(m.Estados_ID_estado=edo.ID_estado AND m.ID_Municipio=s.Municipio_ID_Municipio AND m.Estados_ID_estado=s.Municipio_Estados_ID_estado)";
@@ -484,7 +484,7 @@
                         <label for="validationTooltip05"> Prueba </label>
                         <div class="col-md-3 mb-3">
                                 <select name="deporte" id="selectsport" class="custom-select" style="width: 380px;" required>
-					  <option value="">Seleccione prueba...</option>
+					  <option value="${eve[0].ID_Pruebas}">${eve[0].Prueba} - ${eve[0].Disciplina}</option>
                                                     <%
                                                         try{
                                                             String query="select ID_Pruebas, Prueba, Disciplina from pruebas pr, Act_Deportiva d where pr.Act_Deportiva_ID_Deporte=d.ID_Deporte";
@@ -494,7 +494,7 @@
                                                             ResultSet rs=stm.executeQuery(query);
                                                             while(rs.next()){
                                                                 %>
-                                                                <option value="<%=rs.getInt("ID_Pruebas")%>"><%=rs.getString("Prueba")%>-<%=rs.getString("Disciplina")%></option>
+                                                                <option value="<%=rs.getInt("ID_Pruebas")%>"><%=rs.getString("Prueba")%> - <%=rs.getString("Disciplina")%></option>
                                                                 <%
                                                             }
                                                             
@@ -515,7 +515,7 @@
                         <textarea name="Desc" onkeyup="countChars(this);" class="form-control" id="exampleFormControlTextarea1" rows="2" maxlength="200">${eve[0].Descripcion}</textarea>
                         <p id="charNum">0/200</p>
                     </div>
-                        ${jav}
+                        
 <!--                    <button class="btn  btn-outline-success" type="submit"> Registrar </button>-->
                     <button id="actt" name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Actualizar </button>
                     <a href="../DDyFD.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
