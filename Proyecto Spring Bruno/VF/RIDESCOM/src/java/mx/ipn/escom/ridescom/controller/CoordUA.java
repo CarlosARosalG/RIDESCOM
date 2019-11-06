@@ -44,7 +44,7 @@ public class CoordUA {
         if(session.getAttribute("Nombre_U")== null){
          mav.setViewName("Login");
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
-        mav.setViewName("DDyFD");
+        mav.setViewName("redirect:/DDyFD.html");
         }else{
             //Info del Usuario Coordinador
         String sqlp="select u.Nombre_U, p.Nombre, p.Ap_Pat, p.Ap_Mat, s.Sexo, p.Fecha_Nac, p.CURP, p.NSS, ce.Correo, tf.Telefono, tc.Celular" +

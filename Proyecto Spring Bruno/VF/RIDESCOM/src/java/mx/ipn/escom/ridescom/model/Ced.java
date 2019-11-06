@@ -11,12 +11,14 @@ package mx.ipn.escom.ridescom.model;
  */
 public class Ced {
     int iddeporte;
+    int Ciclo;
 
     public Ced() {
     }
 
     public Ced(int iddeporte) {
         this.iddeporte = iddeporte;
+        this.Ciclo = Ciclo;
     }
 
     public int getIddeporte() {
@@ -25,6 +27,13 @@ public class Ced {
 
     public void setIddeporte(int iddeporte) {
         this.iddeporte = iddeporte;
+    }
+    public int getCiclo() {
+        return Ciclo;
+    }
+
+    public void setCiclo(int Ciclo) {
+        this.Ciclo = Ciclo;
     }
     
 }

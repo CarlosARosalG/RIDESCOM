@@ -603,7 +603,7 @@ Funciones: Será la vista gerenal para los alumnos
                             <th scope="col"> Marca </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="datos">
 							<c:forEach var="ins" items="${ins}">
                                                         <tr>
                                                             <td>${ins.Alumno_ID_Alumno}</td>

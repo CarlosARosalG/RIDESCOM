@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 //import java.sql.*;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import mx.ipn.escom.ridescom.config.Conexion;
+import mx.ipn.escom.ridescom.config.Connect;
 import mx.ipn.escom.ridescom.config.Craw;
 import mx.ipn.escom.ridescom.model.Crawler;
 import mx.ipn.escom.ridescom.model.CrawlerDAO;
@@ -39,12 +42,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class LoginAlumno {
     ModelAndView mav=new ModelAndView();
-    Conexion cn=new Conexion();
+    Conexion con=new Conexion();
 //    Connection con;
-    JdbcTemplate rid=new JdbcTemplate(cn.ConectaRID());
+    JdbcTemplate rid=new JdbcTemplate(con.ConectaRID());
 //    PreparedStatement ps;
 //    ResultSet rs;
     Craw cw=new Craw();
+    
+    Connect cn=new Connect();
+    java.sql.Connection ct;
+    ResultSet rs;
+    PreparedStatement ps;
+    String ro;
     
     Usuario us=new Usuario();
     Crawler cra=new Crawler();
@@ -56,13 +65,25 @@ public class LoginAlumno {
     @RequestMapping(value="LoginAlumno.html", method=RequestMethod.GET)
     public ModelAndView log(HttpServletRequest req) throws IOException, Exception{
         HttpSession session = req.getSession();
+        String ur="select Roles_ID_Roles from usuario where Nombre_U='"+session.getAttribute("Nombre_U")+"';";
+         try{
+            ct=cn.Connect();
+            ps=ct.prepareStatement(ur);
+            rs=ps.executeQuery();
+            if(rs!=null ){
+                while(rs.next() ){
+                ro =rs.getString("Roles_ID_Roles");
+                }
+            }
+        }catch(Exception e){
+        }
         if(session.getAttribute("Nombre_U")!= null){
-            if(us.getRol()==1){
-                mav.setViewName("Error404");
-            }else if(us.getRol()==2){
-                mav.setViewName("CoordUA");
-            }else if(us.getRol()==3){
-                mav.setViewName("Alumno");
+            if(ro.equals("1")){
+            mav.setViewName("redirect:/DDyFD.html");
+            }else if(ro.equals("2")){
+            mav.setViewName("redirect:/Coordinador.html");
+            }else if(ro.equals("3")){
+            mav.setViewName("redirect:/Alumno.html");    
             }
         }else{
             cw.downloadCaptcha();
@@ -79,7 +100,13 @@ public class LoginAlumno {
         String pass=req.getParameter("Password");
         String capt=req.getParameter("Captcha");
         //String jefe= "DDyFD";
-        
+        if(capt==null || capt.equals(" ")){
+            mav.setViewName("redirect:/LoginAlumno.html");
+                    mav.addObject("mjs", "<div style='color: red;'>ERROR, usuario o contraseña invalido.</div>"); 
+                
+        }else{
+       
+                    
             us=udao.validar(usuario, pass);
             if(us.getNombre_U()!= null){
                 if(us.getRol()==3){
@@ -94,11 +121,10 @@ public class LoginAlumno {
                     mav.setViewName("redirect:/LoginAlumno.html");
                     mav.addObject("mjs", "<div style='color: red;'>ERROR, usuario o contraseña invalido.</div>"); 
                 }
+        }
         }else{
-                
-                    mav.setViewName("redirect:/LoginAlumno.html");
-                    mav.addObject("mjs", "<div style='color: red;'>ERROR, usuario o contraseña invalido.</div>"); 
-                }
+            mav.setViewName("redirect:/LoginAlumno.html");
+        }
         return mav;
     }
     

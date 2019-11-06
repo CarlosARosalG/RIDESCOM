@@ -40,6 +40,7 @@
                 <prop key="DDyFD/AgregarEvento.html">evento</prop>
                 <prop key="DDyFD/Eventosiguiente.html">evento</prop>
                 <prop key="DDyFD/EditarEvento.html">evento</prop>
+                <prop key="DDyFD/ExisteEvento.html">evento</prop>
                 <prop key="DDyFD/BorrarEvento.html">evento</prop>
                 <prop key="DDyFD/ConfirmaBorrarEvento.html">evento</prop>
                 

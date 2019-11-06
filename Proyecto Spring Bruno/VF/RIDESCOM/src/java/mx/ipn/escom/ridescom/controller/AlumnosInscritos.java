@@ -55,17 +55,22 @@ public class AlumnosInscritos {
         ConectaCedula cc=new ConectaCedula();
             //File reportfile =new File(application.getRealPath("WEB-INF/jsp/Cedula.jasper"));
             Map<String, Object> parameter = new HashMap<>();
+//            Map<String, Object> parameter1 = new HashMap<>();
             String path = "Cedula.jasper";
             
 //            String dat=request.getParameter("iddeporte");
             parameter.put("Deporte",cd.getIddeporte());
+            parameter.put("Ciclo",cd.getCiclo());
             JasperReport reportfile = (JasperReport) JRLoader.loadObjectFromFile(path);
             byte[] bytes = JasperRunManager.runReportToPdf(reportfile, parameter, cc.getConexion());
+//            byte[] bytes1 = JasperRunManager.runReportToPdf(reportfile, parameter1, cc.getConexion());
             
             response.setContentType("application/pdf");
             response.setContentLength(bytes.length);
+//            response.setContentLength(bytes1.length);
             ServletOutputStream outputstream = response.getOutputStream();
             outputstream.write(bytes, 0, bytes.length);
+//            outputstream.write(bytes1, 0, bytes1.length);
             
             outputstream.flush();
             outputstream.close();

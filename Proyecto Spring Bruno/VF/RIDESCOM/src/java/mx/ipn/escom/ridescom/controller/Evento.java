@@ -36,7 +36,7 @@ public class Evento {
     Connection ct;
     ResultSet rs;
     PreparedStatement ps;
-    String dep;
+    String dep=null;
     
     int EventoID;
     List dat;
@@ -77,6 +77,21 @@ public class Evento {
         }
         return mav;
     }
+    @RequestMapping(value="DDyFD/ExisteEvento.html", method=RequestMethod.GET)
+    public ModelAndView Existe(HttpServletRequest re)throws SQLException{
+        HttpSession session = re.getSession();
+        if(session.getAttribute("Nombre_U")== null){
+         mav.setViewName("Error404");
+        }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
+
+        mav.setViewName("ExisteEv");
+//         mav.setViewName("redirect:/DDyFD.html");
+            
+        }else{
+            mav.setViewName("CoordUA");
+        }
+        return mav;
+    }
     
     //Scripts para edici√≥n de Deportes
     @RequestMapping(value="DDyFD/EditarEvento.html", method=RequestMethod.GET)
@@ -86,7 +101,7 @@ public class Evento {
          mav.setViewName("Error404");
         }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
         EventoID=Integer.parseInt(re.getParameter("EventoID"));
-        String ei="select Evento_Evento_ID from Inscripcion where Evento_Evento_ID="+EventoID;
+        String ei="select distinct Evento_Evento_ID from Inscripcion where Evento_Evento_ID="+EventoID;
         try{
             ct=cn.Connect();
             ps=ct.prepareStatement(ei);
@@ -99,7 +114,7 @@ public class Evento {
         }catch(Exception e){
         }
         if(dep==null){
-            String sql="select Evento_ID, Nombre_Evento, Descripcion, Fecha_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, ID_Pruebas, Prueba, Disciplina, ID_Sede, Nombre_S, ID_Ciclo, Ciclo_Escolar " +
+        String sql="select Evento_ID, Nombre_Evento, Descripcion, Fecha_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, ID_Pruebas, Prueba, Disciplina, ID_Sede, Nombre_S, ID_Ciclo, Ciclo_Escolar " +
                         "from Evento e, Ciclo c, Sede s, Pruebas pr, act_deportiva d " +
                         "where e.Ciclo_ID_Ciclo=c.ID_Ciclo " +
                         "and e.Sede_ID_Sede=s.ID_Sede " +
@@ -116,10 +131,9 @@ public class Evento {
         mav.addObject("fecha", o.substring(24, 34));
         
         mav.addObject("eve",dat);
-//        mav.addObject("fecha", dat1);
-        mav.setViewName("EditarEvento");
+        mav.setViewName("EditarEvento");        
         }else{
-            String sql="select Evento_ID, Nombre_Evento, Descripcion, Fecha_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, ID_Pruebas, Prueba, Disciplina, ID_Sede, Nombre_S, ID_Ciclo, Ciclo_Escolar " +
+        String sql="select Evento_ID, Nombre_Evento, Descripcion, Fecha_Evento, Fecha_inicio_Registro, Fecha_fin_Registro, ID_Pruebas, Prueba, Disciplina, ID_Sede, Nombre_S, ID_Ciclo, Ciclo_Escolar " +
                         "from Evento e, Ciclo c, Sede s, Pruebas pr, act_deportiva d " +
                         "where e.Ciclo_ID_Ciclo=c.ID_Ciclo " +
                         "and e.Sede_ID_Sede=s.ID_Sede " +
@@ -136,11 +150,9 @@ public class Evento {
         mav.addObject("fecha", o.substring(24, 34));
         
         mav.addObject("eve",dat);
-        mav.addObject("mjs", "<div style='color: red;'>No se puede editar porque ya tiene inscritos en Èl</div>");
-        mav.setViewName("EditarEvento");
-//         mav.setViewName("redirect:/DDyFD.html");
-        }
-            
+        mav.addObject("mjs", "<div style='color: red;'>"+dep+"No se puede editar porque ya tiene inscritos en Èl</div>");
+        mav.setViewName("ExisteEv");
+        }    
         }else{
             mav.setViewName("CoordUA");
         }

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cedula" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="d60dc77c-3bc9-4ed1-b67a-55e2e73e212f">
-	<property name="ireport.zoom" value="2.1435888100000016"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="80"/>
+	<property name="ireport.zoom" value="1.610510000000001"/>
+	<property name="ireport.x" value="406"/>
+	<property name="ireport.y" value="60"/>
 	<parameter name="Deporte" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
+	<parameter name="Ciclo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
-		<![CDATA[select p.Ap_Pat, p.Ap_Mat, p.nombre, p.Fecha_Nac, (select Estado from Estados where Homo=(select left(right(CURP,7),2) from persona WHERE ID_Persona=3)) as Lugar_Nac, p.CURP, pa.Programa, a.ID_Alumno, a.Inscrito as Grupo, p.NSS, ce.Correo, m.municipio, ad.Disciplina
-	from Alumno a, Inscripcion i, Evento e, pruebas pr, act_deportiva ad, Persona p, Contacto c, email ce, Municipio m, escuela_has_prog_academico epa, escuela es, prog_academico pa
+		<![CDATA[select distinct p.Ap_Pat, p.Ap_Mat, p.nombre, p.Fecha_Nac, p.CURP, pa.Programa, a.ID_Alumno, a.Inscrito as Grupo, p.NSS, ce.Correo, m.municipio, ad.Disciplina, ci.Ciclo_Escolar
+	from Alumno a, Inscripcion i, Evento e, pruebas pr, act_deportiva ad, Persona p, Contacto c, email ce, Municipio m, escuela_has_prog_academico epa, escuela es, prog_academico pa, ciclo ci
 		where p.ID_Persona = a.Persona_ID_Persona
 			AND p.ID_Persona = c.Persona_ID_Persona
             AND c.ID_Contacto = ce.Contacto_ID_Contacto
@@ -18,9 +21,11 @@
             AND epa.Escuela_ID_Escuela = es.ID_Escuela
             AND epa.Prog_Academico_ID_Prog_Academico = pa.ID_Prog_Academico
 			AND i.Evento_Evento_ID = e.Evento_ID
+            AND e.Ciclo_ID_Ciclo=ci.ID_Ciclo
             AND pr.ID_Pruebas= e.Pruebas_ID_Pruebas
             AND pr.Act_Deportiva_ID_Deporte = ad.ID_Deporte
-            AND pr.Act_Deportiva_ID_Deporte = $P!{Deporte}
+            AND pr.Act_Deportiva_ID_Deporte = $P{Deporte}
+            AND e.Ciclo_ID_Ciclo = $P{Ciclo}
             order by ad.Disciplina asc;]]>
 	</queryString>
 	<field name="Ap_Pat" class="java.lang.String">
@@ -35,7 +40,6 @@
 	<field name="Fecha_Nac" class="java.sql.Date">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="Lugar_Nac" class="java.lang.String"/>
 	<field name="CURP" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
@@ -56,6 +60,9 @@
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="Disciplina" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ciclo_Escolar" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<background>
@@ -85,24 +92,24 @@
 	<columnHeader>
 		<band height="27" splitType="Stretch">
 			<staticText>
-				<reportElement x="475" y="2" width="60" height="20" uuid="1ae42108-3f27-4ffd-8df6-712d1a917d17"/>
+				<reportElement x="470" y="2" width="75" height="20" uuid="1ae42108-3f27-4ffd-8df6-712d1a917d17"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[NSS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="169" y="2" width="50" height="20" uuid="ada3031c-6b8c-4706-afb1-5cd90d4bd331"/>
+				<reportElement x="162" y="2" width="50" height="20" uuid="ada3031c-6b8c-4706-afb1-5cd90d4bd331"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<paragraph lineSpacing="Proportional"/>
 				</textElement>
 				<text><![CDATA[Ap_Mat]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="534" y="2" width="135" height="20" uuid="561f0c9a-a281-48d7-8324-81f9e2971d44"/>
+				<reportElement x="545" y="3" width="119" height="20" uuid="561f0c9a-a281-48d7-8324-81f9e2971d44"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Correo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="218" y="2" width="75" height="20" uuid="86ba84ce-ed32-422f-82ee-89a0a1f9023e"/>
+				<reportElement x="210" y="3" width="75" height="20" uuid="86ba84ce-ed32-422f-82ee-89a0a1f9023e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<paragraph lineSpacing="Proportional"/>
 				</textElement>
@@ -121,7 +128,7 @@
 				<text><![CDATA[Ap_Pat]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="411" y="2" width="65" height="20" uuid="95b6231d-ff4c-4b35-b019-a9b242d19146"/>
+				<reportElement x="405" y="2" width="65" height="20" uuid="95b6231d-ff4c-4b35-b019-a9b242d19146"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Boleta]]></text>
 			</staticText>
@@ -131,7 +138,7 @@
 				<text><![CDATA[Disciplina]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="292" y="2" width="120" height="20" uuid="095b494d-7a71-4898-bcc6-b9e59bac54e1"/>
+				<reportElement x="285" y="3" width="120" height="20" uuid="095b494d-7a71-4898-bcc6-b9e59bac54e1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[CURP]]></text>
 			</staticText>
@@ -145,29 +152,29 @@
 				<text><![CDATA[Foto]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="411" y="4" width="65" height="47" uuid="c55e2882-59a3-4b8f-9fe9-e9301c3d94a1"/>
+				<reportElement x="405" y="4" width="65" height="47" uuid="c55e2882-59a3-4b8f-9fe9-e9301c3d94a1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{ID_Alumno}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="292" y="4" width="120" height="47" uuid="eb874c00-b17f-4207-9cef-aecaa9a55476"/>
+				<reportElement x="285" y="4" width="120" height="47" uuid="eb874c00-b17f-4207-9cef-aecaa9a55476"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{CURP}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="218" y="3" width="75" height="48" uuid="775272d0-c48e-421e-963c-ff907f0abeea"/>
+				<reportElement x="210" y="3" width="75" height="48" uuid="775272d0-c48e-421e-963c-ff907f0abeea"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<paragraph lineSpacing="Proportional"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="534" y="4" width="135" height="47" uuid="084d4fb5-fae4-4b58-abd7-ff13fe7edaa6"/>
+				<reportElement x="535" y="4" width="135" height="47" uuid="084d4fb5-fae4-4b58-abd7-ff13fe7edaa6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{Correo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="169" y="3" width="50" height="48" uuid="82785050-527e-4381-b275-fae640eba9cc"/>
+				<reportElement x="162" y="4" width="50" height="48" uuid="82785050-527e-4381-b275-fae640eba9cc"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<paragraph lineSpacing="Proportional"/>
 				</textElement>
@@ -188,7 +195,7 @@
 				<textFieldExpression><![CDATA[$F{Disciplina}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="475" y="4" width="60" height="47" uuid="2353112c-928b-45b6-aa5b-f6581031c99f"/>
+				<reportElement x="470" y="5" width="65" height="47" uuid="2353112c-928b-45b6-aa5b-f6581031c99f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{NSS}]]></textFieldExpression>
 			</textField>

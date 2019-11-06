@@ -491,6 +491,32 @@
                 <div class="invalid-feedback">
                     Ingresa un deporte
                 </div>
+                <label for="validationTooltip05"> Ciclo Escolar </label>
+            <div class="col-md-3 mb-3">
+                <select name="Ciclo" class="custom-select" style="width: 380px;" required/>
+                <option value="">Ciclo Escolar...</option>
+                <%
+                    try {
+                        String query = "select * from Ciclo";
+                        Class.forName("com.mysql.jdbc.Driver").newInstance();
+                        Connect conn = new Connect();
+                        Statement stm = conn.Connect().createStatement();
+                        ResultSet rs = stm.executeQuery(query);
+                        while (rs.next()) {
+                %>
+                <option value="<%=rs.getInt("ID_Ciclo")%>"><%=rs.getString("Ciclo_Escolar")%></option>
+                <%
+                        }
+
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                        out.println("Error: " + ex.getMessage());
+                    }
+                %>
+                </select>
+                <div class="invalid-feedback">
+                    Ingresa un Ciclo Escolar
+                </div>
             </div>
             <input name="btn" value="Generar" type="submit" class="btn btn-light float-leftt login_btn">
             <a href="../Coordinador.html" class="btn btn-light float-left login_btn"> Volver </a>

@@ -5,10 +5,13 @@
  */
 package mx.ipn.escom.ridescom.controller;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import mx.ipn.escom.ridescom.config.Conexion;
+import mx.ipn.escom.ridescom.config.Connect;
 import mx.ipn.escom.ridescom.model.Usuario;
 import mx.ipn.escom.ridescom.model.UsuarioDAO;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -27,6 +30,12 @@ public class Alumno {
     UsuarioDAO udao=new UsuarioDAO();
     Usuario us=new Usuario();
      
+    Connect cn=new Connect();
+    java.sql.Connection ct;
+    ResultSet rs;
+    PreparedStatement ps;
+    String ro;
+    
     List p;
     List dat;
     
@@ -38,12 +47,27 @@ public class Alumno {
     @RequestMapping(value="Alumno.html", method=RequestMethod.GET)
     public ModelAndView Alumno(HttpServletRequest re){
         HttpSession session = re.getSession();
+        String ur="select Roles_ID_Roles from usuario where Nombre_U='"+session.getAttribute("Nombre_U")+"';";
+         try{
+            ct=cn.Connect();
+            ps=ct.prepareStatement(ur);
+            rs=ps.executeQuery();
+            if(rs!=null ){
+                while(rs.next() ){
+                ro =rs.getString("Roles_ID_Roles");
+                }
+            }
+        }catch(Exception e){
+        }
         if(session.getAttribute("Nombre_U")== null){
-         mav.setViewName("LoginAlumno");
-        }else if(session.getAttribute("Nombre_U").equals("DDyFD")){
-        mav.setViewName("DDyFD");
-        }else{
-        //Info del Usuario principal
+         mav.setViewName("redirect:/LoginAlumno.html");
+        }else {
+        if(ro.equals("1")){
+            mav.setViewName("redirect:/DDyFD.html");
+            }else if(ro.equals("2")){
+            mav.setViewName("redirect:/Coordinador.html");
+            }else if(ro.equals("3")){
+                //Info del Usuario principal
         String sqlp="select u.Nombre_U, p.Nombre, p.Ap_Pat, p.Ap_Mat, s.Sexo, p.Fecha_Nac, p.CURP, p.NSS, ce.Correo, tf.Telefono, tc.Celular" +
 "	from persona p, Usuario u, contacto c, tipo_sexo s, email ce, telefono_fijo tf, telefono_celular tc, Roles r" +
 "		where r.ID_Roles='3' " +
@@ -74,7 +98,8 @@ public class Alumno {
             
             if(dat!=null)
                 mav.addObject("eve",dat);
-        mav.setViewName("Alumno");
+                mav.setViewName("Alumno");    
+            }
         }
         return mav;
     }

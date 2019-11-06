@@ -456,7 +456,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip04"> Lugar donde se realizará el evento </label>
-                            <select name="sede" id="selectsport" class="custom-select" style="width: 200px;" required/>
+                            <select name="sede" id="selectsport" class="custom-select" style="width: 300px;" required/>
 					  <option value="${eve[0].ID_Sede}">${eve[0].Nombre_S}</option>
                                                     <%
                                                         try{
