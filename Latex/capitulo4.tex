@@ -28,11 +28,11 @@
 	Para que el JFD pueda ingresar a la página RIDESCOM debe de contar con un Usuario y Contraseña, de caso contrario no podrá acceder.
 	Una vez dentro de la página de RIDESCOM se le mostrarán las opciones que tiene permitidas, tales como: Evento, Coordinadores, Usuarios, Pruebas en estos dos podrá agregar, editar o eliminar. \\
 	
-	Para la vista de Evento, la información se le mostrará en la página principal, si hay eventos registrados estos serán mostrados en la tabla correspondiente, sino se cuenta con datos se mostrará en la tabla el mensaje de que no existen datos.  Para poder agregar un evento se deben de cumplir con algunos campos que son requisito sino se completan los campos no podrá registrar el evento.  Dentro del formulario para crear el evento se debe asignar una fecha en la que los alumnos podrán inscribirse para esto, no debe de ser mayor  a 5 días en la que se realizará el evento. También se debe considerar que no se puede asignar una fecha menor respecto a la fecha en que se está creando el evento. Una vez tenga el evento registrado podrá editar información respecto a este, teniendo en cuenta los campos que son requisito, o en caso contrario eliminar el evento.\\
+	\noindent Para la vista de Evento, la información se le mostrará en la página principal, si hay eventos registrados estos serán mostrados en la tabla correspondiente, sino se cuenta con datos se mostrará en la tabla el mensaje de que no existen datos.  Para poder agregar un evento se deben de cumplir con algunos campos que son requisito sino se completan los campos no podrá registrar el evento.  Dentro del formulario para crear el evento se debe asignar una fecha en la que los alumnos podrán inscribirse para esto, no debe de ser mayor  a 5 días en la que se realizará el evento. También se debe considerar que no se puede asignar una fecha menor respecto a la fecha en que se está creando el evento. Una vez tenga el evento registrado podrá editar información respecto a este, teniendo en cuenta los campos que son requisito, o en caso contrario eliminar el evento.\\
 	
-	Para la vista de Coordinadores, se mostrará la información en una tabla dentro de la página principal, en caso de no contar con datos registrados se mostrará un mensaje de que no existen datos. Para poder agregar un Coordinador de Unidad Académica deberá cumplir con campos que son requisitos sino se completan los campos no podrá registrar el coordinador. Una vez tenga el coordinador registrado podrá editar información respecto a este, teniendo en cuenta los campos que son requisito, o en caso contrario eliminar los datos del coordinador. \\
+	\noindent Para la vista de Coordinadores, se mostrará la información en una tabla dentro de la página principal, en caso de no contar con datos registrados se mostrará un mensaje de que no existen datos. Para poder agregar un Coordinador de Unidad Académica deberá cumplir con campos que son requisitos sino se completan los campos no podrá registrar el coordinador. Una vez tenga el coordinador registrado podrá editar información respecto a este, teniendo en cuenta los campos que son requisito, o en caso contrario eliminar los datos del coordinador. \\
 	
-	Contará con un apartado en el que visualizará los resultados obtenidos por los participantes estos estarán disponibles hasta que concluyan los eventos interpolitécnios y para el JFD solo será de consulta. \\
+	\noindent Contará con un apartado en el que visualizará los resultados obtenidos por los participantes estos estarán disponibles hasta que concluyan los eventos interpolitécnios y para el JFD solo será de consulta. \\
 	
 	Para la vista de Pruebas, se mostrará una tabla en la que podrá ver las pruebas registradas, en caso de no tener datos que mostrar se mostrará un mensaje en el que se indique que no hay datos por mostrar. Se podrá agregar pruebas, para ello deberá de cumplir con los campos que son requisitos. De igual manera tendrá campos que son requisito para poder guardar los datos. Una vez guardado las Pruebas podrá editar o eliminar la información. \\
 	
@@ -66,6 +66,82 @@
 	Para la vista Resultado, se mostrará la información de los resultados del último evento en el que a participado. Esta vista es de solo lectura.\\
 	
 	Para la vista de Eventos Inscritos, mostrará el o los eventos a los que se a registrado el alumno en el periodo en curso. Esta vista es de solo lectura.\\
+	
+	\noindent A continuación se mostrará en una tabla un resumen de las Reglas de Negocio de cada uno de los actores.
+	
+	\begin{table}[hbt!]
+		\begin{center}
+			\begin{tabular}{|p{30mm}|p{100mm}|}
+				\hline
+				\multicolumn{2}{|c|}{Jefe de Fomento Deportivo} \\
+				\hline
+				Identificador & Descripción \\
+				\hline 
+				RN 1 & Para ingresar a la página debe de contar con un usuario y contraseña. \\ \hline
+				RN 2 &  Para registrar un nuevo evento deben de completarse todos los campos que son requisito.\\ \hline
+				RN 3 & Para registrar un evento debe de considerar que la fecha de este no sea menor a la fecha en la que se quiere realizar el mismo (no debe de ser mayor  a 5 días en la que se realizará el evento). \\ \hline
+				RN 4 &  La fecha de inicio de registro para los alumnos no rebase la fecha en la que se realizará el evento.\\ \hline
+				RN 5 &  La fecha de fin de registro para los alumnos no rebase la fecha en la que se realizará el evento. \\ \hline
+				RN 6 & Para editar los datos de un evento, no debe de haber alumnos inscritos. \\ \hline
+				RN 7 &  Al editar los datos de un evento debe considerar completar todos los campos.\\ \hline
+				RN 8 &  Para eliminar un evento, no debe de haber alumnos inscritos en este.\\ \hline
+				RN 9 &  Para agregar un deporte, todos los campos que son requisito deben completarse.\\ \hline
+				RN 10 &  Al editar un deporte, se debe considerar completar todos los campos requeridos.\\ \hline
+				RN 11 &  Para registrar una Prueba, se debe de completar todos los campos.\\ \hline
+				RN 12 & Al editar los datos se debe considerar completar todos los campos.\\ \hline
+				RN 13 &  Al registrar un nuevo Coordinador, se debe asignar un usuario y contraseña.\\ \hline
+				RN 14 &  Para completar el registro, debe completarse todos los campos requeridos.\\ \hline
+				RN 15 &  Al editar los datos de un Coordinador, se debe tomar en cuenta completar todos los campos requeridos.\\ \hline
+				RN 16 &  Para registrar una Sede, deben completarse todos los campos requeridos.\\ \hline
+				RN 17 &  Al editar los datos de una Sede, se debe considerar que esta no esté asignada en un evento.\\ \hline
+			\end{tabular}
+			\caption{Reglas de Negocio Jefe de Fomento Deportivo.}
+			\label{RNJFD}
+		\end{center}
+	\end{table}
+	
+	\begin{table}[hbt!]
+		\begin{center}
+			\begin{tabular}{|p{30mm}|p{100mm}|}
+				\hline
+				\multicolumn{2}{|c|}{Coordinador de Unidad Acedémica} \\
+				\hline
+				Identificador & Descripción \\
+				\hline 
+				RN 18 &  Para ingresar a la página debe de contar con un usuario y contraseña.\\ \hline
+				RN 19 & Las credenciales deben estar activas y ser proporcionadas por el Jefe de Fomento Deportivo.\\ \hline
+				RN 20 & Para ingresar los resultados, debe seleccionar un usuario. \\ \hline
+				RN 21 & Se debe seleccionar una prueba correspondiente al alumno.\\ \hline
+				RN 22 & Para terminar el proceso de registro de resultados, debe completar los campos requeridos. \\ \hline
+				RN 23 & Para registrar un entrenador debe llenar todos los campos requeridos.\\ \hline
+				RN 24 & Para obtener la cédula de inscripción, el coordinador deberá de seleccionar el tipo de deporte, así como el ciclo escolar. \\ \hline
+				RN 25 & Para consultar si un alumno participó en un evento, se debe buscar por medio de su boleta o por el ciclo escolar en el que participó.\\ \hline
+				RN 26 & Para difundir un evento, deberá seleccionar el evento de la tabla y seleccionar el medio por el cual quiere compartir el evento.\\ \hline
+			\end{tabular}
+			\caption{Reglas de Negocio Coordinador de Unidad Académicas.}
+			\label{RNCUA}
+		\end{center}
+	\end{table}
+	
+	\pagebreak
+	
+	\begin{table}[hbt!]
+		\begin{center}
+			\begin{tabular}{|p{30mm}|p{100mm}|}
+				\hline
+				\multicolumn{2}{|c|}{Alumno} \\ \hline
+				Identificador & Descripción \\ \hline 
+				RN & Para ingresar a la página debe de contar con un usuario y contraseña.\\ \hline
+				RN & El alumno debe verificar el estatus académico para poder registrarse en un evento.\\ \hline
+				RN & Para concluir el registro al evento, debe de llenar todos los campos requeridos.\\ \hline
+				RN & Puede inscribirse en los eventos que desee, siempre y cuando no tenga traslape en horas de los eventos.\\ \hline
+				RN & \\ \hline
+				RN & \\ \hline
+			\end{tabular}
+			\caption{Reglas de Negocio para el alumno.}
+			\label{RNA}
+		\end{center}
+	\end{table}
 	
 	
 	%=========================================================

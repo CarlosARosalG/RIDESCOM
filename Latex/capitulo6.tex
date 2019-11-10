@@ -30,21 +30,32 @@
 	%=========================================================
 	%                                                         Sprint 0
 	%=========================================================
-	\section{Sprint 0}
+	\section{Sprint 0: Análisis}
 	\noindent En este SPRINT se declara el planteamiento y comportamiento de la aplicación como tal, en sus inicios, el plan de desarrollo y los posibles resultados que otorgará.
-	Este SPRINT no se contempló en la entrega del protocolo, sin embargo es de importancia ya que en este se definen, las herramientas \ref{Herramientas} que se van a emplear, el análisis del sistema, visualizar y proponer el proceso que se emplea.
-	También se especificará cómo es que se instalaron las herramientas que se emplearon.
+	Este no se contempló en inicios del proyecto, sin embargo es de importancia ya que en este se definen, las herramientas \ref{Herramientas} que se van a emplear, el análisis del sistema, visualizar y proponer el proceso que se emplea.
+	También se especificará cómo es que se instalaron las herramientas empleadas.
 	
-	\noindent Dentro de este Spring nos reunimos con responsable de las actividades del Departamento de Formación Deportivas para que se planteara la problematica, que es lo que se puede atacar con el proyecto, ver el proceso detalladamente para la inscripción a un evento interpolitécnico deportivo \ref{Entrevista}, se plantearon los Casos de Uso, para mas detalles consulte el apartado Anexos la sección D \ref{CasosdeUso}. Se modelo la base de datos que tendrá el proyecto \ref{BasedeDatos}. 
+	\noindent Dentro de este Spring se reunió con responsable de las actividades del Departamento de Formación Deportivas para que se planteara la problematica y así, se defina que es lo que se puede atacar con el proyecto, ver el proceso detalladamente para la inscripción a un evento interpolitécnico deportivo \ref{Entrevista}, se plantearon los Casos de Uso, para mas detalles consulte el apartado Anexos la sección D \ref{CasosdeUso}. Se modelo la base de datos que tendrá el proyecto \ref{BasedeDatos}. 
 	\pagebreak
 	
 	%=========================================================
 	%                                                         Sprint 1
 	%=========================================================
 	\section{Sprint 1:  Mecanismo de validación de estatus académico.}
-	\noindent El desarrollo de este SPRINT se consideró que la manera de validación del participante será que el alumno que desee participar en un evento interpolitécnico para ello deberá registrarse en la aplicación web posteriormente, deberá acudir con el coordinador de su Unidad Académica y que el corrobore sus datos solicitando alguna identificación, cabe destacar que este proceso de validación se hará solo una vez.
-	Una vez que haya sido validado por el coordinador y este, activará su cuenta, el alumno interesado podrá ingresar en el sistema e inscribirse en una evento interpolitécnico dentro de las fechas establecidas.
-	El objetivo de este mecanismo es comprobar la existencia de un alumno en la base de datos del plantel o en el IPN y aceptar únicamente a los que estén inscritos. \ref{craweler}
+	\noindent Para el desarrollo de este Sprint se desarrolla la forma de verificar el estatus académico de los alumnos que deseen participar en un evento interpolitécnico. \\
+	Dicha verificación consiste de 3 pasos:
+	\begin{enumerate}
+		\item Ingresa credenciales en la aplicación web RIDESCOM.
+		\item Se verifican credenciales en el SAES.
+		\item Accede a la página RIDESCOM.
+	\end{enumerate}
+
+	Como primer paso, el usuario ingresa el usuario y contraseña, mismas que ocupa para ingresar al Sistema de Administración Escolar SAES.
+	Una vez ingresado Usuario y Contraseña, la aplicación hace uso del Crawler \ref{crawler}. \\
+	Este tomará la información de Usuario y Contraseña, las utilizará para ingresar al SAES, de tal manera que se comprobará si estas son correctas o no. En cualquier caso, se tomará la respuesta para mostrala al usuario.
+	Finalmente, en la aplicación web se buscará la respuesta del Crawler para definir el acceso a la aplicación.
+	
+	El objetivo de este mécanismo es comprobar la inscripción del alumno en el IPN, ya que en el reglamento en el que se basan los eventos interpolitécnicos deportivos, donde se menciona que solo deben participar alumnos que estén inscritos. \ref{crawler}
 	
 	
 	%=========================================================
