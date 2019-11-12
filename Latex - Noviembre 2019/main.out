@@ -1,0 +1,231 @@
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Introducci\363n}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Justificaci\363n}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Problem\341tica}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Objetivos}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.4.1}{Objetivo General}{section.1.4}% 6
+\BOOKMARK [2][-]{subsection.1.4.2}{Objetivos Especificos}{section.1.4}% 7
+\BOOKMARK [0][-]{chapter.2}{Estado del arte}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Aplicaciones}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{Aplicaciones Tournament Software}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.2}{Aplicaciones Active Network}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.3}{Aplicaciones TeamSnap Tournament}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.4}{Aplicaciones TorneoPal}{section.2.1}% 13
+\BOOKMARK [2][-]{subsection.2.1.5}{Aplicaciones Instituto Nacional del deporte CHILE}{section.2.1}% 14
+\BOOKMARK [2][-]{subsection.2.1.6}{Prototipo para el registro a interpolit\351cnicos RIDESCOM}{section.2.1}% 15
+\BOOKMARK [0][-]{chapter.3}{Marco te\363rico}{}% 16
+\BOOKMARK [1][-]{section.3.1}{An\341lisis de Entornos de Desarrollo Interactivo}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.1.1}{IDE}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.2}{Framework}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.3}{Rastreo Web y API's}{section.3.1}% 20
+\BOOKMARK [1][-]{section.3.2}{Sistema Gestor de Base de Datos del lado del servidor}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.3}{Servidor}{chapter.3}% 22
+\BOOKMARK [0][-]{chapter.4}{An\341lisis}{}% 23
+\BOOKMARK [1][-]{section.4.1}{Prototipo para el Registro a Interpolit\351cnicos Deportivos \(RIDESCOM\)}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.2}{An\341lisis de factibilidad t\351cnica}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.3}{Reglas de Negocio}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.3.1}{Reglas de Negocio Jefe de Fomento Deportivo}{section.4.3}% 27
+\BOOKMARK [2][-]{subsection.4.3.2}{Reglas de Negocio Coordinador de Unidad Acad\351mica}{section.4.3}% 28
+\BOOKMARK [2][-]{subsection.4.3.3}{Reglas de Negocio Alumno}{section.4.3}% 29
+\BOOKMARK [1][-]{section.4.4}{Reglas del Sistema}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.5}{Diagrama de Procesos}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.6}{Casos de Uso}{chapter.4}% 32
+\BOOKMARK [2][-]{subsection.4.6.1}{CU1 Iniciar Sesi\363n Jefe de Fomento Deportivo}{section.4.6}% 33
+\BOOKMARK [2][-]{subsection.4.6.2}{CU2 Iniciar Sesi\363n Coordinador de Unidad Acad\351mica}{section.4.6}% 34
+\BOOKMARK [2][-]{subsection.4.6.3}{CU3 Iniciar Sesi\363n Alumno}{section.4.6}% 35
+\BOOKMARK [2][-]{subsection.4.6.4}{CU4 Recuperar contrase\361a para el alumno}{section.4.6}% 36
+\BOOKMARK [2][-]{subsection.4.6.5}{CU5 Recuperar contrase\361a para el coordinador}{section.4.6}% 37
+\BOOKMARK [2][-]{subsection.4.6.6}{CU6 Consulta calendario de eventos}{section.4.6}% 38
+\BOOKMARK [2][-]{subsection.4.6.7}{CU7 Alta de eventos deportivos}{section.4.6}% 39
+\BOOKMARK [2][-]{subsection.4.6.8}{CU8 Editar datos de eventos deportivos}{section.4.6}% 40
+\BOOKMARK [2][-]{subsection.4.6.9}{CU9 Eliminar datos de eventos deportivos}{section.4.6}% 41
+\BOOKMARK [2][-]{subsection.4.6.10}{CU10 Consulta coordinadores de unidad acad\351mica registrados}{section.4.6}% 42
+\BOOKMARK [2][-]{subsection.4.6.11}{CU11 Agregar coordinadores de unidad acad\351mica registrados}{section.4.6}% 43
+\BOOKMARK [2][-]{subsection.4.6.12}{CU12 Editar datos del coordinador de unidad acad\351mica}{section.4.6}% 44
+\BOOKMARK [2][-]{subsection.4.6.13}{CU13 Eliminar datos del coordinador de unidad acad\351mica}{section.4.6}% 45
+\BOOKMARK [2][-]{subsection.4.6.14}{CU14 Consulta resultados}{section.4.6}% 46
+\BOOKMARK [2][-]{subsection.4.6.15}{CU15 Consulta pruebas}{section.4.6}% 47
+\BOOKMARK [2][-]{subsection.4.6.16}{CU16 Agregar pruebas}{section.4.6}% 48
+\BOOKMARK [2][-]{subsection.4.6.17}{CU17 Editar datos de las pruebas}{section.4.6}% 49
+\BOOKMARK [2][-]{subsection.4.6.18}{CU18 Eliminar datos de las pruebas}{section.4.6}% 50
+\BOOKMARK [2][-]{subsection.4.6.19}{CU19 Consultar deportes}{section.4.6}% 51
+\BOOKMARK [2][-]{subsection.4.6.20}{CU20 Agregar deportes}{section.4.6}% 52
+\BOOKMARK [2][-]{subsection.4.6.21}{CU21 Eliminar deporte}{section.4.6}% 53
+\BOOKMARK [2][-]{subsection.4.6.22}{CU22 Agregar resultados}{section.4.6}% 54
+\BOOKMARK [2][-]{subsection.4.6.23}{CU23 Editar resultados}{section.4.6}% 55
+\BOOKMARK [2][-]{subsection.4.6.24}{CU24 Eliminar resultados}{section.4.6}% 56
+\BOOKMARK [2][-]{subsection.4.6.25}{CU25 Consulta entrenadores}{section.4.6}% 57
+\BOOKMARK [2][-]{subsection.4.6.26}{CU26 Agregar entrenador}{section.4.6}% 58
+\BOOKMARK [2][-]{subsection.4.6.27}{CU27 Editar entrenador}{section.4.6}% 59
+\BOOKMARK [2][-]{subsection.4.6.28}{CU28 Eliminar entrenador}{section.4.6}% 60
+\BOOKMARK [2][-]{subsection.4.6.29}{CU29 Difusi\363n de evento}{section.4.6}% 61
+\BOOKMARK [2][-]{subsection.4.6.30}{CU30 Consulta inscritos}{section.4.6}% 62
+\BOOKMARK [2][-]{subsection.4.6.31}{CU31 Consulta para expedir constancias}{section.4.6}% 63
+\BOOKMARK [2][-]{subsection.4.6.32}{CU32 Consulta eventos inscritos}{section.4.6}% 64
+\BOOKMARK [2][-]{subsection.4.6.33}{CU33 Consulta historial}{section.4.6}% 65
+\BOOKMARK [2][-]{subsection.4.6.34}{CU34 Consulta c\351dula de inscripci\363n}{section.4.6}% 66
+\BOOKMARK [1][-]{section.4.7}{Requisitos del usuario}{chapter.4}% 67
+\BOOKMARK [1][-]{section.4.8}{Requisitos funcionales de la aplicaci\363n web}{chapter.4}% 68
+\BOOKMARK [1][-]{section.4.9}{Requisitos no funcionales de la aplicaci\363n web}{chapter.4}% 69
+\BOOKMARK [1][-]{section.4.10}{MockUp}{chapter.4}% 70
+\BOOKMARK [0][-]{chapter.5}{Desarrollo}{}% 71
+\BOOKMARK [1][-]{section.5.1}{Sprint 0: An\341lisis}{chapter.5}% 72
+\BOOKMARK [1][-]{section.5.2}{Sprint 1: Mecanismo de validaci\363n de estatus acad\351mico.}{chapter.5}% 73
+\BOOKMARK [1][-]{section.5.3}{Sprint 2: Interfaces}{chapter.5}% 74
+\BOOKMARK [1][-]{section.5.4}{Sprint 3: M\363dulo de formulario}{chapter.5}% 75
+\BOOKMARK [1][-]{section.5.5}{Sprint 4: M\363dulo de difusi\363n de eventos}{chapter.5}% 76
+\BOOKMARK [1][-]{section.5.6}{Sprint 5:M\363dulo de comunicaci\363n con redes sociales}{chapter.5}% 77
+\BOOKMARK [1][-]{section.5.7}{Sprint 6:M\363dulo de creaci\363n de c\351dula de inscripci\363n.}{chapter.5}% 78
+\BOOKMARK [1][-]{section.5.8}{Sprint 7: M\363dulo de consulta de resultados.}{chapter.5}% 79
+\BOOKMARK [0][-]{chapter.6}{Pruebas}{}% 80
+\BOOKMARK [0][-]{section*.1}{Conclusiones}{}% 81
+\BOOKMARK [0][-]{section*.2}{Trabajo a Futuro}{}% 82
+\BOOKMARK [0][-]{section*.2}{Referencias}{}% 83
+\BOOKMARK [0][-]{section*.4}{Ap\351ndice}{}% 84
+\BOOKMARK [0][-]{chapter.1}{Apartado A: Entrevista}{}% 85
+\BOOKMARK [0][-]{chapter.2}{Apartado B: Mensajes}{}% 86
+\BOOKMARK [1][-]{section.2.1}{Mensajes de RIDESCOM}{chapter.2}% 87
+\BOOKMARK [0][-]{chapter.3}{Apartado C: Dise\361os de Pantallas}{}% 88
+\BOOKMARK [0][-]{chapter.4}{Apartado D: Diagrama de Procesos}{}% 89
+\BOOKMARK [0][-]{chapter.5}{Apartado E: Diagramas de Casos de Uso}{}% 90
+\BOOKMARK [0][-]{chapter.6}{Apartado F: Crawler}{}% 91
+\BOOKMARK [0][-]{chapter.7}{Apartado G: Casos de Uso}{}% 92
+\BOOKMARK [1][-]{section.7.1}{CU1 Iniciar Sesi\363n Jefe de Fomento Deportivo}{chapter.7}% 93
+\BOOKMARK [2][-]{subsection.7.1.1}{Descripci\363n completa}{section.7.1}% 94
+\BOOKMARK [2][-]{subsection.7.1.2}{Atributos importantes}{section.7.1}% 95
+\BOOKMARK [2][-]{subsection.7.1.3}{Trayectorias del Caso de Uso}{section.7.1}% 96
+\BOOKMARK [1][-]{section.7.2}{CU2 Iniciar Sesi\363n Coordinador de Unidad Acad\351mica}{chapter.7}% 97
+\BOOKMARK [2][-]{subsection.7.2.1}{Descripci\363n completa}{section.7.2}% 98
+\BOOKMARK [2][-]{subsection.7.2.2}{Atributos importantes}{section.7.2}% 99
+\BOOKMARK [2][-]{subsection.7.2.3}{Trayectorias del Caso de Uso}{section.7.2}% 100
+\BOOKMARK [1][-]{section.7.3}{CU3 Iniciar Sesi\363n Alumno}{chapter.7}% 101
+\BOOKMARK [2][-]{subsection.7.3.1}{Descripci\363n completa}{section.7.3}% 102
+\BOOKMARK [2][-]{subsection.7.3.2}{Atributos importantes}{section.7.3}% 103
+\BOOKMARK [2][-]{subsection.7.3.3}{Trayectorias del Caso de Uso}{section.7.3}% 104
+\BOOKMARK [1][-]{section.7.4}{CU4 Recupera contrase\361a para el alumno}{chapter.7}% 105
+\BOOKMARK [2][-]{subsection.7.4.1}{Descripci\363n completa}{section.7.4}% 106
+\BOOKMARK [2][-]{subsection.7.4.2}{Atributos importantes}{section.7.4}% 107
+\BOOKMARK [2][-]{subsection.7.4.3}{Trayectorias del Caso de Uso}{section.7.4}% 108
+\BOOKMARK [1][-]{section.7.5}{CU5 Recupera contrase\361a para el Coordinador}{chapter.7}% 109
+\BOOKMARK [2][-]{subsection.7.5.1}{Descripci\363n completa}{section.7.5}% 110
+\BOOKMARK [2][-]{subsection.7.5.2}{Atributos importantes}{section.7.5}% 111
+\BOOKMARK [2][-]{subsection.7.5.3}{Trayectorias del Caso de Uso}{section.7.5}% 112
+\BOOKMARK [1][-]{section.7.6}{CU6 Consulta Calendario de Eventos}{chapter.7}% 113
+\BOOKMARK [2][-]{subsection.7.6.1}{Descripci\363n completa}{section.7.6}% 114
+\BOOKMARK [2][-]{subsection.7.6.2}{Atributos importantes}{section.7.6}% 115
+\BOOKMARK [2][-]{subsection.7.6.3}{Trayectorias del Caso de Uso}{section.7.6}% 116
+\BOOKMARK [1][-]{section.7.7}{CU7 Alta de Eventos Deportivos}{chapter.7}% 117
+\BOOKMARK [2][-]{subsection.7.7.1}{Descripci\363n completa}{section.7.7}% 118
+\BOOKMARK [2][-]{subsection.7.7.2}{Atributos importantes}{section.7.7}% 119
+\BOOKMARK [2][-]{subsection.7.7.3}{Trayectorias del Caso de Uso}{section.7.7}% 120
+\BOOKMARK [1][-]{section.7.8}{CU8 Editar datos del Eventos Deportivos}{chapter.7}% 121
+\BOOKMARK [2][-]{subsection.7.8.1}{Descripci\363n completa}{section.7.8}% 122
+\BOOKMARK [2][-]{subsection.7.8.2}{Atributos importantes}{section.7.8}% 123
+\BOOKMARK [2][-]{subsection.7.8.3}{Trayectorias del Caso de Uso}{section.7.8}% 124
+\BOOKMARK [1][-]{section.7.9}{CU9 Eliminar datos del Eventos Deportivos}{chapter.7}% 125
+\BOOKMARK [2][-]{subsection.7.9.1}{Descripci\363n completa}{section.7.9}% 126
+\BOOKMARK [2][-]{subsection.7.9.2}{Atributos importantes}{section.7.9}% 127
+\BOOKMARK [2][-]{subsection.7.9.3}{Trayectorias del Caso de Uso}{section.7.9}% 128
+\BOOKMARK [1][-]{section.7.10}{CU10 Consulta Coordinadores Registrados}{chapter.7}% 129
+\BOOKMARK [2][-]{subsection.7.10.1}{Descripci\363n completa}{section.7.10}% 130
+\BOOKMARK [2][-]{subsection.7.10.2}{Atributos importantes}{section.7.10}% 131
+\BOOKMARK [2][-]{subsection.7.10.3}{Trayectorias del Caso de Uso}{section.7.10}% 132
+\BOOKMARK [1][-]{section.7.11}{CU11 Agregar Coordinadores Registrados}{chapter.7}% 133
+\BOOKMARK [2][-]{subsection.7.11.1}{Descripci\363n completa}{section.7.11}% 134
+\BOOKMARK [2][-]{subsection.7.11.2}{Atributos importantes}{section.7.11}% 135
+\BOOKMARK [2][-]{subsection.7.11.3}{Trayectorias del Caso de Uso}{section.7.11}% 136
+\BOOKMARK [1][-]{section.7.12}{CU12 Editar datos del Coordinador de Unidad Acad\351mica}{chapter.7}% 137
+\BOOKMARK [2][-]{subsection.7.12.1}{Descripci\363n completa}{section.7.12}% 138
+\BOOKMARK [2][-]{subsection.7.12.2}{Atributos importantes}{section.7.12}% 139
+\BOOKMARK [2][-]{subsection.7.12.3}{Trayectorias del Caso de Uso}{section.7.12}% 140
+\BOOKMARK [1][-]{section.7.13}{CU13 Eliminar datos del Eventos Deportivos}{chapter.7}% 141
+\BOOKMARK [2][-]{subsection.7.13.1}{Descripci\363n completa}{section.7.13}% 142
+\BOOKMARK [2][-]{subsection.7.13.2}{Atributos importantes}{section.7.13}% 143
+\BOOKMARK [2][-]{subsection.7.13.3}{Trayectorias del Caso de Uso}{section.7.13}% 144
+\BOOKMARK [1][-]{section.7.14}{CU14 Consulta Resultados}{chapter.7}% 145
+\BOOKMARK [2][-]{subsection.7.14.1}{Descripci\363n completa}{section.7.14}% 146
+\BOOKMARK [2][-]{subsection.7.14.2}{Atributos importantes}{section.7.14}% 147
+\BOOKMARK [2][-]{subsection.7.14.3}{Trayectorias del Caso de Uso}{section.7.14}% 148
+\BOOKMARK [1][-]{section.7.15}{CU15 Consulta Pruebas}{chapter.7}% 149
+\BOOKMARK [2][-]{subsection.7.15.1}{Descripci\363n completa}{section.7.15}% 150
+\BOOKMARK [2][-]{subsection.7.15.2}{Atributos importantes}{section.7.15}% 151
+\BOOKMARK [2][-]{subsection.7.15.3}{Trayectorias del Caso de Uso}{section.7.15}% 152
+\BOOKMARK [1][-]{section.7.16}{CU16 Agregar Pruebas}{chapter.7}% 153
+\BOOKMARK [2][-]{subsection.7.16.1}{Descripci\363n completa}{section.7.16}% 154
+\BOOKMARK [2][-]{subsection.7.16.2}{Atributos importantes}{section.7.16}% 155
+\BOOKMARK [2][-]{subsection.7.16.3}{Trayectorias del Caso de Uso}{section.7.16}% 156
+\BOOKMARK [1][-]{section.7.17}{CU17 Editar datos de las Pruebas}{chapter.7}% 157
+\BOOKMARK [2][-]{subsection.7.17.1}{Descripci\363n completa}{section.7.17}% 158
+\BOOKMARK [2][-]{subsection.7.17.2}{Atributos importantes}{section.7.17}% 159
+\BOOKMARK [2][-]{subsection.7.17.3}{Trayectorias del Caso de Uso}{section.7.17}% 160
+\BOOKMARK [1][-]{section.7.18}{CU18 Eliminar datos de Pruebas}{chapter.7}% 161
+\BOOKMARK [2][-]{subsection.7.18.1}{Descripci\363n completa}{section.7.18}% 162
+\BOOKMARK [2][-]{subsection.7.18.2}{Atributos importantes}{section.7.18}% 163
+\BOOKMARK [2][-]{subsection.7.18.3}{Trayectorias del Caso de Uso}{section.7.18}% 164
+\BOOKMARK [1][-]{section.7.19}{CU19 Consulta Actividades Deportivas}{chapter.7}% 165
+\BOOKMARK [2][-]{subsection.7.19.1}{Descripci\363n completa}{section.7.19}% 166
+\BOOKMARK [2][-]{subsection.7.19.2}{Atributos importantes}{section.7.19}% 167
+\BOOKMARK [2][-]{subsection.7.19.3}{Trayectorias del Caso de Uso}{section.7.19}% 168
+\BOOKMARK [1][-]{section.7.20}{CU20 Agregar Deporte}{chapter.7}% 169
+\BOOKMARK [2][-]{subsection.7.20.1}{Descripci\363n completa}{section.7.20}% 170
+\BOOKMARK [2][-]{subsection.7.20.2}{Atributos importantes}{section.7.20}% 171
+\BOOKMARK [2][-]{subsection.7.20.3}{Trayectorias del Caso de Uso}{section.7.20}% 172
+\BOOKMARK [1][-]{section.7.21}{CU21 Eliminar Deportes}{chapter.7}% 173
+\BOOKMARK [2][-]{subsection.7.21.1}{Descripci\363n completa}{section.7.21}% 174
+\BOOKMARK [2][-]{subsection.7.21.2}{Atributos importantes}{section.7.21}% 175
+\BOOKMARK [2][-]{subsection.7.21.3}{Trayectorias del Caso de Uso}{section.7.21}% 176
+\BOOKMARK [1][-]{section.7.22}{CU22 Agregar Resultados}{chapter.7}% 177
+\BOOKMARK [2][-]{subsection.7.22.1}{Descripci\363n completa}{section.7.22}% 178
+\BOOKMARK [2][-]{subsection.7.22.2}{Atributos importantes}{section.7.22}% 179
+\BOOKMARK [2][-]{subsection.7.22.3}{Trayectorias del Caso de Uso}{section.7.22}% 180
+\BOOKMARK [1][-]{section.7.23}{CU23 Editar Resultados}{chapter.7}% 181
+\BOOKMARK [2][-]{subsection.7.23.1}{Descripci\363n completa}{section.7.23}% 182
+\BOOKMARK [2][-]{subsection.7.23.2}{Atributos importantes}{section.7.23}% 183
+\BOOKMARK [2][-]{subsection.7.23.3}{Trayectorias del Caso de Uso}{section.7.23}% 184
+\BOOKMARK [1][-]{section.7.24}{CU24 Eliminar Resultados}{chapter.7}% 185
+\BOOKMARK [2][-]{subsection.7.24.1}{Descripci\363n completa}{section.7.24}% 186
+\BOOKMARK [2][-]{subsection.7.24.2}{Atributos importantes}{section.7.24}% 187
+\BOOKMARK [2][-]{subsection.7.24.3}{Trayectorias del Caso de Uso}{section.7.24}% 188
+\BOOKMARK [1][-]{section.7.25}{CU25 Consulta Entrenadores}{chapter.7}% 189
+\BOOKMARK [2][-]{subsection.7.25.1}{Descripci\363n completa}{section.7.25}% 190
+\BOOKMARK [2][-]{subsection.7.25.2}{Atributos importantes}{section.7.25}% 191
+\BOOKMARK [2][-]{subsection.7.25.3}{Trayectorias del Caso de Uso}{section.7.25}% 192
+\BOOKMARK [1][-]{section.7.26}{CU26 Agregar Entrenador}{chapter.7}% 193
+\BOOKMARK [2][-]{subsection.7.26.1}{Descripci\363n completa}{section.7.26}% 194
+\BOOKMARK [2][-]{subsection.7.26.2}{Atributos importantes}{section.7.26}% 195
+\BOOKMARK [2][-]{subsection.7.26.3}{Trayectorias del Caso de Uso}{section.7.26}% 196
+\BOOKMARK [1][-]{section.7.27}{CU27 Editar Entrenador}{chapter.7}% 197
+\BOOKMARK [2][-]{subsection.7.27.1}{Descripci\363n completa}{section.7.27}% 198
+\BOOKMARK [2][-]{subsection.7.27.2}{Atributos importantes}{section.7.27}% 199
+\BOOKMARK [2][-]{subsection.7.27.3}{Trayectorias del Caso de Uso}{section.7.27}% 200
+\BOOKMARK [1][-]{section.7.28}{CU28 Eliminar Entrenador}{chapter.7}% 201
+\BOOKMARK [2][-]{subsection.7.28.1}{Descripci\363n completa}{section.7.28}% 202
+\BOOKMARK [2][-]{subsection.7.28.2}{Atributos importantes}{section.7.28}% 203
+\BOOKMARK [2][-]{subsection.7.28.3}{Trayectorias del Caso de Uso}{section.7.28}% 204
+\BOOKMARK [1][-]{section.7.29}{CU29 Difusi\363n de Eventos}{chapter.7}% 205
+\BOOKMARK [2][-]{subsection.7.29.1}{Descripci\363n completa}{section.7.29}% 206
+\BOOKMARK [2][-]{subsection.7.29.2}{Atributos importantes}{section.7.29}% 207
+\BOOKMARK [2][-]{subsection.7.29.3}{Trayectorias del Caso de Uso}{section.7.29}% 208
+\BOOKMARK [1][-]{section.7.30}{CU30 Consulta Inscritos}{chapter.7}% 209
+\BOOKMARK [2][-]{subsection.7.30.1}{Descripci\363n completa}{section.7.30}% 210
+\BOOKMARK [2][-]{subsection.7.30.2}{Atributos importantes}{section.7.30}% 211
+\BOOKMARK [2][-]{subsection.7.30.3}{Trayectorias del Caso de Uso}{section.7.30}% 212
+\BOOKMARK [1][-]{section.7.31}{CU31 Consulta para expedici\363n de constancias}{chapter.7}% 213
+\BOOKMARK [2][-]{subsection.7.31.1}{Descripci\363n completa}{section.7.31}% 214
+\BOOKMARK [2][-]{subsection.7.31.2}{Atributos importantes}{section.7.31}% 215
+\BOOKMARK [2][-]{subsection.7.31.3}{Trayectorias del Caso de Uso}{section.7.31}% 216
+\BOOKMARK [1][-]{section.7.32}{CU32 Consulta eventos inscritos}{chapter.7}% 217
+\BOOKMARK [2][-]{subsection.7.32.1}{Descripci\363n completa}{section.7.32}% 218
+\BOOKMARK [2][-]{subsection.7.32.2}{Atributos importantes}{section.7.32}% 219
+\BOOKMARK [2][-]{subsection.7.32.3}{Trayectorias del Caso de Uso}{section.7.32}% 220
+\BOOKMARK [1][-]{section.7.33}{CU33 Consulta Historial}{chapter.7}% 221
+\BOOKMARK [2][-]{subsection.7.33.1}{Descripci\363n completa}{section.7.33}% 222
+\BOOKMARK [2][-]{subsection.7.33.2}{Atributos importantes}{section.7.33}% 223
+\BOOKMARK [2][-]{subsection.7.33.3}{Trayectorias del Caso de Uso}{section.7.33}% 224
+\BOOKMARK [1][-]{section.7.34}{CU34 Consulta C\351dula de Inscripci\363n}{chapter.7}% 225
+\BOOKMARK [2][-]{subsection.7.34.1}{Descripci\363n completa}{section.7.34}% 226
+\BOOKMARK [2][-]{subsection.7.34.2}{Atributos importantes}{section.7.34}% 227
+\BOOKMARK [2][-]{subsection.7.34.3}{Trayectorias del Caso de Uso}{section.7.34}% 228
+\BOOKMARK [0][-]{chapter.8}{Apartado H: Base de Datos}{}% 229
+\BOOKMARK [0][-]{chapter.9}{Apartado I: Vistas}{}% 230
+\BOOKMARK [0][-]{chapter.10}{Apartado J: API Facebook}{}% 231
