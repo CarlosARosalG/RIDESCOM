@@ -1,0 +1,65 @@
+\begin{UseCase}{CU34}{Consulta Cédula de Inscripción}{
+		\noindent Esta caso de uso servirá para que el Coordinador de una Unidad Académica en particular pueda descargar el archivo PDF en el que se muestran los alumnos que se han registrado en una deporte en particular.
+		Para ello el Coordinador se dirigirá a la \IUref{}{Pantalla de Principal \ref{principalcoord}} seleccionando Consulta Inscritos. Se le mostrará una tabla en la que podrá ver los alumnos que se han registrado. Pasando a la parte inferior de la pantalla encontrará el apartado de Cédula de Inscripción, donde tendrá que seleccionar el deporte para así, se descargue la información relacionada a este.
+	} \label{CU34_evento}
+
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Alumno}
+		\UCitem{Propósito}{Consultar Cédula de Inscripción.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Iniciar sesión.
+            \item Tener evetnos registrados.
+            \item Alumnos registrados en eventos.	
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla de Consulta Inscripción.}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Nombre 
+        	\item Boleta
+        	\item Escuela
+        	\item Deporte
+        	\item Sub-división
+        	\item Posición
+        	\item Prueba
+        	\item Marca
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Eventos inscritos.
+		\end{itemize}}
+		\UCitem{Destino}{Principal Alumno}
+		\UCitem{Errores}{
+        	\begin{itemize}
+			    \item No hay datos registrados.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+	
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla Principal \ref{principalcoord}}.
+    \UCpaso Muestra la \IUref{}{Pantalla Deportes \ref{principalcoord}}.
+    \UCpaso[\UCactor] Se dirige a la sección Consultar Inscripción.  
+    \UCpaso Muestra la \IUref{}{Pantalla Deportes \ref{consultaalumnosinscritos}}. \label{CU34_regresar}
+    \UCpaso[\UCactor] Se dirige a la sección Consultar Cédula de Inscripción.
+    \UCpaso[\UCactor] Selecciona un deporte.
+    \UCpaso[\UCactor] Oprime el botón Generar Cedúla. 
+    \UCpaso Caputra el deporte seleccionado.
+    \UCpaso Valida datos. \Trayref{A}
+    \UCpaso Muestra ventana con el archivo.
+    \UCpaso[\UCactor] Guarda el archivo. 
+    \end{UCtrayectoria}
+    
+    \begin{UCtrayectoriaA}{A}{No hay evento registrado}
+    	\UCpaso Muestra mensaje “No hay coordinadores registrados".
+    	\UCpaso Continua en el paso \ref{CU34_regresar} del \UCref{CU34}.
+    \end{UCtrayectoriaA}
+
+
+	
+
+
