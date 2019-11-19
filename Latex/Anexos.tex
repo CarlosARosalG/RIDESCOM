@@ -295,7 +295,167 @@
 	
 	\chapter{Apartado F: Crawler}
 		\label{crawler}
+		\noindent Este código fue desarrollado con el lenguaje de programación JAVA y JSOUP, permitiendo la simulación de la interacción de una persona “navegando” en la red, este “web crawler” fue desarrollado con el propósito de encontrar un mecanismo de validación para comprobar si realmente eres alumno de la ESCOM, donde se iniciará sesión con los datos del usuario de la plataforma de la escuela llamado SAES pidiendo un usuario (Boleta del alumno), contraseña y una clave captcha que el servidor de la plataforma genera como un filtro para evitar la intrusión de “bots informáticos”.\\
+		
+		\begin{figure}[hbt!]
+			\centering
+			\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/SAES}
+			\caption{Página del SAES Escom}
+			\label{saes}
+		\end{figure}
 	
+		\noindent Mediante las herramientas como JSOUP nos permite obtener información del HTML de cualquier página en la web, a excepción de la información generada con javascript pues las obtenciones de información son extraídas de manera estática y no de forma dinámica, o bien desde la lectura del HTML.\\
+		\noindent Las pruebas de este código fueron realizadas durante los meses de enero del 2019 y octubre del mismo año. Utilizando así el siguiente código.
+\pagebreak
+		
+		\noindent Por inicio tenemos que importar las librerías de JSOUP para hacer uso de los métodos que se presentarán a continuación, además de crear datos públicos para los métodos de las clases java para utilizarlos posteriormente.\\
+		\noindent Creamos la conexión con la página que queremos explorar y solicitar una respuesta de esta conexión realizada junto con las “cookies” generadas en esta respuesta, ya que estás nos darán pauta para mantenernos en la misma conexión con respecto a la solicitud de conexión hecha anteriormente. \\
+		
+		\begin{figure} [hbt!]
+			\centering
+			\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Codigo1}
+			\caption{Código desarrollado implementando el crawler.}
+			\label{codigo1}
+		\end{figure}
+		
+		\noindent Lo siguiente es realizar la exploración de los elementos del HTML en una variable de tipo “Document” de la página solicitada donde buscaremos el elemento por ID del CAPTCHA del HTML y así crear una imagen válida que fuese creada por el servidor, extrayendo la ubicación de la imagen para colocarla en una respuesta de conexión con la ruta de la imagen obtenida en la variable “a” y generarla de manera local utilizando “FileOutputStream”, el método creado es de tipo “Document” por lo tanto su salida es del mismo tipo. 
+\pagebreak
+		
+		\begin{figure} [hbt!]
+			\centering
+			\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo2}
+			\caption{Continuación de la implementación del crawler.}
+			\label{codigo2}
+		\end{figure}
+		
+		\noindent Una vez realizado este método procedemos a explorar los campos de inserción que existen en el HTML, para ello hacemos otra búsqueda de elementos en el HTML y definimos los datos que contienen estos elementos para su posterior inserción y uso de ellos mediante una variable de tipo “HashMap<String,String>” (todos los campos son de tipo cadena).\\
+		
+		\noindent Ahora la realización del método “getData(HashMap<String,String> formFields)” utilizaremos como parámetros los elementos de inserción explorados anteriormente insertándolos en nuestro método “POST”. Creamos la conexión a donde se debe redirigir la información del inicio de sesión, insertando también las cookies almacenadas en la previa conexión de la obtención del HTML de la página del SAES.\\
+		
+		\begin{figure} [hbt!]
+			\centering
+			\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo3}
+			\caption{Continuación implementación del crawler.}
+			\label{codigo3}
+		\end{figure}
+	\pagebreak
+	
+	\noindent Si los datos ingresados son correctos se realizará una respuesta de la ruta solicitada en el POST insertando las cookies correspondientes a la conexión para comprobar la sesión del usuario en la plataforma, seguido de un mapeo del nuevo HTML donde se realizará la búsqueda por ID del campo donde se encuentre el nombre del alumno y un mensaje donde solo habrá texto si el usuario que haya iniciado sesión no estuviera inscrito.\\
+	\noindent De lo anterior y siguiendo la condición de que el usuario que haya iniciado sesión esté o no inscrito dependerá si el texto buscado como “fail” sea nulo/vacío, en el caso de que no lo esté indicará que el alumno que haya iniciado sesión está “INSCRITO” indicando el nombre del alumno que corresponda a la boleta y usuario junto con un grupo al que pertenezca, en el caso de que “fail” no sea nulo/vacío se indicará que el alumno que corresponda a la boleta y usuario aparezca como “NO INSCRITO”. \\
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo4}
+		\caption{Continuación implementación del crawler.}
+		\label{codigo4}
+	\end{figure}
+
+	\noindent Finalmente se crean 3 archivos donde se almacena la información del usuario que haya iniciado sesión donde se inserta su nombre completo (alumno.txt), su grupo al que esté inscrito (grupo.txt) y el código HTML de la página donde se obtuvo toda esta información (respoinse.html).
+\pagebreak
+
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Codigo5}
+		\caption{Continuación de la implementación del crawler.}
+		\label{codigo5}
+	\end{figure}
+
+	\noindent Una vez realizado esto necesitamos adjuntar estos métodos en 1 sola petición (o método) para realizar su ejecución e inserción de datos correspondientes a los que se necesitan.
+	Como se hace en el método “run()”. \\
+	
+	\noindent Creamos un método donde se adjunta en 1 petición la ejecución de todos los métodos anteriores, y haremos la petición de los datos del inicio de sesión del SAES usando “readLine()” para hacer la lectura de estas seguido de la asignación de los campos que se escogen para insertar estas cadenas y reenviarlos al método “getData” donde los datos insertados serán los parámetros que servirán para la correcta funcionalidad del método “getData” y finalmente iniciar sesión.\\
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo6}
+		\caption{Continuación implementación crawler.}
+		\label{codigo6}
+	\end{figure}
+\pagebreak
+	\noindent Cabe mencionar que dicha plataforma está desarrollada con ASP.NET con un plugin detector de “bots” llamado “Captcha BotDetect”, donde desde el servidor se realiza la generación de credenciales correspondientes a la imagen que se muestre en la página como la conocemos.\\
+	\textbf{“href="BotDetectCaptcha.ashx?get=layoutStyleSheet" ”}\\
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/ASP2}
+		\caption{Inspección de estructura del SAES.}
+		\label{asp2}
+	\end{figure}
+
+	\noindent Las peticiones de inicio de sesión se realizan directo al servidor y el servidor responde con un javascript donde redirecciona a la vista correspondiente si las credenciales de usuario y clave captcha son las correctas de acuerdo a la sesión de página en la que se encuentra.\\
+	\textbf{“action="Default.aspx?ReturnUrl=\%2fAlumnos\%2fcambia\_clave.aspx" onsubmit="javascript:return WebForm\_OnSubmit();" ”}
+	
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/ASP1}
+		\caption{Inspección de estructura del SAES.}
+		\label{asp1}
+	\end{figure}
+	\noindent Estos cambios se identificaron el día 15 de octubre del 2019.
+\pagebreak
+	
+	\textbf{POR EJEMPLO: CON USUARIO NO INSCRITO}\\
+	\noindent Se inserta previamente la boleta y contraseña del alumno del SAES ESCOM.
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=5cm]{Imagenes/Crawler/ImagenloginNoinscrito}
+		\caption{Captcha para alumno no inscrito.}
+		\label{imagenloginnoinscrito}
+	\end{figure}
+	
+	Se ingresa la clave captcha mostrada en la imagen “KJU”
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=5cm]{Imagenes/Crawler/Datosloginnoinscrito}
+		\caption{Se ingresan los datos en el crawler.}
+		\label{datosloginnoinscrito}
+	\end{figure}
+	\noindent Responde de acuerdo a la inscripción del alumno, para este caso el alumno NO ESTÁ INSCRITO.
+\pagebreak
+
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Noinscrito}
+		\caption{Respuesta del crawler.}
+		\label{noinscrito}
+	\end{figure}
+
+	\noindent Se muestran las cadenas correspondientes a la extracción de información para validar que el alumno en cuestión esté inscrito o no lo esté.\\
+	
+	\textbf{POR EJEMPLO: CON USUARIO INSCRITO}\\
+	\noindent Se inserta previamente la boleta y contraseña del alumno del SAES ESCOM.
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Imagenlogininscrito}
+		\caption{Captcha para el alumno inscrito.}
+		\label{imagenlogininscrito}
+	\end{figure}
+	\noindent Se ingresa la clave captcha mostrada en la imagen “MDJ”
+\pagebreak
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Datoslogininscrito}
+		\caption{Se registran ingresan datos al crawler.}
+		\label{datoslogininscrito}
+	\end{figure}
+	
+	\noindent Responde de acuerdo a la inscripción del alumno, para este caso el alumno ESTÁ INSCRITO.
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Logininscrito}
+		\caption{Respuesta del crawler.}
+		\label{logininscrito}
+	\end{figure}
+	
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Infologininscrito}
+		\caption{Información del alumno inscrito.}
+		\label{infologininscrito}
+	\end{figure}
+	\noindent Se muestran las cadenas correspondientes a la extracción de información para validar que el alumno en cuestión esté inscrito o no lo esté.
 
 	\chapter{Apartado G: API Facebook}
 	\label{apiFB}

@@ -1,0 +1,69 @@
+\begin{UseCase}{CU12}{Editar datos del Coordinador de Unidad Académica}{
+		\noindent Esta caso de uso servirá para que el Jefe de Fomento Deportivo pueda editar los datos del Coordinador de Unidad Académica previamente registrado con la finalidad de que si llega a presentar un cambio en el evento pueda ser editado sin problema alguno.
+		Para ello el Jefe de Fomento Deportivo dará click en el botón \IUbutton{ Editar } ubicado en la  parte derecha de la tabla de Coordinadores dentro de la \IUref{}{Pantalla de Principal \ref{principalJFD}}.	
+	} \label{CU12_evento}
+
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Jefe de Fomento Deportivo}
+		\UCitem{Propósito}{Editar datos de eventos Interpolitécnicos Deportivos.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Iniciar sesión.
+            \item Tener un evento registrado.
+            \item Seleccionar un evento para editar.
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla Editar Evento Deportivo}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Nombre del evento 
+        	\item Dirección
+        	\item Sede
+        	\item Punto de Referencia
+        	\item Semestre
+        	\item Fecha inicio de registro
+        	\item Fecha fin de registro
+        	\item Deporte
+        	\item Comentarios
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Evento registrado
+		    \item Campos requeridos
+		\end{itemize}}
+		\UCitem{Destino}{Editar Eventos Deportivos}
+		\UCitem{Errores}{
+        	\begin{itemize}
+        	    \item Los campos están vacíos.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+	
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Oprime el botón \IUbutton{ Editar } que esta en la \IUref{}{Pantalla principal \ref{principalJFD}}.
+    \UCpaso Muestra la \IUref{}{Pantalla Registrar un Evento Interpolitécnico Deportivo \ref{editarcoord}}.
+    \UCpaso[\UCactor] Llena los campos solicitados. \label{CU12_regresar}
+    \UCpaso[\UCactor] Presiona el botón \IUbutton{ Registrar }.
+    \UCpaso Comprueba que los campos no estén vacíos. \Trayref{A}
+    \UCpaso Obtiene los valores ingresados
+    \UCpaso Válida campos. \Trayref{B}
+    \UCpaso Muestra mensaje de confirmación de registro.
+    \UCpaso Muestra la \IUref{}{Pantalla principal del Jefe de Fomento Deportivo. \ref{principalJFD}}.
+    \end{UCtrayectoria}
+    
+    \begin{UCtrayectoriaA}{A}{Campo(s) vacios}
+    	\UCpaso Muestra mensaje “Campos Necesario".
+    	\UCpaso Continua en el paso \ref{CU12_regresar} del \UCref{CU12}.
+    \end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{Válida campos}
+		\UCpaso Muestra el mensaje "Datos incorrectos".
+   		\UCpaso Continua en el paso \ref{CU12_regresar} del \UCref{CU12}.
+	\end{UCtrayectoriaA}
+
+	
+
+
