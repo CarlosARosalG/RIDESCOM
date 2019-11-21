@@ -1,0 +1,56 @@
+\begin{UseCase}{CU25}{Consulta Entrenadores}{
+		\noindent Esta caso de uso servirá para que el Coordinador de Unida Académica pueda consultar los entrenadores registrados que laboran en la Unidades Académicas que le compete.
+		Para ello el Coordinador de Unida Académica se dirigirá a la tabla de Entrenadores ubicada en la \IUref{}{Pantalla de Principal \ref{principalcoord}}.	
+	} \label{CU25_evento}
+
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Coordinador de Unida Académica}
+		\UCitem{Propósito}{Consultar los Entrenadores.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Iniciar sesión.
+            \item Tener registrados datos.	
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla principal}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Nombre
+        	\item Apellido Paterno
+        	\item Apellido Materno
+        	\item Escuela
+        	\item Deporte
+        	\item Teléfono
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Datos registrados.
+		    \item Página de deportes.
+		\end{itemize}}
+		\UCitem{Destino}{Principal Coordinador de Unidad Académica}
+		\UCitem{Errores}{
+        	\begin{itemize}
+			    \item No hay coordinadores registrados.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+	
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla Principal \ref{principalcoord}}.
+    \UCpaso Muestra la \IUref{}{Pantalla Deportes \ref{principalcoord}}. \label{CU25_regresar}
+    \UCpaso[\UCactor] Se dirige a la tabla de Entrenadores.  
+    \UCpaso Muestra la tabla de Entrenadores. \Trayref{A}
+    \end{UCtrayectoria}
+    
+    \begin{UCtrayectoriaA}{A}{No hay registros}
+    	\UCpaso Muestra mensaje “No hay coordinadores registrados".
+    	\UCpaso Continua en el paso \ref{CU25_regresar} del \UCref{CU25}.
+    \end{UCtrayectoriaA}
+
+
+	
+
+
