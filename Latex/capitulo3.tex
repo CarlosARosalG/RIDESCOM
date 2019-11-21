@@ -14,32 +14,27 @@
 	\item Implementar un módulo de comunicación con la red social (Facebook). 
 	\item Implementar un módulo de consulta de resultados de competencias.
 \end{itemize}
+\pagebreak
 
 	%=========================================================
 	%                                                         Marco teorico
 	%=========================================================
-	
-	\noindent Dentro del Instituto Politécnico Nacional (IPN) se han creado eventos que fomentan la participación y competitividad de la comunidad, llamados interpolitécnicos. Estos involucran áreas tales como: actividades deportivas, culturales o académicas, dichos eventos son de participación gratuita y se realizan 2 veces al año entre todos los planteles académicos que constituyen al IPN, divididas en los niveles Medio Superior y Superior.  \cite{Reglas}\\
-	\noindent El IPN cuenta con 26 actividades deportivas registradas, sin embargo, en las unidades académicas no se practican todas.\cite{Reglas}.
-	\noindent La entidad dedicada a la coordinación de las actividades deportivas con las que cuenta el IIPN, es la Dirección de Desarrollo y Fomento Deportivo \cite{DDYFD}. Esta se encarga de la creación, administración y control de todas las actividades deportivas prácticadas dentro del IPN tales como: definir el área donde se practican y la asignación de presupuesto de cada actividad deportiva, llevar un registro de la cantidad de población que practica un deporte. \cite{Reglamento}.	
-	\noindent A su vez coordinan la realización de los eventos Interpolitécnicos Deportivos del IPN siguiendo ‘el reglamento general liga interpolitécnica. \cite{Reglamento}, donde se explican los  procesos que realiza cada persona involucrada.\\
-	
-	\noindent El Coordinador de Área Deportiva de cada Unidad Académica es el responsable de supervisar los aspectos operativos y técnicos de todos los deportes que se practican dentro de la misma así mismo es el encargado de realizar el proceso de inscripción a un interpolitécnico para los alumnos que así lo deseen y para que puedan participar este deberá solicitar la documentación de inscripción (cédula de inscripción) individual o de sus equipos y entregarlos a los Coordinadores de cada Disciplina Deportiva en la Dirección de Desarrollo y Fomento Deportivo. \cite{Reglamento} \\
-	\noindent  El alumno que desee participar en un evento interpolitécno deberá acudir con el coordinador de su unidad académica para comenzar el proceso de inscripción a un evento interpolitécnico. 
-	\\El coordinador le solicitará una forma para comprobar su estatus académico, este puede variar dependiendo de los coordinadores de las distintas unidades académicas. A su vez el alumno llenará el formato de inscripción al evento de su interés, anexando una fotografía. 
-	\\ Si se comprueba que el alumno está inscrito en el periodo actual en el que quiere participar, podrá continuar con el proceso, en caso contrario se negará la inscripción. \cite{Reglamento}
-	\\ Al concluir con la comprobación de inscripción, se le notifica al alumno cual es el estatus de su solicitud. 
-	
-	\noindent Para más detalles puede consultarse en el apartado Anexos Apartado \ref{ProcesoInscripcionActual}
-	\pagebreak
-	
+	\section{Alcance de la solución}
+	\noindent A continuación se muestra la arquitectura de la aplicación web,
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/arquitectura}
+		\caption{Arquitectura del sistema}
+		\label{arquitectura}
+	\end{figure}
+
+	\noindent Como se puede observar, la arquitectura contempla su implementación en otras unidades académicas, sin embargo cabe mencionar que el Trabajo Terminal se enfocará particularmente en ESCOM con el objetivo de análisar, estudiar la aceptación del mismo, así como posibles mejoras.
 	
 	
 	%=========================================================
 	%                                                         Analisis de factibilidad tecnica
 	%=========================================================
 	\section{An\'alisis de Entornos de Desarrollo Interactivo}
-	\noindent Éste análisis tiene como objetivo describir las herramientas que pueden ocuparse para la realización de este proyecto mencionando sus objetivos de cada herramienta de trabajo seleccionada.
 	
 	%=========================================================
 	%                                                         IDE
@@ -349,7 +344,43 @@ En cuestión de la memoria RAM está esta pensada de manera que soporte las cons
 O bien Tomando como caso la capacidad del disco duro se considera que el almacenamiento no se saturará hasta pasado 1 año, puesto que el uso de memoria de almacenamiento de datos creados por la aplicación no serán concurrentes, con el proposito de almacenar la aplicación y los archivos de base de datos, cuya base de datos incrementa de acuerdo al número de usuarios que hagan uso de ella (unicamente los que estén inscritos, o usuarios coordinador).\\
 
 
-\subsection{Reglas de Negocio Coordinador de Unidad Académica}
+%=========================================================
+%                                             Reglas del sistema
+%=========================================================
+\section{Reglas del Sistema}
+\noindent El alumno que desee participar en un evento interpolitécnico hará uso de la aplicación web RIDESCOM. Como primer punto deberá iniciar sesión en la misma, ingresando el usuario y contraseña con el que entra a sistema SAES (Sistema de Administración Escolar). Si los datos ingresados son correctos, se le dará acceso a la aplicación RIDESCOM, en caso contrario no se le dará acceso para poder registrarse en un evento. Sin embargo, podrá seguir visualizando datos generales, como lo es el calendario de eventos, resultados de eventos y los eventos que se practican dentro de la unidad académica.
+El Jefe de Fomento Deportivo podrá dar de alta a un Coordinador de alguna Unidad Académica. Para dar de alta un evento deportivo deberá llenar todos los campos requeridos, tendrá la opción de agregar una descripción si así lo desea. 
+El Coordinador de la Unidad Académica registrará a los entrenadores de las actividades deportivas deberá llenar los campos requeridos para poder concluir el registro. En caso de que exista un entrenador ya haya sido registrado, la aplicación le notificará. Una vez concluido los eventos deportivos, este registrará los resultados obtenidos por los participantes para que puedan ser vistos por la comunidad en general. 
+
+%=========================================================
+%                                             Reglas de Negocio
+%=========================================================
+\section{Reglas de Negocio}
+\noindent La aplicación RIDESCOM permitirá a los alumnos que estén inscritos en el periodo actual, inscribirse en un evento interpolitécnico, consultar los eventos registrados, consultar calendario de eventos. 
+El sistema cuenta con una interfaz que nos permite visualizar las diferentes opciones ofrecidas por el mismo. Para acceder al anterior el usuario debe de tener un usuario y contraseña. Dicho usuario y contraseña, será con el que ingresa al sistema del SAES. 
+Así mismo, habrá “usuarios encargados”, quienes se encargan de controlar y supervisar el uso de éste ante pequeñas porciones de estudiantes (grupos de alumnos). Ahora dichos encargados hay dos tipos el Jefe de Fomento Deportivo, a este se le permitirá crear eventos deportivos, registrar eventos deportivos y restablecer contraseña a los perfiles de los coordinadores. El segundo tipo de encargado es el Coordinador de una Unidad Académica, este podrá registrar los resultados de los participantes en el sistema para poder ser visualizados en la vista principal, podrá generar un reporte de los alumnos registrados durante el periodo que se haya especificado y registrar a los entrenadores que laboran dentro de la Unidad Académica a la que atienda, a continuación se describirán las reglas para cada uno de los actores que se involucran.
+
+
+%=========================================================
+%                                             Reglas de Negocio del JFD
+%=========================================================
+\section{Reglas de Negocio Jefe de Fomento Deportivo}
+Para que el JFD pueda ingresar a la página RIDESCOM debe de contar con un Usuario y Contraseña, de caso contrario no podrá acceder.
+Una vez dentro de la página de RIDESCOM se le mostrarán las opciones que tiene permitidas, tales como: Evento, Coordinadores, Usuarios, Pruebas en estos dos podrá agregar, editar o eliminar.
+
+\noindent Para la vista de Evento, la información se le mostrará en la página principal, si hay eventos registrados estos serán mostrados en la tabla correspondiente, sino se cuenta con datos se mostrará en la tabla el mensaje de que no existen datos.  Para poder agregar un evento se deben de cumplir con algunos campos que son requisito sino se completan los campos no podrá registrar el evento.  Dentro del formulario para crear el evento se debe asignar una fecha en la que los alumnos podrán inscribirse para esto, no debe de ser mayor  a 5 días en la que se realizará el evento. También se debe considerar que no se puede asignar una fecha menor respecto a la fecha en que se está creando el evento. Una vez tenga el evento registrado podrá editar información respecto a este, teniendo en cuenta los campos que son requisito, o en caso contrario eliminar el evento.
+
+\noindent Para la vista de Coordinadores, se mostrará la información en una tabla dentro de la página principal, en caso de no contar con datos registrados se mostrará un mensaje de que no existen datos. Para poder agregar un Coordinador de Unidad Académica deberá cumplir con campos que son requisitos sino se completan los campos no podrá registrar el coordinador. Una vez tenga el coordinador registrado podrá editar información respecto a este, teniendo en cuenta los campos que son requisito, o en caso contrario eliminar los datos del coordinador.
+
+\noindent Contará con un apartado en el que visualizará los resultados obtenidos por los participantes estos estarán disponibles hasta que concluyan los eventos interpolitécnios y para el JFD solo será de consulta.
+
+\noindent Para la vista de Pruebas, se mostrará una tabla en la que podrá ver las pruebas registradas, en caso de no tener datos que mostrar se mostrará un mensaje en el que se indique que no hay datos por mostrar. Se podrá agregar pruebas, para ello deberá de cumplir con los campos que son requisitos. De igual manera tendrá campos que son requisito para poder guardar los datos. Una vez guardado las Pruebas podrá editar o eliminar la información.
+\pagebreak
+
+%=========================================================
+%                                             Reglas de Negocio del Coord
+%=========================================================
+\section{Reglas de Negocio Coordinador de Unidad Académica}
 \noindent Para que el Coordinador de Unidad Académica pueda ingresar a la página RIDESCOM debe de contar con un Usuario y Contraseña, de caso contrario no podrá acceder.\\
 
 \noindent Una vez dentro de la página de RIDESCOM se le mostrarán las opciones que tiene permitidas, tales como: Constancias, Calendario, Resultados, Consulta Inscritos, DIfundir Evento y Entrenadores. Las vistas antes mencionadas exceptuando Resultados y Difundir Evento, serán vistas de solo lectura.\\
@@ -364,7 +395,7 @@ O bien Tomando como caso la capacidad del disco duro se considera que el almacen
 
 \noindent Para la vista de Entrenadores, se mostrará la información dentro de la vista principal en una tabla, en caso de no contar con información se mostrará el mensaje de que no existen datos. Para agregar datos de un Entrenador se deben de cumplir con datos que son requisitos. Una vez que se tengan datos registrados podrá editar o eliminar la información. \\
 
-\subsection{Reglas de Negocio Alumno}
+\section{Reglas de Negocio Alumno}
 Para que el alumno pueda ingresar a la página RIDESCOM debe de contar con un Usuario y Contraseña, de caso contrario no podrá acceder.\\
 
 Una vez dentro de la página de RIDESCOM se le mostrarán las opciones que tiene permitidas, tales como: Calendario, Inscribe Interpolitecnico, Historial,  Resultados, Eventos Inscritos. Las vistas antes mencionadas serán solo lectura exeptuando la vista de INscribe Interpolitecnico.\\
@@ -456,14 +487,76 @@ Para la vista de Eventos Inscritos, mostrará el o los eventos a los que se a re
 	\end{center}
 \end{table}
 
+%=========================================================
+%                                                         Requisitos de interaccion con el usuario
+%=========================================================
+\section{Requisitos del usuario}
+A continuación se mostrarán los requisitos indispensables que se deben considerar para el usuario, así como la prioridad de cada uno de ellos. Estos servirán para el desarrollo de los módulos que conformarán la aplicaciónweb 
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|l|p{45mm}|p{45mm}|p{45mm}|l}
+			\hline
+			Id & Nombre & Descripción & Prioridad \\
+			\hline 
+			RF1 & Registro de eventos & En la aplicación web se podrán registrar, modificar, eliminar y consultar  en un formulario todos los datos para identificar un evento.
+			& MEDIA \\ \hline
+			RF2 & Registro de participantes & En la aplicación web se podrán registrar, modificar, eliminar y consultar  en un formulario los datos del participante & ALTA  \\ \hline
+			RF3 & Vista al público & En una pantalla se mostrarán los participantes que estén registrados en la aplicación y ver sus resultados de competencia. & MEDIO \\ \hline
+			RF4 & Conexión con red social FACEBOOK. & Gracias a los datos que identifican a un evento se podrá promover en la red social FACEBOOK mediante el uso de API.& ALTA \\ \hline
+			RF5 & Realizar una interfaz para los participantes (alumnos). &Se creará un(una ventana)  sitio para los alumnos que quieran participar en algún evento deportivo(, haciendo su registro, consultar estatus). & MEDIA \\ \hline
+			RF6 & Mostrar una tabla de estadísticas. & En una pantalla (vista)  se mostrará todas las áreas deportivas que participaron en el evento deportivo y  número de participantes. & ALTA \\ \hline
+			RF7 & Registrar un coordinador & El coordinador que utilizará la aplicación web tendrá que ser registrado en la base de datos. & ALTA \\ \hline
+			RF8 & Vista para el coordinador. &El coordinador tendrá una vista donde podrá dar de alta eventos, participantes y generar cédulas de inscripción. & MEDIA \\ \hline
+			RF9  & Historial & Para que se tenga un monitoreo de participantes. & ALTA \\ \hline
+		\end{tabular}
+		\caption{Requerimientos del Usuario.}
+		\label{tabla:sencilla}
+	\end{center}
+\end{table}
+\pagebreak
 
 %=========================================================
-%                                             Requisitos
+%                                                         Requisitos funcionales
 %=========================================================
-\section{Reglas del Sistema}
-\noindent El alumno que desee participar en un evento interpolitécnico hará uso de la aplicación web RIDESCOM. Como primer punto deberá iniciar sesión en la misma, ingresando el usuario y contraseña con el que entra a sistema SAES (Sistema de Administración Escolar). Si los datos ingresados son correctos, se le dará acceso a la aplicación RIDESCOM, en caso contrario no se le dará acceso para poder registrarse en un evento. Sin embargo, podrá seguir visualizando datos generales, como lo es el calendario de eventos, resultados de eventos y los eventos que se practican dentro de la unidad académica.
-El Jefe de Fomento Deportivo podrá dar de alta a un Coordinador de alguna Unidad Académica. Para dar de alta un evento deportivo deberá llenar todos los campos requeridos, tendrá la opción de agregar una descripción si así lo desea. 
-El Coordinador de la Unidad Académica registrará a los entrenadores de las actividades deportivas deberá llenar los campos requeridos para poder concluir el registro. En caso de que exista un entrenador ya haya sido registrado, la aplicación le notificará. Una vez concluido los eventos deportivos, este registrará los resultados obtenidos por los participantes para que puedan ser vistos por la comunidad en general. \pagebreak
+\section{Requisitos funcionales de la aplicación web}
+En la tabla mostrada a continuación, se muestrán los requisitos funcionales de la aplicación web los cuales serviran para el desarrollo de la aplicación web, así como la prioridad de cada uno de ellos.
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|l|p{45mm}|p{45mm}|p{45mm}|l}
+			\hline
+			Id & Nombre & Descripción & Prioridad \\
+			\hline 
+			RF1 & Validación de datos de los participantes. & La aplicación contará con un mecanismo de comprobación de estado académico (inscrito). & ALTA \\ \hline
+			RF2 & Historial de participante. & Para tener seguimiento del participante durante su trayectoria académica & MEDIA  \\ \hline
+			RF3 & Comunicación con la red social FACEBOOK &Habrá comunicación con la red social FACEBOOK para la publicación de eventos registrados en la aplicación.  & MEDIO \\ \hline
+			RF4 & Creación de perfiles. & Se podrá asignar un perfil a un usuario.& MEDIA \\ \hline
+		\end{tabular}
+		\pagebreak
+		\caption{Requerimientos funcionales de la aplicación web.}
+		\label{tabla:sencilla}
+	\end{center}
+\end{table}
+
+
+%=========================================================
+%                                                         Requisitos de informacion
+%=========================================================
+\section{Requisitos no funcionales de la aplicación web}
+En la tabla mostrada a continuación se muestran los requisitos que no afectan al funcionamiento de la aplicación, sin embargo se consideran para que en caso de tener el tiempo, se integran a la aplicación y obtener un complemento al resultado fijado.
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|l|p{45mm}|p{45mm}|p{45mm}|l}
+			\hline
+			Id & Nombre & Descripción & Prioridad \\
+			\hline 
+			RF1 & Vista de consulta genera. & Comunidad ajena a los participantes podrán ver los resultados. & MEDIA \\ \hline
+			RF2 & Lista de registros &El usuario podrá consultar sus registros realizados & MEDIA   \\ \hline
+			RF3 & Recuperación de contraseña &El usuario participante podrá recuperar su contraseña. & MEDIO \\ \hline
+		\end{tabular}
+		\caption{Requerimientos no funcionales de la aplicación web.}
+		\label{tabla:sencilla}
+	\end{center}
+\end{table}
 
 
 %=========================================================
@@ -625,76 +718,6 @@ En esta sección se describe cada uno de los procesos que se debe de tener la ap
 \input{CU34.tex}
 
 
-%=========================================================
-%                                                         Requisitos de interaccion con el usuario
-%=========================================================
-\section{Requisitos del usuario}
-A continuación se mostrarán los requisitos indispensables que se deben considerar para el usuario, así como la prioridad de cada uno de ellos. Estos servirán para el desarrollo de los módulos que conformarán la aplicaciónweb 
-\begin{table}[htbp]
-	\begin{center}
-		\begin{tabular}{|l|p{45mm}|p{45mm}|p{45mm}|l}
-			\hline
-			Id & Nombre & Descripción & Prioridad \\
-			\hline 
-			RF1 & Registro de eventos & En la aplicación web se podrán registrar, modificar, eliminar y consultar  en un formulario todos los datos para identificar un evento.
-			& MEDIA \\ \hline
-			RF2 & Registro de participantes & En la aplicación web se podrán registrar, modificar, eliminar y consultar  en un formulario los datos del participante & ALTA  \\ \hline
-			RF3 & Vista al público & En una pantalla se mostrarán los participantes que estén registrados en la aplicación y ver sus resultados de competencia. & MEDIO \\ \hline
-			RF4 & Conexión con red social FACEBOOK. & Gracias a los datos que identifican a un evento se podrá promover en la red social FACEBOOK mediante el uso de API.& ALTA \\ \hline
-			RF5 & Realizar una interfaz para los participantes (alumnos). &Se creará un(una ventana)  sitio para los alumnos que quieran participar en algún evento deportivo(, haciendo su registro, consultar estatus). & MEDIA \\ \hline
-			RF6 & Mostrar una tabla de estadísticas. & En una pantalla (vista)  se mostrará todas las áreas deportivas que participaron en el evento deportivo y  número de participantes. & ALTA \\ \hline
-			RF7 & Registrar un coordinador & El coordinador que utilizará la aplicación web tendrá que ser registrado en la base de datos. & ALTA \\ \hline
-			RF8 & Vista para el coordinador. &El coordinador tendrá una vista donde podrá dar de alta eventos, participantes y generar cédulas de inscripción. & MEDIA \\ \hline
-			RF9  & Historial & Para que se tenga un monitoreo de participantes. & ALTA \\ \hline
-		\end{tabular}
-		\caption{Requerimientos del Usuario.}
-		\label{tabla:sencilla}
-	\end{center}
-\end{table}
-\pagebreak
-
-%=========================================================
-%                                                         Requisitos funcionales
-%=========================================================
-\section{Requisitos funcionales de la aplicación web}
-En la tabla mostrada a continuación, se muestrán los requisitos funcionales de la aplicación web los cuales serviran para el desarrollo de la aplicación web, así como la prioridad de cada uno de ellos.
-\begin{table}[htbp]
-	\begin{center}
-		\begin{tabular}{|l|p{45mm}|p{45mm}|p{45mm}|l}
-			\hline
-			Id & Nombre & Descripción & Prioridad \\
-			\hline 
-			RF1 & Validación de datos de los participantes. & La aplicación contará con un mecanismo de comprobación de estado académico (inscrito). & ALTA \\ \hline
-			RF2 & Historial de participante. & Para tener seguimiento del participante durante su trayectoria académica & MEDIA  \\ \hline
-			RF3 & Comunicación con la red social FACEBOOK &Habrá comunicación con la red social FACEBOOK para la publicación de eventos registrados en la aplicación.  & MEDIO \\ \hline
-			RF4 & Creación de perfiles. & Se podrá asignar un perfil a un usuario.& MEDIA \\ \hline
-		\end{tabular}
-		\pagebreak
-		\caption{Requerimientos funcionales de la aplicación web.}
-		\label{tabla:sencilla}
-	\end{center}
-\end{table}
-
-
-%=========================================================
-%                                                         Requisitos de informacion
-%=========================================================
-\section{Requisitos no funcionales de la aplicación web}
-En la tabla mostrada a continuación se muestran los requisitos que no afectan al funcionamiento de la aplicación, sin embargo se consideran para que en caso de tener el tiempo, se integran a la aplicación y obtener un complemento al resultado fijado.
-\begin{table}[htbp]
-	\begin{center}
-		\begin{tabular}{|l|p{45mm}|p{45mm}|p{45mm}|l}
-			\hline
-			Id & Nombre & Descripción & Prioridad \\
-			\hline 
-			RF1 & Vista de consulta genera. & Comunidad ajena a los participantes podrán ver los resultados. & MEDIA \\ \hline
-			RF2 & Lista de registros &El usuario podrá consultar sus registros realizados & MEDIA   \\ \hline
-			RF3 & Recuperación de contraseña &El usuario participante podrá recuperar su contraseña. & MEDIO \\ \hline
-		\end{tabular}
-		\caption{Requerimientos no funcionales de la aplicación web.}
-		\label{tabla:sencilla}
-	\end{center}
-\end{table}
 
 
 %=========================================================

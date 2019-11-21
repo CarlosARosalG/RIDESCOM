@@ -1,86 +1,165 @@
 \chapter{Trabajo realizado}
 
-	\noindent En este capítulo se presentará una breve descripción acerca del trabajo terminal haciendo mención del trabajo que se realizó, los problemas que se enfrentaron, así como lo que se logró. Continuando con el capítulo se presentan las Reglas de Negocio y las Reglas del Sistema donde se menciona que es lo que puede realizar la aplicación y que no.\\
-	De manera breve  se hace mención de los casos de uso que se realizaron haciendo referencia al apartado Anexos para una consulta más detallada de cada uno de estos.\\
-	Así mismo se menciona los Requisitos del usuario, Requisitos funcionales de la aplicación web y Requisitos no funcionales de la aplicación web.\\
-	Finalmente se menciona las iteraciones programadas, detallando las actividades realizadas, problemas, logros y si fue necesario, investigación para lograr las metas propuestas.\\
-	
-	%Agregar etiqueta de diagrama de propuesto
+	\noindent En este capítulo se presenta un resumen del trabajo realizado durante el periodo correspondiente a Trabajo Terminal 1, esto servirá como base para entender los procesos y el desarrollo correspondiente a Trabajo Terminal 2.\\
+	\noindent Siendo así se presentará el plan de trabajo establecido para Trabajo Terminal 2 de tal manera que posteriormente, pueda explicarse a detalle los logros obtenidos, incluyendo las problemáticas y la solución a estos. \\
 	
 	%=========================================================
-	%                                                         Prototipo RIDESCOM
+	%                                                     Antecedentes
 	%=========================================================
-	\section{Prototipo para el Registro a Interpolit\'ecnicos Deportivos (RIDESCOM)}
+	\section{Antecedentes}
+	\noindent Durante el periodo correspondiente al Trabajo Terminal 1, de acuerdo al calendario de actividades, se realizó la toma de requerimientos para delimitar el alcance del proyecto. Una vez realizado esto, se procedió a realizar el análisis del proyecto identificando los módulos que ayudarían a mitigar la problemática y a su vez estos sean fácil de usar.\\
+	Se diseño la base de datos, la cual tiene la estructura para que en un futuro pueda soportar las unidades académicas que conforman al IPN. Se planteó el diseño de las pantallas que contaría la aplicación web.\\
 	
-	\noindent En este capítulo se muestran las iteraciones que realizamos los primeros 4 meses del año 2019 siguiendo la metodología Scrum. En las primeras iteraciones se realizó la investigación acerca de los aspectos fundamentales de las páginas web, con el finn de comprender los conceptos del desarrollo de aplicaciones y poder llevarlos a la práctica. En iteraciones posteriores se hizo un análisis de lo que va a realizar RIDESCOM; de ese análisis se obtuvieron los requisitos funcionales y no funcionales del sistema, una breve descripción de los casos de uso, así como la identificación de los actores, se fueron obteniendo reglas de negocio. Además, de seguir con la investigación y práctica de la creación de aplicaciones web y del uso o implementación de un crawler. Posteriormente se comenzó con la redacción de la documentación técnica, la investigación del estado del arte, el análisis y diseño de la base de datos, la comprensión de comandos de LaTeX, el diseño que tendrá la aplicación, se realizaron pantallas de como lucirá la apliación, se definieron los iconos que se utilizarán en la aplicación, se definieron las tecnologías a utilizar, se implementó un servidor local para la interacción con la aplicación móvil, se creó un primer prototipo de la aplicación con la vista del crawler (Inicio Sesión) y se realizó la redacción de este documento que es el reporte de actividades realizadas. También se creó el repositorio para el desarrollo colaborativo de los documentos. En estas iteraciones surgieron problemas e inconvenientes que afectan al proyecto RIDESCOM tales como la implementación de un crawler, la curva de aprendizaje del desarrollo utilizando Spring MVC, las limitaciones de tiempo debido a que los miembros del equipo trabajan o están realizando su servicio social. Pese a los problemas mencionados o no, tenemos un prototipo funcional de la aplicación así como la mayor parte de la documentación técnica y la elaboración de este documento. El resto de este capítulo presenta en mayor o menor medida los detalles del trabajo realizado en cada iteración.
+	\noindent Un punto importante del Trabajo Terminal 1 fue la implementación de un Crawler, el cual ayudará a atacar dos de los principales problemas existentes. Uno de ellos es que el alumno interesado en participar en un evento interpolitécnicos sea estudiante del IPN. El segundo problema es la participación de alumnos que no están inscritos en el ciclo escolar en el cual se quiere participar.
 	
-	\section{An\'alisis de factibilidad t\'ecnica}
-	
-	%=========================================================
-	%                                             Requisitos
-	%=========================================================
-	\section{Reglas de Negocio}
-	\noindent La aplicación RIDESCOM permitirá a los alumnos que estén inscritos en el periodo actual, inscribirse en un evento interpolitécnico, consultar los eventos registrados, consultar calendario de eventos. 
-	El sistema cuenta con una interfaz que nos permite visualizar las diferentes opciones ofrecidas por el mismo. Para acceder al anterior el usuario debe de tener un usuario y contraseña. Dicho usuario y contraseña, será con el que ingresa al sistema del SAES. 
-	Así mismo, habrá “usuarios encargados”, quienes se encargan de controlar y supervisar el uso de éste ante pequeñas porciones de estudiantes (grupos de alumnos). Ahora dichos encargados hay dos tipos el Jefe de Fomento Deportivo, a este se le permitirá crear eventos deportivos, registrar eventos deportivos y restablecer contraseña a los perfiles de los coordinadores. El segundo tipo de encargado es el Coordinador de una Unidad Académica, este podrá registrar los resultados de los participantes en el sistema para poder ser visualizados en la vista principal, podrá generar un reporte de los alumnos registrados durante el periodo que se haya especificado y registrar a los entrenadores que laboran dentro de la Unidad Académica a la que atienda, a continuación se describirán las reglas para cada uno de los actores que se involucran.
-	
-	\subsection{Reglas de Negocio Jefe de Fomento Deportivo}
-	Para que el JFD pueda ingresar a la página RIDESCOM debe de contar con un Usuario y Contraseña, de caso contrario no podrá acceder.
-	Una vez dentro de la página de RIDESCOM se le mostrarán las opciones que tiene permitidas, tales como: Evento, Coordinadores, Usuarios, Pruebas en estos dos podrá agregar, editar o eliminar. \\
-	
-	\noindent Para la vista de Evento, la información se le mostrará en la página principal, si hay eventos registrados estos serán mostrados en la tabla correspondiente, sino se cuenta con datos se mostrará en la tabla el mensaje de que no existen datos.  Para poder agregar un evento se deben de cumplir con algunos campos que son requisito sino se completan los campos no podrá registrar el evento.  Dentro del formulario para crear el evento se debe asignar una fecha en la que los alumnos podrán inscribirse para esto, no debe de ser mayor  a 5 días en la que se realizará el evento. También se debe considerar que no se puede asignar una fecha menor respecto a la fecha en que se está creando el evento. Una vez tenga el evento registrado podrá editar información respecto a este, teniendo en cuenta los campos que son requisito, o en caso contrario eliminar el evento.\\
-	
-	\noindent Para la vista de Coordinadores, se mostrará la información en una tabla dentro de la página principal, en caso de no contar con datos registrados se mostrará un mensaje de que no existen datos. Para poder agregar un Coordinador de Unidad Académica deberá cumplir con campos que son requisitos sino se completan los campos no podrá registrar el coordinador. Una vez tenga el coordinador registrado podrá editar información respecto a este, teniendo en cuenta los campos que son requisito, o en caso contrario eliminar los datos del coordinador. \\
-	
-	\noindent Contará con un apartado en el que visualizará los resultados obtenidos por los participantes estos estarán disponibles hasta que concluyan los eventos interpolitécnios y para el JFD solo será de consulta. \\
-	
-	\noindent Para la vista de Pruebas, se mostrará una tabla en la que podrá ver las pruebas registradas, en caso de no tener datos que mostrar se mostrará un mensaje en el que se indique que no hay datos por mostrar. Se podrá agregar pruebas, para ello deberá de cumplir con los campos que son requisitos. De igual manera tendrá campos que son requisito para poder guardar los datos. Una vez guardado las Pruebas podrá editar o eliminar la información. \\
-	\pagebreak
-	
-	
-	%=========================================================
-	%                                                         Sprint 0
-	%=========================================================
-	\section{Sprint 0: Análisis}
-	\noindent En este SPRINT se declara el planteamiento y comportamiento de la aplicación como tal, en sus inicios, el plan de desarrollo y los posibles resultados que otorgará.
-	Este no se contempló en inicios del proyecto, sin embargo es de importancia ya que en este se definen, las herramientas \ref{Herramientas} que se van a emplear, el análisis del sistema, visualizar y proponer el proceso que se emplea.
-	También se especificará cómo es que se instalaron las herramientas empleadas.
-	
-	\noindent Dentro de este Spring se reunió con responsable de las actividades del Departamento de Formación Deportivas para que se planteara la problematica y así, se defina que es lo que se puede atacar con el proyecto, ver el proceso detalladamente para la inscripción a un evento interpolitécnico deportivo \ref{Entrevista}, se plantearon los Casos de Uso. 
-	
-	\noindent Cabe destacar que durante el desarrollo correspondiente a Trabajo Terminal 2, nos percatamos de que existia cierta inconsistencia en la relación de algunas tablas a lo cual se realizó la modificación para mas detalles de la estructura actual de la base de datos consulte el apartado Anexos la sección D \ref{CasosdeUso},está se modelo de tal forma que ya contempla el agregar otras unidades académicas\ref{BasedeDatos}. 
-	
-	\noindent Ahora bien, en este apartado se muestra la estructura propuesta en Trabajo Terminal, como se muestra en la Figura \ref{basededatosInicial}. 
-	\pagebreak
-	
+	\section{Plan de trabajo}
+	\noindent A continuación se muestra el cronograma correspondiente a Trabajo Terminal 2 este servirá para explicar detalladamente el trabajo en cada uno de los Sprint, los problemas y las soluciones a estos.
 	\begin{figure}[hbt!]
 		\centering
-		\includegraphics[angle=90, width=10cm, height=15cm]{Imagenes/BasedeDatos}
-		\caption{Base de Datos propuesta en Trabajo Terminal 1.}
-		\label{basededatosInicial}
+		\includegraphics[width=13cm, height=4cm]{Imagenes/cronograma}
+		\caption{Cronograma de actividades correspondientes a Trabajo Terminal 2}
+		\label{cronograma}
 	\end{figure}
+
+	\noindent Ahora bien, los Sprint a desarrollar son: 
+	\begin{itemize}
+		\item Sprint 2
+		\item Sprint 4
+		\item Sprint 5
+		\item Sprint 6
+		\item Sprint 7
+	\end{itemize}
+	\noindent En este capítulo se muestran las iteraciones que realizamos los primeros 4 meses del año 2019 siguiendo la metodología Scrum. En las primeras iteraciones se realizó la investigación acerca de los aspectos fundamentales de las páginas web, con el fin de comprender los conceptos del desarrollo de aplicaciones y poder llevarlos a la práctica. En iteraciones posteriores se hizo un análisis de lo que va a realizar RIDESCOM; de ese análisis se obtuvieron los requisitos funcionales y no funcionales del sistema, una breve descripción de los casos de uso, así como la identificación de los actores, se fueron obteniendo reglas de negocio. Además, de seguir con la investigación y práctica de la creación de aplicaciones web y del uso o implementación de un crawler. Posteriormente se comenzó con la redacción de la documentación técnica, la investigación del estado del arte, el análisis y diseño de la base de datos, la comprensión de comandos de LaTeX, el diseño que tendrá la aplicación, se realizaron pantallas de como lucirá la apliación, se definieron los iconos que se utilizarán en la aplicación, se definieron las tecnologías a utilizar, se implementó un servidor local para la interacción con la aplicación móvil, se creó un primer prototipo de la aplicación con la vista del crawler (Inicio Sesión) y se realizó la redacción de este documento que es el reporte de actividades realizadas. También se creó el repositorio para el desarrollo colaborativo de los documentos. En estas iteraciones surgieron problemas e inconvenientes que afectan al proyecto RIDESCOM tales como la implementación de un crawler, la curva de aprendizaje del desarrollo utilizando Spring MVC, las limitaciones de tiempo debido a que los miembros del equipo trabajan o están realizando su servicio social. Pese a los problemas mencionados o no, tenemos un prototipo funcional de la aplicación así como la mayor parte de la documentación técnica y la elaboración de este documento. El resto de este capítulo presenta en mayor o menor medida los detalles del trabajo realizado en cada iteración. A continuación se explicara a detalle el trabajo realizado en cada uno de los Sprint antes mencionados.
+
 	
-	\noindent Los cambios realizados fueron respecto a la tabla de Tipo de Contacto, esta se cambio por la separación del tipo de contacto. Quedando tres tablas nuevas, las cuales son: Telefonono Fijo, Telefonono Celular y extensión. \\
-	Otro cambio realizado fue la relación entre la tabla Evento y la tabla Act Deportiva, con el cambio realizado quedó la tabla Evento relacionada con la tabla Prueba. Con la finalidad de encontrar especifícamente los datos de un evento en particular, ya que nos percatamos que con la primer relación se mostraban datos duplicados. 
+	\section{An\'alisis de factibilidad t\'ecnica}
+	\noindent Éste análisis tiene como objetivo describir las herramientas que pueden ocuparse para la realización de este proyecto mencionando sus objetivos de cada herramienta de trabajo seleccionada.
 	
-	%=========================================================
-	%                                                         Sprint 1
-	%=========================================================
-	\section{Sprint 1:  Mecanismo de validación de estatus académico.}
-	\noindent Para el desarrollo de este Sprint se desarrolla la forma de verificar el estatus académico de los alumnos que deseen participar en un evento interpolitécnico. \\
-	Dicha verificación consiste de 3 pasos:
-	\begin{enumerate}
-		\item Ingresa credenciales en la aplicación web RIDESCOM.
-		\item Se verifican credenciales en el SAES.
-		\item Accede a la página RIDESCOM.
-	\end{enumerate}
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|p{20mm}|p{30mm}|p{15mm}|p{15mm}|p{15mm}|}
+				\hline
+				\textbf{Puesto} & \textbf{Descripción de actividades} & \textbf{Salario mensual} & \textbf{Cantidad} & \textbf{Total por mes}\\ \hline 
+				Project Manager Analista & Encargado de supervisar el desarrollo del sistema y participará en el desarrollo del mismo & 17,00 MXN. & 1 &17,00 MXN. \\ \hline
+				
+				Programador Back-end & Encargado de desarrollar la parte lógica del proyecto & 12,500 MXN. & 1 &12,500 MXN. \\ \hline
+				
+				Programador Front-end & Encargado de desarrollar las interfaces del proyecto & 12,500 MXN. & 1 &12,500 MXN.\\ \hline
+				
+				\multicolumn{4}{|c|}{Total por el desarrollo del sistema: 10 meses} & 420,000 MXN.\\ \hline
+			\end{tabular}
+			\caption{Tabla de costos del personal.}
+			\label{tablacostopersonal}
+		\end{center}
+	\end{table}
 	
-	Como primer paso, el usuario ingresa el usuario y contraseña, mismas que ocupa para ingresar al Sistema de Administración Escolar SAES.
-	Una vez ingresado Usuario y Contraseña, la aplicación hace uso del Crawler \ref{crawler}. \\
-	Este tomará la información de Usuario y Contraseña, las utilizará para ingresar al SAES, de tal manera que se comprobará si estas son correctas o no. En cualquier caso, se tomará la respuesta para mostrala al usuario.
-	Finalmente, en la aplicación web se buscará la respuesta del Crawler para definir el acceso a la aplicación.
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|p{20mm}|p{30mm}|p{15mm}|p{15mm}|}
+				\hline
+				\textbf{Servicio}  & \textbf{Características} & \textbf{Precio mensual} & \textbf{Total} \\ \hline 
+				Paquete esencial de TotalPlay & Telefonía ilimitada Intenet de 50 MG. & 459 MXN. & 5,049 MXN \\ \hline
+				
+				Luz & - & Varía de acuerdo a las tarifas establecidas por CFE & 2,354 MXN. \\ \hline
+				
+				\multicolumn{3}{|c|}{Total por el desarrollo del sistema: 10 meses} & 7,403 MXN\\ \hline
+			\end{tabular}
+			\caption{Tabla de costos operativos.}
+			\label{tablacostosoperativos}
+		\end{center}
+	\end{table}
 	
-	El objetivo de este mécanismo es comprobar la inscripción del alumno en el IPN, ya que en el reglamento en el que se basan los eventos interpolitécnicos deportivos, donde se menciona que solo deben participar alumnos que estén inscritos. \ref{crawler}
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|p{20mm}|p{30mm}|p{15mm}|p{15mm}|p{15mm}|}
+				\hline
+				\textbf{Equipo} & \textbf{Características} & \textbf{Cantidad} & \textbf{Unidad} & \textbf{Precio}\\ \hline 
+				Laptop HP Pavilion & Procesador AMD 5, Memoria RAM: 8 GB, Disco duro: 512GB, Sistema operativo: Windows 10  & 1 & Pieza & 15,00 MXN. \\ \hline
+				
+				Laptop HP Pavilion & Procesador AMD 5, Memoria RAM: 8 GB, Disco duro: 512GB, Sistema operativo: Windows 10  & 1 & Pieza & 15,00 MXN. \\ \hline
+				
+				\multicolumn{4}{|c|}{Total por el desarrollo del sistema: 10 meses} & 30,000 MXN.\\ \hline
+			\end{tabular}
+			\caption{Tabla de costos de herramientas de desarrollo.}
+			\label{tablcostoherramientas}
+		\end{center}
+	\end{table}
+	
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|p{20mm}|p{30mm}|p{15mm}|p{15mm}|p{15mm}|}
+				\hline
+				\textbf{Producto} & \textbf{Cantidad} & \textbf{Unidad} & \textbf{Precio}  & \textbf{Precio Total}\\ \hline 
+				Paquete de 100 hojas blancas & 1  & Pieza & 22.50 MXN. & 22.50 MXN. \\ \hline
+				
+				Engargolado & 2 & - & 22 MXN. & 44 MXN. \\ \hline
+				
+				CD virgen & 2 & Pieza & 8 MXN. & 16 MXN. \\ \hline
+				
+				Impresiones & 200 & - & 0.32 MXN. & 64 MXN \\ \hline
+				
+				\multicolumn{4}{|c|}{Total por el desarrollo del sistema: 10 meses} & 30,000 MXN.\\ \hline
+			\end{tabular}
+			\caption{Tabla de costos de herramientas de papelería.}
+			\label{tablacostospapeleria}
+		\end{center}
+	\end{table}
+	
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|p{20mm}|p{30mm}|p{15mm}|p{15mm}|}
+				\hline
+				\textbf{Fase de desarrollo}  & \textbf{Horas requeridas} & \textbf{Total de días empleados} & \textbf{Total} \\ \hline 
+				Análisis, diseño y planeación & 4 & 150 & 600 \\ \hline
+				
+				Desarrollo, implementación y pruebas & 6 & 180 & 1080 \\ \hline
+				
+				\multicolumn{3}{|c|}{Total de horas requeridas} & 1680\\ \hline
+			\end{tabular}
+			\caption{Tabla de costo de tiempo de desarrollo.}
+			\label{tablacostodesarrollo}
+		\end{center}
+	\end{table}
+	\newpage
+	
+	\noindent El Modelo Básico de COCOMO’81 estima el esfuerzo y el tiempo empleado en el desarrollo
+	de un proyecto de software usando dos variables predictivas denominadas factores de costo (cost
+	drivers): el tamaño del software y el modo de desarrollo. Las ecuaciones básicas son: \\
+	\textbf{Esfuerzo:}
+	$PM = A * (KSLOC)^{B} $\\
+	
+	\noindent Donde: 
+	\begin{itemize}
+		\item PM: Es el esfuerzo estimado. Representa los meses-persona necesarios para ejecutar el proyecto.
+		\item KSLOC: Es el tamaño del software a desarrollar en miles de líneas de código.
+		\item A y B: son coeficientes que varían según el Modo de Desarrollo (Orgánico, Semiacoplado, Empotrado).
+	\end{itemize}
+	
+	\textbf{Cronograma:}
+	$TDEV = C * (PM)^{D} $\\
+	\noindent Donde: 
+	\begin{itemize}
+		\item TDEV: Representa los meses de trabajo que se necesitan para ejecutar el proyecto.
+		\item C y D: son coeficientes que varían según el Modo de Desarrollo (Orgánico, Semiacoplado, Empotrado).
+	\end{itemize}
+	
+	\noindent Tomando en cuenta las formulas anteriores se completa la tabla siguiente:
+	
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|p{20mm}|p{45mm}|p{45mm}|}
+				\hline
+				\textbf{Modo de desarrollo}  & \textbf{Esfuerzo} & \textbf{Cronograma} \\ \hline 
+				Orgánico & $ PM = 2.4 * (KSLOC)^{1.05}$  PM = 50 & $ TDEV = 2.5 * (PM)^{0.38}$  \\ \hline
+				
+				Semiacoplado & $ PM = 2.4 * (KSLOC)^{1.12}$ & $ TDEV = 2.5 * (PM)^{0.35}$  \\ \hline
+				
+				Empotrado & $ PM = 2.4 * (KSLOC)^{1.20}$ & $ TDEV = 2.5 * (PM)^{0.32}$  \\ \hline
+			\end{tabular}
+			\caption{Tabla de costo de tiempo de desarrollo.}
+			\label{tablacocomo}
+		\end{center}
+	\end{table}
 	
 	
 	%=========================================================
@@ -151,13 +230,9 @@
 	\noindent En este capítulo se presentará una breve descripción del trabajo realizado, los problemas que se enfretaron, así como lo que se logró. Continuando con el capítulo se presentan los Sprint porgramado. 
 	De manera breve se hace mención de los casos de uso desarrollados, vistas del proyecto final. así como las pruebas realizadas.
 	
-	\section{Sprint 3: Módulo de formulario}	
-	\noindent En el desarrollo de este Sprint se desarrollaron los formulario necesario para el proyecto, sin embargo, en el proceso de desarrollo se optó por implementar un Crawler, el cual ayudaría a reducir vistas y manejo de información al comprobar los datos de un alumno. Siendo así, los formularios desarrollados son: agregar, editar y eliminar deporte, agregar, editar y eliminar coordinador de unidad académica, agregar, editar y eliminar evento, agregar, editar y eliminar pruebas, inscribir interpolitecnico.
-	
 	\section{Sprint 4: Módulo de difusión de eventos}
 	\noindent Este Sprint se planteó mostrar a los usuarios involucrados en la aplicación web los eventos disponibles al momento, siendo así puedan informarse y decidir los eventos en los que quiera participar. Durante el proceso de desarrollo en Trabajo Terminal 2, se modificó la manera en la que se presentaría estos. 
 	En un principio se planteó en mostrar los datos dentro de una tabla como se muestra en la Figura  , sin embargo esto cambió de tal manera que se presentará los datos de cada evento en un recuadro y a su vez estos están ordenados de forma ordenada.
-	\pagebreak
 	
 	\section{Sprint 5:Módulo de comunicación con redes sociales}	
 	\noindent Este Sprint se planteó con la finalidad de hacer llegar por distintos medios, los eventos que están disponibles para su inscripción. De tal manera, se estableció que estos fueran compartidos a través de la red social Facebook.
@@ -219,3 +294,53 @@
 	\section{Sprint 7: Módulo de consulta de resultados.}
 	\noindent Este Sprint se planteó con la finalidad de que los actores involucrados en la aplicación web puedan visualizar los resultados obtenidos por los alumnos participantes en los eventos interpolitécnicos deportivos. 
 	Estos se mostrarán en una tabla con los datos más relevantes de estos, cabe destacar que se agrega un módulo para el participante el cual es “Historial”, la finalidad de este es para que el alumno pueda ver de manera fácil y rápida los eventos en los que a participado a lo largo de su trayectoria académica complementando con los datos relacionados a los resultados de los mismos.
+	
+	%=========================================================
+	%                                                         Sprint 0
+	%=========================================================
+	\section{Sprint 0: Análisis}
+	\noindent En este SPRINT se declara el planteamiento y comportamiento de la aplicación como tal, en sus inicios, el plan de desarrollo y los posibles resultados que otorgará.
+	Este no se contempló en inicios del proyecto, sin embargo es de importancia ya que en este se definen, las herramientas \ref{Herramientas} que se van a emplear, el análisis del sistema, visualizar y proponer el proceso que se emplea.
+	También se especificará cómo es que se instalaron las herramientas empleadas.
+	
+	\noindent Dentro de este Spring se reunió con responsable de las actividades del Departamento de Formación Deportivas para que se planteara la problematica y así, se defina que es lo que se puede atacar con el proyecto, ver el proceso detalladamente para la inscripción a un evento interpolitécnico deportivo \ref{Entrevista}, se plantearon los Casos de Uso. 
+	
+	\noindent Cabe destacar que durante el desarrollo correspondiente a Trabajo Terminal 2, nos percatamos de que existia cierta inconsistencia en la relación de algunas tablas a lo cual se realizó la modificación para mas detalles de la estructura actual de la base de datos consulte el apartado Anexos la sección D \ref{CasosdeUso},está se modelo de tal forma que ya contempla el agregar otras unidades académicas\ref{BasedeDatos}. 
+	
+	\noindent Ahora bien, en este apartado se muestra la estructura propuesta en Trabajo Terminal, como se muestra en la Figura \ref{basededatosInicial}. 
+	\pagebreak
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[angle=90, width=10cm, height=15cm]{Imagenes/BasedeDatos}
+		\caption{Base de Datos propuesta en Trabajo Terminal 1.}
+		\label{basededatosInicial}
+	\end{figure}
+	
+	\noindent Los cambios realizados fueron respecto a la tabla de Tipo de Contacto, esta se cambio por la separación del tipo de contacto. Quedando tres tablas nuevas, las cuales son: Telefonono Fijo, Telefonono Celular y extensión. \\
+	Otro cambio realizado fue la relación entre la tabla Evento y la tabla Act Deportiva, con el cambio realizado quedó la tabla Evento relacionada con la tabla Prueba. Con la finalidad de encontrar especifícamente los datos de un evento en particular, ya que nos percatamos que con la primer relación se mostraban datos duplicados. 
+	
+	%=========================================================
+	%                                                         Sprint 1
+	%=========================================================
+	\section{Sprint 1:  Mecanismo de validación de estatus académico.}
+	\noindent Para el desarrollo de este Sprint se desarrolla la forma de verificar el estatus académico de los alumnos que deseen participar en un evento interpolitécnico. \\
+	Dicha verificación consiste de 3 pasos:
+	\begin{enumerate}
+		\item Ingresa credenciales en la aplicación web RIDESCOM.
+		\item Se verifican credenciales en el SAES.
+		\item Accede a la página RIDESCOM.
+	\end{enumerate}
+	
+	Como primer paso, el usuario ingresa el usuario y contraseña, mismas que ocupa para ingresar al Sistema de Administración Escolar SAES.
+	Una vez ingresado Usuario y Contraseña, la aplicación hace uso del Crawler \ref{crawler}. \\
+	Este tomará la información de Usuario y Contraseña, las utilizará para ingresar al SAES, de tal manera que se comprobará si estas son correctas o no. En cualquier caso, se tomará la respuesta para mostrala al usuario.
+	Finalmente, en la aplicación web se buscará la respuesta del Crawler para definir el acceso a la aplicación.
+	
+	El objetivo de este mécanismo es comprobar la inscripción del alumno en el IPN, ya que en el reglamento en el que se basan los eventos interpolitécnicos deportivos, donde se menciona que solo deben participar alumnos que estén inscritos. \ref{crawler}
+	
+	
+	\section{Sprint 3: Módulo de formulario}	
+	\noindent En el desarrollo de este Sprint se desarrollaron los formulario necesario para el proyecto, sin embargo, en el proceso de desarrollo se optó por implementar un Crawler, el cual ayudaría a reducir vistas y manejo de información al comprobar los datos de un alumno. Siendo así, los formularios desarrollados son: agregar, editar y eliminar deporte, agregar, editar y eliminar coordinador de unidad académica, agregar, editar y eliminar evento, agregar, editar y eliminar pruebas, inscribir interpolitecnico.
+	
+	
