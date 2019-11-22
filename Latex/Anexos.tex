@@ -40,14 +40,8 @@
 		Se toman en cuenta la participación de los alumnos por escuela, posteriormente se límita a la cantidad de hombres y mujeres que participaron. También se toma en cuenta la participación por el deporte tomando en cuenta los parametros antes mencionados.
 		
 	\end{enumerate} 
-	
-	\chapter{Apartado B: Mensajes}
-	\noindent En este apartado, se describen a detalle los mensajes que se encuentran dentro de la aplicación web. Estos mensajes contemplan la notificación de un proceso completado o un error en algún proceso del mismo.
-		\input{mensajes.tex}
-	
-		\pagebreak
 		
-	\chapter{Apartado C: Diseños de Pantallas}
+	\chapter{Apartado B: Diseños de Pantallas}
 	\label{diseños}
 	\noindent Este apartado, se muestran los diseños de pantallas que se consideraron para incluir en el proyecto final. Se muestran los distintos módulos de cada uno de los participantes involucrados en la aplicación web.
 	
@@ -258,7 +252,7 @@
 			\label{historial}
 		\end{figure}
 
-	\chapter{Apartado D: Diagrama de Procesos}	
+	\chapter{Apartado C: Diagrama de Procesos}	
 		\noindent Este apartado esta destinado para mostrar el diagrama del proceso actual refiriendose al proceso de inscripción a un evento interpolitécnico deportivo y a su vez, se muestra el proceso propuesto del mismo.
 		
 		\begin{figure}[hbt!]
@@ -277,7 +271,7 @@
 		\end{figure}
 	
 	
-	\chapter{Apartado E: Diagramas de Casos de Uso}
+	\chapter{Apartado D: Diagramas de Casos de Uso}
 	\noindent En este apartado se muestra el diagrama de casos de uso de los actores, la interacción con cada uno de ellos y como funcionaria dentro de la aplicación web.
 		\begin{figure}[hbt!]
 			\centering
@@ -293,175 +287,244 @@
 			\label{Inscripcion}
 		\end{figure}
 	
-	\chapter{Apartado F: Crawler}
-		\label{crawler}
-		\noindent Este código fue desarrollado con el lenguaje de programación JAVA y JSOUP, permitiendo la simulación de la interacción de una persona “navegando” en la red, este “web crawler” fue desarrollado con el propósito de encontrar un mecanismo de validación para comprobar si realmente eres alumno de la ESCOM, donde se iniciará sesión con los datos del usuario de la plataforma de la escuela llamado SAES pidiendo un usuario (Boleta del alumno), contraseña y una clave captcha que el servidor de la plataforma genera como un filtro para evitar la intrusión de “bots informáticos”.\\
-		
-		\begin{figure}[hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/SAES}
-			\caption{Página del SAES Escom}
-			\label{saes}
-		\end{figure}
+	\chapter{Apartado E: An\'alisis de Entornos de Desarrollo Interactivo}
 	
-		\noindent Mediante las herramientas como JSOUP nos permite obtener información del HTML de cualquier página en la web, a excepción de la información generada con javascript pues las obtenciones de información son extraídas de manera estática y no de forma dinámica, o bien desde la lectura del HTML.\\
-		\noindent Las pruebas de este código fueron realizadas durante los meses de enero del 2019 y octubre del mismo año. Utilizando así el siguiente código.
-\pagebreak
 		
-		\noindent Por inicio tenemos que importar las librerías de JSOUP para hacer uso de los métodos que se presentarán a continuación, además de crear datos públicos para los métodos de las clases java para utilizarlos posteriormente.\\
-		\noindent Creamos la conexión con la página que queremos explorar y solicitar una respuesta de esta conexión realizada junto con las “cookies” generadas en esta respuesta, ya que estás nos darán pauta para mantenernos en la misma conexión con respecto a la solicitud de conexión hecha anteriormente. \\
+		%=========================================================
+		%                                                         IDE
+		%=========================================================
+		\section{IDE}
+		\begin{itemize}
+			\item  Netbeans 
+			\label{Herramientas}
+			\newline
+			Netbeans es un entorno integrado de desarrollo o IDE (IntegratedDevelopmentEnvironment), cone el que se puede realizar todas las tareas asociadas a la programación.
+			\newline
+			Simplifica alguna de las tareas que, sobretodo en proyectos grandes, son laboriosas. Ofrece la posibilidad de asistencia (parcialmente) en la escritura de código, aunque no nos libera de aprender el lenguaje de programación.
+			Nos ayuda en la navegación de las clases predefinidas.
+			Aunque puede ser costoso su aprendizaje, los beneficios superan las dificultades.
+			
+			\subsection{Framework}
+			\item Spring MVC \\ 
+			Spring Mvc es una alternativa de framework basado en el patrón modelo-vista-controlador, después de haber aprendido de errores de frameowrks como Jakarta Struts y otras alternativas.
+			El framework tiene un conjunto de interfaces que después se implementan para proporcionar la funcionalidad correspondiente. Las interfaces están acopladas claramente al Servlet Api.\cite{spring}\\
+			La clase DispatcherServlet está en el front controller y es responsable de delegar y coordinar el control entre varias interfaces en la fase de ejecución durante una petición Http.
+			Las interfaces más importantes definidas en Spring Mvc, y sus responsabilidades, son las siguientes:
+			\begin{itemize}
+				\item HandlerMapping: permite manejar peticiones de entrada.
+				\item HandlerAdapter: ejecución de objetos que permiten manejar las peticiones entrantes.
+				\item Controller: está entre el modelo y la vista, y permite manejar peticiones entrantes y redirigirlas a la respuesta adecuada. 
+				\item Vista: responsable de retornar una respuesta al cliente. 
+				\item ViewResolver: selecciona una vista basada en un nombre lógico de la vista.
+				\item HandlerInterceptor: intercepta las peticiones entrantes, es comparable pero no igual a los filtros de Servlet.
+				\item LocaleResolver: resuelve y opcionalmente salva el locale de un usuario individual.
+				\item MultipartResolver: facilita trabajar con ficheros de subida wrapping peticiones de entrada.
+			\end{itemize}
+			Cada interfaz de estrategia tiene su responsabilidad importante dentro del framework general. Estas abstracciones ofrecidas por estas interfaces son potentes, pues permiten configurar un conjunto de interfaces juntas y ofrecen un conjunto en el top del Api de Servlet. Sin embargo, los desarrolladores y los vendedores son libres es escribir otras implementaciones. Spring MVC utiliza la interfaz java.util.Map como una abstracción del modelo cuando se espera que las llaves tenga valores de String. \\
+			Cada testeo de las implementaciones de estas interfaces tiene otra ventaja importante dentro del alto nivel de abstracción ofrecido por Spring Mvc. Dispatcher Servlet está altamente acoplado con el contenedor de Inversión de Control de Spring para configurar las capas de web de las aplicaciones. Sin embargo, las aplicaciones web pueden utilizar otras partes del framework de Spring, incluyendo el contenedor, y decidir no usar Spring Mvc. \cite{MVC}\\
+			Struts es un framework mucho más antiguo, por lo que Spring ha aprendido de la experiencia adquirida de usar Struts para no cometer los mismos errores. \cite{introspring}
+			A continuación se enumeran un conjunto de ventajas:
+			\begin{itemize}
+				\item Spring MVC ofrece una división limpia entre Controllers, Models (JavaBeans) y Views. 
+				\item Spring MVC es muy flexible, ya que implementa toda su estructura mediante interfaces, no como Struts que obliga a heredar de clases concretas tanto en sus Actions como en sus Forms. 
+				\item Spring MVC provee interceptores y controllers que permiten interpretar y adaptar el comportamiento común en el manejo de múltiples requests.
+				\item Los controllers de Spring MVC se configuran mediante IoC como los demás objetos, lo cual los hace fácilmente testeables e integrables con otros objetos que estén en el contexto de Spring, y por tanto sean manejables por éste. 
+				\item Las partes de Spring MVC son más fácilmente testeables que las de Struts, debido a que evita la herencia de una clase de manera forzosa y una dependencia directa en el controller del servlet que despacha las peticiones. 
+				\item No existen ActionForms, se enlaza directamente con los beans de negocio. 
+				\item Struts obliga a extender la clase Action, mientras que Spring MVC no, aunque proporciona una serie de implementaciones de Controllers para que el usuario los utilice. Existe una gran variedad de Controladores.
+				\item Spring tiene una interfaz bien definida para la capa de negocio. 
+				\item Spring ofrece mejor integración con tecnologías distintas a JSP, como Velocity,XSLT,FreeMaker y XL. 
+			\end{itemize}
+			Las ventajas que se tiene usar Spring MVC 
+			\begin{itemize}
+				\item Se ha introduce un nombre es espacio MVC que simplifica la configuración.
+				\item Se han insertado anotaciones adicionales como @CookieValue (permite relacionar un atributo de un método a una cookie) y @RequestMappings (asociar directamente en la clase la posibilidad de asociar una petición Url a un controlador específico).
+				\item El tipo ConversionService es una alternativa más simple y robusta que los PropertyEditors de JavaBeans.
+				\item Se soporta un formateo de números con el atributo @NumberFormat.
+				\item Se soportan el formateo de fechas, calendarios y joda time con el atributo @DatetimeFormat, siempre que la librería Joda Time esté dentro del classpath.
+				\item Se soporta la validación para entradas @Controller con la etiqueta @Valid, si se proporciona una implementación de la Jsr-303 en el classpath.
+				\item Soporte para leer y escribir Xml, si Jaxb está dentro del classpath.
+				\item Soporte para leer y escribir Json, si Jackson está dentor del classpath.
+			\end{itemize}
+			Para poder crear los controladores debemos de seguir los siguientes pasos:
+			\begin{itemize}
+				\item Definir una clase que implementa la interfaz del controlador.
+				\item Insertar dicha clase como un objeto en el contexto de Spring.
+				\item Asignar el nombre a una Uri que posteriormente será invocada por el usuario.
+				\item Especificar la extensión de la uti en el DispatcherServlet de Spring, configurado en web.xml, para que se pueda buscar internamente.
+			\end{itemize}
+			
+			El modelo son los datos con los que interactúa la vista y el controlador. En este caso, el modelo se pasa mediante un atributo de la clase ModelAndView, para posteriormente acceder al mismo desde la parte de la vista. \cite{introspring}
+			
+			Algunas recomendaciones para desarrollar usando Spring MVC
+			Primero: determinar el Ide de desarrollo que se quiera utilizar. Existan varias alternativas: Netbeans, Eclipse, Intellij, Spring Tool Suite. Yo, por precio (gratis) y facilidad de uso (está orientado al desarrollo de Spring) recomiendo el uso de Spring Tool Suite. \\
+			
+			Segundo: crear el proyecto básico, y elegir nuestra herramienta de gestión de librerías. Para crear el proyecto, tenemos varias alternativas, desde configurar nosotros desde cero el servlet de spring, como utilizar plantillas ya existentes. También existe la posibilidad de descargar las librerías de la web de Spring o bien utilizar repositorios de Maven.\\
+			
+			Tercero: escoger el tipo de vista que se utilizará para el proyecto. En mi caso, la vista que suelo utilizar y con la que me siento más acostumbrado es Jsp.\\
+			
+			Cuarto: desarrollar la parte de negocio (controladores) y persistencia (seleccionando un framework como hibernate o jpa), y relacionar los controladores, con la vista y la persistencia.
+			En principio, eso es todo.\\
+			El framework fue lanzado inicialmente bajo Apache 2.0 License en junio de 2003. Esta licencia es una licencia de software libre creada por la Apache Software Foundation que requiere la conservación del aviso de copyright y disclaimer, pero no es una liencia copyleft, ya que no requiere la redistribución del código fuente cuando se distribuyen versiones modificadas. \cite{introspring} \\
+			
+			\item Facebook Developers 
+			La Plataforma de Facebook es el conjunto de servicios, herramientas y productos proporcionados por el servicio de redes sociales Facebook para que los desarrolladores externos creen sus propias aplicaciones y servicios que acceden a datos en Facebook.\\
+			
+			La actual Plataforma de Facebook se lanzó en 2010. La plataforma ofrece un conjunto de interfaces y herramientas de programación que permiten a los desarrolladores integrarse con el "gráfico social" abierto de relaciones personales y otras cosas como canciones, lugares y páginas de Facebook. La asignación en facebook.com, sitios web externos y dispositivos pueden acceder al gráfico. \\
+			
+			Facebook lanzó la Plataforma de Facebook el 24 de mayo de 2007, proporcionando un marco para que los desarrolladores de software creen aplicaciones que interactúen con las funciones principales de Facebook. Se introdujo un lenguaje de marcado llamado Facebook Markup Language simultáneamente; se utiliza para personalizar el "aspecto y la sensación" de las aplicaciones que crean los desarrolladores. Usando la Plataforma, Facebook lanzó varias aplicaciones nuevas, incluyendo Regalos, permitiendo a los usuarios enviarse regalos virtuales entre sí, Marketplace, permitiendo a los usuarios publicar anuncios clasificados gratuitos, eventos de Facebook, brindando a los usuarios un método para informar a sus amigos sobre los próximos eventos, Video, Permitir a los usuarios compartir videos caseros entre ellos y juegos de redes sociales, donde los usuarios pueden usar sus conexiones con amigos para ayudarlos a avanzar en los juegos que están jugando. Muchos de los primeros juegos populares de redes sociales combinarían capacidades. Por ejemplo, uno de los primeros juegos en llegar al primer lugar de aplicación, (Lil) Green Patch, combina regalos virtuales con notificaciones de eventos a amigos y contribuciones a organizaciones benéficas a través de causas. \\
+			
+			Componentes de plataforma de alto nivel
+			API de gráficos\\
+			Graph API es el núcleo de la plataforma de Facebook, lo que permite a los desarrolladores leer y escribir datos en Facebook. Graph API presenta una vista simple y coherente del gráfico social de Facebook, que representa de manera uniforme los objetos en el gráfico (por ejemplo, personas, fotos, eventos y páginas) y las conexiones entre ellos (por ejemplo, relaciones de amigos, contenido compartido y etiquetas de fotos )\\
+			
+			Autenticación\\
+			La autenticación de Facebook permite que las aplicaciones de los desarrolladores interactúen con la API Graph en nombre de los usuarios de Facebook, y proporciona un mecanismo de inicio de sesión único en aplicaciones web, móviles y de escritorio.\\
+			
+			Complementos sociales\\
+			Los complementos sociales, incluidos el botón Me gusta, las recomendaciones y el feed de actividades, permiten a los desarrolladores proporcionar experiencias sociales a sus usuarios con solo unas pocas líneas de HTML. Todos los complementos sociales son extensiones de Facebook y están diseñados para que no se compartan datos de los usuarios con los sitios en los que aparecen. Por otro lado, los complementos sociales permiten a Facebook rastrear los hábitos de navegación de sus usuarios a través de cualquier sitio que cuente con los complementos. Y los datos recopilados de los hábitos de navegación de los usuarios ayudan a los vendedores y anunciantes en Facebook a dirigirse a su audiencia.\\
+			
+			iframes\\
+			Facebook usa iframes para permitir que los desarrolladores externos creen aplicaciones que están alojadas por separado de Facebook, pero operan dentro de una sesión de Facebook y se accede a través del perfil de un usuario. Dado que los iframes esencialmente anidan sitios web independientes dentro de una sesión de Facebook, su contenido es distinto del formato de Facebook. \\
+			
+			Originalmente, Facebook utilizaba el 'Lenguaje de marcado de Facebook (FBML)' para permitir a los desarrolladores de aplicaciones de Facebook personalizar el "aspecto y la sensación" de sus aplicaciones, hasta cierto punto. FBML es una especificación de cómo codificar contenido para que los servidores de Facebook puedan leerlo y publicarlo, lo cual es necesario en el feed específico de Facebook para que el sistema de Facebook pueda analizar el contenido y publicarlo como se especifica. Facebook almacena en caché el FBML establecido por cualquier aplicación hasta que una llamada API posterior lo reemplace. Facebook también ofrece una biblioteca especializada de JavaScript de Facebook (FBJS).\\
+			
+			Facebook dejó de aceptar nuevas aplicaciones FBML el 18 de marzo de 2011, pero continuó admitiendo las pestañas y aplicaciones FBML existentes. Desde el 1 de enero de 2012, FBML ya no era compatible, y FBML ya no funcionaba a partir del 1 de junio de 2012. 
+		\end{itemize}
 		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Codigo1}
-			\caption{Código desarrollado implementando el crawler.}
-			\label{codigo1}
-		\end{figure}
 		
-		\noindent Lo siguiente es realizar la exploración de los elementos del HTML en una variable de tipo “Document” de la página solicitada donde buscaremos el elemento por ID del CAPTCHA del HTML y así crear una imagen válida que fuese creada por el servidor, extrayendo la ubicación de la imagen para colocarla en una respuesta de conexión con la ruta de la imagen obtenida en la variable “a” y generarla de manera local utilizando “FileOutputStream”, el método creado es de tipo “Document” por lo tanto su salida es del mismo tipo. 
-\pagebreak
+		\section{Rastreo Web y API's}
+		\begin{itemize}
+			\item Web Crawler\newline
+			Un Web Crawler (también llamado Web Spider) es un programa diseñado para explorar páginas Web en forma automática. La operación normal es que se le da al programa un grupo de direcciones iniciales, el crawler descarga estas direcciones, analiza las páginas y busca enlaces a páginas nuevas. Luego descarga estas páginas nuevas, analiza sus enlaces, y así sucesivamente.\cite{crawling} \\
+			Los crawlers se pueden usar para varias cosas, lo más común es que se usen para:
+			\begin{itemize}
+				\item Crear el índice de una [article-1056.html máquina de búsqueda]. 
+				\item Analizar los enlaces de un sitio para buscar links rotos. 
+				\item Recolectar información de un cierto tipo, como precios de productos para armar un catálogo. \cite{craw}
+			\end{itemize} 
+			
+			Un Web Crawler es un pequeño programa que recorre permanentemente el entramado de contenidos que conforman la Red. Su principal utilidad se la otorgan los buscadores al emplearlos para rastrear nuevas webs, de las que descargan automáticamente una copia que almacenan en un índice; una vez integradas en estas bases de datos las webs podrán ser rápidamente localizadas en la siguiente consulta efectuada por los usuarios, permitiendo mostrárselas entre la lista de resultados.
+			Una araña web inicia su trabajo visitando un conjunto de direcciones predeterminadas, analiza las páginas, identifica los enlaces externos que éstas puedan incluir y los añade a la lista de direcciones a visitar, perpetuándose en su labor.	\cite{web} \\
+			
+			Ahora bien, un rastreador web, indexador web, indizador web o araña web es un programa informático que inspecciona las páginas del World Wide Web de forma metódica y automatizada.1 Uno de los usos más frecuentes que se les da consiste en crear una copia de todas las páginas web visitadas para su procesado posterior por un motor de búsqueda que indexa las páginas proporcionando un sistema de búsquedas rápido. Las arañas web suelen ser bots. \cite{araña} \\
+			
+			Web scraping es una técnica utilizada mediante programas de software para extraer información de sitios web. Usualmente, estos programas simulan la navegación de un humano en la World Wide Web ya sea utilizando el protocolo HTTP manualmente, o incrustando un navegador en una aplicación.  \\
+			El web scraping está muy relacionado con la indexación de la web, la cual indexa la información de la web utilizando un robot y es una técnica universal adoptada por la mayoría de los motores de búsqueda. Sin embargo, el web scraping se enfoca más en la transformación de datos sin estructura en la web (como el formato HTML) en datos estructurados que pueden ser almacenados y analizados en una base de datos central, en una hoja de cálculo o en alguna otra fuente de almacenamiento. Alguno de los usos del web scraping son la comparación de precios en tiendas, la monitorización de datos relacionados con el clima de cierta región, la detección de cambios en sitios webs y la integración de datos en sitios webs.	\cite{araña} \\
+			
+			El web scraping es una técnica que sirve para extraer información de páginas web de forma automatizada. Si traducimos del inglés su significado vendría a significar algo así como “escarbar una web”. \\
+			Aplicaciones y ejemplos:\\
+			Su uso está muy claro: podemos aprovechar el web scraping para conseguir cantidades industriales de información (Big data) sin teclear una sola palabra. A través de los algoritmos de búsqueda podemos rastrear centenares de webs para extraer sólo aquella información que necesitamos.\\
+			Para ello nos será muy útil dominar regex (regular expression) para delimitar las búsquedas o hacerlas más precisas y que el filtrado de la información sea mejor.\\
+			Algunos ejemplos para los cuales vamos a necesitar el web scraping:
+			\begin{itemize}
+				\item Para marketing de contenidos: podemos diseñar un robot que haga un ‘scrapeo’ de datos concretos de una web y los podamos utilizar para generar nuestro propio contenido. Ejemplo: scrapear los datos estadísticos la web oficial de una liga de fútbol para generar nuestra propia base de datos.
+				\item Para ganar visibilidad en redes sociales: podemos utilizar los datos de un scrapeo para interactuar a través de un robot con usuarios en redes sociales. Ejemplo: crear un bot en instagram que seleccione los links de cada foto y luego programar un comentario en cada entrada.
+				\item Para controlar la imagen y la visibilidad de nuestra marca en internet: a través de un scrapeo podemos automatizar la posición por la que varios artículos de nuestra web se posicionan en Google o, por ejemplo, controlar la presencia del nombre de nuestra marca en determinados foros. Ejemplo: rastrear la posición en Google de todas las entradas de nuestro blog.
+			\end{itemize}	
+			
+			
+			Para poder desarrollar un web scraping de la mejor manera se debe considerar  dos vertientes muy diferenciadas del conocimiento web, ambas esenciales para tener perfil versátil en la red. Por un lugar debemos dominar la visualización de datos a nivel conceptual y por el otro debemos disponer de los conocimientos técnicos necesarios para lograr extraer con exactitud los datos con herramientas especializadas. \\
+			Al fin y al cabo esto se resumirá en saber gestionar grandes cantidades de datos (big data). Debemos estar mínimamente familiarizados con la visualización de grandes cantidades de datos con tal de poder jerarquizar e interpretar los datos que extraigamos de una web. Y no solo para extraer los datos, también a la hora de plantear la estrategia de extracción debemos saber cuales van a ser los datos que vayamos a extraer con tal de poder darles un sentido informativo para el usuario \cite{scraping}.\\
+			
+			\textbf{Api's más utilizadas}
+			\begin{itemize}
+				\item \textbf{Jsoup}: Es una libreria de Java para trabajar con HTML real en el mundo real. Proporciona una API muy conveniente para extraer y manipular datos, utilizando lo mejor de DOM, CSS y métodos similares a jquery.\\
+				
+				Implementa la especificación HTML5 WHATWG y analiza HTML en el mismo DOM que los navegadores modernos.
+				\begin{itemize}
+					\item 
+					\item Raspa y analiza HTML desde una URL, archivo o cadena
+					\item Encuentra y extrae datos, usando DOM transversal o selectores de CSS
+					manipular los elementos HTML, atributos y texto
+					\item Limpia el contenido enviado por el usuario contra una lista blanca segura, para evitar ataques XSS
+					\item HTML ordenado de salida
+				\end{itemize}
+				
+				Jsoup está diseñado para tratar con todas las variedades de HTML que se encuentran en la naturaleza; de lo prístino y de la validación para invalidar la etiqueta soup; jsoup creará un árbol de análisis sensible.\\
+				
+				Jsoup es un proyecto de código abierto distribuido bajo la licencia liberal MIT. El código fuente está disponible en GitHub.\cite{jsoup}
+				
+				\item \textbf{Selenium}: Es un automatizador de navegadores. Principalmente, es para automatizar aplicaciones web con fines de prueba, pero ciertamente no se limita a eso. Las tareas de administración aburridas basadas en la web pueden (y deberían) ser automatizadas también.\\
+				
+				Selenium tiene el soporte de algunos de los proveedores más grandes de navegadores que han tomado (o están tomando) pasos para hacer de Selenium una parte nativa de su navegador. También es la tecnología central en muchas otras herramientas de automatización del navegador, API y marcos.\\
+				
+				Selenium provee una herramienta de grabar o reproducir para crear pruebas sin usar un lenguaje de scripting para pruebas (Selenium IDE). Incluye también un lenguaje específico de dominio para pruebas (Selanese) para escribir pruebas en un amplio número de lenguajes de programación populares incluyendo Java, C$\#$, Ruby, Groovy, Perl, Php y Python. Las pruebas pueden ejecutarse entonces usando la mayoría de los navegadores web modernos en diferentes sistemas operativos como Windows, Linux y OSX.
+				
+			\end{itemize}
+			Como Api seleccionada para trepar páginas web Jsoup es apta para la realización del trabajo ya que nos permite analizar libremente el DOM de alguna página y es mucho más rápido que selenium, ya que no necesita molestarse con un DOM "vivo". Selenium siempre debe verificar si los manejadores de elementos siguen siendo válidos antes de realizar cualquier operación con ellos pero la sobrecarga es realmente notable cuando realiza un raspado serio. \\
+			
+		\end{itemize}
 		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo2}
-			\caption{Continuación de la implementación del crawler.}
-			\label{codigo2}
-		\end{figure}
 		
-		\noindent Una vez realizado este método procedemos a explorar los campos de inserción que existen en el HTML, para ello hacemos otra búsqueda de elementos en el HTML y definimos los datos que contienen estos elementos para su posterior inserción y uso de ellos mediante una variable de tipo “HashMap<String,String>” (todos los campos son de tipo cadena).\\
+		%=========================================================
+		%                                                         Sistema Gestor de BD
+		%=========================================================
+		%\section{Sistema Gestor de Base de Datos}
+		%\noindent Realizando una investigación de los distintos gestores de Bases de Datos encontramos las siguientes caracteristicas:
+		%\begin{table}[htbp]
+		%	\begin{center}
+		%		\begin{tabular}{|l|p{35mm}|p{35mm}|p{35mm}|l}
+		%			\hline
+		%			Caracter\'isticas & Oracle & MySQL & SQL Server \\
+		%			\hline 
+		%			Interfaz & GUI, SQL & SQL & GUI, SQL \\ \hline
+		%			Lenguaje soportado & C, C++, C, Java, Ruby y Objective-C & C, C, C++, D, Java, Ruby y Objective C & Java, Ruby, Python, VB, .Net y PHP  \\ \hline
+		%			Sistema Operativo & Windows, GNU/Linux, Solaris, OS-X & Windows, GNU/Linux, OS-X, FreeBSD, Solaris & Windows \\ \hline
+		%			Licencia & Propietrio & Código Libre & Propietario \\ \hline
+		%		\end{tabular}
+		%		\caption{Tabla comparativa de lenguajes de BD.}
+		%		\label{tabla:sencilla}
+		%	\end{center}
+		%\end{table}
 		
-		\noindent Ahora la realización del método “getData(HashMap<String,String> formFields)” utilizaremos como parámetros los elementos de inserción explorados anteriormente insertándolos en nuestro método “POST”. Creamos la conexión a donde se debe redirigir la información del inicio de sesión, insertando también las cookies almacenadas en la previa conexión de la obtención del HTML de la página del SAES.\\
+		\section{iReport}
+		\noindent IReport. Es una herramienta visual que sirve para generar ficheros XML (plantillas de informes) utilizando la herramienta de generación de informes JasperReport.\\
+		\noindent Escrito en Java IReport provee a los usuarios de JasperReport una interfaz visual para construir reportes. También permite que los usuarios corrijan visualmente informes complejos con cartas, imágenes y subinformes. \\
+		Bibliotecas gráficas que emplea \\
+		\noindent Está además integrado con JFreeChart, una de la bibliotecas gráficas OpenSource más difundida para Java. Los datos para imprimir pueden ser recuperados por varios caminos incluso múltiples uniones JDBC, TableModels, JavaBeans, XML, etc. \\
 		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo3}
-			\caption{Continuación implementación del crawler.}
-			\label{codigo3}
-		\end{figure}
-	\pagebreak
-	
-	\noindent Si los datos ingresados son correctos se realizará una respuesta de la ruta solicitada en el POST insertando las cookies correspondientes a la conexión para comprobar la sesión del usuario en la plataforma, seguido de un mapeo del nuevo HTML donde se realizará la búsqueda por ID del campo donde se encuentre el nombre del alumno y un mensaje donde solo habrá texto si el usuario que haya iniciado sesión no estuviera inscrito.\\
-	\noindent De lo anterior y siguiendo la condición de que el usuario que haya iniciado sesión esté o no inscrito dependerá si el texto buscado como “fail” sea nulo/vacío, en el caso de que no lo esté indicará que el alumno que haya iniciado sesión está “INSCRITO” indicando el nombre del alumno que corresponda a la boleta y usuario junto con un grupo al que pertenezca, en el caso de que “fail” no sea nulo/vacío se indicará que el alumno que corresponda a la boleta y usuario aparezca como “NO INSCRITO”. \\
-	\begin{figure}[hbt!]
-		\centering
-		\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo4}
-		\caption{Continuación implementación del crawler.}
-		\label{codigo4}
-	\end{figure}
+		\textbf{Características de IReport}
+		La lista siguiente describe algunas de las características importantes de IReport:
+		\begin{itemize}
+			\item 100 porciento escrito en Java y además OpenSource y gratuito.
+			\item Maneja el 98 porciento de las etiquetas de JasperReport.
+			\item Permite diseñar con sus propias herramientas: rectángulos, líneas, elipses, campos de los textfields, cartas, subreports (subreportes).
+			\item Soporta internacionalización nativamente.
+			\item Browser de la estructura del documento.
+			\item Recopilador y exportador integrados .
+			\item Soporta JDBC.
+			\item Soporta JavaBeans como orígenes de datos (éstos deben implementar la interface JRDataSource).
+			\item Incluye Wizard’s (asistentes) para crear automáticamente informes.
+			\item Tiene asistentes para generar los subreportes.
+			\item Tiene asistentes para las plantillas.
+			\item Facilidad de instalación.
+		\end{itemize}
+		
+		\textbf{Requerimientos de instalación}
+		\begin{itemize}
+			\item Sun JDK 1.4 (SDK) o superior.
+			\item Acrobat 5.0 no es requerido, pero es fuertemente recomendado.
+			\item Si se desea conectar con una base de datos, se debe proporcionar el DriverJDBC correspondiente.
+			\item Usar la versión IReport-0.5.1 o superior.
+		\end{itemize}
+		
+		\textbf{Librerias que utiliza}
+		\begin{itemize}
+			\item jasperreports-1.0.1.jar
+			\item commons-digester.jar
+			\item commons-beanutils.jar
+			\item commons-collections.jar
+			\item commons-logging.jar
+			\item itext-1.02b.jar
+			\item poi-2.0-final-20040126.jar
+		\end{itemize}
 
-	\noindent Finalmente se crean 3 archivos donde se almacena la información del usuario que haya iniciado sesión donde se inserta su nombre completo (alumno.txt), su grupo al que esté inscrito (grupo.txt) y el código HTML de la página donde se obtuvo toda esta información (respoinse.html).
-\pagebreak
-
-	\begin{figure}[hbt!]
-		\centering
-		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Codigo5}
-		\caption{Continuación de la implementación del crawler.}
-		\label{codigo5}
-	\end{figure}
-
-	\noindent Una vez realizado esto necesitamos adjuntar estos métodos en 1 sola petición (o método) para realizar su ejecución e inserción de datos correspondientes a los que se necesitan.
-	Como se hace en el método “run()”. \\
-	
-	\noindent Creamos un método donde se adjunta en 1 petición la ejecución de todos los métodos anteriores, y haremos la petición de los datos del inicio de sesión del SAES usando “readLine()” para hacer la lectura de estas seguido de la asignación de los campos que se escogen para insertar estas cadenas y reenviarlos al método “getData” donde los datos insertados serán los parámetros que servirán para la correcta funcionalidad del método “getData” y finalmente iniciar sesión.\\
-	\begin{figure} [hbt!]
-		\centering
-		\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo6}
-		\caption{Continuación implementación crawler.}
-		\label{codigo6}
-	\end{figure}
-\pagebreak
-	\noindent Cabe mencionar que dicha plataforma está desarrollada con ASP.NET con un plugin detector de “bots” llamado “Captcha BotDetect”, donde desde el servidor se realiza la generación de credenciales correspondientes a la imagen que se muestre en la página como la conocemos.\\
-	\textbf{“href="BotDetectCaptcha.ashx?get=layoutStyleSheet" ”}\\
-	\begin{figure} [hbt!]
-		\centering
-		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/ASP2}
-		\caption{Inspección de estructura del SAES.}
-		\label{asp2}
-	\end{figure}
-
-	\noindent Las peticiones de inicio de sesión se realizan directo al servidor y el servidor responde con un javascript donde redirecciona a la vista correspondiente si las credenciales de usuario y clave captcha son las correctas de acuerdo a la sesión de página en la que se encuentra.\\
-	\textbf{“action="Default.aspx?ReturnUrl=\%2fAlumnos\%2fcambia\_clave.aspx" onsubmit="javascript:return WebForm\_OnSubmit();" ”}
-	
-	\begin{figure} [hbt!]
-		\centering
-		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/ASP1}
-		\caption{Inspección de estructura del SAES.}
-		\label{asp1}
-	\end{figure}
-	\noindent Estos cambios se identificaron el día 15 de octubre del 2019.
-\pagebreak
-	
-	\textbf{POR EJEMPLO: CON USUARIO NO INSCRITO}\\
-	\noindent Se inserta previamente la boleta y contraseña del alumno del SAES ESCOM.
-	
-	\begin{figure}[hbt!]
-		\centering
-		\includegraphics[width=10cm, height=5cm]{Imagenes/Crawler/ImagenloginNoinscrito}
-		\caption{Captcha para alumno no inscrito.}
-		\label{imagenloginnoinscrito}
-	\end{figure}
-	
-	Se ingresa la clave captcha mostrada en la imagen “KJU”
-	
-	\begin{figure}[hbt!]
-		\centering
-		\includegraphics[width=10cm, height=5cm]{Imagenes/Crawler/Datosloginnoinscrito}
-		\caption{Se ingresan los datos en el crawler.}
-		\label{datosloginnoinscrito}
-	\end{figure}
-	\noindent Responde de acuerdo a la inscripción del alumno, para este caso el alumno NO ESTÁ INSCRITO.
-\pagebreak
-
-	\begin{figure}[hbt!]
-		\centering
-		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Noinscrito}
-		\caption{Respuesta del crawler.}
-		\label{noinscrito}
-	\end{figure}
-
-	\noindent Se muestran las cadenas correspondientes a la extracción de información para validar que el alumno en cuestión esté inscrito o no lo esté.\\
-	
-	\textbf{POR EJEMPLO: CON USUARIO INSCRITO}\\
-	\noindent Se inserta previamente la boleta y contraseña del alumno del SAES ESCOM.
-	
-	\begin{figure}[hbt!]
-		\centering
-		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Imagenlogininscrito}
-		\caption{Captcha para el alumno inscrito.}
-		\label{imagenlogininscrito}
-	\end{figure}
-	\noindent Se ingresa la clave captcha mostrada en la imagen “MDJ”
-\pagebreak
-	
-	\begin{figure}[hbt!]
-		\centering
-		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Datoslogininscrito}
-		\caption{Se registran ingresan datos al crawler.}
-		\label{datoslogininscrito}
-	\end{figure}
-	
-	\noindent Responde de acuerdo a la inscripción del alumno, para este caso el alumno ESTÁ INSCRITO.
-	
-	\begin{figure}[hbt!]
-		\centering
-		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Logininscrito}
-		\caption{Respuesta del crawler.}
-		\label{logininscrito}
-	\end{figure}
-	
-	\begin{figure} [hbt!]
-		\centering
-		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Infologininscrito}
-		\caption{Información del alumno inscrito.}
-		\label{infologininscrito}
-	\end{figure}
-	\noindent Se muestran las cadenas correspondientes a la extracción de información para validar que el alumno en cuestión esté inscrito o no lo esté.
-
-	\chapter{Apartado G: API Facebook}
+	\chapter{Apartado F: API Facebook}
 	\label{apiFB}
 	\noindent En este apartado, se menciona detalladamente la función e implementación al proyecto. Así como lo desarrollado y la problemática que se tuvo al final de la presentación del proyecto.\\
 		
-	Durante el periodo de pruebas realizado en Trabajo Terminal 2 nos percatamos que el módulo de difusión de eventos, no funcionaba de la manera correcta, por lo cual se realizó una revisión de este. Siendo así, nos percatamos que los terminos de uso de las herramientas de Facebook solicitaban una revisión de datos para que estás puedan ser empleadas en el proyecto, como se puede apreciar en la figura a continuación.
+	\noindent Durante el periodo de pruebas realizado en Trabajo Terminal 2 nos percatamos que el módulo de difusión de eventos, no funcionaba de la manera correcta, por lo cual se realizó una revisión de este. Siendo así, nos percatamos que los terminos de uso de las herramientas de Facebook solicitaban una revisión de datos para que estás puedan ser empleadas en el proyecto, como se puede apreciar en la figura a continuación.
 	
 	Dentro de la investigacion se encontró que se  tenía que seguir paso a pasola verificación del negoncio y la revisión de la aplicación, con la finalidad de si está todo en orden se pueda utilizar las herramientas de Facebook.
 	
@@ -650,7 +713,7 @@
 	\end{figure}
 	
 	
-	\chapter{Apartado H: Base de Datos}
+	\chapter{Apartado G: Base de Datos}
 	\noindent En este apartado, se muestra la estructura de la base de datos que tiene la aplicación web. Se tomó en consideración los requisitos y problemática que se tenían para proporcionar una respuesta óptima de los datos. Cabe mencionar que la base de datos se modeló para que esta pueda funcionar cuando al proyecto se agreguen más unidades académicas.
 	
 		\label{BasedeDatos}
@@ -664,149 +727,4 @@
 		
 	
 	\pagebreak
-		
-	\chapter{Apartado I: Vistas}
-	\noindent En este apartado, se muestran las vistas finales de la aplicación web, mostrando cada uno de los módulos junto con su descripción y al actor que corresponde cada una de ellas.
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/VIsta1_TipoSesion}
-			\caption{Vista que ayuda a definir el tipo de usuario que ingresará.}
-			\label{VistaTipoSesion}
-		\end{figure}
-	
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista2_InicioSesionJFD}
-			\caption{Vista del Inicio de Sesión para el Jefe de Fomento Deportivo y el Coordinador de una Unidad Académica.}
-			\label{VistaInicioSesionJFD}
-		\end{figure}
-	
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista3_PrincipalJFD}
-			\caption{Vista principal del Jefe de Fomento Deportivo (JFD).}
-			\label{VistaPrincipalJFD}
-		\end{figure}
-			
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista4_PrincipalJFD}
-			\caption{Vista principal del Jefe de Fomento Deportivo continuación(JFD).}
-			\label{VIstaPrincipalJFD1}
-		\end{figure}
-	
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista5_MenuUsuarioJFD}
-			\caption{Vista que muestra datos del usuario en sesión.(Jefe de Fomento Deportivo)}
-			\label{VistaMenuUsuario}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista6_ConsultaCoordJFD}
-			\caption{Vista donde se visualizan los Coordinadores de Unidades Académicas registrados.}
-			\label{VistaConsultaCoord}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista7_DeportesJFD}
-			\caption{Vista en la que el Jefe de Fomento Deportivo visualiza los deportes que se practican actualmente en el Instituto Politécnico Nacional.}
-			\label{VistaDeportes}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista8_PruebaJFD}
-			\caption{Vista donde el Jefe de Fomento Deportivo podrá ver las pruebas que han sido registradas.}
-			\label{VistaPruebas}
-		\end{figure}
-	
-		\begin{figure}
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista20_AgregaPrueba}
-			\caption{Vista para agregar una prueba.}
-			\label{VistaAgregaPrueba}
-		\end{figure}
-		
-	
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista9_SedesJFD}
-			\caption{Vista para visualizar las sedes donde se llevarán a cabo los eventos interpolitécnicos deportivos.}
-			\label{VistaSedes}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista10_AgregaEvento}
-			\caption{Vista en la que se puede agregar un Evento Interpolitécnico Deportivo.}
-			\label{VistaAgregarEvento}
-		\end{figure}
-	
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista11_EditarEvento}
-			\caption{Vista en la que se pueden editar los datos de un Evento Interpolitécnico Deportivo.}
-			\label{VistaEditarEvento}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista12_PrincipalCoord}
-			\caption{Vista principal del Coordinador de la Unidad Académica.}
-			\label{VistaPrincipalCoord}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista13_PrincipalCoord}
-			\caption{Vistas principal del Coordinador de la Unidad Académica. (Continuación)}
-			\label{VistaPrincipalCoord1}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista14_MenuUsuarioCoord}
-			\caption{Vista que muestra datos del usuario en sesión.(Coordinador)}
-			\label{VistaMenuCoord}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista15_ConsultaEntrenador}
-			\caption{Vista para la consulta de entrenadores.}
-			\label{VistaConsultaEntrenador}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista16_AgregaEntrenador}
-			\caption{Vista para agregar a un entrenador.}
-			\label{VistaAgregarEntrenador}
-		\end{figure}
-	
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista17_EditarEntrenador}
-			\caption{Vista para editar los datos del entrenador.}
-			\label{VistaEditarEntrenador}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista18_ConsultaInscritos}
-			\caption{Vista para consultar los alumnos inscritos en algún Evento Interpolitécnico Deportivo.}
-			\label{VistaConsultaInscritos}
-		\end{figure}
-		
-		\begin{figure} [hbt!]
-			\centering
-			\includegraphics[width=10cm, height=6cm]{Imagenes/Vistas/Vista19_ConsultaResultados}
-			\caption{Vista para consultar los resultados obtenidos por los participantes.}
-			\label{VistaConsultaResultados}
-		\end{figure}
-		
 		

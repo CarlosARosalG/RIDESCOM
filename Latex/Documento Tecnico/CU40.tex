@@ -1,0 +1,63 @@
+\begin{UseCase}{CU40}{Inscribir a un evento interpolitécnico deportivo}{
+		\noindent Este caso de uso permite que el actor alumno, pueda registrarse en el evento interpolitécnico deportivo de su interés. Deberá llenar un formulario donde se solicitan datos del alumno como: Grupo, NSS (Número de Seguro Social), correo electrónico, Delegación/Municipio, así como el seleccionar el deporte en el que desea participar.\\
+		Para poder inscribirse, deberá primero validar su estatus académico (Inscrito/No inscrito), para ello debe ingresar su boleta, contraseña y el captcha como se muestra en la pantalla \IUref{p15InscripcionInterpolitecnico1}{Pantalla Inscribir interpolitécnico 1.}, da click en el botón \IUbutton { Verificar } si cumple con el requisito, continua el proceso, en caso contrario no podrá inscribirse en algun evento interpolitécnico deportivo.\\
+		Si los datos son correctos, da click en el botón \IUbutton{ Aceptar }, a continuación se muestra la pantalla \IUref{p15Inscripcion Interpolitecnico3}{Pantalla Inscribir interpolitécnico 3.} donde llenará los datos corresponidentes al evento deportivo. Una vez que se llenen todos los campos, el alumno da click en el botón \IUbutton{ Inscribir }.\\ 
+		Al final se mostrará un mensaje de confirmación de la inscripción.
+	} \label{CU40_Inscribirauneventointerpolitécnicodeportivo}
+	\UCitem{Versión}{0.1}
+	\UCitem{Autor}{Rosales González Carlos Andrés}
+	\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+	\UCitem{Actor}{Alumno}
+	\UCitem{Propósito}{Poder participar en un evento deportivo.}
+	\UCitem{Precondiciones}{
+		\begin{itemize}
+			\item Iniciar Sesión
+			\item Ser un alumno pertenenciente al IPN
+			\item Validar estatus académico
+	\end{itemize}}
+	\UCitem{Postcondiciones}{Persitencia de dat}
+	\UCitem{Entradas}{
+		\begin{itemize}
+			\item Boleta
+			\item Nombre
+			\item Apellido Paterno
+			\item Apellido Materno
+			\item Curp
+			\item Escuela
+			\item Carrera
+			\item Fecha de nacimiento
+			\item Lugar de nacimiento
+			\item Sexo
+			\item Correo electronico
+	\end{itemize}}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{
+		\begin{itemize}
+			\item Confirmación de la inscripción al evento
+	\end{itemize}}
+	\UCitem{Destino}{Pantalla principal}
+	\UCitem{Errores}{
+		\begin{itemize}
+			\item EL alumno no se encuentra inscrito en el periodo actual.
+			\item Completa todos los campos
+		\end{itemize}
+	}
+	\UCitem{Observaciones}{}
+\end{UseCase}
+\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton { Inscribir Interpolitécnico } de la pantalla \IUref{p13Iniciopaticipante}{Pantalla principal del alumno \ref{Inscripcioninterpolitecnico}}.\label{CU3_inicio}
+	\UCpaso Muestra la pantalla \IUref{p15InscripcionInterpolitecnico1}{Pantalla Inscribir interpolitécnico 1 \ref{Inscripcioninterpolitecnico2}.}\label{CU3_regresa}
+	\UCpaso[\UCactor] Llena los campos solicitados. \Trayref{D}
+	\UCpaso Confirma registro en una ventana emergente.
+	\UCpaso Carga la pantalla Principal.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{El alumno debe de estar inscrito para continuar.}
+	\UCpaso Muestra el mensaje. “El alumno no esta inscrito en el periodo actual”
+	\UCpaso Continua en el paso \ref{CU3_regresa} del \UCref{CU3}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{El alumno no completa los campos requeridos}
+	\UCpaso Muestra el mensaje "Debes llenar todos los campos solicitados". \ref{CU3_deporte}
+	\UCpaso Continua en el paso \ref{CU3_inicio} del \UCref{CU3}.
+\end{UCtrayectoriaA}
