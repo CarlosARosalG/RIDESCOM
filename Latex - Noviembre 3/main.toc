@@ -1,0 +1,200 @@
+\babel@toc {spanish}{}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}Planteamiento del Problema}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Antecedentes}{3}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Problem\'atica}{4}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Justificaci\'on}{4}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Aplicaciones}{5}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Aplicaciones Tournament Software}{5}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Aplicaciones Active Network}{7}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.3}Aplicaciones TeamSnap Tournament}{8}{subsection.2.4.3}% 
+\contentsline {subsection}{\numberline {2.4.4}Aplicaciones TorneoPal}{10}{subsection.2.4.4}% 
+\contentsline {subsection}{\numberline {2.4.5}Aplicaciones Instituto Nacional del deporte CHILE}{11}{subsection.2.4.5}% 
+\contentsline {subsection}{\numberline {2.4.6}Prototipo para el registro a interpolit\IeC {\'e}cnicos RIDESCOM}{12}{subsection.2.4.6}% 
+\contentsline {chapter}{\numberline {3}Propuesta de soluci\IeC {\'o}n}{13}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Objetivos}{13}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Objetivo General}{13}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.2}Objetivos Especificos}{13}{subsection.3.1.2}% 
+\contentsline {section}{\numberline {3.2}Alcance de la soluci\IeC {\'o}n}{14}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}An\'alisis de Entornos de Desarrollo Interactivo}{14}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}IDE}{14}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Framework}{14}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}Rastreo Web y API's}{17}{subsection.3.3.3}% 
+\contentsline {section}{\numberline {3.4}iReport}{19}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Sistema Gestor de Base de Datos del lado del servidor}{20}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Servidor}{21}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Reglas del Sistema}{22}{section.3.7}% 
+\contentsline {section}{\numberline {3.8}Reglas de Negocio}{22}{section.3.8}% 
+\contentsline {section}{\numberline {3.9}Reglas de Negocio Jefe de Fomento Deportivo}{22}{section.3.9}% 
+\contentsline {section}{\numberline {3.10}Reglas de Negocio Coordinador de Unidad Acad\IeC {\'e}mica}{23}{section.3.10}% 
+\contentsline {section}{\numberline {3.11}Reglas de Negocio Alumno}{23}{section.3.11}% 
+\contentsline {section}{\numberline {3.12}Requisitos del usuario}{25}{section.3.12}% 
+\contentsline {section}{\numberline {3.13}Requisitos funcionales de la aplicaci\IeC {\'o}n web}{27}{section.3.13}% 
+\contentsline {section}{\numberline {3.14}Requisitos no funcionales de la aplicaci\IeC {\'o}n web}{27}{section.3.14}% 
+\contentsline {section}{\numberline {3.15}Diagrama de Procesos}{27}{section.3.15}% 
+\contentsline {section}{\numberline {3.16}Casos de Uso}{28}{section.3.16}% 
+\contentsline {section}{\numberline {3.17}CU1 Iniciar Sesi\IeC {\'o}n Jefe de Fomento Deportivo}{29}{section.3.17}% 
+\contentsline {subsection}{\numberline {3.17.1}Descripci\IeC {\'o}n completa}{29}{subsection.3.17.1}% 
+\contentsline {subsection}{\numberline {3.17.2}Atributos importantes}{29}{subsection.3.17.2}% 
+\contentsline {subsection}{\numberline {3.17.3}Trayectorias del Caso de Uso}{29}{subsection.3.17.3}% 
+\contentsline {section}{\numberline {3.18}CU2 Iniciar Sesi\IeC {\'o}n Coordinador de Unidad Acad\IeC {\'e}mica}{31}{section.3.18}% 
+\contentsline {subsection}{\numberline {3.18.1}Descripci\IeC {\'o}n completa}{31}{subsection.3.18.1}% 
+\contentsline {subsection}{\numberline {3.18.2}Atributos importantes}{31}{subsection.3.18.2}% 
+\contentsline {subsection}{\numberline {3.18.3}Trayectorias del Caso de Uso}{31}{subsection.3.18.3}% 
+\contentsline {section}{\numberline {3.19}CU3 Iniciar Sesi\IeC {\'o}n Alumno}{33}{section.3.19}% 
+\contentsline {subsection}{\numberline {3.19.1}Descripci\IeC {\'o}n completa}{33}{subsection.3.19.1}% 
+\contentsline {subsection}{\numberline {3.19.2}Atributos importantes}{33}{subsection.3.19.2}% 
+\contentsline {subsection}{\numberline {3.19.3}Trayectorias del Caso de Uso}{33}{subsection.3.19.3}% 
+\contentsline {section}{\numberline {3.20}CU4 Recupera contrase\IeC {\~n}a para el alumno}{35}{section.3.20}% 
+\contentsline {subsection}{\numberline {3.20.1}Descripci\IeC {\'o}n completa}{35}{subsection.3.20.1}% 
+\contentsline {subsection}{\numberline {3.20.2}Atributos importantes}{35}{subsection.3.20.2}% 
+\contentsline {subsection}{\numberline {3.20.3}Trayectorias del Caso de Uso}{35}{subsection.3.20.3}% 
+\contentsline {section}{\numberline {3.21}CU5 Recupera contrase\IeC {\~n}a para el Coordinador}{36}{section.3.21}% 
+\contentsline {subsection}{\numberline {3.21.1}Descripci\IeC {\'o}n completa}{36}{subsection.3.21.1}% 
+\contentsline {subsection}{\numberline {3.21.2}Atributos importantes}{36}{subsection.3.21.2}% 
+\contentsline {subsection}{\numberline {3.21.3}Trayectorias del Caso de Uso}{36}{subsection.3.21.3}% 
+\contentsline {section}{\numberline {3.22}CU6 Consulta Calendario de Eventos}{37}{section.3.22}% 
+\contentsline {subsection}{\numberline {3.22.1}Descripci\IeC {\'o}n completa}{37}{subsection.3.22.1}% 
+\contentsline {subsection}{\numberline {3.22.2}Atributos importantes}{37}{subsection.3.22.2}% 
+\contentsline {subsection}{\numberline {3.22.3}Trayectorias del Caso de Uso}{37}{subsection.3.22.3}% 
+\contentsline {section}{\numberline {3.23}CU7 Alta de Eventos Deportivos}{39}{section.3.23}% 
+\contentsline {subsection}{\numberline {3.23.1}Descripci\IeC {\'o}n completa}{39}{subsection.3.23.1}% 
+\contentsline {subsection}{\numberline {3.23.2}Atributos importantes}{39}{subsection.3.23.2}% 
+\contentsline {subsection}{\numberline {3.23.3}Trayectorias del Caso de Uso}{39}{subsection.3.23.3}% 
+\contentsline {section}{\numberline {3.24}CU8 Editar datos del Eventos Deportivos}{41}{section.3.24}% 
+\contentsline {subsection}{\numberline {3.24.1}Descripci\IeC {\'o}n completa}{41}{subsection.3.24.1}% 
+\contentsline {subsection}{\numberline {3.24.2}Atributos importantes}{41}{subsection.3.24.2}% 
+\contentsline {subsection}{\numberline {3.24.3}Trayectorias del Caso de Uso}{42}{subsection.3.24.3}% 
+\contentsline {section}{\numberline {3.25}CU9 Eliminar datos del Eventos Deportivos}{43}{section.3.25}% 
+\contentsline {subsection}{\numberline {3.25.1}Descripci\IeC {\'o}n completa}{43}{subsection.3.25.1}% 
+\contentsline {subsection}{\numberline {3.25.2}Atributos importantes}{43}{subsection.3.25.2}% 
+\contentsline {subsection}{\numberline {3.25.3}Trayectorias del Caso de Uso}{43}{subsection.3.25.3}% 
+\contentsline {section}{\numberline {3.26}CU10 Consulta Coordinadores Registrados}{45}{section.3.26}% 
+\contentsline {subsection}{\numberline {3.26.1}Descripci\IeC {\'o}n completa}{45}{subsection.3.26.1}% 
+\contentsline {subsection}{\numberline {3.26.2}Atributos importantes}{45}{subsection.3.26.2}% 
+\contentsline {subsection}{\numberline {3.26.3}Trayectorias del Caso de Uso}{45}{subsection.3.26.3}% 
+\contentsline {section}{\numberline {3.27}CU11 Agregar Coordinadores Registrados}{47}{section.3.27}% 
+\contentsline {subsection}{\numberline {3.27.1}Descripci\IeC {\'o}n completa}{47}{subsection.3.27.1}% 
+\contentsline {subsection}{\numberline {3.27.2}Atributos importantes}{47}{subsection.3.27.2}% 
+\contentsline {subsection}{\numberline {3.27.3}Trayectorias del Caso de Uso}{48}{subsection.3.27.3}% 
+\contentsline {section}{\numberline {3.28}CU12 Editar datos del Coordinador de Unidad Acad\IeC {\'e}mica}{49}{section.3.28}% 
+\contentsline {subsection}{\numberline {3.28.1}Descripci\IeC {\'o}n completa}{49}{subsection.3.28.1}% 
+\contentsline {subsection}{\numberline {3.28.2}Atributos importantes}{49}{subsection.3.28.2}% 
+\contentsline {subsection}{\numberline {3.28.3}Trayectorias del Caso de Uso}{50}{subsection.3.28.3}% 
+\contentsline {section}{\numberline {3.29}CU13 Eliminar datos del Coordinador de Unidad Acad\IeC {\'e}mica}{52}{section.3.29}% 
+\contentsline {subsection}{\numberline {3.29.1}Descripci\IeC {\'o}n completa}{52}{subsection.3.29.1}% 
+\contentsline {subsection}{\numberline {3.29.2}Atributos importantes}{52}{subsection.3.29.2}% 
+\contentsline {subsection}{\numberline {3.29.3}Trayectorias del Caso de Uso}{53}{subsection.3.29.3}% 
+\contentsline {section}{\numberline {3.30}CU14 Consulta Resultados}{54}{section.3.30}% 
+\contentsline {subsection}{\numberline {3.30.1}Descripci\IeC {\'o}n completa}{54}{subsection.3.30.1}% 
+\contentsline {subsection}{\numberline {3.30.2}Atributos importantes}{54}{subsection.3.30.2}% 
+\contentsline {subsection}{\numberline {3.30.3}Trayectorias del Caso de Uso}{55}{subsection.3.30.3}% 
+\contentsline {section}{\numberline {3.31}CU15 Consulta Pruebas}{56}{section.3.31}% 
+\contentsline {subsection}{\numberline {3.31.1}Descripci\IeC {\'o}n completa}{56}{subsection.3.31.1}% 
+\contentsline {subsection}{\numberline {3.31.2}Atributos importantes}{56}{subsection.3.31.2}% 
+\contentsline {subsection}{\numberline {3.31.3}Trayectorias del Caso de Uso}{56}{subsection.3.31.3}% 
+\contentsline {section}{\numberline {3.32}CU16 Agregar Pruebas}{58}{section.3.32}% 
+\contentsline {subsection}{\numberline {3.32.1}Descripci\IeC {\'o}n completa}{58}{subsection.3.32.1}% 
+\contentsline {subsection}{\numberline {3.32.2}Atributos importantes}{58}{subsection.3.32.2}% 
+\contentsline {subsection}{\numberline {3.32.3}Trayectorias del Caso de Uso}{58}{subsection.3.32.3}% 
+\contentsline {section}{\numberline {3.33}CU17 Editar datos de las Pruebas}{60}{section.3.33}% 
+\contentsline {subsection}{\numberline {3.33.1}Descripci\IeC {\'o}n completa}{60}{subsection.3.33.1}% 
+\contentsline {subsection}{\numberline {3.33.2}Atributos importantes}{60}{subsection.3.33.2}% 
+\contentsline {subsection}{\numberline {3.33.3}Trayectorias del Caso de Uso}{60}{subsection.3.33.3}% 
+\contentsline {section}{\numberline {3.34}CU18 Eliminar datos de Pruebas}{62}{section.3.34}% 
+\contentsline {subsection}{\numberline {3.34.1}Descripci\IeC {\'o}n completa}{62}{subsection.3.34.1}% 
+\contentsline {subsection}{\numberline {3.34.2}Atributos importantes}{62}{subsection.3.34.2}% 
+\contentsline {subsection}{\numberline {3.34.3}Trayectorias del Caso de Uso}{62}{subsection.3.34.3}% 
+\contentsline {section}{\numberline {3.35}CU19 Consulta Actividades Deportivas}{64}{section.3.35}% 
+\contentsline {subsection}{\numberline {3.35.1}Descripci\IeC {\'o}n completa}{64}{subsection.3.35.1}% 
+\contentsline {subsection}{\numberline {3.35.2}Atributos importantes}{64}{subsection.3.35.2}% 
+\contentsline {subsection}{\numberline {3.35.3}Trayectorias del Caso de Uso}{64}{subsection.3.35.3}% 
+\contentsline {section}{\numberline {3.36}CU20 Agregar Deporte}{66}{section.3.36}% 
+\contentsline {subsection}{\numberline {3.36.1}Descripci\IeC {\'o}n completa}{66}{subsection.3.36.1}% 
+\contentsline {subsection}{\numberline {3.36.2}Atributos importantes}{66}{subsection.3.36.2}% 
+\contentsline {subsection}{\numberline {3.36.3}Trayectorias del Caso de Uso}{66}{subsection.3.36.3}% 
+\contentsline {section}{\numberline {3.37}CU21 Eliminar Deportes}{68}{section.3.37}% 
+\contentsline {subsection}{\numberline {3.37.1}Descripci\IeC {\'o}n completa}{68}{subsection.3.37.1}% 
+\contentsline {subsection}{\numberline {3.37.2}Atributos importantes}{68}{subsection.3.37.2}% 
+\contentsline {subsection}{\numberline {3.37.3}Trayectorias del Caso de Uso}{68}{subsection.3.37.3}% 
+\contentsline {section}{\numberline {3.38}CU22 Agregar Resultados}{70}{section.3.38}% 
+\contentsline {subsection}{\numberline {3.38.1}Descripci\IeC {\'o}n completa}{70}{subsection.3.38.1}% 
+\contentsline {subsection}{\numberline {3.38.2}Atributos importantes}{70}{subsection.3.38.2}% 
+\contentsline {subsection}{\numberline {3.38.3}Trayectorias del Caso de Uso}{71}{subsection.3.38.3}% 
+\contentsline {section}{\numberline {3.39}CU23 Editar Resultados}{72}{section.3.39}% 
+\contentsline {subsection}{\numberline {3.39.1}Descripci\IeC {\'o}n completa}{72}{subsection.3.39.1}% 
+\contentsline {subsection}{\numberline {3.39.2}Atributos importantes}{72}{subsection.3.39.2}% 
+\contentsline {subsection}{\numberline {3.39.3}Trayectorias del Caso de Uso}{73}{subsection.3.39.3}% 
+\contentsline {section}{\numberline {3.40}CU24 Eliminar Resultados}{74}{section.3.40}% 
+\contentsline {subsection}{\numberline {3.40.1}Descripci\IeC {\'o}n completa}{74}{subsection.3.40.1}% 
+\contentsline {subsection}{\numberline {3.40.2}Atributos importantes}{74}{subsection.3.40.2}% 
+\contentsline {subsection}{\numberline {3.40.3}Trayectorias del Caso de Uso}{75}{subsection.3.40.3}% 
+\contentsline {section}{\numberline {3.41}CU25 Consulta Entrenadores}{76}{section.3.41}% 
+\contentsline {subsection}{\numberline {3.41.1}Descripci\IeC {\'o}n completa}{76}{subsection.3.41.1}% 
+\contentsline {subsection}{\numberline {3.41.2}Atributos importantes}{76}{subsection.3.41.2}% 
+\contentsline {subsection}{\numberline {3.41.3}Trayectorias del Caso de Uso}{76}{subsection.3.41.3}% 
+\contentsline {section}{\numberline {3.42}CU26 Agregar Entrenador}{78}{section.3.42}% 
+\contentsline {subsection}{\numberline {3.42.1}Descripci\IeC {\'o}n completa}{78}{subsection.3.42.1}% 
+\contentsline {subsection}{\numberline {3.42.2}Atributos importantes}{78}{subsection.3.42.2}% 
+\contentsline {subsection}{\numberline {3.42.3}Trayectorias del Caso de Uso}{79}{subsection.3.42.3}% 
+\contentsline {section}{\numberline {3.43}CU27 Editar Entrenador}{80}{section.3.43}% 
+\contentsline {subsection}{\numberline {3.43.1}Descripci\IeC {\'o}n completa}{80}{subsection.3.43.1}% 
+\contentsline {subsection}{\numberline {3.43.2}Atributos importantes}{80}{subsection.3.43.2}% 
+\contentsline {subsection}{\numberline {3.43.3}Trayectorias del Caso de Uso}{81}{subsection.3.43.3}% 
+\contentsline {section}{\numberline {3.44}CU28 Eliminar Entrenador}{82}{section.3.44}% 
+\contentsline {subsection}{\numberline {3.44.1}Descripci\IeC {\'o}n completa}{82}{subsection.3.44.1}% 
+\contentsline {subsection}{\numberline {3.44.2}Atributos importantes}{82}{subsection.3.44.2}% 
+\contentsline {subsection}{\numberline {3.44.3}Trayectorias del Caso de Uso}{83}{subsection.3.44.3}% 
+\contentsline {section}{\numberline {3.45}CU29 Difusi\IeC {\'o}n de Eventos}{84}{section.3.45}% 
+\contentsline {subsection}{\numberline {3.45.1}Descripci\IeC {\'o}n completa}{84}{subsection.3.45.1}% 
+\contentsline {subsection}{\numberline {3.45.2}Atributos importantes}{84}{subsection.3.45.2}% 
+\contentsline {subsection}{\numberline {3.45.3}Trayectorias del Caso de Uso}{84}{subsection.3.45.3}% 
+\contentsline {section}{\numberline {3.46}CU30 Consulta Inscritos}{86}{section.3.46}% 
+\contentsline {subsection}{\numberline {3.46.1}Descripci\IeC {\'o}n completa}{86}{subsection.3.46.1}% 
+\contentsline {subsection}{\numberline {3.46.2}Atributos importantes}{86}{subsection.3.46.2}% 
+\contentsline {subsection}{\numberline {3.46.3}Trayectorias del Caso de Uso}{86}{subsection.3.46.3}% 
+\contentsline {section}{\numberline {3.47}CU31 Consulta para expedici\IeC {\'o}n de constancias}{88}{section.3.47}% 
+\contentsline {subsection}{\numberline {3.47.1}Descripci\IeC {\'o}n completa}{88}{subsection.3.47.1}% 
+\contentsline {subsection}{\numberline {3.47.2}Atributos importantes}{88}{subsection.3.47.2}% 
+\contentsline {subsection}{\numberline {3.47.3}Trayectorias del Caso de Uso}{89}{subsection.3.47.3}% 
+\contentsline {section}{\numberline {3.48}CU32 Consulta eventos inscritos}{90}{section.3.48}% 
+\contentsline {subsection}{\numberline {3.48.1}Descripci\IeC {\'o}n completa}{90}{subsection.3.48.1}% 
+\contentsline {subsection}{\numberline {3.48.2}Atributos importantes}{90}{subsection.3.48.2}% 
+\contentsline {subsection}{\numberline {3.48.3}Trayectorias del Caso de Uso}{90}{subsection.3.48.3}% 
+\contentsline {section}{\numberline {3.49}CU33 Consulta Historial}{92}{section.3.49}% 
+\contentsline {subsection}{\numberline {3.49.1}Descripci\IeC {\'o}n completa}{92}{subsection.3.49.1}% 
+\contentsline {subsection}{\numberline {3.49.2}Atributos importantes}{92}{subsection.3.49.2}% 
+\contentsline {subsection}{\numberline {3.49.3}Trayectorias del Caso de Uso}{93}{subsection.3.49.3}% 
+\contentsline {section}{\numberline {3.50}CU34 Consulta C\IeC {\'e}dula de Inscripci\IeC {\'o}n}{94}{section.3.50}% 
+\contentsline {subsection}{\numberline {3.50.1}Descripci\IeC {\'o}n completa}{94}{subsection.3.50.1}% 
+\contentsline {subsection}{\numberline {3.50.2}Atributos importantes}{94}{subsection.3.50.2}% 
+\contentsline {subsection}{\numberline {3.50.3}Trayectorias del Caso de Uso}{95}{subsection.3.50.3}% 
+\contentsline {section}{\numberline {3.51}Dise\IeC {\~n}o de pantallas}{95}{section.3.51}% 
+\contentsline {chapter}{\numberline {4}Trabajo realizado}{98}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Antecedentes}{98}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Plan de trabajo}{98}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}An\'alisis de factibilidad t\'ecnica}{99}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Sprint 2: Interfaces}{102}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Sprint 4: M\IeC {\'o}dulo de difusi\IeC {\'o}n de eventos}{104}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Sprint 5:M\IeC {\'o}dulo de comunicaci\IeC {\'o}n con redes sociales}{105}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Sprint 6:M\IeC {\'o}dulo de creaci\IeC {\'o}n de c\IeC {\'e}dula de inscripci\IeC {\'o}n.}{107}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Sprint 7: M\IeC {\'o}dulo de consulta de resultados.}{107}{section.4.8}% 
+\contentsline {section}{\numberline {4.9}Sprint 0: An\IeC {\'a}lisis}{107}{section.4.9}% 
+\contentsline {section}{\numberline {4.10}Sprint 1: Mecanismo de validaci\IeC {\'o}n de estatus acad\IeC {\'e}mico.}{108}{section.4.10}% 
+\contentsline {section}{\numberline {4.11}Sprint 3: M\IeC {\'o}dulo de formulario}{109}{section.4.11}% 
+\contentsline {chapter}{\numberline {5}Pruebas}{110}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Plan de pruebas}{110}{section.5.1}% 
+\contentsline {chapter}{Conclusiones}{116}{section*.1}% 
+\contentsline {chapter}{Trabajo a Futuro}{117}{section*.2}% 
+\contentsline {chapter}{Referencias}{118}{section*.2}% 
+\contentsline {chapter}{Ap\IeC {\'e}ndice}{123}{section*.4}% 
+\contentsline {chapter}{\numberline {A}Apartado A: Entrevista}{124}{chapter.1}% 
+\contentsline {chapter}{\numberline {B}Apartado B: Mensajes}{126}{chapter.2}% 
+\contentsline {section}{\numberline {B.1}Mensajes de RIDESCOM}{126}{section.2.1}% 
+\contentsline {chapter}{\numberline {C}Apartado C: Dise\IeC {\~n}os de Pantallas}{133}{chapter.3}% 
+\contentsline {chapter}{\numberline {D}Apartado D: Diagrama de Procesos}{144}{chapter.4}% 
+\contentsline {chapter}{\numberline {E}Apartado E: Diagramas de Casos de Uso}{146}{chapter.5}% 
+\contentsline {chapter}{\numberline {F}Apartado F: Crawler}{148}{chapter.6}% 
+\contentsline {chapter}{\numberline {G}Apartado G: API Facebook}{157}{chapter.7}% 
+\contentsline {chapter}{\numberline {H}Apartado H: Base de Datos}{166}{chapter.8}% 
+\contentsline {chapter}{\numberline {I}Apartado I: Vistas}{168}{chapter.9}% 

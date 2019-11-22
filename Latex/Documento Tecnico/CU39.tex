@@ -1,0 +1,63 @@
+\begin{UseCase}{CU39}{Eliminar sede}{
+		\noindent Esta caso de uso servirá para que el Jefe de Fomento Deportivo pueda editar sedes en las que se llevaran acabo los eventos interpolitécnicos.
+		Para ello el Jefe de Fomento Deportivo dará click en el botón \IUbutton{ Eliminar } ubicado en la \IUref{}{Pantalla de Sede \ref{pruebas}}.	
+	} \label{CU39_evento}
+
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Jefe de Fomento Deportivo}
+		\UCitem{Propósito}{Eliminar sede.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Iniciar sesión.
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla Eliminar Sede}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Nombre del lugar
+        	\item Calle
+        	\item Colonia
+        	\item Número
+        	\item CP
+        	\item Municipio
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Datos registrados.
+		    \item Página de sedes.
+		\end{itemize}}
+		\UCitem{Destino}{Pantalla Eliminar Prueba}
+		\UCitem{Errores}{
+        	\begin{itemize}
+			    \item Datos faltantes.
+			    \item Campo vacío.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+	
+    \begin{UCtrayectoria}{Principal}
+   	\UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla Consulta Sedes \ref{VistaPruebas}}.
+   	\UCpaso Muestra la \IUref{}{Pantalla Consulta Sedes \ref{VIstaPruebas}}.
+    \UCpaso[\UCactor] Oprime el botón \IUbutton{ Eliminar } en la \IUref{}{Pantalla Consulta Sedes\ref{VistaPruebas}}.
+    \UCpaso Muestra la \IUref{}{Pantalla Eliminar Sedes \ref{VistaAgregaPrueba}}. 
+    \UCpaso[\UCactor] Lllena los campos. \label{CU39_regresar}  
+    \UCpaso[\UCactor] Presiona el botón \IUbutton{ Confirmar }.
+    \UCpaso Comprueba que los campos no estén vacíos. \Trayref{A}
+    \UCpaso Obtiene los valores ingresados
+    \UCpaso Válida campos. \Trayref{B}
+    \UCpaso Muestra mensaje de confirmación de registro.
+    \UCpaso Muestra la \IUref{}{Pantalla Consulta Sedes. \ref{VistaPruebas}}.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campo(s) vacios}
+\UCpaso Muestra mensaje “Campos Necesario".
+\UCpaso Continua en el paso \ref{CU39_regresar} del \UCref{CU39}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Válida campos}
+\UCpaso Muestra el mensaje "Datos incorrectos".
+\UCpaso Continua en el paso \ref{CU39_regresar} del \UCref{CU39}.
+\end{UCtrayectoriaA}

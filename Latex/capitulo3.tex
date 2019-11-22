@@ -20,7 +20,7 @@
 	%                                                         Marco teorico
 	%=========================================================
 	\section{Alcance de la solución}
-	\noindent A continuación se muestra la arquitectura de la aplicación web,
+	\noindent En la Figura \ref{arquitectura} se muestra la arquitectura de la aplicación web,
 	\begin{figure}[hbt!]
 		\centering
 		\includegraphics[width=10cm, height=6cm]{Imagenes/arquitectura}
@@ -28,243 +28,177 @@
 		\label{arquitectura}
 	\end{figure}
 
-	\noindent Como se puede observar, la arquitectura contempla su implementación en otras unidades académicas, sin embargo cabe mencionar que el Trabajo Terminal se enfocará particularmente en ESCOM con el objetivo de análisar, estudiar la aceptación del mismo, así como posibles mejoras.
+	\noindent Como se puede observar, esta contempla su implementación en otras unidades académicas, sin embargo cabe mencionar que el Trabajo Terminal se enfocará particularmente en ESCOM con el objetivo de análisar, estudiar la aceptación del mismo, así como posibles mejoras.
+	
+	\noindet La aplicación esta involucrada por 3 usuarios, el Jefe de Departamento de Fomento Deportivo, el coordinador de Unidad Académica y el alumno. En esta cada uno tendrá distintos permisos y funciones dentro de la aplicación, el Jefe de Departamento de Fomento Deportivo será el encargado de publicar eventos deportivos, agregar nuevos deportes junto con las pruebas de los mismos, el coordinador de Unidad Académica se encargará de cerrar el proceso de inscripición a los eventos, generar el listado de los alumnos inscritos y el ingresar los resultados obtenidos por los participantes, finalmente el alumno podrá inscribirse en los eventos de su interés, así como consultar su historial de participaciones y los eventos actuales en los que está inscrito.
 	
 	
 	%=========================================================
 	%                                                         Analisis de factibilidad tecnica
 	%=========================================================
-	\section{An\'alisis de Entornos de Desarrollo Interactivo}
+	\section{Crawler}
+	\label{crawler}
+	\noindent Este código fue desarrollado con el lenguaje de programación JAVA y JSOUP, permitiendo la simulación de la interacción de una persona “navegando” en la red, este “web crawler” fue desarrollado con el propósito de encontrar un mecanismo de validación para comprobar si realmente eres alumno de la ESCOM, donde se iniciará sesión con los datos del usuario de la plataforma de la escuela llamado SAES pidiendo un usuario (Boleta del alumno), contraseña y una clave captcha que el servidor de la plataforma genera como un filtro para evitar la intrusión de “bots informáticos”.\\
 	
-	%=========================================================
-	%                                                         IDE
-	%=========================================================
-	\subsection{IDE}
-	\begin{itemize}
-		\item  Netbeans 
-		\label{Herramientas}
-		\newline
-		Netbeans es un entorno integrado de desarrollo o IDE (IntegratedDevelopmentEnvironment), cone el que se puede realizar todas las tareas asociadas a la programación.
-		\newline
-		Simplifica alguna de las tareas que, sobretodo en proyectos grandes, son laboriosas. Ofrece la posibilidad de asistencia (parcialmente) en la escritura de código, aunque no nos libera de aprender el lenguaje de programación.
-		Nos ayuda en la navegación de las clases predefinidas.
-		Aunque puede ser costoso su aprendizaje, los beneficios superan las dificultades.
-		
-	\subsection{Framework}
-		\item Spring MVC \\ 
-		Spring Mvc es una alternativa de framework basado en el patrón modelo-vista-controlador, después de haber aprendido de errores de frameowrks como Jakarta Struts y otras alternativas.
-		El framework tiene un conjunto de interfaces que después se implementan para proporcionar la funcionalidad correspondiente. Las interfaces están acopladas claramente al Servlet Api.\cite{spring}\\
-		La clase DispatcherServlet está en el front controller y es responsable de delegar y coordinar el control entre varias interfaces en la fase de ejecución durante una petición Http.
-		Las interfaces más importantes definidas en Spring Mvc, y sus responsabilidades, son las siguientes:
-		\begin{itemize}
-			\item HandlerMapping: permite manejar peticiones de entrada.
-			\item HandlerAdapter: ejecución de objetos que permiten manejar las peticiones entrantes.
-			\item Controller: está entre el modelo y la vista, y permite manejar peticiones entrantes y redirigirlas a la respuesta adecuada. 
-			\item Vista: responsable de retornar una respuesta al cliente. 
-			\item ViewResolver: selecciona una vista basada en un nombre lógico de la vista.
-			\item HandlerInterceptor: intercepta las peticiones entrantes, es comparable pero no igual a los filtros de Servlet.
-			\item LocaleResolver: resuelve y opcionalmente salva el locale de un usuario individual.
-			\item MultipartResolver: facilita trabajar con ficheros de subida wrapping peticiones de entrada.
-		\end{itemize}
-		Cada interfaz de estrategia tiene su responsabilidad importante dentro del framework general. Estas abstracciones ofrecidas por estas interfaces son potentes, pues permiten configurar un conjunto de interfaces juntas y ofrecen un conjunto en el top del Api de Servlet. Sin embargo, los desarrolladores y los vendedores son libres es escribir otras implementaciones. Spring MVC utiliza la interfaz java.util.Map como una abstracción del modelo cuando se espera que las llaves tenga valores de String. \\
-		Cada testeo de las implementaciones de estas interfaces tiene otra ventaja importante dentro del alto nivel de abstracción ofrecido por Spring Mvc. Dispatcher Servlet está altamente acoplado con el contenedor de Inversión de Control de Spring para configurar las capas de web de las aplicaciones. Sin embargo, las aplicaciones web pueden utilizar otras partes del framework de Spring, incluyendo el contenedor, y decidir no usar Spring Mvc. \cite{MVC}\\
-		Struts es un framework mucho más antiguo, por lo que Spring ha aprendido de la experiencia adquirida de usar Struts para no cometer los mismos errores. \cite{introspring}
-		A continuación se enumeran un conjunto de ventajas:
-		\begin{itemize}
-			\item Spring MVC ofrece una división limpia entre Controllers, Models (JavaBeans) y Views. 
-			\item Spring MVC es muy flexible, ya que implementa toda su estructura mediante interfaces, no como Struts que obliga a heredar de clases concretas tanto en sus Actions como en sus Forms. 
-			\item Spring MVC provee interceptores y controllers que permiten interpretar y adaptar el comportamiento común en el manejo de múltiples requests.
-			\item Los controllers de Spring MVC se configuran mediante IoC como los demás objetos, lo cual los hace fácilmente testeables e integrables con otros objetos que estén en el contexto de Spring, y por tanto sean manejables por éste. 
-			\item Las partes de Spring MVC son más fácilmente testeables que las de Struts, debido a que evita la herencia de una clase de manera forzosa y una dependencia directa en el controller del servlet que despacha las peticiones. 
-			\item No existen ActionForms, se enlaza directamente con los beans de negocio. 
-			\item Struts obliga a extender la clase Action, mientras que Spring MVC no, aunque proporciona una serie de implementaciones de Controllers para que el usuario los utilice. Existe una gran variedad de Controladores.
-			\item Spring tiene una interfaz bien definida para la capa de negocio. 
-			\item Spring ofrece mejor integración con tecnologías distintas a JSP, como Velocity,XSLT,FreeMaker y XL. 
-		\end{itemize}
-		Las ventajas que se tiene usar Spring MVC 
-		\begin{itemize}
-			\item Se ha introduce un nombre es espacio MVC que simplifica la configuración.
-			\item Se han insertado anotaciones adicionales como @CookieValue (permite relacionar un atributo de un método a una cookie) y @RequestMappings (asociar directamente en la clase la posibilidad de asociar una petición Url a un controlador específico).
-			\item El tipo ConversionService es una alternativa más simple y robusta que los PropertyEditors de JavaBeans.
-			\item Se soporta un formateo de números con el atributo @NumberFormat.
-			\item Se soportan el formateo de fechas, calendarios y joda time con el atributo @DatetimeFormat, siempre que la librería Joda Time esté dentro del classpath.
-			\item Se soporta la validación para entradas @Controller con la etiqueta @Valid, si se proporciona una implementación de la Jsr-303 en el classpath.
-			\item Soporte para leer y escribir Xml, si Jaxb está dentro del classpath.
-			\item Soporte para leer y escribir Json, si Jackson está dentor del classpath.
-		\end{itemize}
-		Para poder crear los controladores debemos de seguir los siguientes pasos:
-		\begin{itemize}
-			\item Definir una clase que implementa la interfaz del controlador.
-			\item Insertar dicha clase como un objeto en el contexto de Spring.
-			\item Asignar el nombre a una Uri que posteriormente será invocada por el usuario.
-			\item Especificar la extensión de la uti en el DispatcherServlet de Spring, configurado en web.xml, para que se pueda buscar internamente.
-		\end{itemize}
-		
-		El modelo son los datos con los que interactúa la vista y el controlador. En este caso, el modelo se pasa mediante un atributo de la clase ModelAndView, para posteriormente acceder al mismo desde la parte de la vista. \cite{introspring}
-		
-		Algunas recomendaciones para desarrollar usando Spring MVC
-		Primero: determinar el Ide de desarrollo que se quiera utilizar. Existan varias alternativas: Netbeans, Eclipse, Intellij, Spring Tool Suite. Yo, por precio (gratis) y facilidad de uso (está orientado al desarrollo de Spring) recomiendo el uso de Spring Tool Suite. \\
-		
-		Segundo: crear el proyecto básico, y elegir nuestra herramienta de gestión de librerías. Para crear el proyecto, tenemos varias alternativas, desde configurar nosotros desde cero el servlet de spring, como utilizar plantillas ya existentes. También existe la posibilidad de descargar las librerías de la web de Spring o bien utilizar repositorios de Maven.\\
-		
-		Tercero: escoger el tipo de vista que se utilizará para el proyecto. En mi caso, la vista que suelo utilizar y con la que me siento más acostumbrado es Jsp.\\
-		
-		Cuarto: desarrollar la parte de negocio (controladores) y persistencia (seleccionando un framework como hibernate o jpa), y relacionar los controladores, con la vista y la persistencia.
-		En principio, eso es todo.\\
-		El framework fue lanzado inicialmente bajo Apache 2.0 License en junio de 2003. Esta licencia es una licencia de software libre creada por la Apache Software Foundation que requiere la conservación del aviso de copyright y disclaimer, pero no es una liencia copyleft, ya que no requiere la redistribución del código fuente cuando se distribuyen versiones modificadas. \cite{introspring} \\
-		
-		\item Facebook Developers 
-		La Plataforma de Facebook es el conjunto de servicios, herramientas y productos proporcionados por el servicio de redes sociales Facebook para que los desarrolladores externos creen sus propias aplicaciones y servicios que acceden a datos en Facebook.\\
-		
-		La actual Plataforma de Facebook se lanzó en 2010. La plataforma ofrece un conjunto de interfaces y herramientas de programación que permiten a los desarrolladores integrarse con el "gráfico social" abierto de relaciones personales y otras cosas como canciones, lugares y páginas de Facebook. La asignación en facebook.com, sitios web externos y dispositivos pueden acceder al gráfico. \\
-		
-		Facebook lanzó la Plataforma de Facebook el 24 de mayo de 2007, proporcionando un marco para que los desarrolladores de software creen aplicaciones que interactúen con las funciones principales de Facebook. Se introdujo un lenguaje de marcado llamado Facebook Markup Language simultáneamente; se utiliza para personalizar el "aspecto y la sensación" de las aplicaciones que crean los desarrolladores. Usando la Plataforma, Facebook lanzó varias aplicaciones nuevas, incluyendo Regalos, permitiendo a los usuarios enviarse regalos virtuales entre sí, Marketplace, permitiendo a los usuarios publicar anuncios clasificados gratuitos, eventos de Facebook, brindando a los usuarios un método para informar a sus amigos sobre los próximos eventos, Video, Permitir a los usuarios compartir videos caseros entre ellos y juegos de redes sociales, donde los usuarios pueden usar sus conexiones con amigos para ayudarlos a avanzar en los juegos que están jugando. Muchos de los primeros juegos populares de redes sociales combinarían capacidades. Por ejemplo, uno de los primeros juegos en llegar al primer lugar de aplicación, (Lil) Green Patch, combina regalos virtuales con notificaciones de eventos a amigos y contribuciones a organizaciones benéficas a través de causas. \\
-		
-		Componentes de plataforma de alto nivel
-		API de gráficos\\
-		Graph API es el núcleo de la plataforma de Facebook, lo que permite a los desarrolladores leer y escribir datos en Facebook. Graph API presenta una vista simple y coherente del gráfico social de Facebook, que representa de manera uniforme los objetos en el gráfico (por ejemplo, personas, fotos, eventos y páginas) y las conexiones entre ellos (por ejemplo, relaciones de amigos, contenido compartido y etiquetas de fotos )\\
-		
-		Autenticación\\
-		La autenticación de Facebook permite que las aplicaciones de los desarrolladores interactúen con la API Graph en nombre de los usuarios de Facebook, y proporciona un mecanismo de inicio de sesión único en aplicaciones web, móviles y de escritorio.\\
-		
-		Complementos sociales\\
-		Los complementos sociales, incluidos el botón Me gusta, las recomendaciones y el feed de actividades, permiten a los desarrolladores proporcionar experiencias sociales a sus usuarios con solo unas pocas líneas de HTML. Todos los complementos sociales son extensiones de Facebook y están diseñados para que no se compartan datos de los usuarios con los sitios en los que aparecen. Por otro lado, los complementos sociales permiten a Facebook rastrear los hábitos de navegación de sus usuarios a través de cualquier sitio que cuente con los complementos. Y los datos recopilados de los hábitos de navegación de los usuarios ayudan a los vendedores y anunciantes en Facebook a dirigirse a su audiencia.\\
-		
-		iframes\\
-		Facebook usa iframes para permitir que los desarrolladores externos creen aplicaciones que están alojadas por separado de Facebook, pero operan dentro de una sesión de Facebook y se accede a través del perfil de un usuario. Dado que los iframes esencialmente anidan sitios web independientes dentro de una sesión de Facebook, su contenido es distinto del formato de Facebook. \\
-		
-		Originalmente, Facebook utilizaba el 'Lenguaje de marcado de Facebook (FBML)' para permitir a los desarrolladores de aplicaciones de Facebook personalizar el "aspecto y la sensación" de sus aplicaciones, hasta cierto punto. FBML es una especificación de cómo codificar contenido para que los servidores de Facebook puedan leerlo y publicarlo, lo cual es necesario en el feed específico de Facebook para que el sistema de Facebook pueda analizar el contenido y publicarlo como se especifica. Facebook almacena en caché el FBML establecido por cualquier aplicación hasta que una llamada API posterior lo reemplace. Facebook también ofrece una biblioteca especializada de JavaScript de Facebook (FBJS).\\
-		
-		Facebook dejó de aceptar nuevas aplicaciones FBML el 18 de marzo de 2011, pero continuó admitiendo las pestañas y aplicaciones FBML existentes. Desde el 1 de enero de 2012, FBML ya no era compatible, y FBML ya no funcionaba a partir del 1 de junio de 2012. 
-	\end{itemize}
-
-
-	\subsection{Rastreo Web y API's}
-	\begin{itemize}
-		\item Web Crawler\newline
-			Un Web Crawler (también llamado Web Spider) es un programa diseñado para explorar páginas Web en forma automática. La operación normal es que se le da al programa un grupo de direcciones iniciales, el crawler descarga estas direcciones, analiza las páginas y busca enlaces a páginas nuevas. Luego descarga estas páginas nuevas, analiza sus enlaces, y así sucesivamente.\cite{crawling} \\
-			Los crawlers se pueden usar para varias cosas, lo más común es que se usen para:
-				\begin{itemize}
-					\item Crear el índice de una [article-1056.html máquina de búsqueda]. 
-					\item Analizar los enlaces de un sitio para buscar links rotos. 
-					\item Recolectar información de un cierto tipo, como precios de productos para armar un catálogo. \cite{craw}
-				\end{itemize} 
-			
-			Un Web Crawler es un pequeño programa que recorre permanentemente el entramado de contenidos que conforman la Red. Su principal utilidad se la otorgan los buscadores al emplearlos para rastrear nuevas webs, de las que descargan automáticamente una copia que almacenan en un índice; una vez integradas en estas bases de datos las webs podrán ser rápidamente localizadas en la siguiente consulta efectuada por los usuarios, permitiendo mostrárselas entre la lista de resultados.
-			Una araña web inicia su trabajo visitando un conjunto de direcciones predeterminadas, analiza las páginas, identifica los enlaces externos que éstas puedan incluir y los añade a la lista de direcciones a visitar, perpetuándose en su labor.	\cite{web} \\
-			
-			Ahora bien, un rastreador web, indexador web, indizador web o araña web es un programa informático que inspecciona las páginas del World Wide Web de forma metódica y automatizada.1 Uno de los usos más frecuentes que se les da consiste en crear una copia de todas las páginas web visitadas para su procesado posterior por un motor de búsqueda que indexa las páginas proporcionando un sistema de búsquedas rápido. Las arañas web suelen ser bots. \cite{araña} \\
-			
-			Web scraping es una técnica utilizada mediante programas de software para extraer información de sitios web. Usualmente, estos programas simulan la navegación de un humano en la World Wide Web ya sea utilizando el protocolo HTTP manualmente, o incrustando un navegador en una aplicación.  \\
-			El web scraping está muy relacionado con la indexación de la web, la cual indexa la información de la web utilizando un robot y es una técnica universal adoptada por la mayoría de los motores de búsqueda. Sin embargo, el web scraping se enfoca más en la transformación de datos sin estructura en la web (como el formato HTML) en datos estructurados que pueden ser almacenados y analizados en una base de datos central, en una hoja de cálculo o en alguna otra fuente de almacenamiento. Alguno de los usos del web scraping son la comparación de precios en tiendas, la monitorización de datos relacionados con el clima de cierta región, la detección de cambios en sitios webs y la integración de datos en sitios webs.	\cite{araña} \\
-			
-			El web scraping es una técnica que sirve para extraer información de páginas web de forma automatizada. Si traducimos del inglés su significado vendría a significar algo así como “escarbar una web”. \\
-			Aplicaciones y ejemplos:\\
-			Su uso está muy claro: podemos aprovechar el web scraping para conseguir cantidades industriales de información (Big data) sin teclear una sola palabra. A través de los algoritmos de búsqueda podemos rastrear centenares de webs para extraer sólo aquella información que necesitamos.\\
-			Para ello nos será muy útil dominar regex (regular expression) para delimitar las búsquedas o hacerlas más precisas y que el filtrado de la información sea mejor.\\
-			Algunos ejemplos para los cuales vamos a necesitar el web scraping:
-				\begin{itemize}
-					\item Para marketing de contenidos: podemos diseñar un robot que haga un ‘scrapeo’ de datos concretos de una web y los podamos utilizar para generar nuestro propio contenido. Ejemplo: scrapear los datos estadísticos la web oficial de una liga de fútbol para generar nuestra propia base de datos.
-					\item Para ganar visibilidad en redes sociales: podemos utilizar los datos de un scrapeo para interactuar a través de un robot con usuarios en redes sociales. Ejemplo: crear un bot en instagram que seleccione los links de cada foto y luego programar un comentario en cada entrada.
-					\item Para controlar la imagen y la visibilidad de nuestra marca en internet: a través de un scrapeo podemos automatizar la posición por la que varios artículos de nuestra web se posicionan en Google o, por ejemplo, controlar la presencia del nombre de nuestra marca en determinados foros. Ejemplo: rastrear la posición en Google de todas las entradas de nuestro blog.
-				\end{itemize}	
-
-			
-			Para poder desarrollar un web scraping de la mejor manera se debe considerar  dos vertientes muy diferenciadas del conocimiento web, ambas esenciales para tener perfil versátil en la red. Por un lugar debemos dominar la visualización de datos a nivel conceptual y por el otro debemos disponer de los conocimientos técnicos necesarios para lograr extraer con exactitud los datos con herramientas especializadas. \\
-			Al fin y al cabo esto se resumirá en saber gestionar grandes cantidades de datos (big data). Debemos estar mínimamente familiarizados con la visualización de grandes cantidades de datos con tal de poder jerarquizar e interpretar los datos que extraigamos de una web. Y no solo para extraer los datos, también a la hora de plantear la estrategia de extracción debemos saber cuales van a ser los datos que vayamos a extraer con tal de poder darles un sentido informativo para el usuario \cite{scraping}.\\
-			
-			\textbf{Api's más utilizadas}
-			\begin{itemize}
-				\item \textbf{Jsoup}: Es una libreria de Java para trabajar con HTML real en el mundo real. Proporciona una API muy conveniente para extraer y manipular datos, utilizando lo mejor de DOM, CSS y métodos similares a jquery.\\
-				
-				Implementa la especificación HTML5 WHATWG y analiza HTML en el mismo DOM que los navegadores modernos.
-				\begin{itemize}
-					\item 
-				\item Raspa y analiza HTML desde una URL, archivo o cadena
-				\item Encuentra y extrae datos, usando DOM transversal o selectores de CSS
-				manipular los elementos HTML, atributos y texto
-				\item Limpia el contenido enviado por el usuario contra una lista blanca segura, para evitar ataques XSS
-				\item HTML ordenado de salida
-				\end{itemize}
-				
-				Jsoup está diseñado para tratar con todas las variedades de HTML que se encuentran en la naturaleza; de lo prístino y de la validación para invalidar la etiqueta soup; jsoup creará un árbol de análisis sensible.\\
-				
-				Jsoup es un proyecto de código abierto distribuido bajo la licencia liberal MIT. El código fuente está disponible en GitHub.\cite{jsoup}
-				
-				\item \textbf{Selenium}: Es un automatizador de navegadores. Principalmente, es para automatizar aplicaciones web con fines de prueba, pero ciertamente no se limita a eso. Las tareas de administración aburridas basadas en la web pueden (y deberían) ser automatizadas también.\\
-				
-				Selenium tiene el soporte de algunos de los proveedores más grandes de navegadores que han tomado (o están tomando) pasos para hacer de Selenium una parte nativa de su navegador. También es la tecnología central en muchas otras herramientas de automatización del navegador, API y marcos.\\
-				
-				Selenium provee una herramienta de grabar o reproducir para crear pruebas sin usar un lenguaje de scripting para pruebas (Selenium IDE). Incluye también un lenguaje específico de dominio para pruebas (Selanese) para escribir pruebas en un amplio número de lenguajes de programación populares incluyendo Java, C$\#$, Ruby, Groovy, Perl, Php y Python. Las pruebas pueden ejecutarse entonces usando la mayoría de los navegadores web modernos en diferentes sistemas operativos como Windows, Linux y OSX.
-				
-			\end{itemize}
-		Como Api seleccionada para trepar páginas web Jsoup es apta para la realización del trabajo ya que nos permite analizar libremente el DOM de alguna página y es mucho más rápido que selenium, ya que no necesita molestarse con un DOM "vivo". Selenium siempre debe verificar si los manejadores de elementos siguen siendo válidos antes de realizar cualquier operación con ellos pero la sobrecarga es realmente notable cuando realiza un raspado serio. \\
-			
-	\end{itemize}
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/SAES}
+		\caption{Página del SAES Escom}
+		\label{saes}
+	\end{figure}
 	
+	\noindent Mediante las herramientas como JSOUP nos permite obtener información del HTML de cualquier página en la web, a excepción de la información generada con javascript pues las obtenciones de información son extraídas de manera estática y no de forma dinámica, o bien desde la lectura del HTML.\\
+	\noindent Las pruebas de este código fueron realizadas durante los meses de enero del 2019 y octubre del mismo año. Utilizando así el siguiente código.
+	\pagebreak
 	
-	%=========================================================
-	%                                                         Sistema Gestor de BD
-	%=========================================================
-	%\section{Sistema Gestor de Base de Datos}
-	%\noindent Realizando una investigación de los distintos gestores de Bases de Datos encontramos las siguientes caracteristicas:
-	%\begin{table}[htbp]
-	%	\begin{center}
-	%		\begin{tabular}{|l|p{35mm}|p{35mm}|p{35mm}|l}
-	%			\hline
-	%			Caracter\'isticas & Oracle & MySQL & SQL Server \\
-	%			\hline 
-	%			Interfaz & GUI, SQL & SQL & GUI, SQL \\ \hline
-	%			Lenguaje soportado & C, C++, C, Java, Ruby y Objective-C & C, C, C++, D, Java, Ruby y Objective C & Java, Ruby, Python, VB, .Net y PHP  \\ \hline
-	%			Sistema Operativo & Windows, GNU/Linux, Solaris, OS-X & Windows, GNU/Linux, OS-X, FreeBSD, Solaris & Windows \\ \hline
-	%			Licencia & Propietrio & Código Libre & Propietario \\ \hline
-	%		\end{tabular}
-	%		\caption{Tabla comparativa de lenguajes de BD.}
-	%		\label{tabla:sencilla}
-	%	\end{center}
-	%\end{table}
+	\noindent Por inicio tenemos que importar las librerías de JSOUP para hacer uso de los métodos que se presentarán a continuación, además de crear datos públicos para los métodos de las clases java para utilizarlos posteriormente.\\
+	\noindent Creamos la conexión con la página que queremos explorar y solicitar una respuesta de esta conexión realizada junto con las “cookies” generadas en esta respuesta, ya que estás nos darán pauta para mantenernos en la misma conexión con respecto a la solicitud de conexión hecha anteriormente. \\
 	
-	\section{iReport}
-	\noindent IReport. Es una herramienta visual que sirve para generar ficheros XML (plantillas de informes) utilizando la herramienta de generación de informes JasperReport.\\
-	\noindent Escrito en Java IReport provee a los usuarios de JasperReport una interfaz visual para construir reportes. También permite que los usuarios corrijan visualmente informes complejos con cartas, imágenes y subinformes. \\
-	Bibliotecas gráficas que emplea \\
-	\noindent Está además integrado con JFreeChart, una de la bibliotecas gráficas OpenSource más difundida para Java. Los datos para imprimir pueden ser recuperados por varios caminos incluso múltiples uniones JDBC, TableModels, JavaBeans, XML, etc. \\
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Codigo1}
+		\caption{Código desarrollado implementando el crawler.}
+		\label{codigo1}
+	\end{figure}
 	
-	\textbf{Características de IReport}
-	La lista siguiente describe algunas de las características importantes de IReport:
-	\begin{itemize}
-		\item 100 porciento escrito en Java y además OpenSource y gratuito.
-		\item Maneja el 98 porciento de las etiquetas de JasperReport.
-		\item Permite diseñar con sus propias herramientas: rectángulos, líneas, elipses, campos de los textfields, cartas, subreports (subreportes).
-		\item Soporta internacionalización nativamente.
-		\item Browser de la estructura del documento.
-		\item Recopilador y exportador integrados .
-		\item Soporta JDBC.
-		\item Soporta JavaBeans como orígenes de datos (éstos deben implementar la interface JRDataSource).
-		\item Incluye Wizard’s (asistentes) para crear automáticamente informes.
-		\item Tiene asistentes para generar los subreportes.
-		\item Tiene asistentes para las plantillas.
-		\item Facilidad de instalación.
-	\end{itemize}
-
-	\textbf{Requerimientos de instalación}
-	\begin{itemize}
-		\item Sun JDK 1.4 (SDK) o superior.
-		\item Acrobat 5.0 no es requerido, pero es fuertemente recomendado.
-		\item Si se desea conectar con una base de datos, se debe proporcionar el DriverJDBC correspondiente.
-		\item Usar la versión IReport-0.5.1 o superior.
-	\end{itemize}
-
-	\textbf{Librerias que utiliza}
-		\begin{itemize}
-			\item jasperreports-1.0.1.jar
-			\item commons-digester.jar
-			\item commons-beanutils.jar
-			\item commons-collections.jar
-			\item commons-logging.jar
-			\item itext-1.02b.jar
-			\item poi-2.0-final-20040126.jar
-		\end{itemize}
+	\noindent Lo siguiente es realizar la exploración de los elementos del HTML en una variable de tipo “Document” de la página solicitada donde buscaremos el elemento por ID del CAPTCHA del HTML y así crear una imagen válida que fuese creada por el servidor, extrayendo la ubicación de la imagen para colocarla en una respuesta de conexión con la ruta de la imagen obtenida en la variable “a” y generarla de manera local utilizando “FileOutputStream”, el método creado es de tipo “Document” por lo tanto su salida es del mismo tipo. 
+	\pagebreak
+	
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo2}
+		\caption{Continuación de la implementación del crawler.}
+		\label{codigo2}
+	\end{figure}
+	
+	\noindent Una vez realizado este método procedemos a explorar los campos de inserción que existen en el HTML, para ello hacemos otra búsqueda de elementos en el HTML y definimos los datos que contienen estos elementos para su posterior inserción y uso de ellos mediante una variable de tipo “HashMap<String,String>” (todos los campos son de tipo cadena).\\
+	
+	\noindent Ahora la realización del método “getData(HashMap<String,String> formFields)” utilizaremos como parámetros los elementos de inserción explorados anteriormente insertándolos en nuestro método “POST”. Creamos la conexión a donde se debe redirigir la información del inicio de sesión, insertando también las cookies almacenadas en la previa conexión de la obtención del HTML de la página del SAES.\\
+	
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo3}
+		\caption{Continuación implementación del crawler.}
+		\label{codigo3}
+	\end{figure}
+	\pagebreak
+	
+	\noindent Si los datos ingresados son correctos se realizará una respuesta de la ruta solicitada en el POST insertando las cookies correspondientes a la conexión para comprobar la sesión del usuario en la plataforma, seguido de un mapeo del nuevo HTML donde se realizará la búsqueda por ID del campo donde se encuentre el nombre del alumno y un mensaje donde solo habrá texto si el usuario que haya iniciado sesión no estuviera inscrito.\\
+	\noindent De lo anterior y siguiendo la condición de que el usuario que haya iniciado sesión esté o no inscrito dependerá si el texto buscado como “fail” sea nulo/vacío, en el caso de que no lo esté indicará que el alumno que haya iniciado sesión está “INSCRITO” indicando el nombre del alumno que corresponda a la boleta y usuario junto con un grupo al que pertenezca, en el caso de que “fail” no sea nulo/vacío se indicará que el alumno que corresponda a la boleta y usuario aparezca como “NO INSCRITO”. \\
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo4}
+		\caption{Continuación implementación del crawler.}
+		\label{codigo4}
+	\end{figure}
+	
+	\noindent Finalmente se crean 3 archivos donde se almacena la información del usuario que haya iniciado sesión donde se inserta su nombre completo (alumno.txt), su grupo al que esté inscrito (grupo.txt) y el código HTML de la página donde se obtuvo toda esta información (respoinse.html).
+	\pagebreak
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Codigo5}
+		\caption{Continuación de la implementación del crawler.}
+		\label{codigo5}
+	\end{figure}
+	
+	\noindent Una vez realizado esto necesitamos adjuntar estos métodos en 1 sola petición (o método) para realizar su ejecución e inserción de datos correspondientes a los que se necesitan.
+	Como se hace en el método “run()”. \\
+	
+	\noindent Creamos un método donde se adjunta en 1 petición la ejecución de todos los métodos anteriores, y haremos la petición de los datos del inicio de sesión del SAES usando “readLine()” para hacer la lectura de estas seguido de la asignación de los campos que se escogen para insertar estas cadenas y reenviarlos al método “getData” donde los datos insertados serán los parámetros que servirán para la correcta funcionalidad del método “getData” y finalmente iniciar sesión.\\
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=8cm]{Imagenes/Crawler/Codigo6}
+		\caption{Continuación implementación crawler.}
+		\label{codigo6}
+	\end{figure}
+	\pagebreak
+	\noindent Cabe mencionar que dicha plataforma está desarrollada con ASP.NET con un plugin detector de “bots” llamado “Captcha BotDetect”, donde desde el servidor se realiza la generación de credenciales correspondientes a la imagen que se muestre en la página como la conocemos.\\
+	\textbf{“href="BotDetectCaptcha.ashx?get=layoutStyleSheet" ”}\\
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/ASP2}
+		\caption{Inspección de estructura del SAES.}
+		\label{asp2}
+	\end{figure}
+	
+	\noindent Las peticiones de inicio de sesión se realizan directo al servidor y el servidor responde con un javascript donde redirecciona a la vista correspondiente si las credenciales de usuario y clave captcha son las correctas de acuerdo a la sesión de página en la que se encuentra.\\
+	\textbf{“action="Default.aspx?ReturnUrl=\%2fAlumnos\%2fcambia\_clave.aspx" onsubmit="javascript:return WebForm\_OnSubmit();" ”}
+	
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/ASP1}
+		\caption{Inspección de estructura del SAES.}
+		\label{asp1}
+	\end{figure}
+	\noindent Estos cambios se identificaron el día 15 de octubre del 2019.
+	\pagebreak
+	
+	\textbf{POR EJEMPLO: CON USUARIO NO INSCRITO}\\
+	\noindent Se inserta previamente la boleta y contraseña del alumno del SAES ESCOM.
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=5cm]{Imagenes/Crawler/ImagenloginNoinscrito}
+		\caption{Captcha para alumno no inscrito.}
+		\label{imagenloginnoinscrito}
+	\end{figure}
+	
+	Se ingresa la clave captcha mostrada en la imagen “KJU”
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=5cm]{Imagenes/Crawler/Datosloginnoinscrito}
+		\caption{Se ingresan los datos en el crawler.}
+		\label{datosloginnoinscrito}
+	\end{figure}
+	\noindent Responde de acuerdo a la inscripción del alumno, para este caso el alumno NO ESTÁ INSCRITO.
+	\pagebreak
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Noinscrito}
+		\caption{Respuesta del crawler.}
+		\label{noinscrito}
+	\end{figure}
+	
+	\noindent Se muestran las cadenas correspondientes a la extracción de información para validar que el alumno en cuestión esté inscrito o no lo esté.\\
+	
+	\textbf{POR EJEMPLO: CON USUARIO INSCRITO}\\
+	\noindent Se inserta previamente la boleta y contraseña del alumno del SAES ESCOM.
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Imagenlogininscrito}
+		\caption{Captcha para el alumno inscrito.}
+		\label{imagenlogininscrito}
+	\end{figure}
+	\noindent Se ingresa la clave captcha mostrada en la imagen “MDJ”
+	\pagebreak
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Datoslogininscrito}
+		\caption{Se registran ingresan datos al crawler.}
+		\label{datoslogininscrito}
+	\end{figure}
+	
+	\noindent Responde de acuerdo a la inscripción del alumno, para este caso el alumno ESTÁ INSCRITO.
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Logininscrito}
+		\caption{Respuesta del crawler.}
+		\label{logininscrito}
+	\end{figure}
+	
+	\begin{figure} [hbt!]
+		\centering
+		\includegraphics[width=10cm, height=6cm]{Imagenes/Crawler/Infologininscrito}
+		\caption{Información del alumno inscrito.}
+		\label{infologininscrito}
+	\end{figure}
+	\noindent Se muestran las cadenas correspondientes a la extracción de información para validar que el alumno en cuestión esté inscrito o no lo esté.
 	
 	
 	%=========================================================
@@ -285,10 +219,10 @@
 				Licencia & Propietrio & Código Libre & Propietario \\ \hline
 			\end{tabular}
 			\caption{Tabla comparativa de lenguajes de BD.}
-			\label{tabla:sencilla}
+			\label{tablaServidor}
 		\end{center}
 	\end{table}
-	\pagebreak
+	
 	
 	%=========================================================
 	%                                                         Servidor
@@ -298,7 +232,8 @@
 	\noindent Para establecer las caracteristicas de nuestro servidor debemos conocer parte de sus componentes y que operabilidad tendrá dedicada.
 	Empezando con los procesadores dedicados para equipos de servidores, se recomienda usar Intel Xeon (cualquier versión), por ejemplo: los servidores con Intel Xeon E5 v3 pueden tener hasta 36 núcleos y se encuentran entre los pocos procesadores que son compatibles con la nueva versión DDR4 de RAM, que utiliza un consumo de energía muy reducido y brinda una excelente velocidad de transferencia de datos.\cite{serv}
 	
-	Tomando en cuenta las recomendaciones para armar un buen servidor se tomaron algunas caracteristicas de componentes que pueden ser accesibles para montar el proyecto. \cite{serv}\cite{servi}
+	\noindent Tomando en cuenta las recomendaciones para armar un buen servidor se tomaron algunas caracteristicas de componentes que pueden ser accesibles para montar el proyecto. \cite{serv}\cite{servi}
+	
 	\begin{table}[htbp]
 		\begin{center}
 			\begin{tabular}{|l|l|}
@@ -331,17 +266,18 @@
 			\caption{Tabla de especificaciones del servidor.}
 		\end{center}
 	\end{table}
-Suponiendo el caso de que por día se hagan 1000 visitas diarias donde se tienen 6 páginas por visita que además por página consume 100kb.
+\pagebreak
+\noindent Suponiendo el caso de que por día se hagan 1000 visitas diarias donde se tienen 6 páginas por visita que además por página consume 100kb.
 
-En condiciones normales, una web envía más datos de los que recibe, por lo cual, hemos de contar con los datos enviados.
+\noindent En condiciones normales, una web envía más datos de los que recibe, por lo cual, hemos de contar con los datos enviados.
 \\
-Podremos calcular la transferencia de datos con la siguiente formula\\
+\noindent Podremos calcular la transferencia de datos con la siguiente formula\\
 
 (días por mes) x (visitas diarias) x (páginas por visita) x (volumen por página) x 1,25\\
 
-En cuestión de la memoria RAM está esta pensada de manera que soporte las consultas realizadas por los usuarios en la aplicación, es bien dicho que entre más RAM el servidor tendrá mejor rendimiento \cite{servi}.
+\noindent En cuestión de la memoria RAM está esta pensada de manera que soporte las consultas realizadas por los usuarios en la aplicación, es bien dicho que entre más RAM el servidor tendrá mejor rendimiento \cite{servi}.
 
-O bien Tomando como caso la capacidad del disco duro se considera que el almacenamiento no se saturará hasta pasado 1 año, puesto que el uso de memoria de almacenamiento de datos creados por la aplicación no serán concurrentes, con el proposito de almacenar la aplicación y los archivos de base de datos, cuya base de datos incrementa de acuerdo al número de usuarios que hagan uso de ella (unicamente los que estén inscritos, o usuarios coordinador).\\
+\noindent O bien Tomando como caso la capacidad del disco duro se considera que el almacenamiento no se saturará hasta pasado 1 año, puesto que el uso de memoria de almacenamiento de datos creados por la aplicación no serán concurrentes, con el proposito de almacenar la aplicación y los archivos de base de datos, cuya base de datos incrementa de acuerdo al número de usuarios que hagan uso de ella (unicamente los que estén inscritos, o usuarios coordinador).\\
 
 
 %=========================================================
@@ -359,6 +295,7 @@ El Coordinador de la Unidad Académica registrará a los entrenadores de las act
 \noindent La aplicación RIDESCOM permitirá a los alumnos que estén inscritos en el periodo actual, inscribirse en un evento interpolitécnico, consultar los eventos registrados, consultar calendario de eventos. 
 El sistema cuenta con una interfaz que nos permite visualizar las diferentes opciones ofrecidas por el mismo. Para acceder al anterior el usuario debe de tener un usuario y contraseña. Dicho usuario y contraseña, será con el que ingresa al sistema del SAES. 
 Así mismo, habrá “usuarios encargados”, quienes se encargan de controlar y supervisar el uso de éste ante pequeñas porciones de estudiantes (grupos de alumnos). Ahora dichos encargados hay dos tipos el Jefe de Fomento Deportivo, a este se le permitirá crear eventos deportivos, registrar eventos deportivos y restablecer contraseña a los perfiles de los coordinadores. El segundo tipo de encargado es el Coordinador de una Unidad Académica, este podrá registrar los resultados de los participantes en el sistema para poder ser visualizados en la vista principal, podrá generar un reporte de los alumnos registrados durante el periodo que se haya especificado y registrar a los entrenadores que laboran dentro de la Unidad Académica a la que atienda, a continuación se describirán las reglas para cada uno de los actores que se involucran.
+\pagebreak
 
 
 %=========================================================
@@ -375,7 +312,6 @@ Una vez dentro de la página de RIDESCOM se le mostrarán las opciones que tiene
 \noindent Contará con un apartado en el que visualizará los resultados obtenidos por los participantes estos estarán disponibles hasta que concluyan los eventos interpolitécnios y para el JFD solo será de consulta.
 
 \noindent Para la vista de Pruebas, se mostrará una tabla en la que podrá ver las pruebas registradas, en caso de no tener datos que mostrar se mostrará un mensaje en el que se indique que no hay datos por mostrar. Se podrá agregar pruebas, para ello deberá de cumplir con los campos que son requisitos. De igual manera tendrá campos que son requisito para poder guardar los datos. Una vez guardado las Pruebas podrá editar o eliminar la información.
-\pagebreak
 
 %=========================================================
 %                                             Reglas de Negocio del Coord
@@ -385,9 +321,7 @@ Una vez dentro de la página de RIDESCOM se le mostrarán las opciones que tiene
 
 \noindent Una vez dentro de la página de RIDESCOM se le mostrarán las opciones que tiene permitidas, tales como: Constancias, Calendario, Resultados, Consulta Inscritos, DIfundir Evento y Entrenadores. Las vistas antes mencionadas exceptuando Resultados y Difundir Evento, serán vistas de solo lectura.\\
 
-\noindent Para la vista de Constancias el Coordinador de la Unidad Académica podrá consultar si el alumno participó en un evento para que posteriormente, él pueda comenzar el trámite correspondiente para la generación de la constancia. Será solo vista de consulta/lectura.\\
-
-\noindent Para la vista de Calendario, se mostrará en la página principal del Coordinador una tabla con los datos que le corresponden, en caso de no tener información se mostrará el mensaje de que no existen datos. Esta vista sólo será de lectura.\\
+\noindent Para la vista de Constancias el Coordinador de la Unidad Académica podrá consultar si el alumno participó en un evento para que posteriormente, él pueda comenzar el trámite correspondiente para la generación de la constancia. Será solo vista de consulta/lectura. Para la vista de Calendario, se mostrará en la página principal del Coordinador una tabla con los datos que le corresponden, en caso de no tener información se mostrará el mensaje de que no existen datos. Esta vista sólo será de lectura.\\
 
 \noindent Para la vista de Resultados el Coordinador de la Unidad Académica podrá visualizar la información en una tabla dentro de la página principal, en caso de no tener datos se mostrará el mensaje de que no existen datos Para ingresar los resultados obtenidos de los participantes, como el tiempo que se obtuvo, el lugar, etc., deberá de llenar los campos que son requisitos, sino se completan los campos no podrá registrarse el evento. Una vez que se tengan los datos registrados podrá editar o eliminar estos.\\
 
@@ -486,6 +420,7 @@ Para la vista de Eventos Inscritos, mostrará el o los eventos a los que se a re
 		\label{RNA}
 	\end{center}
 \end{table}
+\pagebreak
 
 %=========================================================
 %                                                         Requisitos de interaccion con el usuario
@@ -526,10 +461,11 @@ En la tabla mostrada a continuación, se muestrán los requisitos funcionales de
 			\hline
 			Id & Nombre & Descripción & Prioridad \\
 			\hline 
-			RF1 & Validación de datos de los participantes. & La aplicación contará con un mecanismo de comprobación de estado académico (inscrito). & ALTA \\ \hline
-			RF2 & Historial de participante. & Para tener seguimiento del participante durante su trayectoria académica & MEDIA  \\ \hline
-			RF3 & Comunicación con la red social FACEBOOK &Habrá comunicación con la red social FACEBOOK para la publicación de eventos registrados en la aplicación.  & MEDIO \\ \hline
-			RF4 & Creación de perfiles. & Se podrá asignar un perfil a un usuario.& MEDIA \\ \hline
+			RF1 & Conexión a internet. & La aplicación deberá estar siempre conectada a internet & ALTA \\ \hline
+			RF2 & Validación de datos de los participantes. & La aplicación contará con un mecanismo de comprobación de estado académico (inscrito). & ALTA \\ \hline
+			RF3 & Historial de participante. & Para tener seguimiento del participante durante su trayectoria académica & MEDIA  \\ \hline
+			RF4 & Comunicación con la red social FACEBOOK &Habrá comunicación con la red social FACEBOOK para la publicación de eventos registrados en la aplicación.  & MEDIO \\ \hline
+			RF5 & Creación de perfiles. & Se podrá asignar un perfil a un usuario.& MEDIA \\ \hline
 		\end{tabular}
 		\pagebreak
 		\caption{Requerimientos funcionales de la aplicación web.}
@@ -557,7 +493,7 @@ En la tabla mostrada a continuación se muestran los requisitos que no afectan a
 		\label{tabla:sencilla}
 	\end{center}
 \end{table}
-
+\pagebreak
 
 %=========================================================
 %                                    Diagrama de procesos
@@ -571,153 +507,6 @@ Una vez que realizada la comprobación se le notifica al alumno el estatus final
 El coordinador de la unidad académica realiza un listado con los alumnos que participaran en los eventos de acuerdo al ciclo escolar en curso para que sea enviado al Departamento de Fomento Deportivo.
 Finalmente el alumno espera a que sea la fecha del evento para hacer su participación. Una vez concluido estos, se procede a pagar el arbitraje que se contrata para llevar control de las actividades deportivas.\\
 \noindent Una vez pagado el arbitraje se pasa a hacer el llenado de los resultados obtenidos para cada uno de los participantes para así ser publicados y pueda ser visualizados por la comunidad estudiantil.
-
-
-%=========================================================
-%                                            Casos de Uso
-%=========================================================
-\section{Casos de Uso}
-En esta sección se describe cada uno de los procesos que se debe de tener la aplicación web tomando en cuenta las reglas de negocio, los requisitos funcionales y los requisitos no funcionales, así como la problemática que ataca el proyecto.
-%		\subsection{CU1 Iniciar Sesión Jefe de Fomento Deportivo}
-%		\noindent En este caso de uso describe el funcionamiento del módulo Iniciar sesión para el Jefe de Fomento Deportivo. Se describe paso a paso el proceso a seguir, asi como los posibles errores que pueden existir junto con los mensajes correspondientes para cada caso. Para mas detalles consulta el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU1_Iniciarsesion}. \\
-\input{CU1.tex}
-
-%		\subsection{CU2 Iniciar Sesión Coordinador de Unidad Académica}
-%		\noindent En este caso de uso describe el funcionamiento del módulo Iniciar sesión para el Coordinador de Unidad Académica. Se describe paso a paso el proceso a seguir, asi como los posibles errores que pueden existir junto con los mensajes correspondientes para cada caso. Para mas detalles consulta el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU2_Iniciarsesion}. \\
-\input{CU2.tex}
-
-%		\subsection{CU3 Iniciar Sesión Alumno}
-%		\noindent En este caso de uso describe el funcionamiento del módulo Iniciar sesión para el Alumno. Se describe paso a paso el proceso a seguir, asi como los posibles errores que pueden existir junto con los mensajes correspondientes para cada caso. Para mas detalles consulta el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU3_Iniciarsesion}.\\
-\input{CU3.tex}
-
-%		\subsection{CU4 Recuperar contraseña para el alumno}
-%		\noindent Este caso de uso se define para que el alumno pueda recuperar la contraseña, sin embargo dado que el alumno ingresa a la aplicación web con el usuario y contraseña que utiliza al accesar al SAES, será re dirigido a la antes mencionada para que solicite su nueva contraseña. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU4_Recuperaalum}. \\ \pagebreak
-\input{CU4.tex}
-
-%		\subsection{CU5 Recuperar contraseña para el coordinador}
-%		\noindent Este caso de uso sirve para que el coordinador de unidad académica solicite el restablecer la contraseña. Sin embargo, para que esta sea restablecida el coordinador debe solicitarla mediante un oficio o escrito para que se tenga la certeza de que este es quien realmente hace la solicitud. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU5_Recupercoord}.\\ 
-\input{CU5.tex}
-
-%		\subsection{CU6 Consulta calendario de eventos}
-%		\noindent Este caso de uso tiene como finalidad el mostrar a los usuarios dentro de la aplicación web, los eventos interpolitécnicos deportivos disponibles para registrase. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU6_evento}. \\
-\input{CU6.tex}
-
-%		\subsection{CU7 Alta de eventos deportivos}
-%		\noindent Este caso de uso tiene como finalidad el agregar un nuevo evento deportivo, solicitando los datos indispensables para que sea de fácil entender y ubicación. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU7_evento}.\\
-\input{CU7.tex}
-
-%		\subsection{CU8 Editar datos de eventos deportivos}
-%		\noindent Este caso de uso sirve para  editar los datos de un evento previamente registrado. Esto se realiza ya que usualmente cambian durante el proceso algunos datos de estos. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU8_evento}. \\
-\input{CU8.tex}
-
-%		\subsection{CU9 Eliminar datos de eventos deportivos}
-%		\noindent Este caso de uso sirve para eliminar un evento interpolitécnico deportivo, con la finalidad de que si se llega a cancelar un evento interpolitécnico deportivo este pueda ser elimnidao y no existan errores en un futuro. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU9_evento}.\\
-\input{CU9.tex}
-
-%		\subsection{CU10 Consulta coordinadores de unidad académica registrados}
-%		\noindent Este caso de uso tiene como finalidad consultar los coordinadores registrados en la aplicación web, a su vez se puede visualizar los datos principales de cada uno de ellos, que a su vez servirán para proporcionar un usuario y contraseña que le servirán para ingresar a la página. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU10_evento}.
-%		\\
-\input{CU10.tex}
-
-%		\subsection{CU11 Agregar coordinadores de unidad académica registrados}
-%		\noindent Este caso de uso tiene como finalidad agregar a un coordinador de una unidad académica, se llenará un formulario el cual solicita datos personales, así como un usuario y contraseña para este. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU11_evento}.\\
-\input{CU11.tex}
-
-%		\subsection{CU12 Editar datos del coordinador de unidad académica}
-%		\noindent Este caso de uso tiene como finalidad editar los datos registrados de un coordinador, cabe destacar que todos los campos deben estar completos para poder completar el cambio. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU12_evento}.\\
-\input{CU12.tex}
-
-%		\subsection{CU13 Eliminar datos del coordinador de unidad académica}
-%		\noindent Este caso de uso tiene como finalidad eliminar los datos y cuenta de un coordinador de unidad académica, esto con la finalidad de no guardar información innecesaria haciendo a la aplicación web lenta. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU13_evento}.\\
-\input{CU13.tex}
-
-%		\subsection{CU14 Consulta resultados}
-%		\noindent Este caso de uso tiene como finalidad que los actores involucrados en la aplicación web, puedan visualizar los resultados obtenidos por los participantes en los distintos eventos. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU14_evento}.\\
-\input{CU14.tex}
-
-%		\subsection{CU15 Consulta pruebas}
-%		\noindent Este caso de uso tiene como finalidad que los actores involucrados en la aplicación web, puedan consultar las pruebas registradas, la descripción, el deporte al que están asociados y la sede donde se llevará a cabo. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU15_evento}.\\
-\input{CU15.tex}
-
-%		\subsection{CU16 Agregar pruebas}
-%		\noindent Este caso de uso tiene como finalidad que agregar una prueba a la aplicación web, estás serán especialmente para cada tipo de deporte. Se solicitan datos esenciales para el entendimiento de los actores. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU16_evento}.
-\\
-\input{CU16.tex}
-
-%		\subsection{CU17 Editar datos de las pruebas}
-%		\noindent Este caso de uso tiene como finalidad editar los datos de una prueba registrada, para completar el cambio deben de estar completados todos los campos. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU17_evento}.\\
-\input{CU17.tex}
-
-%		\subsection{CU18 Eliminar datos de las pruebas}
-%		\noindent Este caso de uso tiene como finalidad eliminar datos de una prueba para evitar considerar pruebas de más y esto repercuta en el dinero invertido para los eventos. Para eliminar los datos se muestra previamente una ventana con los datos seleccionados para confirmar la acción solicitada. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU18_evento}.\\
-\input{CU18.tex}
-
-%		\subsection{CU19 Consultar deportes}
-%		\noindent Este caso de uso tiene como finalidad que el Jefe de Fomento Deportivo, visualice los deportes registrados en la aplicación web. Estos servirán para asignar las pruebas y eventos que se realizarán. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU19_evento}.\\
-\input{CU19.tex}
-
-%		\subsection{CU20 Agregar deportes}
-%		\noindent Este caso de uso tiene como finalidad agregar nuevos deportes a la aplicación, todos los campos  deben ser completados para completar la acción. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU20_evento}.\\
-\input{CU20.tex}
-
-%		\subsection{CU21 Eliminar deporte}
-%		\noindent Este caso de uso tiene como finalidad eliminar un deporte, el cual haya dejado de practicarse en el Instituto Politécnico Nacional. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU21_evento}.\\
-\input{CU21.tex}
-
-%		\subsection{CU22 Agregar resultados}
-%		\noindent Este caso tiene como finalidad que el coordinador de unidad académica agregue los resultados obtenidos por los participantes. A lo cual, primero buscará al alumno por boleta de tal manera que se confirme los datos del participante, posteriormente agregará los resultados obtenidos llenando todos los campos. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU22_evento}.\\
-\input{CU22.tex}
-
-%		\subsection{CU23 Editar resultados}
-%		\noindent Este caso tiene como finalidad editar datos de los resultados obtenidos por un participante, esto con la intención de facilitar la modificación de datos en caso de error de captura o algún otro suceso. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU23_evento}.
-\\
-\input{CU23.tex}
-
-%		\subsection{CU24 Eliminar resultados}
-%		\noindent Este caso de uso tiene como finalidad eliminar los resultados registrados de un alumno, esto con la finalidad de tener duplicidad de información o datos erróneos. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU24_evento}. \\
-\input{CU24.tex}
-
-%		\subsection{CU25 Consulta entrenadores}
-%		\noindent Este caso de uso tiene como finalidad consultar los entrenadores que laboran en la unidad académica de acuerdo al coordinador en sesión, es decir, que el coordinador solo podrá visualizar los entrenadores que laboran en la unidad académica de la que este es responsable. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU25_evento}.\\
-\input{CU25.tex}
-
-%		\subsection{CU26 Agregar entrenador}
-%		\noindent Este caso de uso tiene como finalidad agregar un entrenador a la aplicación web, esto servirá para que los actores participantes tengan la información necesaria de estos. Los campos solicitados deben de estar completados todos para que posteriormente sean asociados a un deporte. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU26_evento}.\\
-\input{CU26.tex}
-
-%		\subsection{CU27 Editar entrenador}
-%		\noindent Este caso de uso tiene como finalidad el editar los datos registrados de un entrenador, se debe de tener en cuenta que para completar la acción se debe de tener completos los campos solicitados. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU27_evento}.\\
-\input{CU27.tex}
-
-%		\subsection{CU28 Eliminar entrenador}
-%		\noindent Este caso de uso tiene como finalidad eliminar los datos registrados de un entrenador de tal manera que no se tengan datos de más y exista confusión de datos. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU28_evento}.\\
-\input{CU28.tex}
-
-%		\subsection{CU29 Difusión de evento}
-%		\noindent Este caso de uso tiene como finalidad el compartir los eventos creados en la aplicación web en la red social Facebook, de tal manera que tenga mayor alcance para los alumnos. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU29_evento}.\\
-\input{CU29.tex}
-
-%		\subsection{CU30 Consulta inscritos}
-%		\noindent Este caso de uso tiene como finalidad que el alumno pueda visualizar los evento interpolitécnicos a los que se ha registrado y así esté al tanto de los eventos y sus fechas. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU30_evento}.\\
-\input{CU30.tex}
-
-%		\subsection{CU31 Consulta para expedir constancias}
-%		\noindent Este caso de uso tiene como finalidad que el coordinador de unidad académica pueda consultar el número de alumnos que se han inscrito en un evento interpolitécnico. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU31_evento}.\\
-\input{CU31.tex}
-
-%		\subsection{CU32 Consulta eventos inscritos}
-%		\noindent Este caso de uso tiene como finalidad que el coordinador de unidad académica pueda consultar si el alumno que quiere solicitar una constancia, realmente haya participado en el o los eventos para que se le pueda proporcionar la constancia. Para ello deberá buscar al alumno por su número de boleta o el ciclo escolar en el que realizo la participación. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU32_evento}.\\
-\input{CU32.tex}
-
-%		\subsection{CU33 Consulta historial}
-%		\noindent Este caso de uso tiene como finalidad que el alumno pueda ver los eventos interpolitécnicos deportivos en los que ha participado a lo largo de su trayectoria académica. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU33_evento}.\\
-\input{CU33.tex}
-
-%		\subsection{CU34 Consulta cédula de inscripción}
-%		\noindent Este caso de uso tiene como finalidad que el coordinador de unidad académica pueda generar un archivo en el cual estén todos los alumnos registrados durante el periodo de registro y así se pueda tener control y conocimiento anticipado del número de personas que participarán en el ciclo escolar en curso. Para más detalles consulte el apartado Anexos en la sección \ref{CasosdeUso} haciendo referencia al CU \ref{CU34_evento}.\\
-\input{CU34.tex}
-
-
 
 
 %=========================================================
