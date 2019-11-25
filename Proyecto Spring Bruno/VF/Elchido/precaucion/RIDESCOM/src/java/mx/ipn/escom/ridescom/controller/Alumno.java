@@ -43,6 +43,7 @@ public class Alumno {
     @RequestMapping(value="Alumno.html", method=RequestMethod.GET)
     public ModelAndView Alumno(HttpServletRequest re){
         HttpSession session = re.getSession();
+        mav.clear();
         String ur="select Roles_ID_Roles from usuario where Nombre_U='"+session.getAttribute("Nombre_U")+"';";
          try{
             ct=cn.Connect();
@@ -78,7 +79,7 @@ public class Alumno {
         p=this.rid.queryForList(sqlp);
             if(p!=null)
             mav.addObject("alu",p);
-        String sql1="SELECT * from (select Evento_ID, Nombre_Evento, Descripcion, DATE_FORMAT(Fecha_Inicio_Registro,'%d-%m-%Y') AS FIR, DATE_FORMAT(Fecha_Fin_Registro,'%d-%m-%Y') AS FFR, DATE_FORMAT(Fecha_Evento, '%d-%m-%Y') AS FE, Ciclo_Escolar, Disciplina, Nombre_S, Municipio, Estado, Prueba, Rama \n" +
+        String sql1="SELECT * from (select Evento_ID, Nombre_Evento, Descripcion, concat(Calle,', ',Numero,', ',Colonia,', ',CP,', ',Estado,', ',Municipio)as direccion, DATE_FORMAT(Fecha_Inicio_Registro,'%d-%m-%Y') AS FIR, DATE_FORMAT(Fecha_Fin_Registro,'%d-%m-%Y') AS FFR, DATE_FORMAT(Fecha_Evento, '%d-%m-%Y') AS FE, Ciclo_Escolar, Disciplina, Nombre_S, Municipio, Estado, Prueba, Rama \n" +
                         "from Evento e " +
                     "inner join (Ciclo ci, Pruebas pr, Act_Deportiva d, Sede s, Municipio m, Estados edo, Tipo_Pruebas tp) " +
 "                    on (e.Ciclo_ID_Ciclo=ci.ID_Ciclo " +
@@ -89,7 +90,7 @@ public class Alumno {
 "                    AND s.Municipio_ID_Municipio=m.ID_Municipio " +
 "                    AND s.Municipio_Estados_ID_estado=m.Estados_ID_estado " +
 "                    AND m.Estados_ID_estado=edo.ID_estado) " +
-"                    where Fecha_evento >= left(now(),10) order by FE ASC) as eve left join (inscripcion i) on (i.Evento_Evento_ID=eve.Evento_ID)";
+"                    where Fecha_evento >= left(now(),10) order by FE ASC) as eve left join (inscripcion i) on (i.Evento_Evento_ID=eve.Evento_ID) order by Disciplina";
             dat=this.rid.queryForList(sql1);
             
             if(dat!=null)

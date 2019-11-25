@@ -376,14 +376,14 @@
 			</p>
 			</div>
 		</div>
-                ${mjs}
+                
 		<!-- Formulario --> 
                 <form class="needs-validation" novalidate method="POST">
                     <c:forEach var="r" items="${alu}">
 			<div class="form-row">
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip01"><i class="fas fa-id-card"></i> Boleta </label>
-                                    <input name="Boleta" type="text" id="validationTooltip01" class="form-control" value="${r.ID_Alumno}" maxlength="10" required/>
+                                    <input name="Boleta" type="text" id="validationTooltip01" class="form-control" value="${r.ID_Alumno}" maxlength="10" readonly="On" required/>
 				</div>
 			</div>
                 
@@ -425,7 +425,7 @@
 			    </div>
                     </c:forEach>
 			<div>
-                        <label for="validationTooltip05"> Prueba </label>
+                        <label for="validationTooltip05"> Prueba </label><span style="color: #ff0000">*</span>
                         <div class="col-md-3 mb-3">
                                 <select name="Ev_ID" id="selectsport" class="custom-select" style="width: 380px;" required/>
 					  <option value="">Seleccione prueba...</option>
@@ -434,13 +434,13 @@
                                           </c1:forEach>
                                 </select>
                             <div class="invalid-feedback">
-                                Ingresa un deporte
+                                Ingresa una Prueba
                             </div>
                         </div>
                     </div>
                
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip09"><i class="fas fa-trophy"></i> Posición </label>
+				    <label for="validationTooltip09"><i class="fas fa-trophy"></i> Posición </label><span style="color: #ff0000">*</span>
                                     <input name="Posicion" type="text" id="validationTooltip09" class="form-control" placeholder="Lugar_Obtenido" maxlength="10" required/>
 				    <div class="invalid-feedback">
                                         Ingresa una posición
@@ -448,7 +448,7 @@
 			    </div>
 			    
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip11"><i class="fas fa-stopwatch"></i> Marca </label>
+				    <label for="validationTooltip11"><i class="fas fa-stopwatch"></i> Marca </label><span style="color: #ff0000">*</span>
                                     <input name="Marca" type="text" id="validationTooltip11" class="form-control" placeholder="Marca" maxlength="10" required/>
 				    <div class="invalid-feedback">
                                         Ingresa una marca

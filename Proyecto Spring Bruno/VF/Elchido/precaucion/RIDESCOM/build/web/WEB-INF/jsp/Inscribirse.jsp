@@ -368,11 +368,8 @@
 			<h1> Registra un evento interpolitécnico deportivo </h1>
 		</div>
 
-		<div class="col-12 ">
-			<div id="noti" class="alert alert-warning col-4" role="alert">
-			  <p> Solo se muestran los eventos disponibles. </p>
-			</div>
-		</div>
+                <h4><b>Datos personales</b></h4>
+                <hr>
                 <div class="form-row">
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Boleta </label>
@@ -431,13 +428,6 @@
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Lugar de nacimiento </label>
-				    <input type="text" class="form-control" id="validationTooltip02" value="${lugar}" disabled/>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
-			    </div>
-			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Sexo </label>
 				    <input type="text" class="form-control" id="validationTooltip02" value="${per.Sexo}" disabled/>
 				    <div class="valid-tooltip">
@@ -453,11 +443,14 @@
 			    </div>
                 </c:forEach>
 		<!-- Formulario --> 
-                <form class="needs-validation" novalidate method="POST">
+                <form style="width: 100%; height: auto;" class="needs-validation" novalidate method="POST">
                     <!-- Material checked -->
+                    <h4><b>Eventos disponibles</b></h4>
+                    <hr>
                     <p>
-                    <h4> Selecciona el Evento en el que quieres participar: </h4>
-                    ${mjs}
+                    <h5> Selecciona el evento en el que quieres participar: </h5>
+                    <p> Solo se muestran los eventos disponibles. </p>
+                    ${mjs1}
                     </p>
                     <div class="form-row">
                         
@@ -477,7 +470,7 @@
 "                    AND s.Municipio_ID_Municipio=m.ID_Municipio " +
 "                    AND s.Municipio_Estados_ID_estado=m.Estados_ID_estado " +
 "                    AND m.Estados_ID_estado=edo.ID_estado) " +
-"                    where Fecha_evento >= left(now(),10) order by FE ASC) as eve left join (inscripcion i) on (i.Evento_Evento_ID=eve.Evento_ID)";
+"                    where Fecha_Fin_Registro >= left(now(),10) order by FE ASC) as eve left join (inscripcion i) on (i.Evento_Evento_ID=eve.Evento_ID)";
                                                             Class.forName("com.mysql.jdbc.Driver").newInstance();
                                                             Connect conn = new Connect();
                                                             Statement stm=conn.Connect().createStatement();

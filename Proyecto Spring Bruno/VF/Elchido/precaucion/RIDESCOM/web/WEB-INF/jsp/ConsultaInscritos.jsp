@@ -47,7 +47,12 @@
             * Autor: Rosales González Carlos Andrés *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
-
+table th {
+                      text-align: center;
+                    }
+                    table tr {
+                      text-align: center;
+                    }
             .clearfix {
                 float: none;
                 clear: both;
@@ -361,14 +366,6 @@
             <h1> Consulta tus inscripciones </h1>
         </div>
 
-        <div class="col-12 ">
-            <div id="noti" class="alert alert-light" role="alert">
-                <p> 
-                    Selecciona la unidad académica, el deporte y el ciclo escolar en el que participó.
-                </p>
-            </div>
-        </div>
-
         <!-- Formulario --> 
             <div class="col-row-8">
                                     <div class="flexsearch">
@@ -382,40 +379,73 @@
                                     </div>
                                 </div>
             <div class="clearfix" >&nbsp;</div>
-        <div class="clearfix" >&nbsp;</div>
 
         <div class="container">
             <div class="table-responsive">
+                <h2> Inscripciones pasadas</h2>
                 <table class="table table-hover">
                     <thead>
                         <tr>
+                            <th scope="col"> Deporte </th>
+                            <th scope="col"> Prueba </th>
                             <th scope="col"> Nombre </th>
                             <th scope="col"> Boleta </th>
-                            <th scope="col"> Deporte </th>
                             <th scope="col"> Evento </th>
                             <th scope="col"> Ciclo Escolar </th>
+                            
                         </tr>
                     </thead>
                     <tbody id="datos">
                         <c:forEach var="alui" items="${resu}">
                         <tr>
+                            <td>${alui.Disciplina}</td>
+                            <td>${alui.Prueba}</td>
                             <td>${alui.Nombre}</td>
                             <td>${alui.ID_Alumno}</td>
-                            <td>${alui.Disciplina}</td>
                             <td>${alui.Nombre_Evento}</td>
                             <td>${alui.Ciclo_Escolar}</td>
-                            
-<!--                            <td> 
-                                <a href="Inscripciones/BorrarInscripcion.html?Ev=${alui.Evento_Evento_ID}" style='text-decoration:none;color: red;'> 
-                                <i class="far fa-trash-alt"></i>  
-                                </a> 
-                            </td>-->
                             
                         </tr>
                         </c:forEach>
                     </tbody>
                 </table>
-                <a href="../Alumno.html" class="btn btn-light float-right login_btn"> Volver </a>
+            </div>
+            <div class="table-responsive">
+                <h2> Inscripciones actuales</h2>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Deporte </th>
+                            <th scope="col"> Prueba </th>
+                            <th scope="col"> Nombre </th>
+                            <th scope="col"> Boleta </th>
+                            <th scope="col"> Evento </th>
+                            <th scope="col"> Ciclo Escolar </th>
+                            <th scope="col"> Cancelar Inscripción </th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <c:forEach var="alu1" items="${resu1}">
+                        <tr>
+                            <td>${alu1.Disciplina}</td>
+                            <td>${alu1.Prueba}</td>
+                            <td>${alu1.Nombre}</td>
+                            <td>${alu1.ID_Alumno}</td>
+                            <td>${alu1.Nombre_Evento}</td>
+                            <td>${alu1.Ciclo_Escolar}</td>
+                            
+                            <td> 
+                                <a href="Inscripciones/BorrarInscripcion.html?EvID=${alu1.Evento_Evento_ID}" class="borra" style='text-decoration:none;color: red;'> 
+                                <i class="far fa-trash-alt"></i>  
+                                </a> 
+                            </td>
+                            
+                        </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+                
+                <a href="../Alumno.html" class="btn btn-light float-right login_btn btn-outline-danger "> Volver </a>
             </div>	
         </div>
     </section>
@@ -452,5 +482,14 @@ $('#search').keyup(function() {
     }).hide();
 });
 
+</script>
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('borra');
+    var confirmIt = function (e) {
+    if (!confirm('¿Estás seguro de borrar esta inscripción?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
 </script>
 </html>

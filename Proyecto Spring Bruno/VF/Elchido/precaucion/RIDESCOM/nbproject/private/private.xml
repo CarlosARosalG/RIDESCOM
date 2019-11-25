@@ -32,12 +32,15 @@
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Entrenadornext.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Error404.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/BorrarEvento.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ExisteDep.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/redirect.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Apc.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Crawp.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Deportenext.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/EventosPasados.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/ResultadosFD.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ExistePru.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/LoginAlumno.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/EditarPrueba.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/AlumnoDAO.java</file>
@@ -49,6 +52,7 @@
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Inscribirse.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/ResultadosAL.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Deportes.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ExisteEv.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Entrenadores.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarResultado.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ExisteEvb.jsp</file>
@@ -71,7 +75,6 @@
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/Inscribir.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Resultados.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/BorrarUsuario.jsp</file>
-            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Crawler.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Entrenadores.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/dispatcher-servlet.xml</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/Deporte.java</file>
@@ -85,6 +88,7 @@
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/ResultadosAlumno.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/EditarEvento.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Resultadonext.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Cedulas.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/pdf.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/Boleta.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarSede.jsp</file>
@@ -95,9 +99,11 @@
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/DDyFD.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Condiciones.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/DifundirEvento.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Registro.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/model/DDyFDUDAO.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Error.jsp</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/AgregarUsuario.jsp</file>
+            <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/config/Craw.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/src/java/mx/ipn/escom/ridescom/controller/Deportes.java</file>
             <file>file:/C:/Users/spy51/Desktop/Ride/RIDESCOM/web/WEB-INF/jsp/Eventonext.jsp</file>

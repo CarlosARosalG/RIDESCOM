@@ -378,7 +378,6 @@
 
 		<!-- Formulario --> 
 		<form class="needs-validation" novalidate method="POST">
-                    <label>ID_Persona: ${per[0].ID_Persona}</label>
                         <div class="form-row">
 		    	
 			    <div class="col-md-4 mb-3">
@@ -485,7 +484,7 @@
                         <!--<a href="ConfirmaBorrarEntrenador.html?EntrenadorID=${per[0].ID_Persona}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>-->
                                         <button type="submit" class="btn  btn-outline-success "> Eliminar </button>
 <!--		  	<button type="submit" class="btn  btn-outline-success "> Borrar </button>-->
-		  	<a href="../../Entrenadores.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+		  	<a href="../Entrenadores.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
 		</form>
 	</section>
 

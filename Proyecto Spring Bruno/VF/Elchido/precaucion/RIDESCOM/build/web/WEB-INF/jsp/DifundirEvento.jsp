@@ -53,7 +53,12 @@
             * Autor: Rosales González Carlos Andrés *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
-
+table th {
+                      text-align: center;
+                    }
+                    table tr {
+                      text-align: center;
+                    }
             .clearfix {
                    float: none;
                    clear: both;
@@ -462,7 +467,7 @@ function checkLoginState() {
     <input type="button" value="Post on Wall" onClick="post_on_wall();" />
 </div>-->
         </div>
-        <h2 id="titulo">Consulta los eventos para publicar</h2>
+        <h2 id="titulo">Consulta los eventos disponibles para publicar</h2>
         <div class="container">
             <div class="col-row-12">
                 <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
@@ -499,14 +504,14 @@ function checkLoginState() {
 <!--                                                            <td>${e.Prueba} </td>
                                                             <td>${e.Lugar_Obtenido}</td>
                                                             <td>${e.Marca}</td>-->
-                                                            <td>
+<!--                                                            <td>
                                                                     <button type="button" class="btn btn-outline-info"> RIDESCOM </button>
-                                                            </td>
+                                                            </td>-->
                                                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
-                <a href="../Coordinador.html" class="btn btn-light float-right login_btn"> Volver </a>
+                <a href="../Coordinador.html" class="btn btn-light float-right login_btn btn-outline-danger "> Volver </a>
             </div>
         </div>
 </section>

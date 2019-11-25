@@ -384,42 +384,42 @@
 			<div class="form-row">
 		    	
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Nombre del lugar </label>
+				    <label for="validationTooltip02"> Nombre del lugar </label><span style="color: #ff0000">*</span>
                                     <input type="text" class="form-control" id="validationTooltip02" name="Sede" placeholder="Nombre de la sede" maxlength="50" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 				</div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Calle </label>
+				    <label for="validationTooltip02"> Calle </label><span style="color: #ff0000">*</span>
 				    <input type="text" class="form-control" id="validationTooltip02" name="Calle" placeholder="Calle/Avenida" maxlength="100" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Colonia </label>
+				    <label for="validationTooltip02"> Colonia </label><span style="color: #ff0000">*</span>
 				    <input type="text" class="form-control" id="validationTooltip02" name="Colonia" placeholder="Colonia" maxlength="100" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Numero </label>
+				    <label for="validationTooltip02"> Numero </label><span style="color: #ff0000">*</span>
 				    <input type="text" class="form-control" id="validationTooltip02" name="Numero" placeholder="Numero" maxlength="5">
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> CP </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="CP" placeholder="Código Postal" maxlength="5" required>
+				    <label for="validationTooltip02"> CP </label><span style="color: #ff0000">*</span>
+				    <input type="text" class="num form-control" id="validationTooltip02" name="CP" placeholder="Código Postal" maxlength="5" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Municipio </label>
+				    <label for="validationTooltip02"> Municipio </label><span style="color: #ff0000">*</span>
 <!--				    <input type="text" class="form-control" id="validationTooltip02" placeholder="Buscar..." required>-->
                                     <select name="municipio" id="mun" class="custom-select" style="width: 300px;" required/>
 					  <option value="">Seleccione municipio</option>
@@ -474,5 +474,9 @@
           }, false);
         })();
 </script>
-
+<script>
+     $('.num').on('input', function () { 
+    this.value = this.value.replace(/[^0-9]/g,'');
+    });
+    </script>
 </html>

@@ -146,8 +146,8 @@
             <div class="card col-sm-10">
                 <div class="card-body">
                         <div class="form-group text-center">
-                            <H2>El evento ha sido agregada correctamente</H2>
-                            <h3>¿Desea agregar más?</h3>
+                            <H2 style="color: #ffffff">El evento ha sido agregada correctamente</H2>
+                            <h3 style="color: #ffffff">¿Desea agregar más?</h3>
                             <a class="btn btn-primary" href="AgregarEvento.html">SI</a>  
                         <a class="btn btn-primary" href="../DDyFD.html">NO</a>
                 </div>

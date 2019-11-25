@@ -391,7 +391,7 @@ Funciones: Será la vista gerenal para los alumnos
                 margin-top:3px;
                 width: 100%;
                 overflow: hidden;
-                height: 150px;
+                height: 120px;
                 position: relative;
             }
 
@@ -748,7 +748,7 @@ Funciones: Será la vista gerenal para los alumnos
                             <li><a href="#"style='text-decoration:none;'> ${Nombre_U} </a></li>
                             <li><a href="#"style='text-decoration:none;'> ${al.Correo} </a></li>
                             <li><a href="#"style='text-decoration:none;'> ${al.Nombre} ${al.Ap_pat} </a></li>
-                            <li><a href="#Contacto"style='text-decoration:none;'><span class="sexto"></span> Contacto </a></li>
+                            <li><a href="#"style='text-decoration:none;'><span class="sexto"></span> Contacto </a></li>
                             <li><a href="Logout.html" style='text-decoration:none;'>Salir</a></li>
                             
                         </ul>
@@ -764,9 +764,19 @@ Funciones: Será la vista gerenal para los alumnos
             <div class="container text-center">
                 <h1>Eventos Interpolitécnicos Deportivos Disponibles</h1>
             </div>
-
+<div class="col-row-8">
+                    <div class="flexsearch">
+                            <div class="flexsearch--wrapper">
+                                <form class="flexsearch--form" id="searchTerm" placeholder="Buscar" type="text" onkeyup="doSearch()" />
+                                    <div class="flexsearch--input-wrapper">
+                                        <input type="text" id="search" placeholder="Buscar..." title="Busqueda Rapida" class="form-control">
+                                    </div>
+                                </form>    
+                            </div>
+                    </div>
+                </div>
             <section class="timeline">
-                <div class="container">
+                <div class="container" id="datos">
                     <c:forEach var="dato" items="${eve}">
                     <div class="timeline-item">
                         <div class="timeline-img"></div>
@@ -780,13 +790,17 @@ Funciones: Será la vista gerenal para los alumnos
                                 <div class="clearfix">&nbsp;</div>
                                 <h2>${dato.Nombre_Evento}</h2>
                                 <div class="date">${dato.FE}</div>
-                                <blockquote><u>Lugar del Evento</u>: ${dato.Nombre_S}</blockquote>
+                                <blockquote><u>Lugar del Evento</u>: ${dato.Nombre_S}
+                                <p></p> <b>${dato.direccion}</b></blockquote>
                                 <blockquote><u>Período de inscripciones</u>: ${dato.FIR} / ${dato.FFR}</blockquote>
                                 <blockquote><u>Deporte del evento</u>: ${dato.Disciplina}
                                     <p></p>
                                 <u>Prueba</u>: ${dato.Prueba} - ${dato.Rama}</blockquote>
                                 <blockquote><u>Descripción: </u><div class="clearfix">&nbsp;</div>
                                     ${dato.Descripcion}</blockquote>
+                                <a href="" class="edita bnt-more" style='text-decoration:none;color: #0174DF;'> 
+                                    <i class="fas fa-sign-in-alt fa-2x"></i>
+                                </a> 
                             </div>
                         <div class="clearfix">&nbsp;</div>
                     </div>    
@@ -798,27 +812,7 @@ Funciones: Será la vista gerenal para los alumnos
 
 
             <!-- Contacto -->
-            <a name="Contacto" id="Contacto"></a>
-            <div class="container">
-                <div class="cuadro">
-                    <div class="box">
-                        <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div class='details'>
-                            <h3><a href='https://www.google.com.mx/maps/place/Escuela+Superior+de+Cómputo/@19.5046589,-99.1490405,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1f835393528b5:0x5f2dd0563ce99e8!8m2!3d19.5046539!4d-99.1468518' style='text-decoration:none;color: #FFFFFF;'> 
-                                    ESCOM - Actividades Deportivas
-                                </a></h3>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                        <div class='details'><h3>5512345678</h3></div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                        <div class='details'><h3>prueba@gmail.com</h3></div>
-                    </div>
-                </div>
-            </div>
+            
             <div class="clearfix" >&nbsp;</div>
             <div class="clearfix" >&nbsp;</div>
         </section>
@@ -829,4 +823,16 @@ Funciones: Será la vista gerenal para los alumnos
         </footer>
         <div class="clearfix" >&nbsp;</div>
     </body>
+    <script>
+var $rows = $('#datos div.timeline-item');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+
+</script>
 </html>

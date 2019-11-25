@@ -426,7 +426,7 @@
                         <label for="validationTooltip05"> Prueba </label>
                         <div class="col-md-3 mb-3">
                                 <select name="Ev_ID" id="selectsport" class="custom-select" style="width: 380px;" required/>
-                                <option value="">Seleccione prueba...</option>
+                                <option value="${alu[0].Evento_Evento_ID}">${alu[0].Prueba} - ${alu[0].Disciplina}</option>
                                 <c:forEach var="alum" items="${alum}">   
                                     <option value="${alum.Evento_Evento_ID}">${alum.Prueba} - ${alum.Disciplina} </option>
                                 </c:forEach>       

@@ -26,7 +26,12 @@ Funciones: Será la vista gerenal para los alumnos
             * Autor: Rosales González Carlos Andrés *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
-
+table th {
+                      text-align: center;
+                    }
+                    table tr {
+                      text-align: center;
+                    }
             .clearfix {
                 float: none;
                 clear: both;
@@ -593,10 +598,10 @@ Funciones: Será la vista gerenal para los alumnos
                 <table class="table table-hover" id="datos">
                     <thead>
                         <tr>
+                            <th scope="col"> Deporte </th>
                             <th scope="col"> Boleta </th>
                             <th scope="col"> Nombre </th>
                             <th scope="col"> Escuela </th>
-                            <th scope="col"> Deporte </th>
                             <th scope="col"> Evento </th>
                             <th scope="col"> Prueba </th>
                             <th scope="col"> Posición </th>
@@ -606,10 +611,10 @@ Funciones: Será la vista gerenal para los alumnos
                     <tbody id="datos">
 							<c:forEach var="ins" items="${ins}">
                                                         <tr>
+                                                            <td>${ins.Disciplina}</td>
                                                             <td>${ins.Alumno_ID_Alumno}</td>
                                                             <td>${ins.Nombre}</td>
                                                             <td>${ins.Escuela}</td>
-                                                            <td>${ins.Disciplina}</td>
                                                             <td>${ins.Nombre_Evento}</td>
                                                             <td>${ins.Prueba} </td>
                                                             <td>${ins.Lugar_Obtenido}</td>
@@ -625,7 +630,7 @@ Funciones: Será la vista gerenal para los alumnos
 						</tbody>
                 </table>
             </div>
-            <a href="../Coordinador.html" class="btn btn-light float-right login_btn"> Volver </a>
+            <a href="../Coordinador.html" class="btn btn-light float-right login_btn btn-outline-danger "> Volver </a>
         </div>
 
         <div class="clearfix" >&nbsp;</div>

@@ -382,8 +382,6 @@
                 <form class="needs-validation" novalidate method="POST">
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label>ID Prueba: ${prue[0].ID_Pruebas}</label>
-                            <div></div>
                             <label for="validationTooltip01"> Nombre de la Prueba </label>
                             <input type="text" name="Prueba" value="${prue[0].Prueba}" id="validationTooltip01" class="form-control" maxlength="30" autocomplete="off" required/>
                             <div class="invalid-feedback">

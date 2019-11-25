@@ -378,7 +378,6 @@
                 <form class="needs-validation" novalidate method="POST">
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label>ID Persona: ${usu[0].ID_Persona}</label>
                             <label for="validationTooltip01"><i class="fas fa-id-card"></i> Usuario </label>
                             <input name="Nombre_U" type="text" id="validationTooltip01" onkeypress="return soloLetras(event)" class="form-control" value="${usu[0].Nombre_U}" maxlength="15" disabled/>
                             <div class="invalid-feedback">

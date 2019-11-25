@@ -85,6 +85,7 @@ public class Resultados {
         mav.setViewName("BoletaRes");
         return mav;
     }
+    
     @RequestMapping(value="Coordinador/Resultados/IngresaBoleta.html", method=RequestMethod.POST)
     public ModelAndView bolr(Boleta bl){   
         
@@ -168,15 +169,16 @@ public class Resultados {
         return mav;
     }
     @RequestMapping(value="Coordinador/Resultados/AgregarResultado.html", method=RequestMethod.POST)
-    public ModelAndView Agrega( Resultado re)throws Exception{
-            String che="select DISTINCT Inscripcion_Alumno_ID_Alumno, Inscripcion_Evento_Evento_ID from Resultados where Inscripcion_Alumno_ID_Alumno="+re.getBoleta()+" and Inscripcion_Evento_Evento_ID="+re.getEv_ID();
+    public ModelAndView Agrega(Boleta bl, Resultado re)throws Exception{
+        AlumnoID=bl.getBoleta();
+            String che="select DISTINCT Inscripcion_Alumno_ID_Alumno, Inscripcion_Evento_Evento_ID from Resultados where Inscripcion_Alumno_ID_Alumno='"+AlumnoID+"' and Inscripcion_Evento_Evento_ID="+re.getEv_ID();
 //            String che1="select DISTINCT Inscripcion_Evento_Evento_ID from Resultados where Inscripcion_Alumno_ID_Alumno="+re.getBoleta()+" and Inscripcion_Evento_Evento_ID="+re.getEv_ID();
         try{
             ct=cn.Connect();
             ps=ct.prepareStatement(che);
             rs=ps.executeQuery();
-            if(rs!=null && rs1!=null){
-                while(rs.next() && rs1.next()){
+            if(rs!=null){
+                while(rs.next()){
                 co =rs.getString("Inscripcion_Alumno_ID_Alumno");
                 a=rs.getString("Inscripcion_Evento_Evento_ID");
                 }
@@ -187,16 +189,14 @@ public class Resultados {
             String sql="insert into Resultados (Lugar_Obtenido, Marca, Inscripcion_Alumno_ID_Alumno, Inscripcion_Evento_Evento_ID) values (?,?,?,?)";
             this.rid.update(sql,re.getPosicion(), re.getMarca(), re.getBoleta(), re.getEv_ID());
             
-//            return new ModelAndView ("redirect:../Coordinador/Resultados.html");
-            mav.setViewName("redirect:../Resultados.html");
             mav.addObject("mjs", "<div style='color: green;'>Los resultados se registraron correctamente.</div>");
-            return mav;
-        }else{
-             //            return new ModelAndView ("redirect:../Coordinador/Resultados.html");ModelAndView mv=new ModelAndView("/AgregarResultado.html");
             mav.setViewName("redirect:../Resultados.html");
-            mav.addObject("mjs", "<div style='color: red;'>Esta información ya esta registrada.</div>");
-        return mav;  
+        }else{
+            mav.addObject("mjs", "<div style='color: red;'>Esta información ya está registrada.</div>");
+//            mav.setViewName("redirect:../Resultados.html");
+            mav.setViewName("redirect:/Coordinador/Resultados.html");
         }
+        return mav;
     }
     @RequestMapping(value="Coordinador/Resultados/Resultadosiguiente.html", method=RequestMethod.GET)
     public ModelAndView sig(HttpServletRequest re){
@@ -222,7 +222,7 @@ public class Resultados {
         }else{
             ResulID=Integer.parseInt(re.getParameter("ResulID"));
             
-            String ed="select r.ID_Resultados, i.Alumno_ID_Alumno, p.ID_Persona, p.Nombre, p.Ap_Pat, p.Ap_Mat, e.Escuela, prog.Programa, ad.Disciplina, pr.ID_Pruebas, pr.Prueba, r.Lugar_Obtenido, r.Marca, ev.Nombre_Evento \n" +
+            String ed="select r.ID_Resultados, i.Alumno_ID_Alumno, i.Evento_Evento_ID, p.ID_Persona, p.Nombre, p.Ap_Pat, p.Ap_Mat, e.Escuela, prog.Programa, ad.Disciplina, pr.ID_Pruebas, pr.Prueba, r.Lugar_Obtenido, r.Marca, ev.Nombre_Evento \n" +
 "	FROM Resultados r\n" +
 "    inner join (Inscripcion i, Escuela e, Evento ev, Pruebas pr, Act_Deportiva ad, Persona p, Alumno a, prog_academico prog)\n" +
 "    on (p.ID_Persona=a.Persona_ID_Persona\n" +

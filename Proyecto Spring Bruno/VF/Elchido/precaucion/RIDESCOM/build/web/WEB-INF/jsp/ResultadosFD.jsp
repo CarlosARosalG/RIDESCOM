@@ -25,7 +25,12 @@ Funciones: Será la vista gerenal para los alumnos
             * Autor: Rosales González Carlos Andrés *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
-
+table th {
+                      text-align: center;
+                    }
+                    table tr {
+                      text-align: center;
+                    }
             .clearfix {
                 float: none;
                 clear: both;

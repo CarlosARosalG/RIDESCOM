@@ -87,7 +87,7 @@ public class Evento {
             }
             }catch(Exception ex){
             }
-    if(existe.isEmpty()){
+    if(existe==null){
             String sql="insert into Evento(Nombre_Evento, Fecha_inicio_Registro, Descripcion, Fecha_Evento, Ciclo_ID_Ciclo, Pruebas_ID_Pruebas, Sede_ID_Sede) value (?,left(now(),10),?,?,?,?,?);";
             this.rid.update(sql, ev.getNombre_E(), ev.getDesc(), ev.getFE(), ev.getCiclo(), ev.getDeporte(), ev.getSede());
             String evs="select Evento_ID, date_add(Fecha_Evento, INTERVAL -5 DAY)as ffr from Evento where Evento_ID=(select MAX(Evento_ID)from Evento)";

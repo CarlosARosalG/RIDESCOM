@@ -28,7 +28,12 @@ Funciones: Será la vista gerenal para los alumnos
                 * Autor: Rosales González Carlos Andrés *
                 * Titulo: Hoja de estilos 				 *
                 ****************************************/
-
+table th {
+                      text-align: center;
+                    }
+                    table tr {
+                      text-align: center;
+                    }
                .clearfix {
                        float: none;
                        clear: both;
@@ -620,7 +625,7 @@ Funciones: Será la vista gerenal para los alumnos
                                                                     </a> 
                                                             </td>
                                                             <td> 
-                                                                    <a href="Sedes/BorrarSede.html?SedeID=${dato.ID_Sede}" style='text-decoration:none;color: red;'>
+                                                                <a href="Sedes/BorrarSede.html?SedeID=${dato.ID_Sede}" class="borra" style='text-decoration:none;color: red;'>
                                                                         <i  class="far fa-trash-alt"></i> 
                                                                     </a> 
                                                             </td>
@@ -652,5 +657,14 @@ $('#search').keyup(function() {
     }).hide();
 });
 
+</script>
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('borra');
+    var confirmIt = function (e) {
+    if (!confirm('¿Está seguro de borrar esta sede?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
 </script>
 </html>

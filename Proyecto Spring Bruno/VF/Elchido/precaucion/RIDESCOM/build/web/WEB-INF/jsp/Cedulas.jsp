@@ -356,13 +356,13 @@
     </head>
 </head>
 <body>
-    <section id="global">
+    <section id="global" style="width: 50%; height: 50%">
         <div id="titulo">
             <h1> Genera cédulas de inscripción </h1>
         </div>
 
         <div class="col-12 ">
-            <div id="noti" class="alert alert-light col-6" role="alert">
+            <div id="noti"  role="alert" style="width: 100%; height: 100%">
                 <p> 
                     Para descargar la cédula de inscripción, selecciona el deporte y el ciclo.
                     Posteriormente oprime el Generar Cédula.
@@ -428,9 +428,10 @@
                 <div class="invalid-feedback">
                     Ingresa un Ciclo Escolar
                 </div>
-            <input name="btn" value="Generar" type="submit" class="btn btn-light float-leftt login_btn">
-            <a href="../Coordinador.html" class="btn btn-light float-left login_btn"> Volver </a>
+            
             </div>
+                <input name="btn" value="Generar" type="submit" class="btn  btn-outline-success">
+                <a href="../Coordinador.html" class="btn  btn-outline-danger "> Volver </a>
         </form>
     </section>
 </body>

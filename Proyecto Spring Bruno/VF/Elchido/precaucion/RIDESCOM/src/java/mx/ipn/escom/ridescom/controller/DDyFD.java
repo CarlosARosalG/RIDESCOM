@@ -84,24 +84,12 @@ public class DDyFD {
         p=this.rid.queryForList(sqlp);
         if(p!=null)
             mav.addObject("ddyfd",p);
-                    //Consulta de Eventos registrados en la Base de Datos
-//            String sql1="select Evento_ID, Nombre_Evento, Descripcion, DATE_FORMAT(Fecha_Inicio_Registro,'%d-%m-%Y') AS FIR, DATE_FORMAT(Fecha_Fin_Registro,'%d-%m-%Y') AS FFR, DATE_FORMAT(Fecha_Evento, '%d-%m-%Y') AS FE, Ciclo_Escolar, Disciplina, Nombre_S, Municipio, Estado, Prueba, Rama from Evento e "
-//                    + "inner join (Ciclo ci, Pruebas pr, Act_Deportiva d, Sede s, Municipio m, Estados edo, Tipo_Pruebas tp) "
-//                    + "on (e.Ciclo_ID_Ciclo=ci.ID_Ciclo "
-//                    + "AND pr.Tipo_Pruebas_ID_Tipo=tp.ID_Tipo "
-//                    + "AND e.Pruebas_ID_Pruebas=pr.ID_Pruebas "
-//                    + "AND pr.Act_Deportiva_ID_Deporte=d.ID_Deporte "
-//                    + "AND e.Sede_ID_Sede=s.ID_Sede "
-//                    + "AND s.Municipio_ID_Municipio=m.ID_Municipio "
-//                    + "AND s.Municipio_Estados_ID_estado=m.Estados_ID_estado "
-//                    + "AND m.Estados_ID_estado=edo.ID_estado) "
-//                    + "order by Fecha_evento ASC";
         String sql1="SELECT *,\n" +
 "(case\n" +
 "	when Evento_Evento_ID is NULL then 0\n" +
 "    else 1\n" +
 "    end)as algo\n" +
-"from (select Evento_ID, Nombre_Evento, Fecha_Evento, Descripcion, DATE_FORMAT(Fecha_Inicio_Registro,'%d-%m-%Y') AS FIR, DATE_FORMAT(Fecha_Fin_Registro,'%d-%m-%Y') AS FFR, DATE_FORMAT(Fecha_Evento, '%d-%m-%Y') AS FE, Ciclo_Escolar, Disciplina, Nombre_S, Municipio, Estado, Prueba, Rama \n" +
+"from (select Evento_ID, Nombre_Evento, Fecha_Evento, concat(Calle,', ',Numero,', ',Colonia,', ',CP,', ',Estado,', ',Municipio)as direccion, Descripcion, DATE_FORMAT(Fecha_Inicio_Registro,'%d-%m-%Y') AS FIR, DATE_FORMAT(Fecha_Fin_Registro,'%d-%m-%Y') AS FFR, DATE_FORMAT(Fecha_Evento, '%d-%m-%Y') AS FE, Ciclo_Escolar, Disciplina, Nombre_S, Municipio, Estado, Prueba, Rama \n" +
 "                        from Evento e\n" +
 "                    inner join (Ciclo ci, Pruebas pr, Act_Deportiva d, Sede s, Municipio m, Estados edo, Tipo_Pruebas tp) \n" +
 "                    on (e.Ciclo_ID_Ciclo=ci.ID_Ciclo \n" +

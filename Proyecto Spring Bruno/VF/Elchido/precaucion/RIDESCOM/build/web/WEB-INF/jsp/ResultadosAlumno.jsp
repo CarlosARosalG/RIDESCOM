@@ -25,7 +25,12 @@ Funciones: Será la vista gerenal para los alumnos
             * Autor: Rosales González Carlos Andrés *
             * Titulo: Hoja de estilos 				 *
             ****************************************/
-
+table th {
+                      text-align: center;
+                    }
+                    table tr {
+                      text-align: center;
+                    }
             .clearfix {
                 float: none;
                 clear: both;
@@ -612,7 +617,7 @@ Funciones: Será la vista gerenal para los alumnos
 						</tbody>
                 </table>
             </div>
-            <a href="../Alumno.html" class="btn btn-light float-right login_btn"> Volver </a>
+            <a href="../Alumno.html" class="btn btn-light float-right login_btn btn-outline-danger "> Volver </a>
         </div>
 
         <div class="clearfix" >&nbsp;</div>

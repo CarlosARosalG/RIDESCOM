@@ -372,7 +372,6 @@
 			  Verifica que no falte ningún campo por completar antes de guardar la actualización de datos.
 			</p>
 			</div>
-                    <label>ID Persona: ${da[0].ID_Persona}</label>
                             <br>
 		</div>
 

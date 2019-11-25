@@ -3,6 +3,8 @@
     Created on : 15/08/2019, 04:16:11 PM
     Author     : spy51
 --%>
+<%@page import="java.sql.*"%>
+<%@page import="mx.ipn.escom.ridescom.config.Connect"%>
 <%--<%@taglib prefix="botDetect" uri="https://captcha.com/java/jsp"%>--%>
 <%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -154,10 +156,18 @@
         <title>Login</title>
     </head>
     <body>
+        <script>
+            
+            alert("Bienvenido al login de RIDESCOM.\n\
+                   Este login esta vinculado con el de la plataforma SAES-ESCOM.\n\
+                   Donde comprobaremos si eres alumno de la ESCOM y si cumples con los requisitos \n\
+                   para participar en interpolitécnicos deportivos.");
+            alert("Si no has usado RIDESCOM, te pediremos que termines de llenar un formulario con los datos que se soliciten");
+        </script>
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <div class="container">
 	<div class="d-flex justify-content-center h-100">
-            <div class="card" style="height: 400px; width: 500px;">
+            <div class="card" style="height: 500px; width: 500px;">
 			<div class="card-header">
 				<h3>Inicia Sesión</h3>
 			</div>
@@ -168,7 +178,7 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-                                            <input type="text" class="num form-control" placeholder="Número de Boleta" name="User"  maxlength="10" required/>
+                                            <input type="text" class="num form-control" placeholder="Número de Boleta" name="User" minlength="10"  maxlength="10" required/>
 <!--                                            <div class="valid-feedback">
                                                 Looks good!
                                             </div>-->
@@ -191,7 +201,7 @@
 						</div>
 						<!--<input type="text" class="form-control" name="vrfcd" placeholder="Captcha" requied/>-->
 <!--                                                <input id="captchaCode" type="text" name="captchaCode" value="${basicExample.captchaCode}"/>-->
-                                                <input type="text" id="captchaCode" class="form-control" placeholder="Captcha" name="Captcha" autocomplete="off" required/>
+                                                <input type="text" id="captchaCode" class="form-control" placeholder="Captcha" name="Captcha" autocomplete="off" minlength="3" maxlength="3" required/>
                                                 <div class="invalid-feedback">
                                                     Campo requerido
                                                 </div>
@@ -203,11 +213,7 @@
                                         </div>
                                                 <input name="btn" value="Entrar" type="submit" class="btn btn-light float-right login_btn">
                                                 <a href="Home.html" class="btn btn-light float-right login_btn"> Volver </a>
-                                        <div class="clearfix" >&nbsp;</div>
                                         
-                                        <div class="clearfix" >&nbsp;</div>
-					
-                                        <div class="clearfix" >&nbsp;</div>
                                         <div class="card-footer">
                                             <div class="d-flex justify-content-center">
                                                     <a href="https://www.saes.escom.ipn.mx/SendEmail/PruebaSendMail.aspx">¿Olvidaste tu contraseña?</a>
@@ -215,31 +221,134 @@
                                                     <a href="https://www.ipn.mx/assets/files/main/docs/avisos-privacidad/integral-control-gestionescolar-alumnos.pdf?fbclid=IwAR1cnui7-AIWCyuUlBJziReIsP0VrKipsHrdHUWC_WgHXrahPuaL6L1DfJc">Politica de privacidad</a>
                                             </div>
                                         </div>
-				</form>
-                                    
-                                        
-                                <script>
-                                    // Example starter JavaScript for disabling form submissions if there are invalid fields
-                                    (function() {
-                                      'use strict';
-                                      window.addEventListener('load', function() {
-                                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                                        var forms = document.getElementsByClassName('needs-validation');
-                                        // Loop over them and prevent submission
-                                        var validation = Array.prototype.filter.call(forms, function(form) {
-                                          form.addEventListener('submit', function(event) {
-                                            if (form.checkValidity() === false) {
-                                              event.preventDefault();
-                                              event.stopPropagation();
-                                            }
-                                            form.classList.add('was-validated');
-                                          }, false);
-                                        });
-                                      }, false);
-                                    })();
-                                </script>
 			</div>
 		</div>
+<!--<div class="card" style="height: 500px; width: 650px;">
+			<div class="card-header">
+				<h3>Información Personal</h3>
+			</div>
+			<div class="card-body" >
+				<div class="form-row">
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> CURP </label><span style="color: #ff0000">*</span>
+				    <input type="text" class="form-control" id="curp_input" oninput="validarInput(this)" name="CURP" placeholder="CURP" minlength="18" maxlength="18" required/>
+                                    <pre id="resultado"></pre>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> NSS (Opcional) </label>
+				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" placeholder="NSS" maxlength="45" />
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                            <div class="col-md-4 mb-3">
+                            <label for="validationTooltip03"> Fecha de Nacimiento </label><span style="color: #ff0000">*</span>
+                            <input name="Nacimiento" type="text" class="form-control" id="datepicker" placeholder="YYYY-MM-DD" maxlength="10" required/>
+                            <script>
+                                 var today, datepicker;
+                                today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()-1);
+                                    datepicker = $('#datepicker').datepicker({
+                                    uiLibrary: 'bootstrap4',
+                                    maxDate: today,
+                                    format: 'yyyy-mm-dd'
+                                });
+                            </script>
+                        </div>
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Sexo </label><span style="color: #ff0000">*</span>
+                                    <br>
+				    <select name="Sexo" class="custom-select" style="width: 150px;" required/>
+					  <option value=""></option>
+                                                    <%
+                                                        try{
+                                                            String query="select * from Tipo_Sexo";
+                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                                            Connect conn = new Connect();
+                                                            Statement stm=conn.Connect().createStatement();
+                                                            ResultSet rs=stm.executeQuery(query);
+                                                            while(rs.next()){
+                                                                %>
+                                                                <option value="<%=rs.getInt("ID_Tipo_Sexo")%>"><%=rs.getString("Sexo")%></option>
+                                                                <%
+                                                            }
+                                                            
+                                                        }catch(Exception ex)
+                                                        {
+                                                            ex.printStackTrace();
+                                                            out.println("Error: "+ex.getMessage());
+                                                        }
+                                                    %>
+                                                </select>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02">Municipio </label><span style="color: #ff0000">*</span>
+				    <input type="text" class="form-control" id="validationTooltip02" placeholder="Buscar..." required>
+                                    <select name="municipio" id="mun" class="custom-select" style="width: 300px;" required/>
+					  <option value="">Seleccione municipio</option>
+                                                    <%
+                                                        try{
+                                                            String query="select * from Municipio m, Estados edo where m.Estados_ID_estado=edo.ID_estado order by Municipio ASC";
+                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                                            Connect conn = new Connect();
+                                                            Statement stm=conn.Connect().createStatement();
+                                                            ResultSet rs=stm.executeQuery(query);
+                                                            while(rs.next()){
+                                                                %>
+                                                                <option value="<%=rs.getString("ID_Municipio")%>"><%=rs.getString("Municipio")%>-<%=rs.getString("Estado")%></option>
+                                                                <%
+                                                            }
+                                                            
+                                                        }catch(Exception ex)
+                                                        {
+                                                            ex.printStackTrace();
+                                                            out.println("Error: "+ex.getMessage());
+                                                        }
+                                                    %>
+                                                </select>
+                                    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                            
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Correo </label><span style="color: #ff0000">*</span>
+                                    <input type="text" class="email form-control" id="validationTooltip02" name="Correo" placeholder="Correo" required/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			    <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Teléfono de contacto (minimo 8 dígitos) </label><span style="color: #ff0000">*</span>
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Tel_fijo" placeholder="Telefono fijo" minlength="8" maxlength="10" required/>
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Extensión (Opcional) </label>
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Ext" placeholder="Extension de Telefono fijo"  maxlength="10">
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+                            <div class="col-md-4 mb-3">
+				    <label for="validationTooltip02"> Teléfono Móvil (Opcional) </label>
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Tel_cel" placeholder="Telefono movil" minlength="10" maxlength="15">
+				    <div class="valid-tooltip">
+				    	OK
+				    </div>
+			    </div>
+			</div>
+				
+                            </form>
+			</div>
+		</div>-->
 	</div>
 </div>
     </body>

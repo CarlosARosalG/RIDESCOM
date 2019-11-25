@@ -384,14 +384,14 @@
                 <form class="needs-validation" novalidate method="POST">
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip01"> Nombre del evento </label>
+                            <label for="validationTooltip01"> Nombre del evento </label><span style="color: #ff0000">*</span>
                             <input name="Nombre_E" type="text" id="validationTooltip01" class="form-control" placeholder="Nombre evento" maxlength="300" required/>
                             <div class="invalid-feedback">
                                 Ingresa un usuario
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip03"> Fecha del Evento </label>
+                            <label for="validationTooltip03"> Fecha del Evento </label><span style="color: #ff0000">*</span>
                             <input name="FE" type="text" class="form-control" id="datepicker" placeholder="YYYY-MM-DD" maxlength="10" autocomplete="off" required/>
                             <div class="invalid-feedback">
                                 Ingresa una fecha válida
@@ -409,29 +409,8 @@
                         </div>
                         <div class="col-md-2 mb-3">
                         </div>
-                        <!--<div class="col-md-4 mb-3">-->
-<!--                            <label for="validationTooltip03"> Fecha de Inicio para registrarse </label>
-                            <input name="FIR" type="text" class="form-control" id="datepicker1" placeholder="" required>
-                            <script>
-                                $('#datepicker1').datepicker({
-                                    uiLibrary: 'bootstrap4',
-                                    format: 'yyyy-mm-dd'
-                                });
-                            </script>-->
-<!--                            <label for="validationTooltip03"> Fecha limite para registrarse </label>
-                            <input name="FFR" type="text" class="form-control" id="datepicker2" placeholder="YYYY-MM-DD" maxlength="10" required/>
-                            <script>
-                                var today, datepicker;
-                                today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                                    datepicker = $('#datepicker2').datepicker({
-                                    uiLibrary: 'bootstrap4',
-                                    minDate: today,
-                                    format: 'yyyy-mm-dd'
-                                });
-                            </script>-->
-                        <!--</div>-->
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip02"> Semestre </label>
+                            <label for="validationTooltip02"> Semestre </label><span style="color: #ff0000">*</span>
                             <div class="clearfix">&nbsp;</div>
                                 <select name="ciclo" id="selectsport" class="custom-select" style="width: 150px;" required/>
 					  <option value="">Ciclo escolar</option>
@@ -461,7 +440,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip04"> Lugar donde se realizará el evento </label>
+                            <label for="validationTooltip04"> Lugar donde se realizará el evento </label><span style="color: #ff0000">*</span>
                             <select name="sede" id="selectsport" class="custom-select" style="width: 200px;" required/>
 					  <option value="">Seleccione sede...</option>
                                                     <%
@@ -488,7 +467,7 @@
                     </div>
                                                                 
                     <div>
-                        <label for="validationTooltip05"> Prueba </label>
+                        <label for="validationTooltip05"> Prueba </label><span style="color: #ff0000">*</span>
                         <div class="col-md-3 mb-3">
                                 <select name="deporte" id="selectsport" class="custom-select" style="width: 380px;" required/>
 					  <option value="">Seleccione prueba...</option>
@@ -518,13 +497,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1"> Comentarios acerca del evento </label>
+                        <label for="exampleFormControlTextarea1"> Comentarios acerca del evento </label><span style="color: #ff0000">*</span>
                         <textarea name="Desc" onkeyup="countChars(this);" class="form-control" id="exampleFormControlTextarea1" rows="2" maxlength="200"></textarea>
                         <p id="charNum">0/200</p>
                     </div>
 <!--                    <button class="btn  btn-outline-success" type="submit"> Registrar </button>-->
                     <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Registrar </button>
-                    <a href="../DDyFD.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+                    <a href="../DDyFD.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Volver </button></a>
                 </form>
 	</section>
 </body>

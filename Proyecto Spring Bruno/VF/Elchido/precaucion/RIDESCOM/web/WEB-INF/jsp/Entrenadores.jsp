@@ -570,7 +570,7 @@ Funciones: Será la vista gerenal para los alumnos
                     <div id="agregaboton">
                         <label> Para agregar un nuevo entrenador pulsa aquí: </label>
                         <a href="Entrenadores/AgregarEntrenador.html" style='text-decoration:none;color: #777620; align-content: right;'> 
-                            <i class="far fa-plus-square"></i> 
+                            <i class="far fa-plus-square fa-2x"></i> 
                         </a> 
                     </div>
 			<div class="container">
@@ -635,7 +635,7 @@ Funciones: Será la vista gerenal para los alumnos
 				</div>	
                             
 			</div>
-                        <a href="../Coordinador.html" class="btn btn-light float-right login_btn"> Volver </a>
+                        <a href="../Coordinador.html" class="btn btn-light float-right login_btn btn-outline-danger "> Volver </a>
         <div class="clearfix" >&nbsp;</div>    
         <div class="clearfix" >&nbsp;</div>
     </section>

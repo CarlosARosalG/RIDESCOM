@@ -364,12 +364,11 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Registra un entrenador </h1>
+			<h1> Registra un entrenador que labore en la Unidad Académica</h1>
 		</div>
 
 		<div class="col-12 ">
-			<div id="noti" class="alert alert-dark col-4" role="alert">
-			  <p> Registra a un entrenador que labore en la Unidad Acádemica. </p>
+                    <div id="noti" role="alert" style="alignment-adjust: central;">
 			  <p> Recuerda verificar todos los datos antes de concluir. </p>
 			</div>
 		</div>
@@ -379,28 +378,28 @@
 			<div class="form-row">
 		    	
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Nombre </label>
+				    <label for="validationTooltip02"> Nombre </label><span style="color: #ff0000">*</span>
 				    <input type="text" class="form-control" id="validationTooltip02" name="Nombre" placeholder="Nombre" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 				</div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Apellido Paterno </label>
+				    <label for="validationTooltip02"> Apellido Paterno </label><span style="color: #ff0000">*</span>
 				    <input type="text" class="form-control" id="validationTooltip02" name="Appat" placeholder="Apellido Paterno" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Apellido Materno </label>
+				    <label for="validationTooltip02"> Apellido Materno </label><span style="color: #ff0000">*</span>
 				    <input type="text" class="form-control" id="validationTooltip02" name="Apmat" placeholder="Apellido Materno" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> CURP </label>
+				    <label for="validationTooltip02"> CURP </label><span style="color: #ff0000">*</span>
 				    <input type="text" class="form-control" id="validationTooltip02" name="CURP" placeholder="CURP" required>
 				    <div class="valid-tooltip">
 				    	OK
@@ -408,14 +407,14 @@
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> NSS (Opcional) </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" placeholder="NSS" required>
+				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" placeholder="NSS">
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Sexo </label>
-                                    
+				    <label for="validationTooltip02"> Sexo </label><span style="color: #ff0000">*</span>
+                                    <br>
 				    <select name="Sexo" class="custom-select" style="width: 120px;" required>
 					  <option value=""></option>
                                                     <%
@@ -443,7 +442,7 @@
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Municipio </label>
+				    <label for="validationTooltip02"> Municipio </label><span style="color: #ff0000">*</span>
 <!--				    <input type="text" class="form-control" id="validationTooltip02" placeholder="Buscar..." required>-->
                                     <select name="municipio" id="mun" class="custom-select" style="width: 300px;" required>
 					  <option value="">Seleccione municipio</option>
@@ -472,7 +471,7 @@
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
-                            <label for="validationTooltip03"> Fecha de Nacimiento </label>
+                            <label for="validationTooltip03"> Fecha de Nacimiento </label><span style="color: #ff0000">*</span>
                             <input name="Nacimiento" type="text" class="form-control" id="datepicker" placeholder="YYYY-MM-DD" maxlength="10" required/>
                             <script>
                                  var today, datepicker;
@@ -485,22 +484,22 @@
                             </script>
                         </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Correo </label>
+				    <label for="validationTooltip02"> Correo </label><span style="color: #ff0000">*</span>
                                     <input type="text" class="form-control" id="validationTooltip02" name="Correo" placeholder="Correo" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Teléfono de contacto </label>
-                                    <input type="text" class="num form-control" id="validationTooltip02" name="Tel_fijo" placeholder="Telefono fijo" maxlength="10" required>
+				    <label for="validationTooltip02"> Teléfono de contacto (minino 8 digitos)</label><span style="color: #ff0000">*</span>
+                                    <input type="text" class="num form-control" id="validationTooltip02" name="Tel_fijo" placeholder="Telefono fijo" minlength="8" maxlength="10" required>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Extensión (Opcional) </label>
-                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Ext" placeholder="Extension de Telefono fijo" minlength="10" maxlength="15">
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Ext" placeholder="Extension de Telefono fijo"  maxlength="10">
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -517,7 +516,7 @@
 			<div class="form-row">    
 
 				<div class="col-md-5 mb-3">
-					<label for="validationTooltip03">Deporte</label>
+					<label for="validationTooltip03">Deporte</label><span style="color: #ff0000">*</span>
 					<select name="deporte" id="deporte" class="custom-select" style="width: 380px;" data-live-search="true" required>
 					  <option value="">Seleccione Deporte</option>
                                                     <%
@@ -543,7 +542,7 @@
 				</div>
 		  	</div>
 		  	<button type="submit" class="btn  btn-outline-success "> Registrar </button>
-		  	<a href="../Entrenadores.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+		  	<a href="../Entrenadores.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Volver </button></a>
 		</form>
 	</section>
 </body>

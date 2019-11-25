@@ -382,8 +382,6 @@
                 <form class="needs-validation" novalidate method="POST">
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label>ID Deporte: ${dep[0].ID_Deporte}</label>
-                            <div></div>
                             <label for="validationTooltip01"> Nombre del Deporte </label>
                             <input type="text" name="Disciplina" value="${dep[0].Disciplina}" id="validationTooltip01" class="form-control" maxlength="50" required/>
                             <div class="invalid-feedback">

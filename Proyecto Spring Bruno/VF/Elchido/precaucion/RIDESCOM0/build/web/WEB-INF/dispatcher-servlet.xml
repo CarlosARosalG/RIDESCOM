@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+    
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="Home.html">home</prop>
+                <prop key="Login.html">login</prop>
+                <prop key="Privacidad.html">logina</prop>
+                <prop key="Error404.html">login</prop>
+                <prop key="Error.html">login</prop>
+                <prop key="Logout.html">ddyfd</prop>
+                <prop key="LoginAlumno.html">logina</prop>
+                
+                <prop key="DDyFD.html">ddyfd</prop>
+                <prop key="DDyFD/Resultados.html">resultadosfd</prop>
+                
+                <prop key="DDyFD/AgregarEvento.html">evento</prop>
+                <prop key="DDyFD/Eventosiguiente.html">evento</prop>
+                <prop key="DDyFD/EditarEvento.html">evento</prop>
+                <prop key="DDyFD/ExisteEvento.html">evento</prop>
+                <prop key="DDyFD/ExisteEventoB.html">evento</prop>
+                <prop key="DDyFD/BorrarEvento.html">evento</prop>
+                <prop key="DDyFD/ConfirmaBorrarEvento.html">evento</prop>
+                
+                <prop key="DDyFD/Deportes.html">deportes</prop>
+                <prop key="DDyFD/Deportes/AgregarDeporte.html">deportes</prop>
+                <prop key="DDyFD/Deportes/EditarDeporte.html">deportes</prop>
+                <prop key="DDyFD/Deportes/BorrarDeporte.html">deportes</prop>
+                <prop key="DDyFD/Deportes/ConfirmaBorrar.html">deportes</prop><!--cambiar nombre-->
+                <prop key="DDyFD/Deportes/Deportesiguiente.html">deportes</prop>
+<!--                <prop key="DDyFD/Deportes/BorrarDeporte">deportes</prop>-->
+                
+                <prop key="DDyFD/Usuarios.html">usuarios</prop>
+                <prop key="DDyFD/Usuarios/AgregarUsuario.html">usuarios</prop>
+                <prop key="DDyFD/Usuarios/EditarUsuario.html">usuarios</prop>
+                <prop key="DDyFD/Usuarios/DesactivarUsuario.html">usuarios</prop>
+                <prop key="DDyFD/Usuarios/ActivarUsuario.html">usuarios</prop>
+                <prop key="DDyFD/Usuarios/BorrarUsuario.html">usuarios</prop>
+                <prop key="DDyFD/ConfirmaBorrarUsuario.html">usuarios</prop>
+                <prop key="DDyFD/Usuarios/Usuariosiguiente.html">usuarios</prop>
+
+                <prop key="DDyFD/Pruebas.html">pruebas</prop>
+                <prop key="DDyFD/Pruebas/AgregarPrueba.html">pruebas</prop>
+                <prop key="DDyFD/Pruebas/EditarPrueba.html">pruebas</prop>
+                <prop key="DDyFD/Pruebas/BorrarPrueba.html">pruebas</prop>
+                <prop key="DDyFD/Pruebas/ConfirmaBorrar.html">pruebas</prop>
+                <prop key="DDyFD/Pruebas/Pruebasiguiente.html">pruebas</prop>
+                
+                <prop key="DDyFD/Sedes.html">sedes</prop>
+                <prop key="DDyFD/Sedes/AgregarSede.html">sedes</prop>
+                <prop key="DDyFD/Sedes/Sedesiguiente.html">sedes</prop>
+                <prop key="DDyFD/Sedes/EditarSede.html">sedes</prop>
+                <prop key="DDyFD/Sedes/BorrarSede.html">sedes</prop>
+                <prop key="DDyFD/Sedes/ConfirmaBorrarSede.html">sedes</prop>
+                
+                <prop key="Coordinador.html">coordua</prop>
+                <prop key="Coordinador/Entrenadores.html">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores/AgregarEntrenador.html">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores/Entrenadorsiguiente.html">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores/EditarEntrenador.html">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores/BorrarEntrenador.html">entrenadores</prop>
+                <prop key="Coordinador/Entrenadores/ConfirmaBorrarEntrenador.html">entrenadores</prop>
+                
+                <prop key="Coordinador/DifundirEvento.html">difundir</prop>
+                
+                <prop key="Coordinador/AlumnosInscritos.html">inscritos</prop>
+                <prop key="Coordinador/Cedula.html">cedula</prop>
+                
+                <!--<prop key="Coordinador/Cedulas">cedulas</prop>-->
+                
+                <prop key="Coordinador/Resultados.html">resultados</prop>
+                <prop key="Coordinador/Resultados/IngresaBoleta.html">resultados</prop>
+                <prop key="Coordinador/Resultados/AgregarResultado.html">resultados</prop>
+                <prop key="Coordinador/Resultados/Resultadosiguiente.html">resultados</prop>
+                <prop key="Coordinador/Resultados/EditarResultado.html">resultados</prop>
+                
+                <prop key="Alumno.html">alumno</prop>
+                <prop key="Alumno/Resultados.html">resultadosal</prop>
+                <prop key="Alumno/Inscribirse.html">inscribir</prop>
+                <prop key="Alumno/Inscripciones.html">inscribir</prop>
+                <prop key="Alumno/Inscripiones/BorrarInscripcion.html">inscribir</prop>
+                <!--<prop key="InfoAlumno.html">alumno</prop>-->
+                <!--<prop key="Alumno/InfoAlumno.html">alumno</prop>-->
+                <prop key="InfoAlumno.html">registro</prop>
+                
+            </props>
+        </property>
+    </bean>
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <bean name="home" class="mx.ipn.escom.ridescom.controller.Home"/>
+    <bean name="entrenadores" class="mx.ipn.escom.ridescom.controller.Entrenadores"/>
+    <bean name="login" class="mx.ipn.escom.ridescom.controller.Login"/>
+    <bean name="logina" class="mx.ipn.escom.ridescom.controller.LoginAlumno"/>
+    <bean name="usuarios" class="mx.ipn.escom.ridescom.controller.Usuarios"/>
+    <bean name="coordua" class="mx.ipn.escom.ridescom.controller.CoordUA"/>
+    <bean name="ddyfd" class="mx.ipn.escom.ridescom.controller.DDyFD"/>
+    <bean name="evento" class="mx.ipn.escom.ridescom.controller.Evento"/>
+    <bean name="pruebas" class="mx.ipn.escom.ridescom.controller.Pruebas"/>
+    <bean name="sedes" class="mx.ipn.escom.ridescom.controller.Sedes"/>
+    <bean name="deportes" class="mx.ipn.escom.ridescom.controller.Deportes"/>
+    <bean name="difundir" class="mx.ipn.escom.ridescom.controller.Difundir"/>
+    
+    <bean name="alumno" class="mx.ipn.escom.ridescom.controller.Alumno"/>
+    <bean name="resultados" class="mx.ipn.escom.ridescom.controller.Resultados"/>
+    <bean name="resultadosfd" class="mx.ipn.escom.ridescom.controller.ResultadosFD"/>
+    <bean name="resultadosal" class="mx.ipn.escom.ridescom.controller.ResultadosAL"/>
+    <bean name="inscritos" class="mx.ipn.escom.ridescom.controller.AlumnosInscritos"/>
+    <bean name="inscribir" class="mx.ipn.escom.ridescom.controller.Inscribirse"/>
+    <bean name="registro" class="mx.ipn.escom.ridescom.controller.Registro"/>
+    <bean name="cedula" class="mx.ipn.escom.ridescom.controller.Cedula"/>
+    
+<!--    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />-->
+    <context:annotation-config />
+    <context:component-scan base-package="mx.ipn.escom.ridescom"/>
+
+</beans>

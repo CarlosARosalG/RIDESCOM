@@ -45,7 +45,6 @@ public class Home {
         }
          File ima=new File("../../../Users/spy51/Desktop/Ride/RIDESCOM/web/resources/img/abc.jpg");
          ima.delete();
-         ima.deleteOnExit();
         if(session.getAttribute("Nombre_U")!= null){
             switch (ro) {
                 case "1":
@@ -68,6 +67,8 @@ public class Home {
     public ModelAndView golog(HttpServletRequest req) throws Exception{   
         String accion=req.getParameter("alumno");
         if(accion.equalsIgnoreCase("alu")){
+            File ima=new File("../../../Users/spy51/Desktop/Ride/RIDESCOM/web/resources/img/abc.jpg");
+            ima.delete();
             mav.setViewName("redirect:/LoginAlumno.html");
         }else{
             mav.setViewName("Home.html");

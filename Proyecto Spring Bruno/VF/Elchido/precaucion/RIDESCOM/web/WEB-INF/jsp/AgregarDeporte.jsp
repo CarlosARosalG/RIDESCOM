@@ -382,7 +382,7 @@
                 <form class="needs-validation" novalidate method="POST">
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip01"> Nombre del deporte </label>
+                            <label for="validationTooltip01"> Nombre del deporte </label><span style="color: #ff0000">*</span>
                             <input type="text" name="Disciplina" id="validationTooltip01" class="form-control" placeholder="Nombre Deporte" maxlength="50" required/>
                             <div class="invalid-feedback">
                                 Ingresa una prueba
@@ -390,7 +390,7 @@
                         </div>
                         
                     </div>   
-                    <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Agregar </button>
+                    <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Volver </button>
                     <a href="../Deportes.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
                 </form>
 	</section>

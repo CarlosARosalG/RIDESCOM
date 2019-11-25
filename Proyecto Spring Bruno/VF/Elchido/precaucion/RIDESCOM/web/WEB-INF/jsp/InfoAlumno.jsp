@@ -371,59 +371,24 @@
 			<p> 
 			  Verifica que no falte ningún campo por completar antes de guardar la actualización de datos.
 			</p>
+                        <div>${nom} Por favor complete el formulario</div>
 			</div>
 		</div>
 
 		<!-- Formulario --> 
                 <form class="needs-validation" novalidate method="POST">
                     <div class="form-row">
-                        <div class="col-md-4 mb-3">
-                            <label for="validationTooltip01"><i class="fas fa-id-card"></i> Boleta </label><span style="color: #ff0000">*</span>
-                            <input name="Nombre_U" type="text" id="validationTooltip01" class="bol form-control" value="${bol}" maxlength="10" required/>
-                            <div class="invalid-feedback">
-                                Ingresa tu Boleta
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-                            <label for="validationTooltip02"><i class="fas fa-key"></i>Ingrese Contraseña </label><span style="color: #ff0000">*</span>
-                            <input name="Password_U" type="password"  id="validationTooltip02" class="form-control" placeholder="Vuelva a ingresar contraseña" autofocus="autofocus" min="6" max="10" required/>
-                            <div class="invalid-feedback">
-                                Ingresa una contraseña
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Nombre </label><span style="color: #ff0000">*</span>
-				    <input type="text" class="form-control" id="validationTooltip02" onkeypress="return soloLetras(event)" name="Nombre" value="${nom}" maxlength="45" required/>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
-				</div>
-			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Apellido Paterno </label><span style="color: #ff0000">*</span>
-				    <input type="text" class="form-control" id="validationTooltip02" onkeypress="return soloLetras(event)" name="Appat" value="${app}" maxlength="45" required/>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
-			    </div>
-			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Apellido Materno </label><span style="color: #ff0000">*</span>
-				    <input type="text" class="form-control" id="validationTooltip02" onkeypress="return soloLetras(event)" name="Apmat" value="${apm}" maxlength="45" required/>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
-			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> CURP </label><span style="color: #ff0000">*</span>
-				    <input type="text" class="form-control" id="validationTooltip02" name="CURP" placeholder="CURP" minlength="18" maxlength="18" required/>
+				    <input type="text" class="form-control" id="curp_input" oninput="validarInput(this)" name="CURP" placeholder="CURP" minlength="18" maxlength="18" required/>
+                                    <pre id="resultado"></pre>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> NSS (Opcional) </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" placeholder="NSS" maxlength="45" required/>
+				    <input type="text" class="form-control" id="validationTooltip02" name="NSS" placeholder="NSS" maxlength="45" />
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -508,15 +473,15 @@
 				    </div>
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Teléfono de contacto </label><span style="color: #ff0000">*</span>
-                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Tel_fijo" placeholder="Telefono fijo" minlength="10" maxlength="15" required/>
+				    <label for="validationTooltip02"> Teléfono de contacto (minimo 8 dígitos) </label><span style="color: #ff0000">*</span>
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Tel_fijo" placeholder="Telefono fijo" minlength="8" maxlength="10" required/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Extensión (Opcional) </label>
-                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Ext" placeholder="Extension de Telefono fijo" minlength="10" maxlength="15">
+                                    <input type="text" class="num form-control" id="validationTooltip02" onkeypress="return validarSiNumero()" name="Ext" placeholder="Extension de Telefono fijo"  maxlength="10">
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -630,4 +595,47 @@
  }
  });
     </script>
+<script>
+    function validarInput(input) {
+	var curp = input.value.toUpperCase(),
+    	resultado = document.getElementById("resultado"),
+        valido = "No válido";
+        
+    if (curpValida(curp)) {
+    	valido = "Válido";
+        resultado.classList.add("ok");
+    } else {
+    	resultado.classList.remove("ok");
+    }
+        
+    resultado.innerText = "CURP: " + curp + "\nFormato: " + valido;
+}
+
+function curpValida(curp) {
+	var re = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0\d|1[0-2])(?:[0-2]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/,
+    	validado = curp.match(re);
+	
+    if (!validado)  //Coincide con el formato general?
+    	return false;
+    
+    //Validar que coincida el dígito verificador
+    function digitoVerificador(curp17) {
+        //Fuente https://consultas.curp.gob.mx/CurpSP/
+        var diccionario  = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
+            lngSuma      = 0.0,
+            lngDigito    = 0.0;
+        for(var i=0; i<17; i++)
+            lngSuma= lngSuma + diccionario.indexOf(curp17.charAt(i)) * (18 - i);
+        lngDigito = 10 - lngSuma % 10;
+        if(lngDigito == 10)
+            return 0;
+        return lngDigito;
+    }
+    if (validado[2] != digitoVerificador(validado[1])) 
+    	return false;
+        
+	return true; //Validado
+}
+
+</script>
 </html>

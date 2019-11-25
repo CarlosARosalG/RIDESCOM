@@ -285,6 +285,12 @@
             .cuadro .box:hover .icon {
                 transform:scale(0);
             }
+            table th {
+                      text-align: center;
+                    }
+                    table tr {
+                      text-align: center;
+                    }
             .cuadro .box .details {
                 position:absolute;
                 top:0;
@@ -361,96 +367,48 @@
             <h1> Consulta a alumnos inscritos </h1>
         </div>
 
-        <div class="col-12 ">
-            <div id="noti" class="alert alert-light" role="alert">
-                <p> 
-                    Selecciona la unidad académica, el deporte y el ciclo escolar en el que participó.
-                </p>
-            </div>
-        </div>
-
         <!-- Formulario --> 
-            <div class="form-row">
-                <div class="col-md-5 mb-3">
-                    <label for="validationTooltip03">Deporte</label>
-                    <select name="select" id="selectsport" class="custom-select" >
-					  <option value="">Deporte</option>
-                                                    <%
-                                                        try{
-                                                            String query="select * from Act_Deportiva";
-                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
-                                                            Connect conn = new Connect();
-                                                            Statement stm=conn.Connect().createStatement();
-                                                            ResultSet rs=stm.executeQuery(query);
-                                                            while(rs.next()){
-                                                                %>
-                                                                <option value="<%=rs.getInt("ID_Deporte")%>"><%=rs.getString("Disciplina")%></option>
-                                                                <%
-                                                            }
-                                                            
-                                                        }catch(Exception ex)
-                                                        {
-                                                            ex.printStackTrace();
-                                                            out.println("Error: "+ex.getMessage());
-                                                        }
-                                                    %>
-                                                </select>
+            <div class="col-row-8">
+                    <div class="flexsearch">
+                            <div class="flexsearch--wrapper">
+                                <form class="flexsearch--form" id="searchTerm" placeholder="Buscar" type="text" onkeyup="doSearch()" />
+                                    <div class="flexsearch--input-wrapper">
+                                        <input type="text" id="search" placeholder="Buscar..." title="Busqueda Rapida" class="form-control">
+                                    </div>
+                                </form>    
+                            </div>
+                    </div>
                 </div>
-                <div class="col-md-5 mb-3">
-                    <label for="validationTooltip03">Ciclo Escolar</label>
-                    <select name="select" id="selectsport1" class="custom-select" >
-                    <option value="">Ciclo Escolar</option>
-                                                    <%
-                                                        try{
-                                                            String query="select * from Ciclo";
-                                                            Class.forName("com.mysql.jdbc.Driver").newInstance();
-                                                            Connect conn = new Connect();
-                                                            Statement stm=conn.Connect().createStatement();
-                                                            ResultSet rs=stm.executeQuery(query);
-                                                            while(rs.next()){
-                                                                %>
-                                                                <option value="<%=rs.getInt("ID_Ciclo")%>"><%=rs.getString("Ciclo_Escolar")%></option>
-                                                                <%
-                                                            }
-                                                            
-                                                        }catch(Exception ex)
-                                                        {
-                                                            ex.printStackTrace();
-                                                            out.println("Error: "+ex.getMessage());
-                                                        }
-                                                    %>
-                </select>
-                </div>
-            </div>
             <div class="clearfix" >&nbsp;</div>
-        <div class="clearfix" >&nbsp;</div>
 
         <div class="container">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
                         <tr>
+                            <th scope="col"> Deporte </th>
+                            <th scope="col"> Prueba </th>
                             <th scope="col"> Nombre </th>
                             <th scope="col"> Boleta </th>
-                            <th scope="col"> Deporte </th>
                             <th scope="col"> Evento </th>
                             <th scope="col"> Ciclo Escolar </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="datos">
                         <c:forEach var="ins" items="${ins}">
                         <tr>
+                            <td>${ins.Disciplina}</td>
+                            <td>${ins.Prueba}</td>
                             <td>${ins.Nombre}</td>
                             <td>${ins.ID_Alumno}</td>
-                            <td>${ins.Disciplina}</td>
                             <td>${ins.Nombre_Evento}</td>
                             <td>${ins.Ciclo_Escolar}</td>
-
+                            
                         </tr>
                         </c:forEach>
                     </tbody>
                 </table>
-                <a href="../Coordinador.html" class="btn btn-light float-left login_btn"> Volver </a>
+                <a href="../Coordinador.html" class="btn btn-light float-right login_btn btn-outline-danger "> Volver </a>
             </div>	
         </div>
     </section>
@@ -477,53 +435,15 @@
     })();
 </script>
 <script>
-    $(document).ready(function () {
-
-    $('#selectsport').change(function () {
-        var values = [];
-        $('#selectsport option:selected').each(function () {
-            if ($(this).val() != "") values.push($(this).text());
-        });
-        filter('table > tbody > tr', values);
-    });
-    $('#selectsport1').change(function () {
-        var values = [];
-        $('#selectsport1 option:selected').each(function () {
-            if ($(this).val() != "") values.push($(this).text());
-        });
-        filter('table > tbody > tr', values);
-    });
-
-    function filter(selector, values) {
-        $(selector).each(function () {
-            var sel = $(this);
-            var tokens = sel.text().split('\n');
-            var toknesObj = [], i;
-            for(i=0;i<tokens.length;i++){
-                toknesObj.push( {text:tokens[i].trim(), found:false});
-            }
-            
-            var show = false;
-            console.log(values);
-            $.each(values, function (i, val) {
-                
-                for(i=0;i<toknesObj.length;i++){                    
-                    if (!toknesObj[i].found && toknesObj[i].text.search(new RegExp("\\b"+val+"\\b")) >= 0) {
-                        toknesObj[i].found = true;
-                    }
-                }
-            });          
-            
-            var count = 0;
-             $.each(toknesObj, function (i, val) {
-                 if (val.found){
-                     count+=1;
-                 }
-             });
-            show = (count === values.length);        
-            show ? sel.show() : sel.hide();
-        });
-    }
+var $rows = $('#datos tr');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
 });
+
 </script>
 </html>

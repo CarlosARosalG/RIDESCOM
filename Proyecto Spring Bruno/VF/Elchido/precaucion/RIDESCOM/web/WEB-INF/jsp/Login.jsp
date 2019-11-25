@@ -170,9 +170,10 @@
                                 </div>
                             </div>
                             <div class="clearfix" >&nbsp;</div>
-                            <input name="btn" value="Entrar" type="submit" class="btn btn-light float-right login_btn">
+                            <a href="../RIDESCOM/Home.html" class="btn btn-light  login_btn"> Volver </a>
+                            <input name="btn" value="Entrar" type="submit" class="btn btn-light  login_btn">
                             
-                            <a href="../RIDESCOM/Home.html" class="btn btn-light float-right login_btn"> Volver </a>
+                            
                         </form>
                     </div>
 <!--			<div class="card-footer">

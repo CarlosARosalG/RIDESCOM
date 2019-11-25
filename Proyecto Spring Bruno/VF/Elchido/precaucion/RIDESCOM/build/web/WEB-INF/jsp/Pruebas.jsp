@@ -14,7 +14,12 @@
                 * Autor: Rosales González Carlos Andrés *
                 * Titulo: Hoja de estilos 				 *
                 ****************************************/
-
+table th {
+                      text-align: center;
+                    }
+                    table tr {
+                      text-align: center;
+                    }
                .clearfix {
                        float: none;
                        clear: both;
@@ -587,7 +592,7 @@
                                                             out.println("Error: "+ex.getMessage());
                                                         }
                                                     %>
-                                                </select> ó
+                                                </select> o 
                                          <select name="select" id="selectsport1" style="width: 380px;">
 					  <option value="">Tipo de prueba</option>
                                                     <%
@@ -620,21 +625,23 @@
 					<table class="table table-hover">
 						<thead>
                             <tr>
-                                <th>ID</th>
+                                <!--<th>ID</th>-->
+                                <th>Actividad Deportiva</th>
                                 <th>Prueba</th>
                                 <th>Tipo de Prueba</th>
                                 <th>Rama</th>
-                                <th>Actividad Deportiva</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="dato" items="${prue}">
                             <tr>
-                                <td>${dato.ID_Pruebas}</td>
+                                <!--<td>${dato.ID_Pruebas}</td>-->
+                                <td>${dato.Disciplina}</td>
                                 <td>${dato.Prueba}</td>
                                 <td>${dato.Tipo}</td>
                                 <td>${dato.Rama}</td>
-                                <td>${dato.Disciplina}</td>
+                                
                                 
                                 <td> 
                                                                     <a href="Pruebas/EditarPrueba.html?PruebaID=${dato.ID_Pruebas}" style='text-decoration:none;color: #0174DF;'> 
@@ -642,7 +649,7 @@
                                                                     </a> 
                                                                 </td>
                                                                 <td> 
-                                                                    <a href="Pruebas/BorrarPrueba.html?PruebaID=${dato.ID_Pruebas}" style='text-decoration:none;color: red;'>
+                                                                    <a href="Pruebas/BorrarPrueba.html?PruebaID=${dato.ID_Pruebas}" class="borra" style='text-decoration:none;color: red;'>
                                                                     <i  class="far fa-trash-alt"></i> 
                                                                     </a> 
                                                                 </td>
@@ -651,7 +658,7 @@
                         </tbody>
 					</table>
 				</div>	
-                            <a href="../DDyFD.html" class="btn btn-light float-right login_btn"> Volver </a>
+                            <a href="../DDyFD.html" class="btn btn-light float-right login_btn btn-outline-danger "> Volver </a>
 			</div>
         
 		<div class="clearfix" >&nbsp;</div>
@@ -708,5 +715,15 @@
         });
     }
 });
+</script>
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('borra');
+    var confirmIt = function (e) {
+    if (!confirm('¿Está seguro de borrar esta prueba? \n\
+Ten encuenta que tambien se borrará el evento al que esté registrado')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
 </script>
 </html>

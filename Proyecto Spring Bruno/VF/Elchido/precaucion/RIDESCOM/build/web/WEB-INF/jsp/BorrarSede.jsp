@@ -369,77 +369,39 @@
 <body>
 	<section id="global">
 		<div id="titulo">
-			<h1> Borrar la información de una sede </h1>
-		</div>
-
-		<div class="col-12 ">
-			<div id="noti" class="alert alert-warning col-4" role="alert">
-			  <p> Aquí podrás editar la información de una sede donde se realicen interpolitécnicos deportivos. </p>
-			  <p> Recuerda verificar todos los datos antes de concluir. </p>
-			</div>
+			<h1> No se puede borrar esta sede </h1>
+                        ${ms}
 		</div>
 		
 		<!-- Formulario --> 
-                <form class="needs-validation" novalidate method="POST">
-                    <label>ID_Sede: ${sed[0].ID_Sede}</label>
                             <div class="clearfix">&nbsp;</div>
                     <div class="form-row">
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Nombre del lugar </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Sede" value="${sed[0].Nombre_S}" maxlength="50" readonly="readonly"/>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
+				    <label for="validationTooltip02"> Nombre del lugar: ${sed[0].Nombre_S}</label>
 				</div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Calle </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="Calle" value="${sed[0].Calle}" maxlength="100" readonly="readonly"/>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
+				    <label for="validationTooltip02"> Calle: ${sed[0].Calle} </label>
+				    
 			    </div>
 			    <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Colonia </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="Colonia" value="${sed[0].Colonia}" maxlength="100" readonly="readonly"/>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
+				    <label for="validationTooltip02"> Colonia: ${sed[0].Colonia}</label>
+				   
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Numero </label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="Numero" value="${sed[0].Numero}" maxlength="5" readonly="readonly"/>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
+				    <label for="validationTooltip02"> Numero: ${sed[0].Numero}</label>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> CP </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="CP" value="${sed[0].CP}" maxlength="5" readonly="readonly"/>
-				    <div class="valid-tooltip">
-				    	OK
-				    </div>
+				    <label for="validationTooltip02"> C.P.: ${sed[0].CP}</label>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Estado en el que se localiza la sede </label>
-				    <input type="text" class="form-control" id="validationTooltip02" value="${sed[0].Estado}" readonly="readonly"/>
-                                    
-                                    <div class="valid-tooltip">
-				    	OK
-				    </div>
+				    <label for="validationTooltip02"> Estado en el que se localiza la sede: ${sed[0].Estado} </label>
 			    </div>
                             <div class="col-md-4 mb-3">
-				    <label for="validationTooltip02"> Municipio en el que se localiza la sede </label>
-				    <input name="municipio" type="text" class="form-control" id="validationTooltip02" value="${sed[0].Municipio}" readonly="readonly"/>
-                                    
-                                    <div class="valid-tooltip">
-				    	OK
-				    </div>
+				    <label for="validationTooltip02"> Municipio en el que se localiza la sede: ${sed[0].Municipio} </label>
 			    </div>
                     </div>
                         <div class="clearfix">&nbsp;</div>
-		  	<button type="submit" class="btn  btn-outline-success "> Eliminar </button>
 		  	<a href="../Sedes.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
-		</form>
 	</section>
 </body>
 

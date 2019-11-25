@@ -382,14 +382,14 @@
                 <form class="needs-validation" novalidate method="POST">
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip01"> Nombre de la Prueba </label>
+                            <label for="validationTooltip01"> Nombre de la Prueba </label><span style="color: #ff0000">*</span>
                             <input type="text" name="Prueba" id="validationTooltip01" class="form-control" placeholder="Nombre prueba" maxlength="30" required/>
                             <div class="invalid-feedback">
                                 Ingresa una prueba
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip01"> Tipo de Prueba </label>
+                            <label for="validationTooltip01"> Tipo de Prueba </label><span style="color: #ff0000">*</span>
                             <select name="Tipo" id="selectsport" class="custom-select" style="width: 380px;" required/>
 					  <option value="">Tipo de prueba</option>
                                                     <%
@@ -414,7 +414,7 @@
                             </select>
                         </div>
                         <div >
-                            <label for="validationTooltip01"> Deporte al que pertenezca la Prueba </label>
+                            <label for="validationTooltip01"> Deporte al que pertenezca la Prueba </label><span style="color: #ff0000">*</span>
                             <p></p>
                             <select name="Act_Prueba" id="selectsport" class="custom-select" style="width: 380px;" required/>
 					  <option value="">Deporte al que pertenece</option>
@@ -442,7 +442,7 @@
                         
                     </div>   
                     <button name="Agrega" class="btn   btn-outline-success" value="Agregar" type="submit"> Agregar </button>
-                    <a href="../Pruebas.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+                    <a href="../Pruebas.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Volver </button></a>
                 </form>
 	</section>
 </body>

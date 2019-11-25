@@ -14,6 +14,12 @@
                 * Autor: Rosales González Carlos Andrés *
                 * Titulo: Hoja de estilos 				 *
                 ****************************************/
+                    table th {
+                      text-align: center;
+                    }
+                    table tr {
+                      text-align: center;
+                    }
 
                .clearfix {
                        float: none;
@@ -597,7 +603,7 @@
 					<table class="table table-hover">
 						<thead>
                             <tr>
-                                <th>ID</th>
+                                <!--<th>ID</th>-->
                                 <th>Deporte</th>
                                 <th></th>
                             </tr>
@@ -605,7 +611,7 @@
                         <tbody>
                             <c:forEach var="dato" items="${dep}">
                             <tr>
-                                 <td>${dato.ID_Deporte}</td>
+<!--                                 <td>${dato.ID_Deporte}</td>-->
                                 <td>${dato.Disciplina}</td>
                                 
                                 <td> 
@@ -623,7 +629,7 @@
                         </tbody>
 					</table>
 				</div>	
-                            <a href="../DDyFD.html" class="btn btn-light float-right login_btn"> Volver </a>
+                            <a href="../DDyFD.html" class="btn btn-light float-right login_btn btn-outline-danger "> Volver </a>
 			</div>
         
 		<div class="clearfix" >&nbsp;</div>

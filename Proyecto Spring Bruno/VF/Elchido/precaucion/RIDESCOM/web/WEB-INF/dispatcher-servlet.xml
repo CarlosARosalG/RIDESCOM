@@ -77,6 +77,7 @@
                 <prop key="DDyFD/Sedes/ConfirmaBorrarSede.html">sedes</prop>
                 
                 <prop key="Coordinador.html">coordua</prop>
+                <prop key="Coordinador/EventosPasados.html">coordua</prop>
                 <prop key="Coordinador/Entrenadores.html">entrenadores</prop>
                 <prop key="Coordinador/Entrenadores/AgregarEntrenador.html">entrenadores</prop>
                 <prop key="Coordinador/Entrenadores/Entrenadorsiguiente.html">entrenadores</prop>
@@ -87,6 +88,7 @@
                 <prop key="Coordinador/DifundirEvento.html">difundir</prop>
                 
                 <prop key="Coordinador/AlumnosInscritos.html">inscritos</prop>
+                <prop key="BorrarInscripcion.html">inscritos</prop>
                 <prop key="Coordinador/Cedula.html">cedula</prop>
                 
                 <!--<prop key="Coordinador/Cedulas">cedulas</prop>-->

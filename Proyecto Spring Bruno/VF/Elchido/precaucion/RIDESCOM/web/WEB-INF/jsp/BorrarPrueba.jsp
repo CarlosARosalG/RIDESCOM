@@ -9,23 +9,18 @@
     <body>
          <div class="container mt-4 col-lg-4">
             <div class="card border-info">
-                <h4>¿Seguro que desea eliminar estos datos?</h4>
+                <h4>No se puede eliminar</h4>
             </div>
             <div class="card-header bg-info">
-                <form method="POST">
-                    <label>ID Prueba: ${prue[0].ID_Pruebas}</label>
+                    <p>En este deporte ya hay alumnos inscritos</p>
+                    <label>Prueba: <b>${prue[0].Prueba}</b></label>
                     <p></p>
-                    <label>Prueba</label>
-                    <input type="text" value="${prue[0].Prueba}" name="Prueba" class="form-control" autocomplete="off" disabled/>
-                     <label>Tipo de Prueba</label>
-                     <input type="text" value=" ${prue[0].Tipo}"  name="Tipo" class="form-control" autocomplete="off" disabled/> 
-                     <label>Rama</label>
-                     <input type="text" value=" ${prue[0].Rama}"  name="Tipo" class="form-control" autocomplete="off" disabled/> 
-                     <label>Deporte</label>
-                     <input type="text" value=" ${prue[0].Disciplina}"  name="Act_Prueba" class="form-control" autocomplete="off" disabled/> 
-                    
-                     <!--<a href="ConfirmaBorrar.html?PruebaID=${prue[0].ID_Pruebas}" type="submit" value="Eliminar" class="btn btn-success">Eliminar</a>-->
-                     <button type="submit" class="btn  btn-outline-success "> Eliminar </button>
+                     <label>Tipo de Prueba: <b>${prue[0].Tipo}</b></label>
+                     <p></p>
+                     <label>Rama: <b>${prue[0].Rama}</b></label>
+                     <p></p>
+                     <label>Deporte: <b>${prue[0].Disciplina}</b></label>
+                     <p></p>
                    <a href="../Pruebas.html" type="submit" value="Regresar" class="btn btn-success">Regresar</a>
                 </form>
             </div>

@@ -376,7 +376,7 @@
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip01"> Boleta del Alumno</label>
-                            ${mjs}
+                            
                             <input type="text" name="Boleta" id="validationTooltip01" class="num form-control" placeholder="Boleta del Alumno" minlength="10" maxlength="10" required/>
                             <div class="invalid-feedback">
                                 Ingresa una Boleta
@@ -385,7 +385,7 @@
                         
                     </div>   
                     <button name="btn" value="Entrar" class="btn   btn-outline-success" type="submit"> Agregar </button>
-                    <a href="../Resultados.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Cancelar </button></a>
+                    <a href="../Resultados.html"style='text-decoration:none;color: #FFFFFF;'> <button type="button" class="btn  btn-outline-danger"> Volver </button></a>
                 </form>
 	</section>
 </body>

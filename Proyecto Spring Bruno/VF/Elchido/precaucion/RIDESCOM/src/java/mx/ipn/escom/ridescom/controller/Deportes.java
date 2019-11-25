@@ -49,6 +49,7 @@ public class Deportes {
     @RequestMapping(value="DDyFD/Deportes.html", method=RequestMethod.GET)
     public ModelAndView Prueba(HttpServletRequest re)throws SQLException{
          HttpSession session = re.getSession();
+//         mav.clear();
         String ur="select Roles_ID_Roles from usuario where Nombre_U='"+session.getAttribute("Nombre_U")+"';";
          try{
             ct=cn.Connect();
@@ -67,7 +68,7 @@ public class Deportes {
         }else{
             if(ro.equals("1")){
                 mav.addObject(new Deportes());
-                String sql1="select * from Act_Deportiva";
+                String sql1="select * from Act_Deportiva order by Disciplina ASC";
                 dat=this.rid.queryForList(sql1);
                 mav.addObject("dep",dat);
                 mav.setViewName("Deportes");
@@ -198,15 +199,38 @@ public class Deportes {
         }catch(Exception e){
         }
         if(session.getAttribute("Nombre_U")== null){
-         mav.setViewName("Error404");
+         mav.setViewName("redirect:/Login.html");
         }else{
             if(ro.equals("1")){
-                mav.addObject(new Deportes());
                 DeporteID=Integer.parseInt(re.getParameter("DeporteID"));
-                String sql="select * from Act_Deportiva where ID_Deporte="+DeporteID;
-                dat = this.rid.queryForList(sql);
-                mav.addObject("dep",dat);
-                mav.setViewName("EditarDeporte");
+                String sql="select distinct i.Evento_Evento_ID from Inscripcion i inner join (act_deportiva dep, pruebas pr, evento ev) on (dep.ID_Deporte=pr.Act_Deportiva_ID_Deporte and pr.ID_Pruebas=ev.Pruebas_ID_Pruebas and ev.Evento_ID=i.Evento_Evento_ID) where dep.ID_Deporte="+DeporteID;
+                java.sql.Connection ctd;
+                ResultSet rsd;
+                PreparedStatement psd;
+                String de=null;
+                try{
+                    ctd=cn.Connect();
+                    psd=ctd.prepareStatement(sql);
+                    rsd=psd.executeQuery();
+                    if(rsd!=null ){
+                        while(rsd.next() ){
+                        de =rsd.getString("Evento_Evento_ID");
+                        }
+                    }
+                }catch(Exception e){
+                }
+                if(de==null){
+                    DeporteID=Integer.parseInt(re.getParameter("DeporteID"));
+                        String sqla="select * from Act_Deportiva where ID_Deporte="+DeporteID;    
+                        dat = this.rid.queryForList(sqla);
+                        mav.addObject("dep",dat);
+                        mav.setViewName("EditarDeporte");
+                }else{
+                        String sqlda="select * from Act_Deportiva where ID_Deporte="+DeporteID;
+                        dat = this.rid.queryForList(sqlda);
+//                        mav.addObject("dep",dat);
+                        mav.setViewName("redirect:/DDyFD/Deportes.html");
+                }
             }else if(ro.equals("2")){
                 mav.setViewName("redirect:/Coordinador.html");
             }else if(ro.equals("3")){
@@ -219,9 +243,7 @@ public class Deportes {
     public ModelAndView Editar(HttpServletRequest re, Deporte dep){
         String sql="update Act_Deportiva set Disciplina=? where ID_Deporte="+DeporteID;
         String dis=re.getParameter("Disciplina");
-//        this.rid.update(sql, dep.getDisciplina());
         this.rid.update(sql, dis);
-//        ModelAndView mv=new ModelAndView ("redirect:../Deportes.html");
         mav.setViewName("redirect:../Deportes.html");
         mav.addObject("mjs", "<div style='color: green;'>Se han actualizado los datos correctamente</div>");
         return mav;
@@ -278,35 +300,57 @@ public class Deportes {
 //    }    
     @RequestMapping(value="DDyFD/Deportes/BorrarDeporte.html")
     public ModelAndView delete(HttpServletRequest re, Deporte dep){
+        HttpSession session = re.getSession();
         DeporteID=Integer.parseInt(re.getParameter("DeporteID"));
-        String sql="select distinct i.Evento_Evento_ID from Inscripcion i inner join (act_deportiva dep, pruebas pr, evento ev) on (dep.ID_Deporte=pr.Act_Deportiva_ID_Deporte and pr.ID_Pruebas=ev.Pruebas_ID_Pruebas and ev.Evento_ID=i.Evento_Evento_ID) where dep.ID_Deporte="+DeporteID;
-        java.sql.Connection ctd;
-        ResultSet rsd;
-        PreparedStatement psd;
-        String de=null;
-        try{
-            ctd=cn.Connect();
-            psd=ctd.prepareStatement(sql);
-            rsd=psd.executeQuery();
-            if(rsd!=null ){
-                while(rsd.next() ){
-                de =rsd.getString("Evento_Evento_ID");
+        String ur="select Roles_ID_Roles from usuario where Nombre_U='"+session.getAttribute("Nombre_U")+"';";
+         try{
+            ct=cn.Connect();
+            ps=ct.prepareStatement(ur);
+            rs=ps.executeQuery();
+            if(rs!=null ){
+                while(rs.next() ){
+                ro =rs.getString("Roles_ID_Roles");
                 }
             }
         }catch(Exception e){
         }
-        if(de==null){
-            String sqlde ="delete from Act_Deportiva where ID_Deporte="+DeporteID;
-            this.rid.update(sqlde);
-            mav.addObject("mjs", "<div style='color: green;'>Se ha Eliminado correctamente</div>");
-            mav.setViewName("redirect:../Deportes.html");
+        if(session.getAttribute("Nombre_U")== null){
+         mav.setViewName("redirect:/Login.html");
         }else{
-                String sqlda="select * from Act_Deportiva where ID_Deporte="+DeporteID;
-                dat = this.rid.queryForList(sqlda);
-                mav.addObject("dep",dat);
-                mav.setViewName("BorrarDeporte");
+            if(ro.equals("1")){
+                String sql="select distinct i.Evento_Evento_ID from Inscripcion i inner join (act_deportiva dep, pruebas pr, evento ev) on (dep.ID_Deporte=pr.Act_Deportiva_ID_Deporte and pr.ID_Pruebas=ev.Pruebas_ID_Pruebas and ev.Evento_ID=i.Evento_Evento_ID) where dep.ID_Deporte="+DeporteID;
+                java.sql.Connection ctd;
+                ResultSet rsd;
+                PreparedStatement psd;
+                String de=null;
+                try{
+                    ctd=cn.Connect();
+                    psd=ctd.prepareStatement(sql);
+                    rsd=psd.executeQuery();
+                    if(rsd!=null ){
+                        while(rsd.next() ){
+                        de =rsd.getString("Evento_Evento_ID");
+                        }
+                    }
+                }catch(Exception e){
+                }
+                if(de==null){
+                    String sqlde ="delete from Act_Deportiva where ID_Deporte="+DeporteID;
+                    this.rid.update(sqlde);
+                    mav.addObject("mjs", "<div style='color: green;'>Se ha Eliminado correctamente</div>");
+                    mav.setViewName("redirect:../Deportes.html");
+                }else{
+                        String sqlda="select * from Act_Deportiva where ID_Deporte="+DeporteID;
+                        dat = this.rid.queryForList(sqlda);
+                        mav.addObject("dep",dat);
+                        mav.setViewName("BorrarDeporte");
+                }
+            }else if(ro.equals("2")){
+                mav.setViewName("redirect:/Coordinador.html");
+            }else if(ro.equals("3")){
+                mav.setViewName("redirect:/Alumno.html");    
+            }
         }
-//        ModelAndView mv=new ModelAndView ("redirect:../Deportes.html");
         return mav;
     }
     @RequestMapping(value="DDyFD/Deportes/ConfirmaBorrar.html")

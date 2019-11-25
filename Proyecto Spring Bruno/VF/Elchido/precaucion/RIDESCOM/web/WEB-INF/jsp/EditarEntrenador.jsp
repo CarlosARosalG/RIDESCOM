@@ -376,7 +376,7 @@
 
 		<!-- Formulario --> 
 		<form class="needs-validation" novalidate method="POST">
-                    <label>ID_Persona: ${per[0].ID_Persona}</label>
+
                         <div class="form-row">
 		    	
 			    <div class="col-md-4 mb-3">

@@ -23,26 +23,24 @@ public class AlumnoDAO {
     PreparedStatement psp;
     ResultSet rsp;
     
-    public Usuario validar(String usuario, String pass){
-    Usuario usu=new Usuario();
+    public Usuario validar(String usuario){
+        Usuario us=new Usuario();
 
-        String sql="select Nombre_U from usuario where BINARY Nombre_U=? and Activo=1 and Roles_ID_Roles=3";
+        String sql="select Nombre_U, Roles_ID_Roles from usuario u inner join (Persona p, Alumno a) on (p.ID_Persona=u.Persona_ID_Persona and p.ID_Persona=a.Persona_ID_Persona) where u.Nombre_U=? and a.ID_Alumno=? and u.Activo=1";
         try{
             con=cn.Connect();
             ps=con.prepareStatement(sql);
             ps.setString(1, usuario);
-            ps.setString(2, pass);
+            ps.setString(2, usuario);
             rs=ps.executeQuery();
 
             while(rs.next()){
-                //us.setNombre_U(rs.getString("ID_Roles"));
-                usu.setNombre_U(rs.getString("Nombre_U"));
-//                usu.setPassword_U(rs.getString("Password_U"));
-        //        usu.setRol(rs.getInt("Roles_ID_Roles"));
+                us.setNombre_U(rs.getString("Nombre_U"));
+                us.setRol(rs.getInt("Roles_ID_Roles"));
             }
         }catch(Exception e){
         }
         
-        return usu;
+        return us;
     }
 }

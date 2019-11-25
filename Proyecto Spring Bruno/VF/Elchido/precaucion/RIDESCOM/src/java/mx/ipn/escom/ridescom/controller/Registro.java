@@ -5,9 +5,12 @@
  */
 package mx.ipn.escom.ridescom.controller;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import mx.ipn.escom.ridescom.config.Conexion;
 import mx.ipn.escom.ridescom.config.Connect;
 import mx.ipn.escom.ridescom.config.SAES;
@@ -30,13 +33,11 @@ public class Registro {
     Usuario us=new Usuario();
      
     Connect cn=new Connect();
-    java.sql.Connection ct;
+    Connection ct;
     ResultSet rs;
     PreparedStatement ps;
-    SAES sacn=new SAES();
-//    java.sql.Connection cts;
-//    ResultSet rss;
-//    PreparedStatement pss;
+    String ro;
+
     String sas;
     String reg;
     String nombre;
@@ -49,39 +50,36 @@ public class Registro {
     
     
     @RequestMapping(value="InfoAlumno.html", method=RequestMethod.GET)
-    public ModelAndView Ialu(){   
-        mav.setViewName("InfoAlumno");
+    public ModelAndView Ialu(HttpServletRequest re){   
+//        HttpSession session = re.getSession();
+//        String ur="select Roles_ID_Roles from usuario where Nombre_U='"+session.getAttribute("Nombre_U")+"';";
+//         try{
+//            ct=cn.Connect();
+//            ps=ct.prepareStatement(ur);
+//            rs=ps.executeQuery();
+//            if(rs!=null ){
+//                while(rs.next() ){
+//                ro =rs.getString("Roles_ID_Roles");
+//                }
+//            }
+//        }catch(Exception e){
+//        }
+//        if(session.getAttribute("Nombre_U")== null){
+//         mav.setViewName("redirect:/Login.html");
+//        }else{
+//            if(ro.equals("1")){
+//            mav.setViewName("redirect:/DDyFD.html");
+//            }else if(ro.equals("2")){
+//            mav.setViewName("redirect:/Coordinador.html");
+//            }else if(ro.equals("3")){
+            mav.setViewName("InfoAlumno");    
+//            }
+//        }
         return mav;
     }
     @RequestMapping(value="InfoAlumno.html", method=RequestMethod.POST)
     public ModelAndView ralu(Usuario u){   
-        String all="select Numero_Boleta, Nombre, Apellido_Pat, Apellido_Mat, Inscrito from estudiante where Numero_Boleta="+u.getNombre_U();
-        try{
-                ct=sacn.ConnectSAES();
-            ps=ct.prepareStatement(all);
-            rs=ps.executeQuery();
-            if(rs!=null ){
-                while(rs.next() ){
-                sas =rs.getString("Numero_Boleta");
-                nombre=rs.getString("Nombre");
-                APP=rs.getString("Apellido_Pat");
-                APM=rs.getString("Apellido_Mat");
-                insc=rs.getString("Inscrito");
-                }
-            }
-            }catch(Exception ex){
-            }
-        if(insc.equals("1")){
-            mav.addObject("bol",sas);
-            mav.addObject("nom",nombre);
-            mav.addObject("nom",APP);
-            mav.addObject("nom",APM);
-            mav.addObject("mjs", "<div style='color: red;'>"+insc+sas+nombre+APP+APM+"</div>");
-            mav.setViewName("InfoAlumno");
-        }else{
-            mav.setViewName("InfoAlumno");
-            mav.addObject("mjs", "<div style='color: red;'>Lo sentimos no estás inscrito</div>");
-        }
+            
         return mav;
     }
 }

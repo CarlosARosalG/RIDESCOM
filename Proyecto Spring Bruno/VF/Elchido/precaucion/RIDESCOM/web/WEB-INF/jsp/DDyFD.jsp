@@ -752,7 +752,7 @@ Funciones: Será la vista gerenal para los alumnos
                             <li><a href="#"style='text-decoration:none;'> ${Nombre_U} </a></li>
                             <li><a href="#"style='text-decoration:none;'> ${p.Correo} </a></li>
                             <li><a href="#"style='text-decoration:none;'> ${p.Nombre} ${p.Ap_pat} </a></li>
-                            <li><a href="#Contacto"style='text-decoration:none;'><span class="sexto"></span> Contacto </a></li>
+                            <li><a href="#"style='text-decoration:none;'><span class="sexto"></span> Contacto </a></li>
                             <li><a href="Logout.html" style='text-decoration:none;'>Salir</a></li>
                             
                         </ul>
@@ -793,11 +793,13 @@ Funciones: Será la vista gerenal para los alumnos
                 <div class="container" id="datos">
                     <c:forEach var="dato" items="${eve}">
                     <div class="timeline-item">
+                        <div class="timeline-img"></div>
                         <div class="timeline-content js--fadeInLeft">
                             <div class="clearfix">&nbsp;</div>
                             <h2>${dato.Nombre_Evento}</h2>
                             <div class="date" id="identi">${dato.FE}</div>
-                                <blockquote><u>Lugar del Evento</u>: ${dato.Nombre_S}</blockquote>
+                                <blockquote><u>Lugar del Evento</u>: ${dato.Nombre_S}
+                                    <p></p> <b>${dato.direccion}</b></blockquote>
                                 <blockquote><u>Período de inscripciones</u>: ${dato.FIR} / ${dato.FFR}</blockquote>
                                 <blockquote><u>Deporte del evento</u>: ${dato.Disciplina}
                                     <p></p>
@@ -821,27 +823,7 @@ Funciones: Será la vista gerenal para los alumnos
             <script src='https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js'></script>
 
             <!-- Contacto -->
-            <a name="Contacto" id="Contacto"></a>
-            <div class="container">
-                <div class="cuadro">
-                    <div class="box">
-                        <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div class='details'>
-                            <h3><a href='https://www.google.com.mx/maps/place/Escuela+Superior+de+Cómputo/@19.5046589,-99.1490405,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1f835393528b5:0x5f2dd0563ce99e8!8m2!3d19.5046539!4d-99.1468518' style='text-decoration:none;color: #FFFFFF;'> 
-                                    ESCOM - Actividades Deportivas
-                                </a></h3>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                        <div class='details'><h3>5512345678</h3></div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                        <div class='details'><h3>prueba@gmail.com</h3></div>
-                    </div>
-                </div>
-            </div>
+            
             <div class="clearfix" >&nbsp;</div>
             <div class="clearfix" >&nbsp;</div>
         </section>

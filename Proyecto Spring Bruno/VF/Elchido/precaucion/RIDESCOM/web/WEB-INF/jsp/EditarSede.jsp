@@ -381,8 +381,6 @@
 		
 		<!-- Formulario --> 
                 <form class="needs-validation" novalidate method="POST">
-                    <label>ID_Sede: ${sed[0].ID_Sede}</label>
-                            <div class="clearfix">&nbsp;</div>
                     <div class="form-row">
 			    <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> Nombre del lugar </label>
@@ -414,7 +412,7 @@
 			    </div>
                             <div class="col-md-4 mb-3">
 				    <label for="validationTooltip02"> CP </label>
-				    <input type="text" class="form-control" id="validationTooltip02" name="CP" value="${sed[0].CP}" maxlength="5" equired/>
+				    <input type="text" class="num form-control" id="validationTooltip02" name="CP" value="${sed[0].CP}" maxlength="5" equired/>
 				    <div class="valid-tooltip">
 				    	OK
 				    </div>
@@ -475,5 +473,9 @@
           }, false);
         })();
 </script>
-
+<script>
+     $('.num').on('input', function () { 
+    this.value = this.value.replace(/[^0-9]/g,'');
+    });
+    </script>
 </html>

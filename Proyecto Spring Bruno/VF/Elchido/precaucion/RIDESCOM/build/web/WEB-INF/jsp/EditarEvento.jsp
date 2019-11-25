@@ -381,7 +381,7 @@
 		
 		<!-- Formulario --> 
                 <form class="needs-validation" novalidate method="POST">
-                    <label>ID de Evento: ${eve[0].Evento_ID}</label>
+                    
                     <div class="form-row">
                         
                         <div class="col-md-4 mb-3">

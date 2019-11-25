@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cedula" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1e560d76-7c40-4a9f-a932-bab82fecb79c">
+	<property name="ireport.zoom" value="2.357947691000002"/>
+	<property name="ireport.x" value="577"/>
+	<property name="ireport.y" value="479"/>
+	<parameter name="Act_Deport" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Act_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select p.Ap_Pat, p.Ap_Mat, p.nombre, date_format(p.Fecha_Nac,"%Y-%m-%d") as Fecha_Nac, (select Estado from Estados where Homo=(select left(right(CURP,7),2) from persona WHERE ID_Persona=3)) as Lugar_Nac, p.CURP, pa.Programa, a.ID_Alumno, a.Inscrito as Grupo, p.NSS, ce.Correo, m.municipio, ad.Disciplina
+	from Alumno a, Inscripcion i, Evento e, act_deportiva ad, Persona p, Contacto c, email ce, Municipio m, escuela_has_prog_academico epa, escuela es, prog_academico pa
+		where p.ID_Persona = a.Persona_ID_Persona
+			AND p.ID_Persona = c.Persona_ID_Persona
+            AND c.ID_Contacto = ce.Contacto_ID_Contacto
+            AND p.Municipio_ID_Municipio = m.ID_Municipio
+			AND a.ID_Alumno = i.Alumno_ID_Alumno
+            AND a.Escuela_has_Prog_Academico_Prog_Academico_ID_Prog_Academico = epa.Prog_Academico_ID_Prog_Academico
+            AND epa.Escuela_ID_Escuela = es.ID_Escuela
+            AND epa.Prog_Academico_ID_Prog_Academico = pa.ID_Prog_Academico
+			AND i.Evento_Evento_ID = e.Evento_ID
+            AND e.Act_Deportiva_ID_Deporte = ad.ID_Deporte
+	AND ad.ID_Deporte = $P{Act_ID}
+            order by ad.Disciplina asc;]]>
+	</queryString>
+	<field name="Ap_Pat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ap_Mat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fecha_Nac" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Lugar_Nac" class="java.lang.String"/>
+	<field name="CURP" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Programa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID_Alumno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Grupo" class="java.lang.String"/>
+	<field name="NSS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Correo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="municipio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Disciplina" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="289" y="37" width="163" height="26" uuid="87335f27-694d-4a66-8322-8e3e3139d9ef"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Cédula de Inscripción]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="580" y="18" width="120" height="19" uuid="6e5a60ad-2b46-49d7-911c-b01e4b7c9e25"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="19" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="2" width="50" height="20" uuid="7565cb84-4f86-41f9-ab25-bfe8a08aa4aa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Ap_Pat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="2" width="50" height="20" uuid="b3535f99-5fb7-459f-bb51-5b23a90d589c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Ap_Mat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="2" width="75" height="20" uuid="68aa5ba0-d936-414e-8488-dba3336801bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="1" width="100" height="20" uuid="5eeb9a25-f999-4819-8fe2-9e0ae2e26b5d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Fotografía]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="2" width="120" height="20" uuid="ff71cea8-b75c-4214-9586-3666f699071b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CURP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="2" width="65" height="20" uuid="3d6d3cd9-6294-4922-aa33-3d7b0a768ac5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Boleta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="2" width="60" height="20" uuid="abbc1b5b-7be4-4f43-a457-cb358554481e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NSS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="524" y="2" width="135" height="20" uuid="4d8a6d98-b1e6-4f2d-989e-493b1025db8a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="660" y="2" width="80" height="20" uuid="c3dcb077-a607-458d-b200-607a747e6e55"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Disciplina]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="0" width="50" height="48" uuid="b11e46e3-ddba-407f-91d3-c46302f9cd9a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ap_Pat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="0" width="50" height="48" uuid="1574f876-dd7a-41df-9814-7cc9b58ed956"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ap_Mat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="0" width="75" height="48" uuid="b4a7b9ac-1e4c-4914-ab7c-b69edab89fef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="0" width="100" height="47" uuid="9c47e809-d69a-4e01-9842-f6478ac0cbeb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Foto]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="282" y="1" width="120" height="47" uuid="a42e5e1e-68cb-4d31-85de-caa3f1c0cd75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CURP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="1" width="65" height="47" uuid="f2539a93-bd31-4cd5-aaec-e82d32dfcd42"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ID_Alumno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="1" width="60" height="47" uuid="71ae4e21-1d7c-409e-b2dd-cedf740e3e15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NSS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="524" y="1" width="135" height="47" uuid="7284bae4-0fcf-4240-9af1-25c893df5576"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Correo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="660" y="1" width="80" height="47" uuid="1c362200-e5be-4928-9d2d-fa7d32f6ff6c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Disciplina}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="63" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="308" y="13" width="80" height="20" uuid="cb1f5730-afc6-443a-8eca-9b0b40060dab"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="391" y="13" width="40" height="20" uuid="8a1c66d2-2fc0-4f69-9435-7ff387499675"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
