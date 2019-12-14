@@ -1,0 +1,89 @@
+\documentclass[oneside,10pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[left=3cm,top=2cm,right=2cm,bottom=2cm]{geometry} 
+\usepackage{graphicx}
+\graphicspath{Imagenes}
+\usepackage{imakeidx}
+\usepackage{usecases}
+\usepackage{requerimientos}
+\usepackage{cdtBook}
+\usepackage{pdfpages}
+\usepackage{appendix}
+\usepackage{url}
+\renewcommand{\appendixname}{Apéndice}
+\renewcommand{\appendixtocname}{Apéndice}
+\renewcommand{\appendixpagename}{Apéndice}
+%\makeindex[columns=3, title=Alphabetical Index, intoc]
+\let\OLDthebibliography=\thebibliography
+\def\thebibliography#1{\OLDthebibliography{#1}\addcontentsline{toc}{chapter}{\bibname}}	
+
+\begin{document}
+	\renewcommand{\bibname}{Referencias}
+	\includepdf{portada.pdf}
+	
+	\includepdf{portada2.pdf}
+	
+	\includepdf{cartaResponsiva.pdf}
+	
+	\includepdf{Advertencia.pdf}
+	
+	%=========================================================
+	%                                                         Indice.
+	%=========================================================
+	
+	\tableofcontents
+	\mainmatter
+		\input{capitulo1}
+		
+	%=========================================================
+	%                                                         Capitulo 2
+	%=========================================================
+		\input{capitulo2}
+	%=========================================================
+	%                                                         Capitulo 3 Estado del arte
+	%=========================================================
+		\input{capitulo3}
+	\newpage
+	%=========================================================
+	%                                                         Capitulo 4 Análisis
+	%=========================================================
+		\input{capitulo4}
+		
+	%=========================================================
+	%                                                         Capitulo 6 Desarrollo
+	%=========================================================
+	%\input{capitulo6}
+	
+	%=========================================================
+	%                                                         Capitulo 7 Pruebas
+	%=========================================================
+	\input{capitulo7}
+	
+	%=========================================================
+	%                                                         Capitulo 7 Pruebas
+	%=========================================================
+	\input{Conclusiones}
+	
+	%=========================================================
+	%                                                         Capitulo 7 Pruebas
+	%=========================================================
+	\input{TrabajoFuturo}
+
+	%=========================================================
+	%     										Referencias
+	%=========================================================
+	\input{referencias}	
+	
+	%=========================================================
+	%             apendice              Glosario
+	%=========================================================
+		\input{glosario}
+	
+	%=========================================================
+	%                                                         Anexos
+	%=========================================================
+		\input{Anexos}
+	
+\end{document}

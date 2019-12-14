@@ -1,0 +1,56 @@
+\begin{UseCase}{CU6}{Consultar calendario de eventos}{
+		\noindent Este caso de uso tiene como finalidad mostrar la las fechas en la que los eventos registrados se van a realizar, el actor pueda consultar en la página principal los eventos que han sido registrados y están disponibles para inscribirse. 
+		Para ello deberá iniciar sesión, una vez hecho esto se mostrará una pantalla  donde estarán las opciones que este tenga disponibles y a su vez, el calendario de eventos estará contenida en esta misma como se puede apreciar en \IUref{}{Pantalla de Principal \ref{principalalum}}.
+        
+	} \label{CU6_evento}
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Jefe de Fomento Deportivo, Coordinador de Unidad Académica, Alumno}
+		\UCitem{Propósito}{Consultar los eventos disponibles.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Iniciar sesión.
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla principal}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Nombre del evento 
+        	\item Fecha del evento
+        	\item Ciclo escolar
+        	\item Sede
+        	\item Prueba
+        	\item Comentarios
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Eventos registrados
+		\end{itemize}}
+		\UCitem{Destino}{Pantalla Principal}
+		\UCitem{Errores}{
+        	\begin{itemize}
+        	    \item No hay eventos registrados.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+	\pagebreak
+	
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Ingresa a la página RIDESCOM.
+    \UCpaso Muestra la pantalla \IUref{}{Pantalla de Inicio de Sesión \ref{principalalum}}.
+    \UCpaso Muestra los eventos registrados.  \Trayref{A} \label{CU6_regresar}
+    \UCpaso[\UCactor] Se desplaza dentro de la \IUref{}{Pantalla de Principal \ref{principalJFD}} para visualizar todos los campos registrados.
+	\UCpaso[\UCactor] Consulta los eventos. 
+    \end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{No existen registros}
+		\UCpaso Muestra mensaje “No existen registros.".
+		\UCpaso Continua en el paso \ref{CU6_regresar} del \UCref{CU6}.
+	\end{UCtrayectoriaA}
+    
+
+	
+
+

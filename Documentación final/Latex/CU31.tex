@@ -1,0 +1,57 @@
+\begin{UseCase}{CU31}{Consultar para expedición de constancias}{
+		\noindent Esta caso de uso servirá para que el Coordinador de Unida Académica pueda verificar si el alumno participó en un evento interpoliltécnico para que pueda comenzar el trámite de su constancia.
+		Para ello el Coordinador de Unida Académica se dirigirá a la \IUref{}{Pantalla de Principal \ref{principalcoord}} seleccionando Consulta para expedir constancias. Se le mostrará una tabla con los alumnos que han participado y si lo desea, podrá filtrar su busqueda.
+	} \label{CU31_evento}
+
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Coordinador de Unida Académica}
+		\UCitem{Propósito}{Consultar participación de alumnos en eventos interpolitécnicos.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Iniciar sesión.
+            \item Tener registrados datos.	
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla de Consulta participación de alumnos en eventos interpolitécnicos.}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Nombre 
+        	\item Boleta
+        	\item Escuela
+        	\item Deporte
+        	\item Sub-división
+        	\item Posición
+        	\item Prueba
+        	\item Marca
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Alumnos inscritos en un evento.
+		\end{itemize}}
+		\UCitem{Destino}{Principal Coordinador de Unidad Académica}
+		\UCitem{Errores}{
+        	\begin{itemize}
+			    \item No hay datos registrados.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+	
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla Principal \ref{principalcoord}}.
+    \UCpaso Muestra la \IUref{}{Pantalla Deportes \ref{principalcoord}}. \label{CU31_regresar}
+    \UCpaso[\UCactor] Se dirige a la sección Consultar para la expedición de constancias.  
+    \UCpaso Muestra la \IUref{}{Pantalla Deportes \ref{consultaparaexpedirconstancias}}. \Trayref{A}
+    \end{UCtrayectoria}
+    
+    \begin{UCtrayectoriaA}{A}{No hay evento registrado}
+    	\UCpaso Muestra mensaje “No hay coordinadores registrados".
+    	\UCpaso Continua en el paso \ref{CU31_regresar} del \UCref{CU31}.
+    \end{UCtrayectoriaA}
+
+
+	
+
+

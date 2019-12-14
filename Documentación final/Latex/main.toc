@@ -1,0 +1,60 @@
+\babel@toc {spanish}{}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}Planteamiento del Problema}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Antecedentes}{3}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Problem\'atica}{4}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Justificaci\'on}{4}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Aplicaciones}{5}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Aplicaciones Tournament Software}{5}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Aplicaciones Active Network}{7}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.3}Aplicaciones TeamSnap Tournament}{8}{subsection.2.4.3}% 
+\contentsline {subsection}{\numberline {2.4.4}Aplicaciones TorneoPal}{10}{subsection.2.4.4}% 
+\contentsline {subsection}{\numberline {2.4.5}Aplicaciones Instituto Nacional del deporte CHILE}{11}{subsection.2.4.5}% 
+\contentsline {subsection}{\numberline {2.4.6}Prototipo para el registro a interpolit\IeC {\'e}cnicos RIDESCOM}{12}{subsection.2.4.6}% 
+\contentsline {chapter}{\numberline {3}Propuesta de soluci\IeC {\'o}n}{13}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Objetivos}{13}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Objetivo General}{13}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.2}Objetivos Especificos}{13}{subsection.3.1.2}% 
+\contentsline {section}{\numberline {3.2}Alcance de la soluci\IeC {\'o}n}{14}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Crawler}{14}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Sistema Gestor de Base de Datos del lado del servidor}{23}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Servidor}{23}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Reglas del Sistema}{24}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Reglas de Negocio}{24}{section.3.7}% 
+\contentsline {section}{\numberline {3.8}Reglas de Negocio Jefe de Fomento Deportivo}{25}{section.3.8}% 
+\contentsline {section}{\numberline {3.9}Reglas de Negocio Coordinador de Unidad Acad\IeC {\'e}mica}{25}{section.3.9}% 
+\contentsline {section}{\numberline {3.10}Reglas de Negocio Alumno}{26}{section.3.10}% 
+\contentsline {section}{\numberline {3.11}Requisitos del usuario}{27}{section.3.11}% 
+\contentsline {section}{\numberline {3.12}Requisitos funcionales de la aplicaci\IeC {\'o}n web}{28}{section.3.12}% 
+\contentsline {section}{\numberline {3.13}Requisitos no funcionales de la aplicaci\IeC {\'o}n web}{30}{section.3.13}% 
+\contentsline {section}{\numberline {3.14}Diagrama de Procesos}{31}{section.3.14}% 
+\contentsline {section}{\numberline {3.15}Dise\IeC {\~n}o de pantallas}{31}{section.3.15}% 
+\contentsline {chapter}{\numberline {4}Prototipo RIDESCOM}{34}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Introduccci\IeC {\'o}n}{34}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Plan de trabajo}{34}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}An\'alisis de factibilidad t\'ecnica}{37}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Sprint 2: Interfaces}{39}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Sprint 4: M\IeC {\'o}dulo de difusi\IeC {\'o}n de eventos}{42}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Sprint 5:M\IeC {\'o}dulo de comunicaci\IeC {\'o}n con redes sociales}{42}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Sprint 6:M\IeC {\'o}dulo de creaci\IeC {\'o}n de c\IeC {\'e}dula de inscripci\IeC {\'o}n.}{44}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Sprint 7: M\IeC {\'o}dulo de consulta de resultados.}{44}{section.4.8}% 
+\contentsline {section}{\numberline {4.9}Sprint 0: An\IeC {\'a}lisis}{44}{section.4.9}% 
+\contentsline {section}{\numberline {4.10}Sprint 1: Mecanismo de validaci\IeC {\'o}n de estatus acad\IeC {\'e}mico.}{45}{section.4.10}% 
+\contentsline {section}{\numberline {4.11}Sprint 3: M\IeC {\'o}dulo de formulario}{46}{section.4.11}% 
+\contentsline {chapter}{\numberline {5}Pruebas}{47}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Plan de pruebas}{47}{section.5.1}% 
+\contentsline {chapter}{Conclusiones}{52}{section*.1}% 
+\contentsline {chapter}{Trabajo a Futuro}{53}{section*.2}% 
+\contentsline {chapter}{Referencias}{54}{section*.2}% 
+\contentsline {chapter}{Ap\IeC {\'e}ndice}{59}{section*.4}% 
+\contentsline {chapter}{\numberline {A}Entrevista}{60}{chapter.1}% 
+\contentsline {chapter}{\numberline {B}Dise\IeC {\~n}os de Pantallas}{62}{chapter.2}% 
+\contentsline {chapter}{\numberline {C}Diagrama de Procesos}{73}{chapter.3}% 
+\contentsline {chapter}{\numberline {D}Diagramas de Sistema}{75}{chapter.4}% 
+\contentsline {chapter}{\numberline {E}An\'alisis de Entornos de Desarrollo Interactivo}{77}{chapter.5}% 
+\contentsline {section}{\numberline {E.1}IDE}{77}{section.5.1}% 
+\contentsline {subsection}{\numberline {E.1.1}Framework}{77}{subsection.5.1.1}% 
+\contentsline {section}{\numberline {E.2}Rastreo Web y API's}{80}{section.5.2}% 
+\contentsline {section}{\numberline {E.3}iReport}{82}{section.5.3}% 
+\contentsline {chapter}{\numberline {F}API Facebook}{84}{chapter.6}% 
+\contentsline {chapter}{\numberline {G}Base de Datos}{93}{chapter.7}% 

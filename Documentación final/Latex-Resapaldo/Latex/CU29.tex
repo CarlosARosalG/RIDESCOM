@@ -1,0 +1,53 @@
+\begin{UseCase}{CU29}{Difusión de Eventos}{
+		\noindent Esta caso de uso servirá para que el Coordinador de Unida Académica pueda compartir en la red social Facebook, los eventos que han sido registrados.
+		Para ello el Coordinador de Unida Académica se dirigirá a la \IUref{}{Pantalla de Principal \ref{principalcoord}} seleccionando Difundir evento.
+	} \label{CU29_evento}
+
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Coordinador de Unida Académica}
+		\UCitem{Propósito}{Difundir eventos en la red social Facebook.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Iniciar sesión.
+            \item Tener registrados datos.	
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla de Difusión de eventos.}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Nombre del evento
+        	\item Fecha del Evento
+        	\item Lugar del Evento
+        	\item Descripción
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Evento publicado.
+		\end{itemize}}
+		\UCitem{Destino}{Principal Coordinador de Unidad Académica}
+		\UCitem{Errores}{
+        	\begin{itemize}
+			    \item No hay evento seleccionado registrados.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+	
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Ingresa a la \IUref{}{Pantalla Principal \ref{principalcoord}}.
+    \UCpaso Muestra la \IUref{}{Pantalla Deportes \ref{principalcoord}}. \label{CU29_regresar}
+    \UCpaso[\UCactor] Se dirige a la sección Difundir Evento.  
+    \UCpaso Muestra la \IUref{}{Pantalla Deportes \ref{principalcoord}}. \Trayref{A}
+    \end{UCtrayectoria}
+    
+    \begin{UCtrayectoriaA}{A}{No hay evento registrado}
+    	\UCpaso Muestra mensaje “No hay coordinadores registrados".
+    	\UCpaso Continua en el paso \ref{CU29_regresar} del \UCref{CU29}.
+    \end{UCtrayectoriaA}
+
+
+	
+
+

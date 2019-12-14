@@ -1,0 +1,38 @@
+\begin{UseCase}{CU5}{Recuperar contraseña para el Coordinador}{
+		Servirá para que el  Coordinador de la Unidad Académica pueda solicitar su restablecimiento de contraseña. Para ellos deberá de dar click en el botón \IUbutton{ Recuperar Contraseña } que se encuentra en la \IUref{}{Pantalla de Inicio de Sesión \ref{inicioJFDycoord}}.
+		EL Jefe de Fomento Deportivo, recibirá la notificación de que un COordinador de Unidad Académica solicita el restablecimiento de la contraseña y así, este podrá realizar el cambio. 
+	}
+	\label{CU5_Recupercoord}
+	
+	\UCitem{Versión}{0.1}
+	\UCitem{Autor}{Rosales González Carlos Andrés}
+	\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+	\UCitem{Actor}{Alumno}
+	\UCitem{Propósito}{Restablecer las contraseña del usaurio de un Coordinador de Unidad Académica.}
+	\UCitem{Precondiciones}{Tener una cuenta registrada.}
+	\UCitem{Postcondiciones}{
+		\begin{itemize}
+			\item El Coordinador de la Unidad acadpemica podrá ingresar a la página.
+	\end{itemize}}
+	\UCitem{Entradas}{
+		\begin{itemize}
+			\item Usuario
+	\end{itemize}}
+	\UCitem{Origen}{Pantalla, Teclado}
+	\UCitem{Salidas}{Pantalla}
+	\UCitem{Destino}{Login Coordinador de Unidad Académica}
+	\UCitem{Errores}{
+		\begin{itemize}
+			\item El usuario no es válida
+			\item Campo requerido.
+		\end{itemize}
+	}
+	\UCitem{Observaciones}{Ninguna}
+\end{UseCase}
+\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{ Recuperar } ubicado en la \IUref{}{Pantalla de Inicio de Sesión \ref{inicioJFDycoord}}.
+	\UCpaso Es redirigido .
+	\UCpaso[\UCactor] Introduce su correo electrónico.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{ Recuperar }.
+	\UCpaso Envía la contraseña al correo registrado.
+\end{UCtrayectoria}

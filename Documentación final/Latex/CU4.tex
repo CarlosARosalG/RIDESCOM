@@ -1,0 +1,39 @@
+\begin{UseCase}{CU4}{Recuperar contraseña para el alumno}{
+			\noindent Servirá para que el alumno pueda recuperar su contraseña, en caso de que esté la olvidará. Para ello deve dar click en el botón \IUbutton{ Recuperar Contraseña } que se encuentra en la \IUref{}{Pantalla de Inicio de Sesión \ref{loginalumno}}. 
+		Será re-dirigido a la página del SAES de la Unidad Académica a la que pertenece para que de estea manera pueda solicitar su restablecimiento de contraseña.	
+}
+		\label{CU4_Recuperaalum}
+	
+	\UCitem{Versión}{0.1}
+	\UCitem{Autor}{Rosales González Carlos Andrés}
+	\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+	\UCitem{Actor}{Alumno}
+	\UCitem{Propósito}{Restablecer la contraseña.}
+	\UCitem{Precondiciones}{Contar con una cuenta registrada.}
+	\UCitem{Postcondiciones}{
+		\begin{itemize}
+			\item El alumno podrá restablecer su contraseña.
+			\item Ingresar a la página.
+	\end{itemize}}
+	\UCitem{Entradas}{
+		\begin{itemize}
+			\item Correo electrónico
+	\end{itemize}}
+	\UCitem{Origen}{Pantalla, Teclado}
+	\UCitem{Salidas}{Pantalla}
+	\UCitem{Destino}{Login Alumno}
+	\UCitem{Errores}{
+		\begin{itemize}
+			\item La boleta no es válida.
+			\item Correo Inválido.
+		\end{itemize}
+	}
+	\UCitem{Observaciones}{Ninguna}
+\end{UseCase}
+\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{ Recuperar } ubicado en la \IUref{}{Pantalla de Inicio de Sesión \ref{loginalumno}}.
+	\UCpaso Es redirigido a la página del SAES de ESCOM.
+	\UCpaso[\UCactor] Introduce su correo electrónico.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{ Recuperar }.
+	\UCpaso Envía la contraseña al correo registrado.
+\end{UCtrayectoria}

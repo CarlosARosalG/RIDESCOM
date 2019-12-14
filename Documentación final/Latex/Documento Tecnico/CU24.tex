@@ -1,0 +1,70 @@
+\begin{UseCase}{CU24}{Eliminar resultados}{
+		\noindent Esta caso de uso servirá para que el Coordinador de Unidad Académica pueda agregar los Resultados, estos serán ingresados una vez que estos se hallan realizado.
+		Para ello el Coordinador de Unidad Académica se deberá dirigir a la tabla de Resultados ubicada en la \IUref{}{Pantalla de Deportes \ref{principalcoord}}, seguido dará click en el botón \IUbutton{ + Agregar }.	
+	} \label{CU24_evento}
+
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Rosales González Carlos Andrés}
+		\UCitem{Supervisa}{Mendoza García Bruno Alejandro}
+		\UCitem{Actor}{Coordinador de Unida Académica}
+		\UCitem{Propósito}{Eliminar los resultados registrados en la página.}
+        \UCitem{Precondiciones}{
+        \begin{itemize}
+            \item Iniciar sesión.	
+        \end{itemize}}
+        \UCitem{Postcondiciones}{Se muestra la pantalla principal}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	 \item Boleta
+        	 \item Nombre
+        	 \item Apellido Paterno
+        	 \item Apellido Materno
+        	 \item Escuela
+        	 \item Carrera
+        	 \item Prueba
+        	 \item Posición
+        	 \item Marca
+        \end{itemize}}
+		\UCitem{Origen}{Pantalla, Teclado}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		    \item Datos registrados.
+		    \item Página de deportes.
+		\end{itemize}}
+		\UCitem{Destino}{Pantalla principal de Coordinador de Unidad Académica}
+		\UCitem{Errores}{
+        	\begin{itemize}
+			    \item Datos faltantes.
+			    \item Campo vacío.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+	
+    \begin{UCtrayectoria}{Principal}
+    \UCpaso[\UCactor] Se dirige a la tabla Resultados, ubicada dentro de la página principal del Coordinador de Unidad Académica \IUref{}{Pantalla Deportes \ref{principalcoord}}.
+    \UCpaso[\UCactor] Oprime el botón \IUbutton{ Editar } en la parte superior de la tabla de Resultados \IUref{}{Pantalla principal \ref{principalcoord}}.
+    \UCpaso Muestra la \IUref{}{Pantalla Editar Resultados \ref{editaresultados}}. 
+    \UCpaso[\UCactor] Lllena los campos. \label{CU24_regresar}  
+    \UCpaso[\UCactor] Presiona el botón \IUbutton{ Editar }.
+    \UCpaso Comprueba que los campos no estén vacíos. \Trayref{A}
+    \UCpaso Obtiene los valores ingresados
+    \UCpaso Válida campos. \Trayref{B}
+    \UCpaso Muestra mensaje de confirmación de registro.
+    \UCpaso Muestra la \IUref{}{Pantalla Deportes. \ref{principalcoord}}.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campo(s) vacios}
+	\UCpaso Muestra mensaje “Campos Necesario".
+	\UCpaso Continua en el paso \ref{CU24_regresar} del \UCref{CU24}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Válida campos}
+	\UCpaso Muestra el mensaje "Datos incorrectos".
+	\UCpaso Continua en el paso \ref{CU24_regresar} del \UCref{CU24}.
+\end{UCtrayectoriaA}
+
+
+	
+
+

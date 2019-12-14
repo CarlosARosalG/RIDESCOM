@@ -1,0 +1,59 @@
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Planteamiento del Problema}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Antecedentes}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Problem\341tica}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Justificaci\363n}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Aplicaciones}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.4.1}{Aplicaciones Tournament Software}{section.2.4}% 7
+\BOOKMARK [2][-]{subsection.2.4.2}{Aplicaciones Active Network}{section.2.4}% 8
+\BOOKMARK [2][-]{subsection.2.4.3}{Aplicaciones TeamSnap Tournament}{section.2.4}% 9
+\BOOKMARK [2][-]{subsection.2.4.4}{Aplicaciones TorneoPal}{section.2.4}% 10
+\BOOKMARK [2][-]{subsection.2.4.5}{Aplicaciones Instituto Nacional del deporte CHILE}{section.2.4}% 11
+\BOOKMARK [2][-]{subsection.2.4.6}{Prototipo para el registro a interpolit\351cnicos RIDESCOM}{section.2.4}% 12
+\BOOKMARK [0][-]{chapter.3}{Propuesta de soluci\363n}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Objetivos}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.1.1}{Objetivo General}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.2}{Objetivos Especificos}{section.3.1}% 16
+\BOOKMARK [1][-]{section.3.2}{Alcance de la soluci\363n}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.3}{Crawler}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.4}{Sistema Gestor de Base de Datos del lado del servidor}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.5}{Servidor}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.6}{Reglas del Sistema}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.7}{Reglas de Negocio}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.8}{Reglas de Negocio Jefe de Fomento Deportivo}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.9}{Reglas de Negocio Coordinador de Unidad Acad\351mica}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.10}{Reglas de Negocio Alumno}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.11}{Requisitos del usuario}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.12}{Requisitos funcionales de la aplicaci\363n web}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.13}{Requisitos no funcionales de la aplicaci\363n web}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.14}{Diagrama de Procesos}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.15}{Dise\361o de pantallas}{chapter.3}% 30
+\BOOKMARK [0][-]{chapter.4}{Prototipo RIDESCOM}{}% 31
+\BOOKMARK [1][-]{section.4.1}{Introduccci\363n}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{Plan de trabajo}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{An\341lisis de factibilidad t\351cnica}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{Sprint 2: Interfaces}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.5}{Sprint 4: M\363dulo de difusi\363n de eventos}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.6}{Sprint 5:M\363dulo de comunicaci\363n con redes sociales}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.7}{Sprint 6:M\363dulo de creaci\363n de c\351dula de inscripci\363n.}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.8}{Sprint 7: M\363dulo de consulta de resultados.}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.9}{Sprint 0: An\341lisis}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.10}{Sprint 1: Mecanismo de validaci\363n de estatus acad\351mico.}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.11}{Sprint 3: M\363dulo de formulario}{chapter.4}% 42
+\BOOKMARK [0][-]{chapter.5}{Pruebas}{}% 43
+\BOOKMARK [1][-]{section.5.1}{Plan de pruebas}{chapter.5}% 44
+\BOOKMARK [0][-]{section*.1}{Conclusiones}{}% 45
+\BOOKMARK [0][-]{section*.2}{Trabajo a Futuro}{}% 46
+\BOOKMARK [0][-]{section*.2}{Referencias}{}% 47
+\BOOKMARK [0][-]{section*.4}{Ap\351ndice}{}% 48
+\BOOKMARK [0][-]{chapter.1}{Entrevista}{}% 49
+\BOOKMARK [0][-]{chapter.2}{Dise\361os de Pantallas}{}% 50
+\BOOKMARK [0][-]{chapter.3}{Diagrama de Procesos}{}% 51
+\BOOKMARK [0][-]{chapter.4}{Diagramas de Sistema}{}% 52
+\BOOKMARK [0][-]{chapter.5}{An\341lisis de Entornos de Desarrollo Interactivo}{}% 53
+\BOOKMARK [1][-]{section.5.1}{IDE}{chapter.5}% 54
+\BOOKMARK [2][-]{subsection.5.1.1}{Framework}{section.5.1}% 55
+\BOOKMARK [1][-]{section.5.2}{Rastreo Web y API's}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.3}{iReport}{chapter.5}% 57
+\BOOKMARK [0][-]{chapter.6}{API Facebook}{}% 58
+\BOOKMARK [0][-]{chapter.7}{Base de Datos}{}% 59
